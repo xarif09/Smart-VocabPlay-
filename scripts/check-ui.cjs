@@ -88,6 +88,28 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('text=พื้นหลัง'); await p.waitForTimeout(100); await a('shop-bg');
     await p.click('button:has-text("‹")');
     res.push({ label: name + ' missions-card', ok: await p.isVisible('text=ภารกิจวันนี้') });
+    // บทสนทนา: ฟัง → เล่นบทบาท (ไม่มีไมค์ → ปุ่มแตะ) → เติมคำ
+    await p.click('text=บทสนทนา'); await p.waitForTimeout(200); await shot(p, `${name}-13a-talk`); await a('talk');
+    await p.click('text=Hello!'); await p.waitForTimeout(300); await shot(p, `${name}-13b-dialog`); await a('dialog-listen');
+    await p.click('text=🎭 เล่นบทบาท'); await p.click('button:has-text("Mina")'); await p.waitForTimeout(300); await shot(p, `${name}-13c-roleplay`); await a('roleplay');
+    for (let k = 0; k < 8; k++) { if (await p.isVisible('button:has-text("🎤")')) { await p.click('button:has-text("🎤")'); await p.waitForTimeout(150); } await p.locator('button:has-text("ถัดไป ›"), button:has-text("ข้าม ›")').first().click(); await p.waitForTimeout(150); }
+    await p.waitForSelector('text=เล่นอีก', { timeout: 3000 }); res.push({ label: name + ' roleplay-finished', ok: true }); await p.click('text=กลับ ›'); await p.waitForTimeout(200);
+    await p.click('text=🧩 เติมคำ'); await p.waitForTimeout(300); await shot(p, `${name}-13d-fill`); await a('fill');
+    await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")');
+    // นิทาน: อ่าน → แตะคำ → ถึงหน้าสุดท้าย → ตอบคำถาม
+    await p.click('text=นิทานภาพ'); await p.waitForTimeout(300); await shot(p, `${name}-14a-stories`); await a('stories');
+    await p.click('text=The Little Cat'); await p.waitForTimeout(400); await shot(p, `${name}-14b-reader`); await a('reader');
+    await p.click('button:has-text("cat")').catch(()=>{}); await p.waitForTimeout(200); res.push({ label: name + ' reader-word-popup', ok: await p.isVisible('text=แมว') });
+    for (let k = 0; k < 7; k++) await p.click('text=หน้าถัดไป');
+    await p.click('text=ตอบคำถามท้ายเรื่อง'); await p.waitForTimeout(300); await shot(p, `${name}-14c-storyquiz`); await a('storyquiz');
+    for (let k = 0; k < 3; k++) { await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1300); }
+    await p.waitForSelector('text=เล่นอีก', { timeout: 3000 }); await p.click('text=กลับ ›'); await p.waitForTimeout(200);
+    res.push({ label: name + ' story-done-badge', ok: await p.isVisible('text=อ่านแล้ว') });
+    await p.click('button:has-text("‹")');
+    // โฟนิกส์
+    await p.click('text=โฟนิกส์'); await p.waitForTimeout(300); await p.click('button:text-is("B")'); await p.waitForTimeout(200); await shot(p, `${name}-15a-phonics`); await a('phonics');
+    await p.click('text=เกมเสียงแรก'); await p.waitForTimeout(300); await p.click('text=ฟัง EN+TH'); await p.waitForTimeout(200); await shot(p, `${name}-15b-phonics-game`); await a('phonics-game');
+    await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")');
     // learning path: open unit 1 → learn step → flash cards → back marks step
     await p.click('text=เส้นทางบทเรียน'); await p.waitForTimeout(300); await shot(p, `${name}-12a-path`); await a('path');
     await p.click('text=1. เรียนการ์ด'); await p.waitForTimeout(200);

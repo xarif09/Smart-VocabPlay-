@@ -27,7 +27,7 @@ node scripts/check-ui.cjs   # (ต้องเปิด preview ก่อน) �
 ```
 
 ## โครงสำคัญ
-- `src/App.jsx` = หน้าจอ + เกมทั้งหมด · `src/progress.js` = ดาว/เหรียญ/สติกเกอร์/streak/เพื่อนคู่หู · `src/sfx.js` = เสียงเอฟเฟกต์ (Web Audio) · `src/lexicon.js` = คำอ่านไทย+ประโยค 403 คำ (key `หมวด|คำ`) · `src/images.js` = คำ → บทความ Wikipedia สำหรับรูปจริง (รูปจริงอยู่ `public/img/` ดาวน์โหลดโดย workflow `fetch-images.yml` · แก้ชื่อบทความแล้ว push จะโหลดใหม่เอง · ตรวจด้วย `node scripts/contact-sheet.cjs`) · `src/main.jsx` แค่ mount
+- `src/App.jsx` = หน้าจอ + เกมทั้งหมด · `src/progress.js` = ดาว/เหรียญ/สติกเกอร์/streak/เพื่อนคู่หู · `src/sfx.js` = เสียงเอฟเฟกต์ (Web Audio) · `src/lexicon.js` = คำอ่านไทย+ประโยค 403 คำ (key `หมวด|คำ`) · `src/images.js` = คำ → บทความ Wikipedia สำหรับรูปจริง (รูปจริงอยู่ `public/img/` ดาวน์โหลดโดย workflow `fetch-images.yml` · แก้ชื่อบทความแล้ว push จะโหลดใหม่เอง · ตรวจด้วย `node scripts/contact-sheet.cjs`) · `src/content.js` = บทสนทนา/นิทาน/โฟนิกส์ (รูปอ้างด้วย key `หมวด|คำ`) · `src/main.jsx` แค่ mount
 - ทุกเกมรายงานผลผ่าน `track.correct(word)` / `track.wrong(word)` / `track.finish(score,total,opts)` → GameRouter คิดดาว เหรียญ สติกเกอร์ แล้วเปิด ResultScreen
 - เพิ่มคำเริ่มต้นใหม่ = **ต่อท้าย** รายการ `W(...)` ใน App.jsx เสมอ (id ผูกกับสติกเกอร์/SRS) + แถวใน lexicon.js + (ถ้าเป็นของจริง) แถวใน images.js · ห้ามลบคำกลางรายการ ให้แทนที่ด้วยคำใหม่แทน · ทุกเกมใหม่ต้องมีใน `GAME_META` และ (ถ้าทุกหมวดมี) ใน `EXTRA_GAMES`
 - localStorage: `smart-vocabplay:words:v1` (คำศัพท์ ใช้ร่วมทุกคน) · `smart-vocabplay:profiles:v1` (รายชื่อโปรไฟล์) · `smart-vocabplay:progress:v1[:<profileId>]` (ความคืบหน้าแต่ละคน · p1 ไม่มี suffix)

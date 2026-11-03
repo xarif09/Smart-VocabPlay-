@@ -5140,5 +5140,197 @@
   "source": "https://commons.wikimedia.org/wiki/File:En-us-world.oga",
   "artist": "Dsm.wiki",
   "license": "CC BY-SA 4.0"
+ },
+ "submarine": {
+  "file": "submarine.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-submarine.ogg",
+  "artist": "Speaker: Kingdon\n\nSubmarine",
+  "license": "CC BY-SA 3.0"
+ },
+ "oval": {
+  "file": "oval.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-oval.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "monday": {
+  "file": "monday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-monday.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tuesday": {
+  "file": "tuesday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tuesday.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wednesday": {
+  "file": "wednesday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wednesday.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "thursday": {
+  "file": "thursday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thursday.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "saturday": {
+  "file": "saturday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-saturday.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sunday": {
+  "file": "sunday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sunday.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "january": {
+  "file": "january.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-january.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "april": {
+  "file": "april.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-april.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "may": {
+  "file": "may.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-may.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "june": {
+  "file": "june.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-june.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "july": {
+  "file": "july.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-july.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "september": {
+  "file": "september.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-september.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "october": {
+  "file": "october.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-october.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "november": {
+  "file": "november.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-november.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "december": {
+  "file": "december.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-december.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "thailand": {
+  "file": "thailand.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thailand.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "india": {
+  "file": "india.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-india.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "vietnam": {
+  "file": "vietnam.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-vietnam.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "laos": {
+  "file": "laos.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-laos.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "myanmar": {
+  "file": "myanmar.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-myanmar.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "cambodia": {
+  "file": "cambodia.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cambodia.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "malaysia": {
+  "file": "malaysia.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-malaysia.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "singapore": {
+  "file": "singapore.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-singapore.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "australia": {
+  "file": "australia.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-australia.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "england": {
+  "file": "england.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-england.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "america": {
+  "file": "america.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-america.ogg",
+  "artist": "OR AlexMC",
+  "license": "CC BY-SA 4.0"
+ },
+ "france": {
+  "file": "france.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-france.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "italy": {
+  "file": "italy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-italy.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "egypt": {
+  "file": "egypt.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-egypt.ogg",
+  "artist": "No machine-readable author provided. Muke assumed (based on copyright claims).",
+  "license": "Public domain"
+ },
+ "brazil": {
+  "file": "brazil.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-brazil.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
  }
 }

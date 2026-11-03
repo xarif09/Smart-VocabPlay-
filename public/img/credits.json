@@ -6320,25 +6320,11 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Theatre"
  },
- "Programmer": {
-  "file": "programmer.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Two_women_operating_ENIAC_(full_resolution).jpg",
-  "artist": "Unidentified U.S. Army photographer",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Programmer"
- },
  "Alpine skiing": {
   "file": "alpine-skiing.png",
   "source": "https://commons.wikimedia.org/wiki/File:Alpine_skiing_pictogram.svg.png",
   "artist": "",
   "license": "",
   "page": "https://en.wikipedia.org/wiki/Alpine_skiing"
- },
- "Wooden door": {
-  "file": "wooden-door.png",
-  "source": "https://commons.wikimedia.org/wiki/File:L-door.png",
-  "artist": "",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Door"
  }
 }

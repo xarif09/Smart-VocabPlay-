@@ -6305,5 +6305,26 @@
   "artist": "Museum Rotterdam",
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Baby_bottle"
+ },
+ "Public speaking": {
+  "file": "public-speaking.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Reijiro_Wakatsuki_giving_a_speech_at_the_London_Naval_Conference.jpg",
+  "artist": "毎日新聞社",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Public_speaking"
+ },
+ "Theatre": {
+  "file": "theatre.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Bernhardt_Hamlet2.jpg",
+  "artist": "Lafayette Photo, London",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Theatre"
+ },
+ "Alpine skiing": {
+  "file": "alpine-skiing.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Alpine_skiing_pictogram.svg.png",
+  "artist": "",
+  "license": "",
+  "page": "https://en.wikipedia.org/wiki/Alpine_skiing"
  }
 }

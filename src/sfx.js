@@ -40,7 +40,7 @@ function play(fn) {
 }
 
 export const sfx = {
-  tap:  () => play(t => tone(600, t, 0.06, "square", 0.04)),
+  tap:  () => { try { navigator.vibrate?.(6); } catch (_) {} play(t => tone(600, t, 0.06, "square", 0.04)); },
   ok:   () => play(t => { tone(660, t, 0.12); tone(880, t + 0.1, 0.2); }),
   bad:  () => play(t => { tone(220, t, 0.18, "sawtooth", 0.07); tone(160, t + 0.12, 0.25, "sawtooth", 0.07); }),
   coin: () => play(t => { tone(1200, t, 0.08, "square", 0.05); tone(1600, t + 0.07, 0.16, "square", 0.05); }),

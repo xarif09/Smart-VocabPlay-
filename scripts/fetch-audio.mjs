@@ -31,21 +31,34 @@ const get = async (url, type = "json") => {
 };
 const strip = html => (html || "").replace(/<[^>]+>/g, "").trim();
 // ชื่อไฟล์ที่ลอง เรียงตามความนิยม: อเมริกัน → ไม่ระบุสำเนียง → อังกฤษ/ออสเตรเลีย (เว้นวรรคใน Commons ใช้ขีดล่าง)
-const cands = w => { const u = w.replace(/ /g, "_"); return [`En-us-${u}.ogg`, `En-${u}.ogg`, `En-uk-${u}.ogg`, `En-au-${u}.ogg`, `En-us-${u}.oga`, `En-ca-${u}.ogg`]; };
+//  Commons แยกตัวพิมพ์ใหญ่-เล็ก (ยกเว้นอักษรแรกของชื่อไฟล์) → ลองทั้งตัวเล็กและขึ้นต้นตัวใหญ่ (Monday, Thailand, Lego)
+const cands = w => {
+  const lower = w.replace(/ /g, "_");
+  const cap = lower.replace(/(^|_)([a-z])/g, (m, a, b) => a + b.toUpperCase());
+  const first = lower.charAt(0).toUpperCase() + lower.slice(1);
+  const forms = [...new Set([lower, first, cap])];
+  const out = [];
+  for (const f of forms) out.push(`En-us-${f}.ogg`, `En-${f}.ogg`, `En-uk-${f}.ogg`, `En-au-${f}.ogg`);
+  out.push(`En-us-${lower}.oga`, `En-ca-${lower}.ogg`);
+  return out;
+};
 
 let ok = 0, skipped = 0, failed = [];
 const todo = words.filter(w => FORCE || !(manifest[w] && existsSync(join(OUT, manifest[w]))));
 skipped = words.length - todo.length;
-// ถาม Commons ทีละ 8 คำ (48 ชื่อไฟล์ต่อครั้ง ≤ 50) ว่าไฟล์ไหนมีจริง + ขอ URL และเครดิต
-for (let i = 0; i < todo.length; i += 8) {
-  const batch = todo.slice(i, i + 8);
-  const titles = batch.flatMap(w => cands(w).map(f => "File:" + f));
-  let pages = {};
-  try {
-    const q = await get(`https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(titles.join("|"))}&prop=imageinfo&iiprop=url|extmetadata&format=json`);
-    for (const p of Object.values(q?.query?.pages || {})) if (p.imageinfo?.[0]?.url) pages[p.title.replace(/^File:/, "").replace(/ /g, "_")] = p.imageinfo[0];
-    // Commons อาจแปลงชื่อ (ตัวแรกเป็นตัวใหญ่) → เทียบแบบไม่สนตัวพิมพ์
-  } catch (e) { batch.forEach(w => failed.push(`${w}: ${e.message}`)); await sleep(1000); continue; }
+// ถาม Commons ทีละ 3 คำ (≤ 50 ชื่อไฟล์ต่อคำขอ) ว่าไฟล์ไหนมีจริง + ขอ URL และเครดิต · ลองใหม่ 3 ครั้งถ้า API ล้ม
+for (let i = 0; i < todo.length; i += 3) {
+  const batch = todo.slice(i, i + 3);
+  const titles = [...new Set(batch.flatMap(w => cands(w).map(f => "File:" + f)))].slice(0, 50);
+  let pages = {}, okq = false;
+  for (let attempt = 0; attempt < 3 && !okq; attempt++) {
+    try {
+      const q = await get(`https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(titles.join("|"))}&prop=imageinfo&iiprop=url|extmetadata&format=json`);
+      for (const p of Object.values(q?.query?.pages || {})) if (p.imageinfo?.[0]?.url) pages[p.title.replace(/^File:/, "").replace(/ /g, "_")] = p.imageinfo[0];
+      okq = true;
+    } catch (e) { await sleep(1500 * (attempt + 1)); if (attempt === 2) batch.forEach(w => failed.push(`${w}: ${e.message}`)); }
+  }
+  if (!okq) continue;
   const found = Object.fromEntries(Object.entries(pages).map(([k, v]) => [k.toLowerCase(), v]));
   for (const w of batch) {
     const hit = cands(w).map(f => [f, found[f.toLowerCase()]]).find(x => x[1]);

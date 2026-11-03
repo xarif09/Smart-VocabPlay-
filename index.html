@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#F97316" />
+    <meta name="theme-color" content="#6d5dfc" />
     <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
     <link rel="apple-touch-icon" href="%BASE_URL%icons/icon-192.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -13,9 +13,21 @@
     <meta name="description" content="เกมฝึกคำศัพท์ภาษาอังกฤษสำหรับเด็กไทย คำอ่านไทย ประโยคตัวอย่าง พูดตาม เก็บดาว เลี้ยงเพื่อนคู่หู" />
     <title>Smart VocabPlay</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap" />
     <style>
       *, *::before, *::after { box-sizing: border-box; }
-      html, body { margin: 0; padding: 0; background: #fafafa; -webkit-text-size-adjust: 100%; }
+      html, body { margin: 0; padding: 0; background: #f4f6fb; -webkit-text-size-adjust: 100%; font-family: 'Prompt', 'Noto Sans Thai', system-ui, sans-serif; }
+      /* พื้นหลังออโรรา: วงไล่สีนุ่มๆ ตรึงอยู่กับที่ */
+      body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+        background:
+          radial-gradient(600px 400px at 10% -10%, rgba(168,85,247,0.22), transparent 60%),
+          radial-gradient(500px 400px at 110% 10%, rgba(255,111,174,0.2), transparent 60%),
+          radial-gradient(600px 500px at 50% 110%, rgba(34,211,238,0.18), transparent 60%); }
+      button { font-family: inherit; transition: transform .08s ease; }
+      button:active { transform: scale(0.97); }
+      input, select { font-family: inherit; }
       button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; font-family: inherit; }
       @keyframes vpFall { to { transform: translateY(110vh) rotate(720deg); opacity: 0.9; } }
       @keyframes vpPop { 0% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); } }

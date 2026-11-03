@@ -19,6 +19,7 @@ export const EMPTY_PROGRESS = {
   owned: {},           // { itemId: true } ของที่ซื้อแล้ว
   hat: null,           // itemId หมวกที่ใส่อยู่
   bg: null,            // itemId พื้นหลังการ์ดเพื่อน
+  theme: null,         // ธีมแอป (aurora/ocean/forest/sunset/space/candy)
   learned: {},         // { wordId: true } เปิดการ์ดเรียนแล้ว
   path: {},            // { unitId: { learn:true, quiz:true, listen:true } } เส้นทางบทเรียน
 };
@@ -168,6 +169,13 @@ export const SHOP_ITEMS = [
   { id: "bgForest",type: "bg",    emoji: "🌳", name: "ป่าไม้",      cost: 120, css: "linear-gradient(135deg,#dcfce7,#bbf7d0)" },
   { id: "bgCandy", type: "bg",    emoji: "🍭", name: "ลูกกวาด",     cost: 150, css: "linear-gradient(135deg,#fce7f3,#fbcfe8,#fef3c7)" },
   { id: "bgSpace", type: "bg",    emoji: "🌌", name: "อวกาศ",       cost: 250, css: "linear-gradient(135deg,#1e1b4b,#4c1d95)" },
+  // ธีมทั้งแอป (CSS อยู่ใน index.html [data-theme=...])
+  { id: "aurora", type: "theme", emoji: "🌈", name: "ออโรรา (เริ่มต้น)", cost: 0,   preview: "linear-gradient(135deg,#6d5dfc,#a855f7,#ff6fae)" },
+  { id: "ocean",  type: "theme", emoji: "🌊", name: "ท้องทะเล",      cost: 300, preview: "linear-gradient(135deg,#0ea5e9,#06b6d4,#34d399)" },
+  { id: "forest", type: "theme", emoji: "🌿", name: "ป่าเขียว",      cost: 300, preview: "linear-gradient(135deg,#16a34a,#84cc16,#facc15)" },
+  { id: "sunset", type: "theme", emoji: "🌇", name: "พระอาทิตย์ตก",  cost: 350, preview: "linear-gradient(135deg,#f43f5e,#fb923c,#facc15)" },
+  { id: "space",  type: "theme", emoji: "🚀", name: "อวกาศ (โหมดมืด)", cost: 500, preview: "linear-gradient(135deg,#0f172a,#312e81,#7c3aed)" },
+  { id: "candy",  type: "theme", emoji: "🍭", name: "ลูกกวาด",       cost: 300, preview: "linear-gradient(135deg,#f472b6,#c084fc,#67e8f9)" },
 ];
 
 // ═══════════════════════════════════════════════════════

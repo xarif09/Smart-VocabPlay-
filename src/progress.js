@@ -18,6 +18,7 @@ export const EMPTY_PROGRESS = {
   daily: { date: null, counters: {}, claimed: {} },
   owned: {},           // { itemId: true } ของที่ซื้อแล้ว
   hat: null,           // itemId หมวกที่ใส่อยู่
+  outfit: [],          // itemId ชุดแต่งตัวที่ใส่อยู่ (หลายชิ้น)
   bg: null,            // itemId พื้นหลังการ์ดเพื่อน
   theme: null,         // ธีมแอป (aurora/ocean/forest/sunset/space/candy)
   learned: {},         // { wordId: true } เปิดการ์ดเรียนแล้ว
@@ -84,6 +85,8 @@ export const PETS = [
   { id: "dog",    name: "บ๊อบ", stages: ["🥚", "🐶", "🐕", "🦮"] },
   { id: "bunny",  name: "ปุย",  stages: ["🥚", "🐰", "🐇", "🐰"] },
   { id: "dragon", name: "ไฟ",   stages: ["🥚", "🐲", "🐉", "🐉"] },
+  { id: "panda",  name: "ปังปัง", stages: ["🥚", "🐼", "🐼", "🐼"] },
+  { id: "fox",    name: "จิ้ง",  stages: ["🥚", "🦊", "🦊", "🦊"] },
 ];
 // XP (จำนวนข้อที่ตอบถูกสะสม) ที่ต้องถึงในแต่ละเลเวล
 export const LEVELS = [0, 15, 40, 80, 140, 220, 320, 450, 600, 800];
@@ -169,6 +172,21 @@ export const SHOP_ITEMS = [
   { id: "bgForest",type: "bg",    emoji: "🌳", name: "ป่าไม้",      cost: 120, css: "linear-gradient(135deg,#dcfce7,#bbf7d0)" },
   { id: "bgCandy", type: "bg",    emoji: "🍭", name: "ลูกกวาด",     cost: 150, css: "linear-gradient(135deg,#fce7f3,#fbcfe8,#fef3c7)" },
   { id: "bgSpace", type: "bg",    emoji: "🌌", name: "อวกาศ",       cost: 250, css: "linear-gradient(135deg,#1e1b4b,#4c1d95)" },
+  // ชุดแต่งตัว (วาดใน Pet.jsx OUTFIT) · type "outfit" ใส่ได้หลายชิ้น (เก็บใน progress.outfit[])
+  { id: "tee",      type: "outfit", emoji: "👕", name: "เสื้อยืด A+",   cost: 120 },
+  { id: "hoodie",   type: "outfit", emoji: "🧥", name: "เสื้อฮู้ดม่วง", cost: 180 },
+  { id: "dress",    type: "outfit", emoji: "👗", name: "ชุดเดรสชมพู",  cost: 180 },
+  { id: "suit",     type: "outfit", emoji: "🤵", name: "สูทหล่อ",       cost: 250 },
+  { id: "scarf",    type: "outfit", emoji: "🧣", name: "ผ้าพันคอแดง",  cost: 100 },
+  { id: "glasses",  type: "outfit", emoji: "👓", name: "แว่นนักเรียน", cost: 120 },
+  { id: "shades",   type: "outfit", emoji: "🕶️", name: "แว่นกันแดดเท่", cost: 160 },
+  { id: "necklace", type: "outfit", emoji: "📿", name: "สร้อยทอง",      cost: 200 },
+  { id: "backpack", type: "outfit", emoji: "🎒", name: "กระเป๋านักเรียน", cost: 150 },
+  { id: "book",     type: "outfit", emoji: "📘", name: "หนังสือคู่ใจ",  cost: 120 },
+  { id: "balloon",  type: "outfit", emoji: "🎈", name: "ลูกโป่งแดง",   cost: 100 },
+  { id: "wand",     type: "outfit", emoji: "🪄", name: "ไม้กายสิทธิ์", cost: 300 },
+  { id: "cape",     type: "outfit", emoji: "🦸", name: "ผ้าคลุมฮีโร่", cost: 350 },
+  { id: "wings",    type: "outfit", emoji: "🪽", name: "ปีกนางฟ้า",     cost: 450 },
   // ธีมทั้งแอป (CSS อยู่ใน index.html [data-theme=...])
   { id: "aurora", type: "theme", emoji: "🌈", name: "ออโรรา (เริ่มต้น)", cost: 0,   preview: "linear-gradient(135deg,#6d5dfc,#a855f7,#ff6fae)" },
   { id: "ocean",  type: "theme", emoji: "🌊", name: "ท้องทะเล",      cost: 300, preview: "linear-gradient(135deg,#0ea5e9,#06b6d4,#34d399)" },

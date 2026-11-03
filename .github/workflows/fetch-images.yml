@@ -1,0 +1,30 @@
+name: Fetch word images
+
+# ดาวน์โหลดรูปจริงจาก Wikipedia ตาม src/images.js แล้ว commit เข้า branch ที่สั่งรัน
+# (เครื่องพัฒนาบางเครื่องต่อ Wikipedia ไม่ได้ แต่ runner ของ GitHub ต่อได้)
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "โหลดใหม่ทุกรูป (ไม่ข้ามที่มีอยู่)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/fetch-images.mjs ${{ inputs.force && '--force' || '' }}
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/img src/imgManifest.json
+          git diff --cached --quiet && echo "no changes" || (git commit -m "Add word images fetched from Wikipedia" && git push)

@@ -4,6 +4,7 @@
 // (สี ตัวเลข ความรู้สึก ครอบครัว รูปทรง ใช้อีโมจิ เพราะสื่อชัดกว่ารูปถ่าย)
 // รูปโหลดครั้งแรกจะถูก service worker แคชไว้ → เล่นออฟไลน์ก็ยังเห็น
 // ═══════════════════════════════════════════════════════
+import manifest from "./imgManifest.json";
 const T = {};
 const add = (cat, rows) => rows.forEach(([w, title]) => { T[`${cat}|${w}`] = title; });
 
@@ -102,18 +103,26 @@ const load = () => { if (mem) return mem; try { mem = JSON.parse(window.localSto
 const save = () => { try { window.localStorage.setItem(CK, JSON.stringify(mem)); } catch (_) {} };
 const inflight = {};
 
-export function cachedImageUrl(title) { const c = load(); return title in c ? c[title] : undefined; }
+// รูปที่บรรจุมากับแอป (public/img จาก scripts/fetch-images.mjs) — ใช้ก่อนเสมอ ไม่ต้องต่อเน็ต
+const BASE = (typeof import.meta !== "undefined" && import.meta.env?.BASE_URL) || "/";
+export function bundledImageUrl(title) { const f = manifest[title]; return f ? `${BASE}img/${f}` : null; }
+export const bundledCount = () => Object.keys(manifest).length;
+
+export function cachedImageUrl(title) { const b = bundledImageUrl(title); if (b) return b; const c = load(); return title in c ? c[title] : undefined; }
 
 export function fetchImageUrl(title) {
   const c = load();
   if (title in c) return Promise.resolve(c[title]);
   if (inflight[title]) return inflight[title];
+  const b = bundledImageUrl(title); if (b) return Promise.resolve(b);
   inflight[title] = fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g, "_"))}`)
-    .then(r => (r.ok ? r.json() : null))
+    .then(r => { if (r.status === 404) return { none: true }; if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
     .then(j => {
       let url = j?.thumbnail?.source || "";
       if (url) url = url.replace(/\/(\d+)px-/, "/480px-");   // ขอขนาด 480px พอสำหรับมือถือ
-      c[title] = url; save(); return url;
+      // จำผลเฉพาะเมื่อได้คำตอบจริง (มีรูป หรือบทความไม่มีรูป) · error ชั่วคราวไม่จำ
+      if (url || j?.none || j?.title) { c[title] = url; save(); }
+      return url;
     })
     .catch(() => "")   // ออฟไลน์/บล็อก → ไม่จำผล ลองใหม่คราวหน้า
     .finally(() => { delete inflight[title]; });

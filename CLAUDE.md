@@ -28,6 +28,7 @@ node scripts/check-ui.cjs   # (ต้องเปิด preview ก่อน) �
 - `src/App.jsx` = หน้าจอ + เกมทั้งหมด · `src/progress.js` = ดาว/เหรียญ/สติกเกอร์/streak/เพื่อนคู่หู · `src/sfx.js` = เสียงเอฟเฟกต์ (Web Audio) · `src/lexicon.js` = คำอ่านไทย+ประโยค 296 คำ (key `หมวด|คำ`) · `src/main.jsx` แค่ mount
 - ทุกเกมรายงานผลผ่าน `track.correct(word)` / `track.wrong(word)` / `track.finish(score,total,opts)` → GameRouter คิดดาว เหรียญ สติกเกอร์ แล้วเปิด ResultScreen
 - เพิ่มคำเริ่มต้นใหม่ = เพิ่มทั้ง `W(...)` ใน App.jsx และแถวใน lexicon.js · ทุกเกมใหม่ต้องมีใน `GAME_META` และ (ถ้าทุกหมวดมี) ใน `EXTRA_GAMES`
-- localStorage 2 key: `smart-vocabplay:words:v1` (คำศัพท์) · `smart-vocabplay:progress:v1` (ความคืบหน้า)
+- localStorage: `smart-vocabplay:words:v1` (คำศัพท์ ใช้ร่วมทุกคน) · `smart-vocabplay:profiles:v1` (รายชื่อโปรไฟล์) · `smart-vocabplay:progress:v1[:<profileId>]` (ความคืบหน้าแต่ละคน · p1 ไม่มี suffix)
+- PWA: `public/sw.js` แคช index + assets · แก้ SW แล้วต้องเปลี่ยนชื่อ `CACHE` · ไอคอนสร้างใหม่ได้ด้วยสคริปต์ Playwright (ดู PROJECT.md)
 - `vite.config.js` → `base: "/Smart-VocabPlay-/"` (ต้องตรงชื่อ repo)
 - Deploy: push เข้า `main` → `.github/workflows/deploy.yml` build แล้วขึ้น GitHub Pages เอง

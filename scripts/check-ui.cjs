@@ -48,7 +48,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('text=แตะการ์ดเพื่อดูความหมาย'); await p.waitForTimeout(300);
     await shot(p, `${name}-2b-learn-back`); await a('learn-back');
     res.push({ label: name + ' learn-sentence', ok: await p.isVisible('text=/[A-Z][a-z].*\\./') });
-    await p.click('text=รู้แล้ว'); await p.click('text=ยังไม่แม่น'); await p.waitForTimeout(100);
+    await p.click('button:has-text("รู้แล้ว")'); await p.click('button:has-text("ยังไม่แม่น")'); await p.waitForTimeout(100);
     await p.click('button:has-text("‹")'); await p.waitForTimeout(200);
     // new games
     await p.click('text=Listen'); await p.waitForTimeout(200); await shot(p, `${name}-2c-listen`); await a('listen');
@@ -88,6 +88,24 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('text=พื้นหลัง'); await p.waitForTimeout(100); await a('shop-bg');
     await p.click('button:has-text("‹")');
     res.push({ label: name + ' missions-card', ok: await p.isVisible('text=ภารกิจวันนี้') });
+    // learning path: open unit 1 → learn step → flash cards → back marks step
+    await p.click('text=เส้นทางบทเรียน'); await p.waitForTimeout(300); await shot(p, `${name}-12a-path`); await a('path');
+    await p.click('text=1. เรียนการ์ด'); await p.waitForTimeout(200);
+    res.push({ label: name + ' unit-learn-opened', ok: await p.isVisible('text=การ์ดที่ 1/') });
+    for (let i = 0; i < 8; i++) { await p.click('button:has-text("รู้แล้ว")'); await p.waitForTimeout(60); }
+    await p.waitForTimeout(300);
+    res.push({ label: name + ' unit-learn-marked', ok: await p.isVisible('text=✅'), backOnPath: await p.isVisible('text=2. ทำแบบทดสอบ') });
+    await p.click('text=2. ทำแบบทดสอบ'); await p.waitForTimeout(200);
+    res.push({ label: name + ' unit-quiz', ok: await p.isVisible('text=เลือกคำที่ตรงกับรูป'), title: await p.innerText('text=/บทที่ 1/') });
+    await shot(p, `${name}-12b-path-unit`); await a('path-unit');
+    await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")');
+    // profiles: add second profile → fresh progress → switch back keeps coins
+    const coinsBefore = await p.innerText('text=/🪙 \\d+$/');
+    await p.click('button:has-text("▾")'); await p.waitForTimeout(200); await shot(p, `${name}-12c-profiles`); await a('profiles');
+    await p.click('text=เพิ่มคนใหม่'); await p.fill('input[placeholder^="ชื่อ"]', 'มีนา'); await p.click('text=สร้าง ✓'); await p.waitForTimeout(300);
+    res.push({ label: name + ' profile-new', pickerShown: await p.isVisible('text=เลือกเพื่อนคู่หูของมีนา') });
+    await p.click('button:has-text("▾")'); await p.click('text=หนู'); await p.waitForTimeout(300);
+    res.push({ label: name + ' profile-switch-back', coinsBefore, coinsAfter: await p.innerText('text=/🪙 \\d+$/') });
     // seeded: boss unlocked + review card
     await p.evaluate(() => {
       const k = 'smart-vocabplay:progress:v1'; const d = JSON.parse(localStorage.getItem(k));
@@ -109,6 +127,18 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     res.push({ label: name + ' errors', errs });
     await ctx.close();
   }
+  // PWA: manifest + sw served, SW registers, offline reload still renders
+  const pw = await b.newContext({ viewport: { width: 375, height: 812 } }); const pp = await pw.newPage();
+  const man = await pp.request.get(URL + 'manifest.webmanifest'); const swr = await pp.request.get(URL + 'sw.js'); const ico = await pp.request.get(URL + 'icons/icon-192.png');
+  await pp.goto(URL); await pp.click(START); await pp.waitForTimeout(500);
+  const swReady = await pp.evaluate(async () => { try { const r = await navigator.serviceWorker.ready; return !!r.active; } catch (e) { return 'ERR ' + e.message; } });
+  await pp.waitForTimeout(800);
+  await pw.setOffline(true);
+  let offlineOk = false; try { await pp.reload(); await pp.click(START, { timeout: 5000 }); offlineOk = await pp.isVisible('text=แตะหมวดที่อยากเรียน'); } catch (e) { offlineOk = 'ERR ' + e.message.slice(0, 60); }
+  await pw.setOffline(false);
+  res.push({ label: 'pwa', manifest: man.status(), sw: swr.status(), icon: ico.status(), swReady, offlineOk });
+  if (man.status() !== 200 || swr.status() !== 200 || swReady !== true || offlineOk !== true) bad('pwa', { man: man.status(), sw: swr.status(), swReady, offlineOk });
+  await pw.close();
   // localStorage blocked → still works
   const c4 = await b.newContext(); await c4.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new Error('blocked'); } }); });
   const q = await c4.newPage(); const e2 = []; q.on('pageerror', e => e2.push(e.message));

@@ -88,6 +88,28 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('text=พื้นหลัง'); await p.waitForTimeout(100); await a('shop-bg');
     await p.click('button:has-text("‹")');
     res.push({ label: name + ' missions-card', ok: await p.isVisible('text=ภารกิจวันนี้') });
+    // บทสนทนา: ฟัง → เล่นบทบาท (ไม่มีไมค์ → ปุ่มแตะ) → เติมคำ
+    await p.click('text=บทสนทนา'); await p.waitForTimeout(200); await shot(p, `${name}-13a-talk`); await a('talk');
+    await p.click('text=Hello!'); await p.waitForTimeout(300); await shot(p, `${name}-13b-dialog`); await a('dialog-listen');
+    await p.click('text=🎭 เล่นบทบาท'); await p.click('button:has-text("Mina")'); await p.waitForTimeout(300); await shot(p, `${name}-13c-roleplay`); await a('roleplay');
+    for (let k = 0; k < 8; k++) { if (await p.isVisible('button:has-text("🎤")')) { await p.click('button:has-text("🎤")'); await p.waitForTimeout(150); } await p.locator('button:has-text("ถัดไป ›"), button:has-text("ข้าม ›")').first().click(); await p.waitForTimeout(150); }
+    await p.waitForSelector('text=เล่นอีก', { timeout: 3000 }); res.push({ label: name + ' roleplay-finished', ok: true }); await p.click('text=กลับ ›'); await p.waitForTimeout(200);
+    await p.click('text=🧩 เติมคำ'); await p.waitForTimeout(300); await shot(p, `${name}-13d-fill`); await a('fill');
+    await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")');
+    // นิทาน: อ่าน → แตะคำ → ถึงหน้าสุดท้าย → ตอบคำถาม
+    await p.click('text=นิทานภาพ'); await p.waitForTimeout(300); await shot(p, `${name}-14a-stories`); await a('stories');
+    await p.click('text=The Little Cat'); await p.waitForTimeout(400); await shot(p, `${name}-14b-reader`); await a('reader');
+    await p.click('button:has-text("cat")').catch(()=>{}); await p.waitForTimeout(200); res.push({ label: name + ' reader-word-popup', ok: await p.isVisible('text=แมว') });
+    for (let k = 0; k < 7; k++) await p.click('text=หน้าถัดไป');
+    await p.click('text=ตอบคำถามท้ายเรื่อง'); await p.waitForTimeout(300); await shot(p, `${name}-14c-storyquiz`); await a('storyquiz');
+    for (let k = 0; k < 3; k++) { await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1300); }
+    await p.waitForSelector('text=เล่นอีก', { timeout: 3000 }); await p.click('text=กลับ ›'); await p.waitForTimeout(200);
+    res.push({ label: name + ' story-done-badge', ok: await p.isVisible('text=อ่านแล้ว') });
+    await p.click('button:has-text("‹")');
+    // โฟนิกส์
+    await p.click('text=โฟนิกส์'); await p.waitForTimeout(300); await p.click('button:text-is("B")'); await p.waitForTimeout(200); await shot(p, `${name}-15a-phonics`); await a('phonics');
+    await p.click('text=เกมเสียงแรก'); await p.waitForTimeout(300); await p.click('text=ฟัง EN+TH'); await p.waitForTimeout(200); await shot(p, `${name}-15b-phonics-game`); await a('phonics-game');
+    await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")');
     // learning path: open unit 1 → learn step → flash cards → back marks step
     await p.click('text=เส้นทางบทเรียน'); await p.waitForTimeout(300); await shot(p, `${name}-12a-path`); await a('path');
     await p.click('text=1. เรียนการ์ด'); await p.waitForTimeout(200);
@@ -99,6 +121,33 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     res.push({ label: name + ' unit-quiz', ok: await p.isVisible('text=เลือกคำที่ตรงกับรูป'), title: await p.innerText('text=/บทที่ 1/') });
     await shot(p, `${name}-12b-path-unit`); await a('path-unit');
     await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")');
+    // ไวยากรณ์: เปิดบท → ฝึก → ตอบ 8 ข้อ
+    await p.click('text=ไวยากรณ์'); await p.waitForTimeout(200); await shot(p, `${name}-16a-grammar`); await a('grammar');
+    await p.click('text=a / an'); await p.waitForTimeout(200); await shot(p, `${name}-16b-grammar-lesson`); await a('grammar-lesson');
+    await p.click('text=ฝึกทำ'); await p.waitForTimeout(300); await shot(p, `${name}-16c-grammar-game`); await a('grammar-game');
+    for (let k = 0; k < 8; k++) { await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1400); }
+    await p.waitForSelector('text=เล่นอีก', { timeout: 3000 }); res.push({ label: name + ' grammar-finished', ok: true }); await p.click('text=กลับ ›'); await p.waitForTimeout(200);
+    res.push({ label: name + ' grammar-back-to-list', ok: await p.isVisible('text=ไวยากรณ์เด็ก') });
+    await p.click('button:has-text("‹")');
+    // ชีวิตประจำวัน: 4 แท็บ + เกมเวลา
+    await p.click('text=ชีวิตประจำวัน'); await p.waitForTimeout(200); await shot(p, `${name}-17a-daily-time`); await a('daily-time');
+    await p.click('text=💰 เงินบาท'); await p.waitForTimeout(150); await a('daily-money');
+    await p.click('text=📅 วัน-เดือน'); await p.waitForTimeout(150); await shot(p, `${name}-17b-daily-calendar`); await a('daily-calendar');
+    await p.click('text=🔢 ตัวเลข'); await p.waitForTimeout(150); const r = await audit(p, name + ' daily-numbers'); res.push({ ...r, smallBtns: [], note: 'ตาราง 1–100 ตั้งใจให้ปุ่มเล็ก มีปุ่มเลื่อนทีละ 1 แทน' }); if (r.overlaps.length || r.hScroll) bad('daily-numbers', r);
+    await p.click('text=🕐 เวลา'); await p.click('button:has-text("เล่นเกม")'); await p.waitForTimeout(300); await shot(p, `${name}-17c-daily-game`); await a('daily-game');
+    await p.click('button:has-text("‹")'); res.push({ label: name + ' daily-back', ok: await p.isVisible('text=ภาษาอังกฤษในชีวิตประจำวัน') });
+    await p.click('button:has-text("‹")');
+    // สอบวัดระดับ 20 ข้อ → ใบประกาศ
+    await p.click('text=สอบวัดระดับ'); await p.waitForTimeout(200); await shot(p, `${name}-18a-test-intro`); await a('test-intro');
+    await p.click('text=เริ่มสอบ'); await p.waitForTimeout(300); await shot(p, `${name}-18b-test`); await a('test');
+    for (let k = 0; k < 20; k++) { if (await p.isVisible('text=ฟัง EN+TH')) await p.click('text=ฟัง EN+TH'); await p.waitForTimeout(100); await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1100); }
+    await p.waitForSelector('text=เล่นอีก', { timeout: 3000 }); await p.click('text=กลับ ›'); await p.waitForTimeout(300);
+    await shot(p, `${name}-18c-certificate`); await a('certificate'); res.push({ label: name + ' certificate', ok: await p.isVisible('text=ใบประกาศนียบัตร') });
+    await p.click('button:has-text("‹")');
+    // แข่ง 2 คน
+    await p.click('text=แข่ง 2 คน จอเดียว'); await p.waitForTimeout(200); await a('versus-setup');
+    await p.click('text=เริ่มแข่ง'); await p.waitForTimeout(400); await shot(p, `${name}-19-versus`); const rv = await audit(p, name + ' versus'); res.push(rv); if (rv.hScroll) bad('versus', rv);
+    await p.click('text=ออก'); await p.waitForTimeout(200);
     // profiles: add second profile → fresh progress → switch back keeps coins
     const coinsBefore = await p.innerText('text=/🪙 \\d+$/');
     await p.click('button:has-text("▾")'); await p.waitForTimeout(200); await shot(p, `${name}-12c-profiles`); await a('profiles');

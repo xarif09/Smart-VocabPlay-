@@ -132,6 +132,11 @@ export const MISSION_POOL = [
   { id: "speak1",   label: "ฝึกพูดตาม 1 รอบ",           key: "speak",   goal: 1,  reward: 40 },
   { id: "sentence1",label: "เรียงประโยค 1 รอบ",         key: "sentence",goal: 1,  reward: 30 },
   { id: "stickers2",label: "ได้สติกเกอร์ใหม่ 2 ใบ",     key: "stickers",goal: 2,  reward: 50 },
+  { id: "dialog1",  label: "เล่นบทสนทนา 1 บท",         key: "dialog",  goal: 1,  reward: 40 },
+  { id: "story1",   label: "อ่านนิทานจบ 1 เรื่อง",     key: "story",   goal: 1,  reward: 40 },
+  { id: "phonics1", label: "เล่นเกมเสียงแรก 1 รอบ",    key: "phonics", goal: 1,  reward: 30 },
+  { id: "grammar1", label: "ฝึกไวยากรณ์ 1 บท",         key: "grammar", goal: 1,  reward: 40 },
+  { id: "daily1",   label: "เล่นเกมชีวิตประจำวัน 1 รอบ", key: "daily",  goal: 1,  reward: 30 },
 ];
 const hash = s => { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; };
 export function missionsForDate(date) {

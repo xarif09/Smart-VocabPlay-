@@ -125,6 +125,13 @@
 - หน้าที่รื้อ: splash · header · nav · home (hero primaryContainer + pet ใน cookie + wavy XP + button group · การ์ดทำต่อ · ภารกิจ · tiles · versus · การ์ดหมวด 28px) · hubs (list item M3) · หน้าหมวด · ResultScreen (dialog M3) · Settings/Profiles (sheet M3) · PathScreen hero · InstallBanner · GS (การ์ดเกม) · Pill/SndBtn · กวาดสี hardcode เทา/ขาว/ดำ → โทเค็น (ใช้ได้ในโหมดมืด)
 - โมชัน: spring `cubic-bezier(.34,1.56,.64,1)` กดแล้วย่อ `.m3-press` · `prefers-reduced-motion` ปิด
 
+## v3.1 — ทำต่อเองไม่รอสั่ง (Android-first + ปิดช่องโหว่)
+- **ปุ่ม Back ของ Android/เบราว์เซอร์ย้อนในแอป** (history sentinel + popstate → ปิดแผ่น/goBack) ไม่ปิดแอปทิ้งเหมือน PWA ทั่วไป
+- **โหมดเกมเป็น M3**: พื้นหลังสีหมวดผสม surface (`color-mix`) ใช้ได้ทั้งสว่าง/มืด · ปุ่มบน M3 icon button · hero ทุกหน้าเนื้อหา (บทสนทนา นิทาน โฟนิกส์ ไวยากรณ์ ชีวิตประจำวัน สติกเกอร์ รายงาน) → primaryContainer · ร้านค้า chips/ปุ่ม M3 · สมุดสติกเกอร์ช่อง M3
+- **เสียง**: คำประสมที่ไม่มีไฟล์ (police car, ice skating, tuk-tuk) ต่อเสียงคำเดี่ยว → ครอบคลุม 915/1,165 · สคริปต์ดึงเสียงลองชื่อไฟล์ตัวพิมพ์ใหญ่ (Monday, Thailand) + retry API 3 ครั้ง (รอบแรกเสีย ~250 คำเพราะ batch ล้ม) · สั่นเบาๆ ตอนแตะ (Android)
+- **ภาพ**: ตัวเลข 13–19/60–90 ที่หลุด + ร่างกาย (LEG NECK ELBOW HIP CHEST BODY) + ME เป็นภาพออกแบบ → ภาพครบ **1,140/1,165 (98%)** · ลองชื่อบทความใหม่ SPEAK ACTOR PROGRAMMER SCIENCE FLAG SKIING ASPARAGUS DOOR
+- **`scripts/audit.cjs`** (อ่านหน้า `?audit=1`): รายงานรูป/ภาพออกแบบ/อีโมจิ · เสียงคนจริง · คำอ่าน/ประโยคที่ขาด · จำนวนบทสนทนา/นิทาน — รันทุกครั้งก่อนส่งงาน
+
 ## โครงไฟล์
 ```
 index.html                    หน้า HTML (viewport, manifest/apple meta, keyframes)
@@ -151,6 +158,7 @@ docs/screenshots/             ภาพผลตรวจล่าสุด (ม
 - [x] ระบบรางวัลทั้งหมดตามตารางด้านบน · ปุ่มทุกปุ่ม ≥44px · ปุ่มล้างความคืบหน้าในตั้งค่า
 - [x] ระลอก "สุดยอดแอป": คำอ่าน+ประโยค 296 คำ · โหมดเรียนการ์ด · SRS · Listen/Sentence/Speak · ภารกิจประจำวัน · ร้านค้า · รายงานผู้ปกครอง
 - [x] ระลอก 3: PWA ติดตั้ง/ออฟไลน์ · โปรไฟล์หลายคน · เส้นทางบทเรียน A1→A2 · Speak แบบ % · แปลอัตโนมัติ MyMemory · badge ไอคอน
+- [x] v3.1.0: Back ของ Android · โหมดเกม/หน้าเนื้อหาเป็น M3 · เสียงคำประสม · ภาพ 98% · audit.cjs
 - [x] v3.0.0: Material 3 Expressive ทั้ง shell (m3.jsx) · โหมดมืดจริง · nav bar/top bar/sheet/switch/wavy progress/shapes
 - [x] v2.9.0: Concept.jsx ภาพออกแบบ 145 คำ · images.js +204 คำ · เสียงเจ้าของภาษา 857 คำ
 - [x] v2.8.0: ท่อเสียงเจ้าของภาษา (Commons → mp3 ผ่าน Actions) + สวิตช์ในตั้งค่า · บทสนทนา 23 · นิทาน 15

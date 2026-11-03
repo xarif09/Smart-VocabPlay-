@@ -164,6 +164,12 @@ add("actions", [["SLEEP","Nap"],["READ","Reading"],["WRITE","Homework"],["SIT","
 add("opposites", [["BIG","Asian elephant"],["SMALL","House mouse"],["TALL","Giraffe"],["FAST","Cheetah"],["SLOW","Sloth"],["HOT","Sunlight"],["COLD","Snow"],["NEW","Sneakers"],["OLD","Old age"],["YOUNG","Infant"],["HAPPY","Smile"],["SAD","Crying"],["CLEAN","Hand washing"],["DIRTY","Mud"],["WET","Rain"],["DRY","Desert"],["OPEN","Door handle"],["CLOSED","Padlock"],["HEAVY","Dumbbell"],["LIGHT","Toy balloon"],["HARD","Pebble"],["SOFT","Pillow"],["LOUD","Megaphone"],["QUIET","Library"],["RICH","Gold"],["STRONG","Weightlifting"],["SWEET","Candy"],["SOUR","Lemon"],["SAME","Twin"]]);
 add("time", [["HOLIDAY","Songkran (Thailand)"],["WEEKEND","Park"],]);
 
+add("actions", [["SPEAK","Public speaking"]]);
+add("jobs", [["ACTOR","Theatre"],["PROGRAMMER","Programmer"]]);
+add("school", [["SCIENCE","Laboratory"],["FLAG","National flag"]]);
+add("sports", [["SKIING","Alpine skiing"]]);
+add("vegetables", [["ASPARAGUS","Asparagus officinalis"]]);
+add("home", [["DOOR","Wooden door"]]);
 export const IMAGE_TITLES = T;
 export const imageTitleOf = w => (w && T[`${w.cat}|${w.word}`]) || null;
 

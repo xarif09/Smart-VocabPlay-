@@ -79,8 +79,10 @@ function Tens({ n }) { // 20–90: มัดละสิบเป็นแท่
   const k = Math.round(n / 10);
   return <g>{[...Array(k)].map((_, i) => <g key={i}><rect x={88 + (i % 5) * 13} y={i < 5 ? 26 : 60} width="9" height="28" rx="3" fill={i < 5 ? "#6366f1" : "#f97316"} />{[...Array(4)].map((_, j) => <line key={j} x1={88 + (i % 5) * 13} y1={(i < 5 ? 26 : 60) + 6 + j * 6} x2={97 + (i % 5) * 13} y2={(i < 5 ? 26 : 60) + 6 + j * 6} stroke="#fff" strokeOpacity="0.6" />)}</g>)}</g>;
 }
+const NUM_WORDS = { ZERO:0, ONE:1, TWO:2, THREE:3, FOUR:4, FIVE:5, SIX:6, SEVEN:7, EIGHT:8, NINE:9, TEN:10, ELEVEN:11, TWELVE:12, THIRTEEN:13, FOURTEEN:14, FIFTEEN:15, SIXTEEN:16, SEVENTEEN:17, EIGHTEEN:18, NINETEEN:19,
+  TWENTY:20, THIRTY:30, FORTY:40, FIFTY:50, SIXTY:60, SEVENTY:70, EIGHTY:80, NINETY:90, HUNDRED:100, THOUSAND:1000, MILLION:1000000 };
 function NumberCard({ w }) {
-  const n = w.num; const word = w.word;
+  const word = (w.word || "").toUpperCase(); const n = typeof w.num === "number" ? w.num : NUM_WORDS[word];
   if (word === "FIRST" || word === "SECOND" || word === "THIRD") {
     const pos = { FIRST:0, SECOND:1, THIRD:2 }[word];
     const steps = [[62, 40, 44, "#fbbf24", "1"], [20, 56, 36, "#cbd5e1", "2"], [104, 66, 30, "#d97706", "3"]];
@@ -299,6 +301,38 @@ function FaceCard({ word }) {
   );
 }
 
+
+// ── ร่างกาย: เงาคนยืนด้านหน้า ไฮไลต์ส่วนที่หมายถึง (ใช้กับคำที่ไม่มีรูปถ่ายดีๆ) ──
+const BODY_PARTS = {
+  BODY: null,
+  LEG: [<rect key="l" x="66" y="64" width="11" height="34" rx="5" />, <rect key="r" x="83" y="64" width="11" height="34" rx="5" />],
+  NECK: [<rect key="n" x="74" y="28" width="12" height="9" rx="3" />],
+  ELBOW: [<circle key="e1" cx="53" cy="62" r="6" />, <circle key="e2" cx="107" cy="62" r="6" />],
+  HIP: [<rect key="h" x="64" y="56" width="32" height="12" rx="6" />],
+  CHEST: [<rect key="c" x="66" y="38" width="28" height="16" rx="6" />],
+  ME: null,
+};
+function BodyCard({ word }) {
+  const parts = BODY_PARTS[word]; const all = word === "BODY" || word === "ME";
+  const skin = "#f1c9a5", hi = "#ef4444";
+  return (
+    <Frame bg="#eff6ff" bg2="#dbeafe">
+      <g opacity={all ? 1 : 0.45}>
+        <circle cx="80" cy="18" r="11" fill={skin} />
+        <rect x="74" y="28" width="12" height="9" rx="3" fill={skin} />
+        <rect x="62" y="36" width="36" height="32" rx="10" fill="#60a5fa" />
+        <rect x="46" y="38" width="10" height="30" rx="5" fill={skin} transform="rotate(12 51 38)" />
+        <rect x="104" y="38" width="10" height="30" rx="5" fill={skin} transform="rotate(-12 109 38)" />
+        <rect x="66" y="64" width="11" height="34" rx="5" fill="#1e40af" />
+        <rect x="83" y="64" width="11" height="34" rx="5" fill="#1e40af" />
+      </g>
+      {parts && <g fill={hi} stroke="#fff" strokeWidth="1.5" style={{ filter:"drop-shadow(0 0 4px rgba(239,68,68,.7))" }}>{parts}</g>}
+      {word === "ME" && <g><path d="M118 40 l-18 10" stroke="#ef4444" strokeWidth="3" strokeLinecap="round" /><circle cx="122" cy="38" r="5" fill="#ef4444" /><text x="128" y="30" fontSize="14" fontWeight="900" fill="#1e40af">ME!</text></g>}
+      {word === "BODY" && <path d="M40 10 v88 M120 10 v88" stroke="#1e40af" strokeWidth="2" strokeDasharray="4 4" />}
+    </Frame>
+  );
+}
+
 // ── ทางเข้า ── (คืน null เมื่อไม่มีภาพของคำนั้น → <Pic> จะใช้อีโมจิแทน)
 const TIME_WORDS = new Set([...DAYS, ...MONTHS, "TODAY", "TOMORROW", "YESTERDAY", "WEEK", "WEEKEND", "MONTH", "YEAR", "HOUR", "MINUTE", "O'CLOCK"]);
 const OPP_WORDS = new Set(["TALL", "SHORT", "LONG", "THICK", "THIN", "UP", "DOWN", "LEFT", "RIGHT", "IN", "OUT", "FRONT", "BACK", "NEAR", "FAR", "FULL", "EMPTY", "SAME", "DIFFERENT", "EASY", "DIFFICULT", "POOR", "WEAK", "NEW"]);
@@ -307,14 +341,16 @@ export function conceptFor(w) {
   const word = (w.word || "").toUpperCase();
   switch (w.cat) {
     case "colors": return COLORS[word] ? <ColorCard word={word} /> : null;
-    case "numbers": return (typeof w.num === "number" || ["FIRST", "SECOND", "THIRD", "HALF"].includes(word)) ? <NumberCard w={w} /> : null;
+    case "numbers": return (typeof w.num === "number" || word in NUM_WORDS || ["FIRST", "SECOND", "THIRD", "HALF"].includes(word)) ? <NumberCard w={w} /> : null;
     case "shapes": return (word === "CUBE" || SHAPES[word]) ? <ShapeCard word={word} /> : null;
     case "time": return TIME_WORDS.has(word) ? <TimeCard word={word} /> : null;
     case "feelings": return FACES[word] ? <FaceCard word={word} /> : null;
     case "opposites": return OPP_WORDS.has(word) ? <OppositeCard word={word} /> : FACES[word] ? <FaceCard word={word} /> : null;
+    case "body": return word in BODY_PARTS ? <BodyCard word={word} /> : null;
+    case "family": return word === "ME" ? <BodyCard word={word} /> : null;
     default: return null;
   }
 }
 export const hasConcept = w => !!conceptFor(w);
 // รายการคำทั้งหมดที่มีภาพออกแบบ (ใช้ทำหน้าตรวจ ?concepts=1)
-export const CONCEPT_WORDS = { colors:Object.keys(COLORS), shapes:[...Object.keys(SHAPES)], time:[...TIME_WORDS], feelings:Object.keys(FACES), opposites:[...OPP_WORDS] };
+export const CONCEPT_WORDS = { body:Object.keys(BODY_PARTS), colors:Object.keys(COLORS), shapes:[...Object.keys(SHAPES)], time:[...TIME_WORDS], feelings:Object.keys(FACES), opposites:[...OPP_WORDS] };

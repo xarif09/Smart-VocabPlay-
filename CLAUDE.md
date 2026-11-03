@@ -13,7 +13,7 @@
 4. มือถือห้ามมีอะไรซ้อนกัน · ปุ่มสูง ≥ 44px
 5. เพิ่มไลบรารีได้เมื่อทำให้ดีขึ้นจริง (ผู้ใช้อนุญาตแล้ว v2.4) แต่ต้องใช้งานออฟไลน์ได้และไม่หนัก · ใช้ inline CSS (ไม่ใช้ Tailwind) · ตัวละครเพื่อนคู่หูคือ `src/Pet.jsx` (SVG วาดเอง มี mood + outfit) · ไอคอนหมวด/เกมใช้ `src/Icons.jsx` (`<CatIcon>`/`<GameIcon>`) ไม่ใช้อีโมจิบนการ์ดหลัก
 6. localStorage ใช้ไม่ได้ แอปต้องยังทำงาน (ครอบ try/catch เสมอ)
-7. ก่อน commit ต้องรัน `npm run build` และ `node scripts/check-ui.cjs` ให้ขึ้น ✅ ALL PASS
+7. ก่อน commit ต้องรัน `npm run build` และ `node scripts/check-ui.cjs` ให้ขึ้น ✅ ALL PASS · และ `node scripts/audit.cjs` (ความครบของรูป/เสียง/คำอ่าน) แล้วรายงานตัวเลขในสรุป
 8. **ทุกครั้งที่ส่งงาน ต้องขยับ `version` ใน package.json** (โชว์บนหน้าแรก + ตั้งค่า) และบอกเลขเวอร์ชันในสรุป
 9. ก่อน push ซ้ำเข้า branch เดิม ต้องเช็กว่า PR ยัง open อยู่ · ถ้า merge แล้วให้ merge main เข้ามาแล้วเปิด PR ใหม่ (งานที่ push หลัง merge จะไม่ขึ้นเว็บ)
 
@@ -24,6 +24,7 @@ npm run dev        # เปิดเครื่อง dev → http://localhost:
 npm run build      # build ลง dist/
 npm run preview    # ดูผล build → http://localhost:4173/Smart-VocabPlay-/
 node scripts/check-ui.cjs   # (ต้องเปิด preview ก่อน) ถ่ายภาพ + ตรวจซ้อน/นับคำ/localStorage
+node scripts/audit.cjs      # (ต้องเปิด preview ก่อน) รายงานความครบ: รูป/ภาพออกแบบ/อีโมจิ · เสียงคนจริง · คำอ่าน/ประโยค
 ```
 
 ## โครงสำคัญ

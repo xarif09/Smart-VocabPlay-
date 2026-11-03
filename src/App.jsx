@@ -101,8 +101,15 @@ let curAudio = null;
 function setNativeVoice(v) { nativeOn = !!v; }
 export const nativeCount = () => Object.keys(audioManifest).length;
 const audioUrlFor = en => { const f = audioManifest[(en || "").toLowerCase()]; return f ? `${import.meta.env.BASE_URL}audio/${f}` : null; };
-export const hasNativeAudio = en => nativeOn && !!audioUrlFor(en);
-function stopNative() { if (curAudio) { try { curAudio.onended = null; curAudio.pause(); } catch (_) {} curAudio = null; } }
+// คำประสม (police car, ice skating, tuk-tuk) ที่ไม่มีไฟล์ของตัวเอง → ต่อเสียงคำเดี่ยวทุกคำ (ต้องมีครบทุกส่วน)
+const audioUrlsFor = en => {
+  const one = audioUrlFor(en); if (one) return [one];
+  const parts = (en || "").toLowerCase().split(/[\s-]+/).filter(Boolean);
+  if (parts.length < 2) return null;
+  const urls = parts.map(audioUrlFor); return urls.every(Boolean) ? urls : null;
+};
+export const hasNativeAudio = en => nativeOn && !!audioUrlsFor(en);
+function stopNative() { if (curAudio) { try { const el = curAudio.el || curAudio; el.onended = null; el.pause?.(); } catch (_) {} curAudio = null; } }
 function speakThOnly(th, rate) {
   if (!window.speechSynthesis || !th) return;
   const u = new SpeechSynthesisUtterance(th); u.lang = "th-TH"; u.rate = rate; u.volume = 1;
@@ -113,17 +120,21 @@ function speakThOnly(th, rate) {
 // Speak EN then TH — must be called from onClick
 function speakWord(en, th, rate = 0.85, bilingual = true) {
   stopNative();
-  const url = nativeOn ? audioUrlFor(en) : null;
-  if (url) {
+  const urls = nativeOn ? audioUrlsFor(en) : null;
+  if (urls) {
     try { window.speechSynthesis?.cancel(); } catch (_) {}
-    const a = new Audio(url);
-    a.preload = "auto";
-    try { a.playbackRate = Math.min(1, Math.max(0.65, rate + 0.1)); } catch (_) {}
-    curAudio = a;
-    const fallback = () => { if (curAudio !== a) return; curAudio = null; ttsWord(en, th, rate, bilingual); };
-    a.onended = () => { if (curAudio !== a) return; curAudio = null; if (bilingual && th) speakThOnly(th, rate); };
-    a.onerror = fallback;
-    try { const p = a.play(); if (p && p.catch) p.catch(fallback); } catch (_) { fallback(); }
+    const token = {}; curAudio = token;
+    const fallback = () => { if (curAudio !== token) return; curAudio = null; ttsWord(en, th, rate, bilingual); };
+    const playAt = i => {
+      if (curAudio !== token) return;
+      if (i >= urls.length) { curAudio = null; if (bilingual && th) speakThOnly(th, rate); return; }
+      const a = new Audio(urls[i]); a.preload = "auto"; token.el = a;
+      try { a.playbackRate = Math.min(1, Math.max(0.65, rate + 0.1)); } catch (_) {}
+      a.onended = () => playAt(i + 1);
+      a.onerror = fallback;
+      try { const p = a.play(); if (p && p.catch) p.catch(fallback); } catch (_) { fallback(); }
+    };
+    playAt(0);
     return;
   }
   ttsWord(en, th, rate, bilingual);
@@ -1564,11 +1575,28 @@ export default function App() {
     else if (screen === "category") { setScreen(navTab === "home" ? "home" : navTab); }
     else                       { setScreen(navTab === "home" ? "home" : navTab); }
   };
+  // ปุ่ม Back ของ Android/เบราว์เซอร์ → ย้อนในแอป (ปิดแผ่น/กลับหน้าก่อน) แทนที่จะปิดแอป
+  //  วิธี: เมื่อไม่ได้อยู่หน้าแท็บหลัก ดัน history state เฝ้าไว้ 1 ชั้น · popstate = ผู้ใช้กด Back → ทำ goBack แล้ว effect จะดันใหม่ถ้ายังไม่ถึงราก
+  const atRoot = HUBS.includes(screen) && !showSettings && !showProfiles;
+  useEffect(() => {
+    try { if (!atRoot && !window.history.state?.vp) window.history.pushState({ vp: 1 }, ""); } catch (_) {}
+  }, [atRoot, screen, showSettings, showProfiles, activeDialog, activeStory, activeCat]);
+  useEffect(() => {
+    const h = () => {
+      if (showSettings) setShowSettings(false);
+      else if (showProfiles) setShowProfiles(false);
+      else if (!HUBS.includes(screen)) goBack();
+    };
+    window.addEventListener("popstate", h); return () => window.removeEventListener("popstate", h);
+  });
   // เปลี่ยนหน้าแล้วเลื่อนขึ้นบนสุดเสมอ (ไม่งั้นเปิดหมวดจากท้ายหน้าแรกจะเห็นตรงกลางหน้า)
   useEffect(() => { try { window.scrollTo(0, 0); } catch (_) {} }, [screen, activeCat, activeDialog, activeStory]);
   const immersive = ["game", "learn", "versus"].includes(screen);
   const showNav = !immersive && screen !== "credits" && !showSettings && !showProfiles;   // ซ่อนแท็บล่างตอนเปิดแผ่นตั้งค่า/โปรไฟล์
-  const immersiveBg = activeCat?.color ? `linear-gradient(160deg, ${activeCat.color} 0%, ${activeCat.color}cc 35%, #1e1b4b 100%)` : "linear-gradient(160deg,#6d5dfc,#1e1b4b)";
+  // พื้นโหมดเกม: สีหมวดผสมกับ surface ของธีม (M3 tonal) → ยังรู้ว่าอยู่หมวดไหน แต่โทนเดียวกับทั้งแอปและใช้ได้ในโหมดมืด
+  const immersiveBg = activeCat?.color
+    ? `linear-gradient(170deg, color-mix(in oklab, ${activeCat.color} 45%, var(--md-surface)) 0%, color-mix(in oklab, ${activeCat.color} 12%, var(--md-surface)) 42%, var(--md-surface) 100%)`
+    : `linear-gradient(170deg, var(--md-primary-container) 0%, var(--md-surface) 55%)`;
   const headerTitle = ({ home:"", learnhub:"เรียน", playhub:"เล่น", me:"ของฉัน", manage:"จัดการคำศัพท์", stickers:"สมุดสติกเกอร์", shop:"ร้านค้า", room:"ห้องเพื่อนคู่หู", report:"รายงานผู้ปกครอง", credits:"เครดิตรูปภาพ", path:"เส้นทางบทเรียน", talk:"บทสนทนา", stories:"นิทานภาพ", phonics:"โฟนิกส์", grammar:"ไวยากรณ์", daily:"ชีวิตประจำวัน", test:"สอบวัดระดับ", versus:"แข่ง 2 คน" })[screen] ?? (activeCat?.label || "");
 
   // คำที่ถึงกำหนดทบทวนวันนี้ (SRS) + คำที่เคยพลาด เรียงจากพลาดบ่อยสุด
@@ -1590,6 +1618,21 @@ export default function App() {
   }, [missedWords.length]);
 
   // ── Sound unlock screen ──────────────────
+  // หน้า audit (dev): เปิด ?audit=1 → ตัวเลขความครบของเนื้อหา (รูป/ภาพออกแบบ/อีโมจิ · เสียงคนจริง · คำอ่าน/ประโยค) อ่านโดย scripts/audit.cjs
+  if (typeof window !== "undefined" && /[?&]audit=1/.test(window.location.search)) {
+    const rows = INITIAL_WORDS.map(w => {
+      const t = imageTitleOf(w); const photo = !!(t && cachedImageUrl(t)); const concept = !photo && !!conceptFor(w);
+      const lx = lexOf(w); const parts = w.word.toLowerCase().split(/[\s-]+/);
+      const audio = !!audioManifest[w.word.toLowerCase()] || (parts.length > 1 && parts.every(x => audioManifest[x]));
+      return { key:`${w.cat}|${w.word}`, visual: photo ? "photo" : concept ? "concept" : "emoji", audio, read: !!lx?.read, sen: !!lx?.sen };
+    });
+    const cnt = k => rows.filter(r => r.visual === k).length;
+    const byCat = {}; rows.forEach(r => { const c = r.key.split("|")[0]; byCat[c] = byCat[c] || { n:0, emoji:[] }; byCat[c].n++; if (r.visual === "emoji") byCat[c].emoji.push(r.key.split("|")[1]); });
+    const report = { version: APP_VERSION, words: rows.length, photo: cnt("photo"), concept: cnt("concept"), emoji: cnt("emoji"), emojiWords: rows.filter(r => r.visual === "emoji").map(r => r.key),
+      audio: rows.filter(r => r.audio).length, noAudio: rows.filter(r => !r.audio).map(r => r.key), noRead: rows.filter(r => !r.read).map(r => r.key), noSentence: rows.filter(r => !r.sen).map(r => r.key),
+      dialogues: DIALOGUES.length, stories: STORIES.length, grammar: GRAMMAR.length, phonics: PHONICS.length, games: Object.keys(GAME_META).length, byCat };
+    return <pre id="audit" style={{ fontFamily:"monospace",fontSize:11,padding:12,whiteSpace:"pre-wrap" }}>{JSON.stringify(report, null, 1)}</pre>;
+  }
   // หน้าตรวจภาพออกแบบทั้งชุด (dev): เปิด ?concepts=1 → ตารางทุกคำที่มีภาพใน Concept.jsx
   if (typeof window !== "undefined" && /[?&]concepts=1/.test(window.location.search)) {
     const list = INITIAL_WORDS.filter(w => conceptFor(w));
@@ -1720,9 +1763,9 @@ export default function App() {
       {immersive ? (
         <div style={{ position:"fixed",inset:0,zIndex:60,display:"flex",flexDirection:"column",background:immersiveBg,overflow:"hidden",animation: fxOn ? "vpZoomIn .5s cubic-bezier(.2,.8,.2,1) both" : "none" }}>
           <div style={{ display:"flex",alignItems:"center",gap:8,padding:"calc(env(safe-area-inset-top, 0px) + 8px) 10px 6px",flexShrink:0 }}>
-            <button onClick={goBack} style={{ width:44,height:44,borderRadius:16,border:"none",background:"rgba(255,255,255,0.22)",color:"#fff",fontSize:22,cursor:"pointer",backdropFilter:"blur(8px)" }}>‹</button>
-            <div style={{ flex:1,minWidth:0,color:"#fff",fontWeight:800,fontSize:15,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textShadow:"0 1px 2px rgba(0,0,0,0.2)" }}>{headerTitle}</div>
-            <button onClick={() => setSoundOn(v => !v)} style={{ width:44,height:44,borderRadius:16,border:"none",background:"rgba(255,255,255,0.22)",color:"#fff",fontSize:18,cursor:"pointer" }}>{soundOn ? "🔊" : "🔇"}</button>
+            <button onClick={goBack} aria-label="ย้อนกลับ" className="m3-press" style={M3.iconBtn({ background:"color-mix(in oklab, var(--md-surface) 55%, transparent)",color:T.ink,fontSize:24,backdropFilter:"blur(8px)" })}>‹</button>
+            <div style={{ flex:1,minWidth:0,...TYPE.titleM,color:T.ink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{headerTitle}</div>
+            <button onClick={() => setSoundOn(v => !v)} aria-label="เสียง" className="m3-press" style={M3.iconBtn({ background:"color-mix(in oklab, var(--md-surface) 55%, transparent)",color:T.ink,fontSize:18 })}>{soundOn ? "🔊" : "🔇"}</button>
           </div>
           <div style={{ flex:1,overflowY:"auto",WebkitOverflowScrolling:"touch",paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 16px)" }}>
             {SCREENS}
@@ -3228,10 +3271,10 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
   const total = words.filter(w => have(w.id)).length;
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:560,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#7c3aed,#ec4899)",borderRadius:20,padding:16,color:"#fff",marginBottom:14 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:14 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>📒 สมุดสติกเกอร์</div>
         <div style={{ fontSize:13,opacity:0.9 }}>เก็บได้ {total} / {words.length} ใบ · ตอบคำไหนถูก {STICKER_NEED} ครั้ง จะได้สติกเกอร์คำนั้น</div>
-        <div style={{ height:8,background:"rgba(255,255,255,0.3)",borderRadius:999,marginTop:8,overflow:"hidden" }}>
+        <div style={{ height:8,background:"color-mix(in oklab, var(--md-on-primary-container) 18%, transparent)",borderRadius:999,marginTop:8,overflow:"hidden" }}>
           <div style={{ height:"100%",width:`${words.length?Math.round(total/words.length*100):0}%`,background:T.card,borderRadius:999 }} />
         </div>
       </div>
@@ -3253,11 +3296,11 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
                 const ok = n >= STICKER_NEED;
                 return (
                   <button key={w.id} onClick={() => { if (ok) { sfx.tap(); speak(w.word, w.meaning); showToast(`${w.word} · ${w.read || ""} · ${w.meaning}`); } else showToast(`ตอบ ${w.word} ถูกอีก ${STICKER_NEED - n} ครั้ง`, "warn"); }}
-                    style={{ aspectRatio:"1",minHeight:56,borderRadius:14,border:`2px solid ${ok?cat.color+"60":"#e5e7eb"}`,background:ok?"#fff":"#f3f4f6",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:2,padding:2 }}>
+                    className="m3-press" style={{ aspectRatio:"1",minHeight:56,borderRadius:18,border:"none",background:ok?T.card:T.surfHigh,outline:ok?`2px solid ${cat.color}66`:"none",outlineOffset:-2,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:2,padding:2 }}>
                     <span style={{ fontSize:26,filter:ok?"none":"grayscale(1) opacity(0.35)" }}>{ok ? w.emoji : "❓"}</span>
                     {ok
                       ? <span style={{ fontSize:8,fontWeight:800,color:T.ink2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",maxWidth:"100%" }}>{w.word}</span>
-                      : <span style={{ display:"flex",gap:2 }}>{[0,1,2].map(i => <span key={i} style={{ width:6,height:6,borderRadius:3,background:i<n?cat.color:"#d1d5db" }} />)}</span>}
+                      : <span style={{ display:"flex",gap:2 }}>{[0,1,2].map(i => <span key={i} style={{ width:6,height:6,borderRadius:3,background:i<n?cat.color:T.outlineV }} />)}</span>}
                   </button>
                 );
               })}
@@ -3665,14 +3708,14 @@ function ShopScreen({ progress, setProgress, showToast }) {
     : { ...p, [it.type]: p[it.type] === it.id ? null : it.id }); };
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:bg,borderRadius:20,padding:16,textAlign:"center",border:"2px solid #e9d5ff",marginBottom:12 }}>
+      <div style={{ background:bg,borderRadius:28,padding:16,textAlign:"center",marginBottom:12 }}>
         <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={76} bounce mood="happy" />
         <div style={{ fontWeight:900,fontSize:16,color:progress.bg==="bgSpace"?"#fff":"#1f2937",marginTop:4 }}>{pet?.name || "เพื่อนคู่หู"}</div>
-        <div style={{ display:"inline-flex",background:"#fef3c7",color:"#92400e",fontWeight:900,borderRadius:999,padding:"4px 14px",marginTop:6 }}>🪙 {progress.coins}</div>
+        <div style={{ ...M3.assist(),marginTop:6,fontWeight:700 }}>🪙 {progress.coins}</div>
       </div>
       <div style={{ display:"flex",gap:6,marginBottom:12 }}>
         {[["hat","🎩 หมวก"],["outfit","👕 ชุด"],["bg","🖼️ พื้นหลัง"],["theme","🎨 ธีมแอป"]].map(([k,l]) => (
-          <button key={k} onClick={() => { sfx.tap(); setTab(k); }} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",fontWeight:800,fontSize:14,cursor:"pointer",background:tab===k?"#7c3aed":"#f3f4f6",color:tab===k?"#fff":"#374151" }}>{l}</button>
+          <button key={k} onClick={() => { sfx.tap(); setTab(k); }} className="m3-press" style={{ ...M3.chip(tab===k,{ flex:1,minHeight:44,borderRadius:tab===k?999:12,fontSize:13,padding:"0 6px" }) }}>{l}</button>
         ))}
       </div>
       {tab === "theme" && <div style={{ fontSize:12,color:T.ink2,marginBottom:10,textAlign:"center" }}>ธีมเปลี่ยนสีทั้งแอป (พื้นหลัง · hero · แท็บ) · "ออโรรา" คือธีมเริ่มต้นฟรี</div>}
@@ -3680,12 +3723,12 @@ function ShopScreen({ progress, setProgress, showToast }) {
         {items.map(it => {
           const owned = !!progress.owned[it.id] || it.cost === 0; const on = it.type === "outfit" ? (progress.outfit || []).includes(it.id) : (progress[it.type] || (it.type === "theme" ? "aurora" : null)) === it.id;
           return (
-            <div key={it.id} style={{ background:T.card,borderRadius:16,padding:12,border:`2px solid ${on?"#7c3aed":"#f3f4f6"}`,textAlign:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.05)" }}>
-              <div style={{ height:64,borderRadius:12,background:it.css||it.preview||"#f9fafb",display:"flex",alignItems:"center",justifyContent:"center",fontSize:38,marginBottom:6 }}>{it.emoji}</div>
+            <div key={it.id} style={{ ...card(on ? { background:T.secondaryC,color:T.onSecondaryC } : {}),padding:12,textAlign:"center",outline:on?`2px solid ${MD.primary}`:"none",outlineOffset:-2 }}>
+              <div style={{ height:64,borderRadius:18,background:it.css||it.preview||T.surfHigh,display:"flex",alignItems:"center",justifyContent:"center",fontSize:38,marginBottom:6 }}>{it.emoji}</div>
               <div style={{ fontWeight:800,fontSize:13,color:T.ink }}>{it.name}</div>
               {owned
-                ? <button onClick={() => wear(it)} style={{ marginTop:6,width:"100%",minHeight:44,borderRadius:10,border:"none",fontWeight:800,fontSize:13,cursor:"pointer",background:on?"#ede9fe":"#f3f4f6",color:on?"#5b21b6":"#374151" }}>{on ? "ใส่อยู่ ✓ (แตะถอด)" : "ใส่"}</button>
-                : <button onClick={() => buy(it)} style={{ marginTop:6,width:"100%",minHeight:44,borderRadius:10,border:"none",fontWeight:800,fontSize:13,cursor:"pointer",background:progress.coins>=it.cost?"#f59e0b":"#e5e7eb",color:progress.coins>=it.cost?"#fff":"#9ca3af" }}>ซื้อ 🪙 {it.cost}</button>}
+                ? <button onClick={() => wear(it)} className="m3-press" style={on ? M3.filled({ marginTop:6,width:"100%",minHeight:44,fontSize:13,padding:"0 8px" }) : M3.tonal({ marginTop:6,width:"100%",minHeight:44,fontSize:13,padding:"0 8px" })}>{on ? "ใส่อยู่ ✓ (แตะถอด)" : "ใส่"}</button>
+                : <button onClick={() => buy(it)} className="m3-press" style={progress.coins>=it.cost ? M3.tertiaryBtn({ marginTop:6,width:"100%",minHeight:44,fontSize:13,padding:"0 8px" }) : M3.tonal({ marginTop:6,width:"100%",minHeight:44,fontSize:13,padding:"0 8px",background:T.surfHighest,color:T.ink3 })}>ซื้อ 🪙 {it.cost}</button>}
             </div>
           );
         })}
@@ -3707,7 +3750,7 @@ function ReportScreen({ words, categories, progress }) {
   const Stat = ({ v, l, c }) => <div style={{ background:T.card,borderRadius:14,padding:"10px 8px",textAlign:"center",border:"none" }}><div style={{ fontSize:22,fontWeight:900,color:c }}>{v}</div><div style={{ fontSize:11,color:T.ink2 }}>{l}</div></div>;
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:560,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#0ea5e9,#6366f1)",borderRadius:20,padding:16,color:"#fff",marginBottom:12 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:12 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>📊 รายงานผู้ปกครอง</div>
         <div style={{ fontSize:13,opacity:0.9 }}>ความคืบหน้าทั้งหมดของลูก · อัปเดตอัตโนมัติ</div>
       </div>
@@ -3955,7 +3998,7 @@ function lookupToken(words, tok) {
 function TalkScreen({ words, progress, onOpen }) {
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#f97316,#ec4899)",borderRadius:20,padding:16,color:"#fff",marginBottom:14 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:14 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>💬 บทสนทนาในชีวิตจริง</div>
         <div style={{ fontSize:13,opacity:0.9 }}>{DIALOGUES.length} สถานการณ์ · ฟัง → เล่นบทบาท (พูดเอง) → เติมคำ</div>
       </div>
@@ -4164,7 +4207,7 @@ function FillGame({ cat, speak, track, onBack }) {
 function StoriesScreen({ words, progress, onOpen }) {
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#8b5cf6,#3b82f6)",borderRadius:20,padding:16,color:"#fff",marginBottom:14 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:14 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>📖 นิทานภาพ</div>
         <div style={{ fontSize:13,opacity:0.9 }}>{STORIES.length} เรื่อง · อ่านพร้อมเสียง · แตะคำที่ไม่รู้ · ตอบคำถามท้ายเรื่อง</div>
       </div>
@@ -4286,7 +4329,7 @@ function PhonicsScreen({ words, speak, speakAt, showToast, progress, setProgress
   const best = progress.stars["phonics:all:phonics"] || 0;
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#06b6d4,#8b5cf6)",borderRadius:20,padding:16,color:"#fff",marginBottom:12 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:12 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>🔤 โฟนิกส์ A–Z</div>
         <div style={{ fontSize:13,opacity:0.9 }}>รู้เสียงของตัวอักษร → อ่านคำใหม่ได้เอง · แตะตัวอักษรเพื่อฟังชื่อและเสียง</div>
       </div>
@@ -4371,7 +4414,7 @@ function GrammarScreen({ words, speak, progress, onPractice }) {
   if (g) return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
       <button onClick={() => { sfx.tap(); setOpen(null); }} style={{ minHeight:44,border:"none",background:"none",color:T.ink2,fontWeight:700,fontSize:13,cursor:"pointer",padding:0,marginBottom:6 }}>‹ บทเรียนทั้งหมด</button>
-      <div style={{ background:"linear-gradient(135deg,#f59e0b,#ef4444)",borderRadius:20,padding:16,color:"#fff",marginBottom:12 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:12 }}>
         <div style={{ fontWeight:900,fontSize:22 }}>{g.emoji} {g.title}</div><div style={{ fontSize:13,opacity:0.9 }}>{g.titleTh}</div>
       </div>
       {g.rules.map((r, i) => {
@@ -4387,12 +4430,12 @@ function GrammarScreen({ words, speak, progress, onPractice }) {
           </div>
         );
       })}
-      <button onClick={() => { sfx.tap(); onPractice(g); }} style={{ width:"100%",minHeight:56,borderRadius:16,border:"none",background:"#10b981",color:"#fff",fontWeight:900,fontSize:15,cursor:"pointer",marginTop:4 }}>✍️ ฝึกทำ {g.practice.length} ข้อ</button>
+      <button onClick={() => { sfx.tap(); onPractice(g); }} className="m3-press" style={M3.filled({ width:"100%",minHeight:56,fontSize:15,marginTop:4 })}>✍️ ฝึกทำ {g.practice.length} ข้อ</button>
     </div>
   );
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#f59e0b,#ef4444)",borderRadius:20,padding:16,color:"#fff",marginBottom:14 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:14 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>✍️ ไวยากรณ์เด็ก</div>
         <div style={{ fontSize:13,opacity:0.9 }}>{GRAMMAR.length} บทเรียนสั้นๆ กฎ 3 ข้อ + แบบฝึก · อธิบายเป็นไทย</div>
       </div>
@@ -4473,7 +4516,7 @@ function DailyScreen({ words, speak, speakAt, progress, onGame }) {
   const btn = { minHeight:44,borderRadius:12,border:"none",background:T.surfHigh,color:T.ink2,fontWeight:800,fontSize:14,cursor:"pointer",padding:"0 14px" };
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#0ea5e9,#22c55e)",borderRadius:20,padding:16,color:"#fff",marginBottom:12 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:12 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>🧭 ภาษาอังกฤษในชีวิตประจำวัน</div>
         <div style={{ fontSize:13,opacity:0.9 }}>บอกเวลา · นับเงินบาท · วันและเดือน · ตัวเลขถึง 100</div>
       </div>
@@ -4700,7 +4743,7 @@ function CertificateScreen({ progress, profile, words, onStart }) {
   };
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#6366f1,#a855f7)",borderRadius:20,padding:16,color:"#fff",marginBottom:14 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:14 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>📝 สอบวัดระดับ</div>
         <div style={{ fontSize:13,opacity:0.9 }}>20 ข้อ ผสม รูป→คำ · ฟัง · เติมประโยค · ไวยากรณ์ · ได้ระดับ Starter / A1 / A1+ / A2 + ใบประกาศ</div>
       </div>
@@ -4756,7 +4799,7 @@ function VersusScreen({ words, categories, speak, setProgress, showToast, onExit
   }, 1200);
   if (stage === "setup") return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:"linear-gradient(135deg,#ef4444,#f59e0b)",borderRadius:20,padding:16,color:"#fff",marginBottom:14 }}>
+      <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:14 }}>
         <div style={{ fontWeight:900,fontSize:20 }}>⚔️ แข่ง 2 คน จอเดียว</div>
         <div style={{ fontSize:13,opacity:0.9 }}>วางมือถือตรงกลาง นั่งตรงข้ามกัน · เห็นรูปเดียวกัน ใครแตะคำที่ถูกก่อนได้คะแนน · 10 รอบ</div>
       </div>

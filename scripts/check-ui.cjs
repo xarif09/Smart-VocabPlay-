@@ -50,7 +50,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await p.waitForTimeout(200);
     await shot(p, `${name}-2a-learn-front`); await a('learn-front');
     res.push({ label: name + ' learn-has-read', ok: await p.locator('span', { hasText: /^[ก-๙]+(-[ก-๙]+)*$/ }).first().isVisible() });
-    await p.click('text=แตะการ์ดเพื่อดูความหมาย'); await p.waitForTimeout(300);
+    await p.click('text=แตะการ์ดเพื่อพลิกดูความหมาย'); await p.waitForTimeout(800);
     await shot(p, `${name}-2b-learn-back`); await a('learn-back');
     res.push({ label: name + ' learn-sentence', ok: await p.isVisible('text=/[A-Z][a-z].*\\./') });
     await p.click('button:has-text("รู้แล้ว")'); await p.click('button:has-text("ยังไม่แม่น")'); await p.waitForTimeout(100);

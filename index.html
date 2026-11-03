@@ -58,6 +58,23 @@
       .vp-card-hover:active { transform: scale(.96) !important; }
       @media (hover:hover) { .vp-card-hover:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 22px 50px rgba(30,27,75,.2) !important; } }
       @media (prefers-reduced-motion: reduce) { .vp-aurora, .vp-shimmer { animation: none !important; } }
+      /* ── ทรานซิชันระหว่างหน้า ── */
+      @keyframes vpPage { from { opacity: 0; transform: translateY(14px) scale(.995); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+      @keyframes vpZoomIn { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
+      /* ── ธีม (ซื้อในร้าน) ── */
+      :root { --vp-grad: linear-gradient(135deg,#6d5dfc 0%,#a855f7 55%,#ff6fae 100%); --vp-bg: #f4f6fb; --vp-card: #ffffff; --vp-ink: #0f172a; --vp-ink2: #475569; --vp-ink3: #94a3b8; }
+      [data-theme="ocean"]  { --vp-grad: linear-gradient(135deg,#0ea5e9,#06b6d4 55%,#34d399); --vp-bg: #eefbff; }
+      [data-theme="ocean"] body::before  { background: radial-gradient(600px 400px at 10% -10%, rgba(14,165,233,.28), transparent 60%), radial-gradient(500px 400px at 110% 10%, rgba(52,211,153,.25), transparent 60%), radial-gradient(600px 500px at 50% 110%, rgba(6,182,212,.22), transparent 60%); }
+      [data-theme="forest"] { --vp-grad: linear-gradient(135deg,#16a34a,#84cc16 55%,#facc15); --vp-bg: #f3fbef; }
+      [data-theme="forest"] body::before { background: radial-gradient(600px 400px at 10% -10%, rgba(22,163,74,.26), transparent 60%), radial-gradient(500px 400px at 110% 10%, rgba(250,204,21,.25), transparent 60%), radial-gradient(600px 500px at 50% 110%, rgba(132,204,22,.22), transparent 60%); }
+      [data-theme="sunset"] { --vp-grad: linear-gradient(135deg,#f43f5e,#fb923c 55%,#facc15); --vp-bg: #fff7f2; }
+      [data-theme="sunset"] body::before { background: radial-gradient(600px 400px at 10% -10%, rgba(244,63,94,.26), transparent 60%), radial-gradient(500px 400px at 110% 10%, rgba(250,204,21,.28), transparent 60%), radial-gradient(600px 500px at 50% 110%, rgba(251,146,60,.22), transparent 60%); }
+      [data-theme="candy"]  { --vp-grad: linear-gradient(135deg,#f472b6,#c084fc 55%,#67e8f9); --vp-bg: #fff4fb; }
+      [data-theme="candy"] body::before  { background: radial-gradient(600px 400px at 10% -10%, rgba(244,114,182,.3), transparent 60%), radial-gradient(500px 400px at 110% 10%, rgba(103,232,249,.28), transparent 60%), radial-gradient(600px 500px at 50% 110%, rgba(192,132,252,.25), transparent 60%); }
+      [data-theme="space"]  { --vp-grad: linear-gradient(135deg,#312e81,#7c3aed 55%,#ec4899); --vp-bg: #0b1020; --vp-card: #1a2036; --vp-ink: #f1f5f9; --vp-ink2: #cbd5e1; --vp-ink3: #94a3b8; }
+      [data-theme="space"] body { background: #0b1020; }
+      [data-theme="space"] body::before { background: radial-gradient(600px 400px at 10% -10%, rgba(124,58,237,.35), transparent 60%), radial-gradient(500px 400px at 110% 10%, rgba(236,72,153,.25), transparent 60%), radial-gradient(600px 500px at 50% 110%, rgba(34,211,238,.2), transparent 60%), radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent 51%), radial-gradient(2px 2px at 70% 60%, #fff 50%, transparent 51%), radial-gradient(1.5px 1.5px at 40% 80%, #fff 50%, transparent 51%), radial-gradient(1.5px 1.5px at 85% 25%, #fff 50%, transparent 51%), radial-gradient(2px 2px at 55% 15%, #fff 50%, transparent 51%); }
+      [data-theme] body { background: var(--vp-bg); transition: background .5s; }
     </style>
   </head>
   <body>

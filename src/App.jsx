@@ -5,7 +5,7 @@ import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER
   srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today,
   loadProfiles, saveProfiles, deleteProgress, AVATARS, buildUnits, UNIT_STEPS, unitDone, unitSteps, markUnitStep, similarity } from "./progress.js";
 import { lexOf } from "./lexicon.js";
-import { sfx, unlockSfx, setSfxEnabled } from "./sfx.js";
+import { sfx, unlockSfx, setSfxEnabled, startMusic, stopMusic } from "./sfx.js";
 import { fx, fxPoint, setFxEnabled, installRipple, Ambient, Reveal, CountUp } from "./fx.jsx";
 import Pet, { PET_CSS } from "./Pet.jsx";
 
@@ -26,9 +26,9 @@ export const BUILD_TIME = typeof __BUILD_TIME__ !== "undefined" ? __BUILD_TIME__
 // ═══════════════════════════════════════════════════════
 const FONT = "'Prompt', 'Noto Sans Thai', system-ui, -apple-system, sans-serif";
 const T = {
-  ink: "#0f172a", ink2: "#475569", ink3: "#94a3b8",
-  bg: "#f4f6fb", card: "#ffffff",
-  grad: "linear-gradient(135deg,#6d5dfc 0%,#a855f7 55%,#ff6fae 100%)",
+  ink: "var(--vp-ink, #0f172a)", ink2: "var(--vp-ink2, #475569)", ink3: "var(--vp-ink3, #94a3b8)",
+  bg: "var(--vp-bg, #f4f6fb)", card: "var(--vp-card, #ffffff)",
+  grad: "var(--vp-grad, linear-gradient(135deg,#6d5dfc 0%,#a855f7 55%,#ff6fae 100%))",
   grad2: "linear-gradient(135deg,#22d3ee,#6d5dfc)",
   grad3: "linear-gradient(135deg,#fb923c,#f43f5e)",
   shadow: "0 10px 30px rgba(30,27,75,0.08)",
@@ -1369,9 +1369,14 @@ export default function App() {
   const [bilingual, setBilingual] = useState(true);
   const [rate, setRate] = useState(0.85);
   const [showSettings, setShowSettings] = useState(false);
+  const [musicOn, setMusicOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:music") === "1"; } catch (_) { return false; } });
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:music", musicOn ? "1" : "0"); } catch (_) {} if (musicOn && soundOn && soundUnlocked) startMusic(); else stopMusic(); }, [musicOn, soundOn, soundUnlocked]);
+  useEffect(() => { const h = () => { if (document.hidden) stopMusic(); else if (musicOn && soundOn && soundUnlocked) startMusic(); }; document.addEventListener("visibilitychange", h); return () => document.removeEventListener("visibilitychange", h); }, [musicOn, soundOn, soundUnlocked]);
   const [fxOn, setFxOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:fx") !== "0"; } catch (_) { return true; } });
   useEffect(() => { setFxEnabled(fxOn); try { localStorage.setItem("smart-vocabplay:fx", fxOn ? "1" : "0"); } catch (_) {} }, [fxOn]);
   useEffect(() => { installRipple(); }, []);
+  // ธีมแอป (ซื้อในร้าน): ตั้ง data-theme บน <html> → CSS ใน index.html เปลี่ยนพื้นหลัง/ออโรรา/สีหลัก
+  useEffect(() => { try { document.documentElement.setAttribute("data-theme", progress.theme || "aurora"); } catch (_) {} }, [progress.theme]);
   const [realPics, setRealPics] = useState(() => { try { return localStorage.getItem("smart-vocabplay:realpics") !== "0"; } catch (_) { return true; } });
   useEffect(() => { try { localStorage.setItem("smart-vocabplay:realpics", realPics ? "1" : "0"); } catch (_) {} }, [realPics]);
   const [toast, setToast] = useState(null);
@@ -1655,7 +1660,7 @@ export default function App() {
 
       {/* CONTENT */}
       {immersive ? (
-        <div style={{ position:"fixed",inset:0,zIndex:60,display:"flex",flexDirection:"column",background:immersiveBg,overflow:"hidden" }}>
+        <div style={{ position:"fixed",inset:0,zIndex:60,display:"flex",flexDirection:"column",background:immersiveBg,overflow:"hidden",animation: fxOn ? "vpZoomIn .5s cubic-bezier(.2,.8,.2,1) both" : "none" }}>
           <div style={{ display:"flex",alignItems:"center",gap:8,padding:"calc(env(safe-area-inset-top, 0px) + 8px) 10px 6px",flexShrink:0 }}>
             <button onClick={goBack} style={{ width:44,height:44,borderRadius:16,border:"none",background:"rgba(255,255,255,0.22)",color:"#fff",fontSize:22,cursor:"pointer",backdropFilter:"blur(8px)" }}>‹</button>
             <div style={{ flex:1,minWidth:0,color:"#fff",fontWeight:800,fontSize:15,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textShadow:"0 1px 2px rgba(0,0,0,0.2)" }}>{headerTitle}</div>
@@ -1666,7 +1671,7 @@ export default function App() {
           </div>
         </div>
       ) : (
-        <div style={{ paddingTop: screen === "home" ? 0 : 64 }}>
+        <div key={screen + ":" + (activeCat?.id || "") + (activeDialog?.id || "") + (activeStory?.id || "")} style={{ paddingTop: screen === "home" ? 0 : 64, animation: fxOn ? "vpPage .45s cubic-bezier(.2,.8,.2,1) both" : "none" }}>
           {SCREENS}
         </div>
       )}
@@ -1690,7 +1695,7 @@ export default function App() {
           realPics={realPics} setRealPics={setRealPics}
           fullscreenOn={fullscreenOn} setFullscreenOn={setFullscreenOn}
           thaiGuide={thaiGuide} setThaiGuide={setThaiGuide}
-          fxOn={fxOn} setFxOn={setFxOn}
+          fxOn={fxOn} setFxOn={setFxOn} musicOn={musicOn} setMusicOn={setMusicOn}
           onClose={() => setShowSettings(false)}
         />
       )}
@@ -3221,7 +3226,7 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
 // ═══════════════════════════════════════════════════════
 // SETTINGS SHEET
 // ═══════════════════════════════════════════════════════
-function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn }) {
+function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn, musicOn, setMusicOn }) {
   const [vr, setVr] = useState(() => voiceReport());
   useEffect(() => { loadVoices(); setVr(voiceReport()); const t = setTimeout(() => { loadVoices(); setVr(voiceReport()); }, 800); return () => clearTimeout(t); }, []);
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -3233,6 +3238,7 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <div style={{ fontSize:11,color:"#9ca3af",marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
         <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
+        <TRow label="ดนตรีประกอบ" desc="เพลงกล่องดนตรีเบาๆ ตลอดแอป (สร้างในเครื่อง ไม่ใช้เน็ต) · ปิดอัตโนมัติเมื่อสลับแอป" on={musicOn} set={setMusicOn} />
         <TRow label="เอฟเฟกต์และแอนิเมชัน" desc="ระเบิดดาว คอนเฟตตี สั่นจอ พื้นหลังเคลื่อนไหว · ปิดถ้าเครื่องช้า" on={fxOn} set={setFxOn} />
         <TRow label="ผู้ช่วยเสียงไทย" desc="อ่านวิธีเล่นเป็นภาษาไทยทุกครั้งที่เข้าเกม (สำหรับเด็กที่ยังอ่านไทยไม่คล่อง)" on={thaiGuide} set={setThaiGuide} />
         <TRow label="เต็มจอเมื่อเข้าเกม" desc="ซ่อนแถบเบราว์เซอร์ตอนเล่น (Android/คอม · iPhone ใช้ได้เมื่อติดตั้งเป็นแอป)" on={fullscreenOn} set={setFullscreenOn} />
@@ -3346,16 +3352,15 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
         <span>📖 การ์ดที่ {i+1}/{deck.length}</span><span>😎 รู้แล้ว {know}</span>
       </div>
       <button onClick={() => { sfx.tap(); if (!flip) speak(w.word, w.meaning); setFlip(f => !f); }}
-        style={{ width:"100%",minHeight:300,borderRadius:24,border:`3px solid ${cat.color}50`,background:flip?`${cat.color}12`:"#fff",boxShadow:"0 8px 28px rgba(0,0,0,0.1)",cursor:"pointer",padding:20,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,transition:"background .25s" }}>
-        {!flip ? (
-          <>
+        style={{ width:"100%",minHeight:320,borderRadius:28,border:"none",background:"transparent",cursor:"pointer",padding:0,perspective:1200,position:"relative",fontFamily:FONT }}>
+        <span key={w.id} style={{ position:"absolute",inset:0,transformStyle:"preserve-3d",transition:"transform .65s cubic-bezier(.2,.8,.2,1)",transform:flip?"rotateY(180deg)":"rotateY(0deg)",animation:"vpInScale .45s both" }}>
+          <span style={{ position:"absolute",inset:0,borderRadius:28,backfaceVisibility:"hidden",WebkitBackfaceVisibility:"hidden",background:"#fff",border:`3px solid ${cat.color}50`,boxShadow:"0 18px 44px rgba(0,0,0,.18)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:20 }}>
             <Pic w={w} size={84} radius={20} />
             <span style={{ fontSize:34,fontWeight:900,color:"#1f2937",letterSpacing:1 }}>{w.word}</span>
             {w.read && <span style={{ fontSize:18,fontWeight:700,color:"#7c3aed" }}>{w.read}</span>}
-            <span style={{ fontSize:11,color:"#9ca3af",marginTop:8 }}>แตะการ์ดเพื่อดูความหมาย</span>
-          </>
-        ) : (
-          <>
+            <span style={{ fontSize:11,color:"#9ca3af",marginTop:8 }}>แตะการ์ดเพื่อพลิกดูความหมาย</span>
+          </span>
+          <span style={{ position:"absolute",inset:0,borderRadius:28,backfaceVisibility:"hidden",WebkitBackfaceVisibility:"hidden",transform:"rotateY(180deg)",background:`linear-gradient(160deg, ${cat.color}22, #fff 60%)`,border:`3px solid ${cat.color}80`,boxShadow:"0 18px 44px rgba(0,0,0,.18)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:20,overflowY:"auto" }}>
             <Pic w={w} size={44} radius={14} />
             <span style={{ fontSize:30,fontWeight:900,color:"#1f2937" }}>{w.meaning}</span>
             {w.read && <span style={{ fontSize:14,color:"#7c3aed",fontWeight:700 }}>{w.word} · {w.read}</span>}
@@ -3364,8 +3369,8 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
               <div style={{ fontSize:13,color:"#6b7280",marginTop:2 }}>{w.senTh}</div>
             </div>}
             {imageTitleOf(w) && <a href={wikiPageUrl(imageTitleOf(w))} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{ fontSize:10,color:"#9ca3af",marginTop:6 }}>รูป: Wikipedia — {imageTitleOf(w)} ↗</a>}
-          </>
-        )}
+          </span>
+        </span>
       </button>
       <div style={{ display:"flex",gap:6,marginTop:10 }}>
         <button onClick={() => speak(w.word, w.meaning)} style={btn}>🔊 คำ</button>
@@ -3622,16 +3627,17 @@ function ShopScreen({ progress, setProgress, showToast }) {
         <div style={{ display:"inline-flex",background:"#fef3c7",color:"#92400e",fontWeight:900,borderRadius:999,padding:"4px 14px",marginTop:6 }}>🪙 {progress.coins}</div>
       </div>
       <div style={{ display:"flex",gap:6,marginBottom:12 }}>
-        {[["hat","🎩 หมวก"],["bg","🖼️ พื้นหลัง"]].map(([k,l]) => (
+        {[["hat","🎩 หมวก"],["bg","🖼️ พื้นหลัง"],["theme","🎨 ธีมแอป"]].map(([k,l]) => (
           <button key={k} onClick={() => { sfx.tap(); setTab(k); }} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",fontWeight:800,fontSize:14,cursor:"pointer",background:tab===k?"#7c3aed":"#f3f4f6",color:tab===k?"#fff":"#374151" }}>{l}</button>
         ))}
       </div>
+      {tab === "theme" && <div style={{ fontSize:12,color:T.ink2,marginBottom:10,textAlign:"center" }}>ธีมเปลี่ยนสีทั้งแอป (พื้นหลัง · hero · แท็บ) · "ออโรรา" คือธีมเริ่มต้นฟรี</div>}
       <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }}>
         {items.map(it => {
-          const owned = !!progress.owned[it.id]; const on = progress[it.type] === it.id;
+          const owned = !!progress.owned[it.id] || it.cost === 0; const on = (progress[it.type] || (it.type === "theme" ? "aurora" : null)) === it.id;
           return (
             <div key={it.id} style={{ background:"#fff",borderRadius:16,padding:12,border:`2px solid ${on?"#7c3aed":"#f3f4f6"}`,textAlign:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.05)" }}>
-              <div style={{ height:64,borderRadius:12,background:it.css||"#f9fafb",display:"flex",alignItems:"center",justifyContent:"center",fontSize:38,marginBottom:6 }}>{it.emoji}</div>
+              <div style={{ height:64,borderRadius:12,background:it.css||it.preview||"#f9fafb",display:"flex",alignItems:"center",justifyContent:"center",fontSize:38,marginBottom:6 }}>{it.emoji}</div>
               <div style={{ fontWeight:800,fontSize:13,color:"#1f2937" }}>{it.name}</div>
               {owned
                 ? <button onClick={() => wear(it)} style={{ marginTop:6,width:"100%",minHeight:44,borderRadius:10,border:"none",fontWeight:800,fontSize:13,cursor:"pointer",background:on?"#ede9fe":"#f3f4f6",color:on?"#5b21b6":"#374151" }}>{on ? "ใส่อยู่ ✓ (แตะถอด)" : "ใส่"}</button>

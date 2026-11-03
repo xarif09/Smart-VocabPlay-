@@ -38,7 +38,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await shot(p, `${name}-1-home`); await a('home');
     const counts = await p.evaluate(() => [...document.querySelectorAll('button')].map(b => b.innerText).filter(t => /\d+ คำ/.test(t)).map(t => +t.match(/(\d+) คำ/)[1]));
     res.push({ label: name + ' count', cats: counts.length, total: counts.reduce((x, c) => x + c, 0) });
-    if (counts.length !== 20 || counts.reduce((x, c) => x + c, 0) !== 403) bad('count', counts);
+    if (counts.length !== 26 || counts.reduce((x, c) => x + c, 0) !== 1165) bad('count', counts);
     await p.click('text=เรียน'); await p.waitForTimeout(300); await shot(p, `${name}-1b-learnhub`); await a('learnhub');
     await p.click('text=เล่น'); await p.waitForTimeout(300); await shot(p, `${name}-1c-playhub`); await a('playhub');
     await p.click('text=หน้าแรก'); await p.waitForTimeout(300);

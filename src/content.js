@@ -243,7 +243,7 @@ export const PHONICS = [
   { L:"G", name:"จี", sound:"เกอะ", words:["animals|GOAT","fruits|GRAPE","toys|GUITAR"] },
   { L:"H", name:"เอช", sound:"เฮอะ", words:["clothes|HAT","body|HAND","animals|HORSE"] },
   { L:"I", name:"ไอ", sound:"อิ", words:["food|ICECREAM","nature|ISLAND"] },
-  { L:"J", name:"เจ", sound:"เจอะ", words:["food|JUICE","clothes|JACKET","actions|JUMP"] },
+  { L:"J", name:"เจ", sound:"เจอะ", words:["food|JUICE","clothes|JACKET","sports|JUMP"] },
   { L:"K", name:"เค", sound:"เคอะ", words:["toys|KITE","home|KEY","animals|KANGAROO"] },
   { L:"L", name:"แอล", sound:"เลอะ", words:["animals|LION","fruits|LEMON","nature|LEAF"] },
   { L:"M", name:"เอ็ม", sound:"เมอะ", words:["animals|MONKEY","food|MILK","nature|MOON"] },
@@ -257,7 +257,332 @@ export const PHONICS = [
   { L:"U", name:"ยู", sound:"อะ", words:["clothes|UMBRELLA","family|UNCLE"] },
   { L:"V", name:"วี", sound:"เวอะ", words:["vehicles|VAN","nature|VOLCANO","sports|VOLLEYBALL"] },
   { L:"W", name:"ดับเบิลยู", sound:"เวอะ", words:["animals|WHALE","food|WATER","nature|WATERFALL"] },
-  { L:"X", name:"เอ็กซ์", sound:"คส์", words:["animals|FOX","toys|BLOCKS"] },
+  { L:"X", name:"เอ็กซ์", sound:"คส์", words:["X-RAY|เอกซเรย์|🩻","XYLOPHONE|ระนาดฝรั่ง|🎵"] },
   { L:"Y", name:"วาย", sound:"เยอะ", words:["food|YOGURT","toys|YO-YO","sports|YOGA"] },
   { L:"Z", name:"แซด", sound:"เซอะ", words:["animals|ZEBRA","places|ZOO"] },
+];
+
+// ═══════════════════════════════════════════════════════
+// บทสนทนาเพิ่มเติม (ชุดที่ 2)
+// ═══════════════════════════════════════════════════════
+DIALOGUES.push(
+  { id:"shop", emoji:"👟", title:"Buying shoes", titleTh:"ซื้อรองเท้า", scene:"clothes|SHOES", a:"Seller", b:"Mom",
+    lines:[
+      { who:"A", en:"Hello! Can I help you?", th:"สวัสดีค่ะ ให้ช่วยอะไรไหมคะ", blank:"help" },
+      { who:"B", en:"Yes. I need shoes for my son.", th:"ค่ะ อยากได้รองเท้าให้ลูกชาย", blank:"shoes" },
+      { who:"A", en:"What size?", th:"ไซส์อะไรคะ" },
+      { who:"B", en:"Size thirty. Do you have blue?", th:"ไซส์สามสิบ มีสีน้ำเงินไหม", blank:"blue" },
+      { who:"A", en:"Yes! Here are the blue shoes.", th:"มีค่ะ นี่รองเท้าสีน้ำเงิน" },
+      { who:"B", en:"How much are they?", th:"ราคาเท่าไหร่", blank:"much" },
+      { who:"A", en:"Five hundred baht.", th:"ห้าร้อยบาทค่ะ", blank:"hundred" },
+      { who:"B", en:"OK, I'll take them. Thank you.", th:"ตกลง เอาคู่นี้ค่ะ ขอบคุณ" },
+    ] },
+  { id:"phone", emoji:"📞", title:"On the phone", titleTh:"คุยโทรศัพท์", scene:"home|PHONE", a:"Tom", b:"Grandma",
+    lines:[
+      { who:"A", en:"Hello, Grandma! It's Tom.", th:"สวัสดีครับคุณยาย ทอมเองครับ" },
+      { who:"B", en:"Hello, Tom! How are you?", th:"สวัสดีจ้ะทอม สบายดีไหม" },
+      { who:"A", en:"I am fine. What are you doing?", th:"สบายดีครับ ยายกำลังทำอะไรอยู่", blank:"doing" },
+      { who:"B", en:"I am cooking soup. Are you coming on Sunday?", th:"ยายกำลังต้มซุป วันอาทิตย์จะมาไหม", blank:"Sunday" },
+      { who:"A", en:"Yes! Can I bring my friend Mina?", th:"มาครับ พาเพื่อนชื่อมีนามาด้วยได้ไหม", blank:"friend" },
+      { who:"B", en:"Of course! I will make a cake.", th:"ได้สิจ๊ะ ยายจะทำเค้กให้", blank:"cake" },
+      { who:"A", en:"Yay! See you on Sunday, Grandma!", th:"เย้ เจอกันวันอาทิตย์นะครับ" },
+    ] },
+  { id:"lost_way", emoji:"🗺️", title:"Where is the library?", titleTh:"ถามทาง", scene:"places|LIBRARY", a:"Mina", b:"Police",
+    lines:[
+      { who:"A", en:"Excuse me, where is the library?", th:"ขอโทษค่ะ ห้องสมุดอยู่ที่ไหนคะ", blank:"library" },
+      { who:"B", en:"Go straight and turn left at the bank.", th:"ตรงไปแล้วเลี้ยวซ้ายที่ธนาคาร", blank:"left" },
+      { who:"A", en:"Is it far?", th:"ไกลไหมคะ", blank:"far" },
+      { who:"B", en:"No, it is near. About five minutes.", th:"ไม่ไกล ใกล้ๆ ประมาณห้านาที", blank:"near" },
+      { who:"A", en:"Is it next to the park?", th:"อยู่ข้างสวนสาธารณะใช่ไหมคะ", blank:"park" },
+      { who:"B", en:"Yes, next to the park. You can't miss it.", th:"ใช่ ข้างสวนเลย หาไม่ยาก" },
+      { who:"A", en:"Thank you very much!", th:"ขอบคุณมากค่ะ" },
+    ] },
+  { id:"sports", emoji:"⚽", title:"Let's play!", titleTh:"ชวนเล่นกีฬา", scene:"sports|FOOTBALL", a:"Tom", b:"Mina",
+    lines:[
+      { who:"A", en:"Mina, do you like football?", th:"มีนา ชอบฟุตบอลไหม", blank:"football" },
+      { who:"B", en:"Yes, but I like swimming more.", th:"ชอบ แต่ชอบว่ายน้ำมากกว่า", blank:"swimming" },
+      { who:"A", en:"Can you swim fast?", th:"ว่ายน้ำเร็วไหม", blank:"fast" },
+      { who:"B", en:"Yes, I can! Can you?", th:"เร็วสิ แล้วเธอล่ะ" },
+      { who:"A", en:"No, I can't swim. But I can run fast.", th:"ไม่ ฉันว่ายน้ำไม่ได้ แต่วิ่งเร็ว", blank:"run" },
+      { who:"B", en:"Let's play basketball together!", th:"งั้นมาเล่นบาสด้วยกัน", blank:"basketball" },
+      { who:"A", en:"Great idea! I have a ball.", th:"ดีเลย ฉันมีลูกบอล", blank:"ball" },
+    ] },
+  { id:"breakfast", emoji:"🍳", title:"Breakfast time", titleTh:"มื้อเช้า", scene:"food|EGG", a:"Dad", b:"Mina",
+    lines:[
+      { who:"A", en:"Good morning! Breakfast is ready.", th:"อรุณสวัสดิ์ อาหารเช้าพร้อมแล้ว", blank:"ready" },
+      { who:"B", en:"What is it?", th:"มีอะไรคะ" },
+      { who:"A", en:"Eggs, bread and milk.", th:"ไข่ ขนมปัง แล้วก็นม", blank:"bread" },
+      { who:"B", en:"Can I have some honey, please?", th:"ขอน้ำผึ้งหน่อยได้ไหมคะ", blank:"honey" },
+      { who:"A", en:"Here you are. Don't forget your water.", th:"นี่จ้ะ อย่าลืมดื่มน้ำนะ", blank:"water" },
+      { who:"B", en:"Thank you, Dad. It's delicious!", th:"ขอบคุณค่ะพ่อ อร่อยมาก" },
+      { who:"A", en:"Finish your milk. Then brush your teeth.", th:"ดื่มนมให้หมด แล้วไปแปรงฟัน", blank:"milk" },
+    ] },
+  { id:"pet", emoji:"🐶", title:"My new puppy", titleTh:"ลูกหมาตัวใหม่", scene:"animals|DOG", a:"Mina", b:"Tom",
+    lines:[
+      { who:"A", en:"Tom, look! I have a new puppy.", th:"ทอม ดูสิ ฉันมีลูกหมาตัวใหม่", blank:"puppy" },
+      { who:"B", en:"Wow! What is his name?", th:"ว้าว ชื่ออะไร", blank:"name" },
+      { who:"A", en:"His name is Max. He is three months old.", th:"ชื่อแม็กซ์ อายุสามเดือน", blank:"three" },
+      { who:"B", en:"He is so small! What does he eat?", th:"ตัวเล็กจัง กินอะไร", blank:"small" },
+      { who:"A", en:"He eats dog food and drinks milk.", th:"กินอาหารหมาแล้วก็ดื่มนม", blank:"milk" },
+      { who:"B", en:"Can I play with him?", th:"ขอเล่นด้วยได้ไหม", blank:"play" },
+      { who:"A", en:"Sure! He likes to run and jump.", th:"ได้สิ มันชอบวิ่งแล้วก็กระโดด", blank:"jump" },
+    ] },
+);
+
+// ═══════════════════════════════════════════════════════
+// นิทานเพิ่มเติม (ชุดที่ 2)
+// ═══════════════════════════════════════════════════════
+STORIES.push(
+  { id:"ant", emoji:"🐜", title:"The Ant and the Bird", titleTh:"มดกับนก", level:"A1+",
+    pages:[
+      { en:"A little ant is thirsty. She walks to the river.", th:"มดตัวน้อยกระหายน้ำ เธอเดินไปที่แม่น้ำ", pic:"animals|ANT" },
+      { en:"Oh no! The ant falls into the water!", th:"แย่แล้ว! มดตกลงไปในน้ำ!", pic:"nature|RIVER" },
+      { en:"A bird sees the ant. She drops a leaf.", th:"นกเห็นมด จึงปล่อยใบไม้ลงมา", pic:"animals|BIRD" },
+      { en:"The ant climbs on the leaf. She is safe!", th:"มดปีนขึ้นบนใบไม้ ปลอดภัยแล้ว!", pic:"nature|LEAF" },
+      { en:"\"Thank you, bird!\" says the ant.", th:"\"ขอบคุณนะเจ้านก!\" มดพูด", pic:"feelings|HAPPY" },
+      { en:"One day, a man wants to catch the bird.", th:"วันหนึ่ง มีผู้ชายอยากจับนก", pic:"nature|TREE" },
+      { en:"The ant bites the man's foot. \"Ouch!\" The bird flies away.", th:"มดกัดเท้าผู้ชาย \"โอ๊ย!\" นกบินหนีไปได้", pic:"body|FOOT" },
+      { en:"Small friends can help too!", th:"เพื่อนตัวเล็กก็ช่วยได้เหมือนกัน!", pic:"animals|ANT" },
+    ],
+    quiz:[
+      { q:"Why does the ant go to the river?", qTh:"ทำไมมดไปที่แม่น้ำ", options:["She is thirsty","She is tired","She is sad"], answer:"She is thirsty" },
+      { q:"What does the bird drop?", qTh:"นกปล่อยอะไรลงมา", options:["A rock","A leaf","A flower"], answer:"A leaf" },
+      { q:"How does the ant help the bird?", qTh:"มดช่วยนกอย่างไร", options:["She sings","She bites the man","She flies"], answer:"She bites the man" },
+    ] },
+  { id:"market", emoji:"🛒", title:"Shopping with Mom", titleTh:"ไปตลาดกับแม่", level:"A1",
+    pages:[
+      { en:"Mina goes to the market with Mom on Saturday.", th:"วันเสาร์ มีนาไปตลาดกับแม่", pic:"places|MARKET" },
+      { en:"Mom buys rice, eggs and fish.", th:"แม่ซื้อข้าว ไข่ และปลา", pic:"food|RICE" },
+      { en:"Mina sees mangoes. \"Can we buy mangoes?\"", th:"มีนาเห็นมะม่วง \"ซื้อมะม่วงได้ไหมคะ\"", pic:"fruits|MANGO" },
+      { en:"\"Yes, two mangoes,\" says Mom.", th:"\"ได้จ้ะ สองลูก\" แม่ตอบ", pic:"numbers|TWO" },
+      { en:"The seller gives Mina a small banana for free.", th:"แม่ค้าให้กล้วยลูกเล็กมีนาฟรีหนึ่งลูก", pic:"fruits|BANANA" },
+      { en:"\"Thank you!\" Mina is happy.", th:"\"ขอบคุณค่ะ!\" มีนาดีใจ", pic:"feelings|HAPPY" },
+      { en:"At home, Mom cooks fried rice. Yummy!", th:"ที่บ้าน แม่ทำข้าวผัด อร่อย!", pic:"food|FRIED RICE" },
+      { en:"Mina eats a mango for dessert.", th:"มีนากินมะม่วงเป็นของหวาน", pic:"fruits|MANGO" },
+    ],
+    quiz:[
+      { q:"When do they go to the market?", qTh:"พวกเขาไปตลาดวันไหน", options:["On Monday","On Saturday","On Sunday"], answer:"On Saturday" },
+      { q:"How many mangoes do they buy?", qTh:"ซื้อมะม่วงกี่ลูก", options:["One","Two","Three"], answer:"Two" },
+      { q:"What does Mom cook?", qTh:"แม่ทำอะไร", options:["Soup","Pizza","Fried rice"], answer:"Fried rice" },
+    ] },
+  { id:"sick", emoji:"🤒", title:"Tom Is Sick", titleTh:"ทอมไม่สบาย", level:"A1+",
+    pages:[
+      { en:"Tom wakes up. His head hurts and he is hot.", th:"ทอมตื่นขึ้นมา ปวดหัวและตัวร้อน", pic:"feelings|SICK" },
+      { en:"\"Mom, I don't feel well,\" he says.", th:"\"แม่ครับ ผมไม่สบาย\" เขาพูด", pic:"family|MOTHER" },
+      { en:"Mom takes Tom to the hospital.", th:"แม่พาทอมไปโรงพยาบาล", pic:"places|HOSPITAL" },
+      { en:"The doctor looks at his mouth and ears.", th:"หมอตรวจปากและหูของเขา", pic:"jobs|DOCTOR" },
+      { en:"\"Drink water and rest,\" says the doctor.", th:"\"ดื่มน้ำแล้วพักผ่อนนะ\" หมอบอก", pic:"food|WATER" },
+      { en:"Tom sleeps all day. Mom makes chicken soup.", th:"ทอมนอนทั้งวัน แม่ทำซุปไก่ให้", pic:"food|SOUP" },
+      { en:"The next day, Tom feels better!", th:"วันต่อมา ทอมรู้สึกดีขึ้น!", pic:"feelings|HAPPY" },
+      { en:"\"Thank you, Mom. Thank you, doctor!\"", th:"\"ขอบคุณครับแม่ ขอบคุณครับคุณหมอ!\"", pic:"family|FAMILY" },
+    ],
+    quiz:[
+      { q:"What hurts?", qTh:"ทอมเจ็บตรงไหน", options:["His head","His leg","His hand"], answer:"His head" },
+      { q:"Where does Mom take Tom?", qTh:"แม่พาทอมไปไหน", options:["To school","To the hospital","To the zoo"], answer:"To the hospital" },
+      { q:"What does Mom make?", qTh:"แม่ทำอะไรให้", options:["Pizza","Chicken soup","Cake"], answer:"Chicken soup" },
+    ] },
+  { id:"kite", emoji:"🪁", title:"The Big Kite", titleTh:"ว่าวตัวใหญ่", level:"A2",
+    pages:[
+      { en:"It is a windy day. Tom and Mina make a kite.", th:"วันนี้ลมแรง ทอมกับมีนาทำว่าว", pic:"weather|WIND" },
+      { en:"The kite is red and yellow. It is very big.", th:"ว่าวสีแดงและเหลือง ตัวใหญ่มาก", pic:"toys|KITE" },
+      { en:"They run to the park. The kite flies high!", th:"พวกเขาวิ่งไปที่สวน ว่าวลอยสูง!", pic:"places|PARK" },
+      { en:"Suddenly, the wind stops. The kite falls into a tree.", th:"ทันใดนั้นลมหยุด ว่าวตกลงไปติดต้นไม้", pic:"nature|TREE" },
+      { en:"\"How can we get it?\" asks Mina.", th:"\"เราจะเอาลงมายังไง\" มีนาถาม", pic:"feelings|SAD" },
+      { en:"A tall man with a ladder helps them.", th:"ชายร่างสูงกับบันไดมาช่วย", pic:"jobs|BUILDER" },
+      { en:"He climbs up and gets the kite. Hooray!", th:"เขาปีนขึ้นไปเอาว่าวลงมา เย้!", pic:"actions|CLIMB" },
+      { en:"The wind comes back. The kite flies again!", th:"ลมกลับมาแล้ว ว่าวลอยอีกครั้ง!", pic:"toys|KITE" },
+    ],
+    quiz:[
+      { q:"What colors is the kite?", qTh:"ว่าวสีอะไร", options:["Blue and green","Red and yellow","Black and white"], answer:"Red and yellow" },
+      { q:"Where does the kite fall?", qTh:"ว่าวตกไปที่ไหน", options:["Into a tree","Into the river","On the road"], answer:"Into a tree" },
+      { q:"Who helps them?", qTh:"ใครมาช่วย", options:["A teacher","A tall man with a ladder","A police officer"], answer:"A tall man with a ladder" },
+    ] },
+);
+
+// ═══════════════════════════════════════════════════════
+// ไวยากรณ์เด็ก — บทเรียนสั้น: กฎ (ไทย) + ตัวอย่าง + แบบฝึก (เลือกคำเติม)
+// pic = key คำในคลัง เพื่อโชว์รูปประกอบตัวอย่าง
+// ═══════════════════════════════════════════════════════
+export const GRAMMAR = [
+  { id:"a_an", emoji:"🍎", title:"a / an", titleTh:"a กับ an ใช้ต่างกันยังไง",
+    rules:[
+      { th:"ใช้ a หน้าคำที่ขึ้นต้นด้วยเสียงพยัญชนะ", en:"a cat · a dog · a book", pic:"animals|CAT" },
+      { th:"ใช้ an หน้าคำที่ขึ้นต้นด้วยเสียงสระ a e i o u", en:"an apple · an egg · an elephant", pic:"fruits|APPLE" },
+      { th:"a / an แปลว่า \"หนึ่ง\" ใช้กับของที่นับได้ 1 ชิ้นเท่านั้น", en:"I have a banana. I eat an orange.", pic:"fruits|ORANGE" },
+    ],
+    practice:[
+      { q:"I see ___ elephant.", options:["a","an"], answer:"an", th:"ฉันเห็นช้างหนึ่งตัว" },
+      { q:"She has ___ dog.", options:["a","an"], answer:"a", th:"เธอมีหมาหนึ่งตัว" },
+      { q:"This is ___ umbrella.", options:["a","an"], answer:"an", th:"นี่คือร่ม" },
+      { q:"He eats ___ egg.", options:["a","an"], answer:"an", th:"เขากินไข่หนึ่งฟอง" },
+      { q:"I want ___ pizza.", options:["a","an"], answer:"a", th:"ฉันอยากได้พิซซ่า" },
+      { q:"Look! ___ owl!", options:["A","An"], answer:"An", th:"ดูสิ นกฮูก!" },
+      { q:"It is ___ red car.", options:["a","an"], answer:"a", th:"มันคือรถสีแดง" },
+      { q:"I have ___ idea!", options:["a","an"], answer:"an", th:"ฉันมีไอเดีย!" },
+    ] },
+  { id:"plural", emoji:"🐱", title:"one cat, two cats", titleTh:"หลายอันเติม s / es",
+    rules:[
+      { th:"ของมากกว่า 1 ชิ้น เติม s ท้ายคำ", en:"one cat → two cats · one book → three books", pic:"animals|CAT" },
+      { th:"คำที่ลงท้ายด้วย s, x, ch, sh เติม es", en:"one bus → two buses · one box → two boxes", pic:"vehicles|BUS" },
+      { th:"บางคำเปลี่ยนรูปพิเศษ ต้องจำ", en:"one man → two men · one child → two children · one fish → two fish · one foot → two feet", pic:"body|FOOT" },
+    ],
+    practice:[
+      { q:"I have two ___.", options:["dog","dogs"], answer:"dogs", th:"ฉันมีหมาสองตัว" },
+      { q:"There are three ___.", options:["buses","buss"], answer:"buses", th:"มีรถบัสสามคัน" },
+      { q:"I see five ___.", options:["bird","birds"], answer:"birds", th:"ฉันเห็นนกห้าตัว" },
+      { q:"She has ten ___.", options:["fingers","finger"], answer:"fingers", th:"เธอมีสิบนิ้ว" },
+      { q:"Two ___ are swimming.", options:["fishes","fish"], answer:"fish", th:"ปลาสองตัวกำลังว่ายน้ำ" },
+      { q:"I wash my two ___.", options:["foots","feet"], answer:"feet", th:"ฉันล้างเท้าสองข้าง" },
+      { q:"Four ___ are in the class.", options:["children","childs"], answer:"children", th:"เด็กสี่คนอยู่ในห้อง" },
+      { q:"I eat six ___.", options:["cookies","cookie"], answer:"cookies", th:"ฉันกินคุกกี้หกชิ้น" },
+    ] },
+  { id:"be", emoji:"🧒", title:"am / is / are", titleTh:"ฉันคือ เธอคือ เขาคือ",
+    rules:[
+      { th:"I ใช้ am", en:"I am a student. I am happy.", pic:"school|STUDENT" },
+      { th:"You / We / They ใช้ are", en:"You are my friend. They are teachers.", pic:"family|FAMILY" },
+      { th:"He / She / It (คนเดียว สัตว์ตัวเดียว ของชิ้นเดียว) ใช้ is", en:"He is tall. She is a nurse. It is a cat.", pic:"jobs|NURSE" },
+    ],
+    practice:[
+      { q:"I ___ seven years old.", options:["am","is","are"], answer:"am", th:"ฉันอายุเจ็ดขวบ" },
+      { q:"She ___ my sister.", options:["am","is","are"], answer:"is", th:"เธอเป็นพี่สาวของฉัน" },
+      { q:"They ___ at school.", options:["am","is","are"], answer:"are", th:"พวกเขาอยู่ที่โรงเรียน" },
+      { q:"It ___ a big elephant.", options:["am","is","are"], answer:"is", th:"มันคือช้างตัวใหญ่" },
+      { q:"You ___ very kind.", options:["am","is","are"], answer:"are", th:"เธอใจดีมาก" },
+      { q:"We ___ hungry.", options:["am","is","are"], answer:"are", th:"พวกเราหิว" },
+      { q:"He ___ a doctor.", options:["am","is","are"], answer:"is", th:"เขาเป็นหมอ" },
+      { q:"The cats ___ sleeping.", options:["am","is","are"], answer:"are", th:"แมวกำลังนอน" },
+    ] },
+  { id:"this_that", emoji:"👉", title:"this / that / these / those", titleTh:"นี่ นั่น เหล่านี้ เหล่านั้น",
+    rules:[
+      { th:"this = นี่ (ใกล้ 1 ชิ้น) · that = นั่น (ไกล 1 ชิ้น)", en:"This is my bag. That is your bag.", pic:"school|BAG" },
+      { th:"these = เหล่านี้ (ใกล้ หลายชิ้น) · those = เหล่านั้น (ไกล หลายชิ้น)", en:"These are apples. Those are oranges.", pic:"fruits|APPLE" },
+      { th:"ถามว่า \"นี่อะไร\" ใช้ What is this? ตอบ It is a ...", en:"What is this? — It is a pencil.", pic:"school|PENCIL" },
+    ],
+    practice:[
+      { q:"___ is my pen. (ใกล้ 1 ด้าม)", options:["This","These"], answer:"This", th:"นี่คือปากกาของฉัน" },
+      { q:"___ are my shoes. (ใกล้ หลายข้าง)", options:["This","These"], answer:"These", th:"นี่คือรองเท้าของฉัน" },
+      { q:"___ is a bird in the tree. (ไกล)", options:["That","Those"], answer:"That", th:"นั่นคือนกบนต้นไม้" },
+      { q:"___ are clouds in the sky. (ไกล)", options:["That","Those"], answer:"Those", th:"นั่นคือเมฆบนฟ้า" },
+      { q:"What is ___? — It is a cat.", options:["this","these"], answer:"this", th:"นี่อะไร — แมว" },
+      { q:"___ bananas are yellow. (ใกล้)", options:["These","This"], answer:"These", th:"กล้วยพวกนี้สีเหลือง" },
+    ] },
+  { id:"can", emoji:"💪", title:"can / can't", titleTh:"ทำได้ / ทำไม่ได้",
+    rules:[
+      { th:"can = ทำได้ ตามด้วยกริยาไม่เติมอะไร", en:"I can swim. A bird can fly.", pic:"actions|SWIM" },
+      { th:"can't (cannot) = ทำไม่ได้", en:"A fish can't walk. I can't fly.", pic:"animals|FISH" },
+      { th:"ถาม Can you ...? ตอบ Yes, I can. / No, I can't.", en:"Can you dance? — Yes, I can!", pic:"actions|DANCE" },
+    ],
+    practice:[
+      { q:"A bird ___ fly.", options:["can","can't"], answer:"can", th:"นกบินได้" },
+      { q:"A fish ___ walk.", options:["can","can't"], answer:"can't", th:"ปลาเดินไม่ได้" },
+      { q:"I ___ swim. I love the pool!", options:["can","can't"], answer:"can", th:"ฉันว่ายน้ำได้ ฉันรักสระน้ำ" },
+      { q:"A baby ___ drive a car.", options:["can","can't"], answer:"can't", th:"เด็กทารกขับรถไม่ได้" },
+      { q:"___ you sing? — Yes, I can.", options:["Can","Is"], answer:"Can", th:"ร้องเพลงได้ไหม — ได้" },
+      { q:"A monkey ___ climb trees.", options:["can","can't"], answer:"can", th:"ลิงปีนต้นไม้ได้" },
+      { q:"An elephant ___ jump.", options:["can","can't"], answer:"can't", th:"ช้างกระโดดไม่ได้" },
+      { q:"I ___ read English now!", options:["can","can't"], answer:"can", th:"ตอนนี้ฉันอ่านอังกฤษได้แล้ว!" },
+    ] },
+  { id:"have", emoji:"🎒", title:"have / has", titleTh:"มี",
+    rules:[
+      { th:"I / You / We / They ใช้ have", en:"I have a bag. They have two dogs.", pic:"school|BAG" },
+      { th:"He / She / It ใช้ has", en:"She has long hair. The dog has four legs.", pic:"animals|DOG" },
+      { th:"ถามว่ามีไหม Do you have ...? ตอบ Yes, I do. / No, I don't.", en:"Do you have a pencil? — Yes, I do.", pic:"school|PENCIL" },
+    ],
+    practice:[
+      { q:"I ___ a red bike.", options:["have","has"], answer:"have", th:"ฉันมีจักรยานสีแดง" },
+      { q:"She ___ a cat.", options:["have","has"], answer:"has", th:"เธอมีแมว" },
+      { q:"They ___ three children.", options:["have","has"], answer:"have", th:"พวกเขามีลูกสามคน" },
+      { q:"The cow ___ four legs.", options:["have","has"], answer:"has", th:"วัวมีสี่ขา" },
+      { q:"We ___ English on Monday.", options:["have","has"], answer:"have", th:"เรามีเรียนอังกฤษวันจันทร์" },
+      { q:"My father ___ a big car.", options:["have","has"], answer:"has", th:"พ่อของฉันมีรถคันใหญ่" },
+      { q:"___ you have a sister?", options:["Do","Does"], answer:"Do", th:"เธอมีพี่สาวไหม" },
+      { q:"It ___ a long tail.", options:["have","has"], answer:"has", th:"มันมีหางยาว" },
+    ] },
+  { id:"prep", emoji:"📦", title:"in / on / under", titleTh:"ใน บน ใต้",
+    rules:[
+      { th:"in = ใน", en:"The milk is in the fridge.", pic:"home|FRIDGE" },
+      { th:"on = บน", en:"The book is on the table.", pic:"home|TABLE" },
+      { th:"under = ใต้ · next to = ข้างๆ", en:"The cat is under the bed. The lamp is next to the sofa.", pic:"home|BED" },
+    ],
+    practice:[
+      { q:"The ball is ___ the box. (ในกล่อง)", options:["in","on","under"], answer:"in", th:"ลูกบอลอยู่ในกล่อง" },
+      { q:"The cup is ___ the table. (บนโต๊ะ)", options:["in","on","under"], answer:"on", th:"แก้วอยู่บนโต๊ะ" },
+      { q:"The dog sleeps ___ the bed. (ใต้เตียง)", options:["in","on","under"], answer:"under", th:"หมานอนใต้เตียง" },
+      { q:"Fish live ___ the water.", options:["in","on","under"], answer:"in", th:"ปลาอาศัยในน้ำ" },
+      { q:"Put your hat ___ your head.", options:["in","on","under"], answer:"on", th:"ใส่หมวกบนหัว" },
+      { q:"The shoes are ___ the chair. (ใต้)", options:["in","on","under"], answer:"under", th:"รองเท้าอยู่ใต้เก้าอี้" },
+    ] },
+  { id:"question", emoji:"❓", title:"What / Where / Who / How many", titleTh:"คำถาม อะไร ที่ไหน ใคร กี่",
+    rules:[
+      { th:"What = อะไร · Where = ที่ไหน", en:"What is this? Where is my bag?", pic:"school|BAG" },
+      { th:"Who = ใคร · How many = กี่ (จำนวน)", en:"Who is she? How many apples?", pic:"fruits|APPLE" },
+      { th:"How old = อายุเท่าไหร่ · What color = สีอะไร", en:"How old are you? What color is it?", pic:"colors|RED" },
+    ],
+    practice:[
+      { q:"___ is your name? — My name is Tom.", options:["What","Where","Who"], answer:"What", th:"ชื่ออะไร" },
+      { q:"___ is the cat? — Under the table.", options:["What","Where","Who"], answer:"Where", th:"แมวอยู่ไหน" },
+      { q:"___ is that man? — He is my uncle.", options:["What","Where","Who"], answer:"Who", th:"ผู้ชายคนนั้นคือใคร" },
+      { q:"___ many eggs? — Six.", options:["How","What","Who"], answer:"How", th:"ไข่กี่ฟอง" },
+      { q:"___ old are you? — I am eight.", options:["How","What","Where"], answer:"How", th:"อายุเท่าไหร่" },
+      { q:"___ color is the sky? — Blue.", options:["What","Where","Who"], answer:"What", th:"ท้องฟ้าสีอะไร" },
+    ] },
+];
+
+// ═══════════════════════════════════════════════════════
+// ชีวิตประจำวัน — วัน/เดือน (ใช้ในเกมปฏิทิน) · ตัวเลขเป็นคำ
+// ═══════════════════════════════════════════════════════
+export const DAYS = [
+  ["Monday","วันจันทร์","มัน-เดย์","💛"],["Tuesday","วันอังคาร","ทิวส์-เดย์","💗"],["Wednesday","วันพุธ","เวนส์-เดย์","💚"],
+  ["Thursday","วันพฤหัสบดี","เธิร์ส-เดย์","🧡"],["Friday","วันศุกร์","ฟราย-เดย์","💙"],["Saturday","วันเสาร์","แซท-เทอร์-เดย์","💜"],["Sunday","วันอาทิตย์","ซัน-เดย์","❤️"],
+];
+export const MONTHS = [
+  ["January","มกราคม","แจน-ยู-อะ-รี่"],["February","กุมภาพันธ์","เฟบ-รู-อะ-รี่"],["March","มีนาคม","มาร์ช"],["April","เมษายน","เอ-พริล"],
+  ["May","พฤษภาคม","เมย์"],["June","มิถุนายน","จูน"],["July","กรกฎาคม","จู-ลาย"],["August","สิงหาคม","ออ-กัสท์"],
+  ["September","กันยายน","เซ็พ-เทม-เบอร์"],["October","ตุลาคม","อ็อก-โท-เบอร์"],["November","พฤศจิกายน","โน-เวม-เบอร์"],["December","ธันวาคม","ดี-เซม-เบอร์"],
+];
+const ONES = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"];
+const TENS = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+export function numberWord(n) {
+  if (n < 20) return ONES[n];
+  if (n < 100) return TENS[Math.floor(n / 10)] + (n % 10 ? "-" + ONES[n % 10] : "");
+  if (n < 1000) return ONES[Math.floor(n / 100)] + " hundred" + (n % 100 ? " " + numberWord(n % 100) : "");
+  return "one thousand";
+}
+const TH_ONES = ["ศูนย์","หนึ่ง","สอง","สาม","สี่","ห้า","หก","เจ็ด","แปด","เก้า"];
+export function numberThai(n) {
+  if (n === 0) return "ศูนย์";
+  if (n >= 1000) return "หนึ่งพัน";
+  let s = "";
+  const h = Math.floor(n / 100), t = Math.floor((n % 100) / 10), o = n % 10;
+  if (h) s += TH_ONES[h] + "ร้อย";
+  if (t === 1) s += "สิบ"; else if (t === 2) s += "ยี่สิบ"; else if (t) s += TH_ONES[t] + "สิบ";
+  if (o === 1 && t) s += "เอ็ด"; else if (o) s += TH_ONES[o];
+  return s;
+}
+// อ่านเวลาแบบง่ายสำหรับเด็ก: o'clock / half past / H:MM
+export function timeWord(h, m) {
+  const hw = numberWord(h);
+  if (m === 0) return `${hw} o'clock`;
+  if (m === 30) return `half past ${hw}`;
+  if (m === 15) return `quarter past ${hw}`;
+  if (m === 45) return `quarter to ${numberWord(h % 12 + 1)}`;
+  return `${hw} ${m < 10 ? "oh " : ""}${numberWord(m)}`;
+}
+export function timeThai(h, m) {
+  const base = `${h} นาฬิกา`;
+  return m === 0 ? `${base}ตรง` : m === 30 ? `${base}ครึ่ง` : `${base} ${m} นาที`;
+}
+export const MONEY = [
+  { v:1, emoji:"🪙", name:"เหรียญ 1 บาท" }, { v:2, emoji:"🪙", name:"เหรียญ 2 บาท" }, { v:5, emoji:"🪙", name:"เหรียญ 5 บาท" }, { v:10, emoji:"🪙", name:"เหรียญ 10 บาท" },
+  { v:20, emoji:"💵", name:"แบงก์ 20" }, { v:50, emoji:"💵", name:"แบงก์ 50" }, { v:100, emoji:"💵", name:"แบงก์ 100" },
+];
+
+// ═══════════════════════════════════════════════════════
+// ระดับจากคะแนนสอบวัดระดับ 20 ข้อ
+// ═══════════════════════════════════════════════════════
+export const LEVELS_TEST = [
+  { min:18, level:"A2", th:"เก่งแล้ว",   emoji:"🏆", desc:"รู้คำศัพท์ ประโยค และไวยากรณ์พื้นฐานครบ พร้อมไปต่อระดับถัดไป" },
+  { min:14, level:"A1+", th:"ต่อยอด",   emoji:"🥈", desc:"ใช้คำศัพท์และประโยคง่ายๆ ได้ดี ฝึกไวยากรณ์กับการฟังอีกนิด" },
+  { min:8,  level:"A1", th:"เริ่มต้น",   emoji:"🥉", desc:"รู้คำศัพท์พื้นฐานหลายหมวดแล้ว ฝึกประโยคและการฟังต่อ" },
+  { min:0,  level:"Starter", th:"ก้าวแรก", emoji:"🌱", desc:"เริ่มจากเส้นทางบทเรียนบทที่ 1 และการ์ดคำศัพท์ทีละหมวด" },
 ];

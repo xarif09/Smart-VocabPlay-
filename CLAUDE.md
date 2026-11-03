@@ -13,6 +13,7 @@
 4. มือถือห้ามมีอะไรซ้อนกัน · ปุ่มสูง ≥ 44px
 5. ห้ามเพิ่มไลบรารีถ้าไม่จำเป็น · ใช้ inline CSS (ไม่ใช้ Tailwind)
 6. localStorage ใช้ไม่ได้ แอปต้องยังทำงาน (ครอบ try/catch เสมอ)
+7. ก่อน commit ต้องรัน `npm run build` และ `node scripts/check-ui.cjs` ให้ขึ้น ✅ ALL PASS
 
 ## คำสั่ง
 ```bash
@@ -24,6 +25,8 @@ node scripts/check-ui.cjs   # (ต้องเปิด preview ก่อน) �
 ```
 
 ## โครงสำคัญ
-- โค้ดทั้งแอปอยู่ `src/App.jsx` (ไฟล์เดียว) · `src/main.jsx` แค่ mount
+- `src/App.jsx` = หน้าจอ + เกมทั้งหมด · `src/progress.js` = ดาว/เหรียญ/สติกเกอร์/streak/เพื่อนคู่หู · `src/sfx.js` = เสียงเอฟเฟกต์ (Web Audio) · `src/main.jsx` แค่ mount
+- ทุกเกมรายงานผลผ่าน `track.correct(word)` / `track.wrong(word)` / `track.finish(score,total,opts)` → GameRouter คิดดาว เหรียญ สติกเกอร์ แล้วเปิด ResultScreen
+- localStorage 2 key: `smart-vocabplay:words:v1` (คำศัพท์) · `smart-vocabplay:progress:v1` (ความคืบหน้า)
 - `vite.config.js` → `base: "/Smart-VocabPlay-/"` (ต้องตรงชื่อ repo)
 - Deploy: push เข้า `main` → `.github/workflows/deploy.yml` build แล้วขึ้น GitHub Pages เอง

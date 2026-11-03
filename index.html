@@ -9,6 +9,10 @@
     <style>
       *, *::before, *::after { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; background: #fafafa; -webkit-text-size-adjust: 100%; }
+      button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; font-family: inherit; }
+      @keyframes vpFall { to { transform: translateY(110vh) rotate(720deg); opacity: 0.9; } }
+      @keyframes vpPop { 0% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); } }
+      @keyframes vpBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
     </style>
   </head>
   <body>

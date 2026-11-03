@@ -1,1 +1,30 @@
-{}
+{
+ "House mouse": {
+  "file": "house-mouse.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Mouse_white_background.jpg%3Futm_source%3Den.wikipedia.org%26utm_campaign%3Dapi%26utm_content%3Dthumbnail_unscaled",
+  "artist": "",
+  "license": "",
+  "page": "https://en.wikipedia.org/wiki/House_mouse"
+ },
+ "Human nose": {
+  "file": "human-nose.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Fort_Ross_Elena_wearing_Traditional_Russian_Costume_(cropped).jpg%3Futm_source%3Den.wikipedia.org%26utm_campaign%3Dapi%26utm_content%3Dthumbnail_unscaled",
+  "artist": "",
+  "license": "",
+  "page": "https://en.wikipedia.org/wiki/Human_nose"
+ },
+ "Human leg": {
+  "file": "human-leg.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Gray1240.png%3Futm_source%3Den.wikipedia.org%26utm_campaign%3Dapi%26utm_content%3Dthumbnail_unscaled",
+  "artist": "",
+  "license": "",
+  "page": "https://en.wikipedia.org/wiki/Human_leg"
+ },
+ "Mirror": {
+  "file": "mirror.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Mirror.jpg%3Futm_source%3Den.wikipedia.org%26utm_campaign%3Dapi%26utm_content%3Dthumbnail_unscaled",
+  "artist": "",
+  "license": "",
+  "page": "https://en.wikipedia.org/wiki/Mirror"
+ }
+}

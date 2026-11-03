@@ -34,10 +34,10 @@ add("food", [
 add("school", [
   ["PEN","Ballpoint pen"],["BOOK","Book"],["BAG","Backpack"],["PENCIL","Pencil"],["RULER","Ruler"],["SCISSORS","Scissors"],["NOTEBOOK","Notebook"],
   ["COMPUTER","Laptop"],["CALCULATOR","Calculator"],["GLOBE","Globe"],["CRAYON","Crayon"],["ERASER","Eraser"],["DESK","Desk"],["CHAIR","Chair"],
-  ["CLASSROOM","Classroom"],["TEACHER","Teaching"],["STUDENT","Student"],["HOMEWORK","Homework"],["MAP","Map"],["PAINT","Paint"],
+  ["CLASSROOM","Classroom"],["STUDENT","Student"],["HOMEWORK","Homework"],["MAP","Map"],["PAINT","Paint"],
 ]);
 add("body", [
-  ["EYE","Human eye"],["EAR","Ear"],["NOSE","Human nose"],["HAND","Hand"],["FOOT","Foot"],["MOUTH","Human mouth"],["HAIR","Long hair"],["TOOTH","Human tooth"],
+  ["EYE","Human eye"],["EAR","Ear"],["NOSE","Human nose"],["HAND","Hand"],["FOOT","Foot"],["MOUTH","Human mouth"],["TOOTH","Human tooth"],
   ["FINGER","Finger"],["ARM","Arm"],["TONGUE","Tongue"],["BRAIN","Human brain"],["HEART","Heart"],["BONE","Bone"],
   ["SHOULDER","Shoulder"],
 ]);
@@ -51,8 +51,8 @@ add("vehicles", [
   ["POLICE CAR","Police car"],["ROCKET","Rocket"],["SUBMARINE","Submarine"],["VAN","Van"],["SCOOTER","Kick scooter"],["TUK-TUK","Auto rickshaw"],
 ]);
 add("jobs", [
-  ["DOCTOR","Pediatrics"],["NURSE","Nursing"],["TEACHER","Teaching"],["FARMER","Farmer"],["COOK","Cooking"],["PILOT","Aircraft pilot"],
-  ["POLICE","Police officer"],["FIREFIGHTER","Firefighter"],["ARTIST","Painting"],["ENGINEER","Engineer"],["SINGER","Singing"],["ACTOR","Acting"],
+  ["DOCTOR","Pediatrics"],["NURSE","Nursing"],["FARMER","Farmer"],["COOK","Cooking"],["PILOT","Aircraft pilot"],
+  ["POLICE","Police officer"],["FIREFIGHTER","Firefighter"],["ARTIST","Painting"],["ENGINEER","Engineer"],["SINGER","Singing"],
   ["SOLDIER","Soldier"],["WAITER","Waiting staff"],["SCIENTIST","Laboratory"],["DRIVER","Bus driver"],["BUILDER","Construction worker"],
   ["DENTIST","Dentist"],["BAKER","Baker"],["CHEF","Chef's uniform"],
 ]);
@@ -62,21 +62,21 @@ add("clothes", [
   ["UMBRELLA","Umbrella"],["BELT","Belt (clothing)"],["TIE","Necktie"],["COAT","Coat (clothing)"],["UNIFORM","School uniforms in Thailand"],
 ]);
 add("home", [
-  ["BED","Bedroom"],["CHAIR","Chair"],["TABLE","Dining room"],["WINDOW","Window"],["TV","Television"],["PHONE","Smartphone"],
+  ["BED","Bedroom"],["CHAIR","Chair"],["TABLE","Dining room"],["WINDOW","Window"],["PHONE","Smartphone"],
   ["CLOCK","Alarm clock"],["LAMP","Lampshade"],["SOFA","Couch"],["MIRROR","Mirror"],["BATH","Bathtub"],["FRIDGE","Refrigerator"],["STOVE","Kitchen stove"],
   ["SINK","Sink"],["TOILET","Flush toilet"],["BOOKSHELF","Bookcase"],["COMPUTER","Personal computer"],["KITCHEN","Kitchen"],
   ["TOOTHBRUSH","Toothbrush"],["TOWEL","Towel"],["SOAP","Soap"],["PILLOW","Pillow"],["BLANKET","Quilt"],["KEY","Key (lock)"],["CUP","Mug"],
   ["PLATE","Tableware"],["SPOON","Spoon"],["FORK","Fork"],
 ]);
 add("nature", [
-  ["TREE","Tree"],["FLOWER","Flower"],["MOUNTAIN","Mountain"],["RIVER","River"],["OCEAN","Sea"],["GRASS","Grass"],["LEAF","Leaf"],["ROCK","Pebble"],
+  ["TREE","Tree"],["FLOWER","Flower"],["MOUNTAIN","Mountain"],["RIVER","River"],["OCEAN","Wind wave"],["GRASS","Grass"],["LEAF","Leaf"],["ROCK","Pebble"],
   ["MOON","Moon"],["STAR","Night sky"],["SUN","Sunset"],["CLOUD","Cumulus cloud"],["LAKE","Lake"],["FOREST","Forest"],["DESERT","Desert"],["ISLAND","Phi Phi Islands"],
-  ["CAVE","Cave"],["WATERFALL","Waterfall"],["VOLCANO","Volcano"],["RAINBOW","Rainbow"],["SKY","Daylight"],["FIRE","Fire"],
+  ["CAVE","Cave"],["WATERFALL","Waterfall"],["VOLCANO","Volcano"],["RAINBOW","Rainbow"],["FIRE","Fire"],
 ]);
 add("sports", [
   ["FOOTBALL","Association football"],["BASKETBALL","Basketball"],["TENNIS","Tennis"],["SWIMMING","Swimming (sport)"],["RUNNING","Running"],
   ["CYCLING","Cycling"],["BOXING","Muay Thai"],["GOLF","Golf"],["VOLLEYBALL","Volleyball"],["BASEBALL","Baseball"],["BADMINTON","Badminton"],
-  ["SKATEBOARD","Skateboarding"],["SKIING","Alpine skiing"],["SURFING","Surfing"],["YOGA","Yoga as exercise"],["TABLE TENNIS","Table tennis"],["DANCING","Dance"],
+  ["SKATEBOARD","Skateboarding"],["SKIING","Ski"],["SURFING","Surfing"],["YOGA","Yoga as exercise"],["TABLE TENNIS","Table tennis"],["DANCING","Dance"],
   ["TROPHY","Trophy"],["MEDAL","Gold medal"],["JUMP","Long jump"],
 ]);
 add("actions", [

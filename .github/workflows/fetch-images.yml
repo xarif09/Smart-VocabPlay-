@@ -3,6 +3,12 @@ name: Fetch word images
 # ดาวน์โหลดรูปจริงจาก Wikipedia ตาม src/images.js แล้ว commit เข้า branch ที่สั่งรัน
 # (เครื่องพัฒนาบางเครื่องต่อ Wikipedia ไม่ได้ แต่ runner ของ GitHub ต่อได้)
 on:
+  # รันเองเมื่อรายชื่อบทความหรือสคริปต์เปลี่ยน (บน branch งานด้วย — ไม่ต้องรอขึ้น main)
+  push:
+    paths:
+      - src/images.js
+      - scripts/fetch-images.mjs
+      - .github/workflows/fetch-images.yml
   workflow_dispatch:
     inputs:
       force:
@@ -21,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/fetch-images.mjs ${{ inputs.force && '--force' || '' }}
+      - run: node scripts/fetch-images.mjs ${{ (github.event_name == 'workflow_dispatch' && inputs.force) && '--force' || '' }}
       - name: Commit images
         run: |
           git config user.name "github-actions[bot]"

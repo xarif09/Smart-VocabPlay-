@@ -1,6 +1,6 @@
 // Service Worker — ให้เล่นออฟไลน์ได้หลังเปิดครั้งแรก
 // หน้า (navigate) = ลองเน็ตก่อน ไม่ได้ค่อยใช้แคช · ไฟล์อื่นในโดเมนเดียวกัน = ใช้แคชก่อน
-const CACHE = "vocabplay-v2";
+const CACHE = "vocabplay-v3";
 const IMG_CACHE = "vocabplay-img-v1";   // รูปจาก Wikipedia (แยกแคช ไม่ล้างตอนอัปเดตแอป)
 const SHELL = ["./", "./index.html", "./manifest.webmanifest"];
 
@@ -15,9 +15,10 @@ self.addEventListener("install", e => {
         .filter(u => /\/assets\/|\.png$|\.webmanifest$/.test(u) && !u.startsWith("http") && !u.startsWith("data:"));
     } catch (_) {}
     await Promise.all([...SHELL, ...assets].map(u => c.add(u).catch(() => {})));
-    await self.skipWaiting();
+    // ไม่ skipWaiting อัตโนมัติ: รอให้ผู้ใช้กด "อัปเดต" (กันรีโหลดกลางเกม)
   })());
 });
+self.addEventListener("message", e => { if (e.data === "SKIP_WAITING") self.skipWaiting(); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE && k !== IMG_CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });

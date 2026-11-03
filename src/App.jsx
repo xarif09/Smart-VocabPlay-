@@ -14,6 +14,10 @@ import { sfx, unlockSfx, setSfxEnabled } from "./sfx.js";
 // 2. Voices may not load until after first speak attempt
 // 3. cancel() + immediate speak() can drop speech — use 50ms gap
 
+// เลขเวอร์ชัน (จาก package.json) + เวลา build — โชว์บนหน้าแรก/ตั้งค่า เพื่อให้รู้ว่าเครื่องโหลดเวอร์ชันไหนอยู่
+export const APP_VERSION = typeof __APP_VERSION__ !== "undefined" ? __APP_VERSION__ : "dev";
+export const BUILD_TIME = typeof __BUILD_TIME__ !== "undefined" ? __BUILD_TIME__ : "";
+
 let voices = [];
 let audioUnlocked = false;
 
@@ -660,6 +664,8 @@ export default function App() {
   const [progress, setProgress] = useState(() => loadProgress(loadProfiles().current));
   const [showProfiles, setShowProfiles] = useState(false);
   const [installEvt, setInstallEvt] = useState(null);
+  const [updateReg, setUpdateReg] = useState(null);   // service worker เวอร์ชันใหม่รออยู่
+  useEffect(() => { const h = e => setUpdateReg(e.detail); window.addEventListener("vp-update", h); return () => window.removeEventListener("vp-update", h); }, []);
   const [installHidden, setInstallHidden] = useState(() => { try { return localStorage.getItem("smart-vocabplay:install-hidden") === "1"; } catch (_) { return false; } });
   const [soundOn, setSoundOn] = useState(true);
   const [bilingual, setBilingual] = useState(true);
@@ -871,6 +877,19 @@ export default function App() {
         />
       )}
 
+      {/* UPDATE BANNER — มีเวอร์ชันใหม่ */}
+      {updateReg && (
+        <div style={{ position:"fixed",left:12,right:12,bottom:16,zIndex:8900,background:"#1f2937",color:"#fff",borderRadius:16,padding:"10px 12px 10px 16px",display:"flex",alignItems:"center",gap:10,boxShadow:"0 10px 30px rgba(0,0,0,0.3)",maxWidth:456,margin:"0 auto" }}>
+          <div style={{ flex:1,minWidth:0 }}>
+            <div style={{ fontWeight:800,fontSize:13 }}>🎁 มีเวอร์ชันใหม่ของแอป</div>
+            <div style={{ fontSize:11,opacity:0.8 }}>ตอนนี้ v{APP_VERSION} · แตะอัปเดตเพื่อโหลดของใหม่</div>
+          </div>
+          <button onClick={() => { try { updateReg.waiting?.postMessage("SKIP_WAITING"); } catch (_) {} setTimeout(() => window.location.reload(), 1500); }}
+            style={{ minHeight:44,padding:"0 14px",borderRadius:12,border:"none",background:"#10b981",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer" }}>อัปเดต</button>
+          <button onClick={() => setUpdateReg(null)} style={{ width:44,height:44,borderRadius:12,border:"none",background:"transparent",color:"#9ca3af",fontSize:18,cursor:"pointer" }}>✕</button>
+        </div>
+      )}
+
       {/* TOAST */}
       {toast && (
         <div style={{
@@ -918,7 +937,8 @@ function SoundUnlockScreen({ onUnlock }) {
         🔊 แตะเพื่อเริ่มเลย!
       </button>
       <p style={{ fontSize:11, color:"#9ca3af", marginTop:16 }}>
-        * แตะปุ่มนี้เพื่อเปิดใช้เสียงบนมือถือ
+        * แตะปุ่มนี้เพื่อเปิดใช้เสียงบนมือถือ<br/>
+        <span style={{ fontWeight:700,color:"#6b7280" }}>v{APP_VERSION}</span>{BUILD_TIME && <span> · build {BUILD_TIME}</span>}
       </p>
     </div>
   );
@@ -2241,7 +2261,8 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
     <div style={{ position:"fixed",inset:0,zIndex:200,display:"flex",flexDirection:"column",justifyContent:"flex-end",background:"rgba(0,0,0,0.4)" }} onClick={onClose}>
       <div onClick={e=>e.stopPropagation()} style={{ background:"#fff",borderRadius:"22px 22px 0 0",padding:"20px 20px 36px",maxWidth:480,width:"100%",margin:"0 auto",maxHeight:"90dvh",overflowY:"auto" }}>
         <div style={{ width:38,height:4,background:"#e5e7eb",borderRadius:999,margin:"0 auto 18px" }}/>
-        <h3 style={{ fontWeight:800,fontSize:17,color:"#1f2937",margin:"0 0 18px" }}>⚙️ ตั้งค่าเสียง</h3>
+        <h3 style={{ fontWeight:800,fontSize:17,color:"#1f2937",margin:"0 0 4px" }}>⚙️ ตั้งค่า</h3>
+        <div style={{ fontSize:11,color:"#9ca3af",marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
         <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
         <TRow label="รูปภาพจริง" desc="ดึงรูปจาก Wikipedia (ต้องมีเน็ตครั้งแรก) · ปิด = ใช้อีโมจิ" on={realPics} set={setRealPics} />

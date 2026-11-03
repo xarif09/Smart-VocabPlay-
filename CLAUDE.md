@@ -14,6 +14,8 @@
 5. ห้ามเพิ่มไลบรารีถ้าไม่จำเป็น · ใช้ inline CSS (ไม่ใช้ Tailwind)
 6. localStorage ใช้ไม่ได้ แอปต้องยังทำงาน (ครอบ try/catch เสมอ)
 7. ก่อน commit ต้องรัน `npm run build` และ `node scripts/check-ui.cjs` ให้ขึ้น ✅ ALL PASS
+8. **ทุกครั้งที่ส่งงาน ต้องขยับ `version` ใน package.json** (โชว์บนหน้าแรก + ตั้งค่า) และบอกเลขเวอร์ชันในสรุป
+9. ก่อน push ซ้ำเข้า branch เดิม ต้องเช็กว่า PR ยัง open อยู่ · ถ้า merge แล้วให้ merge main เข้ามาแล้วเปิด PR ใหม่ (งานที่ push หลัง merge จะไม่ขึ้นเว็บ)
 
 ## คำสั่ง
 ```bash

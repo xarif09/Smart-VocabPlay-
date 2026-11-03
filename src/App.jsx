@@ -3,6 +3,7 @@ import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl, bundledCount 
 import { DIALOGUES, STORIES, PHONICS, GRAMMAR, DAYS, MONTHS, MONEY, numberWord, numberThai, timeWord, timeThai, LEVELS_TEST } from "./content.js";
 import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER_NEED, PETS, getPet, petLevel, EMPTY_PROGRESS,
   srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today,
+  tickCare, careMood, CARE_ACTIONS, CARE_MAX, FOODS, ROOM_ITEMS,
   loadProfiles, saveProfiles, deleteProgress, AVATARS, buildUnits, UNIT_STEPS, unitDone, unitSteps, markUnitStep, similarity } from "./progress.js";
 import { lexOf } from "./lexicon.js";
 import { sfx, unlockSfx, setSfxEnabled, startMusic, stopMusic } from "./sfx.js";
@@ -1462,6 +1463,7 @@ export default function App() {
   const goManage   = () => setScreen("manage");
   const goStickers = () => setScreen("stickers");
   const goShop     = () => setScreen("shop");
+  const goRoom     = () => setScreen("room");
   const goReport   = () => setScreen("report");
   const goCredits  = () => setScreen("credits");
   const goLearn    = () => { setScreen("learn"); enterFullscreen(); speakTh("การ์ดคำศัพท์ แตะการ์ดเพื่อดูความหมาย ถ้ารู้แล้วแตะปุ่มสีเขียว"); };
@@ -1523,7 +1525,7 @@ export default function App() {
   const immersive = ["game", "learn", "versus"].includes(screen);
   const showNav = !immersive && screen !== "credits" && !showSettings && !showProfiles;   // ซ่อนแท็บล่างตอนเปิดแผ่นตั้งค่า/โปรไฟล์
   const immersiveBg = activeCat?.color ? `linear-gradient(160deg, ${activeCat.color} 0%, ${activeCat.color}cc 35%, #1e1b4b 100%)` : "linear-gradient(160deg,#6d5dfc,#1e1b4b)";
-  const headerTitle = ({ home:"", learnhub:"เรียน", playhub:"เล่น", me:"ของฉัน", manage:"จัดการคำศัพท์", stickers:"สมุดสติกเกอร์", shop:"ร้านค้า", report:"รายงานผู้ปกครอง", credits:"เครดิตรูปภาพ", path:"เส้นทางบทเรียน", talk:"บทสนทนา", stories:"นิทานภาพ", phonics:"โฟนิกส์", grammar:"ไวยากรณ์", daily:"ชีวิตประจำวัน", test:"สอบวัดระดับ", versus:"แข่ง 2 คน" })[screen] ?? (activeCat?.label || "");
+  const headerTitle = ({ home:"", learnhub:"เรียน", playhub:"เล่น", me:"ของฉัน", manage:"จัดการคำศัพท์", stickers:"สมุดสติกเกอร์", shop:"ร้านค้า", room:"ห้องเพื่อนคู่หู", report:"รายงานผู้ปกครอง", credits:"เครดิตรูปภาพ", path:"เส้นทางบทเรียน", talk:"บทสนทนา", stories:"นิทานภาพ", phonics:"โฟนิกส์", grammar:"ไวยากรณ์", daily:"ชีวิตประจำวัน", test:"สอบวัดระดับ", versus:"แข่ง 2 คน" })[screen] ?? (activeCat?.label || "");
 
   // คำที่ถึงกำหนดทบทวนวันนี้ (SRS) + คำที่เคยพลาด เรียงจากพลาดบ่อยสุด
   const missedWords = useMemo(() => {
@@ -1561,7 +1563,7 @@ export default function App() {
         {screen === "home" && (
           <HomeScreen categories={CATEGORIES} words={words} onPickCat={goCat}
             progress={progress} setProgress={setProgress} stickerCount={stickerCount}
-            missedCount={missedWords.length} onReview={goReview} onStickers={goStickers} onShop={goShop} onPath={goPath} onTalk={goTalk} onStories={goStories} onPhonics={goPhonics} onGrammar={goGrammar} onDaily={goDaily} onTest={goTest} onVersus={goVersus} speak={speak}
+            missedCount={missedWords.length} onReview={goReview} onStickers={goStickers} onShop={goShop} onRoom={goRoom} onPath={goPath} onTalk={goTalk} onStories={goStories} onPhonics={goPhonics} onGrammar={goGrammar} onDaily={goDaily} onTest={goTest} onVersus={goVersus} speak={speak}
             units={units} profile={profiles.list.find(x => x.id === profiles.current)} onProfiles={() => setShowProfiles(true)}
             install={!installHidden ? { evt: installEvt, onInstall: async () => { try { installEvt.prompt(); const r = await installEvt.userChoice; if (r?.outcome === "accepted") showToast("ติดตั้งแล้ว 📲"); } catch (_) {} setInstallEvt(null); },
               onDismiss: () => { setInstallHidden(true); try { localStorage.setItem("smart-vocabplay:install-hidden", "1"); } catch (_) {} } } : null} />
@@ -1577,7 +1579,7 @@ export default function App() {
         )}
         {screen === "me" && (
           <MeHub words={words} progress={progress} setProgress={setProgress} stickerCount={stickerCount} profile={profiles.list.find(x => x.id === profiles.current)}
-            onProfiles={() => setShowProfiles(true)} onStickers={goStickers} onShop={goShop} onReport={goReport} onManage={goManage} onSettings={() => setShowSettings(true)} onCredits={goCredits} speak={speak} />
+            onProfiles={() => setShowProfiles(true)} onStickers={goStickers} onShop={goShop} onRoom={goRoom} onReport={goReport} onManage={goManage} onSettings={() => setShowSettings(true)} onCredits={goCredits} speak={speak} />
         )}
         {screen === "learn" && activeCat && (
           <FlashCards cat={activeCat} words={catWords} speak={speak} speakAt={speakAt} setProgress={setProgress} showToast={showToast}
@@ -1625,6 +1627,9 @@ export default function App() {
             showToast={showToast} onBack={goBack}
             progress={progress} setProgress={setProgress} allWords={words} speakAt={speakAt}
           />
+        )}
+        {screen === "room" && (
+          <PetRoom progress={progress} setProgress={setProgress} speak={speak} showToast={showToast} onShop={goShop} />
         )}
         {screen === "shop" && (
           <ShopScreen progress={progress} setProgress={setProgress} showToast={showToast} />
@@ -1818,7 +1823,9 @@ const Btn = ({ onClick, children, style={} }) => (
 // ═══════════════════════════════════════════════════════
 // HOME SCREEN
 // ═══════════════════════════════════════════════════════
-function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, onPath, onTalk, onStories, onPhonics, onGrammar, onDaily, onTest, onVersus, speak, units, profile, onProfiles, install }) {
+function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, onRoom, onPath, onTalk, onStories, onPhonics, onGrammar, onDaily, onTest, onVersus, speak, units, profile, onProfiles, install }) {
+  const careNow = progress.pet ? tickCare(progress.care) : null;
+  const careAvg = careNow ? (careNow.hunger + careNow.clean + careNow.fun + careNow.energy) / 4 : 100;
   const unitsDone = units.filter(u => unitDone(progress.path, u)).length;
   const nextUnit = units.find(u => !unitDone(progress.path, u));
   const pet = getPet(progress);
@@ -1836,8 +1843,9 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
           <div style={{ position:"absolute",width:140,height:140,borderRadius:"50%",background:"rgba(34,211,238,0.25)",bottom:-60,left:-30,filter:"blur(10px)",animation:"vpFloatY 8s 1s ease-in-out infinite" }} />
           <span className="vp-shimmer" style={{ position:"absolute",inset:0,pointerEvents:"none",opacity:.5 }} />
           <div style={{ display:"flex",alignItems:"center",gap:14,position:"relative" }}>
-            <button onClick={() => { sfx.tap(); speak(`Hi! Let's learn English!`, `สวัสดี มาเรียนภาษาอังกฤษกันเถอะ`); }} style={{ width:92,height:92,borderRadius:28,background:"rgba(255,255,255,0.22)",backdropFilter:"blur(8px)",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0,flexShrink:0 }}>
-              <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={pet.stage===0?46:52} mood={missedCount > 5 ? "sad" : "idle"} bounce />
+            <button onClick={() => { sfx.tap(); speak(`Hi! Let's learn English!`, `สวัสดี มาเรียนภาษาอังกฤษกันเถอะ`); onRoom(); }} style={{ width:92,height:92,borderRadius:28,background:"rgba(255,255,255,0.22)",backdropFilter:"blur(8px)",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0,flexShrink:0,position:"relative" }}>
+              <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={pet.stage===0?46:52} mood={careNow?.sleeping ? "sleepy" : careAvg < 40 || missedCount > 5 ? "sad" : careAvg >= 75 ? "happy" : "idle"} bounce />
+              {careAvg < 40 && !careNow?.sleeping && <span style={{ position:"absolute",top:-6,right:-6,background:"#f43f5e",color:"#fff",borderRadius:999,fontSize:11,fontWeight:900,padding:"2px 7px",animation:"vpBounce 1s infinite" }}>!</span>}
             </button>
             <div style={{ flex:1,minWidth:0 }}>
               <div style={{ fontSize:12,opacity:0.85,fontWeight:600 }}>เพื่อนคู่หู · Lv.{pet.level}</div>
@@ -1848,6 +1856,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
           </div>
           <div style={{ display:"flex",gap:8,marginTop:14,position:"relative",flexWrap:"wrap" }}>
             <button onClick={() => { sfx.tap(); onStickers(); }} style={{ flex:1,minHeight:46,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>📒 {stickerCount}/{words.length}</button>
+            <button onClick={() => { sfx.tap(); onRoom(); }} style={{ flex:1,minHeight:46,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>🏠 ห้อง{careAvg < 40 ? " ❗" : ""}</button>
             <button onClick={() => { sfx.tap(); onShop(); }} style={{ flex:1,minHeight:46,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>🛍️ ร้านค้า</button>
             <button onClick={() => { sfx.tap(); onProfiles(); }} style={{ flex:1,minHeight:46,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>{profile?.avatar} {profile?.name} ▾</button>
           </div>
@@ -1968,7 +1977,7 @@ function PlayHub({ words, categories, progress, missedCount, onCat, onReview, on
     </div>
   );
 }
-function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles, onStickers, onShop, onReport, onManage, onSettings, onCredits, speak }) {
+function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles, onStickers, onShop, onRoom, onReport, onManage, onSettings, onCredits, speak }) {
   const pet = getPet(progress);
   const mastered = words.filter(w => isMastered(progress.srs, w.id)).length;
   const Stat = ({ v, l }) => <div style={{ textAlign:"center" }}><div style={{ fontWeight:800,fontSize:18,color:T.ink }}>{v}</div><div style={{ fontSize:11,color:T.ink3 }}>{l}</div></div>;
@@ -1982,6 +1991,7 @@ function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles
       <div style={{ ...card(),padding:"14px 10px",marginBottom:12,display:"grid",gridTemplateColumns:"repeat(4,1fr)" }}>
         <Stat v={progress.coins} l="🪙 เหรียญ" /><Stat v={Object.values(progress.stars).reduce((a,b)=>a+b,0)} l="⭐ ดาว" /><Stat v={`${progress.streak.count}`} l="🔥 วันต่อเนื่อง" /><Stat v={mastered} l="จำได้แม่น" />
       </div>
+      <HubRow emoji="🏠" title="ห้องเพื่อนคู่หู" sub="ให้อาหาร อาบน้ำ เล่น นอน · แต่งห้อง" grad="linear-gradient(135deg,#fb7185,#f59e0b)" onClick={onRoom} />
       <HubRow emoji="📒" title="สมุดสติกเกอร์" sub={`เก็บได้ ${stickerCount}/${words.length} ใบ`} grad="linear-gradient(135deg,#a855f7,#ec4899)" onClick={onStickers} />
       <HubRow emoji="🛍️" title="ร้านค้า" sub="หมวกและพื้นหลังให้เพื่อนคู่หู" grad="linear-gradient(135deg,#f59e0b,#fb923c)" onClick={onShop} />
       <HubRow emoji="📊" title="รายงานผู้ปกครอง" sub="ความแม่นยำ หมวดที่อ่อน คำที่พลาดบ่อย" grad="linear-gradient(135deg,#0ea5e9,#6366f1)" onClick={onReport} />
@@ -2408,7 +2418,7 @@ function Confetti({ count = 56 }) {
 // SHARED GAME UI
 // ═══════════════════════════════════════════════════════
 const GS = { // game styles (immersive)
-  wrap: { padding:"6px 12px 24px",maxWidth:460,margin:"0 auto" },
+  wrap: { padding:"6px 12px 24px",maxWidth:520,margin:"0 auto" },
   card: { background:"#fff",borderRadius:28,boxShadow:"0 18px 44px rgba(15,23,42,0.25)",overflow:"hidden" },
   bar: { display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 18px 8px",fontSize:13,fontWeight:800,color:"#475569" },
   body: { padding:"6px 16px 18px" },
@@ -2435,14 +2445,14 @@ function useWordImage(w) {
   return { url: url || "", title, loading: title && url === undefined };
 }
 // รูปคำศัพท์: มีรูปจริง → แสดงรูป (อีโมจิเล็กๆ มุมขวาล่าง) · ไม่มี/โหลดไม่ได้ → อีโมจิ
-function Pic({ w, size = 72, radius = 18, style = {} }) {
+function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
   const { url } = useWordImage(w);
   const [err, setErr] = useState(false);
   useEffect(() => setErr(false), [url]);
   if (!url || err) return <span style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
-  const box = size * 2.2;
+  const box = fill ? "100%" : size * 2.2;
   return (
-    <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:"4/3",borderRadius:radius,overflow:"hidden",background:"#e2e8f0",boxShadow:"0 6px 18px rgba(15,23,42,0.15)",...style }}>
+    <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:fill?"16/11":"4/3",maxHeight:fill?"44vh":undefined,borderRadius:fill?22:radius,overflow:"hidden",background:"#e2e8f0",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
       {/* พื้นหลังเบลอจากรูปเดียวกัน + รูปเต็มใบ (contain) → ไม่ตัดหัว/ตัวสัตว์ */}
       <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75 }} />
       <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"relative",width:"100%",height:"100%",objectFit:"contain",display:"block" }} />
@@ -2464,8 +2474,8 @@ function PicFill({ w, emojiSize = 40, fit }) {
     <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",borderRadius:"inherit" }} />
   </>;
 }
-function Emoji({ e, w, size=72 }) {
-  return <div style={{ textAlign:"center",lineHeight:1,padding:"12px 0 6px",display:"flex",justifyContent:"center" }}>{w ? <Pic w={w} size={size} /> : <span style={{ fontSize:size }}>{e}</span>}</div>;
+function Emoji({ e, w, size=72, fill=true }) {
+  return <div style={{ textAlign:"center",lineHeight:1,padding:"6px 0 8px",display:"flex",justifyContent:"center" }}>{w ? <Pic w={w} size={size} fill={fill} /> : <span style={{ fontSize:size*1.3 }}>{e}</span>}</div>;
 }
 function SndBtn({ onClick }) { return <button onClick={onClick} style={GS.soundBtn}>🔊 ฟัง EN+TH</button>; }
 function Pill({ onClick, disabled, bg="#6366f1", children }) {
@@ -2658,7 +2668,7 @@ function MemoryGame({ words, speak, track, onBack }) {
       <Bar left={`${matched.length}/${PAIRS} คู่`} right={`${moves} ครั้ง`} />
       <div style={GS.body}>
         <p style={{ textAlign:"center",fontSize:12,color:"#6b7280",margin:"0 0 10px" }}>พลิกการ์ดทีละ 2 ใบ หาคู่ คำ + รูป</p>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:7 }}>
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10 }}>
           {cards.map(c=>{
             const sf=!!open.find(x=>x.uid===c.uid)||matched.includes(c.mid);
             const im=matched.includes(c.mid);
@@ -3105,7 +3115,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
             if(sr&&ip&&!ic){bg="#fee2e2";bo="#fca5a5";tc="#991b1b";}
             if(lock&&!ip&&!ic){bg="#f9fafb";bo="#e5e7eb";tc="#9ca3af";}
             return <button key={c.id} onClick={()=>pick(c)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:12,padding:q.mode==="rev"?0:"12px 6px",minHeight:q.mode==="rev"?84:56,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:12,padding:q.mode==="rev"?0:"12px 6px",minHeight:q.mode==="rev"?"min(20vh, 140px)":56,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
               {q.mode==="rev"?<PicFill w={c} emojiSize={34} />:c.word}
             </button>;
           })}
@@ -3353,10 +3363,10 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
         <span>📖 การ์ดที่ {i+1}/{deck.length}</span><span>😎 รู้แล้ว {know}</span>
       </div>
       <button onClick={() => { sfx.tap(); if (!flip) speak(w.word, w.meaning); setFlip(f => !f); }}
-        style={{ width:"100%",minHeight:320,borderRadius:28,border:"none",background:"transparent",cursor:"pointer",padding:0,perspective:1200,position:"relative",fontFamily:FONT }}>
+        style={{ width:"100%",minHeight:"min(62vh, 520px)",borderRadius:28,border:"none",background:"transparent",cursor:"pointer",padding:0,perspective:1200,position:"relative",fontFamily:FONT }}>
         <span key={w.id} style={{ position:"absolute",inset:0,transformStyle:"preserve-3d",transition:"transform .65s cubic-bezier(.2,.8,.2,1)",transform:flip?"rotateY(180deg)":"rotateY(0deg)",animation:"vpInScale .45s both" }}>
           <span style={{ position:"absolute",inset:0,borderRadius:28,backfaceVisibility:"hidden",WebkitBackfaceVisibility:"hidden",background:"#fff",border:`3px solid ${cat.color}50`,boxShadow:"0 18px 44px rgba(0,0,0,.18)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:20 }}>
-            <Pic w={w} size={84} radius={20} />
+            <Pic w={w} size={84} fill style={{ maxHeight:"36vh" }} />
             <span style={{ fontSize:34,fontWeight:900,color:"#1f2937",letterSpacing:1 }}>{w.word}</span>
             {w.read && <span style={{ fontSize:18,fontWeight:700,color:"#7c3aed" }}>{w.read}</span>}
             <span style={{ fontSize:11,color:"#9ca3af",marginTop:8 }}>แตะการ์ดเพื่อพลิกดูความหมาย</span>
@@ -3428,7 +3438,7 @@ function ListenGame({ words, speakAt, track, onBack, pool }) {
             if (sr && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; }
             if (sr && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; }
             return <button key={c.id} onClick={() => pick(c)} disabled={lock || !played}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:14,minHeight:96,fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,minHeight:"min(22vh, 150px)",fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
           })}
         </div>
       </div>
@@ -4302,7 +4312,7 @@ function PhonicsGame({ words, speakAt, track, onBack }) {
     <GameCard>
       <Bar left={`🔤 ${i+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <div style={{ display:"flex",justifyContent:"center",marginBottom:6 }}><Pic w={q.w} size={60} /></div>
+        <div style={{ display:"flex",justifyContent:"center",marginBottom:6 }}><Pic w={q.w} size={60} fill style={{ maxHeight:"30vh" }} /></div>
         <SndBtn onClick={() => { setPlayed(true); speakAt(q.w.word, null, 0.75); }} />
         <p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:"#374151",margin:"0 0 10px",minHeight:20 }}>
           {picked ? <span style={{ color:"#7c3aed" }}>{q.w.word} · {q.w.read} · {q.w.meaning}</span> : played ? "คำนี้ขึ้นต้นด้วยตัวอะไร?" : "แตะฟังก่อน แล้วเลือกตัวอักษรตัวแรก"}
@@ -4769,6 +4779,135 @@ function VersusScreen({ words, categories, speak, setProgress, showToast, onExit
         <button onClick={onExit} style={{ minHeight:44,borderRadius:12,border:"none",background:"transparent",color:"#9ca3af",fontSize:12,fontWeight:700,cursor:"pointer" }}>ออก</button>
       </div>
       {half(0, false)}
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════
+// PET ROOM — ห้องเพื่อนคู่หู: ดูแล (ให้อาหาร/อาบน้ำ/เล่น/นอน) + แต่งห้อง
+//  เพื่อนพูดภาษาอังกฤษทุกครั้งที่ดูแล · ค่าสถานะลดตามเวลาจริง (tickCare)
+// ═══════════════════════════════════════════════════════
+function PetRoom({ progress, setProgress, speak, showToast, onShop }) {
+  const pet = getPet(progress);
+  const care = useMemo(() => tickCare(progress.care), [progress.care]);
+  const [anim, setAnim] = useState(null);      // eat | wash | play | sleep
+  const [feedOpen, setFeedOpen] = useState(false);
+  const [tab, setTab] = useState("care");       // care | room
+  const [bubble, setBubble] = useState(null);
+  // sync tick ทุก 60 วิ
+  useEffect(() => { const t = setInterval(() => setProgress(p => ({ ...p, care: tickCare(p.care) })), 60000); setProgress(p => ({ ...p, care: tickCare(p.care) })); return () => clearInterval(t); }, []);
+  if (!pet) return <div style={{ padding:24,textAlign:"center",color:T.ink2 }}>เลือกเพื่อนคู่หูที่หน้าแรกก่อนนะ</div>;
+  const mood = anim === "eat" || anim === "play" ? "excited" : anim === "sleep" || care.sleeping ? "sleepy" : careMood(care);
+  const say = (en, th) => { setBubble(en); speak(en, th); setTimeout(() => setBubble(null), 2600); };
+  const doAction = (a, food) => {
+    if (care.sleeping && a.id !== "sleep") { showToast(`${pet.name} กำลังนอน ปลุกก่อนนะ 💤`, "warn"); return; }
+    if (a.id === "sleep") {
+      setProgress(p => ({ ...p, care: { ...tickCare(p.care), sleeping: !tickCare(p.care).sleeping } }));
+      if (!care.sleeping) say(a.en, a.th); else say("Good morning!", "อรุณสวัสดิ์");
+      setAnim("sleep"); setTimeout(() => setAnim(null), 1200); return;
+    }
+    const cost = food ? food.cost : a.cost;
+    if (cost && progress.coins < cost) { sfx.bad(); showToast(`เหรียญไม่พอ (ต้องการ ${cost} 🪙) ไปเล่นเกมเก็บเหรียญก่อนนะ`, "warn"); return; }
+    if (a.energyCost && care.energy < a.energyCost) { showToast(`${pet.name} เหนื่อยแล้ว ให้นอนก่อน 😴`, "warn"); return; }
+    const gain = food ? food.gain : a.gain;
+    sfx.coin(); fx.burst(innerWidth / 2, 240, { count: 16 }); setAnim(a.anim); setTimeout(() => setAnim(null), 1400);
+    setProgress(p => {
+      const c = tickCare(p.care); const today = new Date().toDateString();
+      const first = c.lastCareDay !== today;
+      const n = { ...c, [a.stat]: Math.min(CARE_MAX, c[a.stat] + gain), energy: Math.max(0, c.energy - (a.energyCost || 0)), lastCareDay: today, streakCare: first ? (c.streakCare || 0) + 1 : c.streakCare, fedToday: a.id === "feed" ? (first ? 1 : (c.fedToday || 0) + 1) : (first ? 0 : c.fedToday) };
+      const bonus = first ? 5 : 0; if (bonus) setTimeout(() => showToast(`ดูแลเพื่อนวันแรกของวัน +${bonus} 🪙`), 300);
+      return bumpDaily({ ...p, coins: p.coins - cost + bonus, care: n, totalCorrect: p.totalCorrect + (a.id === "play" ? 1 : 0) }, "care", 1);
+    });
+    if (food) say(`Yummy ${food.en}! Thank you!`, `${food.name}อร่อยจัง ขอบคุณนะ`); else say(a.en, a.th);
+    setFeedOpen(false);
+  };
+  const Stat = ({ icon, label, v, color }) => (
+    <div style={{ flex:1,minWidth:0 }}>
+      <div style={{ display:"flex",justifyContent:"space-between",fontSize:11,fontWeight:800,color:T.ink2 }}><span>{icon} {label}</span><span style={{ color:v<30?"#dc2626":T.ink2 }}>{Math.round(v)}</span></div>
+      <div style={{ height:8,background:"rgba(148,163,184,.25)",borderRadius:999,overflow:"hidden",marginTop:3 }}><div style={{ height:"100%",width:`${v}%`,background:v<30?"linear-gradient(90deg,#f43f5e,#fb923c)":color,borderRadius:999,transition:"width .6s" }} /></div>
+    </div>
+  );
+  const on = slot => ROOM_ITEMS.find(i => i.id === progress.roomOn?.[slot]);
+  const avg = (care.hunger + care.clean + care.fun + care.energy) / 4;
+  return (
+    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
+      {/* ห้อง */}
+      <div style={{ position:"relative",borderRadius:28,overflow:"hidden",height:300,boxShadow:T.shadowLg,background:care.sleeping?"linear-gradient(180deg,#1e1b4b 0%,#312e81 60%,#3b2a5a 100%)":"linear-gradient(180deg,#fde68a 0%,#fef3c7 55%,#d9b38c 55%,#c99a6b 100%)",transition:"background 1s" }}>
+        {care.sleeping && [...Array(12)].map((_, i) => <span key={i} style={{ position:"absolute",left:`${(i*41)%100}%`,top:`${(i*29)%50}%`,width:3,height:3,borderRadius:2,background:"#fff",opacity:.8,animation:`vpBlink ${2+i%3}s infinite` }} />)}
+        {/* ผนัง: หน้าต่าง/รูป/ทีวี */}
+        {on("wall") && <span style={{ position:"absolute",left:"50%",top:16,transform:"translateX(-50%)",fontSize:52,filter:"drop-shadow(0 4px 8px rgba(0,0,0,.2))" }}>{on("wall").emoji}</span>}
+        {on("ceiling") && <span style={{ position:"absolute",left:14,top:8,fontSize:36,animation:"vpFloatY 3s ease-in-out infinite" }}>{on("ceiling").emoji}</span>}
+        {on("ceiling") && <span style={{ position:"absolute",right:14,top:8,fontSize:36,animation:"vpFloatY 3s 1s ease-in-out infinite" }}>{on("ceiling").emoji}</span>}
+        {/* พื้น */}
+        {on("floor") && <span style={{ position:"absolute",left:"50%",bottom:18,transform:"translateX(-50%) scaleX(2.6) scaleY(.7)",fontSize:60,opacity:.85 }}>{on("floor").emoji}</span>}
+        {on("left") && <span style={{ position:"absolute",left:12,bottom:42,fontSize:54,filter:"drop-shadow(0 6px 8px rgba(0,0,0,.2))" }}>{on("left").emoji}</span>}
+        {on("right") && <span style={{ position:"absolute",right:12,bottom:42,fontSize:54,filter:"drop-shadow(0 6px 8px rgba(0,0,0,.2))" }}>{on("right").emoji}</span>}
+        {/* เพื่อน */}
+        <div style={{ position:"absolute",left:"50%",bottom:34,transform:"translateX(-50%)",animation:anim==="play"?"petHop .4s ease-in-out infinite":anim==="eat"?"vpWiggle .5s infinite":"none" }}>
+          <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={92} mood={mood} talk={!!bubble} bounce />
+        </div>
+        {/* เอฟเฟกต์การกระทำ */}
+        {anim === "wash" && [...Array(8)].map((_, i) => <span key={i} style={{ position:"absolute",left:`${35+(i*9)%30}%`,bottom:60+(i*17)%80,fontSize:20+i%3*6,animation:`vpFloatY ${1+i%3*.3}s infinite`,opacity:.9 }}>🫧</span>)}
+        {anim === "eat" && <span style={{ position:"absolute",left:"58%",bottom:120,fontSize:30,animation:"vpInScale .4s both" }}>😋</span>}
+        {anim === "play" && <span style={{ position:"absolute",left:"30%",bottom:150,fontSize:34,animation:"vpFloatY .5s infinite" }}>⚽</span>}
+        {(anim === "sleep" || care.sleeping) && <span style={{ position:"absolute",left:"60%",bottom:170,fontSize:22,color:"#c4b5fd",fontWeight:900,animation:"petZ 2s infinite" }}>z z</span>}
+        {bubble && <div style={{ position:"absolute",left:"50%",top:70,transform:"translateX(-50%)",background:"#fff",borderRadius:16,padding:"8px 14px",fontWeight:800,fontSize:14,color:"#1f2937",boxShadow:T.shadow,animation:"vpInScale .3s both",maxWidth:"80%",textAlign:"center" }}>{bubble}<span style={{ position:"absolute",left:"50%",bottom:-8,transform:"translateX(-50%)",borderLeft:"8px solid transparent",borderRight:"8px solid transparent",borderTop:"8px solid #fff" }} /></div>}
+        <div style={{ position:"absolute",top:12,left:14,background:"rgba(255,255,255,.85)",borderRadius:999,padding:"4px 12px",fontSize:12,fontWeight:800,color:"#1f2937" }}>{pet.name} · Lv.{pet.level} · {avg >= 75 ? "😊 มีความสุข" : avg >= 40 ? "🙂 สบายดี" : "😢 ต้องการดูแล"}</div>
+        <div style={{ position:"absolute",top:12,right:14,background:"rgba(255,255,255,.85)",borderRadius:999,padding:"4px 12px",fontSize:12,fontWeight:800,color:"#92400e" }}>🪙 {progress.coins}</div>
+      </div>
+
+      {/* สถานะ */}
+      <div style={{ ...card(),padding:"12px 14px",margin:"12px 0",display:"flex",gap:12 }}>
+        <Stat icon="🍎" label="อิ่ม" v={care.hunger} color="linear-gradient(90deg,#fb923c,#f59e0b)" />
+        <Stat icon="🫧" label="สะอาด" v={care.clean} color="linear-gradient(90deg,#22d3ee,#3b82f6)" />
+        <Stat icon="⚽" label="สนุก" v={care.fun} color="linear-gradient(90deg,#a855f7,#ec4899)" />
+        <Stat icon="⚡" label="พลัง" v={care.energy} color="linear-gradient(90deg,#34d399,#10b981)" />
+      </div>
+
+      <div style={{ display:"flex",gap:6,marginBottom:10 }}>
+        {[["care","💖 ดูแล"],["room","🛋️ แต่งห้อง"]].map(([k,l]) => <button key={k} onClick={() => { sfx.tap(); setTab(k); }} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",fontWeight:800,fontSize:14,cursor:"pointer",background:tab===k?T.grad:"rgba(148,163,184,.18)",color:tab===k?"#fff":T.ink,fontFamily:FONT }}>{l}</button>)}
+      </div>
+
+      {tab === "care" && !feedOpen && (
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
+          {CARE_ACTIONS.map(a => (
+            <button key={a.id} className="vp-card-hover" onClick={() => a.id === "feed" ? (sfx.tap(), setFeedOpen(true)) : doAction(a)} style={{ ...card(),minHeight:88,padding:"10px 4px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:FONT }}>
+              <span style={{ fontSize:30 }}>{a.id === "sleep" && care.sleeping ? "☀️" : a.emoji}</span>
+              <span style={{ fontSize:12,fontWeight:800,color:T.ink }}>{a.id === "sleep" && care.sleeping ? "ปลุก" : a.label}</span>
+              <span style={{ fontSize:10,color:T.ink3 }}>{a.id === "feed" ? "ใช้เหรียญ" : a.id === "sleep" ? "ฟื้นพลัง" : `+${a.gain}`}</span>
+            </button>
+          ))}
+        </div>
+      )}
+      {tab === "care" && feedOpen && (
+        <div style={{ ...card(),padding:12 }}>
+          <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8 }}><b style={{ color:T.ink }}>🍽️ เลือกอาหาร (แตะแล้วฟังชื่อภาษาอังกฤษ)</b><button onClick={() => setFeedOpen(false)} style={{ minHeight:44,border:"none",background:"none",color:T.ink3,fontWeight:800,cursor:"pointer" }}>ปิด</button></div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
+            {FOODS.map(f => <button key={f.id} onClick={() => doAction(CARE_ACTIONS[0], f)} style={{ minHeight:84,borderRadius:16,border:"1px solid rgba(148,163,184,.3)",background:"rgba(255,255,255,.6)",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:2,fontFamily:FONT }}><span style={{ fontSize:30 }}>{f.emoji}</span><b style={{ fontSize:12,color:T.ink }}>{f.en.toUpperCase()}</b><span style={{ fontSize:10,color:T.ink3 }}>{f.name} · 🪙{f.cost} · +{f.gain}</span></button>)}
+          </div>
+        </div>
+      )}
+      {tab === "room" && (
+        <div>
+          <div style={{ fontSize:12,color:T.ink2,marginBottom:8 }}>ซื้อแล้วแตะเพื่อวาง/เก็บ · แต่ละตำแหน่งวางได้ 1 ชิ้น (ผนัง · เพดาน · พื้น · ซ้าย · ขวา)</div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
+            {ROOM_ITEMS.map(it => {
+              const owned = !!progress.room?.[it.id]; const placed = progress.roomOn?.[it.slot] === it.id;
+              return (
+                <button key={it.id} onClick={() => {
+                  if (!owned) { if (progress.coins < it.cost) { sfx.bad(); showToast(`เหรียญไม่พอ ขาด ${it.cost - progress.coins} 🪙`, "warn"); return; } sfx.coin(); fx.burst(innerWidth/2, 200, { count: 18 }); setProgress(p => ({ ...p, coins:p.coins-it.cost, room:{ ...(p.room||{}), [it.id]:true }, roomOn:{ ...(p.roomOn||{}), [it.slot]: it.id } })); showToast(`ซื้อ${it.name}แล้ว ✓`); }
+                  else { sfx.tap(); setProgress(p => ({ ...p, roomOn:{ ...(p.roomOn||{}), [it.slot]: placed ? null : it.id } })); }
+                }} style={{ ...card(),minHeight:92,padding:"8px 4px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3,fontFamily:FONT,border:placed?"2px solid #a855f7":undefined }}>
+                  <span style={{ fontSize:30 }}>{it.emoji}</span>
+                  <span style={{ fontSize:11,fontWeight:800,color:T.ink }}>{it.name}</span>
+                  <span style={{ fontSize:10,fontWeight:800,color:placed?"#7c3aed":owned?T.ink3:"#b45309" }}>{placed ? "วางอยู่ ✓" : owned ? "แตะเพื่อวาง" : `🪙 ${it.cost}`}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+      <div style={{ fontSize:11,color:T.ink3,textAlign:"center",marginTop:12 }}>ค่าสถานะลดลงตามเวลาจริง · ดูแลครั้งแรกของวันได้ +5 🪙 · ดูแลต่อเนื่อง {care.streakCare || 0} วัน</div>
     </div>
   );
 }

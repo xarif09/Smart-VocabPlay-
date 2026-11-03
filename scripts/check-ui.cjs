@@ -10,7 +10,10 @@ async function audit(page, label) {
   await page.evaluate(() => Promise.all(document.getAnimations().filter(a => a.effect?.getTiming?.().iterations !== Infinity).map(a => a.finished.catch(() => {})))).catch(() => {});
   return page.evaluate((label) => {
     const vis = e => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
-    const els = [...document.querySelectorAll('button,input,select')].filter(vis);
+    // เมื่อมี overlay เต็มจอ (ResultScreen/แผ่นตั้งค่า) วัดเฉพาะปุ่มใน overlay นั้น ไม่นับปุ่มที่ถูกบังอยู่ข้างใต้
+    const overlay = [...document.querySelectorAll('div')].reverse().find(d => { const st = getComputedStyle(d); return st.position === 'fixed' && st.zIndex && +st.zIndex >= 200 && d.getBoundingClientRect().width >= innerWidth * 0.9 && d.getBoundingClientRect().height >= innerHeight * 0.9; });
+    const root = overlay || document;
+    const els = [...root.querySelectorAll('button,input,select')].filter(vis);
     const fixed = e => !!e.closest('[style*="position: fixed"]');
     const ov = [];
     for (let i = 0; i < els.length; i++) for (let j = i + 1; j < els.length; j++) {

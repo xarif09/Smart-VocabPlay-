@@ -7,7 +7,7 @@
 - ทำทีละขั้น ถามเฉพาะตอนสงสัยจริงๆ นอกนั้นตัดสินใจเองแล้วบอก
 
 ## กฎเหล็ก
-1. ห้ามเปลี่ยนหน้าตา / เกม / พฤติกรรมเดิม ถ้าไม่ได้สั่ง · ธีมปัจจุบัน = "Aurora" (v2.0: โทเค็น `T`, `card()`, ฟอนต์ Prompt, แท็บล่าง, โหมดเกม immersive) ของใหม่ต้องใช้โทเค็นเดียวกัน · สี `T.*` เป็น CSS var รองรับธีม (`[data-theme]` ใน index.html) ห้าม hardcode สีพื้น/ตัวอักษรหลักในคอมโพเนนต์ใหม่
+1. ห้ามเปลี่ยนหน้าตา / เกม / พฤติกรรมเดิม ถ้าไม่ได้สั่ง · ธีมปัจจุบัน = **Material 3 Expressive** (v3.0 · `src/m3.jsx`): สีไดนามิก oklch จาก seed ของธีม (`applyM3Theme`) → CSS var `--md-*` · โทเค็น `MD.*`/`T.*` · สไตล์สำเร็จรูป `M3.filled/tonal/listItem/card…` · คอมโพเนนต์ `Shape` (cookie/clover/burst) `M3NavBar` `M3TopBar` `M3Sheet` `M3Switch` `WavyProgress` `ButtonGroup` · มุม 28 ปุ่มแคปซูล ไม่มีเงาหนัก · ฟอนต์ Prompt · โหมดเกม immersive · ของใหม่ต้องใช้โทเค็นนี้ **ห้าม hardcode สี** (ธีม space = โหมดมืด ต้องดูได้ทั้งสองโหมด)
 2. `speechSynthesis.speak()` ต้องเรียกตรงใน `onClick` — ห้ามอยู่ใน `setTimeout` / Promise / async (iOS จะไม่ออกเสียง)
 3. หน้าแรก "แตะเพื่อเริ่ม" ต้องเรียก `unlockAudio()` ตรงใน `onClick`
 4. มือถือห้ามมีอะไรซ้อนกัน · ปุ่มสูง ≥ 44px

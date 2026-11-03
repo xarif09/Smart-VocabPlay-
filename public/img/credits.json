@@ -2309,13 +2309,6 @@
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Thumb"
  },
- "Nail (anatomy)": {
-  "file": "nail-anatomy.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Nail_svg_hariadhi.svg.png",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Nail_(anatomy)"
- },
  "Wrist": {
   "file": "wrist.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Nadgarstek_(ubt).jpeg",
@@ -2379,13 +2372,6 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Space_Shuttle"
  },
- "Sailboat": {
-  "file": "sailboat.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Sloop_Example.svg.png",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Sailboat"
- },
  "Ferry": {
   "file": "ferry.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:DFDS_Transmanche_Ferry_loading_at_Newhaven_Harbour.jpg",
@@ -2406,13 +2392,6 @@
   "artist": "Bdonjc",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Garbage_truck"
- },
- "Crane (machine)": {
-  "file": "crane-machine.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Crane_machine_slewing_platform.svg.png",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Crane_(machine)"
  },
  "Hot air balloon": {
   "file": "hot-air-balloon.jpg",
@@ -2448,13 +2427,6 @@
   "artist": "rawpixel.com",
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Veterinarian"
- },
- "Mail carrier": {
-  "file": "mail-carrier.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:NYPL_1814_postman.jpg",
-  "artist": "William Alexander",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Mail_carrier"
  },
  "Fisherman": {
   "file": "fisherman.jpg",
@@ -2518,13 +2490,6 @@
   "artist": "Donni Schoenemond",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Raincoat"
- },
- "Pajamas": {
-  "file": "pajamas.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Muslim_girl_india1844_(cropped).jpg",
-  "artist": "\"by the Hon. Miss Eden, drawn on the stone by L. Dickinson.\"",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Pajamas"
  },
  "Baseball cap": {
   "file": "baseball-cap.jpg",
@@ -2603,13 +2568,6 @@
   "license": "CC BY 4.0",
   "page": "https://en.wikipedia.org/wiki/Seed"
  },
- "Cactus": {
-  "file": "cactus.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Various_Cactaceae.jpg",
-  "artist": "G. Mütrel, Leipzig ; Berlin ; Wien : F.A. Brockhaus",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Cactus"
- },
  "Bamboo": {
   "file": "bamboo.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Bamboo_forest.jpg",
@@ -2617,26 +2575,12 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Bamboo"
  },
- "Karate": {
-  "file": "karate.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Hanashiro_Chomo.jpg",
-  "artist": "仲宗根源和(Nakasone Genwa)",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Karate"
- },
  "Taekwondo": {
   "file": "taekwondo.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Milad_Kharchegani_at_the_2016_Summer_Olympics.jpg",
   "artist": "Javid Nikpour/Tasnim",
   "license": "CC BY 4.0",
   "page": "https://en.wikipedia.org/wiki/Taekwondo"
- },
- "Ice skating": {
-  "file": "ice-skating.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Skating%2C_man%2C_woman%2C_ice-skating_rink%2C_winter%2C_smile%2C_free_time_Fortepan_14348.jpg",
-  "artist": "FOTO:Fortepan — ID 14348: Adományozó/Donor: Unknown.",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Ice_skating"
  },
  "Fishing": {
   "file": "fishing.jpg",
@@ -2673,33 +2617,12 @@
   "license": "GFDL 1.2",
   "page": "https://en.wikipedia.org/wiki/Equestrianism"
  },
- "Rugby football": {
-  "file": "rugby-football.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Foot_Ball%2C_Kingston-upon-Thames%2C_Shrove_Tuesday%2C_Feb._24th%2C_1846.jpg",
-  "artist": "Unknown authorUnknown author",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Rugby_football"
- },
  "Skipping rope": {
   "file": "skipping-rope.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Ghanaian_kid_(skipping_rope)_06_(cropped).jpg",
   "artist": "Pambelle12",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Skipping_rope"
- },
- "Twin": {
-  "file": "twin.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Mauch_Twins.jpg",
-  "artist": "William A. Macis",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Twin"
- },
- "Friendship": {
-  "file": "friendship.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Best_friends_(1934)%2C_by_Romualdo_Locatelli.jpg",
-  "artist": "Romualdo Locatelli",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Friendship"
  },
  "Hug": {
   "file": "hug.jpg",
@@ -2756,13 +2679,6 @@
   "artist": "MoSchle",
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Swing_(seat)"
- },
- "Seesaw": {
-  "file": "seesaw.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_-_El_Balanc%C3%ADn_(Philadelphia_Museum_of_Art).jpg",
-  "artist": "Francisco Goya",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Seesaw"
  },
  "Rocking horse": {
   "file": "rocking-horse.jpg",
@@ -2883,13 +2799,6 @@
   "license": "CC BY 2.0",
   "page": "https://en.wikipedia.org/wiki/Bakery"
  },
- "Fauna": {
-  "file": "fauna.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Fauna.png",
-  "artist": "Jakob Suckale at English Wikipedia",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Fauna"
- },
  "Fruit": {
   "file": "fruit.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Fruit_Platter-_Seasonal_Fruits.jpg",
@@ -2939,20 +2848,6 @@
   "license": "CC BY-SA 2.0",
   "page": "https://en.wikipedia.org/wiki/Vehicle"
  },
- "Profession": {
-  "file": "profession.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:A_farmer_telling_his_family%2C_a_doctor%2C_a_vicar_and_a_lawyer_Wellcome_V0011022.jpg",
-  "artist": "",
-  "license": "CC BY 4.0",
-  "page": "https://en.wikipedia.org/wiki/Profession"
- },
- "Clothing": {
-  "file": "clothing.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Clothes.jpg",
-  "artist": "Unknown authorUnknown author",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Clothing"
- },
  "House": {
   "file": "house.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Katsura_Imperial_Villa_in_Spring.jpg",
@@ -2974,26 +2869,12 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Sport"
  },
- "Family": {
-  "file": "family.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Sauk_Indian_family_by_Frank_Rinehart_1899.jpg",
-  "artist": "Frank Rinehart",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Family"
- },
  "Exercise": {
   "file": "exercise.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Cycling_in_Amsterdam_(893).jpg",
   "artist": "Marc van Woudenberg",
   "license": "CC BY-SA 2.0",
   "page": "https://en.wikipedia.org/wiki/Exercise"
- },
- "Emotion": {
-  "file": "emotion.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Sixteen_faces_expressing_the_human_passions._Wellcome_L0068375_(cropped).jpg",
-  "artist": "",
-  "license": "CC BY 4.0",
-  "page": "https://en.wikipedia.org/wiki/Emotion"
  },
  "Shape": {
   "file": "shape.jpg",
@@ -3008,5 +2889,68 @@
   "artist": "Benh LIEU SONG (Flickr)",
   "license": "CC BY-SA 2.0",
   "page": "https://en.wikipedia.org/wiki/City"
+ },
+ "Dinghy sailing": {
+  "file": "dinghy-sailing.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Contender_sailing_dinghy.jpg",
+  "artist": "No machine-readable author provided. Gwicke~commonswiki assumed (based on copyright claims).",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Dinghy_sailing"
+ },
+ "Mobile crane": {
+  "file": "mobile-crane.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:20100225-Liebherr_LTM_1200-5.jpg",
+  "artist": "© 2010 K. Krallis, SV1XV",
+  "license": "CC BY-SA 3.0",
+  "page": "https://en.wikipedia.org/wiki/Mobile_crane"
+ },
+ "Bermuda shorts": {
+  "file": "bermuda-shorts.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Modern_bermuda_shorts.jpg",
+  "artist": "Trijb007",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Bermuda_shorts"
+ },
+ "Saguaro": {
+  "file": "saguaro.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Carnegiea_gigantea_in_Saguaro_National_Park_near_Tucson%2C_Arizona_during_November_(58).jpg",
+  "artist": "WClarke",
+  "license": "CC BY-SA 3.0",
+  "page": "https://en.wikipedia.org/wiki/Saguaro"
+ },
+ "Figure skating": {
+  "file": "figure-skating.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Team_Les_Supreme_Free_Skate_at_the_2026_ISU_Synchronized_Skating_World_Championships_01.jpg",
+  "artist": "Quejaytee",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Figure_skating"
+ },
+ "Rugby union": {
+  "file": "rugby-union.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:2014_Women's_Six_Nations_Championship_-_France_Italy_(51).jpg",
+  "artist": "Caroline Léna Becker",
+  "license": "CC BY 3.0",
+  "page": "https://en.wikipedia.org/wiki/Rugby_union"
+ },
+ "Wildlife": {
+  "file": "wildlife.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Wildlife_at_Maasai_Mara_(Lion).jpg",
+  "artist": "Superbsic",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Wildlife"
+ },
+ "Fashion": {
+  "file": "fashion.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Carolina_Herrera_AW14_12.jpg",
+  "artist": "CHRISTOPHER MACSURAK from Chicago, USA",
+  "license": "CC BY 2.0",
+  "page": "https://en.wikipedia.org/wiki/Fashion"
+ },
+ "Parenting": {
+  "file": "parenting.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Baby_Sofia.jpg",
+  "artist": "James.rybarsyk",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Parenting"
  }
 }

@@ -22,6 +22,9 @@ export const EMPTY_PROGRESS = {
   bg: null,            // itemId พื้นหลังการ์ดเพื่อน
   theme: null,         // ธีมแอป (aurora/ocean/forest/sunset/space/candy)
   learned: {},         // { wordId: true } เปิดการ์ดเรียนแล้ว
+  care: null,          // ห้องเพื่อนคู่หู (hunger/clean/fun/energy/...)
+  room: {},            // { itemId: true } เฟอร์นิเจอร์ที่ซื้อ
+  roomOn: {},          // { slot: itemId } ที่วางอยู่
   path: {},            // { unitId: { learn:true, quiz:true, listen:true } } เส้นทางบทเรียน
 };
 
@@ -141,6 +144,7 @@ export const MISSION_POOL = [
   { id: "phonics1", label: "เล่นเกมเสียงแรก 1 รอบ",    key: "phonics", goal: 1,  reward: 30 },
   { id: "grammar1", label: "ฝึกไวยากรณ์ 1 บท",         key: "grammar", goal: 1,  reward: 40 },
   { id: "daily1",   label: "เล่นเกมชีวิตประจำวัน 1 รอบ", key: "daily",  goal: 1,  reward: 30 },
+  { id: "care2",    label: "ดูแลเพื่อนคู่หู 2 ครั้ง",   key: "care",    goal: 2,  reward: 30 },
 ];
 const hash = s => { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; };
 export function missionsForDate(date) {
@@ -230,3 +234,51 @@ export function similarity(a, b) {
   for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++) d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1));
   return 1 - d[m][n] / Math.max(m, n);
 }
+
+// ═══════════════════════════════════════════════════════
+// PET CARE — ห้องเพื่อนคู่หู: ค่าสถานะ 4 อย่าง (0–100) ลดตามเวลาจริง
+//  hunger ลด 4/ชม · clean ลด 2/ชม · fun ลด 3/ชม · energy ลด 3/ชม (ตื่น) · นอนคืน +25/ชม
+//  ดูแลได้เหรียญเล็กน้อย + ความสุข (happiness) ส่งผลให้เพื่อนยิ้ม/เศร้า
+// ═══════════════════════════════════════════════════════
+export const CARE_MAX = 100;
+export const EMPTY_CARE = { hunger: 80, clean: 80, fun: 80, energy: 80, sleeping: false, last: Date.now(), fedToday: 0, streakCare: 0, lastCareDay: null };
+export function tickCare(care) {
+  const c = { ...EMPTY_CARE, ...(care || {}) };
+  const h = Math.max(0, (Date.now() - (c.last || Date.now())) / 3600000);
+  if (h < 0.01) return c;
+  const dec = (v, r) => Math.max(0, Math.min(CARE_MAX, v - r * h));
+  const n = { ...c, hunger: dec(c.hunger, 4), clean: dec(c.clean, 2), fun: dec(c.fun, 3), last: Date.now() };
+  n.energy = c.sleeping ? Math.min(CARE_MAX, c.energy + 25 * h) : dec(c.energy, 3);
+  if (n.sleeping && n.energy >= CARE_MAX) n.sleeping = false;
+  return n;
+}
+export const careMood = c => { const avg = (c.hunger + c.clean + c.fun + c.energy) / 4; return c.sleeping ? "sleepy" : avg >= 75 ? "happy" : avg >= 40 ? "idle" : "sad"; };
+export const CARE_ACTIONS = [
+  { id: "feed",  emoji: "🍎", label: "ให้อาหาร", stat: "hunger", gain: 30, cost: 5,  en: "Yummy! Thank you!", th: "อร่อยจัง ขอบคุณนะ", anim: "eat" },
+  { id: "wash",  emoji: "🛁", label: "อาบน้ำ",   stat: "clean",  gain: 40, cost: 0,  en: "Splash splash! I'm clean!", th: "สะอาดแล้ว!", anim: "wash" },
+  { id: "play",  emoji: "⚽", label: "เล่นด้วย",  stat: "fun",    gain: 35, cost: 0,  en: "Let's play! This is fun!", th: "สนุกจัง!", anim: "play", energyCost: 10 },
+  { id: "sleep", emoji: "🌙", label: "นอน",      stat: "energy", gain: 0,  cost: 0,  en: "Good night...", th: "ราตรีสวัสดิ์", anim: "sleep" },
+];
+export const FOODS = [
+  { id: "apple",  emoji: "🍎", name: "แอปเปิล", cost: 5,  gain: 20, en: "apple" },
+  { id: "banana", emoji: "🍌", name: "กล้วย",   cost: 5,  gain: 20, en: "banana" },
+  { id: "rice",   emoji: "🍚", name: "ข้าว",    cost: 8,  gain: 30, en: "rice" },
+  { id: "pizza",  emoji: "🍕", name: "พิซซ่า",  cost: 12, gain: 40, en: "pizza" },
+  { id: "cake",   emoji: "🎂", name: "เค้ก",    cost: 15, gain: 50, en: "cake" },
+  { id: "milk",   emoji: "🥛", name: "นม",      cost: 6,  gain: 25, en: "milk" },
+];
+export const ROOM_ITEMS = [
+  { id: "rug",     emoji: "🟪", name: "พรมม่วง",     cost: 80,  slot: "floor" },
+  { id: "rugStar", emoji: "⭐", name: "พรมดาว",       cost: 150, slot: "floor" },
+  { id: "bed",     emoji: "🛏️", name: "เตียงนุ่ม",     cost: 200, slot: "left" },
+  { id: "plant",   emoji: "🪴", name: "ต้นไม้",        cost: 90,  slot: "right" },
+  { id: "lamp",    emoji: "🛋️", name: "โซฟา",          cost: 220, slot: "left" },
+  { id: "shelf",   emoji: "📚", name: "ชั้นหนังสือ",   cost: 160, slot: "right" },
+  { id: "window",  emoji: "🪟", name: "หน้าต่าง",      cost: 120, slot: "wall" },
+  { id: "picture", emoji: "🖼️", name: "รูปภาพ",        cost: 100, slot: "wall" },
+  { id: "tv",      emoji: "📺", name: "ทีวี",          cost: 260, slot: "wall" },
+  { id: "toybox",  emoji: "🧸", name: "กล่องของเล่น", cost: 140, slot: "right" },
+  { id: "aquarium",emoji: "🐠", name: "ตู้ปลา",        cost: 300, slot: "left" },
+  { id: "balloons",emoji: "🎈", name: "ลูกโป่ง",       cost: 70,  slot: "ceiling" },
+  { id: "lights",  emoji: "✨", name: "ไฟประดับ",      cost: 180, slot: "ceiling" },
+];

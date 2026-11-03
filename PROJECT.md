@@ -108,6 +108,23 @@
 - **แต่งห้อง** 13 ชิ้น 5 ตำแหน่ง (ผนัง เพดาน พื้น ซ้าย ขวา) ซื้อด้วยเหรียญ วาง/เก็บได้ (`progress.room`, `progress.roomOn`)
 - **รูปคำศัพท์ใหญ่เต็มความกว้าง** (`<Pic fill>` 16:11 สูงสุด 44vh) ใน Quiz/Spelling/Speed/Boss/Speak/Phonics/Test · การ์ดเรียนสูง 62vh · Listen/Boss รูปตัวเลือกสูง 22vh · Memory 3 คอลัมน์การ์ดใหญ่
 
+## v2.8 — เสียงเจ้าของภาษา · เนื้อหาเพิ่ม
+- **เสียงอ่านคำโดยเจ้าของภาษา** (Wikimedia Commons `En-us-<word>.ogg` ฯลฯ): `scripts/fetch-audio.mjs` ถาม Commons API ทีละ 8 คำ → ดาวน์โหลด → `ffmpeg` แปลงเป็น mp3 โมโน 48kbps ตัดเงียบ+ปรับดัง (~5KB/คำ) ลง `public/audio/` + `src/audioManifest.json` (คำ → ไฟล์) + `public/audio/credits.json` · รันโดย `.github/workflows/fetch-audio.yml` (เครื่องพัฒนาต่อ Commons ไม่ได้) เมื่อ push สคริปต์/เวิร์กโฟลว์ หรือกด Run workflow (มี force)
+- ในแอป: `speakWord()` → ถ้ามีไฟล์และเปิด "เสียงเจ้าของภาษา" (ตั้งค่า · ค่าเริ่มต้นเปิด · `smart-vocabplay:native`) เล่น `<Audio>` ใน onClick แล้วค่อยพูดไทยด้วยเสียงเครื่องตอน `ended` · เล่นไม่ได้/ไม่มีไฟล์ → `ttsWord()` (เสียงเครื่องแบบเดิม) · ความเร็ว "ช้าๆ" ใช้ `playbackRate` · SW แคชไฟล์เสียงใน `IMG_CACHE` + warm ทั้งหมดตอน activate (`CACHE` = v5) · หน้าเครดิตแสดงที่มาเสียง (🔊) รวมกับรูป
+- **บทสนทนาเพิ่ม 5** (ขึ้นรถเมล์ · สวนสาธารณะ · หมาหลงทาง · ห้องสมุด · ทำอาหารกับพ่อ) → รวม 23 · **นิทานเพิ่ม 5** (เต่ากับกระต่าย · เมล็ดน้อย · ราตรีสวัสดิ์พระจันทร์ · วันเกิดคุณยาย · ปลาสีรุ้ง) → รวม 15 · ผ่าน `check-content`
+
+## v2.9 — เลิกกลวง: ภาพให้ครบทุกคำ
+- ผลวัดก่อนแก้: 1,165 คำ มีรูปถ่าย 794 · **ไม่มีรูป 371** (actions 77 · opposites 50 · numbers 35 · feelings 29 · time 29 · family 23 · colors 17 · jobs 16 · shapes 15 …)
+- **`src/Concept.jsx`** ภาพออกแบบเอง (SVG 16:11) 145 คำที่ถ่ายรูปไม่ได้: สี (วงสี+ของจริงสีนั้น) · ตัวเลข (ตัวเลข + ten-frame / มัดสิบ / ตาราง 100 / ลูกบาศก์พัน-ล้าน / โพเดียมที่ 1-2-3 / ครึ่ง) · รูปทรง 15 · วัน (สีประจำวันไทย) เดือน วันนี้/พรุ่งนี้/เมื่อวาน สัปดาห์ เดือน ปี นาฬิกา · คำตรงข้ามเชิงตำแหน่ง/ปริมาณ 24 ภาพเปรียบเทียบ · ความรู้สึก 30 หน้าแสดงอารมณ์ (parametric face) · `<Pic>`/`<PicFill>` ใช้ก่อนอีโมจิ · หน้าตรวจทั้งชุด `?concepts=1`
+- **images.js เพิ่ม 204 คำ** (actions 77 · family 22 · jobs 15 · opposites 29 ใช้รูปที่มีอยู่แล้ว เช่น BIG=ช้าง SMALL=หนู · body school sports …) → workflow `fetch-images.yml` ดึง 170 บทความใหม่ (ต้องตรวจด้วย contact-sheet แล้วแก้ชื่อบทความที่ไม่สื่อ)
+- เสียงเจ้าของภาษาได้จริง **857/1,126 คำ** (5.3MB) จาก workflow รอบแรก · ที่เหลือส่วนใหญ่เป็นคำประสม/คำไทย (ใช้เสียงเครื่อง)
+
+## v3.0 — UI ใหม่ทั้งแอป: Material 3 Expressive (ตามสั่ง "เหมือน UI Android ตัวล่าสุด")
+- `src/m3.jsx`: ระบบสีไดนามิกแบบ M3 (บทบาทสี primary/secondary/tertiary/surface-container 5 ระดับ/outline ฯลฯ สร้างด้วย `oklch()` จาก hue ของธีม · ธีมร้านค้า 6 แบบ = seed คนละ hue · space = โหมดมืดเต็มรูปแบบ) ตั้งเป็น CSS var `--md-*` + map กลับ `--vp-*` ให้โค้ดเก่า
+- คอมโพเนนต์ M3: navigation bar เต็มกว้างมี pill indicator + ไอคอน Material · top app bar โปร่ง + ปุ่มไอคอน 48 · bottom sheet มี drag handle · สวิตช์ 52×32 มีไอคอน ✓ · ปุ่ม filled/tonal/outlined/text ทรงแคปซูล · connected button group · wavy progress (แถบคลื่น) · `Shape` รูปทรง expressive (cookie 12/9/6/4, clover, burst, sunny, pill) ใช้หลังอวาตาร์/ไอคอน และเป็นฉากหลัง hero/splash (morph สลับทรง)
+- หน้าที่รื้อ: splash · header · nav · home (hero primaryContainer + pet ใน cookie + wavy XP + button group · การ์ดทำต่อ · ภารกิจ · tiles · versus · การ์ดหมวด 28px) · hubs (list item M3) · หน้าหมวด · ResultScreen (dialog M3) · Settings/Profiles (sheet M3) · PathScreen hero · InstallBanner · GS (การ์ดเกม) · Pill/SndBtn · กวาดสี hardcode เทา/ขาว/ดำ → โทเค็น (ใช้ได้ในโหมดมืด)
+- โมชัน: spring `cubic-bezier(.34,1.56,.64,1)` กดแล้วย่อ `.m3-press` · `prefers-reduced-motion` ปิด
+
 ## โครงไฟล์
 ```
 index.html                    หน้า HTML (viewport, manifest/apple meta, keyframes)
@@ -134,6 +151,9 @@ docs/screenshots/             ภาพผลตรวจล่าสุด (ม
 - [x] ระบบรางวัลทั้งหมดตามตารางด้านบน · ปุ่มทุกปุ่ม ≥44px · ปุ่มล้างความคืบหน้าในตั้งค่า
 - [x] ระลอก "สุดยอดแอป": คำอ่าน+ประโยค 296 คำ · โหมดเรียนการ์ด · SRS · Listen/Sentence/Speak · ภารกิจประจำวัน · ร้านค้า · รายงานผู้ปกครอง
 - [x] ระลอก 3: PWA ติดตั้ง/ออฟไลน์ · โปรไฟล์หลายคน · เส้นทางบทเรียน A1→A2 · Speak แบบ % · แปลอัตโนมัติ MyMemory · badge ไอคอน
+- [x] v3.0.0: Material 3 Expressive ทั้ง shell (m3.jsx) · โหมดมืดจริง · nav bar/top bar/sheet/switch/wavy progress/shapes
+- [x] v2.9.0: Concept.jsx ภาพออกแบบ 145 คำ · images.js +204 คำ · เสียงเจ้าของภาษา 857 คำ
+- [x] v2.8.0: ท่อเสียงเจ้าของภาษา (Commons → mp3 ผ่าน Actions) + สวิตช์ในตั้งค่า · บทสนทนา 23 · นิทาน 15
 - [x] v2.7.0: ห้องเพื่อนคู่หู (เลี้ยง 4 อย่าง + แต่งห้อง 13 ชิ้น) · รูปคำศัพท์ใหญ่เต็มจอ
 - [x] v2.6.0: ไอคอน illustration ชุดเดียวกัน 50 ตัว · ชุดแต่งตัว 14 ชิ้น · แพนด้า+จิ้งจอก
 - [x] v2.5.0: ทรานซิชันหน้า · การ์ดเรียนพลิก 3D · ธีม 6 แบบซื้อด้วยเหรียญ (รวมโหมดมืด) · ดนตรีประกอบสังเคราะห์

@@ -1,0 +1,5144 @@
+{
+ "cat": {
+  "file": "cat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dog": {
+  "file": "dog.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dog.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fish": {
+  "file": "fish.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fish.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "bird": {
+  "file": "bird.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bird.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cow": {
+  "file": "cow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pig": {
+  "file": "pig.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pig.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "frog": {
+  "file": "frog.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-frog.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "duck": {
+  "file": "duck.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-duck.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lion": {
+  "file": "lion.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lion.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bear": {
+  "file": "bear.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bear.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rabbit": {
+  "file": "rabbit.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rabbit.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "horse": {
+  "file": "horse.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-horse.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "sheep": {
+  "file": "sheep.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sheep.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "monkey": {
+  "file": "monkey.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-monkey.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "elephant": {
+  "file": "elephant.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-elephant.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "tiger": {
+  "file": "tiger.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tiger.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "panda": {
+  "file": "panda.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-panda.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dolphin": {
+  "file": "dolphin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dolphin.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "shark": {
+  "file": "shark.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-shark.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "whale": {
+  "file": "whale.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-whale.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "octopus": {
+  "file": "octopus.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-octopus.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "crab": {
+  "file": "crab.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-crab.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "owl": {
+  "file": "owl.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-owl.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "snake": {
+  "file": "snake.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-snake.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "turtle": {
+  "file": "turtle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-turtle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "butterfly": {
+  "file": "butterfly.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-butterfly.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "bee": {
+  "file": "bee.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bee.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mouse": {
+  "file": "mouse.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mouse.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "penguin": {
+  "file": "penguin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-penguin.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fox": {
+  "file": "fox.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fox.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "apple": {
+  "file": "apple.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-apple.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "banana": {
+  "file": "banana.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-banana.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "orange": {
+  "file": "orange.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-orange.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "grape": {
+  "file": "grape.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-grape.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lemon": {
+  "file": "lemon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-lemon.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "mango": {
+  "file": "mango.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mango.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "cherry": {
+  "file": "cherry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cherry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "peach": {
+  "file": "peach.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-peach.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "strawberry": {
+  "file": "strawberry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-strawberry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "watermelon": {
+  "file": "watermelon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-watermelon.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pineapple": {
+  "file": "pineapple.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pineapple.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "kiwi": {
+  "file": "kiwi.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-kiwi.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "blueberry": {
+  "file": "blueberry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-blueberry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "coconut": {
+  "file": "coconut.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-coconut.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "pear": {
+  "file": "pear.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pear.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "melon": {
+  "file": "melon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-melon.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "avocado": {
+  "file": "avocado.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-avocado.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rice": {
+  "file": "rice.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rice.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bread": {
+  "file": "bread.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bread.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "egg": {
+  "file": "egg.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-egg.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "milk": {
+  "file": "milk.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-milk.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pizza": {
+  "file": "pizza.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pizza.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cake": {
+  "file": "cake.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cake.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "carrot": {
+  "file": "carrot.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-carrot.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "corn": {
+  "file": "corn.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-corn.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "noodles": {
+  "file": "noodles.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-noodles.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "soup": {
+  "file": "soup.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-soup.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "salad": {
+  "file": "salad.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-salad.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sandwich": {
+  "file": "sandwich.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sandwich.ogg",
+  "artist": "No machine-readable author provided. Rappo assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "cookie": {
+  "file": "cookie.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-cookie.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "donut": {
+  "file": "donut.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-donut.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "chocolate": {
+  "file": "chocolate.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-chocolate.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cheese": {
+  "file": "cheese.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cheese.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "candy": {
+  "file": "candy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-candy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hotdog": {
+  "file": "hotdog.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-hotdog.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "taco": {
+  "file": "taco.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-taco.ogg",
+  "artist": "K6ka",
+  "license": "CC0"
+ },
+ "mushroom": {
+  "file": "mushroom.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mushroom.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tomato": {
+  "file": "tomato.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tomato.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "potato": {
+  "file": "potato.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-potato.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "broccoli": {
+  "file": "broccoli.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-broccoli.ogg",
+  "artist": "DroEsperanto",
+  "license": "Public domain"
+ },
+ "honey": {
+  "file": "honey.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-honey.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "coffee": {
+  "file": "coffee.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-coffee.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tea": {
+  "file": "tea.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tea.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "juice": {
+  "file": "juice.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-juice.ogg",
+  "artist": "No machine-readable author provided. Dominic assumed (based on copyright claims).",
+  "license": "Public domain"
+ },
+ "water": {
+  "file": "water.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-water.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pancake": {
+  "file": "pancake.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pancake.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "red": {
+  "file": "red.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-red.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "blue": {
+  "file": "blue.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-blue.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "green": {
+  "file": "green.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-green.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "yellow": {
+  "file": "yellow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-yellow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "purple": {
+  "file": "purple.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-purple.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pink": {
+  "file": "pink.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-pink.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "brown": {
+  "file": "brown.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-brown.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "black": {
+  "file": "black.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-black.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "white": {
+  "file": "white.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-white.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "gray": {
+  "file": "gray.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-gray.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pen": {
+  "file": "pen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pen.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "book": {
+  "file": "book.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-book.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bag": {
+  "file": "bag.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bag.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pencil": {
+  "file": "pencil.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pencil.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ruler": {
+  "file": "ruler.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ruler.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "scissors": {
+  "file": "scissors.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-scissors.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "computer": {
+  "file": "computer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-computer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "calculator": {
+  "file": "calculator.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-calculator.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "crayon": {
+  "file": "crayon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-crayon.ogg",
+  "artist": "Paul2520",
+  "license": "CC BY-SA 4.0"
+ },
+ "desk": {
+  "file": "desk.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-desk.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "chair": {
+  "file": "chair.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-chair.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "classroom": {
+  "file": "classroom.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-classroom.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "teacher": {
+  "file": "teacher.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-teacher.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "student": {
+  "file": "student.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-student.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "map": {
+  "file": "map.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-map.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "paint": {
+  "file": "paint.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-paint.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "eye": {
+  "file": "eye.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eye.ogg",
+  "artist": "No machine-readable author provided. Muke assumed (based on copyright claims).",
+  "license": "Public domain"
+ },
+ "ear": {
+  "file": "ear.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ear.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "nose": {
+  "file": "nose.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-nose.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hand": {
+  "file": "hand.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hand.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "foot": {
+  "file": "foot.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-foot.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mouth": {
+  "file": "mouth.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mouth.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hair": {
+  "file": "hair.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hair.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tooth": {
+  "file": "tooth.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tooth.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "finger": {
+  "file": "finger.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-finger.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "leg": {
+  "file": "leg.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-leg.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "arm": {
+  "file": "arm.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-arm.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tongue": {
+  "file": "tongue.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tongue.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "brain": {
+  "file": "brain.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-brain.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "heart": {
+  "file": "heart.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-heart.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bone": {
+  "file": "bone.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bone.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "skin": {
+  "file": "skin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-skin.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "back": {
+  "file": "back.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-back.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "neck": {
+  "file": "neck.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-neck.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "shoulder": {
+  "file": "shoulder.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-shoulder.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stomach": {
+  "file": "stomach.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stomach.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sun": {
+  "file": "sun.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sun.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rain": {
+  "file": "rain.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rain.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "snow": {
+  "file": "snow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-snow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cloud": {
+  "file": "cloud.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cloud.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wind": {
+  "file": "wind.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-wind.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "storm": {
+  "file": "storm.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-storm.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rainbow": {
+  "file": "rainbow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rainbow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fog": {
+  "file": "fog.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fog.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hot": {
+  "file": "hot.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hot.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cold": {
+  "file": "cold.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cold.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sunny": {
+  "file": "sunny.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sunny.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "thunder": {
+  "file": "thunder.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thunder.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "humid": {
+  "file": "humid.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-humid.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "warm": {
+  "file": "warm.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-warm.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dry": {
+  "file": "dry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "zero": {
+  "file": "zero.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-zero.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "one": {
+  "file": "one.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-one.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "two": {
+  "file": "two.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-two.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "three": {
+  "file": "three.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-three.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "four": {
+  "file": "four.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-four.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "five": {
+  "file": "five.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-five.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "six": {
+  "file": "six.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-six.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "seven": {
+  "file": "seven.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-seven.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "eight": {
+  "file": "eight.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eight.ogg",
+  "artist": "recorded by TheDaveRoss",
+  "license": "CC BY-SA 3.0"
+ },
+ "nine": {
+  "file": "nine.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-nine.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "ten": {
+  "file": "ten.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ten.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "eleven": {
+  "file": "eleven.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eleven.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "Public domain"
+ },
+ "twelve": {
+  "file": "twelve.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-twelve.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "twenty": {
+  "file": "twenty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-twenty.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "thirty": {
+  "file": "thirty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thirty.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "forty": {
+  "file": "forty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-forty.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "fifty": {
+  "file": "fifty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fifty.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "hundred": {
+  "file": "hundred.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hundred.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "thousand": {
+  "file": "thousand.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thousand.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "million": {
+  "file": "million.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-million.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "car": {
+  "file": "car.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-car.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bus": {
+  "file": "bus.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bus.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "train": {
+  "file": "train.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-train.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "plane": {
+  "file": "plane.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-plane.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "boat": {
+  "file": "boat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-boat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bike": {
+  "file": "bike.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bike.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "truck": {
+  "file": "truck.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-truck.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "taxi": {
+  "file": "taxi.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-taxi.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "helicopter": {
+  "file": "helicopter.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-helicopter.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "ship": {
+  "file": "ship.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ship.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tractor": {
+  "file": "tractor.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tractor.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ambulance": {
+  "file": "ambulance.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ambulance.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rocket": {
+  "file": "rocket.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rocket.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "van": {
+  "file": "van.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-van.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "scooter": {
+  "file": "scooter.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-scooter.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "doctor": {
+  "file": "doctor.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-doctor.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "nurse": {
+  "file": "nurse.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-nurse.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "farmer": {
+  "file": "farmer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-farmer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cook": {
+  "file": "cook.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cook.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pilot": {
+  "file": "pilot.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pilot.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "police": {
+  "file": "police.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-police.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "artist": {
+  "file": "artist.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-artist.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "engineer": {
+  "file": "engineer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-engineer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "singer": {
+  "file": "singer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-singer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "actor": {
+  "file": "actor.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-actor.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "soldier": {
+  "file": "soldier.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-soldier.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "waiter": {
+  "file": "waiter.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-waiter.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "driver": {
+  "file": "driver.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-driver.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dentist": {
+  "file": "dentist.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dentist.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "baker": {
+  "file": "baker.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-baker.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "chef": {
+  "file": "chef.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-chef.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "shirt": {
+  "file": "shirt.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-shirt.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pants": {
+  "file": "pants.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pants.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dress": {
+  "file": "dress.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dress.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "shoes": {
+  "file": "shoes.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-shoes.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "socks": {
+  "file": "socks.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-socks.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "hat": {
+  "file": "hat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "glasses": {
+  "file": "glasses.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-glasses.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "scarf": {
+  "file": "scarf.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-scarf.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "jacket": {
+  "file": "jacket.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-jacket.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "skirt": {
+  "file": "skirt.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-skirt.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "boots": {
+  "file": "boots.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-boots.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "umbrella": {
+  "file": "umbrella.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-umbrella.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "belt": {
+  "file": "belt.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-belt.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tie": {
+  "file": "tie.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tie.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "coat": {
+  "file": "coat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-coat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "swimsuit": {
+  "file": "swimsuit.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-swimsuit.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "uniform": {
+  "file": "uniform.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-uniform.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bed": {
+  "file": "bed.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bed.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "table": {
+  "file": "table.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-table.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "door": {
+  "file": "door.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-door.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "window": {
+  "file": "window.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-window.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tv": {
+  "file": "tv.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tv.ogg",
+  "artist": "Persent101",
+  "license": "CC BY-SA 4.0"
+ },
+ "phone": {
+  "file": "phone.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-phone.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "clock": {
+  "file": "clock.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-clock.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lamp": {
+  "file": "lamp.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lamp.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sofa": {
+  "file": "sofa.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sofa.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mirror": {
+  "file": "mirror.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mirror.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bath": {
+  "file": "bath.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bath.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fridge": {
+  "file": "fridge.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-fridge.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "stove": {
+  "file": "stove.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stove.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sink": {
+  "file": "sink.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sink.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "toilet": {
+  "file": "toilet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-toilet.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "shower": {
+  "file": "shower.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-shower.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "kitchen": {
+  "file": "kitchen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-kitchen.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "tree": {
+  "file": "tree.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tree.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "flower": {
+  "file": "flower.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-flower.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mountain": {
+  "file": "mountain.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mountain.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "river": {
+  "file": "river.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-river.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ocean": {
+  "file": "ocean.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ocean.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "grass": {
+  "file": "grass.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-grass.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "leaf": {
+  "file": "leaf.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-leaf.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rock": {
+  "file": "rock.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rock.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "moon": {
+  "file": "moon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-moon.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "star": {
+  "file": "star.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-star.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "lake": {
+  "file": "lake.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lake.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "forest": {
+  "file": "forest.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-forest.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "island": {
+  "file": "island.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-island.ogg",
+  "artist": "stalker of Amanda T and Amanda found out Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cave": {
+  "file": "cave.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cave.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "waterfall": {
+  "file": "waterfall.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-waterfall.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "volcano": {
+  "file": "volcano.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-volcano.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "basketball": {
+  "file": "basketball.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-basketball.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "swimming": {
+  "file": "swimming.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-swimming.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "running": {
+  "file": "running.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-running.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cycling": {
+  "file": "cycling.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cycling.ogg",
+  "artist": "DroEsperanto",
+  "license": "Public domain"
+ },
+ "golf": {
+  "file": "golf.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-golf.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "volleyball": {
+  "file": "volleyball.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-volleyball.ogg",
+  "artist": "Spacecat2",
+  "license": "Public domain"
+ },
+ "baseball": {
+  "file": "baseball.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-baseball.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "badminton": {
+  "file": "badminton.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-badminton.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "skateboard": {
+  "file": "skateboard.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-skateboard.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "yoga": {
+  "file": "yoga.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-yoga.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "dancing": {
+  "file": "dancing.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dancing.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "medal": {
+  "file": "medal.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-medal.ogg",
+  "artist": "No machine-readable author provided. Tomhannen assumed (based on copyright claims).",
+  "license": "Public domain"
+ },
+ "jump": {
+  "file": "jump.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-jump.ogg",
+  "artist": "TreeMama",
+  "license": "CC BY-SA 3.0"
+ },
+ "giraffe": {
+  "file": "giraffe.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-giraffe.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "zebra": {
+  "file": "zebra.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-zebra.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "chicken": {
+  "file": "chicken.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-chicken.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "goat": {
+  "file": "goat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-goat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "deer": {
+  "file": "deer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-deer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "kangaroo": {
+  "file": "kangaroo.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-kangaroo.ogg",
+  "artist": "No machine-readable author provided. Dean14~commonswiki assumed (based on copyright claims).",
+  "license": "CC BY-SA 4.0"
+ },
+ "ant": {
+  "file": "ant.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ant.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "spider": {
+  "file": "spider.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-spider.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "butter": {
+  "file": "butter.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-butter.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sugar": {
+  "file": "sugar.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sugar.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "salt": {
+  "file": "salt.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-salt.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "toothbrush": {
+  "file": "toothbrush.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-toothbrush.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "towel": {
+  "file": "towel.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-towel.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "soap": {
+  "file": "soap.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-soap.ogg",
+  "artist": "user:Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pillow": {
+  "file": "pillow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pillow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "blanket": {
+  "file": "blanket.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-blanket.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "key": {
+  "file": "key.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-key.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cup": {
+  "file": "cup.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cup.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "plate": {
+  "file": "plate.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-plate.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "spoon": {
+  "file": "spoon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-spoon.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "fork": {
+  "file": "fork.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fork.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sky": {
+  "file": "sky.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sky.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fire": {
+  "file": "fire.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fire.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mother": {
+  "file": "mother.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mother.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "father": {
+  "file": "father.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-father.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sister": {
+  "file": "sister.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sister.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "brother": {
+  "file": "brother.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-brother.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "grandmother": {
+  "file": "grandmother.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-grandmother.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "grandfather": {
+  "file": "grandfather.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-grandfather.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "baby": {
+  "file": "baby.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-baby.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "family": {
+  "file": "family.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-family.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "aunt": {
+  "file": "aunt.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-aunt.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "uncle": {
+  "file": "uncle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-uncle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "son": {
+  "file": "son.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-son.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "daughter": {
+  "file": "daughter.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-daughter.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "run": {
+  "file": "run.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-run.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "walk": {
+  "file": "walk.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-walk.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "eat": {
+  "file": "eat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "drink": {
+  "file": "drink.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-drink.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sleep": {
+  "file": "sleep.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sleep.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "read": {
+  "file": "read.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-read.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "write": {
+  "file": "write.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-write.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sing": {
+  "file": "sing.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sing.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dance": {
+  "file": "dance.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dance.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "swim": {
+  "file": "swim.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-swim.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "play": {
+  "file": "play.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-play.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wash": {
+  "file": "wash.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wash.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "draw": {
+  "file": "draw.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-draw.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sit": {
+  "file": "sit.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sit.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stand": {
+  "file": "stand.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stand.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "laugh": {
+  "file": "laugh.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-laugh.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "cry": {
+  "file": "cry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "climb": {
+  "file": "climb.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-climb.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "listen": {
+  "file": "listen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-listen.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "happy": {
+  "file": "happy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-happy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sad": {
+  "file": "sad.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sad.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "angry": {
+  "file": "angry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-angry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "scared": {
+  "file": "scared.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-scared.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tired": {
+  "file": "tired.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tired.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hungry": {
+  "file": "hungry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hungry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "thirsty": {
+  "file": "thirsty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thirsty.ogg",
+  "artist": "No machine-readable author provided. Neoglitch assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "sick": {
+  "file": "sick.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sick.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "surprised": {
+  "file": "surprised.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-surprised.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "excited": {
+  "file": "excited.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-excited.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "circle": {
+  "file": "circle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-circle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "square": {
+  "file": "square.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-square.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "triangle": {
+  "file": "triangle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-triangle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rectangle": {
+  "file": "rectangle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rectangle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "diamond": {
+  "file": "diamond.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-diamond.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ball": {
+  "file": "ball.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ball.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "doll": {
+  "file": "doll.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-doll.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "kite": {
+  "file": "kite.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-kite.ogg",
+  "artist": "Mx. Granger",
+  "license": "CC0"
+ },
+ "robot": {
+  "file": "robot.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-robot.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "puzzle": {
+  "file": "puzzle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-ca-puzzle.ogg",
+  "artist": "No machine-readable author provided. Tawker assumed (based on copyright claims).",
+  "license": "CC BY 2.5"
+ },
+ "blocks": {
+  "file": "blocks.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-blocks.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "balloon": {
+  "file": "balloon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-balloon.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "drum": {
+  "file": "drum.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-drum.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "guitar": {
+  "file": "guitar.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-guitar.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "yo-yo": {
+  "file": "yo-yo.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-yo-yo.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "school": {
+  "file": "school.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-school.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "hospital": {
+  "file": "hospital.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hospital.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "market": {
+  "file": "market.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-market.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "temple": {
+  "file": "temple.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-temple.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "park": {
+  "file": "park.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-park.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "zoo": {
+  "file": "zoo.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-zoo.ogg",
+  "artist": "No machine-readable author provided. Neoglitch assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "beach": {
+  "file": "beach.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-beach.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "farm": {
+  "file": "farm.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-farm.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bank": {
+  "file": "bank.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bank.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "airport": {
+  "file": "airport.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-airport.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "library": {
+  "file": "library.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-library.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "supermarket": {
+  "file": "supermarket.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-supermarket.ogg",
+  "artist": "TaxRebate",
+  "license": "CC BY-SA 4.0"
+ },
+ "playground": {
+  "file": "playground.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-playground.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "gold": {
+  "file": "gold.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-gold.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "silver": {
+  "file": "silver.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-silver.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "plum": {
+  "file": "plum.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-plum.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "blackboard": {
+  "file": "blackboard.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-blackboard.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "marker": {
+  "file": "marker.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-marker.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "glue": {
+  "file": "glue.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-glue.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "paper": {
+  "file": "paper.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-paper.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bell": {
+  "file": "bell.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bell.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "flag": {
+  "file": "flag.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-flag.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "tape": {
+  "file": "tape.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tape.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "knee": {
+  "file": "knee.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-knee.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "elbow": {
+  "file": "elbow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-elbow.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "chin": {
+  "file": "chin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-chin.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "cheek": {
+  "file": "cheek.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cheek.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lips": {
+  "file": "lips.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lips.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "eyebrow": {
+  "file": "eyebrow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eyebrow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "toe": {
+  "file": "toe.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-toe.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "thumb": {
+  "file": "thumb.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thumb.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "nail": {
+  "file": "nail.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-nail.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wrist": {
+  "file": "wrist.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wrist.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cloudy": {
+  "file": "cloudy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cloudy.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "windy": {
+  "file": "windy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-windy.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "flood": {
+  "file": "flood.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-flood.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ice": {
+  "file": "ice.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ice.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "summer": {
+  "file": "summer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-summer.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "winter": {
+  "file": "winter.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-winter.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "spring": {
+  "file": "spring.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-spring.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "autumn": {
+  "file": "autumn.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-autumn.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "snowman": {
+  "file": "snowman.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-snowman.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "thirteen": {
+  "file": "thirteen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thirteen.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "fourteen": {
+  "file": "fourteen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fourteen.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "fifteen": {
+  "file": "fifteen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fifteen.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "sixty": {
+  "file": "sixty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sixty.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "seventy": {
+  "file": "seventy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-seventy.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "sailboat": {
+  "file": "sailboat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-sailboat.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "ferry": {
+  "file": "ferry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ferry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "crane": {
+  "file": "crane.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-crane.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "tram": {
+  "file": "tram.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-tram.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "speedboat": {
+  "file": "speedboat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-speedboat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mechanic": {
+  "file": "mechanic.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mechanic.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dancer": {
+  "file": "dancer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dancer.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "Public domain"
+ },
+ "shopkeeper": {
+  "file": "shopkeeper.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-shopkeeper.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 ee"
+ },
+ "astronaut": {
+  "file": "astronaut.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-ca-astronaut.ogg",
+  "artist": "",
+  "license": "CC BY-SA 3.0"
+ },
+ "monk": {
+  "file": "monk.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-monk.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "shorts": {
+  "file": "shorts.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-shorts.ogg",
+  "artist": "Persent101",
+  "license": "CC BY-SA 4.0"
+ },
+ "sweater": {
+  "file": "sweater.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sweater.ogg",
+  "artist": "Spacecat2",
+  "license": "Public domain"
+ },
+ "raincoat": {
+  "file": "raincoat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-raincoat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pajamas": {
+  "file": "pajamas.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pajamas.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cap": {
+  "file": "cap.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cap.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "slippers": {
+  "file": "slippers.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-slippers.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "apron": {
+  "file": "apron.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-apron.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mask": {
+  "file": "mask.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mask.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "watch": {
+  "file": "watch.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-watch.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sand": {
+  "file": "sand.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sand.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wave": {
+  "file": "wave.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wave.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hill": {
+  "file": "hill.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hill.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "field": {
+  "file": "field.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-field.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pond": {
+  "file": "pond.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pond.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "seed": {
+  "file": "seed.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-seed.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cactus": {
+  "file": "cactus.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cactus.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bamboo": {
+  "file": "bamboo.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bamboo.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "taekwondo": {
+  "file": "taekwondo.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-taekwondo.ogg",
+  "artist": "Dcoetzee",
+  "license": "CC0"
+ },
+ "fishing": {
+  "file": "fishing.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fishing.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bowling": {
+  "file": "bowling.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-bowling.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "chess": {
+  "file": "chess.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-chess.ogg",
+  "artist": "BirdHopper",
+  "license": "CC BY-SA 4.0"
+ },
+ "rugby": {
+  "file": "rugby.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rugby.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "jump rope": {
+  "file": "jump-rope.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-jump_rope.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "parents": {
+  "file": "parents.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-parents.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cousin": {
+  "file": "cousin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cousin.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "twins": {
+  "file": "twins.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-twins.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "husband": {
+  "file": "husband.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-husband.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wife": {
+  "file": "wife.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wife.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "friend": {
+  "file": "friend.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-friend.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "open": {
+  "file": "open.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-open.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "close": {
+  "file": "close.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-close.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "push": {
+  "file": "push.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-push.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pull": {
+  "file": "pull.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pull.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "throw": {
+  "file": "throw.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-throw.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "catch": {
+  "file": "catch.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-catch.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "kick": {
+  "file": "kick.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-kick.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hug": {
+  "file": "hug.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hug.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "smile": {
+  "file": "smile.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-smile.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "shy": {
+  "file": "shy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-shy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "proud": {
+  "file": "proud.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-proud.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "nervous": {
+  "file": "nervous.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-nervous.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sleepy": {
+  "file": "sleepy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sleepy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "calm": {
+  "file": "calm.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-calm.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lonely": {
+  "file": "lonely.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lonely.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "brave": {
+  "file": "brave.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-brave.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pentagon": {
+  "file": "pentagon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pentagon.ogg",
+  "artist": "K6ka",
+  "license": "CC0"
+ },
+ "hexagon": {
+  "file": "hexagon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hexagon.ogg",
+  "artist": "K6ka",
+  "license": "CC0"
+ },
+ "cube": {
+  "file": "cube.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cube.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "bubbles": {
+  "file": "bubbles.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-bubbles.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "slide": {
+  "file": "slide.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-slide.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "swing": {
+  "file": "swing.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-swing.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "seesaw": {
+  "file": "seesaw.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-seesaw.ogg",
+  "artist": "Paul2520",
+  "license": "CC BY-SA 4.0"
+ },
+ "puppet": {
+  "file": "puppet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-puppet.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dice": {
+  "file": "dice.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dice.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "cinema": {
+  "file": "cinema.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cinema.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pharmacy": {
+  "file": "pharmacy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pharmacy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cafe": {
+  "file": "cafe.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cafe.ogg",
+  "artist": "0x0077BE",
+  "license": "CC0"
+ },
+ "bakery": {
+  "file": "bakery.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bakery.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wolf": {
+  "file": "wolf.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wolf.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "camel": {
+  "file": "camel.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-camel.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rhino": {
+  "file": "rhino.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-rhino.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "gorilla": {
+  "file": "gorilla.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-gorilla.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "leopard": {
+  "file": "leopard.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-leopard.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "buffalo": {
+  "file": "buffalo.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-buffalo.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "donkey": {
+  "file": "donkey.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-donkey.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "squirrel": {
+  "file": "squirrel.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-ca-squirrel.ogg",
+  "artist": "No machine-readable author provided. Tawker assumed (based on copyright claims).",
+  "license": "CC BY 2.5"
+ },
+ "bat": {
+  "file": "bat.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bat.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "koala": {
+  "file": "koala.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-koala.oga",
+  "artist": "Paul2520",
+  "license": "CC BY-SA 4.0"
+ },
+ "sloth": {
+  "file": "sloth.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-sloth.ogg",
+  "artist": "yuumei",
+  "license": "Public domain"
+ },
+ "raccoon": {
+  "file": "raccoon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-raccoon.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "seal": {
+  "file": "seal.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-seal.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "walrus": {
+  "file": "walrus.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-walrus.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "reindeer": {
+  "file": "reindeer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-reindeer.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "moose": {
+  "file": "moose.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-moose.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "parrot": {
+  "file": "parrot.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-parrot.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "peacock": {
+  "file": "peacock.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-peacock.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "eagle": {
+  "file": "eagle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eagle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "swan": {
+  "file": "swan.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-swan.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "goose": {
+  "file": "goose.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-goose.ogg",
+  "artist": "Skysong263",
+  "license": "CC BY-SA 3.0"
+ },
+ "turkey": {
+  "file": "turkey.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-turkey.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rooster": {
+  "file": "rooster.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rooster.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pigeon": {
+  "file": "pigeon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pigeon.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sparrow": {
+  "file": "sparrow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sparrow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "crow": {
+  "file": "crow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-crow.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "hummingbird": {
+  "file": "hummingbird.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hummingbird.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ostrich": {
+  "file": "ostrich.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ostrich.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lizard": {
+  "file": "lizard.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lizard.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "gecko": {
+  "file": "gecko.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-gecko.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "tortoise": {
+  "file": "tortoise.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tortoise.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "jellyfish": {
+  "file": "jellyfish.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-jellyfish.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "starfish": {
+  "file": "starfish.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-starfish.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "seahorse": {
+  "file": "seahorse.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-seahorse.ogg",
+  "artist": "Logical123",
+  "license": "CC BY-SA 3.0"
+ },
+ "shrimp": {
+  "file": "shrimp.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-shrimp.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lobster": {
+  "file": "lobster.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lobster.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "squid": {
+  "file": "squid.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-squid.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "clownfish": {
+  "file": "clownfish.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-clownfish.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "eel": {
+  "file": "eel.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eel.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ladybug": {
+  "file": "ladybug.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ladybug.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dragonfly": {
+  "file": "dragonfly.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dragonfly.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "grasshopper": {
+  "file": "grasshopper.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-grasshopper.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mosquito": {
+  "file": "mosquito.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mosquito.ogg",
+  "artist": "",
+  "license": "CC BY-SA 3.0"
+ },
+ "fly": {
+  "file": "fly.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fly.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "cockroach": {
+  "file": "cockroach.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cockroach.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "worm": {
+  "file": "worm.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-worm.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "snail": {
+  "file": "snail.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-snail.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "caterpillar": {
+  "file": "caterpillar.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-caterpillar.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "puppy": {
+  "file": "puppy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-puppy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "kitten": {
+  "file": "kitten.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-kitten.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "steak": {
+  "file": "steak.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-steak.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "dumpling": {
+  "file": "dumpling.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dumpling.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "porridge": {
+  "file": "porridge.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-porridge.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "toast": {
+  "file": "toast.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-toast.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "cereal": {
+  "file": "cereal.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cereal.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "jam": {
+  "file": "jam.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-jam.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "peanut": {
+  "file": "peanut.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-peanut.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "popcorn": {
+  "file": "popcorn.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-popcorn.ogg",
+  "artist": "Paul2520",
+  "license": "CC BY-SA 4.0"
+ },
+ "chips": {
+  "file": "chips.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-chips.ogg",
+  "artist": "BirdHopper",
+  "license": "CC BY-SA 4.0"
+ },
+ "pudding": {
+  "file": "pudding.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-pudding.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "cupcake": {
+  "file": "cupcake.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-cupcake.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "pie": {
+  "file": "pie.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pie.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "waffle": {
+  "file": "waffle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-waffle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lemonade": {
+  "file": "lemonade.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-lemonade.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "cocoa": {
+  "file": "cocoa.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cocoa.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sausage": {
+  "file": "sausage.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sausage.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bacon": {
+  "file": "bacon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-bacon.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "ham": {
+  "file": "ham.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ham.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "meatball": {
+  "file": "meatball.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-meatball.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "ketchup": {
+  "file": "ketchup.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ketchup.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "garlic": {
+  "file": "garlic.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-garlic.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "onion": {
+  "file": "onion.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-onion.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pepper": {
+  "file": "pepper.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-pepper.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "flour": {
+  "file": "flour.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-flour.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "oil": {
+  "file": "oil.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-oil.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "breakfast": {
+  "file": "breakfast.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-breakfast.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lunch": {
+  "file": "lunch.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lunch.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dinner": {
+  "file": "dinner.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dinner.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stop": {
+  "file": "stop.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stop.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "go": {
+  "file": "go.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-go.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "come": {
+  "file": "come.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-come.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "look": {
+  "file": "look.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-look.ogg",
+  "artist": "Aren Elliott",
+  "license": "CC BY-SA 4.0"
+ },
+ "see": {
+  "file": "see.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-see.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hear": {
+  "file": "hear.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hear.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "smell": {
+  "file": "smell.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-smell.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "touch": {
+  "file": "touch.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-touch.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "taste": {
+  "file": "taste.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-taste.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "speak": {
+  "file": "speak.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-speak.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "say": {
+  "file": "say.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-say.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ask": {
+  "file": "ask.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ask.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "answer": {
+  "file": "answer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-answer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "help": {
+  "file": "help.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-help.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "give": {
+  "file": "give.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-give.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "take": {
+  "file": "take.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-take.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "buy": {
+  "file": "buy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-buy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sell": {
+  "file": "sell.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sell.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pay": {
+  "file": "pay.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pay.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wait": {
+  "file": "wait.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wait.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "start": {
+  "file": "start.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-start.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "finish": {
+  "file": "finish.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-finish.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "win": {
+  "file": "win.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-win.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lose": {
+  "file": "lose.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lose.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "drive": {
+  "file": "drive.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-drive.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ride": {
+  "file": "ride.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ride.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "carry": {
+  "file": "carry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-carry.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "build": {
+  "file": "build.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-build.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "break": {
+  "file": "break.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-break.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "fix": {
+  "file": "fix.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fix.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cut": {
+  "file": "cut.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cut.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "color": {
+  "file": "color.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-color.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fold": {
+  "file": "fold.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fold.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "clean": {
+  "file": "clean.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-clean.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sweep": {
+  "file": "sweep.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sweep.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wipe": {
+  "file": "wipe.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wipe.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pour": {
+  "file": "pour.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pour.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mix": {
+  "file": "mix.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mix.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bake": {
+  "file": "bake.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bake.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fry": {
+  "file": "fry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "feed": {
+  "file": "feed.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-feed.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "plant": {
+  "file": "plant.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-plant.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pick": {
+  "file": "pick.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pick.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dig": {
+  "file": "dig.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dig.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "brush": {
+  "file": "brush.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-brush.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "comb": {
+  "file": "comb.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-comb.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "study": {
+  "file": "study.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-study.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "learn": {
+  "file": "learn.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-learn.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "teach": {
+  "file": "teach.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-teach.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "think": {
+  "file": "think.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-think.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "know": {
+  "file": "know.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-know.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "remember": {
+  "file": "remember.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-remember.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "forget": {
+  "file": "forget.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-forget.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "count": {
+  "file": "count.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-count.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "spell": {
+  "file": "spell.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-spell.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "love": {
+  "file": "love.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-love.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "like": {
+  "file": "like.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-like.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "want": {
+  "file": "want.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-want.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "need": {
+  "file": "need.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-need.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "share": {
+  "file": "share.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-share.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lawyer": {
+  "file": "lawyer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lawyer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "journalist": {
+  "file": "journalist.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-journalist.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "writer": {
+  "file": "writer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-writer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "musician": {
+  "file": "musician.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-musician.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "painter": {
+  "file": "painter.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-painter.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "architect": {
+  "file": "architect.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-architect.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "gardener": {
+  "file": "gardener.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-gardener.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "captain": {
+  "file": "captain.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-captain.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "king": {
+  "file": "king.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-king.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "queen": {
+  "file": "queen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-queen.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "prince": {
+  "file": "prince.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-prince.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "princess": {
+  "file": "princess.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-princess.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pirate": {
+  "file": "pirate.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pirate.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "magician": {
+  "file": "magician.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-magician.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "bedroom": {
+  "file": "bedroom.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bedroom.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bathroom": {
+  "file": "bathroom.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bathroom.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "garage": {
+  "file": "garage.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-garage.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "garden": {
+  "file": "garden.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-garden.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "balcony": {
+  "file": "balcony.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-balcony.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "roof": {
+  "file": "roof.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-roof.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wall": {
+  "file": "wall.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wall.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "floor": {
+  "file": "floor.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-floor.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stairs": {
+  "file": "stairs.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stairs.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fence": {
+  "file": "fence.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fence.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "curtain": {
+  "file": "curtain.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-curtain.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "carpet": {
+  "file": "carpet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-carpet.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "oven": {
+  "file": "oven.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-oven.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "kettle": {
+  "file": "kettle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-kettle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pan": {
+  "file": "pan.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pan.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pot": {
+  "file": "pot.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pot.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "knife": {
+  "file": "knife.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-knife.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "bowl": {
+  "file": "bowl.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bowl.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "glass": {
+  "file": "glass.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-glass.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bottle": {
+  "file": "bottle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bottle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "broom": {
+  "file": "broom.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-broom.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bucket": {
+  "file": "bucket.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bucket.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hanger": {
+  "file": "hanger.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-hanger.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "wardrobe": {
+  "file": "wardrobe.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wardrobe.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "drawer": {
+  "file": "drawer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-drawer.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "candle": {
+  "file": "candle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-candle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "vase": {
+  "file": "vase.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-vase.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "photo": {
+  "file": "photo.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-photo.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "light": {
+  "file": "light.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-light.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "switch": {
+  "file": "switch.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-switch.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "home": {
+  "file": "home.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-home.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "village": {
+  "file": "village.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-village.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "city": {
+  "file": "city.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-city.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "street": {
+  "file": "street.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-street.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bridge": {
+  "file": "bridge.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bridge.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hotel": {
+  "file": "hotel.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hotel.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "museum": {
+  "file": "museum.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-museum.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "aquarium": {
+  "file": "aquarium.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-aquarium.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stadium": {
+  "file": "stadium.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stadium.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "church": {
+  "file": "church.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-church.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mosque": {
+  "file": "mosque.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mosque.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "palace": {
+  "file": "palace.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-palace.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "castle": {
+  "file": "castle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-castle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tower": {
+  "file": "tower.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tower.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "office": {
+  "file": "office.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-office.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "factory": {
+  "file": "factory.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-factory.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "harbor": {
+  "file": "harbor.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-harbor.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "jungle": {
+  "file": "jungle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-jungle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "principal": {
+  "file": "principal.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-principal.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lesson": {
+  "file": "lesson.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lesson.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "test": {
+  "file": "test.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-test.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "grade": {
+  "file": "grade.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-grade.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "english": {
+  "file": "english.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-english.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "math": {
+  "file": "math.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-math.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "science": {
+  "file": "science.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-science.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "art": {
+  "file": "art.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-art.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "music": {
+  "file": "music.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-music.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "history": {
+  "file": "history.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-history.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dictionary": {
+  "file": "dictionary.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dictionary.ogg",
+  "artist": "Dvortygirl",
+  "license": "Public domain"
+ },
+ "sticker": {
+  "file": "sticker.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sticker.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "face": {
+  "file": "face.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-face.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "head": {
+  "file": "head.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-head.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "body": {
+  "file": "body.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-body.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "teeth": {
+  "file": "teeth.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-teeth.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "beard": {
+  "file": "beard.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-beard.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mustache": {
+  "file": "mustache.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mustache.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ankle": {
+  "file": "ankle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ankle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hip": {
+  "file": "hip.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hip.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "chest": {
+  "file": "chest.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-chest.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "blood": {
+  "file": "blood.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-blood.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sea": {
+  "file": "sea.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sea.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stream": {
+  "file": "stream.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stream.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "soil": {
+  "file": "soil.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-soil.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "mud": {
+  "file": "mud.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-mud.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stone": {
+  "file": "stone.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stone.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "shell": {
+  "file": "shell.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-shell.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "coral": {
+  "file": "coral.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-coral.ogg",
+  "artist": "Yndtbt",
+  "license": "CC0"
+ },
+ "branch": {
+  "file": "branch.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-branch.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "root": {
+  "file": "root.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-root.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bush": {
+  "file": "bush.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bush.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rose": {
+  "file": "rose.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-rose.ogg",
+  "artist": "No machine-readable author provided. Celestianpower assumed (based on copyright claims).",
+  "license": "Public domain"
+ },
+ "planet": {
+  "file": "planet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-planet.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "earth": {
+  "file": "earth.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-earth.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "space": {
+  "file": "space.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-space.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "air": {
+  "file": "air.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-air.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "smoke": {
+  "file": "smoke.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-smoke.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "airplane": {
+  "file": "airplane.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-airplane.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "jet": {
+  "file": "jet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-jet.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "subway": {
+  "file": "subway.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-subway.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lorry": {
+  "file": "lorry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-lorry.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "jeep": {
+  "file": "jeep.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-jeep.ogg",
+  "artist": "K6ka",
+  "license": "CC0"
+ },
+ "canoe": {
+  "file": "canoe.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-canoe.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wheelchair": {
+  "file": "wheelchair.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wheelchair.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stroller": {
+  "file": "stroller.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stroller.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wheel": {
+  "file": "wheel.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wheel.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "engine": {
+  "file": "engine.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-engine.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hoodie": {
+  "file": "hoodie.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-hoodie.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "vest": {
+  "file": "vest.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-vest.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "suit": {
+  "file": "suit.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-suit.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "underwear": {
+  "file": "underwear.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-underwear.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "bikini": {
+  "file": "bikini.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-bikini.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "ring": {
+  "file": "ring.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ring.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sunglasses": {
+  "file": "sunglasses.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sunglasses.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "button": {
+  "file": "button.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-button.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pocket": {
+  "file": "pocket.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pocket.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "zipper": {
+  "file": "zipper.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-zipper.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "goal": {
+  "file": "goal.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-goal.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "racket": {
+  "file": "racket.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-racket.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "net": {
+  "file": "net.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-net.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "whistle": {
+  "file": "whistle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-whistle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "team": {
+  "file": "team.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-team.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "coach": {
+  "file": "coach.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-coach.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "race": {
+  "file": "race.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-race.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "exercise": {
+  "file": "exercise.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-exercise.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "stretch": {
+  "file": "stretch.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-stretch.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "push-up": {
+  "file": "push-up.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-push-up.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "sandbox": {
+  "file": "sandbox.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sandbox.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "worried": {
+  "file": "worried.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-worried.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "confused": {
+  "file": "confused.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-confused.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "silly": {
+  "file": "silly.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-silly.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "grumpy": {
+  "file": "grumpy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-grumpy.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "curious": {
+  "file": "curious.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-curious.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sorry": {
+  "file": "sorry.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sorry.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hurt": {
+  "file": "hurt.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hurt.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "full": {
+  "file": "full.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-full.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "beige": {
+  "file": "beige.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-beige.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "turquoise": {
+  "file": "turquoise.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-turquoise.ogg",
+  "artist": "DroEsperanto",
+  "license": "Public domain"
+ },
+ "violet": {
+  "file": "violet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-violet.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "navy": {
+  "file": "navy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-navy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "line": {
+  "file": "line.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-line.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "arrow": {
+  "file": "arrow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-arrow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sixteen": {
+  "file": "sixteen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sixteen.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "seventeen": {
+  "file": "seventeen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-seventeen.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "eighteen": {
+  "file": "eighteen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eighteen.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "nineteen": {
+  "file": "nineteen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-nineteen.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "eighty": {
+  "file": "eighty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eighty.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "ninety": {
+  "file": "ninety.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-ninety.ogg",
+  "artist": "No machine-readable author provided. TheDaveRoss assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "first": {
+  "file": "first.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-first.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "second": {
+  "file": "second.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-second.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "third": {
+  "file": "third.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-third.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "half": {
+  "file": "half.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-half.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "me": {
+  "file": "me.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-me.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "boy": {
+  "file": "boy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-boy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "girl": {
+  "file": "girl.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-girl.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "man": {
+  "file": "man.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-man.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "woman": {
+  "file": "woman.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-woman.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cantaloupe": {
+  "file": "cantaloupe.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cantaloupe.ogg",
+  "artist": "Paul2520",
+  "license": "CC BY-SA 4.0"
+ },
+ "apricot": {
+  "file": "apricot.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-apricot.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "fig": {
+  "file": "fig.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fig.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "raisin": {
+  "file": "raisin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-raisin.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tornado": {
+  "file": "tornado.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tornado.ogg",
+  "artist": "Sylvanmoon",
+  "license": "CC BY-SA 4.0"
+ },
+ "typhoon": {
+  "file": "typhoon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-typhoon.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "drizzle": {
+  "file": "drizzle.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-drizzle.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hail": {
+  "file": "hail.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hail.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "temperature": {
+  "file": "temperature.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-temperature.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "cabbage": {
+  "file": "cabbage.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cabbage.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "lettuce": {
+  "file": "lettuce.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lettuce.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "kale": {
+  "file": "kale.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-kale.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "cucumber": {
+  "file": "cucumber.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cucumber.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "pumpkin": {
+  "file": "pumpkin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-pumpkin.ogg",
+  "artist": "",
+  "license": "CC BY-SA 3.0"
+ },
+ "eggplant": {
+  "file": "eggplant.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-eggplant.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "beans": {
+  "file": "beans.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-beans.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "cauliflower": {
+  "file": "cauliflower.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cauliflower.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "celery": {
+  "file": "celery.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-celery.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "radish": {
+  "file": "radish.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-radish.ogg",
+  "artist": "த*உழவன்",
+  "license": "Public domain"
+ },
+ "galangal": {
+  "file": "galangal.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-galangal.ogg",
+  "artist": "Alifshinobi",
+  "license": "CC BY-SA 3.0"
+ },
+ "lemongrass": {
+  "file": "lemongrass.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-lemongrass.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "basil": {
+  "file": "basil.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-basil.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "asparagus": {
+  "file": "asparagus.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-asparagus.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "turnip": {
+  "file": "turnip.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-turnip.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "zucchini": {
+  "file": "zucchini.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-zucchini.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "artichoke": {
+  "file": "artichoke.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-artichoke.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "vegetables": {
+  "file": "vegetables.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-vegetables.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "smartphone": {
+  "file": "smartphone.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-smartphone.oga",
+  "artist": "Paul2520",
+  "license": "CC0"
+ },
+ "laptop": {
+  "file": "laptop.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-laptop.ogg",
+  "artist": "G. Allen Morris III",
+  "license": "CC BY-SA 4.0"
+ },
+ "keyboard": {
+  "file": "keyboard.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-keyboard.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "screen": {
+  "file": "screen.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-screen.ogg",
+  "artist": "Jelkner",
+  "license": "CC BY-SA 3.0"
+ },
+ "speaker": {
+  "file": "speaker.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-speaker.ogg",
+  "artist": "TreeMama",
+  "license": "CC BY-SA 3.0"
+ },
+ "camera": {
+  "file": "camera.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-camera.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "printer": {
+  "file": "printer.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-au-printer.ogg",
+  "artist": "Commander Keane",
+  "license": "CC BY-SA 4.0"
+ },
+ "battery": {
+  "file": "battery.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-battery.ogg",
+  "artist": "EncycloPetey",
+  "license": "CC BY-SA 3.0"
+ },
+ "cable": {
+  "file": "cable.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-cable.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wifi": {
+  "file": "wifi.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wifi.ogg",
+  "artist": "Gated-verb",
+  "license": "CC BY-SA 3.0"
+ },
+ "internet": {
+  "file": "internet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-internet.ogg",
+  "artist": "Gbeebani",
+  "license": "CC BY-SA 3.0"
+ },
+ "email": {
+  "file": "email.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-email.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "video": {
+  "file": "video.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-video.ogg",
+  "artist": "Spacecat2",
+  "license": "Public domain"
+ },
+ "game": {
+  "file": "game.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-game.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "remote": {
+  "file": "remote.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-remote.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "violin": {
+  "file": "violin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-violin.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "trumpet": {
+  "file": "trumpet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-trumpet.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "flute": {
+  "file": "flute.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-flute.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "saxophone": {
+  "file": "saxophone.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-saxophone.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "xylophone": {
+  "file": "xylophone.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-xylophone.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tambourine": {
+  "file": "tambourine.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tambourine.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "accordion": {
+  "file": "accordion.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-accordion.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "song": {
+  "file": "song.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-song.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "microphone": {
+  "file": "microphone.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-ca-microphone.ogg",
+  "artist": "Gabe Prus",
+  "license": "CC BY-SA 4.0"
+ },
+ "rhythm": {
+  "file": "rhythm.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rhythm.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "loud": {
+  "file": "loud.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-loud.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "quiet": {
+  "file": "quiet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-quiet.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "big": {
+  "file": "big.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-big.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "small": {
+  "file": "small.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-small.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tall": {
+  "file": "tall.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tall.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "short": {
+  "file": "short.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-short.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "long": {
+  "file": "long.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-long.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "fast": {
+  "file": "fast.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-fast.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "slow": {
+  "file": "slow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-slow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "new": {
+  "file": "new.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-new.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "old": {
+  "file": "old.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-old.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "young": {
+  "file": "young.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-young.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "dirty": {
+  "file": "dirty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-dirty.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "wet": {
+  "file": "wet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-wet.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "empty": {
+  "file": "empty.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-empty.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "closed": {
+  "file": "closed.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-closed.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "up": {
+  "file": "up.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-up.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "down": {
+  "file": "down.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-down.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "in": {
+  "file": "in.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-in.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "out": {
+  "file": "out.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-out.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "left": {
+  "file": "left.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-left.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "right": {
+  "file": "right.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-right.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "front": {
+  "file": "front.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-front.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "near": {
+  "file": "near.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-near.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "far": {
+  "file": "far.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-far.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "heavy": {
+  "file": "heavy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-heavy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hard": {
+  "file": "hard.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hard.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "soft": {
+  "file": "soft.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-soft.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "easy": {
+  "file": "easy.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-easy.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "difficult": {
+  "file": "difficult.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-difficult.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "rich": {
+  "file": "rich.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-rich.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "poor": {
+  "file": "poor.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-poor.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "strong": {
+  "file": "strong.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-strong.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "weak": {
+  "file": "weak.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-weak.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "thick": {
+  "file": "thick.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thick.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "thin": {
+  "file": "thin.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-thin.ogg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "sweet": {
+  "file": "sweet.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sweet.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "sour": {
+  "file": "sour.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-sour.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "same": {
+  "file": "same.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-same.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "different": {
+  "file": "different.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-different.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "friday": {
+  "file": "friday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-friday.ogg",
+  "artist": "I am friday",
+  "license": "CC BY-SA 3.0"
+ },
+ "february": {
+  "file": "february.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-february.ogg",
+  "artist": "TaxRebate",
+  "license": "CC BY-SA 4.0"
+ },
+ "march": {
+  "file": "march.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-march.ogg",
+  "artist": "AndroidDevelopment101",
+  "license": "CC BY 4.0"
+ },
+ "august": {
+  "file": "august.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-august.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "today": {
+  "file": "today.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-today.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "tomorrow": {
+  "file": "tomorrow.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-tomorrow.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "yesterday": {
+  "file": "yesterday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-yesterday.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "morning": {
+  "file": "morning.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-morning.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "afternoon": {
+  "file": "afternoon.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-afternoon.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "evening": {
+  "file": "evening.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-uk-evening.ogg",
+  "artist": "Association Shtooka, Judith Franck",
+  "license": "CC BY 3.0 us"
+ },
+ "night": {
+  "file": "night.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-night.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "week": {
+  "file": "week.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-week.ogg",
+  "artist": "No machine-readable author provided. Dvortygirl assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0"
+ },
+ "month": {
+  "file": "month.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-month.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "year": {
+  "file": "year.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-year.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "hour": {
+  "file": "hour.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-hour.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "o'clock": {
+  "file": "o-clock.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-o'clock.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "birthday": {
+  "file": "birthday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-birthday.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "holiday": {
+  "file": "holiday.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-holiday.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "weekend": {
+  "file": "weekend.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-weekend.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "japan": {
+  "file": "japan.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-japan.ogg",
+  "artist": "Neskaya",
+  "license": "CC BY-SA 3.0"
+ },
+ "china": {
+  "file": "china.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-china.ogg",
+  "artist": "Dvortygirl",
+  "license": "CC BY-SA 3.0"
+ },
+ "world": {
+  "file": "world.mp3",
+  "source": "https://commons.wikimedia.org/wiki/File:En-us-world.oga",
+  "artist": "Dsm.wiki",
+  "license": "CC BY-SA 4.0"
+ }
+}

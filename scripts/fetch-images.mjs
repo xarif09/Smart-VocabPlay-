@@ -63,6 +63,9 @@ for (const title of titles) {
   }
   await sleep(120);
 }
+// ลบรูป/รายการของบทความที่ไม่ถูกใช้แล้ว (เปลี่ยนชื่อบทความใน images.js)
+const { unlinkSync } = await import("node:fs");
+for (const t of Object.keys(manifest)) if (!titles.includes(t)) { try { unlinkSync(join(OUT, manifest[t])); } catch (e) {} delete manifest[t]; delete credits[t]; }
 writeFileSync(MANIFEST, JSON.stringify(manifest, null, 1));
 writeFileSync(CREDITS, JSON.stringify(credits, null, 1));
 console.log(`\nเสร็จ: โหลดใหม่ ${ok} · มีอยู่แล้ว ${skipped} · ล้มเหลว ${failed.length}`);

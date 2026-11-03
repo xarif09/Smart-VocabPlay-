@@ -41,6 +41,23 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     if (counts.length !== 14 || counts.reduce((x, c) => x + c, 0) !== 296) bad('count', counts);
     await p.click('text=Animals'); await p.waitForTimeout(200);
     await shot(p, `${name}-2-category`); await a('category');
+    // learn mode (flash cards)
+    await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await p.waitForTimeout(200);
+    await shot(p, `${name}-2a-learn-front`); await a('learn-front');
+    res.push({ label: name + ' learn-has-read', ok: await p.locator('span', { hasText: /^[ก-๙]+(-[ก-๙]+)*$/ }).first().isVisible() });
+    await p.click('text=แตะการ์ดเพื่อดูความหมาย'); await p.waitForTimeout(300);
+    await shot(p, `${name}-2b-learn-back`); await a('learn-back');
+    res.push({ label: name + ' learn-sentence', ok: await p.isVisible('text=/[A-Z][a-z].*\\./') });
+    await p.click('text=รู้แล้ว'); await p.click('text=ยังไม่แม่น'); await p.waitForTimeout(100);
+    await p.click('button:has-text("‹")'); await p.waitForTimeout(200);
+    // new games
+    await p.click('text=Listen'); await p.waitForTimeout(200); await shot(p, `${name}-2c-listen`); await a('listen');
+    await p.click('button:has-text("🔊") >> nth=1').catch(()=>{}); await p.waitForTimeout(100);
+    await p.click('button:has-text("‹")');
+    await p.click('text=Sentence'); await p.waitForTimeout(200); await shot(p, `${name}-2d-sentence`); await a('sentence');
+    await p.click('button:has-text("‹")');
+    await p.click('text=Speak'); await p.waitForTimeout(200); await shot(p, `${name}-2e-speak`); await a('speak');
+    await p.click('button:has-text("‹")');
     // boss locked → toast
     await p.click('text=ด่านบอส'); await p.waitForTimeout(150);
     res.push({ label: name + ' boss-locked-toast', ok: await p.isVisible('text=เก็บดาวให้ได้ทุกเกม') });
@@ -59,22 +76,32 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('text=Spelling'); await p.waitForTimeout(200); await shot(p, `${name}-5-game-spell`); await a('spell');
     await p.click('button:has-text("‹")'); await p.click('text=Habitat Hunt'); await p.waitForTimeout(200); await shot(p, `${name}-6-game-habitat`); await a('habitat');
     await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")');
-    await p.click('text=สติกเกอร์'); await p.waitForTimeout(200); await shot(p, `${name}-7-stickers`); await a('stickers');
+    await p.click('button:has-text("📒")'); await p.waitForTimeout(200); await shot(p, `${name}-7-stickers`); await a('stickers');
     await p.click('button:has-text("‹")');
     await p.click('text=จัดการ'); await p.waitForTimeout(200); await shot(p, `${name}-8-manage`); await a('manage');
     await p.click('text=+ เพิ่มคำ'); await p.waitForTimeout(100); await shot(p, `${name}-9-manage-add`); await a('manage-add');
     await p.click('text=ยกเลิก'); await p.click('button:has-text("‹")');
     await p.click('button:has-text("⚙️")'); await p.waitForTimeout(200); await shot(p, `${name}-10-settings`); await a('settings');
-    await p.click('text=เสร็จสิ้น');
+    await p.click('text=รายงานผู้ปกครอง'); await p.waitForTimeout(200); await shot(p, `${name}-10a-report`); await a('report');
+    await p.click('button:has-text("‹")');
+    await p.click('text=ร้านค้า'); await p.waitForTimeout(200); await shot(p, `${name}-10b-shop`); await a('shop');
+    await p.click('text=พื้นหลัง'); await p.waitForTimeout(100); await a('shop-bg');
+    await p.click('button:has-text("‹")');
+    res.push({ label: name + ' missions-card', ok: await p.isVisible('text=ภารกิจวันนี้') });
     // seeded: boss unlocked + review card
     await p.evaluate(() => {
       const k = 'smart-vocabplay:progress:v1'; const d = JSON.parse(localStorage.getItem(k));
-      ['quiz', 'spell', 'memory', 'habitat'].forEach(g => d.stars['animals:' + g] = 2); d.mistakes = { 1: 2, 2: 1, 3: 1 };
+      ['quiz', 'spell', 'memory', 'habitat', 'listen', 'sentence'].forEach(g => d.stars['animals:' + g] = 2); d.mistakes = { 1: 2, 2: 1, 3: 1 }; d.coins = 500;
       localStorage.setItem(k, JSON.stringify(d));
     });
     await p.reload(); await p.click(START); await p.waitForTimeout(300);
     await shot(p, `${name}-11-home-review`); await a('home-review');
-    res.push({ label: name + ' review-card', ok: await p.isVisible('text=ทบทวนคำที่พลาด') });
+    res.push({ label: name + ' review-card', ok: await p.isVisible('text=ทบทวนวันนี้') });
+    // shop: buy a hat with seeded coins
+    await p.click('text=ร้านค้า'); await p.click('text=ซื้อ 🪙 80'); await p.waitForTimeout(200);
+    res.push({ label: name + ' shop-buy', wearing: await p.isVisible('text=ใส่อยู่'), coinsLeft: await p.innerText('text=/🪙 \\d+$/') });
+    await shot(p, `${name}-11a-shop-bought`); await a('shop-bought');
+    await p.click('button:has-text("‹")');
     await p.click('text=Animals'); await p.waitForTimeout(200); await shot(p, `${name}-12-category-boss-open`); await a('category-boss-open');
     await p.click('text=ด่านบอส'); await p.waitForTimeout(300); await shot(p, `${name}-13-boss`); await a('boss');
     res.push({ label: name + ' boss-screen', ok: await p.isVisible('text=บอส Animals') });

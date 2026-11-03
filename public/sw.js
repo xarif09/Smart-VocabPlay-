@@ -1,6 +1,6 @@
 // Service Worker — ให้เล่นออฟไลน์ได้หลังเปิดครั้งแรก
 // หน้า (navigate) = ลองเน็ตก่อน ไม่ได้ค่อยใช้แคช · ไฟล์อื่นในโดเมนเดียวกัน = ใช้แคชก่อน
-const CACHE = "vocabplay-v3";
+const CACHE = "vocabplay-v4";
 const IMG_CACHE = "vocabplay-img-v1";   // รูปจาก Wikipedia (แยกแคช ไม่ล้างตอนอัปเดตแอป)
 const SHELL = ["./", "./index.html", "./manifest.webmanifest"];
 
@@ -21,7 +21,23 @@ self.addEventListener("install", e => {
 self.addEventListener("message", e => { if (e.data === "SKIP_WAITING") self.skipWaiting(); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE && k !== IMG_CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  warmImages();   // โหลดรูปคำศัพท์ทั้งหมดเข้าแคชเบื้องหลัง (ไม่บล็อก) → ออฟไลน์เห็นครบทุกรูป
 });
+// รายชื่อรูปอยู่ใน img/credits.json (สร้างโดย scripts/fetch-images.mjs) · โหลดทีละ 6 รูป ข้ามที่มีแล้ว
+async function warmImages() {
+  try {
+    const c = await caches.open(IMG_CACHE);
+    const credits = await (await fetch("./img/credits.json", { cache: "no-store" })).json();
+    const files = Object.values(credits).map(x => x.file).filter(Boolean);
+    for (let i = 0; i < files.length; i += 6) {
+      await Promise.all(files.slice(i, i + 6).map(async f => {
+        const u = new URL("./img/" + f, self.location.href).href;
+        if (await c.match(u, { ignoreVary: true })) return;
+        try { const r = await fetch(u); if (r.ok) await c.put(u, r); } catch (_) {}
+      }));
+    }
+  } catch (_) {}
+}
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
@@ -38,6 +54,17 @@ self.addEventListener("fetch", e => {
     return;
   }
   if (url.origin !== self.location.origin) return;           // API ภายนอก (แปล) ไม่แคช
+  // รูปคำศัพท์ที่บรรจุมา → แคชแยก (IMG_CACHE) ไม่ถูกล้างตอนอัปเดตแอป
+  if (url.pathname.includes("/img/")) {
+    e.respondWith(caches.open(IMG_CACHE).then(async c => {
+      const hit = await c.match(req, { ignoreVary: true });
+      if (hit) return hit;
+      const res = await fetch(req);
+      if (res.ok) c.put(req, res.clone());
+      return res;
+    }));
+    return;
+  }
   if (req.mode === "navigate") {
     e.respondWith(
       fetch(req).then(res => { const cp = res.clone(); caches.open(CACHE).then(c => c.put("./index.html", cp)); return res; })

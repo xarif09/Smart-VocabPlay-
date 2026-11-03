@@ -11,6 +11,7 @@ import { fx, fxPoint, setFxEnabled, installRipple, Ambient, Reveal, CountUp } fr
 import Pet, { PET_CSS } from "./Pet.jsx";
 import { CatIcon, GameIcon, hasGameIcon } from "./Icons.jsx";
 import audioManifest from "./audioManifest.json";
+import { conceptFor, CONCEPT_WORDS } from "./Concept.jsx";
 
 // ═══════════════════════════════════════════════════════
 // SPEECH ENGINE — iOS-safe
@@ -1583,6 +1584,14 @@ export default function App() {
   }, [missedWords.length]);
 
   // ── Sound unlock screen ──────────────────
+  // หน้าตรวจภาพออกแบบทั้งชุด (dev): เปิด ?concepts=1 → ตารางทุกคำที่มีภาพใน Concept.jsx
+  if (typeof window !== "undefined" && /[?&]concepts=1/.test(window.location.search)) {
+    const list = INITIAL_WORDS.filter(w => conceptFor(w));
+    return <div style={{ fontFamily:FONT,padding:12,display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(150px,1fr))",gap:10,background:"#fff" }}>
+      {list.map(w => <div key={w.id} style={{ textAlign:"center",fontSize:11 }}><div style={{ aspectRatio:"16/11",borderRadius:12,overflow:"hidden",boxShadow:"0 4px 12px rgba(0,0,0,.12)" }}>{conceptFor(w)}</div><b>{w.cat}|{w.word}</b> {w.meaning}</div>)}
+      <div style={{ gridColumn:"1/-1" }}>ทั้งหมด {list.length} ภาพ</div>
+    </div>;
+  }
   if (!soundUnlocked) {
     return (
       <SoundUnlockScreen onUnlock={() => {
@@ -2487,8 +2496,14 @@ function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
   const { url } = useWordImage(w);
   const [err, setErr] = useState(false);
   useEffect(() => setErr(false), [url]);
-  if (!url || err) return <span style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
+  const concept = (!url || err) ? conceptFor(w) : null;
+  if ((!url || err) && !concept) return <span style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
   const box = fill ? "100%" : size * 2.2;
+  if (concept) return (
+    <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:"16/11",maxHeight:fill?"44vh":undefined,borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
+      {concept}
+    </span>
+  );
   return (
     <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:fill?"16/11":"4/3",maxHeight:fill?"44vh":undefined,borderRadius:fill?22:radius,overflow:"hidden",background:"#e2e8f0",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
       {/* พื้นหลังเบลอจากรูปเดียวกัน + รูปเต็มใบ (contain) → ไม่ตัดหัว/ตัวสัตว์ */}
@@ -2503,6 +2518,8 @@ function PicFill({ w, emojiSize = 40, fit }) {
   const { url } = useWordImage(w);
   const [err, setErr] = useState(false);
   useEffect(() => setErr(false), [url]);
+  const concept = (!url || err) ? conceptFor(w) : null;
+  if (concept) return <span style={{ position:"absolute",inset:0,borderRadius:"inherit",overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center" }}>{concept}</span>;
   if (!url || err) return <span style={{ fontSize:emojiSize,lineHeight:1 }}>{w?.emoji}</span>;
   // รูปปก/ภาพรวม (cover) ตัดขอบได้ · รูปคำศัพท์เดี่ยวใช้ contain ไม่ให้ตัวสัตว์ขาด
   const mode = fit || (w?.cat === "cover" ? "cover" : "contain");

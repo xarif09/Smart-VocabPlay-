@@ -459,6 +459,32 @@ const shuffle = arr => {
 };
 
 // ═══════════════════════════════════════════════════════
+// SAVED WORDS — localStorage (ถ้าใช้ไม่ได้ แอปยังทำงานด้วยคำเริ่มต้น)
+// ═══════════════════════════════════════════════════════
+const STORAGE_KEY = "smart-vocabplay:words:v1";
+
+function loadSavedWords() {
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return INITIAL_WORDS;
+    const data = JSON.parse(raw);
+    const ok = Array.isArray(data) && data.every(w =>
+      w && typeof w === "object" && typeof w.id === "number" &&
+      typeof w.word === "string" && typeof w.cat === "string");
+    return ok ? data : INITIAL_WORDS;
+  } catch (_) {
+    return INITIAL_WORDS;
+  }
+}
+
+function saveWords(words) {
+  try {
+    if (words === INITIAL_WORDS) window.localStorage.removeItem(STORAGE_KEY);
+    else window.localStorage.setItem(STORAGE_KEY, JSON.stringify(words));
+  } catch (_) {}
+}
+
+// ═══════════════════════════════════════════════════════
 // APP ROOT
 // ═══════════════════════════════════════════════════════
 export default function App() {
@@ -467,12 +493,15 @@ export default function App() {
   const [screen, setScreen] = useState("home");   // home|category|game|manage
   const [activeCat, setActiveCat] = useState(null);
   const [activeGame, setActiveGame] = useState(null);
-  const [words, setWords] = useState(INITIAL_WORDS);
+  const [words, setWords] = useState(loadSavedWords);
   const [soundOn, setSoundOn] = useState(true);
   const [bilingual, setBilingual] = useState(true);
   const [rate, setRate] = useState(0.85);
   const [showSettings, setShowSettings] = useState(false);
   const [toast, setToast] = useState(null);
+
+  // บันทึกคำศัพท์ทุกครั้งที่เปลี่ยน
+  useEffect(() => { saveWords(words); }, [words]);
 
   // Load voices on mount
   useEffect(() => {
@@ -552,6 +581,7 @@ export default function App() {
             words={words} setWords={setWords}
             categories={CATEGORIES}
             showToast={showToast} speak={speak}
+            onReset={() => { setWords(INITIAL_WORDS); showToast("คืนค่าคำศัพท์เริ่มต้นแล้ว ✓"); }}
           />
         )}
       </div>
@@ -735,7 +765,7 @@ function CategoryScreen({ cat, words, onPickGame, speak }) {
 // ═══════════════════════════════════════════════════════
 // WORD MANAGEMENT SCREEN
 // ═══════════════════════════════════════════════════════
-function ManageScreen({ words, setWords, categories, showToast, speak }) {
+function ManageScreen({ words, setWords, categories, showToast, speak, onReset }) {
   const [search, setSearch] = useState("");
   const [filterCat, setFilterCat] = useState("all");
   const [showAdd, setShowAdd] = useState(false);
@@ -849,6 +879,12 @@ function ManageScreen({ words, setWords, categories, showToast, speak }) {
         })}
         {filtered.length===0 && <div style={{ textAlign:"center",padding:"40px 0",color:"#9ca3af",fontSize:14 }}>ไม่พบคำที่ค้นหา</div>}
       </div>
+
+      {/* Reset to default words */}
+      <button onClick={()=>{ if(window.confirm("คืนค่าคำศัพท์เริ่มต้น?\nคำที่เพิ่ม/แก้/ลบไว้จะหายทั้งหมด")) onReset(); }}
+        style={{ width:"100%",minHeight:44,marginTop:20,background:"#fff",color:"#6b7280",border:"1px dashed #d1d5db",borderRadius:12,padding:"10px",fontWeight:700,fontSize:13,cursor:"pointer" }}>
+        ↺ คืนค่าคำศัพท์เริ่มต้น
+      </button>
     </div>
   );
 }

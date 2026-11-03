@@ -38,7 +38,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await shot(p, `${name}-1-home`); await a('home');
     const counts = await p.evaluate(() => [...document.querySelectorAll('button')].map(b => b.innerText).filter(t => /\d+ คำ/.test(t)).map(t => +t.match(/(\d+) คำ/)[1]));
     res.push({ label: name + ' count', cats: counts.length, total: counts.reduce((x, c) => x + c, 0) });
-    if (counts.length !== 14 || counts.reduce((x, c) => x + c, 0) !== 296) bad('count', counts);
+    if (counts.length !== 20 || counts.reduce((x, c) => x + c, 0) !== 403) bad('count', counts);
     await p.click('text=Animals'); await p.waitForTimeout(200);
     await shot(p, `${name}-2-category`); await a('category');
     // learn mode (flash cards)
@@ -52,7 +52,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('button:has-text("‹")'); await p.waitForTimeout(200);
     // new games
     await p.click('text=Listen'); await p.waitForTimeout(200); await shot(p, `${name}-2c-listen`); await a('listen');
-    await p.click('button:has-text("🔊") >> nth=1').catch(()=>{}); await p.waitForTimeout(100);
+    await p.click('button:has-text("🔊") >> nth=1', { force: true }).catch(()=>{}); await p.waitForTimeout(100);
     await p.click('button:has-text("‹")');
     await p.click('text=Sentence'); await p.waitForTimeout(200); await shot(p, `${name}-2d-sentence`); await a('sentence');
     await p.click('button:has-text("‹")');
@@ -125,6 +125,34 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     res.push({ label: name + ' boss-screen', ok: await p.isVisible('text=บอส Animals') });
     if (errs.length) bad(name + ' pageerror', errs);
     res.push({ label: name + ' errors', errs });
+    await ctx.close();
+  }
+  // รูปจริง: จำลอง Wikipedia API + รูป (เครื่องทดสอบต่อเน็ตไม่ได้) ดู layout ของรูปในเกม/การ์ด · ปิด SW ไม่งั้น route จำลองไม่โดน
+  {
+    const ctx = await b.newContext({ viewport: { width: 375, height: 812 }, deviceScaleFactor: 2, serviceWorkers: 'block' }); const p = await ctx.newPage();
+    const errs = []; p.on('pageerror', e => errs.push(e.message));
+    // สร้างรูป JPEG จำลองคนละสีต่อคำ ด้วย canvas ในหน้าว่าง
+    const mk = await p.evaluate(() => { const c = document.createElement('canvas'); c.width = 480; c.height = 360; const g = c.getContext('2d'); const gr = g.createLinearGradient(0, 0, 480, 360); gr.addColorStop(0, '#60a5fa'); gr.addColorStop(1, '#f472b6'); g.fillStyle = gr; g.fillRect(0, 0, 480, 360); g.fillStyle = '#fff'; g.font = 'bold 40px sans-serif'; g.fillText('PHOTO', 160, 190); return c.toDataURL('image/jpeg', 0.8); });
+    const jpg = Buffer.from(mk.split(',')[1], 'base64');
+    await p.route('https://en.wikipedia.org/api/rest_v1/page/summary/**', r => { const t = decodeURIComponent(r.request().url().split('/summary/')[1]); r.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ title: t, thumbnail: { source: `https://upload.wikimedia.org/wikipedia/commons/thumb/x/${encodeURIComponent(t)}.jpg/320px-${encodeURIComponent(t)}.jpg` } }) }); });
+    await p.route('https://upload.wikimedia.org/**', r => r.fulfill({ status: 200, contentType: 'image/jpeg', body: jpg }));
+    await p.goto(URL); await p.click(START); await p.click('text=มิว');
+    await p.click('text=Animals'); await p.click('text=Quiz'); await p.waitForTimeout(600);
+    await shot(p, 'mobile-pics-1-quiz'); const r1 = await audit(p, 'pics quiz'); res.push(r1); if (r1.overlaps.length || r1.hScroll) bad('pics quiz', r1);
+    res.push({ label: 'pics quiz-has-img', ok: (await p.locator('img[alt]').count()) >= 1 });
+    await p.click('button:has-text("‹")'); await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await p.waitForTimeout(600);
+    await shot(p, 'mobile-pics-2-card'); const r2 = await audit(p, 'pics card'); res.push(r2); if (r2.overlaps.length || r2.hScroll) bad('pics card', r2);
+    await p.click('button:has-text("‹")'); await p.click('text=Listen'); await p.waitForTimeout(300); await p.click('button:has-text("🔊") >> nth=1', { force: true }); await p.waitForTimeout(600);
+    await shot(p, 'mobile-pics-3-listen'); const r3 = await audit(p, 'pics listen'); res.push(r3); if (r3.overlaps.length || r3.hScroll) bad('pics listen', r3);
+    res.push({ label: 'pics listen-imgs', n: await p.locator('img[alt]').count() });
+    await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")'); await p.click('text=Colors'); await p.click('text=Picture Match'); await p.waitForTimeout(400);
+    await shot(p, 'mobile-pics-4-match'); const r4 = await audit(p, 'pics match'); res.push(r4); if (r4.overlaps.length || r4.hScroll) bad('pics match', r4);
+    // ปิดรูปจริงในตั้งค่า → กลับเป็นอีโมจิ
+    await p.click('button:has-text("⚙️")'); await p.waitForTimeout(200); await shot(p, 'mobile-pics-5-settings-voice');
+    await p.locator('text=รูปภาพจริง').locator('xpath=../..').locator('button').click(); await p.click('text=เสร็จสิ้น');
+    await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")'); await p.click('text=Animals'); await p.click('text=Quiz'); await p.waitForTimeout(300);
+    res.push({ label: 'pics toggle-off-no-img', imgs: await p.locator('img[alt]').count(), errs });
+    if (errs.length) bad('pics errors', errs);
     await ctx.close();
   }
   // PWA: manifest + sw served, SW registers, offline reload still renders

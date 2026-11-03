@@ -23,7 +23,10 @@ console.log(`บทความทั้งหมด ${titles.length} เรื�
 const slug = t => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const get = (url, type = "json") => fetch(url, { headers: { "User-Agent": UA, Accept: type === "json" ? "application/json" : "*/*" } })
-  .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status} ${url}`); return type === "json" ? r.json() : r.arrayBuffer(); });
+  .then(async r => {
+    if (r.status === 429) { await sleep(3000); return get(url, type); }   // โดนจำกัดอัตรา → รอแล้วลองใหม่
+    if (!r.ok) throw new Error(`HTTP ${r.status} ${url}`); return type === "json" ? r.json() : r.arrayBuffer();
+  });
 const strip = html => (html || "").replace(/<[^>]+>/g, "").trim();
 
 let ok = 0, skipped = 0, failed = [];
@@ -33,10 +36,16 @@ for (const title of titles) {
     const j = await get(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g, "_"))}`);
     const src = j?.thumbnail?.source;
     if (!src) throw new Error("no lead image");
-    const url = src.replace(/\/(\d+)px-/, `/${WIDTH}px-`);
-    const ext = /\.png(\?|$)/i.test(url) ? "png" : /\.gif(\?|$)/i.test(url) ? "gif" : "jpg";
+    // ตัด query (?utm_...) ออก · ลองขอ 480px ก่อน ถ้าเซิร์ฟเวอร์ไม่ให้ (400) ใช้ขนาดที่ API ให้มา (320px)
+    const clean = src.split("?")[0];
+    const candidates = [clean.replace(/\/(\d+)px-/, `/${WIDTH}px-`), clean].filter((u, i, a) => a.indexOf(u) === i);
+    let buf = null, url = clean;
+    for (const u of candidates) {
+      try { buf = Buffer.from(await get(u, "bin")); url = u; break; } catch (e) { await sleep(300); }
+    }
+    if (!buf) throw new Error("download failed: " + candidates[0]);
+    const ext = /\.png$/i.test(url) ? "png" : /\.gif$/i.test(url) ? "gif" : "jpg";
     const file = `${slug(title)}.${ext}`;
-    const buf = Buffer.from(await get(url, "bin"));
     if (buf.length < 500) throw new Error("tiny file");
     writeFileSync(join(OUT, file), buf);
     manifest[title] = file;

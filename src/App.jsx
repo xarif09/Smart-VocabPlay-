@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo, createContext, useContext } from "react";
-import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl } from "./images.js";
+import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl, bundledCount } from "./images.js";
 import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER_NEED, PETS, getPet, petLevel, EMPTY_PROGRESS,
   srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today,
   loadProfiles, saveProfiles, deleteProgress, AVATARS, buildUnits, UNIT_STEPS, unitDone, unitSteps, markUnitStep, similarity } from "./progress.js";
@@ -729,6 +729,7 @@ export default function App() {
   const goStickers = () => setScreen("stickers");
   const goShop     = () => setScreen("shop");
   const goReport   = () => setScreen("report");
+  const goCredits  = () => setScreen("credits");
   const goLearn    = () => setScreen("learn");
   const goPath     = () => setScreen("path");
   // เส้นทางบทเรียน: เปิดขั้นของบท (learn / quiz / listen) ด้วยหมวดเสมือน unit:<id>
@@ -847,6 +848,9 @@ export default function App() {
         {screen === "report" && (
           <ReportScreen words={words} categories={CATEGORIES} progress={progress} />
         )}
+        {screen === "credits" && (
+          <CreditsScreen words={words} />
+        )}
         {screen === "stickers" && (
           <StickerBook words={words} categories={CATEGORIES} progress={progress} speak={speak} showToast={showToast} />
         )}
@@ -872,6 +876,7 @@ export default function App() {
           rate={rate} setRate={setRate}
           onResetProgress={() => { setProgress(ensureDaily({ ...EMPTY_PROGRESS })); setShowSettings(false); showToast("เริ่มใหม่แล้ว ✓"); }}
           onReport={() => { setShowSettings(false); goReport(); }}
+          onCredits={() => { setShowSettings(false); goCredits(); }}
           realPics={realPics} setRealPics={setRealPics}
           onClose={() => setShowSettings(false)}
         />
@@ -972,6 +977,7 @@ function Topbar({ screen, catLabel, onBack, onHome, soundOn, onToggleSound, onSe
         {screen==="stickers" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>สมุดสติกเกอร์</span>}
         {screen==="shop" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>ร้านค้า</span>}
         {screen==="report" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>รายงานผู้ปกครอง</span>}
+        {screen==="credits" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>เครดิตรูปภาพ</span>}
         {screen==="path" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>เส้นทางบทเรียน</span>}
       </div>
 
@@ -2253,7 +2259,7 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
 // ═══════════════════════════════════════════════════════
 // SETTINGS SHEET
 // ═══════════════════════════════════════════════════════
-function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onClose, realPics, setRealPics }) {
+function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics }) {
   const [vr, setVr] = useState(() => voiceReport());
   useEffect(() => { loadVoices(); setVr(voiceReport()); const t = setTimeout(() => { loadVoices(); setVr(voiceReport()); }, 800); return () => clearTimeout(t); }, []);
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -2265,7 +2271,8 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <div style={{ fontSize:11,color:"#9ca3af",marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
         <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
-        <TRow label="รูปภาพจริง" desc="ดึงรูปจาก Wikipedia (ต้องมีเน็ตครั้งแรก) · ปิด = ใช้อีโมจิ" on={realPics} set={setRealPics} />
+        <TRow label="รูปภาพจริง" desc={`รูปถ่ายจาก Wikipedia ${bundledCount()} รูปมากับแอป (ไม่ต้องใช้เน็ต) · ปิด = ใช้อีโมจิ`} on={realPics} set={setRealPics} />
+        <button onClick={onCredits} style={{ width:"100%",minHeight:44,marginBottom:10,borderRadius:12,background:"#f9fafb",color:"#6b7280",border:"1px solid #e5e7eb",fontWeight:700,fontSize:12,cursor:"pointer" }}>🖼️ เครดิตรูปภาพ (ที่มา / สัญญาอนุญาต)</button>
         <div style={{ background:vr.th.length?"#ecfdf5":"#fff7ed",border:`1px solid ${vr.th.length?"#a7f3d0":"#fdba74"}`,borderRadius:14,padding:"10px 14px",marginBottom:10,fontSize:12,color:"#374151" }}>
           <div style={{ fontWeight:800,marginBottom:2 }}>{vr.th.length ? `✅ เสียงไทยพร้อมใช้: ${vr.thPick}` : "⚠️ ยังไม่พบเสียงภาษาไทยในเครื่องนี้"}</div>
           {vr.th.length
@@ -2867,6 +2874,38 @@ function InstallBanner({ deferred, onInstall, onDismiss }) {
       </div>
       {deferred && <button onClick={onInstall} style={{ minHeight:44,padding:"0 14px",borderRadius:12,border:"none",background:"#2563eb",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer" }}>ติดตั้ง</button>}
       <button onClick={onDismiss} style={{ width:44,height:44,borderRadius:12,border:"none",background:"transparent",color:"#93c5fd",fontSize:20,cursor:"pointer" }}>✕</button>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════
+// CREDITS — ที่มาและสัญญาอนุญาตของรูปจาก Wikimedia Commons (public/img/credits.json)
+// ═══════════════════════════════════════════════════════
+function CreditsScreen({ words }) {
+  const [list, setList] = useState(null);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}img/credits.json`).then(r => r.json()).then(j => setList(Object.entries(j))).catch(() => setList([]));
+  }, []);
+  const wordOf = title => words.find(w => imageTitleOf(w) === title);
+  return (
+    <div style={{ padding:"14px 12px 40px",maxWidth:560,margin:"0 auto" }}>
+      <div style={{ background:"#fff",borderRadius:16,padding:14,border:"1px solid #f3f4f6",marginBottom:12,fontSize:13,color:"#374151",lineHeight:1.6 }}>
+        รูปถ่ายประกอบคำศัพท์มาจาก <b>Wikipedia / Wikimedia Commons</b> ภายใต้สัญญาอนุญาตแบบเปิด (CC BY / CC BY-SA / สาธารณสมบัติ ฯลฯ) ผู้สร้างและสัญญาอนุญาตของแต่ละรูปอยู่ด้านล่าง · แตะเพื่อเปิดหน้าต้นทาง
+      </div>
+      {list === null && <div style={{ textAlign:"center",color:"#9ca3af" }}>กำลังโหลด…</div>}
+      {list && list.length === 0 && <div style={{ textAlign:"center",color:"#9ca3af" }}>ยังไม่มีรายการ</div>}
+      {list && list.map(([title, c]) => {
+        const w = wordOf(title);
+        return (
+          <a key={title} href={c.source || c.page || "#"} target="_blank" rel="noreferrer" style={{ display:"flex",alignItems:"center",gap:10,padding:"6px 0",borderBottom:"1px solid #f3f4f6",textDecoration:"none",color:"inherit",minHeight:44 }}>
+            {c.file && <img src={`${import.meta.env.BASE_URL}img/${c.file}`} alt="" loading="lazy" style={{ width:44,height:33,objectFit:"cover",borderRadius:6,flexShrink:0 }} />}
+            <div style={{ flex:1,minWidth:0 }}>
+              <div style={{ fontWeight:800,fontSize:13,color:"#1f2937" }}>{w ? `${w.emoji} ${w.word}` : title} <span style={{ fontWeight:500,color:"#9ca3af" }}>· {title}</span></div>
+              <div style={{ fontSize:11,color:"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{c.artist || "—"} · {c.license || "ดูที่ต้นทาง"}</div>
+            </div>
+          </a>
+        );
+      })}
     </div>
   );
 }

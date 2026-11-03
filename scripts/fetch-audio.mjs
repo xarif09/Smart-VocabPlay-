@@ -46,9 +46,9 @@ const cands = w => {
 let ok = 0, skipped = 0, failed = [];
 const todo = words.filter(w => FORCE || !(manifest[w] && existsSync(join(OUT, manifest[w]))));
 skipped = words.length - todo.length;
-// ถาม Commons ทีละ 4 คำ (≤ 50 ชื่อไฟล์ต่อคำขอ) ว่าไฟล์ไหนมีจริง + ขอ URL และเครดิต · ลองใหม่ 3 ครั้งถ้า API ล้ม
-for (let i = 0; i < todo.length; i += 4) {
-  const batch = todo.slice(i, i + 4);
+// ถาม Commons ทีละ 3 คำ (≤ 50 ชื่อไฟล์ต่อคำขอ) ว่าไฟล์ไหนมีจริง + ขอ URL และเครดิต · ลองใหม่ 3 ครั้งถ้า API ล้ม
+for (let i = 0; i < todo.length; i += 3) {
+  const batch = todo.slice(i, i + 3);
   const titles = [...new Set(batch.flatMap(w => cands(w).map(f => "File:" + f)))].slice(0, 50);
   let pages = {}, okq = false;
   for (let attempt = 0; attempt < 3 && !okq; attempt++) {

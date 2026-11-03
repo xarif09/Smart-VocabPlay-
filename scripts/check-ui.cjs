@@ -39,7 +39,10 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     const counts = await p.evaluate(() => [...document.querySelectorAll('button')].map(b => b.innerText).filter(t => /\d+ คำ/.test(t)).map(t => +t.match(/(\d+) คำ/)[1]));
     res.push({ label: name + ' count', cats: counts.length, total: counts.reduce((x, c) => x + c, 0) });
     if (counts.length !== 20 || counts.reduce((x, c) => x + c, 0) !== 403) bad('count', counts);
-    await p.click('text=Animals'); await p.waitForTimeout(200);
+    await p.click('text=เรียน'); await p.waitForTimeout(300); await shot(p, `${name}-1b-learnhub`); await a('learnhub');
+    await p.click('text=เล่น'); await p.waitForTimeout(300); await shot(p, `${name}-1c-playhub`); await a('playhub');
+    await p.click('text=หน้าแรก'); await p.waitForTimeout(300);
+    await p.click('text=Animals'); await p.waitForTimeout(300);
     await shot(p, `${name}-2-category`); await a('category');
     // learn mode (flash cards)
     await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await p.waitForTimeout(200);
@@ -78,9 +81,9 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")');
     await p.click('button:has-text("📒")'); await p.waitForTimeout(200); await shot(p, `${name}-7-stickers`); await a('stickers');
     await p.click('button:has-text("‹")');
-    await p.click('text=จัดการ'); await p.waitForTimeout(200); await shot(p, `${name}-8-manage`); await a('manage');
+    await p.click('text=ของฉัน'); await p.waitForTimeout(200); await shot(p, `${name}-7b-me`); await a('me'); await p.click('text=จัดการคำศัพท์'); await p.waitForTimeout(200); await shot(p, `${name}-8-manage`); await a('manage');
     await p.click('text=+ เพิ่มคำ'); await p.waitForTimeout(100); await shot(p, `${name}-9-manage-add`); await a('manage-add');
-    await p.click('text=ยกเลิก'); await p.click('button:has-text("‹")');
+    await p.click('text=ยกเลิก'); await p.click('button:has-text("‹")'); await p.click('text=หน้าแรก');
     await p.click('button:has-text("⚙️")'); await p.waitForTimeout(200); await shot(p, `${name}-10-settings`); await a('settings');
     await p.click('text=รายงานผู้ปกครอง'); await p.waitForTimeout(200); await shot(p, `${name}-10a-report`); await a('report');
     await p.click('button:has-text("‹")');
@@ -147,14 +150,14 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     // แข่ง 2 คน
     await p.click('text=แข่ง 2 คน จอเดียว'); await p.waitForTimeout(200); await a('versus-setup');
     await p.click('text=เริ่มแข่ง'); await p.waitForTimeout(400); await shot(p, `${name}-19-versus`); const rv = await audit(p, name + ' versus'); res.push(rv); if (rv.hScroll) bad('versus', rv);
-    await p.click('text=ออก'); await p.waitForTimeout(200);
+    await p.click('text=ออก'); await p.waitForTimeout(300);
     // profiles: add second profile → fresh progress → switch back keeps coins
-    const coinsBefore = await p.innerText('text=/🪙 \\d+$/');
+    const coinsBefore = (await p.locator('text=/🪙 \\d+/').first().innerText()).match(/🪙 \d+/)[0];
     await p.click('button:has-text("▾")'); await p.waitForTimeout(200); await shot(p, `${name}-12c-profiles`); await a('profiles');
     await p.click('text=เพิ่มคนใหม่'); await p.fill('input[placeholder^="ชื่อ"]', 'มีนา'); await p.click('text=สร้าง ✓'); await p.waitForTimeout(300);
     res.push({ label: name + ' profile-new', pickerShown: await p.isVisible('text=เลือกเพื่อนคู่หูของมีนา') });
     await p.click('button:has-text("▾")'); await p.click('text=หนู'); await p.waitForTimeout(300);
-    res.push({ label: name + ' profile-switch-back', coinsBefore, coinsAfter: await p.innerText('text=/🪙 \\d+$/') });
+    res.push({ label: name + ' profile-switch-back', coinsBefore, coinsAfter: (await p.locator('text=/🪙 \\d+/').first().innerText()).match(/🪙 \d+/)[0] });
     // seeded: boss unlocked + review card
     await p.evaluate(() => {
       const k = 'smart-vocabplay:progress:v1'; const d = JSON.parse(localStorage.getItem(k));
@@ -196,10 +199,11 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     res.push({ label: 'pics listen-imgs', n: await p.locator('img[alt]').count() });
     await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")'); await p.click('text=Colors'); await p.click('text=Picture Match'); await p.waitForTimeout(400);
     await shot(p, 'mobile-pics-4-match'); const r4 = await audit(p, 'pics match'); res.push(r4); if (r4.overlaps.length || r4.hScroll) bad('pics match', r4);
-    // ปิดรูปจริงในตั้งค่า → กลับเป็นอีโมจิ
+    // ปิดรูปจริงในตั้งค่า → กลับเป็นอีโมจิ (ออกจากโหมดเกมก่อน เพราะในเกมไม่มีปุ่มตั้งค่า)
+    await p.click('button:has-text("‹")'); await p.waitForTimeout(200);
     await p.click('button:has-text("⚙️")'); await p.waitForTimeout(200); await shot(p, 'mobile-pics-5-settings-voice');
     await p.locator('text=รูปภาพจริง').locator('xpath=../..').locator('button').click(); await p.click('text=เสร็จสิ้น');
-    await p.click('button:has-text("‹")'); await p.click('button:has-text("‹")'); await p.click('text=Animals'); await p.click('text=Quiz'); await p.waitForTimeout(300);
+    await p.click('button:has-text("‹")'); await p.click('text=Animals'); await p.click('text=Quiz'); await p.waitForTimeout(300);
     res.push({ label: 'pics toggle-off-no-img', imgs: await p.locator('img[alt]').count(), errs });
     if (errs.length) bad('pics errors', errs);
     await ctx.close();
@@ -211,7 +215,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
   const swReady = await pp.evaluate(async () => { try { const r = await navigator.serviceWorker.ready; return !!r.active; } catch (e) { return 'ERR ' + e.message; } });
   await pp.waitForTimeout(800);
   await pw.setOffline(true);
-  let offlineOk = false; try { await pp.reload(); await pp.click(START, { timeout: 5000 }); offlineOk = await pp.isVisible('text=แตะหมวดที่อยากเรียน'); } catch (e) { offlineOk = 'ERR ' + e.message.slice(0, 60); }
+  let offlineOk = false; try { await pp.reload(); await pp.click(START, { timeout: 5000 }); offlineOk = await pp.isVisible('text=หมวดคำศัพท์'); } catch (e) { offlineOk = 'ERR ' + e.message.slice(0, 60); }
   await pw.setOffline(false);
   res.push({ label: 'pwa', manifest: man.status(), sw: swr.status(), icon: ico.status(), swReady, offlineOk });
   if (man.status() !== 200 || swr.status() !== 200 || swReady !== true || offlineOk !== true) bad('pwa', { man: man.status(), sw: swr.status(), swReady, offlineOk });

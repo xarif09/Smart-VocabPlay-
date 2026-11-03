@@ -19,6 +19,22 @@ import { sfx, unlockSfx, setSfxEnabled } from "./sfx.js";
 export const APP_VERSION = typeof __APP_VERSION__ !== "undefined" ? __APP_VERSION__ : "dev";
 export const BUILD_TIME = typeof __BUILD_TIME__ !== "undefined" ? __BUILD_TIME__ : "";
 
+// ═══════════════════════════════════════════════════════
+// THEME "Aurora" — โทนร่วมสมัย: ฟอนต์ Prompt · พื้นหลังไล่สีนุ่ม · การ์ดมน 24px · เงาฟุ้ง · แถบนำทางล่างแบบแคปซูล
+// ═══════════════════════════════════════════════════════
+const FONT = "'Prompt', 'Noto Sans Thai', system-ui, -apple-system, sans-serif";
+const T = {
+  ink: "#0f172a", ink2: "#475569", ink3: "#94a3b8",
+  bg: "#f4f6fb", card: "#ffffff",
+  grad: "linear-gradient(135deg,#6d5dfc 0%,#a855f7 55%,#ff6fae 100%)",
+  grad2: "linear-gradient(135deg,#22d3ee,#6d5dfc)",
+  grad3: "linear-gradient(135deg,#fb923c,#f43f5e)",
+  shadow: "0 10px 30px rgba(30,27,75,0.08)",
+  shadowLg: "0 18px 44px rgba(30,27,75,0.16)",
+  r: 24, rs: 16,
+};
+const card = (extra = {}) => ({ background:T.card,borderRadius:T.r,boxShadow:T.shadow,border:"1px solid rgba(255,255,255,0.7)",...extra });
+
 let voices = [];
 let audioUnlocked = false;
 
@@ -717,6 +733,14 @@ export default function App() {
     speakWord(en, th, rate, bilingual);
   }, [soundOn, soundUnlocked, rate, bilingual]);
   // พูดด้วยความเร็วที่กำหนดเอง (ช้าๆ / ฟังอย่างเดียว) · th = null = พูดแค่อังกฤษ
+  // ผู้ช่วยเสียงไทย: อ่านคำสั่ง/คำอธิบายเป็นไทยให้เด็กที่ยังอ่านไทยไม่คล่อง (เรียกใน onClick เท่านั้น)
+  const [thaiGuide, setThaiGuide] = useState(() => { try { return localStorage.getItem("smart-vocabplay:thaiguide") !== "0"; } catch (_) { return true; } });
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:thaiguide", thaiGuide ? "1" : "0"); } catch (_) {} }, [thaiGuide]);
+  const speakTh = useCallback((th) => {
+    if (!thaiGuide || !soundOn || !soundUnlocked || !window.speechSynthesis || !th) return;
+    const ss = window.speechSynthesis; if (ss.speaking || ss.pending) ss.cancel();
+    const u = new SpeechSynthesisUtterance(th); u.lang = "th-TH"; u.rate = Math.min(1, rate + 0.1); const v = getVoice("th"); if (v) u.voice = v; ss.speak(u);
+  }, [thaiGuide, soundOn, soundUnlocked, rate]);
   // อ่านหลายประโยคต่อกัน (บทสนทนา) — คิวทั้งหมดทันทีใน onClick ไม่ใช้ timer
   const speakSeq = useCallback((items) => {
     if (!soundOn || !soundUnlocked || !window.speechSynthesis) return;
@@ -733,15 +757,24 @@ export default function App() {
   }, [soundOn, soundUnlocked, rate, bilingual]);
 
   // Navigation
-  const goHome     = () => { setScreen("home"); setActiveCat(null); setActiveGame(null); };
+  const [navTab, setNavTab] = useState("home");
+  const [fullscreenOn, setFullscreenOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:fullscreen") !== "0"; } catch (_) { return true; } });
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:fullscreen", fullscreenOn ? "1" : "0"); } catch (_) {} }, [fullscreenOn]);
+  // เต็มจอเมื่อเข้าเกม (เรียกใน onClick เท่านั้น · iOS Safari ไม่รองรับ → ข้ามเงียบๆ · PWA ที่ติดตั้งแล้วเต็มจออยู่แล้ว)
+  const enterFullscreen = () => { if (!fullscreenOn) return; try { const el = document.documentElement; if (!document.fullscreenElement && el.requestFullscreen) el.requestFullscreen({ navigationUI: "hide" }).catch(() => {}); } catch (_) {} };
+  const exitFullscreen = () => { try { if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {}); } catch (_) {} };
+  const HUBS = ["home", "learnhub", "playhub", "me"];
+  const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
+  const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const goGame     = gid => { setActiveGame(gid); setScreen("game"); };
+  const GUIDE = { quiz:"ดูรูปแล้วเลือกคำภาษาอังกฤษที่ตรงกับรูป", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาคำกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะคำให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน" };
+  const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => setScreen("manage");
   const goStickers = () => setScreen("stickers");
   const goShop     = () => setScreen("shop");
   const goReport   = () => setScreen("report");
   const goCredits  = () => setScreen("credits");
-  const goLearn    = () => setScreen("learn");
+  const goLearn    = () => { setScreen("learn"); enterFullscreen(); speakTh("การ์ดคำศัพท์ แตะการ์ดเพื่อดูความหมาย ถ้ารู้แล้วแตะปุ่มสีเขียว"); };
   const goPath     = () => setScreen("path");
   const [activeDialog, setActiveDialog] = useState(null);
   const [activeStory, setActiveStory] = useState(null);
@@ -752,12 +785,13 @@ export default function App() {
   const goDaily    = () => setScreen("daily");
   const goTest     = () => setScreen("test");
   const goVersus   = () => setScreen("versus");
-  const startPseudoGame = (cat, gid) => { setActiveCat(cat); setActiveGame(gid); setScreen("game"); };
+  const startPseudoGame = (cat, gid) => { setActiveCat(cat); setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   // เส้นทางบทเรียน: เปิดขั้นของบท (learn / quiz / listen) ด้วยหมวดเสมือน unit:<id>
   const goUnitStep = (u, step) => {
     setActiveCat({ ...u.cat, id: `unit:${u.id}`, label: `บทที่ ${u.n} · ${u.cat.label}`, unit: u });
-    if (step === "learn") { setActiveGame(null); setScreen("learn"); }
-    else { setActiveGame(step); setScreen("game"); }
+    if (step === "learn") { setActiveGame(null); setScreen("learn"); speakTh(`บทที่ ${u.n} เรียนการ์ดคำศัพท์ก่อนนะ`); }
+    else { setActiveGame(step); setScreen("game"); speakTh(GUIDE[step]); }
+    enterFullscreen();
   };
   const switchProfile = id => {
     if (id === profiles.current) { setShowProfiles(false); return; }
@@ -781,8 +815,9 @@ export default function App() {
       return { list, current };
     });
   };
-  const goReview   = () => { setActiveCat(REVIEW_CAT); setActiveGame("quiz"); setScreen("game"); };
+  const goReview   = () => { setActiveCat(REVIEW_CAT); setActiveGame("quiz"); setScreen("game"); enterFullscreen(); speakTh("มาทบทวนคำที่เคยพลาดกัน ดูรูปแล้วเลือกคำให้ถูกนะ"); };
   const goBack     = () => {
+    if (screen === "game" || screen === "learn" || screen === "versus") exitFullscreen();
     if (screen === "game" && activeCat?.id === "review") { goHome(); }
     else if (screen === "talk" && activeDialog) { setActiveDialog(null); }
     else if (screen === "stories" && activeStory) { setActiveStory(null); }
@@ -790,9 +825,15 @@ export default function App() {
     else if (screen === "game" && activeCat?.back) { setScreen(activeCat.back); setActiveCat(null); setActiveGame(null); }
     else if ((screen === "game" || screen === "learn") && activeCat?.unit) { setScreen("path"); setActiveGame(null); setActiveCat(null); }
     else if (screen === "game" || screen === "learn") { setScreen("category"); setActiveGame(null); }
-    else if (screen === "category") { goHome(); }
-    else                       { goHome(); }
+    else if (screen === "category") { setScreen(navTab === "home" ? "home" : navTab); }
+    else                       { setScreen(navTab === "home" ? "home" : navTab); }
   };
+  // เปลี่ยนหน้าแล้วเลื่อนขึ้นบนสุดเสมอ (ไม่งั้นเปิดหมวดจากท้ายหน้าแรกจะเห็นตรงกลางหน้า)
+  useEffect(() => { try { window.scrollTo(0, 0); } catch (_) {} }, [screen, activeCat, activeDialog, activeStory]);
+  const immersive = ["game", "learn", "versus"].includes(screen);
+  const showNav = !immersive && screen !== "credits" && !showSettings && !showProfiles;   // ซ่อนแท็บล่างตอนเปิดแผ่นตั้งค่า/โปรไฟล์
+  const immersiveBg = activeCat?.color ? `linear-gradient(160deg, ${activeCat.color} 0%, ${activeCat.color}cc 35%, #1e1b4b 100%)` : "linear-gradient(160deg,#6d5dfc,#1e1b4b)";
+  const headerTitle = ({ home:"", learnhub:"เรียน", playhub:"เล่น", me:"ของฉัน", manage:"จัดการคำศัพท์", stickers:"สมุดสติกเกอร์", shop:"ร้านค้า", report:"รายงานผู้ปกครอง", credits:"เครดิตรูปภาพ", path:"เส้นทางบทเรียน", talk:"บทสนทนา", stories:"นิทานภาพ", phonics:"โฟนิกส์", grammar:"ไวยากรณ์", daily:"ชีวิตประจำวัน", test:"สอบวัดระดับ", versus:"แข่ง 2 คน" })[screen] ?? (activeCat?.label || "");
 
   // คำที่ถึงกำหนดทบทวนวันนี้ (SRS) + คำที่เคยพลาด เรียงจากพลาดบ่อยสุด
   const missedWords = useMemo(() => {
@@ -825,22 +866,8 @@ export default function App() {
     );
   }
 
-  return (
-    <PicCtx.Provider value={realPics}>
-    <div style={{ fontFamily: "system-ui, sans-serif", background: "#fafafa", minHeight: "100dvh" }}>
-      {/* TOPBAR */}
-      <Topbar
-        screen={screen} catLabel={activeCat?.label}
-        onBack={screen !== "home" ? goBack : null}
-        onHome={goHome}
-        soundOn={soundOn} onToggleSound={() => setSoundOn(s => !s)}
-        onSettings={() => setShowSettings(true)}
-        onManage={goManage}
-        streak={progress.streak.count}
-      />
-
-      {/* CONTENT — padded below topbar */}
-      <div style={{ paddingTop: 54 }}>
+  const SCREENS = (
+    <>
         {screen === "home" && (
           <HomeScreen categories={CATEGORIES} words={words} onPickCat={goCat}
             progress={progress} setProgress={setProgress} stickerCount={stickerCount}
@@ -851,6 +878,16 @@ export default function App() {
         )}
         {screen === "category" && activeCat && (
           <CategoryScreen cat={activeCat} words={catWords} onPickGame={goGame} onLearn={goLearn} progress={progress} showToast={showToast} />
+        )}
+        {screen === "learnhub" && (
+          <LearnHub words={words} categories={CATEGORIES} progress={progress} units={units} onPath={goPath} onCat={goCat} onTalk={goTalk} onStories={goStories} onPhonics={goPhonics} onGrammar={goGrammar} onDaily={goDaily} />
+        )}
+        {screen === "playhub" && (
+          <PlayHub words={words} categories={CATEGORIES} progress={progress} missedCount={missedWords.length} onCat={goCat} onReview={goReview} onVersus={goVersus} onTest={goTest} />
+        )}
+        {screen === "me" && (
+          <MeHub words={words} progress={progress} setProgress={setProgress} stickerCount={stickerCount} profile={profiles.list.find(x => x.id === profiles.current)}
+            onProfiles={() => setShowProfiles(true)} onStickers={goStickers} onShop={goShop} onReport={goReport} onManage={goManage} onSettings={() => setShowSettings(true)} onCredits={goCredits} speak={speak} />
         )}
         {screen === "learn" && activeCat && (
           <FlashCards cat={activeCat} words={catWords} speak={speak} speakAt={speakAt} setProgress={setProgress} showToast={showToast}
@@ -919,7 +956,38 @@ export default function App() {
             onReset={() => { setWords(INITIAL_WORDS); showToast("คืนค่าคำศัพท์เริ่มต้นแล้ว ✓"); }}
           />
         )}
-      </div>
+    </>
+  );
+  return (
+    <PicCtx.Provider value={realPics}>
+    <div style={{ fontFamily: FONT, color: T.ink, minHeight: "100dvh", paddingBottom: showNav ? 100 : 0 }}>
+      {/* HEADER (ไม่แสดงในโหมดเต็มจอ) */}
+      {!immersive && (
+        <Header screen={screen} title={headerTitle} onBack={screen !== "home" && !HUBS.includes(screen) ? goBack : null}
+          profile={profiles.list.find(x => x.id === profiles.current)} onProfiles={() => setShowProfiles(true)}
+          soundOn={soundOn} onToggleSound={() => setSoundOn(v => !v)} onSettings={() => setShowSettings(true)} coins={progress.coins} streak={progress.streak.count} />
+      )}
+
+      {/* CONTENT */}
+      {immersive ? (
+        <div style={{ position:"fixed",inset:0,zIndex:60,display:"flex",flexDirection:"column",background:immersiveBg,overflow:"hidden" }}>
+          <div style={{ display:"flex",alignItems:"center",gap:8,padding:"calc(env(safe-area-inset-top, 0px) + 8px) 10px 6px",flexShrink:0 }}>
+            <button onClick={goBack} style={{ width:44,height:44,borderRadius:16,border:"none",background:"rgba(255,255,255,0.22)",color:"#fff",fontSize:22,cursor:"pointer",backdropFilter:"blur(8px)" }}>‹</button>
+            <div style={{ flex:1,minWidth:0,color:"#fff",fontWeight:800,fontSize:15,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textShadow:"0 1px 2px rgba(0,0,0,0.2)" }}>{headerTitle}</div>
+            <button onClick={() => setSoundOn(v => !v)} style={{ width:44,height:44,borderRadius:16,border:"none",background:"rgba(255,255,255,0.22)",color:"#fff",fontSize:18,cursor:"pointer" }}>{soundOn ? "🔊" : "🔇"}</button>
+          </div>
+          <div style={{ flex:1,overflowY:"auto",WebkitOverflowScrolling:"touch",paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 16px)" }}>
+            {SCREENS}
+          </div>
+        </div>
+      ) : (
+        <div style={{ paddingTop: screen === "home" ? 0 : 64 }}>
+          {SCREENS}
+        </div>
+      )}
+
+      {/* BOTTOM NAV */}
+      {showNav && <BottomNav tab={navTab} onTab={goTab} />}
 
       {/* SETTINGS */}
       {showProfiles && (
@@ -935,6 +1003,8 @@ export default function App() {
           onReport={() => { setShowSettings(false); goReport(); }}
           onCredits={() => { setShowSettings(false); goCredits(); }}
           realPics={realPics} setRealPics={setRealPics}
+          fullscreenOn={fullscreenOn} setFullscreenOn={setFullscreenOn}
+          thaiGuide={thaiGuide} setThaiGuide={setThaiGuide}
           onClose={() => setShowSettings(false)}
         />
       )}
@@ -973,34 +1043,20 @@ export default function App() {
 // ═══════════════════════════════════════════════════════
 function SoundUnlockScreen({ onUnlock }) {
   return (
-    <div style={{
-      minHeight:"100dvh", display:"flex", flexDirection:"column",
-      alignItems:"center", justifyContent:"center",
-      background:"linear-gradient(160deg,#fdf2f8,#eff6ff)",
-      padding:24, textAlign:"center",
-    }}>
-      <div style={{ fontSize:80, marginBottom:16 }}>📚</div>
-      <h1 style={{ fontSize:28, fontWeight:900, color:"#1f2937", margin:"0 0 8px" }}>
-        Smart VocabPlay
-      </h1>
-      <p style={{ fontSize:15, color:"#6b7280", margin:"0 0 32px", lineHeight:1.6 }}>
-        403 คำพร้อมรูปจริง · บทสนทนา 18 บท · นิทาน 10 เรื่อง · โฟนิกส์ · ไวยากรณ์<br/>เวลา/เงิน/วัน · สอบวัดระดับ+ใบประกาศ · แข่ง 2 คน · เพื่อนคู่หู 🐣
+    <div style={{ minHeight:"100dvh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"32px 24px",textAlign:"center",fontFamily:FONT,background:T.grad,color:"#fff",position:"relative",overflow:"hidden" }}>
+      <div style={{ position:"absolute",width:320,height:320,borderRadius:"50%",background:"rgba(255,255,255,0.18)",top:-120,right:-100,filter:"blur(10px)" }} />
+      <div style={{ position:"absolute",width:260,height:260,borderRadius:"50%",background:"rgba(34,211,238,0.35)",bottom:-80,left:-80,filter:"blur(20px)" }} />
+      <div style={{ position:"relative",width:120,height:120,borderRadius:36,background:"rgba(255,255,255,0.2)",backdropFilter:"blur(10px)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:64,boxShadow:"0 20px 50px rgba(0,0,0,0.2)",animation:"vpBounce 2.4s infinite" }}>📚</div>
+      <h1 style={{ fontSize:34,fontWeight:800,margin:"22px 0 6px",letterSpacing:-0.5,position:"relative" }}>Smart VocabPlay</h1>
+      <p style={{ fontSize:15,opacity:0.92,margin:"0 0 30px",lineHeight:1.7,maxWidth:340,position:"relative" }}>
+        เรียนอังกฤษแบบเด็กยุคใหม่ — 403 คำพร้อมรูปจริง · บทสนทนา · นิทาน · โฟนิกส์ · ไวยากรณ์ · 24 เกม · เพื่อนคู่หูที่โตไปกับหนู
       </p>
-      <button
-        onClick={onUnlock}
-        style={{
-          background:"linear-gradient(135deg,#EF4444,#F97316)",
-          color:"#fff", border:"none", borderRadius:20,
-          padding:"18px 40px", fontSize:20, fontWeight:800,
-          boxShadow:"0 8px 24px rgba(239,68,68,0.4)",
-          cursor:"pointer", letterSpacing:0.5,
-        }}
-      >
-        🔊 แตะเพื่อเริ่มเลย!
+      <button onClick={onUnlock} style={{ position:"relative",background:"#fff",color:"#4c1d95",border:"none",borderRadius:22,padding:"18px 44px",fontSize:19,fontWeight:800,boxShadow:"0 14px 34px rgba(0,0,0,0.25)",cursor:"pointer",fontFamily:FONT }}>
+        🔊 แตะเพื่อเริ่มเลย
       </button>
-      <p style={{ fontSize:11, color:"#9ca3af", marginTop:16 }}>
-        * แตะปุ่มนี้เพื่อเปิดใช้เสียงบนมือถือ<br/>
-        <span style={{ fontWeight:700,color:"#6b7280" }}>v{APP_VERSION}</span>{BUILD_TIME && <span> · build {BUILD_TIME}</span>}
+      <p style={{ fontSize:12,opacity:0.8,marginTop:18,position:"relative" }}>
+        แตะปุ่มเพื่อเปิดเสียงบนมือถือ<br/>
+        <span style={{ fontWeight:700 }}>v{APP_VERSION}</span>{BUILD_TIME && <span> · build {BUILD_TIME}</span>}
       </p>
     </div>
   );
@@ -1009,54 +1065,51 @@ function SoundUnlockScreen({ onUnlock }) {
 // ═══════════════════════════════════════════════════════
 // TOPBAR
 // ═══════════════════════════════════════════════════════
-function Topbar({ screen, catLabel, onBack, onHome, soundOn, onToggleSound, onSettings, onManage, streak }) {
+function Header({ screen, title, onBack, profile, onProfiles, soundOn, onToggleSound, onSettings, coins, streak }) {
+  const ib = { width:44,height:44,borderRadius:16,border:"none",background:"rgba(255,255,255,0.9)",boxShadow:T.shadow,fontSize:18,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:FONT };
+  if (screen === "home") return (
+    <div style={{ display:"flex",alignItems:"center",gap:10,padding:"calc(env(safe-area-inset-top, 0px) + 14px) 16px 4px",maxWidth:520,margin:"0 auto" }}>
+      <button onClick={() => { sfx.tap(); onProfiles(); }} style={{ display:"flex",alignItems:"center",gap:10,background:"none",border:"none",cursor:"pointer",padding:0,minHeight:44,textAlign:"left",fontFamily:FONT }}>
+        <div style={{ width:46,height:46,borderRadius:16,background:T.grad,display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,boxShadow:T.shadow }}>{profile?.avatar || "🧒"}</div>
+        <div><div style={{ fontSize:12,color:T.ink3,fontWeight:600 }}>สวัสดี 👋</div><div style={{ fontSize:17,fontWeight:800,color:T.ink,lineHeight:1.1 }}>{profile?.name || "หนู"} <span style={{ fontSize:11,color:T.ink3,fontWeight:600 }}>▾</span></div></div>
+      </button>
+      <div style={{ flex:1 }} />
+      <div style={{ display:"inline-flex",alignItems:"center",gap:6,background:"rgba(255,255,255,0.9)",borderRadius:999,padding:"0 12px",height:44,boxShadow:T.shadow,fontWeight:800,fontSize:13,color:T.ink }}>🪙 {coins}{streak > 0 && <span style={{ color:"#ea580c" }}> · 🔥{streak}</span>}</div>
+      <button onClick={onSettings} style={ib}>⚙️</button>
+    </div>
+  );
   return (
-    <div style={{
-      position:"fixed", top:0, left:0, right:0, height:54, zIndex:100,
-      background:"rgba(255,255,255,0.96)", backdropFilter:"blur(8px)",
-      borderBottom:"1px solid #e5e7eb",
-      display:"flex", alignItems:"center", gap:8, padding:"0 10px",
-    }}>
-      {/* Left */}
-      {onBack
-        ? <Btn onClick={onBack} style={{ fontSize:24, width:44, height:44, borderRadius:22, background:"#f3f4f6" }}>‹</Btn>
-        : <button onClick={onHome} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", padding:0, minHeight:44 }}>
-            <div style={{ width:30,height:30,borderRadius:10,background:"linear-gradient(135deg,#F43F5E,#F97316)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16 }}>📚</div>
-            <span style={{ fontWeight:800, fontSize:14, color:"#1f2937" }}>VocabPlay</span>
-          </button>
-      }
-
-      {/* Centre */}
-      <div style={{ flex:1, overflow:"hidden" }}>
-        {catLabel && <span style={{ fontWeight:700,fontSize:13,color:"#374151",display:"block",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{catLabel}</span>}
-        {screen==="home" && streak>0 && <span style={{ fontSize:12,fontWeight:800,color:"#ea580c",whiteSpace:"nowrap" }}>🔥 {streak} วัน</span>}
-        {screen==="manage" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>จัดการคำศัพท์</span>}
-        {screen==="stickers" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>สมุดสติกเกอร์</span>}
-        {screen==="shop" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>ร้านค้า</span>}
-        {screen==="report" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>รายงานผู้ปกครอง</span>}
-        {screen==="credits" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>เครดิตรูปภาพ</span>}
-        {screen==="path" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>เส้นทางบทเรียน</span>}
-        {screen==="talk" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>บทสนทนา</span>}
-        {screen==="stories" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>นิทานภาพ</span>}
-        {screen==="phonics" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>โฟนิกส์</span>}
-        {screen==="grammar" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>ไวยากรณ์</span>}
-        {screen==="daily" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>ชีวิตประจำวัน</span>}
-        {screen==="test" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>สอบวัดระดับ</span>}
-        {screen==="versus" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>แข่ง 2 คน</span>}
-      </div>
-
-      {/* Right */}
-      <div style={{ display:"flex", gap:4, flexShrink:0 }}>
-        <Btn onClick={onToggleSound} style={IB}>{soundOn?"🔊":"🔇"}</Btn>
-        <Btn onClick={onSettings} style={IB}>⚙️</Btn>
-        {screen==="home"
-          ? <Btn onClick={onManage} style={{ ...IB, background:"#1f2937", fontSize:12, color:"#fff", fontWeight:700, borderRadius:12, padding:"0 10px", width:"auto" }}>✏️ จัดการ</Btn>
-          : null
-        }
+    <div style={{ position:"fixed",top:0,left:0,right:0,zIndex:100,background:"rgba(244,246,251,0.85)",backdropFilter:"blur(14px)",WebkitBackdropFilter:"blur(14px)" }}>
+      <div style={{ display:"flex",alignItems:"center",gap:10,padding:"calc(env(safe-area-inset-top, 0px) + 8px) 12px 8px",maxWidth:520,margin:"0 auto" }}>
+        {onBack ? <button onClick={onBack} style={{ ...ib,fontSize:24 }}>‹</button> : <div style={{ width:4 }} />}
+        <div style={{ flex:1,minWidth:0,fontWeight:800,fontSize:17,color:T.ink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{title}</div>
+        <button onClick={onToggleSound} style={ib}>{soundOn ? "🔊" : "🔇"}</button>
+        <button onClick={onSettings} style={ib}>⚙️</button>
       </div>
     </div>
   );
 }
+
+// แถบนำทางล่างแบบแคปซูลลอย
+function BottomNav({ tab, onTab }) {
+  const tabs = [["home","🏠","หน้าแรก"],["learnhub","📚","เรียน"],["playhub","🎮","เล่น"],["me","🧒","ของฉัน"]];
+  return (
+    <div style={{ position:"fixed",left:0,right:0,bottom:0,zIndex:120,padding:"0 14px calc(env(safe-area-inset-bottom, 0px) + 12px)",pointerEvents:"none" }}>
+      <div style={{ maxWidth:420,margin:"0 auto",display:"flex",background:"rgba(255,255,255,0.86)",backdropFilter:"blur(18px)",WebkitBackdropFilter:"blur(18px)",borderRadius:30,padding:6,boxShadow:"0 18px 44px rgba(30,27,75,0.2)",pointerEvents:"auto",border:"1px solid rgba(255,255,255,0.8)" }}>
+        {tabs.map(([k, e, l]) => {
+          const on = tab === k;
+          return (
+            <button key={k} onClick={() => onTab(k)} style={{ flex:1,minHeight:52,borderRadius:24,border:"none",cursor:"pointer",background:on?T.grad:"transparent",color:on?"#fff":T.ink2,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:1,fontFamily:FONT,boxShadow:on?"0 8px 20px rgba(109,93,252,0.35)":"none",transition:"all .2s" }}>
+              <span style={{ fontSize:20,lineHeight:1 }}>{e}</span>
+              <span style={{ fontSize:11,fontWeight:800 }}>{l}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 const IB = { width:44,height:44,borderRadius:22,background:"#f3f4f6",fontSize:19 };
 const Btn = ({ onClick, children, style={} }) => (
   <button onClick={onClick} style={{ border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",...style }}>
@@ -1070,84 +1123,172 @@ const Btn = ({ onClick, children, style={} }) => (
 function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, onPath, onTalk, onStories, onPhonics, onGrammar, onDaily, onTest, onVersus, speak, units, profile, onProfiles, install }) {
   const unitsDone = units.filter(u => unitDone(progress.path, u)).length;
   const nextUnit = units.find(u => !unitDone(progress.path, u));
+  const pet = getPet(progress);
+  const thumbOf = cat => words.find(w => w.cat === cat.id && imageTitleOf(w));
+  const tiles = [["💬","บทสนทนา",`${DIALOGUES.length} สถานการณ์`,"linear-gradient(135deg,#fb923c,#f43f5e)",onTalk],["📖","นิทานภาพ",`${STORIES.length} เรื่อง`,"linear-gradient(135deg,#a855f7,#6366f1)",onStories],["🔤","โฟนิกส์","A–Z + เกม","linear-gradient(135deg,#22d3ee,#3b82f6)",onPhonics],
+    ["✍️","ไวยากรณ์",`${GRAMMAR.length} บทเรียน`,"linear-gradient(135deg,#f59e0b,#ef4444)",onGrammar],["🧭","ชีวิตประจำวัน","เวลา เงิน วัน","linear-gradient(135deg,#34d399,#0ea5e9)",onDaily],["📝","สอบวัดระดับ",progress.cert?`ได้ระดับ ${LEVELS_TEST.find(l=>progress.cert.score>=l.min)?.level}`:"20 ข้อ + ใบประกาศ","linear-gradient(135deg,#6366f1,#a855f7)",onTest]];
   return (
-    <div style={{ padding:"14px 10px 40px",maxWidth:480,margin:"0 auto" }}>
-      <PetCard progress={progress} setProgress={setProgress} stickerCount={stickerCount} totalWords={words.length} onStickers={onStickers} onShop={onShop} speak={speak} profile={profile} onProfiles={onProfiles} />
-      {install && <InstallBanner deferred={install.evt} onInstall={install.onInstall} onDismiss={install.onDismiss} />}
-
-      {/* เส้นทางบทเรียน */}
-      {progress.pet && (
-        <button onClick={()=>{ sfx.tap(); onPath(); }}
-          style={{ width:"100%",minHeight:64,background:"linear-gradient(135deg,#10b981,#3b82f6)",color:"#fff",border:"none",borderRadius:16,padding:"10px 14px",marginBottom:14,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",boxShadow:"0 6px 18px rgba(16,185,129,0.3)" }}>
-          <span style={{ fontSize:28 }}>🗺️</span>
-          <div style={{ flex:1,minWidth:0 }}>
-            <div style={{ fontWeight:900,fontSize:15 }}>เส้นทางบทเรียน A1 → A2</div>
-            <div style={{ fontSize:11,opacity:0.9 }}>{nextUnit ? `ผ่านแล้ว ${unitsDone}/${units.length} บท · ต่อไป: บทที่ ${nextUnit.n} ${nextUnit.cat.thai}` : `ผ่านครบทุกบทแล้ว! 🎓`}</div>
-          </div>
-          <span style={{ fontSize:20,opacity:0.8 }}>›</span>
-        </button>
-      )}
-      {/* เรียนรู้มากกว่าคำศัพท์ */}
-      {progress.pet && (
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:14 }}>
-          {[["💬","บทสนทนา",`${DIALOGUES.length} สถานการณ์`,"#f97316",onTalk],["📖","นิทานภาพ",`${STORIES.length} เรื่อง`,"#8b5cf6",onStories],["🔤","โฟนิกส์","A–Z + เกม","#06b6d4",onPhonics],
-            ["✍️","ไวยากรณ์",`${GRAMMAR.length} บทเรียน`,"#f59e0b",onGrammar],["🧭","ชีวิตประจำวัน","เวลา เงิน วัน","#0ea5e9",onDaily],["📝","สอบวัดระดับ",progress.cert?`ได้ ${LEVELS_TEST.find(l=>progress.cert.score>=l.min)?.level}`:"20 ข้อ + ใบประกาศ","#6366f1",onTest]].map(([e,t,sub,c,fn]) => (
-            <button key={t} onClick={()=>{ sfx.tap(); fn(); }} style={{ minHeight:88,background:"#fff",border:`2px solid ${c}40`,borderRadius:16,padding:"10px 6px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3,boxShadow:"0 2px 8px rgba(0,0,0,0.05)" }}>
-              <span style={{ fontSize:26 }}>{e}</span>
-              <span style={{ fontWeight:800,fontSize:13,color:"#1f2937" }}>{t}</span>
-              <span style={{ fontSize:10,color:c,fontWeight:700 }}>{sub}</span>
+    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
+      {/* HERO: เพื่อนคู่หู + ความคืบหน้า */}
+      {!progress.pet ? (
+        <PetCard progress={progress} setProgress={setProgress} stickerCount={stickerCount} totalWords={words.length} onStickers={onStickers} onShop={onShop} speak={speak} profile={profile} onProfiles={onProfiles} />
+      ) : (
+        <div style={{ background:T.grad,borderRadius:28,padding:"18px 18px 16px",color:"#fff",boxShadow:T.shadowLg,position:"relative",overflow:"hidden",marginBottom:14 }}>
+          <div style={{ position:"absolute",width:220,height:220,borderRadius:"50%",background:"rgba(255,255,255,0.14)",top:-90,right:-60 }} />
+          <div style={{ display:"flex",alignItems:"center",gap:14,position:"relative" }}>
+            <button onClick={() => { sfx.tap(); speak(`Hi! Let's learn English!`, `สวัสดี มาเรียนภาษาอังกฤษกันเถอะ`); }} style={{ width:92,height:92,borderRadius:28,background:"rgba(255,255,255,0.22)",backdropFilter:"blur(8px)",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0,flexShrink:0 }}>
+              <PetAvatar pet={pet} hat={progress.hat} size={pet.stage===0?42:48} bounce />
             </button>
-          ))}
+            <div style={{ flex:1,minWidth:0 }}>
+              <div style={{ fontSize:12,opacity:0.85,fontWeight:600 }}>เพื่อนคู่หู · Lv.{pet.level}</div>
+              <div style={{ fontSize:22,fontWeight:800,lineHeight:1.1 }}>{pet.name}</div>
+              <div style={{ fontSize:11,opacity:0.9,margin:"4px 0 6px" }}>{pet.next == null ? "โตเต็มที่แล้ว!" : `อีก ${pet.next - pet.xp} ข้อ ถึง Lv.${pet.level + 1}`}</div>
+              <div style={{ height:8,background:"rgba(255,255,255,0.25)",borderRadius:999,overflow:"hidden" }}><div style={{ height:"100%",width:`${pet.pct}%`,background:"#fff",borderRadius:999 }} /></div>
+            </div>
+          </div>
+          <div style={{ display:"flex",gap:8,marginTop:14,position:"relative",flexWrap:"wrap" }}>
+            <button onClick={() => { sfx.tap(); onStickers(); }} style={{ flex:1,minHeight:44,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>📒 {stickerCount}/{words.length}</button>
+            <button onClick={() => { sfx.tap(); onShop(); }} style={{ flex:1,minHeight:44,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>🛍️ ร้านค้า</button>
+            <button onClick={() => { sfx.tap(); onProfiles(); }} style={{ flex:1,minHeight:44,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>{profile?.avatar} {profile?.name} ▾</button>
+          </div>
         </div>
       )}
+      {install && <InstallBanner deferred={install.evt} onInstall={install.onInstall} onDismiss={install.onDismiss} />}
+
+      {/* ทำต่อวันนี้ */}
       {progress.pet && (
-        <button onClick={()=>{ sfx.tap(); onVersus(); }} style={{ width:"100%",minHeight:56,background:"linear-gradient(135deg,#ef4444,#f59e0b)",color:"#fff",border:"none",borderRadius:16,padding:"10px 14px",marginBottom:14,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",boxShadow:"0 6px 18px rgba(239,68,68,0.3)" }}>
-          <span style={{ fontSize:26 }}>⚔️</span>
-          <div style={{ flex:1 }}><div style={{ fontWeight:900,fontSize:15 }}>แข่ง 2 คน จอเดียว</div><div style={{ fontSize:11,opacity:0.9 }}>นั่งตรงข้ามกัน ใครแตะคำที่ถูกก่อนชนะ · เล่นกับพี่น้อง/เพื่อน/พ่อแม่</div></div>
-          <span style={{ fontSize:20,opacity:0.8 }}>›</span>
-        </button>
+        <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:14 }}>
+          <button onClick={() => { sfx.tap(); onPath(); }} style={{ ...card(),padding:14,textAlign:"left",cursor:"pointer",minHeight:96,display:"flex",flexDirection:"column",justifyContent:"space-between",fontFamily:FONT }}>
+            <span style={{ fontSize:26 }}>🗺️</span>
+            <div><div style={{ fontWeight:800,fontSize:14,color:T.ink }}>เส้นทางบทเรียน</div><div style={{ fontSize:11,color:T.ink3 }}>{nextUnit ? `บทที่ ${nextUnit.n} · ${nextUnit.cat.thai}` : "ครบทุกบทแล้ว 🎓"} · {unitsDone}/{units.length}</div></div>
+          </button>
+          <button onClick={() => { sfx.tap(); if (missedCount) onReview(); }} style={{ ...card(),padding:14,textAlign:"left",cursor:"pointer",minHeight:96,display:"flex",flexDirection:"column",justifyContent:"space-between",fontFamily:FONT,background:missedCount?"linear-gradient(135deg,#fff7ed,#ffedd5)":T.card }}>
+            <span style={{ fontSize:26 }}>🔁</span>
+            <div><div style={{ fontWeight:800,fontSize:14,color:T.ink }}>ทบทวนวันนี้</div><div style={{ fontSize:11,color:missedCount?"#c2410c":T.ink3 }}>{missedCount ? `${missedCount} คำถึงเวลาทบทวน` : "ยังไม่มีคำค้าง 🎉"}</div></div>
+          </button>
+        </div>
       )}
+
       {progress.pet && <MissionsCard progress={progress} setProgress={setProgress} />}
 
-      {missedCount > 0 && (
-        <button onClick={()=>{ sfx.tap(); onReview(); }}
-          style={{ width:"100%",minHeight:56,background:"#fff7ed",border:"2px solid #fdba74",borderRadius:16,padding:"10px 14px",marginBottom:14,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left" }}>
-          <span style={{ fontSize:28 }}>🔁</span>
-          <div style={{ flex:1 }}>
-            <div style={{ fontWeight:800,fontSize:14,color:"#9a3412" }}>ทบทวนวันนี้</div>
-            <div style={{ fontSize:11,color:"#c2410c" }}>มี {missedCount} คำถึงเวลาทบทวน (คำที่พลาด + คำที่ครบกำหนด)</div>
+      {/* โมดูลเรียนรู้ */}
+      {progress.pet && (
+        <>
+          <div style={{ fontWeight:800,fontSize:16,color:T.ink,margin:"4px 0 10px" }}>มากกว่าคำศัพท์</div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginBottom:14 }}>
+            {tiles.map(([e,t,sub,g,fn]) => (
+              <button key={t} onClick={()=>{ sfx.tap(); fn(); }} style={{ ...card(),minHeight:104,padding:"12px 8px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:FONT }}>
+                <span style={{ width:44,height:44,borderRadius:14,background:g,display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,boxShadow:"0 6px 14px rgba(15,23,42,0.12)" }}>{e}</span>
+                <span style={{ fontWeight:800,fontSize:12.5,color:T.ink }}>{t}</span>
+                <span style={{ fontSize:10,color:T.ink3,fontWeight:600,textAlign:"center" }}>{sub}</span>
+              </button>
+            ))}
           </div>
-          <span style={{ color:"#fb923c",fontSize:20 }}>›</span>
-        </button>
+          <button onClick={()=>{ sfx.tap(); onVersus(); }} style={{ width:"100%",minHeight:64,background:"linear-gradient(135deg,#f43f5e,#fb923c)",color:"#fff",border:"none",borderRadius:22,padding:"10px 16px",marginBottom:18,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",boxShadow:"0 12px 28px rgba(244,63,94,0.3)",fontFamily:FONT }}>
+            <span style={{ fontSize:28 }}>⚔️</span>
+            <div style={{ flex:1 }}><div style={{ fontWeight:800,fontSize:15 }}>แข่ง 2 คน จอเดียว</div><div style={{ fontSize:11,opacity:0.9 }}>นั่งตรงข้ามกัน ใครแตะคำที่ถูกก่อนชนะ</div></div>
+            <span style={{ fontSize:20,opacity:0.8 }}>›</span>
+          </button>
+        </>
       )}
 
-      <p style={{ textAlign:"center",margin:"0 0 10px",fontSize:13,color:"#6b7280" }}>แตะหมวดที่อยากเรียน 👇</p>
-      <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }}>
-        {categories.map((cat,i) => {
+      {/* หมวดคำศัพท์ — การ์ดรูปจริง */}
+      <div style={{ fontWeight:800,fontSize:16,color:T.ink,margin:"0 0 10px" }}>หมวดคำศัพท์ <span style={{ fontSize:12,color:T.ink3,fontWeight:600 }}>· {words.length} คำ</span></div>
+      <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:12 }}>
+        {categories.map(cat => {
           const n = words.filter(w=>w.cat===cat.id).length;
           const got = cat.games.reduce((a,g)=>a+(progress.stars[`${cat.id}:${g}`]||0),0);
           const max = cat.games.length*3;
           const crown = !!progress.boss[cat.id];
+          const tw = thumbOf(cat);
           return (
             <button key={cat.id} onClick={()=>{ sfx.tap(); onPickCat(cat); }}
-              style={{
-                background:"#fff", borderRadius:18, padding:"14px 10px",
-                boxShadow:"0 2px 8px rgba(0,0,0,0.07)",
-                border:`2px solid ${cat.color}30`,
-                display:"flex",flexDirection:"column",alignItems:"center",gap:5,
-                cursor:"pointer", opacity:n===0?0.5:1, position:"relative",
-                animationDelay:`${i*25}ms`,
-              }}>
-              {crown && <span style={{ position:"absolute",top:6,right:8,fontSize:18 }}>👑</span>}
-              <div style={{ width:50,height:50,borderRadius:15,background:`${cat.color}20`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:26 }}>{cat.emoji}</div>
-              <span style={{ fontWeight:800,fontSize:14,color:"#1f2937" }}>{cat.label}</span>
-              <span style={{ fontSize:11,color:"#6b7280" }}>{cat.thai}</span>
-              <span style={{ fontSize:11,fontWeight:700,color:cat.color,background:`${cat.color}18`,padding:"2px 10px",borderRadius:999 }}>{n} คำ</span>
-              <span style={{ fontSize:11,fontWeight:800,color:got>0?"#d97706":"#d1d5db" }}>⭐ {got}/{max}</span>
+              style={{ position:"relative",minHeight:150,borderRadius:24,border:"none",cursor:"pointer",overflow:"hidden",padding:0,textAlign:"left",boxShadow:T.shadow,background:`linear-gradient(135deg,${cat.color},${cat.color}aa)`,fontFamily:FONT }}>
+              {tw && <span style={{ position:"absolute",inset:0 }}><PicFill w={tw} emojiSize={0} /></span>}
+              <span style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(15,23,42,0) 25%,rgba(15,23,42,0.82) 100%)" }} />
+              <span style={{ position:"absolute",top:10,left:10,width:40,height:40,borderRadius:14,background:"rgba(255,255,255,0.92)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,boxShadow:"0 4px 12px rgba(0,0,0,0.15)" }}>{cat.emoji}</span>
+              {crown && <span style={{ position:"absolute",top:12,right:12,fontSize:20 }}>👑</span>}
+              <span style={{ position:"absolute",left:12,right:12,bottom:10,color:"#fff" }}>
+                <span style={{ display:"block",fontWeight:800,fontSize:16,lineHeight:1.1 }}>{cat.label}</span>
+                <span style={{ display:"block",fontSize:12,opacity:0.9 }}>{cat.thai} · {n} คำ</span>
+                <span style={{ display:"inline-block",marginTop:6,fontSize:11,fontWeight:800,background:"rgba(255,255,255,0.22)",padding:"2px 8px",borderRadius:999 }}>⭐ {got}/{max}</span>
+              </span>
             </button>
           );
         })}
       </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════
+// HUBS — แท็บ เรียน / เล่น / ของฉัน
+// ═══════════════════════════════════════════════════════
+function HubRow({ emoji, title, sub, grad, onClick, right }) {
+  return (
+    <button onClick={() => { sfx.tap(); onClick(); }} style={{ ...card(),width:"100%",minHeight:72,padding:"12px 14px",display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",marginBottom:10,fontFamily:FONT }}>
+      <span style={{ width:48,height:48,borderRadius:16,background:grad,display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,flexShrink:0,boxShadow:"0 6px 14px rgba(15,23,42,0.12)" }}>{emoji}</span>
+      <span style={{ flex:1,minWidth:0 }}><span style={{ display:"block",fontWeight:800,fontSize:15,color:T.ink }}>{title}</span><span style={{ display:"block",fontSize:12,color:T.ink3 }}>{sub}</span></span>
+      {right ?? <span style={{ color:T.ink3,fontSize:20 }}>›</span>}
+    </button>
+  );
+}
+function LearnHub({ words, categories, progress, units, onPath, onCat, onTalk, onStories, onPhonics, onGrammar, onDaily }) {
+  const unitsDone = units.filter(u => unitDone(progress.path, u)).length;
+  return (
+    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
+      <HubRow emoji="🗺️" title="เส้นทางบทเรียน A1 → A2" sub={`ผ่านแล้ว ${unitsDone}/${units.length} บท · เรียนการ์ด → ทดสอบ → ฟัง`} grad={T.grad2} onClick={onPath} />
+      <HubRow emoji="💬" title="บทสนทนา" sub={`${DIALOGUES.length} สถานการณ์ · ฟัง เล่นบทบาท เติมคำ`} grad="linear-gradient(135deg,#fb923c,#f43f5e)" onClick={onTalk} />
+      <HubRow emoji="📖" title="นิทานภาพ" sub={`${STORIES.length} เรื่อง · อ่านพร้อมเสียง + คำถาม`} grad="linear-gradient(135deg,#a855f7,#6366f1)" onClick={onStories} />
+      <HubRow emoji="🔤" title="โฟนิกส์ A–Z" sub="เสียงตัวอักษร + คำตัวอย่าง + เกม" grad="linear-gradient(135deg,#22d3ee,#3b82f6)" onClick={onPhonics} />
+      <HubRow emoji="✍️" title="ไวยากรณ์เด็ก" sub={`${GRAMMAR.length} บท · กฎง่ายๆ + แบบฝึก`} grad="linear-gradient(135deg,#f59e0b,#ef4444)" onClick={onGrammar} />
+      <HubRow emoji="🧭" title="ชีวิตประจำวัน" sub="บอกเวลา · เงินบาท · วัน-เดือน · ตัวเลข" grad="linear-gradient(135deg,#34d399,#0ea5e9)" onClick={onDaily} />
+      <div style={{ fontWeight:800,fontSize:16,color:T.ink,margin:"14px 0 10px" }}>การ์ดคำศัพท์ตามหมวด</div>
+      <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
+        {categories.map(c => <button key={c.id} onClick={() => { sfx.tap(); onCat(c); }} style={{ ...card(),minHeight:76,padding:"8px 4px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3,fontFamily:FONT }}><span style={{ fontSize:26 }}>{c.emoji}</span><span style={{ fontSize:11,fontWeight:800,color:T.ink }}>{c.thai}</span></button>)}
+      </div>
+    </div>
+  );
+}
+function PlayHub({ words, categories, progress, missedCount, onCat, onReview, onVersus, onTest }) {
+  const totalStars = Object.values(progress.stars).reduce((a, b) => a + b, 0);
+  return (
+    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
+      <div style={{ ...card(),padding:16,marginBottom:12,display:"flex",alignItems:"center",gap:12 }}>
+        <span style={{ fontSize:36 }}>⭐</span><div><div style={{ fontWeight:800,fontSize:18,color:T.ink }}>{totalStars} ดาว</div><div style={{ fontSize:12,color:T.ink3 }}>จาก 24 เกมใน {categories.length} หมวด · บอสชนะแล้ว {Object.keys(progress.boss).length} หมวด</div></div>
+      </div>
+      <HubRow emoji="🔁" title="ทบทวนวันนี้" sub={missedCount ? `${missedCount} คำถึงเวลาทบทวน` : "ยังไม่มีคำค้าง"} grad="linear-gradient(135deg,#fb923c,#f59e0b)" onClick={() => missedCount && onReview()} />
+      <HubRow emoji="⚔️" title="แข่ง 2 คน จอเดียว" sub="นั่งตรงข้ามกัน ใครแตะคำถูกก่อนชนะ" grad="linear-gradient(135deg,#f43f5e,#fb923c)" onClick={onVersus} />
+      <HubRow emoji="📝" title="สอบวัดระดับ + ใบประกาศ" sub={progress.cert ? `ล่าสุด ${progress.cert.score}/${progress.cert.total} คะแนน` : "20 ข้อ ผสมทุกทักษะ"} grad="linear-gradient(135deg,#6366f1,#a855f7)" onClick={onTest} />
+      <div style={{ fontWeight:800,fontSize:16,color:T.ink,margin:"14px 0 10px" }}>เลือกหมวดเพื่อเล่นเกม</div>
+      {categories.map(c => {
+        const got = c.games.reduce((a,g)=>a+(progress.stars[`${c.id}:${g}`]||0),0);
+        return <HubRow key={c.id} emoji={c.emoji} title={`${c.label} · ${c.thai}`} sub={`${c.games.length} เกม${progress.boss[c.id] ? " · 👑 ชนะบอสแล้ว" : ""}`} grad={`linear-gradient(135deg,${c.color},${c.color}99)`} onClick={() => onCat(c)} right={<span style={{ fontSize:12,fontWeight:800,color:got?"#d97706":T.ink3 }}>⭐ {got}/{c.games.length*3}</span>} />;
+      })}
+    </div>
+  );
+}
+function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles, onStickers, onShop, onReport, onManage, onSettings, onCredits, speak }) {
+  const pet = getPet(progress);
+  const mastered = words.filter(w => isMastered(progress.srs, w.id)).length;
+  const Stat = ({ v, l }) => <div style={{ textAlign:"center" }}><div style={{ fontWeight:800,fontSize:18,color:T.ink }}>{v}</div><div style={{ fontSize:11,color:T.ink3 }}>{l}</div></div>;
+  return (
+    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
+      <div style={{ ...card(),padding:16,marginBottom:12,display:"flex",alignItems:"center",gap:14 }}>
+        <div style={{ width:72,height:72,borderRadius:24,background:T.grad,display:"flex",alignItems:"center",justifyContent:"center",fontSize:36,flexShrink:0 }}>{profile?.avatar}</div>
+        <div style={{ flex:1 }}><div style={{ fontWeight:800,fontSize:20,color:T.ink }}>{profile?.name}</div><div style={{ fontSize:12,color:T.ink3 }}>{pet ? `เพื่อนคู่หู ${pet.name} · Lv.${pet.level}` : "ยังไม่เลือกเพื่อนคู่หู"}</div></div>
+        <button onClick={() => { sfx.tap(); onProfiles(); }} style={{ minHeight:44,padding:"0 14px",borderRadius:14,border:"none",background:"#eef2ff",color:"#4338ca",fontWeight:800,fontSize:12,cursor:"pointer",fontFamily:FONT }}>สลับ</button>
+      </div>
+      <div style={{ ...card(),padding:"14px 10px",marginBottom:12,display:"grid",gridTemplateColumns:"repeat(4,1fr)" }}>
+        <Stat v={progress.coins} l="🪙 เหรียญ" /><Stat v={Object.values(progress.stars).reduce((a,b)=>a+b,0)} l="⭐ ดาว" /><Stat v={`${progress.streak.count}`} l="🔥 วันต่อเนื่อง" /><Stat v={mastered} l="จำได้แม่น" />
+      </div>
+      <HubRow emoji="📒" title="สมุดสติกเกอร์" sub={`เก็บได้ ${stickerCount}/${words.length} ใบ`} grad="linear-gradient(135deg,#a855f7,#ec4899)" onClick={onStickers} />
+      <HubRow emoji="🛍️" title="ร้านค้า" sub="หมวกและพื้นหลังให้เพื่อนคู่หู" grad="linear-gradient(135deg,#f59e0b,#fb923c)" onClick={onShop} />
+      <HubRow emoji="📊" title="รายงานผู้ปกครอง" sub="ความแม่นยำ หมวดที่อ่อน คำที่พลาดบ่อย" grad="linear-gradient(135deg,#0ea5e9,#6366f1)" onClick={onReport} />
+      <HubRow emoji="✏️" title="จัดการคำศัพท์" sub="ค้นหา เพิ่ม แก้ ลบ แปลอัตโนมัติ" grad="linear-gradient(135deg,#334155,#0f172a)" onClick={onManage} />
+      <HubRow emoji="⚙️" title="ตั้งค่า" sub="เสียง · รูปจริง · เต็มจอ · ล้างความคืบหน้า" grad="linear-gradient(135deg,#94a3b8,#64748b)" onClick={onSettings} />
+      <HubRow emoji="🖼️" title="เครดิตรูปภาพ" sub="ที่มาและสัญญาอนุญาตของรูปจาก Wikimedia" grad="linear-gradient(135deg,#cbd5e1,#94a3b8)" onClick={onCredits} />
+      <div style={{ textAlign:"center",fontSize:11,color:T.ink3,marginTop:10 }}>Smart VocabPlay v{APP_VERSION}{BUILD_TIME && ` · build ${BUILD_TIME}`}</div>
     </div>
   );
 }
@@ -1163,12 +1304,16 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
   const crowned = !!progress.boss[cat.id];
   const Stars = ({ n }) => <span style={{ fontSize:13,letterSpacing:1,flexShrink:0 }}>{[1,2,3].map(i => <span key={i} style={{ opacity:i<=n?1:0.2 }}>⭐</span>)}</span>;
   return (
-    <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ background:`${cat.color}15`,borderRadius:18,padding:14,display:"flex",alignItems:"center",gap:12,marginBottom:18,border:`2px solid ${cat.color}30` }}>
-        <div style={{ width:52,height:52,borderRadius:14,background:`${cat.color}30`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:30,flexShrink:0 }}>{cat.emoji}</div>
-        <div>
-          <div style={{ fontWeight:800,fontSize:17,color:"#1f2937" }}>{cat.thai} {crowned && "👑"}</div>
-          <div style={{ fontSize:12,color:"#6b7280" }}>{words.length} คำ · ⭐ {cat.games.reduce((a,g)=>a+starOf(g),0)}/{cat.games.length*3}</div>
+    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
+      <div style={{ position:"relative",borderRadius:28,overflow:"hidden",minHeight:150,marginBottom:16,boxShadow:T.shadowLg,background:`linear-gradient(135deg,${cat.color},${cat.color}aa)` }}>
+        {words.find(w => imageTitleOf(w)) && <span style={{ position:"absolute",inset:0 }}><PicFill w={words.find(w => imageTitleOf(w))} emojiSize={0} /></span>}
+        <span style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(15,23,42,0.05) 20%,rgba(15,23,42,0.85) 100%)" }} />
+        <div style={{ position:"absolute",left:16,right:16,bottom:14,color:"#fff",display:"flex",alignItems:"flex-end",gap:12 }}>
+          <span style={{ width:52,height:52,borderRadius:18,background:"rgba(255,255,255,0.92)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:30,flexShrink:0 }}>{cat.emoji}</span>
+          <div style={{ flex:1 }}>
+            <div style={{ fontWeight:800,fontSize:22,lineHeight:1.1 }}>{cat.label} {crowned && "👑"}</div>
+            <div style={{ fontSize:13,opacity:0.9 }}>{cat.thai} · {words.length} คำ · ⭐ {cat.games.reduce((a,g)=>a+starOf(g),0)}/{cat.games.length*3}</div>
+          </div>
         </div>
       </div>
 
@@ -1189,8 +1334,8 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
           const g=GAME_META[gid]; if(!g) return null;
           return (
             <button key={gid} onClick={()=>{ sfx.tap(); onPickGame(gid); }}
-              style={{ background:"#fff",borderRadius:14,padding:"13px 14px",minHeight:60,boxShadow:"0 2px 8px rgba(0,0,0,0.06)",display:"flex",alignItems:"center",gap:12,border:"1px solid #f3f4f6",cursor:"pointer",textAlign:"left" }}>
-              <span style={{ fontSize:26,width:36,textAlign:"center",flexShrink:0 }}>{g.emoji}</span>
+              style={{ ...card(),padding:"12px 14px",minHeight:64,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",fontFamily:FONT }}>
+              <span style={{ width:44,height:44,borderRadius:14,background:`${cat.color}22`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,flexShrink:0 }}>{g.emoji}</span>
               <div style={{ flex:1,minWidth:0 }}>
                 <div style={{ fontWeight:800,fontSize:14,color:"#1f2937" }}>{g.label}</div>
                 <div style={{ fontSize:11,color:"#6b7280",marginTop:1 }}>{g.thai}</div>
@@ -1557,12 +1702,12 @@ function Confetti({ count = 56 }) {
 // ═══════════════════════════════════════════════════════
 // SHARED GAME UI
 // ═══════════════════════════════════════════════════════
-const GS = { // game styles
-  wrap: { padding:"10px",maxWidth:440,margin:"0 auto" },
-  card: { background:"#fff",borderRadius:18,boxShadow:"0 2px 14px rgba(0,0,0,0.08)",overflow:"hidden",border:"1px solid #f3f4f6" },
-  bar: { display:"flex",justifyContent:"space-between",alignItems:"center",padding:"9px 14px",background:"#f9fafb",borderBottom:"1px solid #f3f4f6",fontSize:13,fontWeight:700,color:"#374151" },
-  body: { padding:"12px 14px" },
-  soundBtn: { display:"flex",alignItems:"center",gap:5,margin:"0 auto 10px",background:"#f3f4f6",borderRadius:999,padding:"8px 18px",minHeight:44,fontWeight:700,fontSize:13,color:"#374151",border:"none",cursor:"pointer" },
+const GS = { // game styles (immersive)
+  wrap: { padding:"6px 12px 24px",maxWidth:460,margin:"0 auto" },
+  card: { background:"#fff",borderRadius:28,boxShadow:"0 18px 44px rgba(15,23,42,0.25)",overflow:"hidden" },
+  bar: { display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 18px 8px",fontSize:13,fontWeight:800,color:"#475569" },
+  body: { padding:"6px 16px 18px" },
+  soundBtn: { display:"flex",alignItems:"center",gap:6,margin:"0 auto 12px",background:"linear-gradient(135deg,#eef2ff,#fdf2f8)",borderRadius:999,padding:"8px 20px",minHeight:46,fontWeight:800,fontSize:14,color:"#4c1d95",border:"none",cursor:"pointer",boxShadow:"0 4px 14px rgba(109,93,252,0.18)" },
 };
 
 function GameCard({ children }) { return <div style={GS.wrap}><div style={GS.card}>{children}</div></div>; }
@@ -1591,8 +1736,10 @@ function Pic({ w, size = 72, radius = 18, style = {} }) {
   if (!url || err) return <span style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
   const box = size * 2.2;
   return (
-    <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:"4/3",borderRadius:radius,overflow:"hidden",background:"#f3f4f6",boxShadow:"0 2px 10px rgba(0,0,0,0.12)",...style }}>
-      <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ width:"100%",height:"100%",objectFit:"cover",display:"block" }} />
+    <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:"4/3",borderRadius:radius,overflow:"hidden",background:"#e2e8f0",boxShadow:"0 6px 18px rgba(15,23,42,0.15)",...style }}>
+      {/* พื้นหลังเบลอจากรูปเดียวกัน + รูปเต็มใบ (contain) → ไม่ตัดหัว/ตัวสัตว์ */}
+      <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75 }} />
+      <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"relative",width:"100%",height:"100%",objectFit:"contain",display:"block" }} />
       {size >= 30 && <span style={{ position:"absolute",right:4,bottom:3,fontSize:Math.max(14, size*0.3),lineHeight:1,filter:"drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>{w.emoji}</span>}
     </span>
   );
@@ -1603,14 +1750,17 @@ function PicFill({ w, emojiSize = 40 }) {
   const [err, setErr] = useState(false);
   useEffect(() => setErr(false), [url]);
   if (!url || err) return <span style={{ fontSize:emojiSize,lineHeight:1 }}>{w?.emoji}</span>;
-  return <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",borderRadius:"inherit" }} />;
+  return <>
+    <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75,borderRadius:"inherit" }} />
+    <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",borderRadius:"inherit" }} />
+  </>;
 }
 function Emoji({ e, w, size=72 }) {
   return <div style={{ textAlign:"center",lineHeight:1,padding:"12px 0 6px",display:"flex",justifyContent:"center" }}>{w ? <Pic w={w} size={size} /> : <span style={{ fontSize:size }}>{e}</span>}</div>;
 }
 function SndBtn({ onClick }) { return <button onClick={onClick} style={GS.soundBtn}>🔊 ฟัง EN+TH</button>; }
 function Pill({ onClick, disabled, bg="#6366f1", children }) {
-  return <button onClick={onClick} disabled={disabled} style={{ background:disabled?"#e5e7eb":bg,color:disabled?"#9ca3af":"#fff",borderRadius:12,padding:"10px 16px",minHeight:44,fontWeight:700,fontSize:14,border:"none",cursor:disabled?"not-allowed":"pointer" }}>{children}</button>;
+  return <button onClick={onClick} disabled={disabled} style={{ background:disabled?"#e2e8f0":bg,color:disabled?"#94a3b8":"#fff",borderRadius:14,padding:"10px 18px",minHeight:46,fontWeight:800,fontSize:14,border:"none",cursor:disabled?"not-allowed":"pointer",boxShadow:disabled?"none":"0 6px 16px rgba(15,23,42,0.15)" }}>{children}</button>;
 }
 function Hearts({ n, max=3 }) {
   return <span>{Array.from({ length: max }, (_, i) => <span key={i} style={{ opacity:i<n?1:0.2 }}>❤️</span>)}</span>;
@@ -2355,7 +2505,7 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
 // ═══════════════════════════════════════════════════════
 // SETTINGS SHEET
 // ═══════════════════════════════════════════════════════
-function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics }) {
+function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide }) {
   const [vr, setVr] = useState(() => voiceReport());
   useEffect(() => { loadVoices(); setVr(voiceReport()); const t = setTimeout(() => { loadVoices(); setVr(voiceReport()); }, 800); return () => clearTimeout(t); }, []);
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -2367,6 +2517,8 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <div style={{ fontSize:11,color:"#9ca3af",marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
         <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
+        <TRow label="ผู้ช่วยเสียงไทย" desc="อ่านวิธีเล่นเป็นภาษาไทยทุกครั้งที่เข้าเกม (สำหรับเด็กที่ยังอ่านไทยไม่คล่อง)" on={thaiGuide} set={setThaiGuide} />
+        <TRow label="เต็มจอเมื่อเข้าเกม" desc="ซ่อนแถบเบราว์เซอร์ตอนเล่น (Android/คอม · iPhone ใช้ได้เมื่อติดตั้งเป็นแอป)" on={fullscreenOn} set={setFullscreenOn} />
         <TRow label="รูปภาพจริง" desc={`รูปถ่ายจาก Wikipedia ${bundledCount()} รูปมากับแอป (ไม่ต้องใช้เน็ต) · ปิด = ใช้อีโมจิ`} on={realPics} set={setRealPics} />
         <button onClick={onCredits} style={{ width:"100%",minHeight:44,marginBottom:10,borderRadius:12,background:"#f9fafb",color:"#6b7280",border:"1px solid #e5e7eb",fontWeight:700,fontSize:12,cursor:"pointer" }}>🖼️ เครดิตรูปภาพ (ที่มา / สัญญาอนุญาต)</button>
         <div style={{ background:vr.th.length?"#ecfdf5":"#fff7ed",border:`1px solid ${vr.th.length?"#a7f3d0":"#fdba74"}`,borderRadius:14,padding:"10px 14px",marginBottom:10,fontSize:12,color:"#374151" }}>

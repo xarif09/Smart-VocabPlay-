@@ -165,11 +165,10 @@ add("opposites", [["BIG","Asian elephant"],["SMALL","House mouse"],["TALL","Gira
 add("time", [["HOLIDAY","Songkran (Thailand)"],["WEEKEND","Park"],]);
 
 add("actions", [["SPEAK","Public speaking"]]);
-add("jobs", [["ACTOR","Theatre"],["PROGRAMMER","Programmer"]]);
-add("school", [["SCIENCE","Laboratory"],["FLAG","National flag"]]);
+add("jobs", [["ACTOR","Theatre"]]);
+add("school", [["FLAG","National flag"]]);
 add("sports", [["SKIING","Alpine skiing"]]);
 add("vegetables", [["ASPARAGUS","Asparagus officinalis"]]);
-add("home", [["DOOR","Wooden door"]]);
 export const IMAGE_TITLES = T;
 export const imageTitleOf = w => (w && T[`${w.cat}|${w.word}`]) || null;
 

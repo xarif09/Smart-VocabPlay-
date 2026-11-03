@@ -6,6 +6,7 @@ import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER
   loadProfiles, saveProfiles, deleteProgress, AVATARS, buildUnits, UNIT_STEPS, unitDone, unitSteps, markUnitStep, similarity } from "./progress.js";
 import { lexOf } from "./lexicon.js";
 import { sfx, unlockSfx, setSfxEnabled } from "./sfx.js";
+import { fx, fxPoint, setFxEnabled, installRipple, Ambient, Reveal, CountUp } from "./fx.jsx";
 
 // ═══════════════════════════════════════════════════════
 // SPEECH ENGINE — iOS-safe
@@ -1367,6 +1368,9 @@ export default function App() {
   const [bilingual, setBilingual] = useState(true);
   const [rate, setRate] = useState(0.85);
   const [showSettings, setShowSettings] = useState(false);
+  const [fxOn, setFxOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:fx") !== "0"; } catch (_) { return true; } });
+  useEffect(() => { setFxEnabled(fxOn); try { localStorage.setItem("smart-vocabplay:fx", fxOn ? "1" : "0"); } catch (_) {} }, [fxOn]);
+  useEffect(() => { installRipple(); }, []);
   const [realPics, setRealPics] = useState(() => { try { return localStorage.getItem("smart-vocabplay:realpics") !== "0"; } catch (_) { return true; } });
   useEffect(() => { try { localStorage.setItem("smart-vocabplay:realpics", realPics ? "1" : "0"); } catch (_) {} }, [realPics]);
   const [toast, setToast] = useState(null);
@@ -1639,7 +1643,8 @@ export default function App() {
   );
   return (
     <PicCtx.Provider value={realPics}>
-    <div style={{ fontFamily: FONT, color: T.ink, minHeight: "100dvh", paddingBottom: showNav ? 100 : 0 }}>
+    {fxOn && !immersive && <Ambient />}
+    <div style={{ fontFamily: FONT, color: T.ink, minHeight: "100dvh", paddingBottom: showNav ? 100 : 0, position:"relative", zIndex:1 }}>
       {/* HEADER (ไม่แสดงในโหมดเต็มจอ) */}
       {!immersive && (
         <Header screen={screen} title={headerTitle} onBack={screen !== "home" && !HUBS.includes(screen) ? goBack : null}
@@ -1684,6 +1689,7 @@ export default function App() {
           realPics={realPics} setRealPics={setRealPics}
           fullscreenOn={fullscreenOn} setFullscreenOn={setFullscreenOn}
           thaiGuide={thaiGuide} setThaiGuide={setThaiGuide}
+          fxOn={fxOn} setFxOn={setFxOn}
           onClose={() => setShowSettings(false)}
         />
       )}
@@ -1725,13 +1731,19 @@ function SoundUnlockScreen({ onUnlock }) {
     <div style={{ minHeight:"100dvh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"32px 24px",textAlign:"center",fontFamily:FONT,background:T.grad,color:"#fff",position:"relative",overflow:"hidden" }}>
       <div style={{ position:"absolute",width:320,height:320,borderRadius:"50%",background:"rgba(255,255,255,0.18)",top:-120,right:-100,filter:"blur(10px)" }} />
       <div style={{ position:"absolute",width:260,height:260,borderRadius:"50%",background:"rgba(34,211,238,0.35)",bottom:-80,left:-80,filter:"blur(20px)" }} />
-      <div style={{ position:"relative",width:120,height:120,borderRadius:36,background:"rgba(255,255,255,0.2)",backdropFilter:"blur(10px)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:64,boxShadow:"0 20px 50px rgba(0,0,0,0.2)",animation:"vpBounce 2.4s infinite" }}>📚</div>
+      {["🦁","🍎","🚀","🎨","⭐","🐬","🎵","🌈","🦋","🍕"].map((e, i) => (
+        <span key={i} style={{ position:"absolute",left:`${(i*37)%90+5}%`,top:`${(i*53)%80+8}%`,fontSize:22+(i%3)*10,opacity:.35,animation:`vpFloatY ${4+(i%4)}s ${i*0.4}s ease-in-out infinite`,filter:"blur(.3px)",pointerEvents:"none" }}>{e}</span>
+      ))}
+      <div style={{ position:"relative",width:130,height:130,borderRadius:40,background:"rgba(255,255,255,0.22)",backdropFilter:"blur(10px)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:68,boxShadow:"0 20px 50px rgba(0,0,0,0.25), 0 0 0 12px rgba(255,255,255,.08)",animation:"vpBreathe 3s ease-in-out infinite, vpInScale .8s both" }}>
+        <span style={{ animation:"vpWiggle 3s 1s ease-in-out infinite",display:"inline-block" }}>📚</span>
+      </div>
       <h1 style={{ fontSize:34,fontWeight:800,margin:"22px 0 6px",letterSpacing:-0.5,position:"relative" }}>Smart VocabPlay</h1>
       <p style={{ fontSize:15,opacity:0.92,margin:"0 0 30px",lineHeight:1.7,maxWidth:340,position:"relative" }}>
         เรียนอังกฤษแบบเด็กยุคใหม่ — 403 คำพร้อมรูปจริง · บทสนทนา · นิทาน · โฟนิกส์ · ไวยากรณ์ · 24 เกม · เพื่อนคู่หูที่โตไปกับหนู
       </p>
-      <button onClick={onUnlock} style={{ position:"relative",background:"#fff",color:"#4c1d95",border:"none",borderRadius:22,padding:"18px 44px",fontSize:19,fontWeight:800,boxShadow:"0 14px 34px rgba(0,0,0,0.25)",cursor:"pointer",fontFamily:FONT }}>
-        🔊 แตะเพื่อเริ่มเลย
+      <button onClick={e => { fx.burst(e.clientX, e.clientY, { count: 28 }); onUnlock(); }} style={{ position:"relative",background:"#fff",color:"#4c1d95",border:"none",borderRadius:22,padding:"18px 44px",fontSize:19,fontWeight:800,boxShadow:"0 14px 34px rgba(0,0,0,0.25), 0 0 0 0 rgba(255,255,255,.6)",cursor:"pointer",fontFamily:FONT,overflow:"hidden",animation:"vpGlow 2.4s ease-in-out infinite" }}>
+        <span className="vp-shimmer" style={{ position:"absolute",inset:0,pointerEvents:"none" }} />
+        <span style={{ position:"relative" }}>🔊 แตะเพื่อเริ่มเลย</span>
       </button>
       <p style={{ fontSize:12,opacity:0.8,marginTop:18,position:"relative" }}>
         แตะปุ่มเพื่อเปิดเสียงบนมือถือ<br/>
@@ -1812,8 +1824,10 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
       {!progress.pet ? (
         <PetCard progress={progress} setProgress={setProgress} stickerCount={stickerCount} totalWords={words.length} onStickers={onStickers} onShop={onShop} speak={speak} profile={profile} onProfiles={onProfiles} />
       ) : (
-        <div style={{ background:T.grad,borderRadius:28,padding:"18px 18px 16px",color:"#fff",boxShadow:T.shadowLg,position:"relative",overflow:"hidden",marginBottom:14 }}>
-          <div style={{ position:"absolute",width:220,height:220,borderRadius:"50%",background:"rgba(255,255,255,0.14)",top:-90,right:-60 }} />
+        <div style={{ background:T.grad,borderRadius:28,padding:"18px 18px 16px",color:"#fff",boxShadow:T.shadowLg,position:"relative",overflow:"hidden",marginBottom:14,animation:"vpInUp .7s cubic-bezier(.2,.8,.2,1) both, vpGlow 4s 1s ease-in-out infinite" }}>
+          <div style={{ position:"absolute",width:220,height:220,borderRadius:"50%",background:"rgba(255,255,255,0.14)",top:-90,right:-60,animation:"vpFloatY 6s ease-in-out infinite" }} />
+          <div style={{ position:"absolute",width:140,height:140,borderRadius:"50%",background:"rgba(34,211,238,0.25)",bottom:-60,left:-30,filter:"blur(10px)",animation:"vpFloatY 8s 1s ease-in-out infinite" }} />
+          <span className="vp-shimmer" style={{ position:"absolute",inset:0,pointerEvents:"none",opacity:.5 }} />
           <div style={{ display:"flex",alignItems:"center",gap:14,position:"relative" }}>
             <button onClick={() => { sfx.tap(); speak(`Hi! Let's learn English!`, `สวัสดี มาเรียนภาษาอังกฤษกันเถอะ`); }} style={{ width:92,height:92,borderRadius:28,background:"rgba(255,255,255,0.22)",backdropFilter:"blur(8px)",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0,flexShrink:0 }}>
               <PetAvatar pet={pet} hat={progress.hat} size={pet.stage===0?42:48} bounce />
@@ -1826,9 +1840,9 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
             </div>
           </div>
           <div style={{ display:"flex",gap:8,marginTop:14,position:"relative",flexWrap:"wrap" }}>
-            <button onClick={() => { sfx.tap(); onStickers(); }} style={{ flex:1,minHeight:44,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>📒 {stickerCount}/{words.length}</button>
-            <button onClick={() => { sfx.tap(); onShop(); }} style={{ flex:1,minHeight:44,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>🛍️ ร้านค้า</button>
-            <button onClick={() => { sfx.tap(); onProfiles(); }} style={{ flex:1,minHeight:44,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>{profile?.avatar} {profile?.name} ▾</button>
+            <button onClick={() => { sfx.tap(); onStickers(); }} style={{ flex:1,minHeight:46,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>📒 {stickerCount}/{words.length}</button>
+            <button onClick={() => { sfx.tap(); onShop(); }} style={{ flex:1,minHeight:46,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>🛍️ ร้านค้า</button>
+            <button onClick={() => { sfx.tap(); onProfiles(); }} style={{ flex:1,minHeight:46,borderRadius:14,border:"none",background:"rgba(255,255,255,0.2)",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>{profile?.avatar} {profile?.name} ▾</button>
           </div>
         </div>
       )}
@@ -1854,15 +1868,15 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
       {progress.pet && (
         <>
           <div style={{ fontWeight:800,fontSize:16,color:T.ink,margin:"4px 0 10px" }}>มากกว่าคำศัพท์</div>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginBottom:14 }}>
+          <Reveal step={50} style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginBottom:14 }}>
             {tiles.map(([e,t,sub,g,fn]) => (
-              <button key={t} onClick={()=>{ sfx.tap(); fn(); }} style={{ ...card(),minHeight:104,padding:"12px 8px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:FONT }}>
+              <button key={t} className="vp-card-hover" onClick={()=>{ sfx.tap(); fn(); }} style={{ ...card(),minHeight:104,padding:"12px 8px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:FONT }}>
                 <span style={{ width:44,height:44,borderRadius:14,background:g,display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,boxShadow:"0 6px 14px rgba(15,23,42,0.12)" }}>{e}</span>
                 <span style={{ fontWeight:800,fontSize:12.5,color:T.ink }}>{t}</span>
                 <span style={{ fontSize:10,color:T.ink3,fontWeight:600,textAlign:"center" }}>{sub}</span>
               </button>
             ))}
-          </div>
+          </Reveal>
           <button onClick={()=>{ sfx.tap(); onVersus(); }} style={{ width:"100%",minHeight:64,background:"linear-gradient(135deg,#f43f5e,#fb923c)",color:"#fff",border:"none",borderRadius:22,padding:"10px 16px",marginBottom:18,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",boxShadow:"0 12px 28px rgba(244,63,94,0.3)",fontFamily:FONT }}>
             <span style={{ fontSize:28 }}>⚔️</span>
             <div style={{ flex:1 }}><div style={{ fontWeight:800,fontSize:15 }}>แข่ง 2 คน จอเดียว</div><div style={{ fontSize:11,opacity:0.9 }}>นั่งตรงข้ามกัน ใครแตะคำที่ถูกก่อนชนะ</div></div>
@@ -1873,7 +1887,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
 
       {/* หมวดคำศัพท์ — การ์ดรูปจริง */}
       <div style={{ fontWeight:800,fontSize:16,color:T.ink,margin:"0 0 10px" }}>หมวดคำศัพท์ <span style={{ fontSize:12,color:T.ink3,fontWeight:600 }}>· {words.length} คำ</span></div>
-      <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:12 }}>
+      <Reveal step={40} style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:12 }}>
         {categories.map(cat => {
           const n = words.filter(w=>w.cat===cat.id).length;
           const got = cat.games.reduce((a,g)=>a+(progress.stars[`${cat.id}:${g}`]||0),0);
@@ -1881,7 +1895,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
           const crown = !!progress.boss[cat.id];
           const tw = thumbOf(cat);
           return (
-            <button key={cat.id} onClick={()=>{ sfx.tap(); onPickCat(cat); }}
+            <button key={cat.id} className="vp-card-hover" onClick={()=>{ sfx.tap(); onPickCat(cat); }}
               style={{ position:"relative",minHeight:150,borderRadius:24,border:"none",cursor:"pointer",overflow:"hidden",padding:0,textAlign:"left",boxShadow:T.shadow,background:`linear-gradient(135deg,${cat.color},${cat.color}aa)`,fontFamily:FONT }}>
               {tw && <span style={{ position:"absolute",inset:0 }}><PicFill w={tw} emojiSize={0} /></span>}
               <span style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(15,23,42,0) 25%,rgba(15,23,42,0.82) 100%)" }} />
@@ -1895,7 +1909,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
             </button>
           );
         })}
-      </div>
+      </Reveal>
     </div>
   );
 }
@@ -1905,7 +1919,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
 // ═══════════════════════════════════════════════════════
 function HubRow({ emoji, title, sub, grad, onClick, right }) {
   return (
-    <button onClick={() => { sfx.tap(); onClick(); }} style={{ ...card(),width:"100%",minHeight:72,padding:"12px 14px",display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",marginBottom:10,fontFamily:FONT }}>
+    <button className="vp-card-hover" onClick={() => { sfx.tap(); onClick(); }} style={{ ...card(),width:"100%",minHeight:72,padding:"12px 14px",display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",marginBottom:10,fontFamily:FONT }}>
       <span style={{ width:48,height:48,borderRadius:16,background:grad,display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,flexShrink:0,boxShadow:"0 6px 14px rgba(15,23,42,0.12)" }}>{emoji}</span>
       <span style={{ flex:1,minWidth:0 }}><span style={{ display:"block",fontWeight:800,fontSize:15,color:T.ink }}>{title}</span><span style={{ display:"block",fontSize:12,color:T.ink3 }}>{sub}</span></span>
       {right ?? <span style={{ color:T.ink3,fontSize:20 }}>›</span>}
@@ -2008,7 +2022,7 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
       </button>
 
       <p style={{ fontWeight:700,fontSize:11,color:"#9ca3af",textTransform:"uppercase",letterSpacing:1,margin:"0 0 10px" }}>เลือกเกม</p>
-      <div style={{ display:"flex",flexDirection:"column",gap:8 }}>
+      <Reveal step={45} style={{ display:"flex",flexDirection:"column",gap:8 }}>
         {cat.games.map((gid,i)=>{
           const g=GAME_META[gid]; if(!g) return null;
           return (
@@ -2035,7 +2049,7 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
           </div>
           <span style={{ fontSize:20,flexShrink:0,opacity:0.6 }}>›</span>
         </button>
-      </div>
+      </Reveal>
     </div>
   );
 }
@@ -2225,9 +2239,9 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
   const pRef = useRef(progress); pRef.current = progress;
 
   const track = useMemo(() => ({
-    correct: w => { sfx.ok(); if (w) correctRef.current.push(w.id); },
+    correct: (w, e) => { sfx.ok(); fx.correct(e, ["+1 ⭐","เยี่ยม!","Great!","Perfect!","สุดยอด!"][Math.floor(Math.random()*5)]); if (w) correctRef.current.push(w.id); },
     wrong: w => {
-      sfx.bad();
+      sfx.bad(); fx.wrong();
       setProgress(p => ({ ...p, wrongTotal: (p.wrongTotal || 0) + 1,
         ...(w ? { mistakes: { ...p.mistakes, [w.id]: (p.mistakes[w.id] || 0) + 1 }, srs: srsWrong(p.srs || {}, w.id) } : {}) }));
     },
@@ -2271,7 +2285,8 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
       if (["time","money","calendar","numbers100"].includes(gameId)) next = bumpDaily(next, "daily", 1);
       if (cat.unit && stars >= 1) next = markUnitStep(next, cat.unit.id, gameId);
       setProgress(next);
-      if (stars >= 2) sfx.win(); else if (stars === 1) sfx.coin(); else sfx.lose();
+      if (stars >= 2) { sfx.win(); fx.win(stars); } else if (stars === 1) { sfx.coin(); fx.confetti(40); } else sfx.lose();
+      if (petLevel(totalCorrect) > lvBefore) setTimeout(() => fx.levelUp(), 700);
       setResult({ score, total, stars, coins, newStickers, label: opts.label, boss: !!opts.boss, cleared, levelUp: petLevel(totalCorrect) > lvBefore });
     },
   }), [gameId, cat.id, setProgress]);
@@ -2321,17 +2336,21 @@ function ResultScreen({ r, words, speak, pet, onReplay, onExit }) {
   const petLine = !pet ? null : r.levelUp ? `เลเวลอัป! ตอนนี้ Lv.${pet.level} แล้ว` : r.stars >= 2 ? "เย้! เก่งที่สุดเลย" : r.stars === 1 ? "ดีขึ้นเรื่อยๆ นะ" : "ไม่เป็นไร ลองอีกที!";
   return (
     <div style={{ position:"fixed",inset:0,zIndex:300,background:"rgba(17,24,39,0.55)",display:"flex",alignItems:"center",justifyContent:"center",padding:16 }}>
-      {(r.stars >= 2 || r.cleared) && <Confetti />}
-      <div style={{ background:"#fff",borderRadius:24,padding:"22px 18px 18px",maxWidth:380,width:"100%",textAlign:"center",boxShadow:"0 20px 50px rgba(0,0,0,0.3)",animation:"vpPop .4s ease-out",maxHeight:"90dvh",overflowY:"auto" }}>
-        <div style={{ fontSize:60,lineHeight:1 }}>{big}</div>
-        <h2 style={{ margin:"10px 0 4px",fontSize:22,fontWeight:900,color:"#1f2937" }}>{msg}</h2>
-        <div style={{ color:"#6b7280",fontSize:14,fontWeight:600 }}>{r.label || `ตอบถูก ${r.score}/${r.total}`}</div>
-        <div style={{ display:"flex",justifyContent:"center",gap:6,margin:"12px 0" }}>
+      <div style={{ position:"absolute",inset:0,background:r.stars>=2?"radial-gradient(circle at 50% 30%, rgba(255,209,102,.35), transparent 60%)":"none",pointerEvents:"none" }} />
+      <div style={{ background:"rgba(255,255,255,.96)",borderRadius:32,padding:"26px 18px 18px",maxWidth:380,width:"100%",textAlign:"center",boxShadow:"0 30px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,.6) inset",animation:"vpInScale .6s cubic-bezier(.2,.8,.2,1) both",maxHeight:"90dvh",overflowY:"auto",position:"relative",overflow:"hidden" }}>
+        {r.stars >= 2 && <div style={{ position:"absolute",left:"50%",top:60,width:360,height:360,marginLeft:-180,borderRadius:"50%",background:"conic-gradient(from 0deg, rgba(255,209,102,.25) 0 15deg, transparent 15deg 30deg)",animation:"vpSpin 14s linear infinite",pointerEvents:"none",maskImage:"radial-gradient(circle, #000 20%, transparent 70%)",WebkitMaskImage:"radial-gradient(circle, #000 20%, transparent 70%)" }} />}
+        <div style={{ fontSize:72,lineHeight:1,position:"relative",animation:"vpFloatY 2.4s ease-in-out infinite",filter:"drop-shadow(0 10px 20px rgba(0,0,0,.2))" }}>{big}</div>
+        <h2 style={{ margin:"12px 0 4px",fontSize:26,fontWeight:900,color:"#1f2937",position:"relative",letterSpacing:-.3 }}>{msg}</h2>
+        <div style={{ color:"#6b7280",fontSize:14,fontWeight:600,position:"relative" }}>{r.label || `ตอบถูก ${r.score}/${r.total}`}</div>
+        <div style={{ display:"flex",justifyContent:"center",gap:4,margin:"14px 0 10px",position:"relative" }}>
           {[1,2,3].map(i => (
-            <span key={i} style={{ fontSize:42,lineHeight:1,animation:`vpPop .45s ${i*0.22}s both`,filter:i<=r.stars?"drop-shadow(0 2px 4px rgba(245,158,11,.5))":"grayscale(1) opacity(0.25)" }}>⭐</span>
+            <span key={i} style={{ fontSize:i===2?56:44,lineHeight:1,marginTop:i===2?-10:0,animation:i<=r.stars?`vpStarPop .7s ${0.3+i*0.28}s both`:"none",filter:i<=r.stars?"drop-shadow(0 4px 10px rgba(245,158,11,.7))":"grayscale(1) opacity(0.2)" }}>⭐</span>
           ))}
         </div>
-        <div style={{ display:"inline-flex",alignItems:"center",gap:6,background:"#fef3c7",color:"#92400e",fontWeight:900,fontSize:18,padding:"8px 18px",borderRadius:999 }}>+{r.coins} 🪙</div>
+        <div style={{ display:"inline-flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#ffd166,#fb923c)",color:"#7c2d12",fontWeight:900,fontSize:20,padding:"10px 22px",borderRadius:999,boxShadow:"0 10px 24px rgba(251,146,60,.4)",position:"relative",animation:"vpInScale .5s 1.2s both" }}>
+          <span className="vp-shimmer" style={{ position:"absolute",inset:0,borderRadius:999,pointerEvents:"none" }} />
+          +<CountUp to={r.coins} ms={1200} /> 🪙
+        </div>
 
         {newW.length > 0 && (
           <div style={{ marginTop:14,background:"#f5f3ff",borderRadius:16,padding:"10px 12px" }}>
@@ -2465,11 +2484,11 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
   }, [idx, cur?.id, src]);
 
   if(!cur) return <NoWords onBack={onBack} />;
-  const pick = c => {
+  const pick = (c, e) => {
     if(lock) return;
     setLock(true); setPicked(c.id);
     const ok = c.id===cur.id;
-    if(ok){ setScore(s=>s+1); track.correct(cur); speak(cur.word,cur.meaning); }
+    if(ok){ setScore(s=>s+1); track.correct(cur, e); speak(cur.word,cur.meaning); }
     else track.wrong(cur);
     setTimeout(()=>{
       if(idx+1<qs.length){ setIdx(i=>i+1); setPicked(null); setLock(false); }
@@ -2490,7 +2509,7 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
             if(sr&&ic){bg="#d1fae5";bo="#6ee7b7";tc="#065f46";}
             if(sr&&ip&&!ic){bg="#fee2e2";bo="#fca5a5";tc="#991b1b";}
             if(lock&&!ip&&!ic){bg="#f9fafb";bo="#e5e7eb";tc="#9ca3af";}
-            return <button key={c.id} onClick={()=>pick(c)} disabled={lock}
+            return <button key={c.id} onClick={e=>pick(c, e)} disabled={lock}
               style={{ background:bg,border:`2px solid ${bo}`,borderRadius:12,padding:"14px 6px",minHeight:52,fontWeight:800,fontSize:15,color:tc,cursor:"pointer" }}>
               {c.word}
             </button>;
@@ -3187,7 +3206,7 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
 // ═══════════════════════════════════════════════════════
 // SETTINGS SHEET
 // ═══════════════════════════════════════════════════════
-function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide }) {
+function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn }) {
   const [vr, setVr] = useState(() => voiceReport());
   useEffect(() => { loadVoices(); setVr(voiceReport()); const t = setTimeout(() => { loadVoices(); setVr(voiceReport()); }, 800); return () => clearTimeout(t); }, []);
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -3199,6 +3218,7 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <div style={{ fontSize:11,color:"#9ca3af",marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
         <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
+        <TRow label="เอฟเฟกต์และแอนิเมชัน" desc="ระเบิดดาว คอนเฟตตี สั่นจอ พื้นหลังเคลื่อนไหว · ปิดถ้าเครื่องช้า" on={fxOn} set={setFxOn} />
         <TRow label="ผู้ช่วยเสียงไทย" desc="อ่านวิธีเล่นเป็นภาษาไทยทุกครั้งที่เข้าเกม (สำหรับเด็กที่ยังอ่านไทยไม่คล่อง)" on={thaiGuide} set={setThaiGuide} />
         <TRow label="เต็มจอเมื่อเข้าเกม" desc="ซ่อนแถบเบราว์เซอร์ตอนเล่น (Android/คอม · iPhone ใช้ได้เมื่อติดตั้งเป็นแอป)" on={fullscreenOn} set={setFullscreenOn} />
         <TRow label="รูปภาพจริง" desc={`รูปถ่ายจาก Wikipedia ${bundledCount()} รูปมากับแอป (ไม่ต้องใช้เน็ต) · ปิด = ใช้อีโมจิ`} on={realPics} set={setRealPics} />
@@ -3279,8 +3299,8 @@ function NoWords({ onBack }) {
 function PetAvatar({ pet, hat, size = 48, bounce = false }) {
   const h = SHOP_ITEMS.find(i => i.id === hat);
   return (
-    <span style={{ position:"relative",display:"inline-flex",alignItems:"center",justifyContent:"center",width:size*1.3,height:size*1.3,lineHeight:1,animation:bounce?"vpBounce 2s infinite":"none" }}>
-      <span style={{ fontSize:size }}>{pet?.emoji || "🥚"}</span>
+    <span style={{ position:"relative",display:"inline-flex",alignItems:"center",justifyContent:"center",width:size*1.3,height:size*1.3,lineHeight:1,animation:bounce?"vpBreathe 3s ease-in-out infinite":"none",transformOrigin:"50% 100%" }}>
+      <span style={{ fontSize:size,display:"inline-block",animation:bounce?"vpBlink 5s ease-in-out infinite":"none",transformOrigin:"50% 60%",filter:"drop-shadow(0 6px 10px rgba(0,0,0,.18))" }}>{pet?.emoji || "🥚"}</span>
       {h && <span style={{ position:"absolute",top:-size*0.22,left:"50%",transform:"translateX(-50%) rotate(-8deg)",fontSize:size*0.5 }}>{h.emoji}</span>}
     </span>
   );

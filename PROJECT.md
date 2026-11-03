@@ -80,6 +80,13 @@
 - เปลี่ยนหน้าแล้ว `scrollTo(0,0)` เสมอ
 - **ผู้ช่วยเสียงไทย** (`speakTh`, เปิด/ปิดในตั้งค่า): อ่านวิธีเล่นเป็นไทยทันทีที่แตะเข้าเกม/การ์ด/บทเรียน/ทบทวน (ข้อความอยู่ใน `GUIDE`) · เสียงไทยจุดอื่นที่มีอยู่แล้ว: คำแปลต่อท้ายทุกคำ ประโยคตัวอย่าง บทสนทนา นิทาน ตัวเลข/เวลา/เงิน
 
+## v2.3 — ชั้นเอฟเฟกต์ "อลังการ" (src/fx.jsx)
+- `fx.burst(x,y)` ระเบิดดาว+อนุภาค+วงแหวน ณ จุดแตะ · `fx.float(x,y,text)` ตัวหนังสือลอย (+1 ⭐ / Perfect!) · `fx.shake()` สั่นจอ+แฟลชแดง · `fx.flash()` · `fx.rays()` รัศมีหมุน · `fx.confetti()` · ชุดสำเร็จรูป `fx.correct(e)` `fx.wrong()` `fx.win(stars)` `fx.levelUp()` · ใช้ Web Animations API บน DOM layer `#vp-fx-layer` ไม่เพิ่มไลบรารี · มี haptic (`navigator.vibrate`)
+- `<Ambient/>` พื้นหลังออโรราไหล (`.vp-aurora` keyframes 28 วิ) + อนุภาคลอยบน canvas ~30 จุด 30fps · `<Reveal/>` การ์ดเลื่อนเข้าแบบ stagger เมื่อเข้าจอ (IntersectionObserver) · `<CountUp/>` ตัวเลขไหล · `installRipple()` คลื่นบนปุ่มทุกปุ่ม (event delegation)
+- ผูกเข้า GameRouter: `track.correct(w, e)` → burst+float ณ จุดแตะ (ไม่ส่ง e ใช้จุดแตะล่าสุด) · `track.wrong` → shake · `finish` → confetti/rays/flash ตามดาว · เลเวลอัป → `fx.levelUp()`
+- ResultScreen ใหม่: รัศมีหมุน อิโมจิลอย ดาวเด้งทีละดวง (`vpStarPop`) เหรียญนับขึ้น+shimmer · เพื่อนคู่หูหายใจ+กระพริบตา · หน้าเริ่มมีอีโมจิลอย ปุ่มเรืองแสง · การ์ดหน้าแรก/หมวดมี hover-lift
+- ปิดได้ในตั้งค่า "เอฟเฟกต์และแอนิเมชัน" · เคารพ `prefers-reduced-motion` · ในโหมดเกม (immersive) ไม่วาด Ambient เพื่อประหยัดแบต
+
 ## โครงไฟล์
 ```
 index.html                    หน้า HTML (viewport, manifest/apple meta, keyframes)
@@ -92,6 +99,7 @@ src/lexicon.js                คำอ่านไทย + ประโยค�
 src/content.js                บทสนทนา 12 · นิทาน 6 · โฟนิกส์ A–Z
 src/images.js                 map คำ → บทความ Wikipedia + โหลด/แคช URL รูป
 src/sfx.js                    เสียงเอฟเฟกต์ Web Audio
+src/fx.jsx                    เอฟเฟกต์ภาพ/แอนิเมชัน (burst, confetti, shake, Ambient, Reveal, ripple)
 .github/workflows/deploy.yml  build + deploy GitHub Pages เมื่อ push เข้า main
 scripts/check-ui.cjs          Playwright: ถ่ายภาพ + ตรวจซ้อน/ปุ่ม<44px/นับคำ/เล่น Quiz จนจบ/บอส/ทบทวน/localStorage
 docs/screenshots/             ภาพผลตรวจล่าสุด (มือถือ 375×812 + คอม 1280×800)
@@ -103,6 +111,7 @@ docs/screenshots/             ภาพผลตรวจล่าสุด (ม
 - [x] ระบบรางวัลทั้งหมดตามตารางด้านบน · ปุ่มทุกปุ่ม ≥44px · ปุ่มล้างความคืบหน้าในตั้งค่า
 - [x] ระลอก "สุดยอดแอป": คำอ่าน+ประโยค 296 คำ · โหมดเรียนการ์ด · SRS · Listen/Sentence/Speak · ภารกิจประจำวัน · ร้านค้า · รายงานผู้ปกครอง
 - [x] ระลอก 3: PWA ติดตั้ง/ออฟไลน์ · โปรไฟล์หลายคน · เส้นทางบทเรียน A1→A2 · Speak แบบ % · แปลอัตโนมัติ MyMemory · badge ไอคอน
+- [x] v2.3.0: ชั้นเอฟเฟกต์ fx.jsx — ระเบิดดาว ตัวเลขลอย สั่นจอ คอนเฟตตี รัศมี พื้นหลังมีชีวิต stagger-in ripple ดาวเด้ง เหรียญนับขึ้น เพื่อนหายใจ
 - [x] v2.2.0: คำศัพท์ 547→1,165 · 26 หมวด (+ผัก เทคโนโลยี ดนตรี คำตรงข้าม เวลา ประเทศ) · รูปเพิ่ม ~400
 - [x] v2.1.0: คำศัพท์ 403→547 (ทุกหมวด ≈30) · รูปปกหมวดแบบภาพรวม · รูปใหม่ ~130 รูปตรวจด้วยตา
 - [x] v2.0.0: ดีไซน์ใหม่ Aurora · แท็บล่าง 4 แท็บ + 3 hub · โหมดเกมเต็มจอ (immersive + Fullscreen API) · รูปไม่ครอป (contain + พื้นเบลอ) · หมวดเป็นการ์ดรูปจริง

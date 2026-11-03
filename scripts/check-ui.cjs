@@ -6,6 +6,8 @@ const OUT = require('path').join(__dirname, '..', 'docs', 'screenshots');
 const START = 'text=แตะเพื่อเริ่มเลย';
 
 async function audit(page, label) {
+  // รอให้แอนิเมชันเลื่อนเข้า (Reveal/stagger) จบก่อนวัด
+  await page.evaluate(() => Promise.all(document.getAnimations().filter(a => a.effect?.getTiming?.().iterations !== Infinity).map(a => a.finished.catch(() => {})))).catch(() => {});
   return page.evaluate((label) => {
     const vis = e => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
     const els = [...document.querySelectorAll('button,input,select')].filter(vis);

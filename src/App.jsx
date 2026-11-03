@@ -2424,11 +2424,14 @@ function Pic({ w, size = 72, radius = 18, style = {} }) {
   );
 }
 // รูปเล็กสำหรับตัวเลือก 4 ช่อง / การ์ดจับคู่: เต็มช่อง
-function PicFill({ w, emojiSize = 40 }) {
+function PicFill({ w, emojiSize = 40, fit }) {
   const { url } = useWordImage(w);
   const [err, setErr] = useState(false);
   useEffect(() => setErr(false), [url]);
   if (!url || err) return <span style={{ fontSize:emojiSize,lineHeight:1 }}>{w?.emoji}</span>;
+  // รูปปก/ภาพรวม (cover) ตัดขอบได้ · รูปคำศัพท์เดี่ยวใช้ contain ไม่ให้ตัวสัตว์ขาด
+  const mode = fit || (w?.cat === "cover" ? "cover" : "contain");
+  if (mode === "cover") return <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",borderRadius:"inherit" }} />;
   return <>
     <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75,borderRadius:"inherit" }} />
     <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",borderRadius:"inherit" }} />

@@ -7,6 +7,7 @@ import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER
 import { lexOf } from "./lexicon.js";
 import { sfx, unlockSfx, setSfxEnabled } from "./sfx.js";
 import { fx, fxPoint, setFxEnabled, installRipple, Ambient, Reveal, CountUp } from "./fx.jsx";
+import Pet, { PET_CSS } from "./Pet.jsx";
 
 // ═══════════════════════════════════════════════════════
 // SPEECH ENGINE — iOS-safe
@@ -1830,7 +1831,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
           <span className="vp-shimmer" style={{ position:"absolute",inset:0,pointerEvents:"none",opacity:.5 }} />
           <div style={{ display:"flex",alignItems:"center",gap:14,position:"relative" }}>
             <button onClick={() => { sfx.tap(); speak(`Hi! Let's learn English!`, `สวัสดี มาเรียนภาษาอังกฤษกันเถอะ`); }} style={{ width:92,height:92,borderRadius:28,background:"rgba(255,255,255,0.22)",backdropFilter:"blur(8px)",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0,flexShrink:0 }}>
-              <PetAvatar pet={pet} hat={progress.hat} size={pet.stage===0?42:48} bounce />
+              <PetAvatar pet={pet} hat={progress.hat} size={pet.stage===0?46:52} mood={missedCount > 5 ? "sad" : "idle"} bounce />
             </button>
             <div style={{ flex:1,minWidth:0 }}>
               <div style={{ fontSize:12,opacity:0.85,fontWeight:600 }}>เพื่อนคู่หู · Lv.{pet.level}</div>
@@ -2368,7 +2369,7 @@ function ResultScreen({ r, words, speak, pet, onReplay, onExit }) {
 
         {pet && (
           <div style={{ marginTop:12,display:"flex",alignItems:"center",gap:10,background:"#f9fafb",borderRadius:14,padding:"8px 12px",textAlign:"left" }}>
-            <span style={{ fontSize:34,animation:"vpBounce 1.2s infinite" }}>{pet.emoji}</span>
+            <PetAvatar pet={pet} size={40} mood={r.stars >= 2 ? "excited" : r.stars === 1 ? "happy" : "sad"} talk />
             <div style={{ fontSize:13,color:"#374151" }}><b>{pet.name}:</b> "{petLine}" {r.levelUp && "🎊"}</div>
           </div>
         )}
@@ -2411,7 +2412,8 @@ const GS = { // game styles (immersive)
 function GameCard({ children }) { return <div style={GS.wrap}><div style={GS.card}>{children}</div></div>; }
 function Bar({ left, right }) { return <div style={GS.bar}><span>{left}</span><span>{right}</span></div>; }
 // ── รูปจริง (Wikipedia) หรืออีโมจิ ──
-const PicCtx = createContext(true);   // เปิด/ปิดรูปจริงจากตั้งค่า
+const PicCtx = createContext(true);
+if (typeof document !== "undefined" && !document.getElementById("vp-pet-css")) { const st = document.createElement("style"); st.id = "vp-pet-css"; st.textContent = PET_CSS; document.head.appendChild(st); }   // เปิด/ปิดรูปจริงจากตั้งค่า
 function useWordImage(w) {
   const on = useContext(PicCtx);
   const title = on ? imageTitleOf(w) : null;
@@ -2578,7 +2580,7 @@ function SpellGame({ words, speak, track, onBack }) {
             ?<span style={{color:"#9ca3af",fontSize:11}}>เลือกตัวอักษร</span>
             :picked.map((l,i)=>(
               <button key={l.id+"p"+i} onClick={()=>removePick(i)}
-                style={{ width:ts,height:ts,borderRadius:10,background:correct?"#10b981":wrong?"#ef4444":"#8b5cf6",color:"#fff",fontWeight:800,fontSize:tf,border:"none",cursor:"pointer",flexShrink:0 }}>
+                style={{ width:ts,height:ts,borderRadius:12,background:correct?"linear-gradient(135deg,#10b981,#34d399)":wrong?"linear-gradient(135deg,#ef4444,#f87171)":"linear-gradient(135deg,#6d5dfc,#a855f7)",color:"#fff",fontWeight:900,fontSize:tf,border:"none",cursor:"pointer",flexShrink:0,boxShadow:"0 6px 14px rgba(0,0,0,.18)",animation:correct?`vpStarPop .5s ${i*0.08}s both`:wrong?"vpWiggle .4s":"vpInScale .35s cubic-bezier(.2,.8,.2,1) both" }}>
                 {l.ch}
               </button>
             ))
@@ -2586,9 +2588,9 @@ function SpellGame({ words, speak, track, onBack }) {
         </div>
 
         <div style={{ display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center",minHeight:ts+6,marginBottom:10 }}>
-          {pool.map(l=>(
-            <button key={l.id} onClick={()=>tapLetter(l)}
-              style={{ width:ts,height:ts,borderRadius:10,background:"#ede9fe",color:"#5b21b6",fontWeight:800,fontSize:tf,border:"2px solid #c4b5fd",cursor:"pointer",flexShrink:0 }}>
+          {pool.map((l,i)=>(
+            <button key={l.id} onClick={()=>tapLetter(l)} className="vp-card-hover"
+              style={{ width:ts,height:ts,borderRadius:12,background:"#fff",color:"#4c1d95",fontWeight:900,fontSize:tf,border:"2px solid #c4b5fd",cursor:"pointer",flexShrink:0,boxShadow:"0 4px 12px rgba(109,93,252,.18)",animation:`vpInUp .4s ${i*0.04}s both` }}>
               {l.ch}
             </button>
           ))}
@@ -2655,16 +2657,13 @@ function MemoryGame({ words, speak, track, onBack }) {
             const sf=!!open.find(x=>x.uid===c.uid)||matched.includes(c.mid);
             const im=matched.includes(c.mid);
             return <button key={c.uid} onClick={()=>flip(c)} disabled={lock||im}
-              style={{
-                aspectRatio:"3/4",borderRadius:11,cursor:"pointer",
-                border:`2px solid ${im?"#6ee7b7":sf?"#a78bfa":"#e5e7eb"}`,
-                background:im?"#d1fae5":sf?"#ede9fe":"#6366f1",
-                fontSize:c.type==="emoji"?24:10,fontWeight:800,
-                color:sf?(im?"#065f46":"#5b21b6"):"#fff",
-                display:"flex",alignItems:"center",justifyContent:"center",
-                padding:3,wordBreak:"break-all",textAlign:"center",overflow:"hidden",
-              }}>
-              {sf?c.label:"✦"}
+              style={{ aspectRatio:"3/4",borderRadius:12,cursor:"pointer",border:"none",background:"transparent",padding:0,perspective:600,position:"relative",animation:im?"vpStarPop .6s both":"none" }}>
+              <span style={{ position:"absolute",inset:0,transformStyle:"preserve-3d",transition:"transform .5s cubic-bezier(.2,.8,.2,1)",transform:sf?"rotateY(180deg)":"rotateY(0deg)" }}>
+                <span style={{ position:"absolute",inset:0,borderRadius:12,backfaceVisibility:"hidden",background:"linear-gradient(135deg,#6d5dfc,#a855f7)",display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",fontSize:22,boxShadow:"0 6px 16px rgba(109,93,252,.35)",border:"2px solid rgba(255,255,255,.35)" }}>✦</span>
+                <span style={{ position:"absolute",inset:0,borderRadius:12,backfaceVisibility:"hidden",transform:"rotateY(180deg)",background:im?"#d1fae5":"#fff",border:`2px solid ${im?"#6ee7b7":"#c4b5fd"}`,display:"flex",alignItems:"center",justifyContent:"center",padding:3,overflow:"hidden",fontSize:c.type==="emoji"?26:10,fontWeight:800,color:im?"#065f46":"#4c1d95",wordBreak:"break-all",textAlign:"center",boxShadow:im?"0 0 18px rgba(16,185,129,.5)":"0 6px 16px rgba(0,0,0,.12)" }}>
+                  {c.type==="emoji" ? <span style={{ position:"absolute",inset:0 }}><PicFill w={c.ref} emojiSize={26} /></span> : c.label}
+                </span>
+              </span>
             </button>;
           })}
         </div>
@@ -2720,8 +2719,12 @@ function SpeedGame({ words, speak, showToast, track }) {
           :<div>
             <Emoji e={cur?.emoji} w={cur} size={60} />
             <SndBtn onClick={()=>cur&&speak(cur.word,cur.meaning)} />
-            <div style={{height:7,background:"#f3f4f6",borderRadius:999,margin:"0 0 10px",overflow:"hidden"}}>
-              <div style={{height:"100%",background:time>10?"#f59e0b":"#ef4444",width:`${(time/T)*100}%`,transition:"width 1s linear",borderRadius:999}}/>
+            <div style={{ display:"flex",justifyContent:"center",margin:"0 0 10px" }}>
+              <svg width="74" height="74" viewBox="0 0 74 74" style={{ animation:time<=5?"vpWiggle .4s infinite":"none" }}>
+                <circle cx="37" cy="37" r="30" fill="none" stroke="#f3f4f6" strokeWidth="8" />
+                <circle cx="37" cy="37" r="30" fill="none" stroke={time>10?"#f59e0b":"#ef4444"} strokeWidth="8" strokeLinecap="round" strokeDasharray={2*Math.PI*30} strokeDashoffset={2*Math.PI*30*(1-time/T)} transform="rotate(-90 37 37)" style={{ transition:"stroke-dashoffset 1s linear, stroke .3s" }} />
+                <text x="37" y="43" textAnchor="middle" fontSize="20" fontWeight="900" fill={time>10?"#92400e":"#991b1b"} fontFamily="Prompt, system-ui">{time}</text>
+              </svg>
             </div>
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
               {opts.map(o=>(
@@ -3070,8 +3073,20 @@ function BossGame({ words, speak, track, cat, onBack }) {
     : <div style={{ textAlign:"center",padding:"18px 0 10px" }}><div style={{ fontSize:12,color:"#9ca3af" }}>รูปไหนคือ</div><div style={{ fontSize:30,fontWeight:900,color:"#1f2937",letterSpacing:1 }}>{q.w.word}</div></div>;
   return (
     <GameCard>
-      <div style={{ ...GS.bar,background:"linear-gradient(135deg,#1f2937,#4c1d95)",color:"#fff",borderBottom:"none" }}>
-        <span>👑 บอส {cat.label} · {idx+1}/{N}</span><Hearts n={hearts} />
+      <div style={{ background:"linear-gradient(160deg,#1f2937,#4c1d95 60%,#7c3aed)",color:"#fff",padding:"12px 16px 10px",position:"relative",overflow:"hidden" }}>
+        <span style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 80% 20%, rgba(168,85,247,.5), transparent 55%)" }} />
+        <div style={{ display:"flex",alignItems:"center",gap:12,position:"relative" }}>
+          <div style={{ width:64,height:64,borderRadius:20,background:"rgba(255,255,255,.12)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:40,animation:lock&&picked&&picked!==q.w.id?"vpWiggle .5s":lock&&picked===q.w.id?"vpStarPop .6s":"vpFloatY 2.6s ease-in-out infinite",filter:"drop-shadow(0 6px 10px rgba(0,0,0,.4))",flexShrink:0 }}>
+            {["👹","🐲","👾","🤖","🦖","🧙","🦁","🐙"][(cat.label?.length || 0) % 8]}
+          </div>
+          <div style={{ flex:1,minWidth:0 }}>
+            <div style={{ display:"flex",justifyContent:"space-between",fontSize:12,fontWeight:800 }}><span>👑 บอส {cat.label}</span><span>{idx+1}/{N}</span></div>
+            <div style={{ height:12,background:"rgba(0,0,0,.35)",borderRadius:999,marginTop:6,overflow:"hidden",border:"1px solid rgba(255,255,255,.25)" }}>
+              <div style={{ height:"100%",width:`${Math.max(0,100-(score/WIN)*100)}%`,background:"linear-gradient(90deg,#f43f5e,#fb923c)",borderRadius:999,transition:"width .6s cubic-bezier(.2,.8,.2,1)",boxShadow:"0 0 12px rgba(244,63,94,.8)" }} />
+            </div>
+            <div style={{ display:"flex",justifyContent:"space-between",marginTop:6,fontSize:13 }}><span style={{ opacity:.85 }}>HP บอส {Math.max(0,WIN-score)}/{WIN}</span><Hearts n={hearts} /></div>
+          </div>
+        </div>
       </div>
       <div style={GS.body}>
         {prompt}
@@ -3110,7 +3125,7 @@ function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, 
           {PETS.map(p => (
             <button key={p.id} onClick={() => { sfx.coin(); speak("Hello! Let's play!", "สวัสดี มาเล่นกันเถอะ"); setProgress(x => ({ ...x, pet: p.id })); }}
               style={{ background:"#fff",border:"2px solid #e5e7eb",borderRadius:16,padding:"10px 4px",minHeight:72,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:4 }}>
-              <span style={{ fontSize:32 }}>{p.stages[1]}</span>
+              <Pet kind={p.id} stage={1} mood="happy" size={56} />
               <span style={{ fontSize:12,fontWeight:800,color:"#374151" }}>{p.name}</span>
             </button>
           ))}
@@ -3296,14 +3311,12 @@ function NoWords({ onBack }) {
 // ═══════════════════════════════════════════════════════
 // PET AVATAR — อีโมจิเพื่อนคู่หู + หมวกที่ซื้อจากร้าน
 // ═══════════════════════════════════════════════════════
-function PetAvatar({ pet, hat, size = 48, bounce = false }) {
+// ตัวละคร SVG (src/Pet.jsx) · mood: idle/happy/sad/sleepy/excited · ขนาดอิงจาก size เดิม (อีโมจิ) ×1.6
+function PetAvatar({ pet, hat, size = 48, bounce = false, mood = "idle", talk = false }) {
   const h = SHOP_ITEMS.find(i => i.id === hat);
-  return (
-    <span style={{ position:"relative",display:"inline-flex",alignItems:"center",justifyContent:"center",width:size*1.3,height:size*1.3,lineHeight:1,animation:bounce?"vpBreathe 3s ease-in-out infinite":"none",transformOrigin:"50% 100%" }}>
-      <span style={{ fontSize:size,display:"inline-block",animation:bounce?"vpBlink 5s ease-in-out infinite":"none",transformOrigin:"50% 60%",filter:"drop-shadow(0 6px 10px rgba(0,0,0,.18))" }}>{pet?.emoji || "🥚"}</span>
-      {h && <span style={{ position:"absolute",top:-size*0.22,left:"50%",transform:"translateX(-50%) rotate(-8deg)",fontSize:size*0.5 }}>{h.emoji}</span>}
-    </span>
-  );
+  const hour = new Date().getHours();
+  const m = mood !== "idle" ? mood : (hour >= 21 || hour < 6) ? "sleepy" : "idle";
+  return <Pet kind={pet?.id || "cat"} stage={pet?.stage ?? 0} mood={m} size={size * 1.6} hat={h?.emoji} talk={talk} />;
 }
 
 // ═══════════════════════════════════════════════════════

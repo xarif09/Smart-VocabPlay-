@@ -10,6 +10,7 @@ import { sfx, unlockSfx, setSfxEnabled, startMusic, stopMusic } from "./sfx.js";
 import { fx, fxPoint, setFxEnabled, installRipple, Ambient, Reveal, CountUp } from "./fx.jsx";
 import Pet, { PET_CSS } from "./Pet.jsx";
 import { CatIcon, GameIcon, hasGameIcon } from "./Icons.jsx";
+import audioManifest from "./audioManifest.json";
 
 // ═══════════════════════════════════════════════════════
 // SPEECH ENGINE — iOS-safe
@@ -86,8 +87,42 @@ function speakOne(text, lang, rate) {
   window.speechSynthesis.speak(u);
 }
 
+// ── เสียงเจ้าของภาษา: ไฟล์ mp3 จาก Wikimedia Commons ใน public/audio/ (ดู scripts/fetch-audio.mjs)
+//    มีไฟล์ → เล่นไฟล์ (อังกฤษ) แล้วต่อด้วยไทยจากเครื่อง · ไม่มี/เล่นไม่ได้ → ใช้เสียงเครื่องเหมือนเดิม
+let nativeOn = true;
+let curAudio = null;
+function setNativeVoice(v) { nativeOn = !!v; }
+export const nativeCount = () => Object.keys(audioManifest).length;
+const audioUrlFor = en => { const f = audioManifest[(en || "").toLowerCase()]; return f ? `${import.meta.env.BASE_URL}audio/${f}` : null; };
+export const hasNativeAudio = en => nativeOn && !!audioUrlFor(en);
+function stopNative() { if (curAudio) { try { curAudio.onended = null; curAudio.pause(); } catch (_) {} curAudio = null; } }
+function speakThOnly(th, rate) {
+  if (!window.speechSynthesis || !th) return;
+  const u = new SpeechSynthesisUtterance(th); u.lang = "th-TH"; u.rate = rate; u.volume = 1;
+  const v = getVoice("th"); if (v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+
 // Speak EN then TH — must be called from onClick
 function speakWord(en, th, rate = 0.85, bilingual = true) {
+  stopNative();
+  const url = nativeOn ? audioUrlFor(en) : null;
+  if (url) {
+    try { window.speechSynthesis?.cancel(); } catch (_) {}
+    const a = new Audio(url);
+    a.preload = "auto";
+    try { a.playbackRate = Math.min(1, Math.max(0.65, rate + 0.1)); } catch (_) {}
+    curAudio = a;
+    const fallback = () => { if (curAudio !== a) return; curAudio = null; ttsWord(en, th, rate, bilingual); };
+    a.onended = () => { if (curAudio !== a) return; curAudio = null; if (bilingual && th) speakThOnly(th, rate); };
+    a.onerror = fallback;
+    try { const p = a.play(); if (p && p.catch) p.catch(fallback); } catch (_) { fallback(); }
+    return;
+  }
+  ttsWord(en, th, rate, bilingual);
+}
+// เสียงเครื่อง (Web Speech) อังกฤษ → ไทย
+function ttsWord(en, th, rate = 0.85, bilingual = true) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
 
@@ -1375,6 +1410,8 @@ export default function App() {
   useEffect(() => { try { localStorage.setItem("smart-vocabplay:music", musicOn ? "1" : "0"); } catch (_) {} if (musicOn && soundOn && soundUnlocked) startMusic(); else stopMusic(); }, [musicOn, soundOn, soundUnlocked]);
   useEffect(() => { const h = () => { if (document.hidden) stopMusic(); else if (musicOn && soundOn && soundUnlocked) startMusic(); }; document.addEventListener("visibilitychange", h); return () => document.removeEventListener("visibilitychange", h); }, [musicOn, soundOn, soundUnlocked]);
   const [fxOn, setFxOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:fx") !== "0"; } catch (_) { return true; } });
+  const [nativeVoice, setNativeVoiceOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:native") !== "0"; } catch (_) { return true; } });
+  useEffect(() => { setNativeVoice(nativeVoice); try { localStorage.setItem("smart-vocabplay:native", nativeVoice ? "1" : "0"); } catch (_) {} }, [nativeVoice]);
   useEffect(() => { setFxEnabled(fxOn); try { localStorage.setItem("smart-vocabplay:fx", fxOn ? "1" : "0"); } catch (_) {} }, [fxOn]);
   useEffect(() => { installRipple(); }, []);
   // ธีมแอป (ซื้อในร้าน): ตั้ง data-theme บน <html> → CSS ใน index.html เปลี่ยนพื้นหลัง/ออโรรา/สีหลัก
@@ -1702,6 +1739,7 @@ export default function App() {
           fullscreenOn={fullscreenOn} setFullscreenOn={setFullscreenOn}
           thaiGuide={thaiGuide} setThaiGuide={setThaiGuide}
           fxOn={fxOn} setFxOn={setFxOn} musicOn={musicOn} setMusicOn={setMusicOn}
+          nativeVoice={nativeVoice} setNativeVoiceOn={setNativeVoiceOn}
           onClose={() => setShowSettings(false)}
         />
       )}
@@ -3237,7 +3275,7 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
 // ═══════════════════════════════════════════════════════
 // SETTINGS SHEET
 // ═══════════════════════════════════════════════════════
-function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn, musicOn, setMusicOn }) {
+function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn, musicOn, setMusicOn, nativeVoice, setNativeVoiceOn }) {
   const [vr, setVr] = useState(() => voiceReport());
   useEffect(() => { loadVoices(); setVr(voiceReport()); const t = setTimeout(() => { loadVoices(); setVr(voiceReport()); }, 800); return () => clearTimeout(t); }, []);
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -3249,6 +3287,7 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <div style={{ fontSize:11,color:"#9ca3af",marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
         <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
+        <TRow label="เสียงเจ้าของภาษา" desc={nativeCount() ? `เสียงอ่านจริงโดยเจ้าของภาษา ${nativeCount()} คำ (Wikimedia Commons · มากับแอป ใช้ออฟไลน์ได้) · คำที่ไม่มีใช้เสียงเครื่องแทน` : "กำลังเตรียมไฟล์เสียง (รอบถัดไป) · ตอนนี้ใช้เสียงเครื่อง"} on={nativeVoice} set={setNativeVoiceOn} />
         <TRow label="ดนตรีประกอบ" desc="เพลงกล่องดนตรีเบาๆ ตลอดแอป (สร้างในเครื่อง ไม่ใช้เน็ต) · ปิดอัตโนมัติเมื่อสลับแอป" on={musicOn} set={setMusicOn} />
         <TRow label="เอฟเฟกต์และแอนิเมชัน" desc="ระเบิดดาว คอนเฟตตี สั่นจอ พื้นหลังเคลื่อนไหว · ปิดถ้าเครื่องช้า" on={fxOn} set={setFxOn} />
         <TRow label="ผู้ช่วยเสียงไทย" desc="อ่านวิธีเล่นเป็นภาษาไทยทุกครั้งที่เข้าเกม (สำหรับเด็กที่ยังอ่านไทยไม่คล่อง)" on={thaiGuide} set={setThaiGuide} />
@@ -3868,21 +3907,25 @@ function InstallBanner({ deferred, onInstall, onDismiss }) {
 function CreditsScreen({ words }) {
   const [list, setList] = useState(null);
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}img/credits.json`).then(r => r.json()).then(j => setList(Object.entries(j))).catch(() => setList([]));
+    Promise.all([
+      fetch(`${import.meta.env.BASE_URL}img/credits.json`).then(r => r.json()).catch(() => ({})),
+      fetch(`${import.meta.env.BASE_URL}audio/credits.json`).then(r => r.json()).catch(() => ({})),
+    ]).then(([img, au]) => setList([...Object.entries(img), ...Object.entries(au).map(([w, c]) => [w, { ...c, audio: true }])])).catch(() => setList([]));
   }, []);
   const wordOf = title => words.find(w => imageTitleOf(w) === title);
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:560,margin:"0 auto" }}>
       <div style={{ background:"#fff",borderRadius:16,padding:14,border:"1px solid #f3f4f6",marginBottom:12,fontSize:13,color:"#374151",lineHeight:1.6 }}>
-        รูปถ่ายประกอบคำศัพท์มาจาก <b>Wikipedia / Wikimedia Commons</b> ภายใต้สัญญาอนุญาตแบบเปิด (CC BY / CC BY-SA / สาธารณสมบัติ ฯลฯ) ผู้สร้างและสัญญาอนุญาตของแต่ละรูปอยู่ด้านล่าง · แตะเพื่อเปิดหน้าต้นทาง
+        รูปถ่ายและเสียงอ่านคำศัพท์มาจาก <b>Wikipedia / Wikimedia Commons</b> ภายใต้สัญญาอนุญาตแบบเปิด (CC BY / CC BY-SA / สาธารณสมบัติ ฯลฯ) ผู้สร้างและสัญญาอนุญาตของแต่ละรายการอยู่ด้านล่าง (🔊 = ไฟล์เสียง) · แตะเพื่อเปิดหน้าต้นทาง
       </div>
       {list === null && <div style={{ textAlign:"center",color:"#9ca3af" }}>กำลังโหลด…</div>}
       {list && list.length === 0 && <div style={{ textAlign:"center",color:"#9ca3af" }}>ยังไม่มีรายการ</div>}
       {list && list.map(([title, c]) => {
-        const w = wordOf(title);
+        const w = c.audio ? words.find(x => x.word.toLowerCase() === title) : wordOf(title);
         return (
-          <a key={title} href={c.source || c.page || "#"} target="_blank" rel="noreferrer" style={{ display:"flex",alignItems:"center",gap:10,padding:"6px 0",borderBottom:"1px solid #f3f4f6",textDecoration:"none",color:"inherit",minHeight:44 }}>
-            {c.file && <img src={`${import.meta.env.BASE_URL}img/${c.file}`} alt="" loading="lazy" style={{ width:44,height:33,objectFit:"cover",borderRadius:6,flexShrink:0 }} />}
+          <a key={(c.audio ? "a:" : "i:") + title} href={c.source || c.page || "#"} target="_blank" rel="noreferrer" style={{ display:"flex",alignItems:"center",gap:10,padding:"6px 0",borderBottom:"1px solid #f3f4f6",textDecoration:"none",color:"inherit",minHeight:44 }}>
+            {c.audio ? <div style={{ width:44,height:33,borderRadius:6,flexShrink:0,background:"#eef2ff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🔊</div>
+              : c.file && <img src={`${import.meta.env.BASE_URL}img/${c.file}`} alt="" loading="lazy" style={{ width:44,height:33,objectFit:"cover",borderRadius:6,flexShrink:0 }} />}
             <div style={{ flex:1,minWidth:0 }}>
               <div style={{ fontWeight:800,fontSize:13,color:"#1f2937" }}>{w ? `${w.emoji} ${w.word}` : title} <span style={{ fontWeight:500,color:"#9ca3af" }}>· {title}</span></div>
               <div style={{ fontSize:11,color:"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{c.artist || "—"} · {c.license || "ดูที่ต้นทาง"}</div>

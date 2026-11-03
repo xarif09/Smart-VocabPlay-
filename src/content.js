@@ -586,3 +586,146 @@ export const LEVELS_TEST = [
   { min:8,  level:"A1", th:"เริ่มต้น",   emoji:"🥉", desc:"รู้คำศัพท์พื้นฐานหลายหมวดแล้ว ฝึกประโยคและการฟังต่อ" },
   { min:0,  level:"Starter", th:"ก้าวแรก", emoji:"🌱", desc:"เริ่มจากเส้นทางบทเรียนบทที่ 1 และการ์ดคำศัพท์ทีละหมวด" },
 ];
+
+// ═══════════════════════════════════════════════════════
+// บทสนทนาเพิ่มเติม (ชุดที่ 3 · v2.8)
+// ═══════════════════════════════════════════════════════
+DIALOGUES.push(
+  { id:"bus", emoji:"🚌", title:"Taking the bus", titleTh:"ขึ้นรถเมล์", scene:"places|BUS STOP", a:"Mina", b:"Driver",
+    lines:[
+      { who:"A", en:"Excuse me, does this bus go to the zoo?", th:"ขอโทษค่ะ รถคันนี้ไปสวนสัตว์ไหมคะ", blank:"zoo" },
+      { who:"B", en:"Yes, it does. Get on, please.", th:"ไปครับ ขึ้นมาเลย" },
+      { who:"A", en:"How much is the ticket?", th:"ตั๋วราคาเท่าไหร่คะ", blank:"ticket" },
+      { who:"B", en:"Ten baht. Please sit down.", th:"สิบบาทครับ นั่งลงด้วยนะ", blank:"Ten" },
+      { who:"A", en:"How many stops to the zoo?", th:"อีกกี่ป้ายถึงสวนสัตว์คะ", blank:"stops" },
+      { who:"B", en:"Five stops. I will tell you.", th:"ห้าป้าย เดี๋ยวบอกนะครับ", blank:"Five" },
+      { who:"A", en:"Thank you. You are very kind.", th:"ขอบคุณค่ะ คุณใจดีมาก", blank:"kind" },
+    ] },
+  { id:"park", emoji:"🌳", title:"In the park", titleTh:"ที่สวนสาธารณะ", scene:"places|PARK", a:"Tom", b:"Mina",
+    lines:[
+      { who:"A", en:"What a sunny day! Let's go to the park.", th:"วันนี้แดดดีจัง ไปสวนกันเถอะ", blank:"sunny" },
+      { who:"B", en:"Good idea! I will bring my kite.", th:"ดีเลย ฉันจะเอาว่าวไปด้วย", blank:"kite" },
+      { who:"A", en:"Look at the ducks in the pond!", th:"ดูเป็ดในสระสิ", blank:"ducks" },
+      { who:"B", en:"They are so cute. Can we feed them?", th:"น่ารักจัง ให้อาหารพวกมันได้ไหม", blank:"feed" },
+      { who:"A", en:"Yes, I have some bread.", th:"ได้ ฉันมีขนมปังอยู่", blank:"bread" },
+      { who:"B", en:"After that, let's fly the kite on the hill.", th:"หลังจากนั้น ไปเล่นว่าวบนเนินกัน", blank:"hill" },
+      { who:"A", en:"And then ice cream!", th:"แล้วก็กินไอศกรีม!" },
+    ] },
+  { id:"lostdog", emoji:"🐕", title:"A lost dog", titleTh:"หมาหลงทาง", scene:"places|STREET", a:"Mina", b:"Police",
+    lines:[
+      { who:"A", en:"Excuse me, I found a dog. He is lost.", th:"ขอโทษค่ะ หนูเจอหมาตัวหนึ่ง มันหลงทาง", blank:"lost" },
+      { who:"B", en:"Let me see. Does he have a collar?", th:"ขอดูหน่อย มีปลอกคอไหม" },
+      { who:"A", en:"Yes. His name is Lucky. There is a phone number.", th:"มีค่ะ ชื่อลัคกี้ มีเบอร์โทรด้วย", blank:"number" },
+      { who:"B", en:"Great! I will call the owner.", th:"เยี่ยม เดี๋ยวโทรหาเจ้าของนะ", blank:"call" },
+      { who:"A", en:"Is he hungry? Can I give him some water?", th:"มันหิวไหมคะ ให้น้ำมันได้ไหม", blank:"water" },
+      { who:"B", en:"Yes, please. You are a good girl.", th:"ได้เลย หนูเป็นเด็กดีนะ", blank:"good" },
+      { who:"A", en:"Thank you. I hope he goes home soon.", th:"ขอบคุณค่ะ หวังว่ามันจะได้กลับบ้านเร็วๆ", blank:"home" },
+    ] },
+  { id:"library", emoji:"📚", title:"At the library", titleTh:"ที่ห้องสมุด", scene:"places|LIBRARY", a:"Librarian", b:"Tom",
+    lines:[
+      { who:"A", en:"Good afternoon. Can I help you?", th:"สวัสดีตอนบ่าย มีอะไรให้ช่วยไหมคะ", blank:"help" },
+      { who:"B", en:"Yes. I want a book about dinosaurs.", th:"ครับ ผมอยากได้หนังสือเกี่ยวกับไดโนเสาร์", blank:"book" },
+      { who:"A", en:"Dinosaur books are on the second shelf.", th:"หนังสือไดโนเสาร์อยู่ชั้นที่สองค่ะ", blank:"second" },
+      { who:"B", en:"Can I borrow two books?", th:"ขอยืมสองเล่มได้ไหมครับ", blank:"borrow" },
+      { who:"A", en:"Yes. Please show me your library card.", th:"ได้ค่ะ ขอดูบัตรห้องสมุดหน่อย", blank:"card" },
+      { who:"B", en:"Here it is. When do I bring them back?", th:"นี่ครับ ต้องคืนเมื่อไหร่", blank:"back" },
+      { who:"A", en:"In two weeks. Please be quiet inside.", th:"สองสัปดาห์ค่ะ อยู่ข้างในเงียบๆ นะ", blank:"quiet" },
+    ] },
+  { id:"cooking", emoji:"🍳", title:"Cooking with Dad", titleTh:"ทำอาหารกับพ่อ", scene:"home|KITCHEN", a:"Dad", b:"Mina",
+    lines:[
+      { who:"A", en:"Mina, do you want to help me cook?", th:"มีนา อยากช่วยพ่อทำอาหารไหม", blank:"cook" },
+      { who:"B", en:"Yes! What are we making?", th:"อยากค่ะ เราจะทำอะไรกัน" },
+      { who:"A", en:"Fried rice. First, wash your hands.", th:"ข้าวผัด ล้างมือก่อนนะ", blank:"hands" },
+      { who:"B", en:"Done. What's next?", th:"เสร็จแล้วค่ะ ต่อไปทำอะไร" },
+      { who:"A", en:"Cut the carrot and the onion. Be careful!", th:"หั่นแครอทกับหัวหอม ระวังด้วยนะ", blank:"carrot" },
+      { who:"B", en:"Now I put the egg in the pan.", th:"ตอนนี้หนูใส่ไข่ลงกระทะ", blank:"egg" },
+      { who:"A", en:"Add the rice and mix it. Smells good!", th:"ใส่ข้าวแล้วผัดให้เข้ากัน หอมจัง", blank:"mix" },
+      { who:"B", en:"I love cooking with you, Dad!", th:"หนูชอบทำอาหารกับพ่อจัง", blank:"love" },
+    ] },
+);
+
+// ═══════════════════════════════════════════════════════
+// นิทานเพิ่มเติม (ชุดที่ 3 · v2.8)
+// ═══════════════════════════════════════════════════════
+STORIES.push(
+  { id:"turtle", emoji:"🐢", title:"The Turtle and the Rabbit", titleTh:"เต่ากับกระต่าย", level:"A1",
+    pages:[
+      { en:"A rabbit is very fast. A turtle is very slow.", th:"กระต่ายวิ่งเร็วมาก เต่าเดินช้ามาก", pic:"animals|RABBIT" },
+      { en:"\"Let's have a race!\" says the rabbit.", th:"\"มาแข่งวิ่งกันเถอะ!\" กระต่ายพูด", pic:"sports|RACE" },
+      { en:"The rabbit runs fast. The turtle walks slowly.", th:"กระต่ายวิ่งเร็ว เต่าเดินช้าๆ", pic:"animals|TURTLE" },
+      { en:"The rabbit stops under a tree. \"I will sleep a little.\"", th:"กระต่ายหยุดใต้ต้นไม้ \"ขอนอนสักหน่อย\"", pic:"nature|TREE" },
+      { en:"The turtle does not stop. Walk, walk, walk.", th:"เต่าไม่หยุด เดิน เดิน เดิน", pic:"actions|WALK" },
+      { en:"The rabbit wakes up. \"Oh no! Where is the turtle?\"", th:"กระต่ายตื่น \"แย่แล้ว เต่าอยู่ไหน\"", pic:"actions|WAKE UP" },
+      { en:"The turtle is at the finish line. The turtle wins!", th:"เต่าอยู่ที่เส้นชัยแล้ว เต่าชนะ!", pic:"sports|TROPHY" },
+      { en:"Slow and steady wins the race.", th:"ช้าแต่มั่นคง ก็ชนะได้", pic:"feelings|PROUD" },
+    ],
+    quiz:[
+      { q:"Who is fast?", qTh:"ใครวิ่งเร็ว", options:["The turtle","The rabbit","The bird"], answer:"The rabbit" },
+      { q:"What does the rabbit do under the tree?", qTh:"กระต่ายทำอะไรใต้ต้นไม้", options:["Sleep","Eat","Sing"], answer:"Sleep" },
+      { q:"Who wins the race?", qTh:"ใครชนะ", options:["The rabbit","The turtle","Nobody"], answer:"The turtle" },
+    ] },
+  { id:"seed", emoji:"🌻", title:"The Little Seed", titleTh:"เมล็ดน้อย", level:"A1",
+    pages:[
+      { en:"Mina has a little seed. She puts it in the soil.", th:"มีนามีเมล็ดเล็กๆ เธอใส่มันลงในดิน", pic:"nature|SEED" },
+      { en:"Every morning she gives it water.", th:"ทุกเช้าเธอรดน้ำให้มัน", pic:"actions|WATER" },
+      { en:"The sun is warm. The rain is soft.", th:"แดดอุ่น ฝนโปรยเบาๆ", pic:"weather|SUN" },
+      { en:"One day, a small green leaf comes out!", th:"วันหนึ่ง ใบเล็กๆ สีเขียวโผล่ออกมา", pic:"nature|LEAF" },
+      { en:"The plant grows tall. Taller than Mina!", th:"ต้นไม้โตสูง สูงกว่ามีนาอีก", pic:"opposites|TALL" },
+      { en:"Then a big yellow flower opens.", th:"แล้วดอกไม้สีเหลืองดอกใหญ่ก็บาน", pic:"nature|SUNFLOWER" },
+      { en:"A bee comes to visit the flower.", th:"ผึ้งบินมาเยี่ยมดอกไม้", pic:"animals|BEE" },
+      { en:"Mina smiles. \"My little seed is a big sunflower now!\"", th:"มีนายิ้ม \"เมล็ดน้อยของฉันเป็นทานตะวันต้นใหญ่แล้ว\"", pic:"feelings|HAPPY" },
+    ],
+    quiz:[
+      { q:"Where does Mina put the seed?", qTh:"มีนาใส่เมล็ดไว้ที่ไหน", options:["In the soil","In the water","In a box"], answer:"In the soil" },
+      { q:"What color is the flower?", qTh:"ดอกไม้สีอะไร", options:["Red","Yellow","Blue"], answer:"Yellow" },
+      { q:"Who visits the flower?", qTh:"ใครมาเยี่ยมดอกไม้", options:["A bee","A cat","A frog"], answer:"A bee" },
+    ] },
+  { id:"moon", emoji:"🌙", title:"Good Night, Moon", titleTh:"ราตรีสวัสดิ์ พระจันทร์", level:"A1",
+    pages:[
+      { en:"It is night. The sky is dark.", th:"ตอนนี้กลางคืนแล้ว ท้องฟ้ามืด", pic:"time|NIGHT" },
+      { en:"Tom looks out of the window. He sees the moon.", th:"ทอมมองออกไปนอกหน้าต่าง เขาเห็นพระจันทร์", pic:"nature|MOON" },
+      { en:"\"Hello, Moon! Are you lonely up there?\"", th:"\"สวัสดีพระจันทร์ อยู่บนนั้นเหงาไหม\"", pic:"feelings|LONELY" },
+      { en:"Many stars come out. One, two, three... so many!", th:"ดาวออกมามากมาย หนึ่ง สอง สาม… เยอะจัง", pic:"nature|STAR" },
+      { en:"\"The moon is not lonely. The stars are its friends.\"", th:"\"พระจันทร์ไม่เหงาหรอก ดาวเป็นเพื่อนของมัน\"", pic:"family|FRIEND" },
+      { en:"An owl says, \"Hoo, hoo!\" in the tree.", th:"นกฮูกร้อง \"ฮู ฮู\" อยู่บนต้นไม้", pic:"animals|OWL" },
+      { en:"Tom gets into his bed. He is sleepy.", th:"ทอมขึ้นเตียง เขาง่วงแล้ว", pic:"home|BED" },
+      { en:"\"Good night, Moon. Good night, stars.\"", th:"\"ราตรีสวัสดิ์พระจันทร์ ราตรีสวัสดิ์ดวงดาว\"", pic:"actions|SLEEP" },
+    ],
+    quiz:[
+      { q:"What does Tom see in the sky?", qTh:"ทอมเห็นอะไรบนฟ้า", options:["The sun","The moon","A plane"], answer:"The moon" },
+      { q:"Who are the moon's friends?", qTh:"ใครเป็นเพื่อนของพระจันทร์", options:["The stars","The clouds","The fish"], answer:"The stars" },
+      { q:"What animal says \"Hoo, hoo\"?", qTh:"สัตว์อะไรร้อง \"ฮู ฮู\"", options:["A dog","A cow","An owl"], answer:"An owl" },
+    ] },
+  { id:"birthday", emoji:"🎂", title:"Grandma's Birthday", titleTh:"วันเกิดคุณยาย", level:"A1+",
+    pages:[
+      { en:"Today is Grandma's birthday. She is seventy years old.", th:"วันนี้วันเกิดคุณยาย คุณยายอายุเจ็ดสิบปี", pic:"family|GRANDMOTHER" },
+      { en:"Mina and Tom want to make a cake.", th:"มีนากับทอมอยากทำเค้ก", pic:"food|CAKE" },
+      { en:"They need flour, sugar, eggs and butter.", th:"ต้องใช้แป้ง น้ำตาล ไข่ และเนย", pic:"food|FLOUR" },
+      { en:"Mom helps them bake it in the oven.", th:"แม่ช่วยอบในเตาอบ", pic:"home|OVEN" },
+      { en:"Tom draws a card. Mina picks flowers from the garden.", th:"ทอมวาดการ์ด มีนาเก็บดอกไม้จากสวน", pic:"nature|FLOWER" },
+      { en:"Surprise! Everybody sings \"Happy Birthday!\"", th:"เซอร์ไพรส์! ทุกคนร้องเพลง \"แฮปปี้เบิร์ธเดย์\"", pic:"actions|SING" },
+      { en:"Grandma blows out the candles and makes a wish.", th:"คุณยายเป่าเทียนแล้วอธิษฐาน", pic:"home|CANDLE" },
+      { en:"\"Thank you, my dears. This is the best birthday!\"", th:"\"ขอบใจนะหลานๆ นี่คือวันเกิดที่ดีที่สุด\"", pic:"feelings|THANKFUL" },
+    ],
+    quiz:[
+      { q:"How old is Grandma?", qTh:"คุณยายอายุเท่าไหร่", options:["Seventeen","Seventy","Seven"], answer:"Seventy" },
+      { q:"What do the children make?", qTh:"เด็กๆ ทำอะไร", options:["A cake","Soup","Pizza"], answer:"A cake" },
+      { q:"What does Mina pick from the garden?", qTh:"มีนาเก็บอะไรจากสวน", options:["Apples","Flowers","Eggs"], answer:"Flowers" },
+    ] },
+  { id:"rainbowfish", emoji:"🐠", title:"The Rainbow Fish", titleTh:"ปลาสีรุ้ง", level:"A1+",
+    pages:[
+      { en:"In the blue sea lives a fish with rainbow colors.", th:"ในทะเลสีฟ้ามีปลาตัวหนึ่งสีรุ้งสวยงาม", pic:"animals|FISH" },
+      { en:"The other fish say, \"Please give us one shiny scale.\"", th:"ปลาตัวอื่นพูดว่า \"ขอเกล็ดแวววาวหนึ่งอันได้ไหม\"", pic:"animals|CLOWNFISH" },
+      { en:"\"No!\" says the rainbow fish. \"They are mine.\"", th:"\"ไม่ให้!\" ปลาสีรุ้งพูด \"มันเป็นของฉัน\"", pic:"feelings|GRUMPY" },
+      { en:"Now nobody plays with the rainbow fish. He is lonely.", th:"ตอนนี้ไม่มีใครเล่นกับปลาสีรุ้ง เขาเหงา", pic:"feelings|LONELY" },
+      { en:"A wise old octopus says, \"Share, and you will be happy.\"", th:"ปลาหมึกเฒ่าผู้ฉลาดบอกว่า \"แบ่งปันแล้วเธอจะมีความสุข\"", pic:"animals|OCTOPUS" },
+      { en:"The rainbow fish gives one scale to a small fish.", th:"ปลาสีรุ้งให้เกล็ดหนึ่งอันกับปลาตัวเล็ก", pic:"actions|GIVE" },
+      { en:"He gives more and more. Now every fish shines!", th:"เขาให้อีกเรื่อยๆ ตอนนี้ปลาทุกตัวแวววาว", pic:"actions|SHARE" },
+      { en:"The rainbow fish has many friends. He is very happy.", th:"ปลาสีรุ้งมีเพื่อนมากมาย เขามีความสุขมาก", pic:"feelings|HAPPY" },
+    ],
+    quiz:[
+      { q:"Where does the rainbow fish live?", qTh:"ปลาสีรุ้งอาศัยอยู่ที่ไหน", options:["In the sea","In a river","In a pond"], answer:"In the sea" },
+      { q:"Who gives advice?", qTh:"ใครให้คำแนะนำ", options:["A shark","An octopus","A crab"], answer:"An octopus" },
+      { q:"What does the rainbow fish learn?", qTh:"ปลาสีรุ้งเรียนรู้อะไร", options:["To share","To hide","To swim fast"], answer:"To share" },
+    ] },
+);

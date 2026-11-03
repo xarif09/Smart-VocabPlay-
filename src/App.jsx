@@ -1,6 +1,8 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo, createContext, useContext } from "react";
+import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl } from "./images.js";
 import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER_NEED, PETS, getPet, petLevel, EMPTY_PROGRESS,
-  srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today } from "./progress.js";
+  srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today,
+  loadProfiles, saveProfiles, deleteProgress, AVATARS, buildUnits, UNIT_STEPS, unitDone, unitSteps, markUnitStep, similarity } from "./progress.js";
 import { lexOf } from "./lexicon.js";
 import { sfx, unlockSfx, setSfxEnabled } from "./sfx.js";
 
@@ -12,6 +14,10 @@ import { sfx, unlockSfx, setSfxEnabled } from "./sfx.js";
 // 2. Voices may not load until after first speak attempt
 // 3. cancel() + immediate speak() can drop speech — use 50ms gap
 
+// เลขเวอร์ชัน (จาก package.json) + เวลา build — โชว์บนหน้าแรก/ตั้งค่า เพื่อให้รู้ว่าเครื่องโหลดเวอร์ชันไหนอยู่
+export const APP_VERSION = typeof __APP_VERSION__ !== "undefined" ? __APP_VERSION__ : "dev";
+export const BUILD_TIME = typeof __BUILD_TIME__ !== "undefined" ? __BUILD_TIME__ : "";
+
 let voices = [];
 let audioUnlocked = false;
 
@@ -19,8 +25,18 @@ function loadVoices() {
   voices = window.speechSynthesis?.getVoices() || [];
 }
 
+// เลือกเสียงตามภาษา · ไทย: ชอบเสียงที่ชื่อมี Kanya (iOS) / Google / Thai / ไทย ก่อน แล้วค่อยเอาตัวแรกที่เจอ
 function getVoice(langPrefix) {
-  return voices.find(v => v.lang.toLowerCase().startsWith(langPrefix)) || null;
+  const list = voices.filter(v => (v.lang || "").toLowerCase().replace("_", "-").startsWith(langPrefix));
+  if (!list.length) return null;
+  const pref = ["kanya", "google", "ไทย", "thai", "narisa", "premwadee", "achara"];
+  for (const k of pref) { const v = list.find(x => x.name.toLowerCase().includes(k)); if (v) return v; }
+  return list.find(v => v.localService) || list[0];
+}
+export function voiceReport() {
+  const th = voices.filter(v => (v.lang || "").toLowerCase().startsWith("th"));
+  const en = voices.filter(v => (v.lang || "").toLowerCase().startsWith("en"));
+  return { total: voices.length, th: th.map(v => v.name), en: en.length, thPick: getVoice("th")?.name || null };
 }
 
 // Call this INSIDE a click/touch handler to unlock audio on iOS
@@ -105,6 +121,12 @@ const CATEGORIES = [
   { id:"home",     label:"Home",     thai:"ของในบ้าน",  emoji:"🏠", color:"#84CC16", games:["quiz","spell","memory"] },
   { id:"nature",   label:"Nature",   thai:"ธรรมชาติ",   emoji:"🌿", color:"#22C55E", games:["quiz","memory","speed"] },
   { id:"sports",   label:"Sports",   thai:"กีฬา",       emoji:"⚽", color:"#60A5FA", games:["quiz","memory","speed"] },
+  { id:"family",   label:"Family",   thai:"ครอบครัว",   emoji:"👨‍👩‍👧", color:"#FB7185", games:["quiz","memory","speed"] },
+  { id:"actions",  label:"Actions",  thai:"กริยา",      emoji:"🏃", color:"#F472B6", games:["quiz","spell","memory"] },
+  { id:"feelings", label:"Feelings", thai:"ความรู้สึก", emoji:"😊", color:"#FBBF24", games:["quiz","memory","speed"] },
+  { id:"shapes",   label:"Shapes",   thai:"รูปทรง",     emoji:"🔺", color:"#A78BFA", games:["quiz","spell","memory"] },
+  { id:"toys",     label:"Toys",     thai:"ของเล่น",    emoji:"🧸", color:"#F59E0B", games:["quiz","spell","memory","speed"] },
+  { id:"places",   label:"Places",   thai:"สถานที่",    emoji:"🏫", color:"#2DD4BF", games:["quiz","spell","memory","speed"] },
 ];
 
 // หมวดพิเศษ "ทบทวนคำที่พลาด" (ไม่อยู่ในตารางหมวด)
@@ -348,7 +370,7 @@ const INITIAL_WORDS = [
   W("vehicles","SUBMARINE","เรือดำน้ำ","🤿"),
   W("vehicles","VAN","รถตู้","🚐"),
   W("vehicles","SCOOTER","สกู๊ตเตอร์","🛵"),
-  W("vehicles","CABLE CAR","รถกระเช้า","🚡"),
+  W("vehicles","TUK-TUK","รถตุ๊กตุ๊ก","🛺"),
 
   // ── Jobs 20 ──────────────────────────────
   W("jobs","DOCTOR","แพทย์","👨‍⚕️"),
@@ -364,7 +386,7 @@ const INITIAL_WORDS = [
   W("jobs","SINGER","นักร้อง","🎤"),
   W("jobs","ACTOR","นักแสดง","🎭"),
   W("jobs","SOLDIER","ทหาร","💂"),
-  W("jobs","JUDGE","ผู้พิพากษา","⚖️"),
+  W("jobs","WAITER","พนักงานเสิร์ฟ","🧑‍🍳"),
   W("jobs","SCIENTIST","นักวิทยาศาสตร์","🔬"),
   W("jobs","DRIVER","คนขับรถ","🚗"),
   W("jobs","BUILDER","ช่างก่อสร้าง","🏗️"),
@@ -454,11 +476,130 @@ const INITIAL_WORDS = [
   W("sports","SKIING","เล่นสกี","🎿"),
   W("sports","SURFING","เล่นเซิร์ฟ","🏄"),
   W("sports","YOGA","โยคะ","🧘"),
-  W("sports","GYMNASTICS","ยิมนาสติก","🤸"),
-  W("sports","ARCHERY","ยิงธนู","🏹"),
+  W("sports","TABLE TENNIS","ปิงปอง","🏓"),
+  W("sports","DANCING","เต้นรำ","💃"),
   W("sports","TROPHY","ถ้วยรางวัล","🏆"),
   W("sports","MEDAL","เหรียญ","🏅"),
   W("sports","JUMP","กระโดด","🤸"),
+
+  // ── เพิ่มภายหลัง (ต่อท้ายเสมอ เพื่อให้ id ของคำเดิมไม่เปลี่ยน) ──
+  // Animals +9
+  W("animals","GIRAFFE","ยีราฟ","🦒",{habitat:"forest"}),
+  W("animals","ZEBRA","ม้าลาย","🦓",{habitat:"forest"}),
+  W("animals","CHICKEN","ไก่","🐔",{habitat:"farm"}),
+  W("animals","GOAT","แพะ","🐐",{habitat:"farm"}),
+  W("animals","DEER","กวาง","🦌",{habitat:"forest"}),
+  W("animals","CROCODILE","จระเข้","🐊"),
+  W("animals","KANGAROO","จิงโจ้","🦘",{habitat:"forest"}),
+  W("animals","ANT","มด","🐜",{habitat:"forest"}),
+  W("animals","SPIDER","แมงมุม","🕷️",{habitat:"forest"}),
+  // Food +10
+  W("food","FRIED RICE","ข้าวผัด","🍛"),
+  W("food","PAD THAI","ผัดไทย","🍝"),
+  W("food","SOM TAM","ส้มตำ","🥗"),
+  W("food","FRENCH FRIES","เฟรนช์ฟรายส์","🍟"),
+  W("food","FRIED CHICKEN","ไก่ทอด","🍗"),
+  W("food","YOGURT","โยเกิร์ต","🥛"),
+  W("food","BUTTER","เนย","🧈"),
+  W("food","SUGAR","น้ำตาล","🍬"),
+  W("food","SALT","เกลือ","🧂"),
+  W("food","FISH SAUCE","น้ำปลา","🐟"),
+  // Home +10 (ของใช้ประจำวัน)
+  W("home","TOOTHBRUSH","แปรงสีฟัน","🪥"),
+  W("home","TOWEL","ผ้าเช็ดตัว","🧻"),
+  W("home","SOAP","สบู่","🧼"),
+  W("home","PILLOW","หมอน","🛏️"),
+  W("home","BLANKET","ผ้าห่ม","🧣"),
+  W("home","KEY","กุญแจ","🔑"),
+  W("home","CUP","แก้ว","🥤"),
+  W("home","PLATE","จาน","🍽️"),
+  W("home","SPOON","ช้อน","🥄"),
+  W("home","FORK","ส้อม","🍴"),
+  // Nature +2
+  W("nature","SKY","ท้องฟ้า","🌤️"),
+  W("nature","FIRE","ไฟ","🔥"),
+  // Family 12
+  W("family","MOTHER","แม่","👩"),
+  W("family","FATHER","พ่อ","👨"),
+  W("family","SISTER","พี่สาว/น้องสาว","👧"),
+  W("family","BROTHER","พี่ชาย/น้องชาย","👦"),
+  W("family","GRANDMOTHER","ยาย/ย่า","👵"),
+  W("family","GRANDFATHER","ตา/ปู่","👴"),
+  W("family","BABY","เด็กทารก","👶"),
+  W("family","FAMILY","ครอบครัว","👨‍👩‍👧‍👦"),
+  W("family","AUNT","ป้า/น้า","👩‍🦱"),
+  W("family","UNCLE","ลุง/อา","👨‍🦱"),
+  W("family","SON","ลูกชาย","🧒"),
+  W("family","DAUGHTER","ลูกสาว","👧"),
+  // Actions 20
+  W("actions","RUN","วิ่ง","🏃"),
+  W("actions","WALK","เดิน","🚶"),
+  W("actions","EAT","กิน","🍽️"),
+  W("actions","DRINK","ดื่ม","🥤"),
+  W("actions","SLEEP","นอน","😴"),
+  W("actions","READ","อ่าน","📖"),
+  W("actions","WRITE","เขียน","✍️"),
+  W("actions","SING","ร้องเพลง","🎤"),
+  W("actions","DANCE","เต้น","💃"),
+  W("actions","SWIM","ว่ายน้ำ","🏊"),
+  W("actions","PLAY","เล่น","🎮"),
+  W("actions","COOK","ทำอาหาร","🍳"),
+  W("actions","WASH","ล้าง","🧼"),
+  W("actions","DRAW","วาดรูป","🎨"),
+  W("actions","SIT","นั่ง","🪑"),
+  W("actions","STAND","ยืน","🧍"),
+  W("actions","LAUGH","หัวเราะ","😂"),
+  W("actions","CRY","ร้องไห้","😢"),
+  W("actions","CLIMB","ปีน","🧗"),
+  W("actions","LISTEN","ฟัง","👂"),
+  // Feelings 10
+  W("feelings","HAPPY","มีความสุข","😊"),
+  W("feelings","SAD","เศร้า","😢"),
+  W("feelings","ANGRY","โกรธ","😠"),
+  W("feelings","SCARED","กลัว","😨"),
+  W("feelings","TIRED","เหนื่อย","😩"),
+  W("feelings","HUNGRY","หิว","🤤"),
+  W("feelings","THIRSTY","กระหายน้ำ","🥵"),
+  W("feelings","SICK","ป่วย","🤒"),
+  W("feelings","SURPRISED","ประหลาดใจ","😲"),
+  W("feelings","EXCITED","ตื่นเต้น","🤩"),
+  // Shapes 8
+  W("shapes","CIRCLE","วงกลม","🔵"),
+  W("shapes","SQUARE","สี่เหลี่ยมจัตุรัส","🟦"),
+  W("shapes","TRIANGLE","สามเหลี่ยม","🔺"),
+  W("shapes","STAR","ดาว","⭐"),
+  W("shapes","HEART","หัวใจ","❤️"),
+  W("shapes","RECTANGLE","สี่เหลี่ยมผืนผ้า","▬"),
+  W("shapes","OVAL","วงรี","🥚"),
+  W("shapes","DIAMOND","สี่เหลี่ยมข้าวหลามตัด","🔶"),
+  // Toys 12
+  W("toys","BALL","ลูกบอล","⚽"),
+  W("toys","DOLL","ตุ๊กตา","🪆"),
+  W("toys","KITE","ว่าว","🪁"),
+  W("toys","ROBOT","หุ่นยนต์","🤖"),
+  W("toys","PUZZLE","จิ๊กซอว์","🧩"),
+  W("toys","BLOCKS","ตัวต่อ","🧱"),
+  W("toys","TEDDY BEAR","ตุ๊กตาหมี","🧸"),
+  W("toys","BALLOON","ลูกโป่ง","🎈"),
+  W("toys","DRUM","กลอง","🥁"),
+  W("toys","GUITAR","กีตาร์","🎸"),
+  W("toys","PIANO","เปียโน","🎹"),
+  W("toys","YO-YO","โยโย่","🪀"),
+  // Places 14
+  W("places","SCHOOL","โรงเรียน","🏫"),
+  W("places","HOSPITAL","โรงพยาบาล","🏥"),
+  W("places","MARKET","ตลาด","🏪"),
+  W("places","TEMPLE","วัด","🛕"),
+  W("places","PARK","สวนสาธารณะ","🏞️"),
+  W("places","ZOO","สวนสัตว์","🦁"),
+  W("places","BEACH","ชายหาด","🏖️"),
+  W("places","FARM","ฟาร์ม","🚜"),
+  W("places","RESTAURANT","ร้านอาหาร","🍽️"),
+  W("places","BANK","ธนาคาร","🏦"),
+  W("places","AIRPORT","สนามบิน","✈️"),
+  W("places","LIBRARY","ห้องสมุด","📚"),
+  W("places","SUPERMARKET","ซูเปอร์มาร์เก็ต","🛒"),
+  W("places","PLAYGROUND","สนามเด็กเล่น","🛝"),
 ];
 
 // เติมคำอ่าน + ประโยคตัวอย่างจาก lexicon.js
@@ -489,8 +630,14 @@ function loadSavedWords() {
     const ok = Array.isArray(data) && data.every(w =>
       w && typeof w === "object" && typeof w.id === "number" &&
       typeof w.word === "string" && typeof w.cat === "string");
+    if (!ok) return INITIAL_WORDS;
     // คำที่บันทึกไว้ก่อนมี lexicon → เติมคำอ่าน/ประโยคให้ (ค่าที่ผู้ใช้แก้เองมาก่อน)
-    return ok ? data.map(w => ({ ...(lexOf(w) || {}), ...w })) : INITIAL_WORDS;
+    let merged = data.map(w => ({ ...(lexOf(w) || {}), ...w }));
+    // หมวดใหม่ที่เพิ่มในเวอร์ชันหลัง (ผู้ใช้เก่ายังไม่มี) → เติมทั้งหมวดให้ ใช้ id ต่อจากที่มี
+    const have = new Set(merged.map(w => w.cat));
+    let nextId = Math.max(0, ...merged.map(w => w.id)) + 1;
+    INITIAL_WORDS.forEach(w => { if (!have.has(w.cat)) merged.push({ ...w, id: nextId++ }); });
+    return merged;
   } catch (_) {
     return INITIAL_WORDS;
   }
@@ -513,16 +660,32 @@ export default function App() {
   const [activeCat, setActiveCat] = useState(null);
   const [activeGame, setActiveGame] = useState(null);
   const [words, setWords] = useState(loadSavedWords);
-  const [progress, setProgress] = useState(loadProgress);
+  const [profiles, setProfiles] = useState(loadProfiles);
+  const [progress, setProgress] = useState(() => loadProgress(loadProfiles().current));
+  const [showProfiles, setShowProfiles] = useState(false);
+  const [installEvt, setInstallEvt] = useState(null);
+  const [updateReg, setUpdateReg] = useState(null);   // service worker เวอร์ชันใหม่รออยู่
+  useEffect(() => { const h = e => setUpdateReg(e.detail); window.addEventListener("vp-update", h); return () => window.removeEventListener("vp-update", h); }, []);
+  const [installHidden, setInstallHidden] = useState(() => { try { return localStorage.getItem("smart-vocabplay:install-hidden") === "1"; } catch (_) { return false; } });
   const [soundOn, setSoundOn] = useState(true);
   const [bilingual, setBilingual] = useState(true);
   const [rate, setRate] = useState(0.85);
   const [showSettings, setShowSettings] = useState(false);
+  const [realPics, setRealPics] = useState(() => { try { return localStorage.getItem("smart-vocabplay:realpics") !== "0"; } catch (_) { return true; } });
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:realpics", realPics ? "1" : "0"); } catch (_) {} }, [realPics]);
   const [toast, setToast] = useState(null);
 
   // บันทึกคำศัพท์ / ความคืบหน้า ทุกครั้งที่เปลี่ยน
   useEffect(() => { saveWords(words); }, [words]);
-  useEffect(() => { saveProgress(progress); }, [progress]);
+  useEffect(() => { saveProgress(progress, profiles.current); }, [progress, profiles.current]);
+  useEffect(() => { saveProfiles(profiles); }, [profiles]);
+
+  // PWA: จับ event ติดตั้ง (Android/Chrome)
+  useEffect(() => {
+    const h = e => { e.preventDefault(); setInstallEvt(e); };
+    window.addEventListener("beforeinstallprompt", h);
+    return () => window.removeEventListener("beforeinstallprompt", h);
+  }, []);
   useEffect(() => { setSfxEnabled(soundOn); }, [soundOn]);
 
   // streak: นับวันที่เล่นต่อเนื่อง (ครั้งแรกหลังแตะเริ่ม)
@@ -567,9 +730,39 @@ export default function App() {
   const goShop     = () => setScreen("shop");
   const goReport   = () => setScreen("report");
   const goLearn    = () => setScreen("learn");
+  const goPath     = () => setScreen("path");
+  // เส้นทางบทเรียน: เปิดขั้นของบท (learn / quiz / listen) ด้วยหมวดเสมือน unit:<id>
+  const goUnitStep = (u, step) => {
+    setActiveCat({ ...u.cat, id: `unit:${u.id}`, label: `บทที่ ${u.n} · ${u.cat.label}`, unit: u });
+    if (step === "learn") { setActiveGame(null); setScreen("learn"); }
+    else { setActiveGame(step); setScreen("game"); }
+  };
+  const switchProfile = id => {
+    if (id === profiles.current) { setShowProfiles(false); return; }
+    setProfiles(pf => ({ ...pf, current: id }));
+    setProgress(ensureDaily(bumpStreak(loadProgress(id))));
+    setShowProfiles(false);
+    const pf = profiles.list.find(x => x.id === id); if (pf) showToast(`สวัสดี ${pf.name} ${pf.avatar}`);
+  };
+  const addProfile = (name, avatar) => {
+    const id = "p" + Date.now().toString(36);
+    setProfiles(pf => ({ list: [...pf.list, { id, name, avatar }], current: id }));
+    setProgress(ensureDaily(bumpStreak({ ...EMPTY_PROGRESS })));
+    setShowProfiles(false); showToast(`ยินดีต้อนรับ ${name} ${avatar}`);
+  };
+  const removeProfile = id => {
+    deleteProgress(id);
+    setProfiles(pf => {
+      const list = pf.list.filter(x => x.id !== id);
+      const current = pf.current === id ? list[0].id : pf.current;
+      if (pf.current === id) setProgress(ensureDaily(bumpStreak(loadProgress(current))));
+      return { list, current };
+    });
+  };
   const goReview   = () => { setActiveCat(REVIEW_CAT); setActiveGame("quiz"); setScreen("game"); };
   const goBack     = () => {
     if (screen === "game" && activeCat?.id === "review") { goHome(); }
+    else if ((screen === "game" || screen === "learn") && activeCat?.unit) { setScreen("path"); setActiveGame(null); setActiveCat(null); }
     else if (screen === "game" || screen === "learn") { setScreen("category"); setActiveGame(null); }
     else if (screen === "category") { goHome(); }
     else                       { goHome(); }
@@ -583,9 +776,15 @@ export default function App() {
   const stickerCount = useMemo(() => words.filter(w => (progress.stickers[w.id] || 0) >= STICKER_NEED).length, [words, progress.stickers]);
 
   const catWords = useMemo(
-    () => !activeCat ? [] : activeCat.id === "review" ? missedWords.slice(0, 10) : words.filter(w => w.cat === activeCat.id),
+    () => !activeCat ? [] : activeCat.unit ? activeCat.unit.words : activeCat.id === "review" ? missedWords.slice(0, 10) : words.filter(w => w.cat === activeCat.id),
     [words, activeCat, missedWords]
   );
+  const units = useMemo(() => buildUnits(words, CATEGORIES), [words]);
+
+  // ตัวเลขบนไอคอนแอป (เมื่อติดตั้งแล้ว) = จำนวนคำที่ถึงเวลาทบทวน
+  useEffect(() => {
+    try { if (navigator.setAppBadge) { missedWords.length ? navigator.setAppBadge(missedWords.length) : navigator.clearAppBadge?.(); } } catch (_) {}
+  }, [missedWords.length]);
 
   // ── Sound unlock screen ──────────────────
   if (!soundUnlocked) {
@@ -601,6 +800,7 @@ export default function App() {
   }
 
   return (
+    <PicCtx.Provider value={realPics}>
     <div style={{ fontFamily: "system-ui, sans-serif", background: "#fafafa", minHeight: "100dvh" }}>
       {/* TOPBAR */}
       <Topbar
@@ -618,13 +818,20 @@ export default function App() {
         {screen === "home" && (
           <HomeScreen categories={CATEGORIES} words={words} onPickCat={goCat}
             progress={progress} setProgress={setProgress} stickerCount={stickerCount}
-            missedCount={missedWords.length} onReview={goReview} onStickers={goStickers} onShop={goShop} speak={speak} />
+            missedCount={missedWords.length} onReview={goReview} onStickers={goStickers} onShop={goShop} onPath={goPath} speak={speak}
+            units={units} profile={profiles.list.find(x => x.id === profiles.current)} onProfiles={() => setShowProfiles(true)}
+            install={!installHidden ? { evt: installEvt, onInstall: async () => { try { installEvt.prompt(); const r = await installEvt.userChoice; if (r?.outcome === "accepted") showToast("ติดตั้งแล้ว 📲"); } catch (_) {} setInstallEvt(null); },
+              onDismiss: () => { setInstallHidden(true); try { localStorage.setItem("smart-vocabplay:install-hidden", "1"); } catch (_) {} } } : null} />
         )}
         {screen === "category" && activeCat && (
           <CategoryScreen cat={activeCat} words={catWords} onPickGame={goGame} onLearn={goLearn} progress={progress} showToast={showToast} />
         )}
         {screen === "learn" && activeCat && (
-          <FlashCards cat={activeCat} words={catWords} speak={speak} speakAt={speakAt} setProgress={setProgress} showToast={showToast} onDone={goBack} />
+          <FlashCards cat={activeCat} words={catWords} speak={speak} speakAt={speakAt} setProgress={setProgress} showToast={showToast}
+            onDone={() => { if (activeCat.unit) setProgress(p => markUnitStep(p, activeCat.unit.id, "learn")); goBack(); }} />
+        )}
+        {screen === "path" && (
+          <PathScreen units={units} progress={progress} onStep={goUnitStep} />
         )}
         {screen === "game" && activeCat && activeGame && (
           <GameRouter
@@ -654,6 +861,10 @@ export default function App() {
       </div>
 
       {/* SETTINGS */}
+      {showProfiles && (
+        <ProfileSheet profiles={profiles} onSwitch={switchProfile} onAdd={addProfile} onDelete={removeProfile} onClose={() => setShowProfiles(false)} />
+      )}
+
       {showSettings && (
         <SettingsSheet
           soundOn={soundOn} setSoundOn={setSoundOn}
@@ -661,8 +872,22 @@ export default function App() {
           rate={rate} setRate={setRate}
           onResetProgress={() => { setProgress(ensureDaily({ ...EMPTY_PROGRESS })); setShowSettings(false); showToast("เริ่มใหม่แล้ว ✓"); }}
           onReport={() => { setShowSettings(false); goReport(); }}
+          realPics={realPics} setRealPics={setRealPics}
           onClose={() => setShowSettings(false)}
         />
+      )}
+
+      {/* UPDATE BANNER — มีเวอร์ชันใหม่ */}
+      {updateReg && (
+        <div style={{ position:"fixed",left:12,right:12,bottom:16,zIndex:8900,background:"#1f2937",color:"#fff",borderRadius:16,padding:"10px 12px 10px 16px",display:"flex",alignItems:"center",gap:10,boxShadow:"0 10px 30px rgba(0,0,0,0.3)",maxWidth:456,margin:"0 auto" }}>
+          <div style={{ flex:1,minWidth:0 }}>
+            <div style={{ fontWeight:800,fontSize:13 }}>🎁 มีเวอร์ชันใหม่ของแอป</div>
+            <div style={{ fontSize:11,opacity:0.8 }}>ตอนนี้ v{APP_VERSION} · แตะอัปเดตเพื่อโหลดของใหม่</div>
+          </div>
+          <button onClick={() => { try { updateReg.waiting?.postMessage("SKIP_WAITING"); } catch (_) {} setTimeout(() => window.location.reload(), 1500); }}
+            style={{ minHeight:44,padding:"0 14px",borderRadius:12,border:"none",background:"#10b981",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer" }}>อัปเดต</button>
+          <button onClick={() => setUpdateReg(null)} style={{ width:44,height:44,borderRadius:12,border:"none",background:"transparent",color:"#9ca3af",fontSize:18,cursor:"pointer" }}>✕</button>
+        </div>
       )}
 
       {/* TOAST */}
@@ -677,6 +902,7 @@ export default function App() {
         }}>{toast.msg}</div>
       )}
     </div>
+    </PicCtx.Provider>
   );
 }
 
@@ -711,7 +937,8 @@ function SoundUnlockScreen({ onUnlock }) {
         🔊 แตะเพื่อเริ่มเลย!
       </button>
       <p style={{ fontSize:11, color:"#9ca3af", marginTop:16 }}>
-        * แตะปุ่มนี้เพื่อเปิดใช้เสียงบนมือถือ
+        * แตะปุ่มนี้เพื่อเปิดใช้เสียงบนมือถือ<br/>
+        <span style={{ fontWeight:700,color:"#6b7280" }}>v{APP_VERSION}</span>{BUILD_TIME && <span> · build {BUILD_TIME}</span>}
       </p>
     </div>
   );
@@ -745,6 +972,7 @@ function Topbar({ screen, catLabel, onBack, onHome, soundOn, onToggleSound, onSe
         {screen==="stickers" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>สมุดสติกเกอร์</span>}
         {screen==="shop" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>ร้านค้า</span>}
         {screen==="report" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>รายงานผู้ปกครอง</span>}
+        {screen==="path" && <span style={{ fontWeight:700,fontSize:13,color:"#374151" }}>เส้นทางบทเรียน</span>}
       </div>
 
       {/* Right */}
@@ -769,10 +997,26 @@ const Btn = ({ onClick, children, style={} }) => (
 // ═══════════════════════════════════════════════════════
 // HOME SCREEN
 // ═══════════════════════════════════════════════════════
-function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, speak }) {
+function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, onPath, speak, units, profile, onProfiles, install }) {
+  const unitsDone = units.filter(u => unitDone(progress.path, u)).length;
+  const nextUnit = units.find(u => !unitDone(progress.path, u));
   return (
     <div style={{ padding:"14px 10px 40px",maxWidth:480,margin:"0 auto" }}>
-      <PetCard progress={progress} setProgress={setProgress} stickerCount={stickerCount} totalWords={words.length} onStickers={onStickers} onShop={onShop} speak={speak} />
+      <PetCard progress={progress} setProgress={setProgress} stickerCount={stickerCount} totalWords={words.length} onStickers={onStickers} onShop={onShop} speak={speak} profile={profile} onProfiles={onProfiles} />
+      {install && <InstallBanner deferred={install.evt} onInstall={install.onInstall} onDismiss={install.onDismiss} />}
+
+      {/* เส้นทางบทเรียน */}
+      {progress.pet && (
+        <button onClick={()=>{ sfx.tap(); onPath(); }}
+          style={{ width:"100%",minHeight:64,background:"linear-gradient(135deg,#10b981,#3b82f6)",color:"#fff",border:"none",borderRadius:16,padding:"10px 14px",marginBottom:14,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",boxShadow:"0 6px 18px rgba(16,185,129,0.3)" }}>
+          <span style={{ fontSize:28 }}>🗺️</span>
+          <div style={{ flex:1,minWidth:0 }}>
+            <div style={{ fontWeight:900,fontSize:15 }}>เส้นทางบทเรียน A1 → A2</div>
+            <div style={{ fontSize:11,opacity:0.9 }}>{nextUnit ? `ผ่านแล้ว ${unitsDone}/${units.length} บท · ต่อไป: บทที่ ${nextUnit.n} ${nextUnit.cat.thai}` : `ผ่านครบทุกบทแล้ว! 🎓`}</div>
+          </div>
+          <span style={{ fontSize:20,opacity:0.8 }}>›</span>
+        </button>
+      )}
       {progress.pet && <MissionsCard progress={progress} setProgress={setProgress} />}
 
       {missedCount > 0 && (
@@ -905,6 +1149,21 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
     showToast("ลบแล้ว ✓");
   };
 
+  const [translating, setTranslating] = useState(false);
+  // แปลอัตโนมัติด้วย MyMemory (ฟรี ไม่ต้องมี key) — เติมความหมายให้ ถ้าเน็ตไม่มีก็พิมพ์เองได้
+  const autoTranslate = async () => {
+    const q = draft.word.trim(); if (!q) return showToast("พิมพ์คำอังกฤษก่อน","warn");
+    setTranslating(true);
+    try {
+      const r = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(q.toLowerCase())}&langpair=en|th`);
+      const j = await r.json();
+      const t = (j?.responseData?.translatedText || "").trim();
+      if (t && !/^[a-z\s]+$/i.test(t)) { setDraft(d => ({ ...d, meaning: t })); showToast(`แปลว่า "${t}" ✓`); }
+      else showToast("แปลไม่ได้ ลองพิมพ์เอง","warn");
+    } catch (_) { showToast("ต่อเน็ตไม่ได้ พิมพ์ความหมายเองนะ","warn"); }
+    setTranslating(false);
+  };
+
   const saveNew = () => {
     if(!draft.word.trim()) return showToast("ใส่คำก่อน","warn");
     if(!draft.meaning.trim()) return showToast("ใส่ความหมายก่อน","warn");
@@ -943,9 +1202,13 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
             <input placeholder="คำ EN (เช่น APPLE)" value={draft.word}
               onChange={e=>setDraft({...draft,word:e.target.value.toUpperCase()})}
               style={inputStyle} />
-            <input placeholder="ความหมาย TH" value={draft.meaning}
-              onChange={e=>setDraft({...draft,meaning:e.target.value})}
-              style={inputStyle} />
+            <div style={{ display:"flex",gap:6 }}>
+              <input placeholder="ความหมาย TH" value={draft.meaning}
+                onChange={e=>setDraft({...draft,meaning:e.target.value})}
+                style={{ ...inputStyle,flex:1,minWidth:0 }} />
+              <button onClick={autoTranslate} disabled={translating} title="แปลอัตโนมัติ"
+                style={{ minWidth:44,minHeight:44,borderRadius:10,border:"none",background:"#ede9fe",color:"#5b21b6",fontSize:16,cursor:"pointer",flexShrink:0 }}>{translating?"…":"✨"}</button>
+            </div>
             <input placeholder="อีโมจิ 🍎" value={draft.emoji} maxLength={4}
               onChange={e=>setDraft({...draft,emoji:e.target.value})}
               style={{ ...inputStyle,textAlign:"center",fontSize:20 }} />
@@ -983,7 +1246,7 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
               {isEditing
                 ? <EditWordRow word={w} categories={categories} onSave={changes=>saveEdit(w.id,changes)} onCancel={()=>setEditingId(null)} />
                 : <div style={{ display:"flex",alignItems:"center",gap:10 }}>
-                    <span style={{ fontSize:28,flexShrink:0 }}>{w.emoji}</span>
+                    <Pic w={w} size={20} radius={10} style={{ flexShrink:0 }} />
                     <div style={{ flex:1,minWidth:0 }}>
                       <div style={{ fontWeight:800,fontSize:14,color:"#1f2937" }}>{w.word} {w.read && <span style={{ fontWeight:600,fontSize:12,color:"#7c3aed" }}>{w.read}</span>}</div>
                       <div style={{ fontSize:12,color:"#6b7280",display:"flex",alignItems:"center",gap:6,flexWrap:"wrap" }}>
@@ -1087,6 +1350,7 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
       if (cat.id === "review") next = bumpDaily(next, "review", 1);
       if (gameId === "speak") next = bumpDaily(next, "speak", 1);
       if (gameId === "sentence") next = bumpDaily(next, "sentence", 1);
+      if (cat.unit && stars >= 1) next = markUnitStep(next, cat.unit.id, gameId);
       setProgress(next);
       if (stars >= 2) sfx.win(); else if (stars === 1) sfx.coin(); else sfx.lose();
       setResult({ score, total, stars, coins, newStickers, label: opts.label, boss: !!opts.boss, cleared, levelUp: petLevel(totalCorrect) > lvBefore });
@@ -1096,8 +1360,9 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
   const replay = () => { correctRef.current = []; setResult(null); setRun(r => r + 1); };
   const p = { words, speak, speakAt, showToast, onBack, cat, track, key: run };
   let game = null;
-  if (gameId === "quiz")     game = <QuizGame {...p} pool={cat.id === "review" ? allWords : words} />;
-  if (gameId === "listen")   game = <ListenGame {...p} />;
+  const catPool = cat.unit ? allWords.filter(w => w.cat === cat.unit.cat.id) : words;
+  if (gameId === "quiz")     game = <QuizGame {...p} pool={cat.id === "review" ? allWords : catPool} />;
+  if (gameId === "listen")   game = <ListenGame {...p} pool={catPool} />;
   if (gameId === "speak")    game = <SpeakGame {...p} />;
   if (gameId === "sentence") game = <SentenceGame {...p} />;
   if (gameId === "spell")    game = <SpellGame {...p} />;
@@ -1200,7 +1465,47 @@ const GS = { // game styles
 
 function GameCard({ children }) { return <div style={GS.wrap}><div style={GS.card}>{children}</div></div>; }
 function Bar({ left, right }) { return <div style={GS.bar}><span>{left}</span><span>{right}</span></div>; }
-function Emoji({ e, size=72 }) { return <div style={{ textAlign:"center",fontSize:size,lineHeight:1,padding:"12px 0 6px" }}>{e}</div>; }
+// ── รูปจริง (Wikipedia) หรืออีโมจิ ──
+const PicCtx = createContext(true);   // เปิด/ปิดรูปจริงจากตั้งค่า
+function useWordImage(w) {
+  const on = useContext(PicCtx);
+  const title = on ? imageTitleOf(w) : null;
+  const [url, setUrl] = useState(() => (title ? cachedImageUrl(title) : ""));
+  useEffect(() => {
+    if (!title) { setUrl(""); return; }
+    const c = cachedImageUrl(title);
+    if (c !== undefined) { setUrl(c); return; }
+    let alive = true; setUrl(undefined);
+    fetchImageUrl(title).then(u => { if (alive) setUrl(u); });
+    return () => { alive = false; };
+  }, [title]);
+  return { url: url || "", title, loading: title && url === undefined };
+}
+// รูปคำศัพท์: มีรูปจริง → แสดงรูป (อีโมจิเล็กๆ มุมขวาล่าง) · ไม่มี/โหลดไม่ได้ → อีโมจิ
+function Pic({ w, size = 72, radius = 18, style = {} }) {
+  const { url } = useWordImage(w);
+  const [err, setErr] = useState(false);
+  useEffect(() => setErr(false), [url]);
+  if (!url || err) return <span style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
+  const box = size * 2.2;
+  return (
+    <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:"4/3",borderRadius:radius,overflow:"hidden",background:"#f3f4f6",boxShadow:"0 2px 10px rgba(0,0,0,0.12)",...style }}>
+      <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ width:"100%",height:"100%",objectFit:"cover",display:"block" }} />
+      {size >= 30 && <span style={{ position:"absolute",right:4,bottom:3,fontSize:Math.max(14, size*0.3),lineHeight:1,filter:"drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>{w.emoji}</span>}
+    </span>
+  );
+}
+// รูปเล็กสำหรับตัวเลือก 4 ช่อง / การ์ดจับคู่: เต็มช่อง
+function PicFill({ w, emojiSize = 40 }) {
+  const { url } = useWordImage(w);
+  const [err, setErr] = useState(false);
+  useEffect(() => setErr(false), [url]);
+  if (!url || err) return <span style={{ fontSize:emojiSize,lineHeight:1 }}>{w?.emoji}</span>;
+  return <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",borderRadius:"inherit" }} />;
+}
+function Emoji({ e, w, size=72 }) {
+  return <div style={{ textAlign:"center",lineHeight:1,padding:"12px 0 6px",display:"flex",justifyContent:"center" }}>{w ? <Pic w={w} size={size} /> : <span style={{ fontSize:size }}>{e}</span>}</div>;
+}
 function SndBtn({ onClick }) { return <button onClick={onClick} style={GS.soundBtn}>🔊 ฟัง EN+TH</button>; }
 function Pill({ onClick, disabled, bg="#6366f1", children }) {
   return <button onClick={onClick} disabled={disabled} style={{ background:disabled?"#e5e7eb":bg,color:disabled?"#9ca3af":"#fff",borderRadius:12,padding:"10px 16px",minHeight:44,fontWeight:700,fontSize:14,border:"none",cursor:disabled?"not-allowed":"pointer" }}>{children}</button>;
@@ -1241,7 +1546,7 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
     <GameCard>
       <Bar left={`${idx+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <Emoji e={cur.emoji} />
+        <Emoji e={cur.emoji} w={cur} />
         <SndBtn onClick={()=>speak(cur.word,cur.meaning)} />
         <p style={{ textAlign:"center",fontSize:12,color:"#6b7280",margin:"0 0 10px",minHeight:18 }}>{lock ? <b style={{ color:"#7c3aed",fontSize:14 }}>{cur.word} · {cur.read} · {cur.meaning}</b> : "เลือกคำที่ตรงกับรูป"}</p>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
@@ -1305,7 +1610,7 @@ function SpellGame({ words, speak, track, onBack }) {
     <GameCard>
       <Bar left={`${idx+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <Emoji e={cur.emoji} size={64} />
+        <Emoji e={cur.emoji} w={cur} size={56} />
         <p style={{ textAlign:"center",fontWeight:600,fontSize:14,color:"#374151",margin:"0 0 2px" }}>{cur.meaning}</p>
         {cur.read && <p style={{ textAlign:"center",fontWeight:700,fontSize:13,color:"#7c3aed",margin:"0 0 8px" }}>{cur.read}</p>}
         <SndBtn onClick={()=>speak(cur.word,cur.meaning)} />
@@ -1460,7 +1765,7 @@ function SpeedGame({ words, speak, showToast, track }) {
             <Pill onClick={()=>{setTime(T);setScore(0);scoreRef.current=0;setActive(true);next();}} bg="#f59e0b">▶ เริ่ม!</Pill>
           </div>
           :<div>
-            <Emoji e={cur?.emoji} size={68} />
+            <Emoji e={cur?.emoji} w={cur} size={60} />
             <SndBtn onClick={()=>cur&&speak(cur.word,cur.meaning)} />
             <div style={{height:7,background:"#f3f4f6",borderRadius:999,margin:"0 0 10px",overflow:"hidden"}}>
               <div style={{height:"100%",background:time>10?"#f59e0b":"#ef4444",width:`${(time/T)*100}%`,transition:"width 1s linear",borderRadius:999}}/>
@@ -1570,8 +1875,8 @@ function MatchGame({ words, speak, showToast, track, onBack }) {
               else{wrongs.current+=1;track.wrong(rw.find(x=>x.id===sel));showToast("ลองอีก 💡","warn");}
               setSel(null);
             }} disabled={pu}
-              style={{width:H*1.3,height:H,borderRadius:12,background:pu?"#d1fae5":"#f0fdf4",border:`2px solid ${pu?"#6ee7b7":"#86efac"}`,fontSize:28,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,cursor:"pointer"}}>
-              {p.emoji}
+              style={{width:H*1.5,height:H,borderRadius:12,background:pu?"#d1fae5":"#f0fdf4",border:`2px solid ${pu?"#6ee7b7":"#86efac"}`,fontSize:28,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,cursor:"pointer",position:"relative",overflow:"hidden",padding:0,opacity:pu?0.55:1}}>
+              <PicFill w={p} emojiSize={28} />
             </button>}
           </div>;
         })}
@@ -1807,7 +2112,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
       else { setIdx(i=>i+1); setPicked(null); setLock(false); }
     },950);
   };
-  const prompt = q.mode==="pic" ? <Emoji e={q.w.emoji} />
+  const prompt = q.mode==="pic" ? <Emoji e={q.w.emoji} w={q.w} />
     : q.mode==="th" ? <div style={{ textAlign:"center",padding:"18px 0 10px" }}><div style={{ fontSize:12,color:"#9ca3af" }}>คำนี้ภาษาอังกฤษคือ?</div><div style={{ fontSize:30,fontWeight:900,color:"#1f2937" }}>{q.w.meaning}</div></div>
     : <div style={{ textAlign:"center",padding:"18px 0 10px" }}><div style={{ fontSize:12,color:"#9ca3af" }}>รูปไหนคือ</div><div style={{ fontSize:30,fontWeight:900,color:"#1f2937",letterSpacing:1 }}>{q.w.word}</div></div>;
   return (
@@ -1826,8 +2131,8 @@ function BossGame({ words, speak, track, cat, onBack }) {
             if(sr&&ip&&!ic){bg="#fee2e2";bo="#fca5a5";tc="#991b1b";}
             if(lock&&!ip&&!ic){bg="#f9fafb";bo="#e5e7eb";tc="#9ca3af";}
             return <button key={c.id} onClick={()=>pick(c)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:12,padding:"12px 6px",minHeight:56,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer" }}>
-              {q.mode==="rev"?c.emoji:c.word}
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:12,padding:q.mode==="rev"?0:"12px 6px",minHeight:q.mode==="rev"?84:56,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
+              {q.mode==="rev"?<PicFill w={c} emojiSize={34} />:c.word}
             </button>;
           })}
         </div>
@@ -1840,12 +2145,13 @@ function BossGame({ words, speak, track, cat, onBack }) {
 // ═══════════════════════════════════════════════════════
 // PET CARD (หน้าแรก) — เพื่อนคู่หู / เหรียญ / streak / สติกเกอร์
 // ═══════════════════════════════════════════════════════
-function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, onShop, speak }) {
+function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, onShop, speak, profile, onProfiles }) {
   const pet = getPet(progress);
   if (!pet) {
     return (
       <div style={{ background:"linear-gradient(135deg,#fdf2f8,#eef2ff)",borderRadius:20,padding:16,marginBottom:14,border:"2px solid #e9d5ff",textAlign:"center" }}>
-        <div style={{ fontWeight:900,fontSize:16,color:"#1f2937" }}>เลือกเพื่อนคู่หูของหนู 🥚</div>
+        {profile && <div style={{ textAlign:"right",marginBottom:4 }}><button onClick={() => { sfx.tap(); onProfiles(); }} style={{ minHeight:44,display:"inline-flex",alignItems:"center",gap:4,background:"rgba(255,255,255,0.85)",border:"none",borderRadius:999,padding:"0 10px",fontSize:12,fontWeight:800,color:"#374151",cursor:"pointer" }}>{profile.avatar} {profile.name} ▾</button></div>}
+        <div style={{ fontWeight:900,fontSize:16,color:"#1f2937" }}>เลือกเพื่อนคู่หูของ{profile?.name || "หนู"} 🥚</div>
         <div style={{ fontSize:12,color:"#6b7280",margin:"2px 0 12px" }}>ยิ่งตอบถูก เพื่อนยิ่งโต!</div>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
           {PETS.map(p => (
@@ -1872,9 +2178,10 @@ function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, 
           <PetAvatar pet={pet} hat={progress.hat} size={pet.stage===0?38:pet.stage===1?42:pet.stage===2?46:50} bounce />
         </button>
         <div style={{ flex:1,minWidth:0 }}>
-          <div style={{ display:"flex",alignItems:"baseline",gap:6 }}>
+          <div style={{ display:"flex",alignItems:"center",gap:6 }}>
             <span style={{ fontWeight:900,fontSize:17,color:dark?"#fff":"#1f2937" }}>{pet.name}</span>
             <span style={{ fontSize:12,fontWeight:800,color:dark?"#c4b5fd":"#7c3aed" }}>Lv.{pet.level}</span>
+            {profile && <button onClick={() => { sfx.tap(); onProfiles(); }} style={{ marginLeft:"auto",minHeight:44,display:"inline-flex",alignItems:"center",gap:4,background:"rgba(255,255,255,0.85)",border:"none",borderRadius:999,padding:"0 10px",fontSize:12,fontWeight:800,color:"#374151",cursor:"pointer" }}>{profile.avatar} {profile.name} ▾</button>}
           </div>
           <div style={{ fontSize:11,color:dark?"#e9d5ff":"#6b7280",marginBottom:5 }}>{line}</div>
           <div style={{ height:8,background:"rgba(255,255,255,0.9)",borderRadius:999,overflow:"hidden" }}>
@@ -1946,14 +2253,31 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
 // ═══════════════════════════════════════════════════════
 // SETTINGS SHEET
 // ═══════════════════════════════════════════════════════
-function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onClose }) {
+function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onClose, realPics, setRealPics }) {
+  const [vr, setVr] = useState(() => voiceReport());
+  useEffect(() => { loadVoices(); setVr(voiceReport()); const t = setTimeout(() => { loadVoices(); setVr(voiceReport()); }, 800); return () => clearTimeout(t); }, []);
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
   return (
     <div style={{ position:"fixed",inset:0,zIndex:200,display:"flex",flexDirection:"column",justifyContent:"flex-end",background:"rgba(0,0,0,0.4)" }} onClick={onClose}>
       <div onClick={e=>e.stopPropagation()} style={{ background:"#fff",borderRadius:"22px 22px 0 0",padding:"20px 20px 36px",maxWidth:480,width:"100%",margin:"0 auto",maxHeight:"90dvh",overflowY:"auto" }}>
         <div style={{ width:38,height:4,background:"#e5e7eb",borderRadius:999,margin:"0 auto 18px" }}/>
-        <h3 style={{ fontWeight:800,fontSize:17,color:"#1f2937",margin:"0 0 18px" }}>⚙️ ตั้งค่าเสียง</h3>
+        <h3 style={{ fontWeight:800,fontSize:17,color:"#1f2937",margin:"0 0 4px" }}>⚙️ ตั้งค่า</h3>
+        <div style={{ fontSize:11,color:"#9ca3af",marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
         <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
+        <TRow label="รูปภาพจริง" desc="ดึงรูปจาก Wikipedia (ต้องมีเน็ตครั้งแรก) · ปิด = ใช้อีโมจิ" on={realPics} set={setRealPics} />
+        <div style={{ background:vr.th.length?"#ecfdf5":"#fff7ed",border:`1px solid ${vr.th.length?"#a7f3d0":"#fdba74"}`,borderRadius:14,padding:"10px 14px",marginBottom:10,fontSize:12,color:"#374151" }}>
+          <div style={{ fontWeight:800,marginBottom:2 }}>{vr.th.length ? `✅ เสียงไทยพร้อมใช้: ${vr.thPick}` : "⚠️ ยังไม่พบเสียงภาษาไทยในเครื่องนี้"}</div>
+          {vr.th.length
+            ? <div style={{ color:"#6b7280" }}>พบเสียงทั้งหมด {vr.total} เสียง (อังกฤษ {vr.en}, ไทย {vr.th.length}) · ถ้ายังไม่ได้ยินไทย ลองกด "ทดสอบเสียง" ด้านล่าง</div>
+            : <div style={{ color:"#9a3412",lineHeight:1.5 }}>
+                แอปจะอ่านได้แค่อังกฤษจนกว่าจะติดตั้งเสียงไทย:<br/>
+                {ios
+                  ? <>iPhone/iPad: <b>การตั้งค่า → การช่วยการเข้าถึง → เนื้อหาที่พูด → เสียง → ไทย</b> → ดาวน์โหลดเสียง (เช่น Kanya) แล้วเปิดแอปใหม่</>
+                  : <>Android: <b>การตั้งค่า → ระบบ → ภาษาและการป้อนข้อมูล → การอ่านออกเสียง (Text-to-speech) → Speech Services by Google → ติดตั้งข้อมูลเสียง → ไทย</b> แล้วเปิดแอปใหม่</>}
+                {vr.total === 0 && <><br/>(ยังโหลดรายชื่อเสียงไม่ขึ้น ลองกด "ทดสอบเสียง" 1 ครั้งแล้วเปิดตั้งค่าใหม่)</>}
+              </div>}
+        </div>
         <div style={{ background:"#f9fafb",borderRadius:14,padding:"12px 14px",marginBottom:10 }}>
           <div style={{ display:"flex",justifyContent:"space-between",marginBottom:6 }}>
             <div style={{ fontWeight:700,fontSize:14,color:"#1f2937" }}>ความเร็วเสียง</div>
@@ -2055,20 +2379,21 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
         style={{ width:"100%",minHeight:300,borderRadius:24,border:`3px solid ${cat.color}50`,background:flip?`${cat.color}12`:"#fff",boxShadow:"0 8px 28px rgba(0,0,0,0.1)",cursor:"pointer",padding:20,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,transition:"background .25s" }}>
         {!flip ? (
           <>
-            <span style={{ fontSize:84,lineHeight:1 }}>{w.emoji}</span>
+            <Pic w={w} size={84} radius={20} />
             <span style={{ fontSize:34,fontWeight:900,color:"#1f2937",letterSpacing:1 }}>{w.word}</span>
             {w.read && <span style={{ fontSize:18,fontWeight:700,color:"#7c3aed" }}>{w.read}</span>}
             <span style={{ fontSize:11,color:"#9ca3af",marginTop:8 }}>แตะการ์ดเพื่อดูความหมาย</span>
           </>
         ) : (
           <>
-            <span style={{ fontSize:40,lineHeight:1 }}>{w.emoji}</span>
+            <Pic w={w} size={44} radius={14} />
             <span style={{ fontSize:30,fontWeight:900,color:"#1f2937" }}>{w.meaning}</span>
             {w.read && <span style={{ fontSize:14,color:"#7c3aed",fontWeight:700 }}>{w.word} · {w.read}</span>}
             {w.sen && <div style={{ marginTop:10,background:"#fff",borderRadius:14,padding:"10px 14px",width:"100%" }}>
               <div style={{ fontSize:16,fontWeight:700,color:"#1f2937" }}>{w.sen}</div>
               <div style={{ fontSize:13,color:"#6b7280",marginTop:2 }}>{w.senTh}</div>
             </div>}
+            {imageTitleOf(w) && <a href={wikiPageUrl(imageTitleOf(w))} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{ fontSize:10,color:"#9ca3af",marginTop:6 }}>รูป: Wikipedia — {imageTitleOf(w)} ↗</a>}
           </>
         )}
       </button>
@@ -2089,16 +2414,17 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
 // ═══════════════════════════════════════════════════════
 // LISTEN — ฟังอย่างเดียว (ไม่มีรูป) แล้วเลือกรูป · 10 ข้อ
 // ═══════════════════════════════════════════════════════
-function ListenGame({ words, speakAt, track, onBack }) {
+function ListenGame({ words, speakAt, track, onBack, pool }) {
   const qs = useMemo(() => shuffle(words).slice(0, 10), [words]);
+  const src = pool && pool.length >= 4 ? pool : words;
   const [idx, setIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [picked, setPicked] = useState(null);
   const [lock, setLock] = useState(false);
   const [played, setPlayed] = useState(false);
   const cur = qs[idx];
-  const choices = useMemo(() => cur ? shuffle([cur, ...shuffle(words.filter(w => w.id !== cur.id)).slice(0, 3)]) : [], [idx, cur?.id, words]);
-  if (!cur || words.length < 4) return <NoWords onBack={onBack} />;
+  const choices = useMemo(() => cur ? shuffle([cur, ...shuffle(src.filter(w => w.id !== cur.id)).slice(0, 3)]) : [], [idx, cur?.id, src]);
+  if (!cur || src.length < 4) return <NoWords onBack={onBack} />;
   const pick = c => {
     if (lock || !played) return;
     setLock(true); setPicked(c.id);
@@ -2126,7 +2452,7 @@ function ListenGame({ words, speakAt, track, onBack }) {
             if (sr && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; }
             if (sr && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; }
             return <button key={c.id} onClick={() => pick(c)} disabled={lock || !played}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:14,minHeight:84,fontSize:44,cursor:"pointer",opacity:played?1:0.5 }}>{c.emoji}</button>;
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:14,minHeight:96,fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
           })}
         </div>
       </div>
@@ -2145,6 +2471,7 @@ function SpeakGame({ words, speak, track, onBack }) {
   const [st, setSt] = useState("idle");   // idle | listening | ok | no | err
   const [heard, setHeard] = useState("");
   const [gotIt, setGotIt] = useState(false);
+  const [pct, setPct] = useState(0);
   const cur = qs[idx];
   if (!cur) return <NoWords onBack={onBack} />;
   if (!SR) return (
@@ -2162,8 +2489,10 @@ function SpeakGame({ words, speak, track, onBack }) {
       r.onresult = e => {
         const alts = [...e.results[0]].map(a => a.transcript.toLowerCase().trim().replace(/[^a-z ]/g, ""));
         setHeard(alts[0] || "");
-        const ok = alts.some(a => a === target || a.includes(target) || (target.includes(a) && a.length >= Math.max(3, target.length - 1)));
-        if (ok) { setSt("ok"); if (!gotIt) { setGotIt(true); setScore(s => s + 1); track.correct(cur); } else sfx.ok(); }
+        // คะแนนความใกล้เคียง: ตรงตัว/มีคำอยู่ในประโยค = 100% · ไม่งั้นวัดจากตัวสะกด (ผ่านที่ ≥ 70%)
+        const best = Math.max(...alts.map(a => (a === target || a.split(" ").includes(target)) ? 1 : Math.max(similarity(a, target), ...a.split(" ").map(x => similarity(x, target)))));
+        setPct(Math.round(best * 100));
+        if (best >= 0.7) { setSt("ok"); if (!gotIt) { setGotIt(true); setScore(s => s + 1); track.correct(cur); } else sfx.ok(); }
         else { setSt("no"); track.wrong(cur); }
       };
       r.onerror = ev => setSt(ev?.error === "not-allowed" ? "err" : "no");
@@ -2172,7 +2501,7 @@ function SpeakGame({ words, speak, track, onBack }) {
     } catch (_) { setSt("err"); }
   };
   const next = () => {
-    if (idx + 1 < qs.length) { setIdx(i => i + 1); setSt("idle"); setHeard(""); setGotIt(false); }
+    if (idx + 1 < qs.length) { setIdx(i => i + 1); setSt("idle"); setHeard(""); setGotIt(false); setPct(0); }
     else track.finish(score, qs.length);
   };
   const micBg = st === "listening" ? "#ef4444" : st === "ok" ? "#10b981" : "linear-gradient(135deg,#f59e0b,#ef4444)";
@@ -2180,7 +2509,7 @@ function SpeakGame({ words, speak, track, onBack }) {
     <GameCard>
       <Bar left={`🎤 ${idx+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <Emoji e={cur.emoji} size={60} />
+        <Emoji e={cur.emoji} w={cur} size={52} />
         <div style={{ textAlign:"center" }}>
           <div style={{ fontSize:30,fontWeight:900,color:"#1f2937",letterSpacing:1 }}>{cur.word}</div>
           <div style={{ fontSize:16,fontWeight:700,color:"#7c3aed" }}>{cur.read}</div>
@@ -2194,8 +2523,8 @@ function SpeakGame({ words, speak, track, onBack }) {
         <p style={{ textAlign:"center",fontSize:13,fontWeight:700,margin:"0 0 6px",color:st==="ok"?"#059669":st==="no"?"#dc2626":"#374151" }}>
           {st === "idle" && "แตะไมค์ แล้วพูดคำนี้"}
           {st === "listening" && "กำลังฟัง... พูดเลย!"}
-          {st === "ok" && "เยี่ยม! ออกเสียงถูกต้อง 🎉"}
-          {st === "no" && (heard ? `ได้ยินว่า "${heard}" ลองอีกครั้งนะ` : "ไม่ได้ยินเสียง ลองพูดดังๆ อีกที")}
+          {st === "ok" && (pct >= 95 ? "เยี่ยม! ชัดเจนมาก 🎉 100%" : `ดีมาก! ใกล้เคียง ${pct}% 👏`)}
+          {st === "no" && (heard ? `ได้ยินว่า "${heard}" (${pct}%) ลองอีกครั้งนะ` : "ไม่ได้ยินเสียง ลองพูดดังๆ อีกที")}
           {st === "err" && "ต้องอนุญาตให้ใช้ไมโครโฟนก่อนนะ"}
         </p>
         <div style={{ display:"flex",gap:8,justifyContent:"center" }}>
@@ -2399,6 +2728,145 @@ function ReportScreen({ words, categories, progress }) {
         ))}
       </div>
       <div style={{ fontSize:11,color:"#9ca3af",textAlign:"center",marginTop:12 }}>"จำได้แม่น" = ตอบถูกต่อเนื่องจนระบบเว้นระยะทบทวน ≥ 7 วัน</div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════
+// PROFILE SHEET — สลับ/เพิ่ม/ลบโปรไฟล์ (พี่น้องใช้เครื่องเดียวกัน)
+// ═══════════════════════════════════════════════════════
+function ProfileSheet({ profiles, onSwitch, onAdd, onDelete, onClose }) {
+  const [adding, setAdding] = useState(false);
+  const [name, setName] = useState("");
+  const [avatar, setAvatar] = useState(AVATARS[1]);
+  return (
+    <div style={{ position:"fixed",inset:0,zIndex:200,display:"flex",flexDirection:"column",justifyContent:"flex-end",background:"rgba(0,0,0,0.4)" }} onClick={onClose}>
+      <div onClick={e=>e.stopPropagation()} style={{ background:"#fff",borderRadius:"22px 22px 0 0",padding:"20px 20px 36px",maxWidth:480,width:"100%",margin:"0 auto",maxHeight:"90dvh",overflowY:"auto" }}>
+        <div style={{ width:38,height:4,background:"#e5e7eb",borderRadius:999,margin:"0 auto 18px" }}/>
+        <h3 style={{ fontWeight:800,fontSize:17,color:"#1f2937",margin:"0 0 6px" }}>👤 ใครกำลังเล่น?</h3>
+        <p style={{ fontSize:12,color:"#6b7280",margin:"0 0 14px" }}>แต่ละคนมีดาว เหรียญ สติกเกอร์ เพื่อนคู่หู แยกกัน · คำศัพท์ใช้ร่วมกัน</p>
+        {profiles.list.map(pf => {
+          const on = pf.id === profiles.current;
+          return (
+            <div key={pf.id} style={{ display:"flex",alignItems:"center",gap:10,padding:"8px 10px",borderRadius:14,marginBottom:8,background:on?"#ede9fe":"#f9fafb",border:`2px solid ${on?"#8b5cf6":"transparent"}` }}>
+              <button onClick={() => { sfx.tap(); onSwitch(pf.id); }} style={{ flex:1,display:"flex",alignItems:"center",gap:10,background:"none",border:"none",cursor:"pointer",minHeight:44,textAlign:"left",padding:0 }}>
+                <span style={{ fontSize:30 }}>{pf.avatar}</span>
+                <span style={{ fontWeight:800,fontSize:15,color:"#1f2937" }}>{pf.name}</span>
+                {on && <span style={{ fontSize:11,fontWeight:800,color:"#7c3aed",background:"#fff",padding:"2px 8px",borderRadius:999 }}>กำลังเล่น</span>}
+              </button>
+              {profiles.list.length > 1 && (
+                <button onClick={() => { if (window.confirm(`ลบโปรไฟล์ "${pf.name}"?\\nดาว เหรียญ สติกเกอร์ของคนนี้จะหายทั้งหมด`)) onDelete(pf.id); }}
+                  style={{ width:44,height:44,borderRadius:12,background:"#fee2e2",border:"none",cursor:"pointer",fontSize:16 }}>🗑️</button>
+              )}
+            </div>
+          );
+        })}
+        {!adding ? (
+          <button onClick={() => { sfx.tap(); setAdding(true); }} style={{ width:"100%",minHeight:48,borderRadius:14,border:"2px dashed #c4b5fd",background:"#fff",color:"#7c3aed",fontWeight:800,fontSize:14,cursor:"pointer",marginTop:4 }}>＋ เพิ่มคนใหม่</button>
+        ) : (
+          <div style={{ background:"#f5f3ff",borderRadius:16,padding:12,marginTop:4 }}>
+            <input value={name} onChange={e => setName(e.target.value)} placeholder="ชื่อ (เช่น น้องมีนา)" maxLength={12} style={{ ...inputStyle,marginBottom:8 }} />
+            <div style={{ display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:6,marginBottom:10 }}>
+              {AVATARS.map(a => <button key={a} onClick={() => { sfx.tap(); setAvatar(a); }} style={{ minHeight:48,borderRadius:12,fontSize:26,border:`2px solid ${avatar===a?"#8b5cf6":"#e5e7eb"}`,background:avatar===a?"#ede9fe":"#fff",cursor:"pointer" }}>{a}</button>)}
+            </div>
+            <div style={{ display:"flex",gap:8 }}>
+              <button onClick={() => { if (!name.trim()) return; sfx.coin(); onAdd(name.trim(), avatar); setAdding(false); setName(""); }} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",background:"#7c3aed",color:"#fff",fontWeight:800,fontSize:14,cursor:"pointer" }}>สร้าง ✓</button>
+              <button onClick={() => setAdding(false)} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",background:"#fff",color:"#374151",fontWeight:700,fontSize:14,cursor:"pointer" }}>ยกเลิก</button>
+            </div>
+          </div>
+        )}
+        <button onClick={onClose} style={{ width:"100%",minHeight:44,marginTop:12,borderRadius:12,background:"#f3f4f6",color:"#374151",fontWeight:700,fontSize:14,border:"none",cursor:"pointer" }}>✓ เสร็จสิ้น</button>
+      </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════
+// LEARNING PATH — แผนที่บทเรียน A1 → A2 ปลดล็อกทีละบท
+// ═══════════════════════════════════════════════════════
+function PathScreen({ units, progress, onStep }) {
+  const path = progress.path || {};
+  const firstOpen = units.findIndex(u => !unitDone(path, u));
+  const [openId, setOpenId] = useState(firstOpen >= 0 ? units[firstOpen].id : units[0]?.id);
+  const doneCount = units.filter(u => unitDone(path, u)).length;
+  const LV = { A1: ["A1 · เริ่มต้น", "#10b981"], "A1+": ["A1+ · ต่อยอด", "#3b82f6"], A2: ["A2 · เก่งแล้ว", "#8b5cf6"] };
+  const STEP = { learn: ["📖", "เรียนการ์ด"], quiz: ["🏆", "ทำแบบทดสอบ"], listen: ["👂", "ฟังแล้วเลือก"] };
+  return (
+    <div style={{ padding:"14px 12px 60px",maxWidth:480,margin:"0 auto" }}>
+      <div style={{ background:"linear-gradient(135deg,#10b981,#3b82f6)",borderRadius:20,padding:16,color:"#fff",marginBottom:16 }}>
+        <div style={{ fontWeight:900,fontSize:20 }}>🗺️ เส้นทางบทเรียน</div>
+        <div style={{ fontSize:13,opacity:0.9 }}>ผ่านแล้ว {doneCount}/{units.length} บท · บทละ 3 ขั้น เรียน → ทดสอบ → ฟัง</div>
+        <div style={{ height:8,background:"rgba(255,255,255,0.3)",borderRadius:999,marginTop:8,overflow:"hidden" }}><div style={{ height:"100%",width:`${units.length?doneCount/units.length*100:0}%`,background:"#fff",borderRadius:999 }} /></div>
+      </div>
+      {units.map((u, i) => {
+        const done = unitDone(path, u);
+        const unlocked = i === 0 || unitDone(path, units[i - 1]);
+        const steps = unitSteps(path, u);
+        const open = openId === u.id;
+        const showLv = i === 0 || units[i - 1].level !== u.level;
+        const side = i % 2 === 0 ? "flex-start" : "flex-end";
+        return (
+          <div key={u.id}>
+            {showLv && <div style={{ textAlign:"center",margin:"8px 0 12px" }}><span style={{ background:LV[u.level][1],color:"#fff",fontWeight:900,fontSize:12,padding:"4px 14px",borderRadius:999 }}>{LV[u.level][0]}</span></div>}
+            <div style={{ display:"flex",justifyContent:open?"center":side,padding:"0 24px",marginBottom:10 }}>
+              {!open ? (
+                <button onClick={() => { if (!unlocked) { sfx.bad(); return; } sfx.tap(); setOpenId(u.id); }}
+                  style={{ width:84,height:84,borderRadius:42,border:"none",cursor:unlocked?"pointer":"not-allowed",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:0,
+                    background:done?"#10b981":unlocked?u.cat.color:"#e5e7eb",color:"#fff",boxShadow:unlocked&&!done?`0 8px 20px ${u.cat.color}66`:"none",animation:unlocked&&!done?"vpBounce 1.6s infinite":"none" }}>
+                  <span style={{ fontSize:30 }}>{done ? "✓" : unlocked ? u.cat.emoji : "🔒"}</span>
+                  <span style={{ fontSize:10,fontWeight:800,opacity:0.95 }}>บท {u.n}</span>
+                </button>
+              ) : (
+                <div style={{ width:"100%",background:"#fff",borderRadius:20,padding:14,border:`2px solid ${u.cat.color}60`,boxShadow:"0 8px 24px rgba(0,0,0,0.08)" }}>
+                  <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:10 }}>
+                    <span style={{ fontSize:34 }}>{u.cat.emoji}</span>
+                    <div style={{ flex:1 }}>
+                      <div style={{ fontWeight:900,fontSize:16,color:"#1f2937" }}>บทที่ {u.n} · {u.cat.thai}</div>
+                      <div style={{ fontSize:11,color:"#6b7280" }}>{u.words.length} คำ: {u.words.slice(0,5).map(w=>w.word).join(", ")}{u.words.length>5?"…":""}</div>
+                    </div>
+                    <span style={{ fontSize:12,fontWeight:800,color:done?"#059669":"#9ca3af" }}>{steps}/3</span>
+                  </div>
+                  {UNIT_STEPS.map((s, k) => {
+                    const sd = !!path[u.id]?.[s];
+                    const prevDone = k === 0 || !!path[u.id]?.[UNIT_STEPS[k - 1]];
+                    return (
+                      <button key={s} onClick={() => { if (!unlocked || !prevDone) { sfx.bad(); return; } sfx.tap(); onStep(u, s); }}
+                        style={{ width:"100%",minHeight:52,borderRadius:14,marginBottom:6,border:"none",cursor:"pointer",display:"flex",alignItems:"center",gap:10,padding:"0 12px",textAlign:"left",
+                          background:sd?"#d1fae5":prevDone&&unlocked?"#f5f3ff":"#f3f4f6",color:sd?"#065f46":prevDone&&unlocked?"#4c1d95":"#9ca3af" }}>
+                        <span style={{ fontSize:22 }}>{sd ? "✅" : prevDone && unlocked ? STEP[s][0] : "🔒"}</span>
+                        <span style={{ flex:1,fontWeight:800,fontSize:14 }}>{k+1}. {STEP[s][1]}</span>
+                        <span style={{ fontSize:18,opacity:0.5 }}>›</span>
+                      </button>
+                    );
+                  })}
+                  {done && <div style={{ textAlign:"center",fontSize:12,color:"#059669",fontWeight:800,marginTop:4 }}>🎉 ผ่านบทนี้แล้ว เล่นซ้ำได้</div>}
+                </div>
+              )}
+            </div>
+            {i < units.length - 1 && !open && <div style={{ textAlign:"center",color:"#d1d5db",fontSize:18,lineHeight:1,marginBottom:6 }}>⋮</div>}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════
+// INSTALL BANNER — ติดตั้งเป็นแอป (PWA) · Android ใช้ prompt · iPhone บอกวิธี
+// ═══════════════════════════════════════════════════════
+function InstallBanner({ deferred, onInstall, onDismiss }) {
+  const standalone = typeof window !== "undefined" && (window.matchMedia?.("(display-mode: standalone)").matches || window.navigator.standalone);
+  const ios = typeof navigator !== "undefined" && /iphone|ipad|ipod/i.test(navigator.userAgent);
+  if (standalone || (!deferred && !ios)) return null;
+  return (
+    <div style={{ background:"#eff6ff",border:"2px solid #bfdbfe",borderRadius:16,padding:"10px 12px",marginBottom:14,display:"flex",alignItems:"center",gap:10 }}>
+      <span style={{ fontSize:28 }}>📲</span>
+      <div style={{ flex:1,minWidth:0 }}>
+        <div style={{ fontWeight:800,fontSize:13,color:"#1e40af" }}>ติดตั้งลงหน้าจอมือถือ เล่นออฟไลน์ได้</div>
+        <div style={{ fontSize:11,color:"#3b82f6" }}>{deferred ? "เปิดเร็วเหมือนแอป ไม่ต้องพิมพ์ลิงก์" : "Safari: แตะปุ่มแชร์ ⬆️ แล้วเลือก \"เพิ่มไปยังหน้าจอโฮม\""}</div>
+      </div>
+      {deferred && <button onClick={onInstall} style={{ minHeight:44,padding:"0 14px",borderRadius:12,border:"none",background:"#2563eb",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer" }}>ติดตั้ง</button>}
+      <button onClick={onDismiss} style={{ width:44,height:44,borderRadius:12,border:"none",background:"transparent",color:"#93c5fd",fontSize:20,cursor:"pointer" }}>✕</button>
     </div>
   );
 }

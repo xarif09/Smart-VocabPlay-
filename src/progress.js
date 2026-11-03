@@ -20,13 +20,31 @@ export const EMPTY_PROGRESS = {
   hat: null,           // itemId หมวกที่ใส่อยู่
   bg: null,            // itemId พื้นหลังการ์ดเพื่อน
   learned: {},         // { wordId: true } เปิดการ์ดเรียนแล้ว
+  path: {},            // { unitId: { learn:true, quiz:true, listen:true } } เส้นทางบทเรียน
 };
+
+// ═══════════════════════════════════════════════════════
+// PROFILES — หลายคนใช้เครื่องเดียวกัน · โปรไฟล์แรก (p1) ใช้ key เดิม ข้อมูลเก่าไม่หาย
+// ═══════════════════════════════════════════════════════
+const PKEY = "smart-vocabplay:profiles:v1";
+export const AVATARS = ["🧒", "👧", "👦", "👶", "🧑", "🐵", "🦊", "🐼", "🦄", "🐯"];
+const DEFAULT_PROFILES = { list: [{ id: "p1", name: "หนู", avatar: "🧒" }], current: "p1" };
+export function loadProfiles() {
+  try {
+    const raw = window.localStorage.getItem(PKEY);
+    if (raw) { const d = JSON.parse(raw); if (d && Array.isArray(d.list) && d.list.length && d.list.some(x => x.id === d.current)) return d; }
+  } catch (_) {}
+  return { ...DEFAULT_PROFILES, list: [...DEFAULT_PROFILES.list] };
+}
+export function saveProfiles(p) { try { window.localStorage.setItem(PKEY, JSON.stringify(p)); } catch (_) {} }
+const progKey = id => (!id || id === "p1" ? KEY : `${KEY}:${id}`);
+export function deleteProgress(id) { try { window.localStorage.removeItem(progKey(id)); } catch (_) {} }
 
 export const STICKER_NEED = 3;
 
-export function loadProgress() {
+export function loadProgress(profileId = "p1") {
   try {
-    const raw = window.localStorage.getItem(KEY);
+    const raw = window.localStorage.getItem(progKey(profileId));
     if (!raw) return { ...EMPTY_PROGRESS };
     const d = JSON.parse(raw);
     if (!d || typeof d !== "object") return { ...EMPTY_PROGRESS };
@@ -36,8 +54,8 @@ export function loadProgress() {
   }
 }
 
-export function saveProgress(p) {
-  try { window.localStorage.setItem(KEY, JSON.stringify(p)); } catch (_) {}
+export function saveProgress(p, profileId = "p1") {
+  try { window.localStorage.setItem(progKey(profileId), JSON.stringify(p)); } catch (_) {}
 }
 
 const fmt = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -146,3 +164,38 @@ export const SHOP_ITEMS = [
   { id: "bgCandy", type: "bg",    emoji: "🍭", name: "ลูกกวาด",     cost: 150, css: "linear-gradient(135deg,#fce7f3,#fbcfe8,#fef3c7)" },
   { id: "bgSpace", type: "bg",    emoji: "🌌", name: "อวกาศ",       cost: 250, css: "linear-gradient(135deg,#1e1b4b,#4c1d95)" },
 ];
+
+// ═══════════════════════════════════════════════════════
+// LEARNING PATH — เส้นทางบทเรียน (แบบ Duolingo) บทละ ~8 คำ · 3 ขั้น เรียน→Quiz→ฟัง
+// ปลดล็อกทีละบท · ป้ายระดับ A1 / A1+ / A2 ตามลำดับบท
+// ═══════════════════════════════════════════════════════
+export const UNIT_STEPS = ["learn", "quiz", "listen"];
+export function buildUnits(words, categories) {
+  const units = [];
+  categories.forEach(c => {
+    const ws = words.filter(w => w.cat === c.id);
+    for (let i = 0; i < ws.length; i += 8) {
+      const chunk = ws.slice(i, i + 8);
+      const last = units[units.length - 1];
+      if (chunk.length < 4 && last && last.cat.id === c.id) { last.words = [...last.words, ...chunk]; continue; }
+      units.push({ id: `${c.id}-${Math.floor(i / 8) + 1}`, cat: c, words: chunk });
+    }
+  });
+  units.forEach((u, i) => { u.n = i + 1; u.level = i < 12 ? "A1" : i < 26 ? "A1+" : "A2"; });
+  return units;
+}
+export const unitDone = (path, u) => UNIT_STEPS.every(s => path?.[u.id]?.[s]);
+export const unitSteps = (path, u) => UNIT_STEPS.filter(s => path?.[u.id]?.[s]).length;
+export function markUnitStep(p, unitId, step) {
+  return { ...p, path: { ...(p.path || {}), [unitId]: { ...((p.path || {})[unitId] || {}), [step]: true } } };
+}
+
+// ความคล้ายของคำ 0..1 (ใช้ให้คะแนน Speak) — Levenshtein
+export function similarity(a, b) {
+  a = (a || "").toLowerCase().replace(/[^a-z]/g, ""); b = (b || "").toLowerCase().replace(/[^a-z]/g, "");
+  if (!a.length || !b.length) return 0;
+  const m = a.length, n = b.length; const d = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]);
+  for (let j = 1; j <= n; j++) d[0][j] = j;
+  for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++) d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+  return 1 - d[m][n] / Math.max(m, n);
+}

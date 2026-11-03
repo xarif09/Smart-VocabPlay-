@@ -32,4 +32,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/audio src/audioManifest.json
-          git diff --cached --quiet && echo "no changes" || (git commit -m "Add native-speaker word audio from Wikimedia Commons" && git push)
+          git diff --cached --quiet && echo "no changes" || (git commit -m "Add native-speaker word audio from Wikimedia Commons" && git pull --rebase --autostash origin ${{ github.ref_name }} && git push)

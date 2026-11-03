@@ -36,7 +36,8 @@ const T = {
   bg: MD.surface, card: MD.surfLowest, surf: MD.surfLow, surfHigh: MD.surfHigh, surfHighest: MD.surfHighest,
   primary: MD.primary, onPrimary: MD.onPrimary, primaryC: MD.primaryC, onPrimaryC: MD.onPrimaryC,
   secondaryC: MD.secondaryC, onSecondaryC: MD.onSecondaryC, tertiaryC: MD.tertiaryC, onTertiaryC: MD.onTertiaryC,
-  outlineV: MD.outlineV, error: MD.error, errorC: MD.errorC, onErrorC: MD.onErrorC,
+  outlineV: MD.outlineV, error: MD.error, errorC: MD.errorC, onErrorC: MD.onErrorC, ok: MD.ok, okC: MD.okC, onOkC: MD.onOkC,
+  tertiary: MD.tertiary, accent: MD.accent, inverse: MD.inverseSurface, onInverse: MD.inverseOnSurface,
   grad: MD.heroGrad,
   grad2: MD.heroGrad,
   grad3: `linear-gradient(135deg, ${MD.tertiary}, ${MD.accent})`,
@@ -1637,7 +1638,7 @@ export default function App() {
   if (typeof window !== "undefined" && /[?&]concepts=1/.test(window.location.search)) {
     const list = INITIAL_WORDS.filter(w => conceptFor(w));
     return <div style={{ fontFamily:FONT,padding:12,display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(150px,1fr))",gap:10,background:T.card }}>
-      {list.map(w => <div key={w.id} style={{ textAlign:"center",fontSize:11 }}><div style={{ aspectRatio:"16/11",borderRadius:12,overflow:"hidden",boxShadow:"0 4px 12px rgba(0,0,0,.12)" }}>{conceptFor(w)}</div><b>{w.cat}|{w.word}</b> {w.meaning}</div>)}
+      {list.map(w => <div key={w.id} style={{ textAlign:"center",fontSize:11 }}><div style={{ aspectRatio:"16/11",borderRadius:16,overflow:"hidden",boxShadow:"0 4px 12px rgba(0,0,0,.12)" }}>{conceptFor(w)}</div><b>{w.cat}|{w.word}</b> {w.meaning}</div>)}
       <div style={{ gridColumn:"1/-1" }}>ทั้งหมด {list.length} ภาพ</div>
     </div>;
   }
@@ -1697,15 +1698,15 @@ export default function App() {
         )}
         {screen === "grammar" && (
           <GrammarScreen words={words} speak={speak} progress={progress}
-            onPractice={g => startPseudoGame({ id:`grammar:${g.id}`, label:`ไวยากรณ์ · ${g.title}`, thai:g.titleTh, emoji:g.emoji, color:"#f59e0b", games:["grammar"], lesson:g, back:"grammar" }, "grammar")} />
+            onPractice={g => startPseudoGame({ id:`grammar:${g.id}`, label:`ไวยากรณ์ · ${g.title}`, thai:g.titleTh, emoji:g.emoji, color:T.tertiary, games:["grammar"], lesson:g, back:"grammar" }, "grammar")} />
         )}
         {screen === "daily" && (
           <DailyScreen words={words} speak={speak} speakAt={speakAt} progress={progress}
-            onGame={k => startPseudoGame({ id:`daily:${k}`, label:{ time:"บอกเวลา", money:"นับเงินบาท", calendar:"วัน-เดือน", numbers100:"ตัวเลข 1–100" }[k], thai:"ชีวิตประจำวัน", emoji:"🧭", color:"#0ea5e9", games:[k], kind:k, back:"daily" }, k)} />
+            onGame={k => startPseudoGame({ id:`daily:${k}`, label:{ time:"บอกเวลา", money:"นับเงินบาท", calendar:"วัน-เดือน", numbers100:"ตัวเลข 1–100" }[k], thai:"ชีวิตประจำวัน", emoji:"🧭", color:T.primary, games:[k], kind:k, back:"daily" }, k)} />
         )}
         {screen === "test" && (
           <CertificateScreen progress={progress} profile={profiles.list.find(x => x.id === profiles.current)} words={words}
-            onStart={() => startPseudoGame({ id:"test:placement", label:"สอบวัดระดับ", thai:"สอบ", emoji:"📝", color:"#6366f1", games:["test"], back:"test", allWords: words,
+            onStart={() => startPseudoGame({ id:"test:placement", label:"สอบวัดระดับ", thai:"สอบ", emoji:"📝", color:T.primary, games:["test"], back:"test", allWords: words,
               onTestDone: (score, total) => setProgress(p => ({ ...p, cert: { score, total, date: new Date().toLocaleDateString("th-TH", { day:"numeric", month:"long", year:"numeric" }) } })) }, "test")} />
         )}
         {screen === "versus" && (
@@ -1804,14 +1805,14 @@ export default function App() {
 
       {/* UPDATE BANNER — มีเวอร์ชันใหม่ */}
       {updateReg && (
-        <div style={{ position:"fixed",left:12,right:12,bottom:16,zIndex:8900,background:"#1f2937",color:"#fff",borderRadius:16,padding:"10px 12px 10px 16px",display:"flex",alignItems:"center",gap:10,boxShadow:"0 10px 30px rgba(0,0,0,0.3)",maxWidth:456,margin:"0 auto" }}>
+        <div style={{ position:"fixed",left:12,right:12,bottom:16,zIndex:8900,background:T.ink,color:"#fff",borderRadius:16,padding:"10px 12px 10px 16px",display:"flex",alignItems:"center",gap:10,boxShadow:"0 10px 30px rgba(0,0,0,0.3)",maxWidth:456,margin:"0 auto" }}>
           <div style={{ flex:1,minWidth:0 }}>
             <div style={{ fontWeight:800,fontSize:13 }}>🎁 มีเวอร์ชันใหม่ของแอป</div>
             <div style={{ fontSize:11,opacity:0.8 }}>ตอนนี้ v{APP_VERSION} · แตะอัปเดตเพื่อโหลดของใหม่</div>
           </div>
           <button onClick={() => { try { updateReg.waiting?.postMessage("SKIP_WAITING"); } catch (_) {} setTimeout(() => window.location.reload(), 1500); }}
-            style={{ minHeight:44,padding:"0 14px",borderRadius:12,border:"none",background:"#10b981",color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer" }}>อัปเดต</button>
-          <button onClick={() => setUpdateReg(null)} style={{ width:44,height:44,borderRadius:12,border:"none",background:"transparent",color:T.ink3,fontSize:18,cursor:"pointer" }}>✕</button>
+            style={{ minHeight:44,padding:"0 14px",borderRadius:16,border:"none",background:T.ok,color:"#fff",fontWeight:800,fontSize:13,cursor:"pointer" }}>อัปเดต</button>
+          <button onClick={() => setUpdateReg(null)} style={{ width:44,height:44,borderRadius:16,border:"none",background:"transparent",color:T.ink3,fontSize:18,cursor:"pointer" }}>✕</button>
         </div>
       )}
 
@@ -1902,8 +1903,8 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
   const nextUnit = units.find(u => !unitDone(progress.path, u));
   const pet = getPet(progress);
   const thumbOf = cat => (imageTitleOf(coverWord(cat)) ? coverWord(cat) : words.find(w => w.cat === cat.id && imageTitleOf(w)));
-  const tiles = [["💬","บทสนทนา",`${DIALOGUES.length} สถานการณ์`,"linear-gradient(135deg,#fb923c,#f43f5e)",onTalk],["📖","นิทานภาพ",`${STORIES.length} เรื่อง`,"linear-gradient(135deg,#a855f7,#6366f1)",onStories],["🔤","โฟนิกส์","A–Z + เกม","linear-gradient(135deg,#22d3ee,#3b82f6)",onPhonics],
-    ["✍️","ไวยากรณ์",`${GRAMMAR.length} บทเรียน`,"linear-gradient(135deg,#f59e0b,#ef4444)",onGrammar],["🧭","ชีวิตประจำวัน","เวลา เงิน วัน","linear-gradient(135deg,#34d399,#0ea5e9)",onDaily],["📝","สอบวัดระดับ",progress.cert?`ได้ระดับ ${LEVELS_TEST.find(l=>progress.cert.score>=l.min)?.level}`:"20 ข้อ + ใบประกาศ","linear-gradient(135deg,#6366f1,#a855f7)",onTest]];
+  const tiles = [["💬","บทสนทนา",`${DIALOGUES.length} สถานการณ์`,T.grad,onTalk],["📖","นิทานภาพ",`${STORIES.length} เรื่อง`,T.grad,onStories],["🔤","โฟนิกส์","A–Z + เกม",T.grad,onPhonics],
+    ["✍️","ไวยากรณ์",`${GRAMMAR.length} บทเรียน`,T.grad,onGrammar],["🧭","ชีวิตประจำวัน","เวลา เงิน วัน",T.grad,onDaily],["📝","สอบวัดระดับ",progress.cert?`ได้ระดับ ${LEVELS_TEST.find(l=>progress.cert.score>=l.min)?.level}`:"20 ข้อ + ใบประกาศ",T.grad,onTest]];
   return (
     <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
       {/* HERO: เพื่อนคู่หู + ความคืบหน้า */}
@@ -2017,11 +2018,11 @@ function LearnHub({ words, categories, progress, units, onPath, onCat, onTalk, o
   return (
     <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
       <HubRow emoji="🗺️" title="เส้นทางบทเรียน A1 → A2" sub={`ผ่านแล้ว ${unitsDone}/${units.length} บท · เรียนการ์ด → ทดสอบ → ฟัง`} grad={T.grad2} onClick={onPath} />
-      <HubRow icon={<GameIcon id="droleplay" size={48} />} title="บทสนทนา" sub={`${DIALOGUES.length} สถานการณ์ · ฟัง เล่นบทบาท เติมคำ`} grad="linear-gradient(135deg,#fb923c,#f43f5e)" onClick={onTalk} />
-      <HubRow emoji="📖" title="นิทานภาพ" sub={`${STORIES.length} เรื่อง · อ่านพร้อมเสียง + คำถาม`} grad="linear-gradient(135deg,#a855f7,#6366f1)" onClick={onStories} />
-      <HubRow icon={<GameIcon id="phonics" size={48} />} title="โฟนิกส์ A–Z" sub="เสียงตัวอักษร + คำตัวอย่าง + เกม" grad="linear-gradient(135deg,#22d3ee,#3b82f6)" onClick={onPhonics} />
-      <HubRow icon={<GameIcon id="grammar" size={48} />} title="ไวยากรณ์เด็ก" sub={`${GRAMMAR.length} บท · กฎง่ายๆ + แบบฝึก`} grad="linear-gradient(135deg,#f59e0b,#ef4444)" onClick={onGrammar} />
-      <HubRow icon={<GameIcon id="time" size={48} />} title="ชีวิตประจำวัน" sub="บอกเวลา · เงินบาท · วัน-เดือน · ตัวเลข" grad="linear-gradient(135deg,#34d399,#0ea5e9)" onClick={onDaily} />
+      <HubRow icon={<GameIcon id="droleplay" size={48} />} title="บทสนทนา" sub={`${DIALOGUES.length} สถานการณ์ · ฟัง เล่นบทบาท เติมคำ`} grad={T.grad} onClick={onTalk} />
+      <HubRow emoji="📖" title="นิทานภาพ" sub={`${STORIES.length} เรื่อง · อ่านพร้อมเสียง + คำถาม`} grad={T.grad} onClick={onStories} />
+      <HubRow icon={<GameIcon id="phonics" size={48} />} title="โฟนิกส์ A–Z" sub="เสียงตัวอักษร + คำตัวอย่าง + เกม" grad={T.grad} onClick={onPhonics} />
+      <HubRow icon={<GameIcon id="grammar" size={48} />} title="ไวยากรณ์เด็ก" sub={`${GRAMMAR.length} บท · กฎง่ายๆ + แบบฝึก`} grad={T.grad} onClick={onGrammar} />
+      <HubRow icon={<GameIcon id="time" size={48} />} title="ชีวิตประจำวัน" sub="บอกเวลา · เงินบาท · วัน-เดือน · ตัวเลข" grad={T.grad} onClick={onDaily} />
       <div style={M3.sectionTitle()}>การ์ดคำศัพท์ตามหมวด</div>
       <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
         {categories.map(c => <button key={c.id} onClick={() => { sfx.tap(); onCat(c); }} style={{ ...card(),minHeight:76,padding:"8px 4px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3,fontFamily:FONT }}><CatIcon id={c.id} size={38} /><span style={{ fontSize:11,fontWeight:800,color:T.ink }}>{c.thai}</span></button>)}
@@ -2036,13 +2037,13 @@ function PlayHub({ words, categories, progress, missedCount, onCat, onReview, on
       <div style={{ ...card(),padding:16,marginBottom:12,display:"flex",alignItems:"center",gap:12 }}>
         <span style={{ fontSize:36 }}>⭐</span><div><div style={{ fontWeight:800,fontSize:18,color:T.ink }}>{totalStars} ดาว</div><div style={{ fontSize:12,color:T.ink3 }}>จาก 24 เกมใน {categories.length} หมวด · บอสชนะแล้ว {Object.keys(progress.boss).length} หมวด</div></div>
       </div>
-      <HubRow icon={<GameIcon id="quiz" size={48} />} title="ทบทวนวันนี้" sub={missedCount ? `${missedCount} คำถึงเวลาทบทวน` : "ยังไม่มีคำค้าง"} grad="linear-gradient(135deg,#fb923c,#f59e0b)" onClick={() => missedCount && onReview()} />
-      <HubRow emoji="⚔️" title="แข่ง 2 คน จอเดียว" sub="นั่งตรงข้ามกัน ใครแตะคำถูกก่อนชนะ" grad="linear-gradient(135deg,#f43f5e,#fb923c)" onClick={onVersus} />
-      <HubRow icon={<GameIcon id="test" size={48} />} title="สอบวัดระดับ + ใบประกาศ" sub={progress.cert ? `ล่าสุด ${progress.cert.score}/${progress.cert.total} คะแนน` : "20 ข้อ ผสมทุกทักษะ"} grad="linear-gradient(135deg,#6366f1,#a855f7)" onClick={onTest} />
+      <HubRow icon={<GameIcon id="quiz" size={48} />} title="ทบทวนวันนี้" sub={missedCount ? `${missedCount} คำถึงเวลาทบทวน` : "ยังไม่มีคำค้าง"} grad={T.grad} onClick={() => missedCount && onReview()} />
+      <HubRow emoji="⚔️" title="แข่ง 2 คน จอเดียว" sub="นั่งตรงข้ามกัน ใครแตะคำถูกก่อนชนะ" grad={T.grad} onClick={onVersus} />
+      <HubRow icon={<GameIcon id="test" size={48} />} title="สอบวัดระดับ + ใบประกาศ" sub={progress.cert ? `ล่าสุด ${progress.cert.score}/${progress.cert.total} คะแนน` : "20 ข้อ ผสมทุกทักษะ"} grad={T.grad} onClick={onTest} />
       <div style={M3.sectionTitle()}>เลือกหมวดเพื่อเล่นเกม</div>
       {categories.map(c => {
         const got = c.games.reduce((a,g)=>a+(progress.stars[`${c.id}:${g}`]||0),0);
-        return <HubRow key={c.id} icon={<CatIcon id={c.id} size={48} />} title={`${c.label} · ${c.thai}`} sub={`${c.games.length} เกม${progress.boss[c.id] ? " · 👑 ชนะบอสแล้ว" : ""}`} grad={`linear-gradient(135deg,${c.color},${c.color}99)`} onClick={() => onCat(c)} right={<span style={{ fontSize:12,fontWeight:800,color:got?"#d97706":T.ink3 }}>⭐ {got}/{c.games.length*3}</span>} />;
+        return <HubRow key={c.id} icon={<CatIcon id={c.id} size={48} />} title={`${c.label} · ${c.thai}`} sub={`${c.games.length} เกม${progress.boss[c.id] ? " · 👑 ชนะบอสแล้ว" : ""}`} grad={`linear-gradient(135deg,${c.color},${c.color}99)`} onClick={() => onCat(c)} right={<span style={{ fontSize:12,fontWeight:800,color:got?T.tertiary:T.ink3 }}>⭐ {got}/{c.games.length*3}</span>} />;
       })}
     </div>
   );
@@ -2061,13 +2062,13 @@ function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles
       <div style={{ ...card(),padding:"14px 10px",marginBottom:12,display:"grid",gridTemplateColumns:"repeat(4,1fr)" }}>
         <Stat v={progress.coins} l="🪙 เหรียญ" /><Stat v={Object.values(progress.stars).reduce((a,b)=>a+b,0)} l="⭐ ดาว" /><Stat v={`${progress.streak.count}`} l="🔥 วันต่อเนื่อง" /><Stat v={mastered} l="จำได้แม่น" />
       </div>
-      <HubRow emoji="🏠" title="ห้องเพื่อนคู่หู" sub="ให้อาหาร อาบน้ำ เล่น นอน · แต่งห้อง" grad="linear-gradient(135deg,#fb7185,#f59e0b)" onClick={onRoom} />
-      <HubRow emoji="📒" title="สมุดสติกเกอร์" sub={`เก็บได้ ${stickerCount}/${words.length} ใบ`} grad="linear-gradient(135deg,#a855f7,#ec4899)" onClick={onStickers} />
-      <HubRow emoji="🛍️" title="ร้านค้า" sub="หมวกและพื้นหลังให้เพื่อนคู่หู" grad="linear-gradient(135deg,#f59e0b,#fb923c)" onClick={onShop} />
-      <HubRow emoji="📊" title="รายงานผู้ปกครอง" sub="ความแม่นยำ หมวดที่อ่อน คำที่พลาดบ่อย" grad="linear-gradient(135deg,#0ea5e9,#6366f1)" onClick={onReport} />
-      <HubRow emoji="✏️" title="จัดการคำศัพท์" sub="ค้นหา เพิ่ม แก้ ลบ แปลอัตโนมัติ" grad="linear-gradient(135deg,#334155,#0f172a)" onClick={onManage} />
-      <HubRow emoji="⚙️" title="ตั้งค่า" sub="เสียง · รูปจริง · เต็มจอ · ล้างความคืบหน้า" grad="linear-gradient(135deg,#94a3b8,#64748b)" onClick={onSettings} />
-      <HubRow emoji="🖼️" title="เครดิตรูปภาพ" sub="ที่มาและสัญญาอนุญาตของรูปจาก Wikimedia" grad="linear-gradient(135deg,#cbd5e1,#94a3b8)" onClick={onCredits} />
+      <HubRow emoji="🏠" title="ห้องเพื่อนคู่หู" sub="ให้อาหาร อาบน้ำ เล่น นอน · แต่งห้อง" grad={T.grad} onClick={onRoom} />
+      <HubRow emoji="📒" title="สมุดสติกเกอร์" sub={`เก็บได้ ${stickerCount}/${words.length} ใบ`} grad={T.grad} onClick={onStickers} />
+      <HubRow emoji="🛍️" title="ร้านค้า" sub="หมวกและพื้นหลังให้เพื่อนคู่หู" grad={T.grad} onClick={onShop} />
+      <HubRow emoji="📊" title="รายงานผู้ปกครอง" sub="ความแม่นยำ หมวดที่อ่อน คำที่พลาดบ่อย" grad={T.grad} onClick={onReport} />
+      <HubRow emoji="✏️" title="จัดการคำศัพท์" sub="ค้นหา เพิ่ม แก้ ลบ แปลอัตโนมัติ" grad={T.grad} onClick={onManage} />
+      <HubRow emoji="⚙️" title="ตั้งค่า" sub="เสียง · รูปจริง · เต็มจอ · ล้างความคืบหน้า" grad={T.grad} onClick={onSettings} />
+      <HubRow emoji="🖼️" title="เครดิตรูปภาพ" sub="ที่มาและสัญญาอนุญาตของรูปจาก Wikimedia" grad={T.grad} onClick={onCredits} />
       <div style={{ textAlign:"center",fontSize:11,color:T.ink3,marginTop:10 }}>Smart VocabPlay v{APP_VERSION}{BUILD_TIME && ` · build ${BUILD_TIME}`}</div>
     </div>
   );
@@ -2121,7 +2122,7 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
                 <div style={{ fontSize:11,color:T.ink2,marginTop:1 }}>{g.thai}</div>
               </div>
               <Stars n={starOf(gid)} />
-              <span style={{ color:"#d1d5db",fontSize:20,flexShrink:0 }}>›</span>
+              <span style={{ color:T.outlineV,fontSize:20,flexShrink:0 }}>›</span>
             </button>
           );
         })}
@@ -2204,7 +2205,7 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
           <div style={{ fontSize:12,color:T.ink2 }}>{words.length} คำรวม · แสดง {filtered.length}</div>
         </div>
         <button onClick={()=>setShowAdd(s=>!s)}
-          style={{ background:"#EF4444",color:"#fff",borderRadius:12,padding:"8px 16px",minHeight:44,fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>
+          style={{ background:"#EF4444",color:"#fff",borderRadius:16,padding:"8px 16px",minHeight:44,fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>
           + เพิ่มคำ
         </button>
       </div>
@@ -2222,7 +2223,7 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
                 onChange={e=>setDraft({...draft,meaning:e.target.value})}
                 style={{ ...inputStyle,flex:1,minWidth:0 }} />
               <button onClick={autoTranslate} disabled={translating} title="แปลอัตโนมัติ"
-                style={{ minWidth:44,minHeight:44,borderRadius:10,border:"none",background:"#ede9fe",color:"#5b21b6",fontSize:16,cursor:"pointer",flexShrink:0 }}>{translating?"…":"✨"}</button>
+                style={{ minWidth:44,minHeight:44,borderRadius:14,border:"none",background:T.primaryC,color:T.onPrimaryC,fontSize:16,cursor:"pointer",flexShrink:0 }}>{translating?"…":"✨"}</button>
             </div>
             <input placeholder="อีโมจิ 🍎" value={draft.emoji} maxLength={4}
               onChange={e=>setDraft({...draft,emoji:e.target.value})}
@@ -2235,8 +2236,8 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
             <input placeholder="คำแปลประโยค TH" value={draft.senTh} onChange={e=>setDraft({...draft,senTh:e.target.value})} style={inputStyle} />
           </div>
           <div style={{ display:"flex",gap:8 }}>
-            <button onClick={saveNew} style={{ flex:1,minHeight:44,background:"#EF4444",color:"#fff",borderRadius:10,padding:"9px",fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>บันทึก</button>
-            <button onClick={()=>setShowAdd(false)} style={{ flex:1,minHeight:44,background:T.surfHigh,color:T.ink2,borderRadius:10,padding:"9px",fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>ยกเลิก</button>
+            <button onClick={saveNew} style={{ flex:1,minHeight:44,background:"#EF4444",color:"#fff",borderRadius:14,padding:"9px",fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>บันทึก</button>
+            <button onClick={()=>setShowAdd(false)} style={{ flex:1,minHeight:44,background:T.surfHigh,color:T.ink2,borderRadius:14,padding:"9px",fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>ยกเลิก</button>
           </div>
         </div>
       )}
@@ -2263,16 +2264,16 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
                 : <div style={{ display:"flex",alignItems:"center",gap:10 }}>
                     <Pic w={w} size={20} radius={10} style={{ flexShrink:0 }} />
                     <div style={{ flex:1,minWidth:0 }}>
-                      <div style={{ fontWeight:800,fontSize:14,color:T.ink }}>{w.word} {w.read && <span style={{ fontWeight:600,fontSize:12,color:"#7c3aed" }}>{w.read}</span>}</div>
+                      <div style={{ fontWeight:800,fontSize:14,color:T.ink }}>{w.word} {w.read && <span style={{ fontWeight:600,fontSize:12,color:T.primary }}>{w.read}</span>}</div>
                       <div style={{ fontSize:12,color:T.ink2,display:"flex",alignItems:"center",gap:6,flexWrap:"wrap" }}>
                         <span>{w.meaning}</span>
                         <span style={{ background:`${cat?.color||"#999"}20`,color:cat?.color||"#666",padding:"1px 6px",borderRadius:6,fontSize:10,fontWeight:600 }}>{cat?.emoji} {cat?.label}</span>
                       </div>
                     </div>
                     <div style={{ display:"flex",gap:4,flexShrink:0 }}>
-                      <Btn onClick={()=>speak(w.word,w.meaning)} style={{ width:44,height:44,borderRadius:12,background:"#ede9fe",fontSize:18 }}>🔊</Btn>
-                      <Btn onClick={()=>setEditingId(w.id)} style={{ width:44,height:44,borderRadius:12,background:"#fef3c7",fontSize:18 }}>✏️</Btn>
-                      <Btn onClick={()=>{if(window.confirm(`ลบ "${w.word}"?`))deleteWord(w.id);}} style={{ width:44,height:44,borderRadius:12,background:"#fee2e2",fontSize:18 }}>🗑️</Btn>
+                      <Btn onClick={()=>speak(w.word,w.meaning)} style={{ width:44,height:44,borderRadius:16,background:T.primaryC,fontSize:18 }}>🔊</Btn>
+                      <Btn onClick={()=>setEditingId(w.id)} style={{ width:44,height:44,borderRadius:16,background:T.tertiaryC,fontSize:18 }}>✏️</Btn>
+                      <Btn onClick={()=>{if(window.confirm(`ลบ "${w.word}"?`))deleteWord(w.id);}} style={{ width:44,height:44,borderRadius:16,background:T.errorC,fontSize:18 }}>🗑️</Btn>
                     </div>
                   </div>
               }
@@ -2284,14 +2285,14 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
 
       {/* Reset to default words */}
       <button onClick={()=>{ if(window.confirm("คืนค่าคำศัพท์เริ่มต้น?\nคำที่เพิ่ม/แก้/ลบไว้จะหายทั้งหมด")) onReset(); }}
-        style={{ width:"100%",minHeight:44,marginTop:20,background:T.card,color:T.ink2,border:"1px dashed #d1d5db",borderRadius:12,padding:"10px",fontWeight:700,fontSize:13,cursor:"pointer" }}>
+        style={{ width:"100%",minHeight:44,marginTop:20,background:T.card,color:T.ink2,border:"1px dashed #d1d5db",borderRadius:16,padding:"10px",fontWeight:700,fontSize:13,cursor:"pointer" }}>
         ↺ คืนค่าคำศัพท์เริ่มต้น
       </button>
     </div>
   );
 }
 
-const inputStyle = { border:"1px solid var(--md-outline-variant)",borderRadius:10,padding:"8px 10px",minHeight:44,fontSize:14,fontFamily:"inherit",width:"100%",outline:"none",background:T.surfHigh };
+const inputStyle = { border:"1px solid var(--md-outline-variant)",borderRadius:14,padding:"8px 10px",minHeight:44,fontSize:14,fontFamily:"inherit",width:"100%",outline:"none",background:T.surfHigh };
 
 function EditWordRow({ word, categories, onSave, onCancel }) {
   const [d, setD] = useState({ word:word.word, meaning:word.meaning, emoji:word.emoji, cat:word.cat, read:word.read||"", sen:word.sen||"", senTh:word.senTh||"" });
@@ -2309,8 +2310,8 @@ function EditWordRow({ word, categories, onSave, onCancel }) {
         <input value={d.senTh} onChange={e=>setD({...d,senTh:e.target.value})} style={inputStyle} placeholder="คำแปลประโยค TH" />
       </div>
       <div style={{ display:"flex",gap:6 }}>
-        <button onClick={()=>onSave(d)} style={{ flex:1,minHeight:44,background:"#10b981",color:"#fff",borderRadius:10,padding:"8px",fontWeight:700,fontSize:12,border:"none",cursor:"pointer" }}>บันทึก ✓</button>
-        <button onClick={onCancel} style={{ flex:1,minHeight:44,background:T.surfHigh,color:T.ink2,borderRadius:10,padding:"8px",fontWeight:700,fontSize:12,border:"none",cursor:"pointer" }}>ยกเลิก</button>
+        <button onClick={()=>onSave(d)} style={{ flex:1,minHeight:44,background:T.ok,color:"#fff",borderRadius:14,padding:"8px",fontWeight:700,fontSize:12,border:"none",cursor:"pointer" }}>บันทึก ✓</button>
+        <button onClick={onCancel} style={{ flex:1,minHeight:44,background:T.surfHigh,color:T.ink2,borderRadius:14,padding:"8px",fontWeight:700,fontSize:12,border:"none",cursor:"pointer" }}>ยกเลิก</button>
       </div>
     </div>
   );
@@ -2434,7 +2435,7 @@ function ResultScreen({ r, words, speak, pet, onReplay, onExit }) {
             <span key={i} style={{ fontSize:i===2?56:44,lineHeight:1,marginTop:i===2?-10:0,animation:i<=r.stars?`vpStarPop .7s ${0.3+i*0.28}s both`:"none",filter:i<=r.stars?"drop-shadow(0 4px 10px rgba(245,158,11,.7))":"grayscale(1) opacity(0.2)" }}>⭐</span>
           ))}
         </div>
-        <div style={{ display:"inline-flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#ffd166,#fb923c)",color:"#7c2d12",fontWeight:900,fontSize:20,padding:"10px 22px",borderRadius:999,boxShadow:"0 10px 24px rgba(251,146,60,.4)",position:"relative",animation:"vpInScale .5s 1.2s both" }}>
+        <div style={{ display:"inline-flex",alignItems:"center",gap:8,background:T.grad,color:T.onTertiaryC,fontWeight:900,fontSize:20,padding:"10px 22px",borderRadius:999,boxShadow:"0 10px 24px rgba(251,146,60,.4)",position:"relative",animation:"vpInScale .5s 1.2s both" }}>
           <span className="vp-shimmer" style={{ position:"absolute",inset:0,borderRadius:999,pointerEvents:"none" }} />
           +<CountUp to={r.coins} ms={1200} /> 🪙
         </div>
@@ -2597,16 +2598,16 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
       <div style={GS.body}>
         <Emoji e={cur.emoji} w={cur} />
         <SndBtn onClick={()=>speak(cur.word,cur.meaning)} />
-        <p style={{ textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 10px",minHeight:18 }}>{lock ? <b style={{ color:"#7c3aed",fontSize:14 }}>{cur.word} · {cur.read} · {cur.meaning}</b> : "เลือกคำที่ตรงกับรูป"}</p>
+        <p style={{ textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 10px",minHeight:18 }}>{lock ? <b style={{ color:T.primary,fontSize:14 }}>{cur.word} · {cur.read} · {cur.meaning}</b> : "เลือกคำที่ตรงกับรูป"}</p>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {choices.map(c=>{
             const ic=c.id===cur.id,ip=picked===c.id,sr=lock&&(ic||ip);
-            let bg="#fffbeb",bo="#fbbf24",tc="#92400e";
-            if(sr&&ic){bg="#d1fae5";bo="#6ee7b7";tc="#065f46";}
-            if(sr&&ip&&!ic){bg="#fee2e2";bo="#fca5a5";tc="#991b1b";}
-            if(lock&&!ip&&!ic){bg="#f9fafb";bo="#e5e7eb";tc="#9ca3af";}
+            let bg=T.tertiaryC,bo=T.tertiary,tc=T.onTertiaryC;
+            if(sr&&ic){bg=T.okC;bo=T.ok;tc=T.onOkC;}
+            if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
+            if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
             return <button key={c.id} onClick={e=>pick(c, e)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:12,padding:"14px 6px",minHeight:52,fontWeight:800,fontSize:15,color:tc,cursor:"pointer" }}>
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:"14px 6px",minHeight:52,fontWeight:800,fontSize:15,color:tc,cursor:"pointer" }}>
               {c.word}
             </button>;
           })}
@@ -2661,20 +2662,20 @@ function SpellGame({ words, speak, track, onBack }) {
       <div style={GS.body}>
         <Emoji e={cur.emoji} w={cur} size={56} />
         <p style={{ textAlign:"center",fontWeight:600,fontSize:14,color:T.ink2,margin:"0 0 2px" }}>{cur.meaning}</p>
-        {cur.read && <p style={{ textAlign:"center",fontWeight:700,fontSize:13,color:"#7c3aed",margin:"0 0 8px" }}>{cur.read}</p>}
+        {cur.read && <p style={{ textAlign:"center",fontWeight:700,fontSize:13,color:T.primary,margin:"0 0 8px" }}>{cur.read}</p>}
         <SndBtn onClick={()=>speak(cur.word,cur.meaning)} />
 
         <div style={{
           minHeight:ts+12,display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center",alignItems:"center",
-          padding:"8px",borderRadius:12,marginBottom:10,
-          background:correct?"#d1fae5":wrong?"#fee2e2":"#f9fafb",
-          border:`2px dashed ${correct?"#6ee7b7":wrong?"#fca5a5":"#d1d5db"}`,
+          padding:"8px",borderRadius:16,marginBottom:10,
+          background:correct?T.okC:wrong?T.errorC:T.surfHigh,
+          border:`2px dashed ${correct?T.ok:wrong?T.error:T.outlineV}`,
         }}>
           {picked.length===0
             ?<span style={{color:T.ink3,fontSize:11}}>เลือกตัวอักษร</span>
             :picked.map((l,i)=>(
               <button key={l.id+"p"+i} onClick={()=>removePick(i)}
-                style={{ width:ts,height:ts,borderRadius:12,background:correct?"linear-gradient(135deg,#10b981,#34d399)":wrong?"linear-gradient(135deg,#ef4444,#f87171)":"linear-gradient(135deg,#6d5dfc,#a855f7)",color:"#fff",fontWeight:900,fontSize:tf,border:"none",cursor:"pointer",flexShrink:0,boxShadow:"0 6px 14px rgba(0,0,0,.18)",animation:correct?`vpStarPop .5s ${i*0.08}s both`:wrong?"vpWiggle .4s":"vpInScale .35s cubic-bezier(.2,.8,.2,1) both" }}>
+                style={{ width:ts,height:ts,borderRadius:16,background:correct?T.grad:wrong?T.grad:T.grad,color:"#fff",fontWeight:900,fontSize:tf,border:"none",cursor:"pointer",flexShrink:0,boxShadow:"0 6px 14px rgba(0,0,0,.18)",animation:correct?`vpStarPop .5s ${i*0.08}s both`:wrong?"vpWiggle .4s":"vpInScale .35s cubic-bezier(.2,.8,.2,1) both" }}>
                 {l.ch}
               </button>
             ))
@@ -2684,17 +2685,17 @@ function SpellGame({ words, speak, track, onBack }) {
         <div style={{ display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center",minHeight:ts+6,marginBottom:10 }}>
           {pool.map((l,i)=>(
             <button key={l.id} onClick={()=>tapLetter(l)} className="vp-card-hover"
-              style={{ width:ts,height:ts,borderRadius:12,background:T.card,color:"#4c1d95",fontWeight:900,fontSize:tf,border:"2px solid #c4b5fd",cursor:"pointer",flexShrink:0,boxShadow:"0 4px 12px rgba(109,93,252,.18)",animation:`vpInUp .4s ${i*0.04}s both` }}>
+              style={{ width:ts,height:ts,borderRadius:16,background:T.card,color:T.primary,fontWeight:900,fontSize:tf,border:"2px solid #c4b5fd",cursor:"pointer",flexShrink:0,boxShadow:"0 4px 12px rgba(109,93,252,.18)",animation:`vpInUp .4s ${i*0.04}s both` }}>
               {l.ch}
             </button>
           ))}
         </div>
 
-        {correct&&<div style={{ textAlign:"center",background:"#d1fae5",borderRadius:10,padding:"8px",marginBottom:8,fontSize:13,fontWeight:700,color:"#065f46" }}>🎉 {cur.word} = {cur.meaning}</div>}
+        {correct&&<div style={{ textAlign:"center",background:T.okC,borderRadius:14,padding:"8px",marginBottom:8,fontSize:13,fontWeight:700,color:T.onOkC }}>🎉 {cur.word} = {cur.meaning}</div>}
 
         <div style={{ display:"flex",gap:8 }}>
-          <Pill onClick={()=>{setPool(shuffle(cur.word.split("").map((ch,i)=>({id:i,ch}))));setPicked([]);}} bg="#9ca3af">🔄 ใหม่</Pill>
-          <Pill onClick={()=>{ if(correct)setScore(s=>s+1); if(idx+1<qs.length)setIdx(i=>i+1); else track.finish(correct?score+1:score, qs.length); }} disabled={!correct} bg="#8b5cf6">ถัดไป ›</Pill>
+          <Pill onClick={()=>{setPool(shuffle(cur.word.split("").map((ch,i)=>({id:i,ch}))));setPicked([]);}} bg={T.ink3}>🔄 ใหม่</Pill>
+          <Pill onClick={()=>{ if(correct)setScore(s=>s+1); if(idx+1<qs.length)setIdx(i=>i+1); else track.finish(correct?score+1:score, qs.length); }} disabled={!correct} bg={T.primary}>ถัดไป ›</Pill>
         </div>
       </div>
     </GameCard>
@@ -2751,10 +2752,10 @@ function MemoryGame({ words, speak, track, onBack }) {
             const sf=!!open.find(x=>x.uid===c.uid)||matched.includes(c.mid);
             const im=matched.includes(c.mid);
             return <button key={c.uid} onClick={()=>flip(c)} disabled={lock||im}
-              style={{ aspectRatio:"3/4",borderRadius:12,cursor:"pointer",border:"none",background:"transparent",padding:0,perspective:600,position:"relative",animation:im?"vpStarPop .6s both":"none" }}>
+              style={{ aspectRatio:"3/4",borderRadius:16,cursor:"pointer",border:"none",background:"transparent",padding:0,perspective:600,position:"relative",animation:im?"vpStarPop .6s both":"none" }}>
               <span style={{ position:"absolute",inset:0,transformStyle:"preserve-3d",transition:"transform .5s cubic-bezier(.2,.8,.2,1)",transform:sf?"rotateY(180deg)":"rotateY(0deg)" }}>
-                <span style={{ position:"absolute",inset:0,borderRadius:12,backfaceVisibility:"hidden",background:"linear-gradient(135deg,#6d5dfc,#a855f7)",display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",fontSize:22,boxShadow:"0 6px 16px rgba(109,93,252,.35)",border:"2px solid rgba(255,255,255,.35)" }}>✦</span>
-                <span style={{ position:"absolute",inset:0,borderRadius:12,backfaceVisibility:"hidden",transform:"rotateY(180deg)",background:im?"#d1fae5":"#fff",border:`2px solid ${im?"#6ee7b7":"#c4b5fd"}`,display:"flex",alignItems:"center",justifyContent:"center",padding:3,overflow:"hidden",fontSize:c.type==="emoji"?26:10,fontWeight:800,color:im?"#065f46":"#4c1d95",wordBreak:"break-all",textAlign:"center",boxShadow:im?"0 0 18px rgba(16,185,129,.5)":"0 6px 16px rgba(0,0,0,.12)" }}>
+                <span style={{ position:"absolute",inset:0,borderRadius:16,backfaceVisibility:"hidden",background:T.grad,display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",fontSize:22,boxShadow:"0 6px 16px rgba(109,93,252,.35)",border:"2px solid rgba(255,255,255,.35)" }}>✦</span>
+                <span style={{ position:"absolute",inset:0,borderRadius:16,backfaceVisibility:"hidden",transform:"rotateY(180deg)",background:im?T.okC:"#fff",border:`2px solid ${im?T.ok:T.primary}`,display:"flex",alignItems:"center",justifyContent:"center",padding:3,overflow:"hidden",fontSize:c.type==="emoji"?26:10,fontWeight:800,color:im?T.onOkC:T.primary,wordBreak:"break-all",textAlign:"center",boxShadow:im?"0 0 18px rgba(16,185,129,.5)":"0 6px 16px rgba(0,0,0,.12)" }}>
                   {c.type==="emoji" ? <span style={{ position:"absolute",inset:0 }}><PicFill w={c.ref} emojiSize={26} /></span> : c.label}
                 </span>
               </span>
@@ -2808,22 +2809,22 @@ function SpeedGame({ words, speak, showToast, track }) {
             <div style={{fontSize:48,marginBottom:8}}>⚡</div>
             <p style={{fontWeight:800,fontSize:17,color:T.ink,margin:"0 0 4px"}}>Speed Round</p>
             <p style={{color:T.ink2,fontSize:13,margin:"0 0 20px"}}>ฟัง→แตะคำให้เร็วใน {T} วิ!<br/>7 คำ = ⭐⭐ · 12 คำ = ⭐⭐⭐</p>
-            <Pill onClick={()=>{setTime(T);setScore(0);scoreRef.current=0;setActive(true);next();}} bg="#f59e0b">▶ เริ่ม!</Pill>
+            <Pill onClick={()=>{setTime(T);setScore(0);scoreRef.current=0;setActive(true);next();}} bg={T.tertiary}>▶ เริ่ม!</Pill>
           </div>
           :<div>
             <Emoji e={cur?.emoji} w={cur} size={60} />
             <SndBtn onClick={()=>cur&&speak(cur.word,cur.meaning)} />
             <div style={{ display:"flex",justifyContent:"center",margin:"0 0 10px" }}>
               <svg width="74" height="74" viewBox="0 0 74 74" style={{ animation:time<=5?"vpWiggle .4s infinite":"none" }}>
-                <circle cx="37" cy="37" r="30" fill="none" stroke="#f3f4f6" strokeWidth="8" />
-                <circle cx="37" cy="37" r="30" fill="none" stroke={time>10?"#f59e0b":"#ef4444"} strokeWidth="8" strokeLinecap="round" strokeDasharray={2*Math.PI*30} strokeDashoffset={2*Math.PI*30*(1-time/T)} transform="rotate(-90 37 37)" style={{ transition:"stroke-dashoffset 1s linear, stroke .3s" }} />
-                <text x="37" y="43" textAnchor="middle" fontSize="20" fontWeight="900" fill={time>10?"#92400e":"#991b1b"} fontFamily="Prompt, system-ui">{time}</text>
+                <circle cx="37" cy="37" r="30" fill="none" stroke={T.surfHigh} strokeWidth="8" />
+                <circle cx="37" cy="37" r="30" fill="none" stroke={time>10?T.tertiary:T.error} strokeWidth="8" strokeLinecap="round" strokeDasharray={2*Math.PI*30} strokeDashoffset={2*Math.PI*30*(1-time/T)} transform="rotate(-90 37 37)" style={{ transition:"stroke-dashoffset 1s linear, stroke .3s" }} />
+                <text x="37" y="43" textAnchor="middle" fontSize="20" fontWeight="900" fill={time>10?T.onTertiaryC:T.onErrorC} fontFamily="Prompt, system-ui">{time}</text>
               </svg>
             </div>
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
               {opts.map(o=>(
                 <button key={o.id} onClick={()=>{ if(o.id===cur.id){scoreRef.current+=1;setScore(s=>s+1);track.correct(cur);next();}else{track.wrong(cur);showToast("❌","err");} }}
-                  style={{background:"#fffbeb",border:"2px solid #fbbf24",borderRadius:12,padding:"13px 6px",minHeight:52,fontWeight:800,fontSize:15,color:"#92400e",cursor:"pointer"}}>
+                  style={{background:T.tertiaryC,border:"2px solid #fbbf24",borderRadius:16,padding:"13px 6px",minHeight:52,fontWeight:800,fontSize:15,color:T.onTertiaryC,cursor:"pointer"}}>
                   {o.word}
                 </button>
               ))}
@@ -2840,9 +2841,9 @@ function SpeedGame({ words, speak, showToast, track }) {
 // ═══════════════════════════════════════════════════════
 function HabitatGame({ words, speak, showToast, track }) {
   const ZN=[
-    {id:"farm",label:"ฟาร์ม",e:"🚜",bg:"#fef3c7",bo:"#fcd34d"},
-    {id:"forest",label:"ป่า",e:"🌳",bg:"#dcfce7",bo:"#86efac"},
-    {id:"ocean",label:"ทะเล",e:"🌊",bg:"#e0f2fe",bo:"#7dd3fc"},
+    {id:"farm",label:"ฟาร์ม",e:"🚜",bg:T.tertiaryC,bo:T.tertiary},
+    {id:"forest",label:"ป่า",e:"🌳",bg:"#dcfce7",bo:T.ok},
+    {id:"ocean",label:"ทะเล",e:"🌊",bg:T.secondaryC,bo:"#7dd3fc"},
   ];
   const base=useMemo(()=>shuffle(words.filter(w=>w.habitat)).slice(0,9),[words]);
   const [pool,setPool]=useState(base);
@@ -2857,11 +2858,11 @@ function HabitatGame({ words, speak, showToast, track }) {
       <Bar left="Habitat Hunt ⭐" right={`${base.length-pool.length}/${base.length}`} />
       <div style={GS.body}>
         <p style={{textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 8px"}}>แตะสัตว์ → แตะที่อยู่ของมัน</p>
-        <div style={{background:T.surfHigh,borderRadius:12,padding:8,display:"flex",flexWrap:"wrap",gap:7,justifyContent:"center",minHeight:70,marginBottom:10}}>
-          {pool.length===0?<span style={{color:"#10b981",fontWeight:700,alignSelf:"center"}}>✅ ครบทุกตัว!</span>
+        <div style={{background:T.surfHigh,borderRadius:16,padding:8,display:"flex",flexWrap:"wrap",gap:7,justifyContent:"center",minHeight:70,marginBottom:10}}>
+          {pool.length===0?<span style={{color:T.ok,fontWeight:700,alignSelf:"center"}}>✅ ครบทุกตัว!</span>
             :pool.map(a=>(
               <button key={a.id} onClick={()=>{sfx.tap();setSel(a);speak(a.word,a.meaning);}}
-                style={{display:"flex",flexDirection:"column",alignItems:"center",gap:2,background:sel?.id===a.id?"#ede9fe":"#fff",border:`2px solid ${sel?.id===a.id?"#8b5cf6":"#e5e7eb"}`,borderRadius:10,padding:"6px 8px",minHeight:56,cursor:"pointer"}}>
+                style={{display:"flex",flexDirection:"column",alignItems:"center",gap:2,background:sel?.id===a.id?T.primaryC:"#fff",border:`2px solid ${sel?.id===a.id?T.primary:T.outlineV}`,borderRadius:14,padding:"6px 8px",minHeight:56,cursor:"pointer"}}>
                 <span style={{fontSize:26}}>{a.emoji}</span>
                 <span style={{fontSize:9,fontWeight:700,color:T.ink2}}>{a.word}</span>
               </button>
@@ -2873,7 +2874,7 @@ function HabitatGame({ words, speak, showToast, track }) {
               if(!sel) return;
               if(sel.habitat===z.id){track.correct(sel);setPlaced(p=>({...p,[z.id]:[...p[z.id],sel]}));setPool(p=>p.filter(x=>x.id!==sel.id));speak(sel.word,sel.meaning);setSel(null);}
               else{wrongs.current+=1;track.wrong(sel);showToast("ลองอีก 🐾","warn");setSel(null);}
-            }} style={{background:z.bg,border:`2px solid ${z.bo}`,borderRadius:12,padding:"8px 4px",minHeight:100,display:"flex",flexDirection:"column",alignItems:"center",gap:3,cursor:"pointer"}}>
+            }} style={{background:z.bg,border:`2px solid ${z.bo}`,borderRadius:16,padding:"8px 4px",minHeight:100,display:"flex",flexDirection:"column",alignItems:"center",gap:3,cursor:"pointer"}}>
               <span style={{fontSize:22}}>{z.e}</span>
               <span style={{fontSize:10,fontWeight:700,color:T.ink2}}>{z.label}</span>
               <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center",gap:2,marginTop:3}}>
@@ -2915,25 +2916,25 @@ function MatchGame({ words, speak, showToast, track, onBack }) {
           const pu=p&&Object.values(matches).includes(p.id);
           return <div key={w.id} style={{display:"flex",gap:8,alignItems:"center",marginBottom:8,height:H}}>
             <button onClick={()=>{if(!im){sfx.tap();setSel(w.id);speak(w.word,w.meaning);}}} disabled={im}
-              style={{flex:1,height:H,borderRadius:12,background:im?"#d1fae5":is?"#4f46e5":"#eff6ff",border:`2px solid ${im?"#6ee7b7":is?"#4f46e5":"#bfdbfe"}`,fontWeight:800,fontSize:14,color:im?"#065f46":is?"#fff":"#1e40af",cursor:"pointer"}}>
+              style={{flex:1,height:H,borderRadius:16,background:im?T.okC:is?T.primary:T.secondaryC,border:`2px solid ${im?T.ok:is?T.primary:"#bfdbfe"}`,fontWeight:800,fontSize:14,color:im?T.onOkC:is?"#fff":"#1e40af",cursor:"pointer"}}>
               {w.word}
             </button>
-            <span style={{color:"#d1d5db",fontSize:18,flexShrink:0}}>→</span>
+            <span style={{color:T.outlineV,fontSize:18,flexShrink:0}}>→</span>
             {p&&<button onClick={()=>{
               if(sel==null||pu) return;
               if(sel===p.id){track.correct(p);setMatches(m=>({...m,[sel]:p.id}));speak(p.word,p.meaning);}
               else{wrongs.current+=1;track.wrong(rw.find(x=>x.id===sel));showToast("ลองอีก 💡","warn");}
               setSel(null);
             }} disabled={pu}
-              style={{width:H*1.5,height:H,borderRadius:12,background:pu?"#d1fae5":"#f0fdf4",border:`2px solid ${pu?"#6ee7b7":"#86efac"}`,fontSize:28,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,cursor:"pointer",position:"relative",overflow:"hidden",padding:0,opacity:pu?0.55:1}}>
+              style={{width:H*1.5,height:H,borderRadius:16,background:pu?T.okC:T.okC,border:`2px solid ${pu?T.ok:T.ok}`,fontSize:28,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,cursor:"pointer",position:"relative",overflow:"hidden",padding:0,opacity:pu?0.55:1}}>
               <PicFill w={p} emojiSize={28} />
             </button>}
           </div>;
         })}
         {done&&<div style={{textAlign:"center",marginTop:6}}>
           {round+1<total
-            ?<Pill onClick={()=>setRound(r=>r+1)} bg="#10b981">รอบถัดไป →</Pill>
-            :<Pill onClick={()=>track.finish(words.length,words.length,{ stars: starsByWrong(wrongs.current) })} bg="#10b981">จบ ✓</Pill>}
+            ?<Pill onClick={()=>setRound(r=>r+1)} bg={T.ok}>รอบถัดไป →</Pill>
+            :<Pill onClick={()=>track.finish(words.length,words.length,{ stars: starsByWrong(wrongs.current) })} bg={T.ok}>จบ ✓</Pill>}
         </div>}
       </div>
     </GameCard>
@@ -2963,13 +2964,13 @@ function ColorMixGame({ words, speak, showToast, track }) {
       <Bar left={`รอบ ${round}/${MAX}`} right={`⭐${score}`} />
       <div style={GS.body}>
         <p style={{textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 10px"}}>ผสม 2 สีให้ได้สีเป้าหมาย</p>
-        <div style={{background:T.surfHigh,borderRadius:12,padding:"12px",textAlign:"center",marginBottom:10}}>
+        <div style={{background:T.surfHigh,borderRadius:16,padding:"12px",textAlign:"center",marginBottom:10}}>
           <div style={{fontSize:10,color:T.ink3,marginBottom:4}}>เป้าหมาย</div>
           <div style={{fontSize:50}}>{tw?.emoji}</div>
           <div style={{fontWeight:800,fontSize:17,color:T.ink}}>{tg}</div>
           <div style={{fontSize:12,color:T.ink2}}>{tw?.meaning}</div>
         </div>
-        <div style={{background:"#f5f3ff",borderRadius:12,minHeight:68,padding:"10px",display:"flex",alignItems:"center",justifyContent:"center",gap:10,marginBottom:10}}>
+        <div style={{background:T.primaryC,borderRadius:16,minHeight:68,padding:"10px",display:"flex",alignItems:"center",justifyContent:"center",gap:10,marginBottom:10}}>
           {picked.length===0?<span style={{color:T.ink3,fontSize:12}}>เลือก 2 สีด้านล่าง</span>
             :picked.map((p,i)=>(
               <div key={i} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:2}}>
@@ -3021,7 +3022,7 @@ function CountGame({ words, speak, showToast, track }) {
       <Bar left={`รอบ ${round}/${MAX}`} right={`⭐${score}`} />
       <div style={GS.body}>
         <p style={{textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 8px"}}>นับแล้วเลือกตัวเลข</p>
-        <div style={{background:"#f0fdf4",borderRadius:12,padding:"12px",display:"flex",flexWrap:"wrap",gap:8,justifyContent:"center",minHeight:110,marginBottom:10}}>
+        <div style={{background:T.okC,borderRadius:16,padding:"12px",display:"flex",flexWrap:"wrap",gap:8,justifyContent:"center",minHeight:110,marginBottom:10}}>
           {Array.from({length:target}).map((_,i)=><span key={i} style={{fontSize:32}}>{shape}</span>)}
         </div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:7}}>
@@ -3057,7 +3058,7 @@ function BodyDoctorGame({ words, speak, showToast, track }) {
       <Bar left={`รอบ ${round}/${MAX}`} right={`⭐${score}`} />
       <div style={GS.body}>
         <div style={{textAlign:"center",marginBottom:10}}>
-          <div style={{display:"inline-flex",alignItems:"center",gap:6,background:"#fce7f3",borderRadius:999,padding:"6px 14px",marginBottom:4}}>
+          <div style={{display:"inline-flex",alignItems:"center",gap:6,background:T.tertiaryC,borderRadius:999,padding:"6px 14px",marginBottom:4}}>
             <span>🔊</span><span style={{fontWeight:800,fontSize:14,color:"#9d174d"}}>Touch the {target?.word}!</span>
           </div>
           <br/>
@@ -3070,7 +3071,7 @@ function BodyDoctorGame({ words, speak, showToast, track }) {
               if(!target||fb) return;
               if(w.id===target.id){ track.correct(w); setScore(s=>s+1); setFb("ok"); speak(w.word,w.meaning); if(round>=MAX) setTimeout(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),800); else setTimeout(()=>setRound(r=>r+1),800); }
               else { wrongs.current+=1; track.wrong(target); setFb("no"); showToast("ลองอีก 🩺","warn"); setTimeout(()=>setFb(null),500); }
-            }} style={{background:fb==="ok"&&w.id===target?.id?"#d1fae5":"#fdf2f8",border:`2px solid ${fb==="ok"&&w.id===target?.id?"#6ee7b7":"#fbcfe8"}`,borderRadius:12,padding:"9px 4px",minHeight:60,display:"flex",flexDirection:"column",alignItems:"center",gap:4,cursor:"pointer",opacity:fb==="no"&&w.id!==target?.id?0.5:1}}>
+            }} style={{background:fb==="ok"&&w.id===target?.id?T.okC:T.tertiaryC,border:`2px solid ${fb==="ok"&&w.id===target?.id?T.ok:T.tertiaryC}`,borderRadius:16,padding:"9px 4px",minHeight:60,display:"flex",flexDirection:"column",alignItems:"center",gap:4,cursor:"pointer",opacity:fb==="no"&&w.id!==target?.id?0.5:1}}>
               <span style={{fontSize:26}}>{w.emoji}</span>
               <span style={{fontWeight:800,fontSize:9,color:T.ink2}}>{w.word}</span>
             </button>
@@ -3102,7 +3103,7 @@ function DressGame({ words, speak, showToast, track }) {
       <Bar left={`รอบ ${round}/${MAX}`} right={`⭐${score}`} />
       <div style={GS.body}>
         <p style={{textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 10px"}}>เลือกเสื้อผ้าให้เหมาะกับอากาศ</p>
-        <div style={{background:"#ecfeff",borderRadius:12,padding:"14px",textAlign:"center",marginBottom:12}}>
+        <div style={{background:T.secondaryC,borderRadius:16,padding:"14px",textAlign:"center",marginBottom:12}}>
           <div style={{fontSize:54}}>{target?.emoji}</div>
           <div style={{fontWeight:800,fontSize:17,color:T.ink}}>{target?.word}</div>
           <div style={{fontSize:12,color:T.ink2}}>{target?.meaning}</div>
@@ -3114,7 +3115,7 @@ function DressGame({ words, speak, showToast, track }) {
               if(o.ok){ track.correct(target); setScore(s=>s+1); showToast("👏 เก่ง!"); if(round>=MAX) setTimeout(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),800); else setTimeout(()=>setRound(r=>r+1),800); }
               else { wrongs.current+=1; track.wrong(target); showToast("ลองอีก 🧥","warn"); setTimeout(()=>setPicked(null),500); }
             }} disabled={!!picked}
-              style={{aspectRatio:"1",minHeight:56,borderRadius:12,fontSize:30,display:"flex",alignItems:"center",justifyContent:"center",background:picked===o.e&&o.ok?"#d1fae5":picked===o.e&&!o.ok?"#fee2e2":"#ecfeff",border:`2px solid ${picked===o.e&&o.ok?"#6ee7b7":picked===o.e&&!o.ok?"#fca5a5":"#a5f3fc"}`,cursor:"pointer"}}>
+              style={{aspectRatio:"1",minHeight:56,borderRadius:16,fontSize:30,display:"flex",alignItems:"center",justifyContent:"center",background:picked===o.e&&o.ok?T.okC:picked===o.e&&!o.ok?T.errorC:T.secondaryC,border:`2px solid ${picked===o.e&&o.ok?T.ok:picked===o.e&&!o.ok?T.error:"#a5f3fc"}`,cursor:"pointer"}}>
               {o.e}
             </button>
           ))}
@@ -3176,7 +3177,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
           <div style={{ flex:1,minWidth:0 }}>
             <div style={{ display:"flex",justifyContent:"space-between",fontSize:12,fontWeight:800 }}><span>👑 บอส {cat.label}</span><span>{idx+1}/{N}</span></div>
             <div style={{ height:12,background:"rgba(0,0,0,.35)",borderRadius:999,marginTop:6,overflow:"hidden",border:"1px solid rgba(255,255,255,.25)" }}>
-              <div style={{ height:"100%",width:`${Math.max(0,100-(score/WIN)*100)}%`,background:"linear-gradient(90deg,#f43f5e,#fb923c)",borderRadius:999,transition:"width .6s cubic-bezier(.2,.8,.2,1)",boxShadow:"0 0 12px rgba(244,63,94,.8)" }} />
+              <div style={{ height:"100%",width:`${Math.max(0,100-(score/WIN)*100)}%`,background:T.grad,borderRadius:999,transition:"width .6s cubic-bezier(.2,.8,.2,1)",boxShadow:"0 0 12px rgba(244,63,94,.8)" }} />
             </div>
             <div style={{ display:"flex",justifyContent:"space-between",marginTop:6,fontSize:13 }}><span style={{ opacity:.85 }}>HP บอส {Math.max(0,WIN-score)}/{WIN}</span><Hearts n={hearts} /></div>
           </div>
@@ -3188,12 +3189,12 @@ function BossGame({ words, speak, track, cat, onBack }) {
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {choices.map(c=>{
             const ic=c.id===q.w.id,ip=picked===c.id,sr=lock&&(ic||ip);
-            let bg="#f5f3ff",bo="#c4b5fd",tc="#4c1d95";
-            if(sr&&ic){bg="#d1fae5";bo="#6ee7b7";tc="#065f46";}
-            if(sr&&ip&&!ic){bg="#fee2e2";bo="#fca5a5";tc="#991b1b";}
-            if(lock&&!ip&&!ic){bg="#f9fafb";bo="#e5e7eb";tc="#9ca3af";}
+            let bg=T.primaryC,bo=T.primary,tc=T.primary;
+            if(sr&&ic){bg=T.okC;bo=T.ok;tc=T.onOkC;}
+            if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
+            if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
             return <button key={c.id} onClick={()=>pick(c)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:12,padding:q.mode==="rev"?0:"12px 6px",minHeight:q.mode==="rev"?"min(20vh, 140px)":56,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:q.mode==="rev"?0:"12px 6px",minHeight:q.mode==="rev"?"min(20vh, 140px)":56,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
               {q.mode==="rev"?<PicFill w={c} emojiSize={34} />:c.word}
             </button>;
           })}
@@ -3211,7 +3212,7 @@ function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, 
   const pet = getPet(progress);
   if (!pet) {
     return (
-      <div style={{ background:"linear-gradient(135deg,#fdf2f8,#eef2ff)",borderRadius:20,padding:16,marginBottom:14,border:"2px solid #e9d5ff",textAlign:"center" }}>
+      <div style={{ background:T.grad,borderRadius:20,padding:16,marginBottom:14,border:"2px solid #e9d5ff",textAlign:"center" }}>
         {profile && <div style={{ textAlign:"right",marginBottom:4 }}><button onClick={() => { sfx.tap(); onProfiles(); }} style={{ minHeight:44,display:"inline-flex",alignItems:"center",gap:4,background:"rgba(255,255,255,0.85)",border:"none",borderRadius:999,padding:"0 10px",fontSize:12,fontWeight:800,color:T.ink2,cursor:"pointer" }}>{profile.avatar} {profile.name} ▾</button></div>}
         <div style={{ fontWeight:900,fontSize:16,color:T.ink }}>เลือกเพื่อนคู่หูของ{profile?.name || "หนู"} 🥚</div>
         <div style={{ fontSize:12,color:T.ink2,margin:"2px 0 12px" }}>ยิ่งตอบถูก เพื่อนยิ่งโต!</div>
@@ -3230,7 +3231,7 @@ function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, 
   const line = pet.stage===0 ? `ไข่กำลังจะฟัก! ตอบถูกอีก ${Math.max(0,(pet.next??0)-pet.xp)} ข้อ`
     : pet.next==null ? "โตเต็มที่แล้ว เก่งมาก!" : `อีก ${pet.next-pet.xp} ข้อ ถึง Lv.${pet.level+1}`;
   const chip = { display:"inline-flex",alignItems:"center",gap:4,background:"rgba(255,255,255,0.8)",borderRadius:999,padding:"4px 10px",fontSize:12,fontWeight:800,color:T.ink2 };
-  const bgCss = SHOP_ITEMS.find(i => i.id === progress.bg)?.css || "linear-gradient(135deg,#fdf2f8,#eef2ff)";
+  const bgCss = SHOP_ITEMS.find(i => i.id === progress.bg)?.css || T.grad;
   const dark = progress.bg === "bgSpace";
   return (
     <div style={{ background:bgCss,borderRadius:20,padding:"14px 14px 12px",marginBottom:14,border:"2px solid #e9d5ff" }}>
@@ -3241,13 +3242,13 @@ function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, 
         </button>
         <div style={{ flex:1,minWidth:0 }}>
           <div style={{ display:"flex",alignItems:"center",gap:6 }}>
-            <span style={{ fontWeight:900,fontSize:17,color:dark?"#fff":"#1f2937" }}>{pet.name}</span>
-            <span style={{ fontSize:12,fontWeight:800,color:dark?"#c4b5fd":"#7c3aed" }}>Lv.{pet.level}</span>
+            <span style={{ fontWeight:900,fontSize:17,color:dark?"#fff":T.ink }}>{pet.name}</span>
+            <span style={{ fontSize:12,fontWeight:800,color:dark?T.primary:T.primary }}>Lv.{pet.level}</span>
             {profile && <button onClick={() => { sfx.tap(); onProfiles(); }} style={{ marginLeft:"auto",minHeight:44,display:"inline-flex",alignItems:"center",gap:4,background:"rgba(255,255,255,0.85)",border:"none",borderRadius:999,padding:"0 10px",fontSize:12,fontWeight:800,color:T.ink2,cursor:"pointer" }}>{profile.avatar} {profile.name} ▾</button>}
           </div>
-          <div style={{ fontSize:11,color:dark?"#e9d5ff":"#6b7280",marginBottom:5 }}>{line}</div>
+          <div style={{ fontSize:11,color:dark?"#e9d5ff":T.ink2,marginBottom:5 }}>{line}</div>
           <div style={{ height:8,background:"rgba(255,255,255,0.9)",borderRadius:999,overflow:"hidden" }}>
-            <div style={{ height:"100%",width:`${pet.pct}%`,background:"linear-gradient(90deg,#a78bfa,#ec4899)",borderRadius:999,transition:"width .6s" }} />
+            <div style={{ height:"100%",width:`${pet.pct}%`,background:T.grad,borderRadius:999,transition:"width .6s" }} />
           </div>
         </div>
       </div>
@@ -3255,8 +3256,8 @@ function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, 
         <span style={chip}>🪙 {progress.coins}</span>
         <span style={chip}>🔥 {progress.streak.count} วัน</span>
         <div style={{ display:"flex",gap:6,marginLeft:"auto" }}>
-          <button onClick={() => { sfx.tap(); onShop(); }} style={{ ...chip,background:"#f59e0b",color:"#fff",border:"none",cursor:"pointer",minHeight:44,padding:"0 12px" }}>🛍️ ร้านค้า</button>
-          <button onClick={() => { sfx.tap(); onStickers(); }} style={{ ...chip,background:"#7c3aed",color:"#fff",border:"none",cursor:"pointer",minHeight:44,padding:"0 12px" }}>📒 {stickerCount}/{totalWords}</button>
+          <button onClick={() => { sfx.tap(); onShop(); }} style={{ ...chip,background:T.tertiary,color:"#fff",border:"none",cursor:"pointer",minHeight:44,padding:"0 12px" }}>🛍️ ร้านค้า</button>
+          <button onClick={() => { sfx.tap(); onStickers(); }} style={{ ...chip,background:T.primary,color:"#fff",border:"none",cursor:"pointer",minHeight:44,padding:"0 12px" }}>📒 {stickerCount}/{totalWords}</button>
         </div>
       </div>
     </div>
@@ -3331,12 +3332,12 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <TRow label="ผู้ช่วยเสียงไทย" desc="อ่านวิธีเล่นเป็นภาษาไทยทุกครั้งที่เข้าเกม (สำหรับเด็กที่ยังอ่านไทยไม่คล่อง)" on={thaiGuide} set={setThaiGuide} />
         <TRow label="เต็มจอเมื่อเข้าเกม" desc="ซ่อนแถบเบราว์เซอร์ตอนเล่น (Android/คอม · iPhone ใช้ได้เมื่อติดตั้งเป็นแอป)" on={fullscreenOn} set={setFullscreenOn} />
         <TRow label="รูปภาพจริง" desc={`รูปถ่ายจาก Wikipedia ${bundledCount()} รูปมากับแอป (ไม่ต้องใช้เน็ต) · ปิด = ใช้อีโมจิ`} on={realPics} set={setRealPics} />
-        <button onClick={onCredits} style={{ width:"100%",minHeight:44,marginBottom:10,borderRadius:12,background:T.surfHigh,color:T.ink2,border:"1px solid var(--md-outline-variant)",fontWeight:700,fontSize:12,cursor:"pointer" }}>🖼️ เครดิตรูปภาพ (ที่มา / สัญญาอนุญาต)</button>
-        <div style={{ background:vr.th.length?"#ecfdf5":"#fff7ed",border:`1px solid ${vr.th.length?"#a7f3d0":"#fdba74"}`,borderRadius:14,padding:"10px 14px",marginBottom:10,fontSize:12,color:T.ink2 }}>
+        <button onClick={onCredits} style={{ width:"100%",minHeight:44,marginBottom:10,borderRadius:16,background:T.surfHigh,color:T.ink2,border:"1px solid var(--md-outline-variant)",fontWeight:700,fontSize:12,cursor:"pointer" }}>🖼️ เครดิตรูปภาพ (ที่มา / สัญญาอนุญาต)</button>
+        <div style={{ background:vr.th.length?"#ecfdf5":T.tertiaryC,border:`1px solid ${vr.th.length?"#a7f3d0":T.tertiary}`,borderRadius:14,padding:"10px 14px",marginBottom:10,fontSize:12,color:T.ink2 }}>
           <div style={{ fontWeight:800,marginBottom:2 }}>{vr.th.length ? `✅ เสียงไทยพร้อมใช้: ${vr.thPick}` : "⚠️ ยังไม่พบเสียงภาษาไทยในเครื่องนี้"}</div>
           {vr.th.length
             ? <div style={{ color:T.ink2 }}>พบเสียงทั้งหมด {vr.total} เสียง (อังกฤษ {vr.en}, ไทย {vr.th.length}) · ถ้ายังไม่ได้ยินไทย ลองกด "ทดสอบเสียง" ด้านล่าง</div>
-            : <div style={{ color:"#9a3412",lineHeight:1.5 }}>
+            : <div style={{ color:T.onTertiaryC,lineHeight:1.5 }}>
                 แอปจะอ่านได้แค่อังกฤษจนกว่าจะติดตั้งเสียงไทย:<br/>
                 {ios
                   ? <>iPhone/iPad: <b>การตั้งค่า → การช่วยการเข้าถึง → เนื้อหาที่พูด → เสียง → ไทย</b> → ดาวน์โหลดเสียง (เช่น Kanya) แล้วเปิดแอปใหม่</>
@@ -3347,7 +3348,7 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <div style={{ background:T.surfHigh,borderRadius:14,padding:"12px 14px",marginBottom:10 }}>
           <div style={{ display:"flex",justifyContent:"space-between",marginBottom:6 }}>
             <div style={{ fontWeight:700,fontSize:14,color:T.ink }}>ความเร็วเสียง</div>
-            <span style={{ fontWeight:800,color:"#ef4444",fontSize:15 }}>{rate.toFixed(2)}x</span>
+            <span style={{ fontWeight:800,color:T.error,fontSize:15 }}>{rate.toFixed(2)}x</span>
           </div>
           <input type="range" min="0.5" max="1.5" step="0.05" value={rate} onChange={e=>setRate(+e.target.value)} style={{ width:"100%",height:44 }} />
           <div style={{ display:"flex",justifyContent:"space-between",fontSize:10,color:T.ink3,marginTop:3 }}>
@@ -3355,17 +3356,17 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
           </div>
         </div>
         <button onClick={()=>{ sfx.coin(); speakWord("Hello! How are you?","สวัสดี เป็นอย่างไรบ้าง",rate,bilingual); }}
-          style={{ width:"100%",minHeight:48,padding:"12px",borderRadius:12,background:"#ef4444",color:"#fff",fontWeight:800,fontSize:15,border:"none",cursor:"pointer",marginBottom:10 }}>
+          style={{ width:"100%",minHeight:48,padding:"12px",borderRadius:16,background:T.error,color:"#fff",fontWeight:800,fontSize:15,border:"none",cursor:"pointer",marginBottom:10 }}>
           🔊 ทดสอบเสียง EN+TH
         </button>
-        <button onClick={onReport} style={{ width:"100%",minHeight:48,padding:"12px",borderRadius:12,background:"#eff6ff",color:"#1d4ed8",fontWeight:800,fontSize:14,border:"2px solid #bfdbfe",cursor:"pointer",marginBottom:10 }}>
+        <button onClick={onReport} style={{ width:"100%",minHeight:48,padding:"12px",borderRadius:16,background:T.secondaryC,color:"#1d4ed8",fontWeight:800,fontSize:14,border:"2px solid #bfdbfe",cursor:"pointer",marginBottom:10 }}>
           📊 รายงานผู้ปกครอง
         </button>
-        <button onClick={onClose} style={{ width:"100%",minHeight:44,padding:"11px",borderRadius:12,background:T.surfHigh,color:T.ink2,fontWeight:700,fontSize:14,border:"none",cursor:"pointer" }}>
+        <button onClick={onClose} style={{ width:"100%",minHeight:44,padding:"11px",borderRadius:16,background:T.surfHigh,color:T.ink2,fontWeight:700,fontSize:14,border:"none",cursor:"pointer" }}>
           ✓ เสร็จสิ้น
         </button>
         <button onClick={()=>{ if(window.confirm("ล้างความคืบหน้าทั้งหมด?\nดาว เหรียญ สติกเกอร์ streak และเพื่อนคู่หู จะเริ่มใหม่หมด")) onResetProgress(); }}
-          style={{ width:"100%",minHeight:44,marginTop:14,background:T.card,color:T.ink3,border:"1px dashed #d1d5db",borderRadius:12,padding:"10px",fontWeight:700,fontSize:12,cursor:"pointer" }}>
+          style={{ width:"100%",minHeight:44,marginTop:14,background:T.card,color:T.ink3,border:"1px dashed #d1d5db",borderRadius:16,padding:"10px",fontWeight:700,fontSize:12,cursor:"pointer" }}>
           ↺ ล้างดาว / เหรียญ / สติกเกอร์ (เริ่มใหม่)
         </button>
     </M3Sheet>
@@ -3392,7 +3393,7 @@ function NoWords({ onBack }) {
     <div style={{ padding:32,textAlign:"center" }}>
       <div style={{ fontSize:46,marginBottom:10 }}>📭</div>
       <p style={{ color:T.ink2,fontWeight:600,fontSize:14 }}>ยังไม่มีคำพอสำหรับเกมนี้ (ต้องมีอย่างน้อย 4 คำ)</p>
-      <button onClick={onBack} style={{ marginTop:14,minHeight:44,background:"#6366f1",color:"#fff",borderRadius:12,padding:"10px 22px",fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>กลับ</button>
+      <button onClick={onBack} style={{ marginTop:14,minHeight:44,background:T.primary,color:"#fff",borderRadius:16,padding:"10px 22px",fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>กลับ</button>
     </div>
   );
 }
@@ -3428,7 +3429,7 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
     if (i + 1 < deck.length) { setKnow(k); setI(i + 1); setFlip(false); }
     else { showToast(`📖 เรียนครบ ${deck.length} ใบ · รู้แล้ว ${k} คำ`); onDone(); }
   };
-  const btn = { flex:1,minHeight:44,borderRadius:12,border:"none",background:T.surfHigh,color:T.ink2,fontWeight:700,fontSize:13,cursor:"pointer" };
+  const btn = { flex:1,minHeight:44,borderRadius:16,border:"none",background:T.surfHigh,color:T.ink2,fontWeight:700,fontSize:13,cursor:"pointer" };
   return (
     <div style={{ padding:"10px",maxWidth:440,margin:"0 auto" }}>
       <div style={{ display:"flex",justifyContent:"space-between",fontSize:13,fontWeight:700,color:T.ink2,padding:"0 4px 8px" }}>
@@ -3440,13 +3441,13 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
           <span style={{ position:"absolute",inset:0,borderRadius:28,backfaceVisibility:"hidden",WebkitBackfaceVisibility:"hidden",background:T.card,border:`3px solid ${cat.color}50`,boxShadow:"0 18px 44px rgba(0,0,0,.18)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:20 }}>
             <Pic w={w} size={84} fill style={{ maxHeight:"36vh" }} />
             <span style={{ fontSize:34,fontWeight:900,color:T.ink,letterSpacing:1 }}>{w.word}</span>
-            {w.read && <span style={{ fontSize:18,fontWeight:700,color:"#7c3aed" }}>{w.read}</span>}
+            {w.read && <span style={{ fontSize:18,fontWeight:700,color:T.primary }}>{w.read}</span>}
             <span style={{ fontSize:11,color:T.ink3,marginTop:8 }}>แตะการ์ดเพื่อพลิกดูความหมาย</span>
           </span>
           <span style={{ position:"absolute",inset:0,borderRadius:28,backfaceVisibility:"hidden",WebkitBackfaceVisibility:"hidden",transform:"rotateY(180deg)",background:`linear-gradient(160deg, ${cat.color}22, #fff 60%)`,border:`3px solid ${cat.color}80`,boxShadow:"0 18px 44px rgba(0,0,0,.18)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:20,overflowY:"auto" }}>
             <Pic w={w} size={44} radius={14} />
             <span style={{ fontSize:30,fontWeight:900,color:T.ink }}>{w.meaning}</span>
-            {w.read && <span style={{ fontSize:14,color:"#7c3aed",fontWeight:700 }}>{w.word} · {w.read}</span>}
+            {w.read && <span style={{ fontSize:14,color:T.primary,fontWeight:700 }}>{w.word} · {w.read}</span>}
             {w.sen && <div style={{ marginTop:10,background:T.card,borderRadius:14,padding:"10px 14px",width:"100%" }}>
               <div style={{ fontSize:16,fontWeight:700,color:T.ink }}>{w.sen}</div>
               <div style={{ fontSize:13,color:T.ink2,marginTop:2 }}>{w.senTh}</div>
@@ -3461,8 +3462,8 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
         {w.sen && <button onClick={() => speak(w.sen, w.senTh)} style={btn}>💬 ประโยค</button>}
       </div>
       <div style={{ display:"flex",gap:8,marginTop:10 }}>
-        <button onClick={() => mark(false)} style={{ flex:1,minHeight:54,borderRadius:16,border:"none",background:"#fff7ed",color:"#c2410c",fontWeight:800,fontSize:15,cursor:"pointer",border:"2px solid #fdba74" }}>😅 ยังไม่แม่น</button>
-        <button onClick={() => mark(true)} style={{ flex:1,minHeight:54,borderRadius:16,border:"none",background:"#10b981",color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>😎 รู้แล้ว</button>
+        <button onClick={() => mark(false)} style={{ flex:1,minHeight:54,borderRadius:16,border:"none",background:T.tertiaryC,color:T.onTertiaryC,fontWeight:800,fontSize:15,cursor:"pointer",border:"2px solid #fdba74" }}>😅 ยังไม่แม่น</button>
+        <button onClick={() => mark(true)} style={{ flex:1,minHeight:54,borderRadius:16,border:"none",background:T.ok,color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>😎 รู้แล้ว</button>
       </div>
       <p style={{ textAlign:"center",fontSize:11,color:T.ink3,marginTop:10 }}>คำที่ "ยังไม่แม่น" จะกลับมาให้ทบทวนวันนี้ · คำที่ "รู้แล้ว" จะเว้นระยะนานขึ้นเรื่อยๆ</p>
     </div>
@@ -3498,17 +3499,17 @@ function ListenGame({ words, speakAt, track, onBack, pool }) {
       <Bar left={`👂 ${idx+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
         <button onClick={() => { setPlayed(true); speakAt(cur.word, null, 0.8); }}
-          style={{ width:120,height:120,borderRadius:60,margin:"6px auto 10px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:52,background:played?"#ede9fe":"linear-gradient(135deg,#8b5cf6,#ec4899)",border:"none",cursor:"pointer",boxShadow:"0 8px 24px rgba(139,92,246,0.35)",animation:played?"none":"vpBounce 1.5s infinite" }}>
+          style={{ width:120,height:120,borderRadius:60,margin:"6px auto 10px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:52,background:played?T.primaryC:T.grad,border:"none",cursor:"pointer",boxShadow:"0 8px 24px rgba(139,92,246,0.35)",animation:played?"none":"vpBounce 1.5s infinite" }}>
           🔊
         </button>
         <p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:T.ink2,margin:"0 0 4px" }}>{played ? "ได้ยินคำว่าอะไร? เลือกรูป" : "แตะลำโพงเพื่อฟัง (ฟังซ้ำได้)"}</p>
-        {lock && <p style={{ textAlign:"center",fontSize:14,color:"#7c3aed",fontWeight:800,margin:"0 0 8px" }}>{cur.word} · {cur.read} · {cur.meaning}</p>}
+        {lock && <p style={{ textAlign:"center",fontSize:14,color:T.primary,fontWeight:800,margin:"0 0 8px" }}>{cur.word} · {cur.read} · {cur.meaning}</p>}
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginTop:8 }}>
           {choices.map(c => {
             const ic = c.id === cur.id, ip = picked === c.id, sr = lock && (ic || ip);
-            let bg = "#f5f3ff", bo = "#ddd6fe";
-            if (sr && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; }
-            if (sr && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; }
+            let bg = T.primaryC, bo = T.primaryC;
+            if (sr && ic) { bg = T.okC; bo = T.ok; }
+            if (sr && ip && !ic) { bg = T.errorC; bo = T.error; }
             return <button key={c.id} onClick={() => pick(c)} disabled={lock || !played}
               style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,minHeight:"min(22vh, 150px)",fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
           })}
@@ -3537,7 +3538,7 @@ function SpeakGame({ words, speak, track, onBack }) {
       <div style={{ fontSize:50 }}>🎤</div>
       <p style={{ fontWeight:800,fontSize:15,color:T.ink }}>เบราว์เซอร์นี้ยังฟังเสียงพูดไม่ได้</p>
       <p style={{ fontSize:13,color:T.ink2 }}>ลองเปิดใน Chrome (Android) หรือ Safari (iPhone) แล้วอนุญาตให้ใช้ไมโครโฟน</p>
-      <Pill onClick={onBack} bg="#6366f1">กลับ</Pill>
+      <Pill onClick={onBack} bg={T.primary}>กลับ</Pill>
     </div></GameCard>
   );
   const listen = () => {
@@ -3562,7 +3563,7 @@ function SpeakGame({ words, speak, track, onBack }) {
     if (idx + 1 < qs.length) { setIdx(i => i + 1); setSt("idle"); setHeard(""); setGotIt(false); setPct(0); }
     else track.finish(score, qs.length);
   };
-  const micBg = st === "listening" ? "#ef4444" : st === "ok" ? "#10b981" : "linear-gradient(135deg,#f59e0b,#ef4444)";
+  const micBg = st === "listening" ? T.error : st === "ok" ? T.ok : T.grad;
   return (
     <GameCard>
       <Bar left={`🎤 ${idx+1}/${qs.length}`} right={`⭐${score}`} />
@@ -3570,7 +3571,7 @@ function SpeakGame({ words, speak, track, onBack }) {
         <Emoji e={cur.emoji} w={cur} size={52} />
         <div style={{ textAlign:"center" }}>
           <div style={{ fontSize:30,fontWeight:900,color:T.ink,letterSpacing:1 }}>{cur.word}</div>
-          <div style={{ fontSize:16,fontWeight:700,color:"#7c3aed" }}>{cur.read}</div>
+          <div style={{ fontSize:16,fontWeight:700,color:T.primary }}>{cur.read}</div>
           <div style={{ fontSize:13,color:T.ink2 }}>{cur.meaning}</div>
         </div>
         <SndBtn onClick={() => speak(cur.word, null)} />
@@ -3578,7 +3579,7 @@ function SpeakGame({ words, speak, track, onBack }) {
           style={{ width:110,height:110,borderRadius:55,margin:"4px auto 8px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:46,background:micBg,border:"none",cursor:"pointer",boxShadow:"0 8px 24px rgba(239,68,68,0.3)",animation:st==="listening"?"vpBounce .6s infinite":"none" }}>
           {st === "ok" ? "✅" : "🎤"}
         </button>
-        <p style={{ textAlign:"center",fontSize:13,fontWeight:700,margin:"0 0 6px",color:st==="ok"?"#059669":st==="no"?"#dc2626":"#374151" }}>
+        <p style={{ textAlign:"center",fontSize:13,fontWeight:700,margin:"0 0 6px",color:st==="ok"?T.ok:st==="no"?T.error:T.ink2 }}>
           {st === "idle" && "แตะไมค์ แล้วพูดคำนี้"}
           {st === "listening" && "กำลังฟัง... พูดเลย!"}
           {st === "ok" && (pct >= 95 ? "เยี่ยม! ชัดเจนมาก 🎉 100%" : `ดีมาก! ใกล้เคียง ${pct}% 👏`)}
@@ -3586,8 +3587,8 @@ function SpeakGame({ words, speak, track, onBack }) {
           {st === "err" && "ต้องอนุญาตให้ใช้ไมโครโฟนก่อนนะ"}
         </p>
         <div style={{ display:"flex",gap:8,justifyContent:"center" }}>
-          {(st === "no" || st === "err") && <Pill onClick={listen} bg="#f59e0b">🎤 ลองอีก</Pill>}
-          <Pill onClick={next} bg={gotIt ? "#10b981" : "#9ca3af"}>{gotIt ? "ถัดไป ›" : "ข้าม ›"}</Pill>
+          {(st === "no" || st === "err") && <Pill onClick={listen} bg={T.tertiary}>🎤 ลองอีก</Pill>}
+          <Pill onClick={next} bg={gotIt ? T.ok : T.ink3}>{gotIt ? "ถัดไป ›" : "ข้าม ›"}</Pill>
         </div>
       </div>
     </GameCard>
@@ -3621,7 +3622,7 @@ function SentenceGame({ words, speak, track, onBack }) {
     } else sfx.tap();
   };
   const undo = i => { if (done) return; const r = picked[i]; setPicked(picked.filter((_, j) => j !== i)); setPool([...pool, r]); };
-  const chip = (bg, bo, c) => ({ minHeight:44,padding:"8px 12px",borderRadius:12,background:bg,border:`2px solid ${bo}`,color:c,fontWeight:800,fontSize:15,cursor:"pointer" });
+  const chip = (bg, bo, c) => ({ minHeight:44,padding:"8px 12px",borderRadius:16,background:bg,border:`2px solid ${bo}`,color:c,fontWeight:800,fontSize:15,cursor:"pointer" });
   return (
     <GameCard>
       <Bar left={`🧩 ${idx+1}/${qs.length}`} right={`⭐${score}`} />
@@ -3632,18 +3633,18 @@ function SentenceGame({ words, speak, track, onBack }) {
           <div style={{ fontSize:11,color:T.ink3 }}>เรียงคำให้เป็นประโยคภาษาอังกฤษ</div>
         </div>
         <SndBtn onClick={() => speak(cur.sen, null)} />
-        <div style={{ minHeight:64,display:"flex",flexWrap:"wrap",gap:6,alignItems:"center",padding:10,borderRadius:14,marginBottom:10,background:done?(correct?"#d1fae5":"#fee2e2"):"#f9fafb",border:`2px dashed ${done?(correct?"#6ee7b7":"#fca5a5"):"#d1d5db"}` }}>
+        <div style={{ minHeight:64,display:"flex",flexWrap:"wrap",gap:6,alignItems:"center",padding:10,borderRadius:14,marginBottom:10,background:done?(correct?T.okC:T.errorC):T.surfHigh,border:`2px dashed ${done?(correct?T.ok:T.error):T.outlineV}` }}>
           {picked.length === 0 && <span style={{ color:T.ink3,fontSize:12 }}>แตะคำด้านล่างตามลำดับ</span>}
-          {picked.map((l, i) => <button key={l.id} onClick={() => undo(i)} style={chip(done?(correct?"#10b981":"#ef4444"):"#6366f1","transparent","#fff")}>{l.t}</button>)}
+          {picked.map((l, i) => <button key={l.id} onClick={() => undo(i)} style={chip(done?(correct?T.ok:T.error):T.primary,"transparent","#fff")}>{l.t}</button>)}
         </div>
         <div style={{ display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center",minHeight:50,marginBottom:10 }}>
-          {pool.map(l => <button key={l.id} onClick={() => tap(l)} style={chip("#eef2ff","#c7d2fe","#3730a3")}>{l.t}</button>)}
+          {pool.map(l => <button key={l.id} onClick={() => tap(l)} style={chip(T.secondaryC,T.primaryC,T.onPrimaryC)}>{l.t}</button>)}
         </div>
-        {done && !correct && <div style={{ textAlign:"center",fontSize:13,color:"#991b1b",marginBottom:8 }}>ที่ถูกคือ: <b>{cur.sen}</b></div>}
-        {done && correct && <div style={{ textAlign:"center",fontSize:13,color:"#065f46",fontWeight:700,marginBottom:8 }}>🎉 {cur.sen}</div>}
+        {done && !correct && <div style={{ textAlign:"center",fontSize:13,color:T.onErrorC,marginBottom:8 }}>ที่ถูกคือ: <b>{cur.sen}</b></div>}
+        {done && correct && <div style={{ textAlign:"center",fontSize:13,color:T.onOkC,fontWeight:700,marginBottom:8 }}>🎉 {cur.sen}</div>}
         <div style={{ display:"flex",gap:8 }}>
-          <Pill onClick={() => { setPool(shuffle(tokens.map((t, i) => ({ id: i, t })))); setPicked([]); setDone(false); }} bg="#9ca3af">🔄 ใหม่</Pill>
-          <Pill onClick={() => { if (idx + 1 < qs.length) setIdx(i => i + 1); else track.finish(score, qs.length); }} disabled={!done} bg="#8b5cf6">ถัดไป ›</Pill>
+          <Pill onClick={() => { setPool(shuffle(tokens.map((t, i) => ({ id: i, t })))); setPicked([]); setDone(false); }} bg={T.ink3}>🔄 ใหม่</Pill>
+          <Pill onClick={() => { if (idx + 1 < qs.length) setIdx(i => i + 1); else track.finish(score, qs.length); }} disabled={!done} bg={T.primary}>ถัดไป ›</Pill>
         </div>
       </div>
     </GameCard>
@@ -3695,7 +3696,7 @@ function ShopScreen({ progress, setProgress, showToast }) {
   const pet = getPet(progress);
   const [tab, setTab] = useState("hat");
   const items = SHOP_ITEMS.filter(i => i.type === tab);
-  const bg = SHOP_ITEMS.find(i => i.id === progress.bg)?.css || "linear-gradient(135deg,#fdf2f8,#eef2ff)";
+  const bg = SHOP_ITEMS.find(i => i.id === progress.bg)?.css || T.grad;
   const buy = it => {
     if (progress.coins < it.cost) { sfx.bad(); showToast(`เหรียญไม่พอ ขาดอีก ${it.cost - progress.coins} 🪙`, "warn"); return; }
     sfx.coin(); fx.burst(innerWidth/2, 160, { count: 24 }); setProgress(p => it.type === "outfit"
@@ -3710,7 +3711,7 @@ function ShopScreen({ progress, setProgress, showToast }) {
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
       <div style={{ background:bg,borderRadius:28,padding:16,textAlign:"center",marginBottom:12 }}>
         <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={76} bounce mood="happy" />
-        <div style={{ fontWeight:900,fontSize:16,color:progress.bg==="bgSpace"?"#fff":"#1f2937",marginTop:4 }}>{pet?.name || "เพื่อนคู่หู"}</div>
+        <div style={{ fontWeight:900,fontSize:16,color:progress.bg==="bgSpace"?"#fff":T.ink,marginTop:4 }}>{pet?.name || "เพื่อนคู่หู"}</div>
         <div style={{ ...M3.assist(),marginTop:6,fontWeight:700 }}>🪙 {progress.coins}</div>
       </div>
       <div style={{ display:"flex",gap:6,marginBottom:12 }}>
@@ -3755,12 +3756,12 @@ function ReportScreen({ words, categories, progress }) {
         <div style={{ fontSize:13,opacity:0.9 }}>ความคืบหน้าทั้งหมดของลูก · อัปเดตอัตโนมัติ</div>
       </div>
       <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:12 }}>
-        <Stat v={mastered.length} l={`คำที่จำได้แม่น / ${words.length}`} c="#059669" />
+        <Stat v={mastered.length} l={`คำที่จำได้แม่น / ${words.length}`} c={T.ok} />
         <Stat v={learned.length} l="คำที่เคยเรียน" c="#2563eb" />
-        <Stat v={`${acc}%`} l="ความแม่นยำ" c="#d97706" />
-        <Stat v={total} l="ตอบถูกสะสม" c="#7c3aed" />
-        <Stat v={progress.games || 0} l="รอบที่เล่นจบ" c="#db2777" />
-        <Stat v={`${progress.streak.count} วัน`} l="เล่นต่อเนื่อง" c="#ea580c" />
+        <Stat v={`${acc}%`} l="ความแม่นยำ" c={T.tertiary} />
+        <Stat v={total} l="ตอบถูกสะสม" c={T.primary} />
+        <Stat v={progress.games || 0} l="รอบที่เล่นจบ" c={T.accent} />
+        <Stat v={`${progress.streak.count} วัน`} l="เล่นต่อเนื่อง" c={T.tertiary} />
       </div>
       <div style={{ background:T.card,borderRadius:16,padding:14,marginBottom:12,border:"none" }}>
         <div style={{ fontWeight:800,fontSize:14,color:T.ink,marginBottom:8 }}>ความคืบหน้าแต่ละหมวด</div>
@@ -3785,8 +3786,8 @@ function ReportScreen({ words, categories, progress }) {
         {weak.map(w => (
           <div key={w.id} style={{ display:"flex",alignItems:"center",gap:10,padding:"6px 0",borderTop:"1px solid #f9fafb" }}>
             <span style={{ fontSize:24 }}>{w.emoji}</span>
-            <div style={{ flex:1 }}><div style={{ fontWeight:800,fontSize:13,color:T.ink }}>{w.word} <span style={{ color:"#7c3aed",fontWeight:600 }}>{w.read}</span></div><div style={{ fontSize:12,color:T.ink2 }}>{w.meaning}</div></div>
-            <span style={{ fontSize:11,fontWeight:800,color:"#dc2626",background:"#fee2e2",padding:"2px 8px",borderRadius:999 }}>พลาด {progress.mistakes[w.id]}</span>
+            <div style={{ flex:1 }}><div style={{ fontWeight:800,fontSize:13,color:T.ink }}>{w.word} <span style={{ color:T.primary,fontWeight:600 }}>{w.read}</span></div><div style={{ fontSize:12,color:T.ink2 }}>{w.meaning}</div></div>
+            <span style={{ fontSize:11,fontWeight:800,color:T.error,background:T.errorC,padding:"2px 8px",borderRadius:999 }}>พลาด {progress.mistakes[w.id]}</span>
           </div>
         ))}
       </div>
@@ -3809,34 +3810,34 @@ function ProfileSheet({ profiles, onSwitch, onAdd, onDelete, onClose }) {
         {profiles.list.map(pf => {
           const on = pf.id === profiles.current;
           return (
-            <div key={pf.id} style={{ display:"flex",alignItems:"center",gap:10,padding:"8px 10px",borderRadius:14,marginBottom:8,background:on?"#ede9fe":"#f9fafb",border:`2px solid ${on?"#8b5cf6":"transparent"}` }}>
+            <div key={pf.id} style={{ display:"flex",alignItems:"center",gap:10,padding:"8px 10px",borderRadius:14,marginBottom:8,background:on?T.primaryC:T.surfHigh,border:`2px solid ${on?T.primary:"transparent"}` }}>
               <button onClick={() => { sfx.tap(); onSwitch(pf.id); }} style={{ flex:1,display:"flex",alignItems:"center",gap:10,background:"none",border:"none",cursor:"pointer",minHeight:44,textAlign:"left",padding:0 }}>
                 <span style={{ fontSize:30 }}>{pf.avatar}</span>
                 <span style={{ fontWeight:800,fontSize:15,color:T.ink }}>{pf.name}</span>
-                {on && <span style={{ fontSize:11,fontWeight:800,color:"#7c3aed",background:T.card,padding:"2px 8px",borderRadius:999 }}>กำลังเล่น</span>}
+                {on && <span style={{ fontSize:11,fontWeight:800,color:T.primary,background:T.card,padding:"2px 8px",borderRadius:999 }}>กำลังเล่น</span>}
               </button>
               {profiles.list.length > 1 && (
                 <button onClick={() => { if (window.confirm(`ลบโปรไฟล์ "${pf.name}"?\\nดาว เหรียญ สติกเกอร์ของคนนี้จะหายทั้งหมด`)) onDelete(pf.id); }}
-                  style={{ width:44,height:44,borderRadius:12,background:"#fee2e2",border:"none",cursor:"pointer",fontSize:16 }}>🗑️</button>
+                  style={{ width:44,height:44,borderRadius:16,background:T.errorC,border:"none",cursor:"pointer",fontSize:16 }}>🗑️</button>
               )}
             </div>
           );
         })}
         {!adding ? (
-          <button onClick={() => { sfx.tap(); setAdding(true); }} style={{ width:"100%",minHeight:48,borderRadius:14,border:"2px dashed #c4b5fd",background:T.card,color:"#7c3aed",fontWeight:800,fontSize:14,cursor:"pointer",marginTop:4 }}>＋ เพิ่มคนใหม่</button>
+          <button onClick={() => { sfx.tap(); setAdding(true); }} style={{ width:"100%",minHeight:48,borderRadius:14,border:"2px dashed #c4b5fd",background:T.card,color:T.primary,fontWeight:800,fontSize:14,cursor:"pointer",marginTop:4 }}>＋ เพิ่มคนใหม่</button>
         ) : (
-          <div style={{ background:"#f5f3ff",borderRadius:16,padding:12,marginTop:4 }}>
+          <div style={{ background:T.primaryC,borderRadius:16,padding:12,marginTop:4 }}>
             <input value={name} onChange={e => setName(e.target.value)} placeholder="ชื่อ (เช่น น้องมีนา)" maxLength={12} style={{ ...inputStyle,marginBottom:8 }} />
             <div style={{ display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:6,marginBottom:10 }}>
-              {AVATARS.map(a => <button key={a} onClick={() => { sfx.tap(); setAvatar(a); }} style={{ minHeight:48,borderRadius:12,fontSize:26,border:`2px solid ${avatar===a?"#8b5cf6":"#e5e7eb"}`,background:avatar===a?"#ede9fe":"#fff",cursor:"pointer" }}>{a}</button>)}
+              {AVATARS.map(a => <button key={a} onClick={() => { sfx.tap(); setAvatar(a); }} style={{ minHeight:48,borderRadius:16,fontSize:26,border:`2px solid ${avatar===a?T.primary:T.outlineV}`,background:avatar===a?T.primaryC:"#fff",cursor:"pointer" }}>{a}</button>)}
             </div>
             <div style={{ display:"flex",gap:8 }}>
-              <button onClick={() => { if (!name.trim()) return; sfx.coin(); onAdd(name.trim(), avatar); setAdding(false); setName(""); }} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",background:"#7c3aed",color:"#fff",fontWeight:800,fontSize:14,cursor:"pointer" }}>สร้าง ✓</button>
-              <button onClick={() => setAdding(false)} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",background:T.card,color:T.ink2,fontWeight:700,fontSize:14,cursor:"pointer" }}>ยกเลิก</button>
+              <button onClick={() => { if (!name.trim()) return; sfx.coin(); onAdd(name.trim(), avatar); setAdding(false); setName(""); }} style={{ flex:1,minHeight:44,borderRadius:16,border:"none",background:T.primary,color:"#fff",fontWeight:800,fontSize:14,cursor:"pointer" }}>สร้าง ✓</button>
+              <button onClick={() => setAdding(false)} style={{ flex:1,minHeight:44,borderRadius:16,border:"none",background:T.card,color:T.ink2,fontWeight:700,fontSize:14,cursor:"pointer" }}>ยกเลิก</button>
             </div>
           </div>
         )}
-        <button onClick={onClose} style={{ width:"100%",minHeight:44,marginTop:12,borderRadius:12,background:T.surfHigh,color:T.ink2,fontWeight:700,fontSize:14,border:"none",cursor:"pointer" }}>✓ เสร็จสิ้น</button>
+        <button onClick={onClose} style={{ width:"100%",minHeight:44,marginTop:12,borderRadius:16,background:T.surfHigh,color:T.ink2,fontWeight:700,fontSize:14,border:"none",cursor:"pointer" }}>✓ เสร็จสิ้น</button>
     </M3Sheet>
   );
 }
@@ -3849,7 +3850,7 @@ function PathScreen({ units, progress, onStep }) {
   const firstOpen = units.findIndex(u => !unitDone(path, u));
   const [openId, setOpenId] = useState(firstOpen >= 0 ? units[firstOpen].id : units[0]?.id);
   const doneCount = units.filter(u => unitDone(path, u)).length;
-  const LV = { A1: ["A1 · เริ่มต้น", "#10b981"], "A1+": ["A1+ · ต่อยอด", "#3b82f6"], A2: ["A2 · เก่งแล้ว", "#8b5cf6"] };
+  const LV = { A1: ["A1 · เริ่มต้น", T.ok], "A1+": ["A1+ · ต่อยอด", T.primary], A2: ["A2 · เก่งแล้ว", T.primary] };
   const STEP = { learn: ["📖", "เรียนการ์ด"], quiz: ["🏆", "ทำแบบทดสอบ"], listen: ["👂", "ฟังแล้วเลือก"] };
   return (
     <div style={{ padding:"14px 12px 60px",maxWidth:480,margin:"0 auto" }}>
@@ -3873,7 +3874,7 @@ function PathScreen({ units, progress, onStep }) {
               {!open ? (
                 <button onClick={() => { if (!unlocked) { sfx.bad(); return; } sfx.tap(); setOpenId(u.id); }}
                   style={{ width:84,height:84,borderRadius:42,border:"none",cursor:unlocked?"pointer":"not-allowed",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:0,
-                    background:done?"#10b981":unlocked?u.cat.color:"#e5e7eb",color:"#fff",boxShadow:unlocked&&!done?`0 8px 20px ${u.cat.color}66`:"none",animation:unlocked&&!done?"vpBounce 1.6s infinite":"none" }}>
+                    background:done?T.ok:unlocked?u.cat.color:T.outlineV,color:"#fff",boxShadow:unlocked&&!done?`0 8px 20px ${u.cat.color}66`:"none",animation:unlocked&&!done?"vpBounce 1.6s infinite":"none" }}>
                   <span style={{ fontSize:30 }}>{done ? "✓" : unlocked ? u.cat.emoji : "🔒"}</span>
                   <span style={{ fontSize:10,fontWeight:800,opacity:0.95 }}>บท {u.n}</span>
                 </button>
@@ -3885,7 +3886,7 @@ function PathScreen({ units, progress, onStep }) {
                       <div style={{ fontWeight:900,fontSize:16,color:T.ink }}>บทที่ {u.n} · {u.cat.thai}</div>
                       <div style={{ fontSize:11,color:T.ink2 }}>{u.words.length} คำ: {u.words.slice(0,5).map(w=>w.word).join(", ")}{u.words.length>5?"…":""}</div>
                     </div>
-                    <span style={{ fontSize:12,fontWeight:800,color:done?"#059669":"#9ca3af" }}>{steps}/3</span>
+                    <span style={{ fontSize:12,fontWeight:800,color:done?T.ok:T.ink3 }}>{steps}/3</span>
                   </div>
                   {UNIT_STEPS.map((s, k) => {
                     const sd = !!path[u.id]?.[s];
@@ -3893,7 +3894,7 @@ function PathScreen({ units, progress, onStep }) {
                     return (
                       <button key={s} onClick={() => { if (!unlocked || !prevDone) { sfx.bad(); return; } sfx.tap(); onStep(u, s); }}
                         style={{ width:"100%",minHeight:52,borderRadius:14,marginBottom:6,border:"none",cursor:"pointer",display:"flex",alignItems:"center",gap:10,padding:"0 12px",textAlign:"left",
-                          background:sd?"#d1fae5":prevDone&&unlocked?"#f5f3ff":"#f3f4f6",color:sd?"#065f46":prevDone&&unlocked?"#4c1d95":"#9ca3af" }}>
+                          background:sd?T.okC:prevDone&&unlocked?T.primaryC:T.surfHigh,color:sd?T.onOkC:prevDone&&unlocked?T.primary:T.ink3 }}>
                         <span style={{ fontSize:22 }}>{sd ? "✅" : prevDone && unlocked ? STEP[s][0] : "🔒"}</span>
                         <span style={{ flex:1,fontWeight:800,fontSize:14 }}>{k+1}. {STEP[s][1]}</span>
                         <span style={{ fontSize:18,opacity:0.5 }}>›</span>
@@ -3904,7 +3905,7 @@ function PathScreen({ units, progress, onStep }) {
                 </div>
               )}
             </div>
-            {i < units.length - 1 && !open && <div style={{ textAlign:"center",color:"#d1d5db",fontSize:18,lineHeight:1,marginBottom:6 }}>⋮</div>}
+            {i < units.length - 1 && !open && <div style={{ textAlign:"center",color:T.outlineV,fontSize:18,lineHeight:1,marginBottom:6 }}>⋮</div>}
           </div>
         );
       })}
@@ -3955,7 +3956,7 @@ function CreditsScreen({ words }) {
         const w = c.audio ? words.find(x => x.word.toLowerCase() === title) : wordOf(title);
         return (
           <a key={(c.audio ? "a:" : "i:") + title} href={c.source || c.page || "#"} target="_blank" rel="noreferrer" style={{ display:"flex",alignItems:"center",gap:10,padding:"6px 0",borderBottom:"1px solid var(--md-outline-variant)",textDecoration:"none",color:"inherit",minHeight:44 }}>
-            {c.audio ? <div style={{ width:44,height:33,borderRadius:6,flexShrink:0,background:"#eef2ff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🔊</div>
+            {c.audio ? <div style={{ width:44,height:33,borderRadius:6,flexShrink:0,background:T.secondaryC,display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🔊</div>
               : c.file && <img src={`${import.meta.env.BASE_URL}img/${c.file}`} alt="" loading="lazy" style={{ width:44,height:33,objectFit:"cover",borderRadius:6,flexShrink:0 }} />}
             <div style={{ flex:1,minWidth:0 }}>
               <div style={{ fontWeight:800,fontSize:13,color:T.ink }}>{w ? `${w.emoji} ${w.word}` : title} <span style={{ fontWeight:500,color:T.ink3 }}>· {title}</span></div>
@@ -4007,12 +4008,12 @@ function TalkScreen({ words, progress, onOpen }) {
         return (
           <button key={d.id} onClick={() => { sfx.tap(); onOpen(d); }}
             style={{ width:"100%",minHeight:72,background:T.card,border:"none",borderRadius:16,padding:"10px 12px",marginBottom:8,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",boxShadow:"0 2px 8px rgba(0,0,0,0.05)" }}>
-            <div style={{ width:56,height:42,borderRadius:12,overflow:"hidden",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center",background:T.surfHigh }}>{picOf(words, d.scene, 24)}</div>
+            <div style={{ width:56,height:42,borderRadius:16,overflow:"hidden",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center",background:T.surfHigh }}>{picOf(words, d.scene, 24)}</div>
             <div style={{ flex:1,minWidth:0 }}>
               <div style={{ fontWeight:800,fontSize:15,color:T.ink }}>{d.emoji} {d.title}</div>
               <div style={{ fontSize:12,color:T.ink2 }}>{d.titleTh} · {d.lines.length} ประโยค</div>
             </div>
-            <span style={{ fontSize:12,fontWeight:800,color:done===2?"#059669":"#9ca3af" }}>{done===2?"✓ ครบ":`${done}/2`}</span>
+            <span style={{ fontSize:12,fontWeight:800,color:done===2?T.ok:T.ink3 }}>{done===2?"✓ ครบ":`${done}/2`}</span>
           </button>
         );
       })}
@@ -4026,29 +4027,29 @@ function TalkScreen({ words, progress, onOpen }) {
 function DialogueScreen({ d, words, speak, speakAt, speakSeq, showToast, progress, setProgress, onBack }) {
   const [mode, setMode] = useState("listen");
   const [role, setRole] = useState(null);
-  const cat = useMemo(() => ({ id:`dialog:${d.id}`, label:d.title, thai:d.titleTh, emoji:d.emoji, color:"#f97316", games:["droleplay","dfill"], dialog:d, role }), [d, role]);
+  const cat = useMemo(() => ({ id:`dialog:${d.id}`, label:d.title, thai:d.titleTh, emoji:d.emoji, color:T.tertiary, games:["droleplay","dfill"], dialog:d, role }), [d, role]);
   const vocab = useMemo(() => { const set = new Set(); d.lines.forEach(l => l.en.split(" ").forEach(t => { const w = lookupToken(words, t); if (w) set.add(w); })); return [...set]; }, [d, words]);
   const tabs = [["listen","👂 ฟัง"],["roleplay","🎭 เล่นบทบาท"],["fill","🧩 เติมคำ"]];
   const nameOf = who => (who === "A" ? d.a : d.b);
   return (
     <div style={{ padding:"10px 10px 40px",maxWidth:480,margin:"0 auto" }}>
-      <div style={{ display:"flex",alignItems:"center",gap:10,background:"#fff7ed",border:"2px solid #fed7aa",borderRadius:18,padding:"10px 12px",marginBottom:10 }}>
-        <div style={{ width:64,height:48,borderRadius:12,overflow:"hidden",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center" }}>{picOf(words, d.scene, 26)}</div>
+      <div style={{ display:"flex",alignItems:"center",gap:10,background:T.tertiaryC,border:"2px solid #fed7aa",borderRadius:18,padding:"10px 12px",marginBottom:10 }}>
+        <div style={{ width:64,height:48,borderRadius:16,overflow:"hidden",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center" }}>{picOf(words, d.scene, 26)}</div>
         <div style={{ flex:1,minWidth:0 }}><div style={{ fontWeight:900,fontSize:16,color:T.ink }}>{d.emoji} {d.title}</div><div style={{ fontSize:12,color:T.ink2 }}>{d.titleTh} · {nameOf("A")} กับ {nameOf("B")}</div></div>
       </div>
       <div style={{ display:"flex",gap:6,marginBottom:10 }}>
-        {tabs.map(([k,l]) => <button key={k} onClick={() => { sfx.tap(); setMode(k); }} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",fontWeight:800,fontSize:13,cursor:"pointer",background:mode===k?"#f97316":"#f3f4f6",color:mode===k?"#fff":"#374151" }}>{l}</button>)}
+        {tabs.map(([k,l]) => <button key={k} onClick={() => { sfx.tap(); setMode(k); }} style={{ flex:1,minHeight:44,borderRadius:16,border:"none",fontWeight:800,fontSize:13,cursor:"pointer",background:mode===k?T.tertiary:T.surfHigh,color:mode===k?"#fff":T.ink2 }}>{l}</button>)}
       </div>
 
       {mode === "listen" && (
         <div>
-          <button onClick={() => speakSeq(d.lines.map(l => ({ en:l.en, th:l.th })))} style={{ width:"100%",minHeight:48,borderRadius:14,border:"none",background:"#1f2937",color:"#fff",fontWeight:800,fontSize:14,cursor:"pointer",marginBottom:10 }}>▶ ฟังทั้งบทสนทนา</button>
+          <button onClick={() => speakSeq(d.lines.map(l => ({ en:l.en, th:l.th })))} style={{ width:"100%",minHeight:48,borderRadius:14,border:"none",background:T.ink,color:"#fff",fontWeight:800,fontSize:14,cursor:"pointer",marginBottom:10 }}>▶ ฟังทั้งบทสนทนา</button>
           {d.lines.map((l, i) => {
             const left = l.who === "A";
             return (
               <div key={i} style={{ display:"flex",justifyContent:left?"flex-start":"flex-end",marginBottom:8 }}>
-                <button onClick={() => speak(l.en, l.th)} style={{ maxWidth:"85%",textAlign:"left",border:"none",cursor:"pointer",borderRadius:left?"4px 18px 18px 18px":"18px 4px 18px 18px",padding:"10px 14px",minHeight:44,background:left?"#fff":"#fde68a",boxShadow:"0 2px 8px rgba(0,0,0,0.06)" }}>
-                  <div style={{ fontSize:10,fontWeight:800,color:left?"#f97316":"#92400e",marginBottom:2 }}>{nameOf(l.who)} 🔊</div>
+                <button onClick={() => speak(l.en, l.th)} style={{ maxWidth:"85%",textAlign:"left",border:"none",cursor:"pointer",borderRadius:left?"4px 18px 18px 18px":"18px 4px 18px 18px",padding:"10px 14px",minHeight:44,background:left?"#fff":T.tertiaryC,boxShadow:"0 2px 8px rgba(0,0,0,0.06)" }}>
+                  <div style={{ fontSize:10,fontWeight:800,color:left?T.tertiary:T.onTertiaryC,marginBottom:2 }}>{nameOf(l.who)} 🔊</div>
                   <div style={{ fontSize:15,fontWeight:700,color:T.ink }}>{l.en}</div>
                   <div style={{ fontSize:12,color:T.ink2,marginTop:2 }}>{l.th}</div>
                 </button>
@@ -4069,7 +4070,7 @@ function DialogueScreen({ d, words, speak, speakAt, speakSeq, showToast, progres
           <div style={{ fontWeight:900,fontSize:16,color:T.ink,marginBottom:4 }}>🎭 หนูจะเป็นใคร?</div>
           <div style={{ fontSize:12,color:T.ink2,marginBottom:12 }}>แอปจะพูดอีกฝ่าย ส่วนประโยคของหนูต้องพูดเองใส่ไมค์ 🎤</div>
           <div style={{ display:"flex",gap:10 }}>
-            {["A","B"].map(r => <button key={r} onClick={() => { sfx.tap(); setRole(r); }} style={{ flex:1,minHeight:64,borderRadius:16,border:"2px solid #fed7aa",background:"#fff7ed",fontWeight:900,fontSize:16,color:"#9a3412",cursor:"pointer" }}>{r === "A" ? "🅰️" : "🅱️"} {nameOf(r)}</button>)}
+            {["A","B"].map(r => <button key={r} onClick={() => { sfx.tap(); setRole(r); }} style={{ flex:1,minHeight:64,borderRadius:16,border:"2px solid #fed7aa",background:T.tertiaryC,fontWeight:900,fontSize:16,color:T.onTertiaryC,cursor:"pointer" }}>{r === "A" ? "🅰️" : "🅱️"} {nameOf(r)}</button>)}
           </div>
         </div>
       )}
@@ -4125,32 +4126,32 @@ function RolePlayGame({ cat, speak, track, onBack }) {
       <div style={GS.body}>
         {/* บทก่อนหน้า (ย่อ) */}
         {i > 0 && <div style={{ fontSize:11,color:T.ink3,marginBottom:8,textAlign:d.lines[i-1].who==="A"?"left":"right" }}>{nameOf(d.lines[i-1].who)}: {d.lines[i-1].en}</div>}
-        <div style={{ background:mine?"#fde68a":"#fff",border:`2px solid ${mine?"#f59e0b":"#e5e7eb"}`,borderRadius:18,padding:14,marginBottom:10 }}>
-          <div style={{ fontSize:11,fontWeight:800,color:mine?"#92400e":"#f97316",marginBottom:4 }}>{mine ? `🫵 ตาหนู (${nameOf(role)}) พูดว่า:` : `${nameOf(line.who)} พูด:`}</div>
+        <div style={{ background:mine?T.tertiaryC:"#fff",border:`2px solid ${mine?T.tertiary:T.outlineV}`,borderRadius:18,padding:14,marginBottom:10 }}>
+          <div style={{ fontSize:11,fontWeight:800,color:mine?T.onTertiaryC:T.tertiary,marginBottom:4 }}>{mine ? `🫵 ตาหนู (${nameOf(role)}) พูดว่า:` : `${nameOf(line.who)} พูด:`}</div>
           <div style={{ fontSize:18,fontWeight:800,color:T.ink }}>{line.en}</div>
           <div style={{ fontSize:13,color:T.ink2,marginTop:2 }}>{line.th}</div>
         </div>
         {!mine ? (
           <div style={{ display:"flex",gap:8,justifyContent:"center" }}>
-            <Pill onClick={() => speak(line.en, null)} bg="#6366f1">🔊 ฟัง</Pill>
-            <Pill onClick={next} bg="#10b981">ถัดไป ›</Pill>
+            <Pill onClick={() => speak(line.en, null)} bg={T.primary}>🔊 ฟัง</Pill>
+            <Pill onClick={next} bg={T.ok}>ถัดไป ›</Pill>
           </div>
         ) : (
           <div style={{ textAlign:"center" }}>
             <SndBtn onClick={() => speak(line.en, null)} />
             <button onClick={listen} disabled={st === "listening"}
-              style={{ width:96,height:96,borderRadius:48,margin:"0 auto 8px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:40,background:st==="listening"?"#ef4444":st==="ok"?"#10b981":"linear-gradient(135deg,#f59e0b,#ef4444)",border:"none",cursor:"pointer",boxShadow:"0 8px 24px rgba(239,68,68,0.3)",animation:st==="listening"?"vpBounce .6s infinite":"none" }}>
+              style={{ width:96,height:96,borderRadius:48,margin:"0 auto 8px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:40,background:st==="listening"?T.error:st==="ok"?T.ok:T.grad,border:"none",cursor:"pointer",boxShadow:"0 8px 24px rgba(239,68,68,0.3)",animation:st==="listening"?"vpBounce .6s infinite":"none" }}>
               {st === "ok" ? "✅" : "🎤"}
             </button>
-            <p style={{ fontSize:13,fontWeight:700,margin:"0 0 8px",color:st==="ok"?"#059669":st==="no"?"#dc2626":"#374151" }}>
+            <p style={{ fontSize:13,fontWeight:700,margin:"0 0 8px",color:st==="ok"?T.ok:st==="no"?T.error:T.ink2 }}>
               {st === "idle" && (SR ? "แตะไมค์แล้วพูดประโยคนี้" : "เครื่องนี้ไม่มีไมค์สำหรับเช็คเสียง · พูดออกเสียงแล้วแตะปุ่มด้านบน")}
               {st === "listening" && "กำลังฟัง..."}
               {st === "ok" && (pct ? `เยี่ยม! ใกล้เคียง ${pct}% 👏` : "เยี่ยม! 👏")}
               {st === "no" && (heard ? `ได้ยินว่า "${heard}" (${pct}%) ลองอีกที` : "ไม่ได้ยิน ลองพูดดังๆ")}
             </p>
             <div style={{ display:"flex",gap:8,justifyContent:"center" }}>
-              {st === "no" && <Pill onClick={listen} bg="#f59e0b">🎤 ลองอีก</Pill>}
-              <Pill onClick={next} bg={gotIt ? "#10b981" : "#9ca3af"}>{gotIt ? "ถัดไป ›" : "ข้าม ›"}</Pill>
+              {st === "no" && <Pill onClick={listen} bg={T.tertiary}>🎤 ลองอีก</Pill>}
+              <Pill onClick={next} bg={gotIt ? T.ok : T.ink3}>{gotIt ? "ถัดไป ›" : "ข้าม ›"}</Pill>
             </div>
           </div>
         )}
@@ -4182,18 +4183,18 @@ function FillGame({ cat, speak, track, onBack }) {
     <GameCard>
       <Bar left={`🧩 ${i+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <div style={{ fontSize:11,fontWeight:800,color:"#f97316",marginBottom:4 }}>{q.who === "A" ? d.a : d.b} พูดว่า:</div>
+        <div style={{ fontSize:11,fontWeight:800,color:T.tertiary,marginBottom:4 }}>{q.who === "A" ? d.a : d.b} พูดว่า:</div>
         <div style={{ fontSize:19,fontWeight:800,color:T.ink,lineHeight:1.5,marginBottom:4 }}>
-          {parts[0]}<span style={{ display:"inline-block",minWidth:70,borderBottom:"3px solid #f59e0b",color:picked?(picked===q.blank?"#059669":"#dc2626"):"#f59e0b",textAlign:"center",padding:"0 4px" }}>{picked || "______"}</span>{parts[1]}
+          {parts[0]}<span style={{ display:"inline-block",minWidth:70,borderBottom:"3px solid #f59e0b",color:picked?(picked===q.blank?T.ok:T.error):T.tertiary,textAlign:"center",padding:"0 4px" }}>{picked || "______"}</span>{parts[1]}
         </div>
         <div style={{ fontSize:13,color:T.ink2,marginBottom:12 }}>{q.th}</div>
         <div style={{ display:"grid",gridTemplateColumns:"1fr",gap:8 }}>
           {opts.map(o => {
             const ic = o === q.blank, ip = picked === o;
-            let bg = "#fff7ed", bo = "#fdba74", c = "#9a3412";
-            if (picked && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; c = "#065f46"; }
-            if (picked && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; c = "#991b1b"; }
-            return <button key={o} onClick={() => pick(o)} disabled={!!picked} style={{ minHeight:50,borderRadius:12,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:16,cursor:"pointer" }}>{o}</button>;
+            let bg = T.tertiaryC, bo = T.tertiary, c = T.onTertiaryC;
+            if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
+            if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
+            return <button key={o} onClick={() => pick(o)} disabled={!!picked} style={{ minHeight:50,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:16,cursor:"pointer" }}>{o}</button>;
           })}
         </div>
       </div>
@@ -4216,9 +4217,9 @@ function StoriesScreen({ words, progress, onOpen }) {
           const done = (progress.stars[`story:${s.id}:squiz`] || 0) >= 1;
           return (
             <button key={s.id} onClick={() => { sfx.tap(); onOpen(s); }} style={{ background:T.card,border:"none",borderRadius:18,padding:10,cursor:"pointer",textAlign:"left",boxShadow:"0 2px 8px rgba(0,0,0,0.05)",minHeight:160,display:"flex",flexDirection:"column",gap:6 }}>
-              <div style={{ width:"100%",aspectRatio:"4/3",borderRadius:12,overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center",background:T.surfHigh,position:"relative" }}>
+              <div style={{ width:"100%",aspectRatio:"4/3",borderRadius:16,overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center",background:T.surfHigh,position:"relative" }}>
                 <PicFill w={wordByKey(words, s.pages[0].pic) || { emoji:s.emoji, word:s.title }} emojiSize={40} />
-                {done && <span style={{ position:"absolute",top:6,right:6,background:"#10b981",color:"#fff",fontSize:11,fontWeight:800,padding:"2px 8px",borderRadius:999 }}>✓ อ่านแล้ว</span>}
+                {done && <span style={{ position:"absolute",top:6,right:6,background:T.ok,color:"#fff",fontSize:11,fontWeight:800,padding:"2px 8px",borderRadius:999 }}>✓ อ่านแล้ว</span>}
               </div>
               <div style={{ fontWeight:800,fontSize:14,color:T.ink }}>{s.emoji} {s.title}</div>
               <div style={{ fontSize:11,color:T.ink2 }}>{s.titleTh} · {s.pages.length} หน้า · {s.level}</div>
@@ -4236,7 +4237,7 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
   const [popup, setPopup] = useState(null);   // คำที่แตะ
   const [quiz, setQuiz] = useState(false);
   const page = s.pages[i];
-  const cat = useMemo(() => ({ id:`story:${s.id}`, label:s.title, thai:s.titleTh, emoji:s.emoji, color:"#8b5cf6", games:["squiz"], story:s }), [s]);
+  const cat = useMemo(() => ({ id:`story:${s.id}`, label:s.title, thai:s.titleTh, emoji:s.emoji, color:T.primary, games:["squiz"], story:s }), [s]);
   if (quiz) return <GameRouter gameId="squiz" cat={cat} words={words.slice(0, 8)} speak={speak} speakAt={speakAt} showToast={showToast} onBack={onBack} progress={progress} setProgress={setProgress} allWords={words} />;
   const tokens = page.en.split(" ");
   return (
@@ -4244,7 +4245,7 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
       <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",fontSize:13,fontWeight:700,color:T.ink2,padding:"0 4px 8px" }}>
         <span>{s.emoji} {s.title}</span><span>หน้า {i+1}/{s.pages.length}</span>
       </div>
-      <div style={{ height:6,background:T.surfHigh,borderRadius:999,marginBottom:10,overflow:"hidden" }}><div style={{ height:"100%",width:`${((i+1)/s.pages.length)*100}%`,background:"#8b5cf6",borderRadius:999,transition:"width .3s" }} /></div>
+      <div style={{ height:6,background:T.surfHigh,borderRadius:999,marginBottom:10,overflow:"hidden" }}><div style={{ height:"100%",width:`${((i+1)/s.pages.length)*100}%`,background:T.primary,borderRadius:999,transition:"width .3s" }} /></div>
       <div style={{ background:T.card,borderRadius:22,overflow:"hidden",boxShadow:"0 8px 28px rgba(0,0,0,0.08)",border:"none" }}>
         <div style={{ width:"100%",aspectRatio:"4/3",position:"relative",background:T.surfHigh,display:"flex",alignItems:"center",justifyContent:"center" }}>
           <PicFill w={wordByKey(words, page.pic) || { emoji:page.pic, word:"" }} emojiSize={80} />
@@ -4254,30 +4255,30 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
             {tokens.map((t, k) => {
               const w = lookupToken(words, t);
               return <span key={k}>{w
-                ? <button onClick={() => { sfx.tap(); setPopup(w); speak(w.word, w.meaning); }} style={{ background:"none",border:"none",padding:0,font:"inherit",color:"#7c3aed",textDecoration:"underline dotted",cursor:"pointer",minHeight:44 }}>{t}</button>
+                ? <button onClick={() => { sfx.tap(); setPopup(w); speak(w.word, w.meaning); }} style={{ background:"none",border:"none",padding:0,font:"inherit",color:T.primary,textDecoration:"underline dotted",cursor:"pointer",minHeight:44 }}>{t}</button>
                 : t}{" "}</span>;
             })}
           </div>
           {showTh && <div style={{ fontSize:14,color:T.ink2,marginTop:6 }}>{page.th}</div>}
           {popup && (
-            <div style={{ marginTop:10,background:"#f5f3ff",borderRadius:14,padding:"8px 12px",display:"flex",alignItems:"center",gap:10 }}>
+            <div style={{ marginTop:10,background:T.primaryC,borderRadius:14,padding:"8px 12px",display:"flex",alignItems:"center",gap:10 }}>
               <Pic w={popup} size={20} radius={8} />
-              <div style={{ flex:1 }}><b style={{ color:T.ink }}>{popup.word}</b> <span style={{ color:"#7c3aed",fontSize:12 }}>{popup.read}</span><div style={{ fontSize:13,color:T.ink2 }}>{popup.meaning}</div></div>
+              <div style={{ flex:1 }}><b style={{ color:T.ink }}>{popup.word}</b> <span style={{ color:T.primary,fontSize:12 }}>{popup.read}</span><div style={{ fontSize:13,color:T.ink2 }}>{popup.meaning}</div></div>
               <button onClick={() => setPopup(null)} style={{ width:44,height:44,border:"none",background:"transparent",color:T.ink3,fontSize:18,cursor:"pointer" }}>✕</button>
             </div>
           )}
         </div>
         <div style={{ display:"flex",gap:6,padding:"0 12px 12px" }}>
-          <button onClick={() => speak(page.en, showTh ? page.th : null)} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",background:"#ede9fe",color:"#5b21b6",fontWeight:800,fontSize:13,cursor:"pointer" }}>🔊 อ่านหน้านี้</button>
-          <button onClick={() => speakAt(page.en, null, 0.6)} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",background:T.surfHigh,color:T.ink2,fontWeight:800,fontSize:13,cursor:"pointer" }}>🐢 ช้าๆ</button>
-          <button onClick={() => { sfx.tap(); setShowTh(v => !v); }} style={{ minWidth:44,minHeight:44,borderRadius:12,border:"none",background:showTh?"#fef3c7":"#f3f4f6",color:"#92400e",fontWeight:800,fontSize:13,cursor:"pointer" }}>ไทย</button>
+          <button onClick={() => speak(page.en, showTh ? page.th : null)} style={{ flex:1,minHeight:44,borderRadius:16,border:"none",background:T.primaryC,color:T.onPrimaryC,fontWeight:800,fontSize:13,cursor:"pointer" }}>🔊 อ่านหน้านี้</button>
+          <button onClick={() => speakAt(page.en, null, 0.6)} style={{ flex:1,minHeight:44,borderRadius:16,border:"none",background:T.surfHigh,color:T.ink2,fontWeight:800,fontSize:13,cursor:"pointer" }}>🐢 ช้าๆ</button>
+          <button onClick={() => { sfx.tap(); setShowTh(v => !v); }} style={{ minWidth:44,minHeight:44,borderRadius:16,border:"none",background:showTh?T.tertiaryC:T.surfHigh,color:T.onTertiaryC,fontWeight:800,fontSize:13,cursor:"pointer" }}>ไทย</button>
         </div>
       </div>
       <div style={{ display:"flex",gap:8,marginTop:12 }}>
-        <button onClick={() => { sfx.tap(); setPopup(null); setI(Math.max(0, i - 1)); }} disabled={i === 0} style={{ flex:1,minHeight:50,borderRadius:14,border:"none",background:i===0?"#f3f4f6":"#fff",color:i===0?"#d1d5db":"#374151",fontWeight:800,fontSize:15,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.06)" }}>‹ ก่อนหน้า</button>
+        <button onClick={() => { sfx.tap(); setPopup(null); setI(Math.max(0, i - 1)); }} disabled={i === 0} style={{ flex:1,minHeight:50,borderRadius:14,border:"none",background:i===0?T.surfHigh:"#fff",color:i===0?T.outlineV:T.ink2,fontWeight:800,fontSize:15,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.06)" }}>‹ ก่อนหน้า</button>
         {i + 1 < s.pages.length
-          ? <button onClick={() => { sfx.tap(); setPopup(null); setI(i + 1); }} style={{ flex:2,minHeight:50,borderRadius:14,border:"none",background:"#8b5cf6",color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>หน้าถัดไป ›</button>
-          : <button onClick={() => { sfx.coin(); setQuiz(true); }} style={{ flex:2,minHeight:50,borderRadius:14,border:"none",background:"#10b981",color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>🎯 ตอบคำถามท้ายเรื่อง</button>}
+          ? <button onClick={() => { sfx.tap(); setPopup(null); setI(i + 1); }} style={{ flex:2,minHeight:50,borderRadius:14,border:"none",background:T.primary,color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>หน้าถัดไป ›</button>
+          : <button onClick={() => { sfx.coin(); setQuiz(true); }} style={{ flex:2,minHeight:50,borderRadius:14,border:"none",background:T.ok,color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>🎯 ตอบคำถามท้ายเรื่อง</button>}
       </div>
       <p style={{ textAlign:"center",fontSize:11,color:T.ink3,marginTop:10 }}>แตะคำสีม่วงเพื่อฟังและดูความหมาย</p>
     </div>
@@ -4309,10 +4310,10 @@ function StoryQuizGame({ cat, speak, track, onBack }) {
         <div style={{ display:"grid",gap:8 }}>
           {opts.map(o => {
             const ic = o === q.answer, ip = picked === o;
-            let bg = "#f5f3ff", bo = "#ddd6fe", c = "#4c1d95";
-            if (picked && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; c = "#065f46"; }
-            if (picked && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; c = "#991b1b"; }
-            return <button key={o} onClick={() => pick(o)} disabled={!!picked} style={{ minHeight:50,borderRadius:12,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:15,cursor:"pointer",textAlign:"left",padding:"0 14px" }}>{o}</button>;
+            let bg = T.primaryC, bo = T.primaryC, c = T.primary;
+            if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
+            if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
+            return <button key={o} onClick={() => pick(o)} disabled={!!picked} style={{ minHeight:50,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:15,cursor:"pointer",textAlign:"left",padding:"0 14px" }}>{o}</button>;
           })}
         </div>
       </div>
@@ -4334,17 +4335,17 @@ function PhonicsScreen({ words, speak, speakAt, showToast, progress, setProgress
         <div style={{ fontSize:13,opacity:0.9 }}>รู้เสียงของตัวอักษร → อ่านคำใหม่ได้เอง · แตะตัวอักษรเพื่อฟังชื่อและเสียง</div>
       </div>
       <div style={{ display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:5,marginBottom:12 }}>
-        {PHONICS.map(p => <button key={p.L} onClick={() => { sfx.tap(); setSel(p); speak(p.L, null); }} style={{ minHeight:44,borderRadius:10,border:`2px solid ${sel.L===p.L?"#8b5cf6":"#e5e7eb"}`,background:sel.L===p.L?"#ede9fe":"#fff",fontWeight:900,fontSize:16,color:T.ink,cursor:"pointer" }}>{p.L}</button>)}
+        {PHONICS.map(p => <button key={p.L} onClick={() => { sfx.tap(); setSel(p); speak(p.L, null); }} style={{ minHeight:44,borderRadius:14,border:`2px solid ${sel.L===p.L?T.primary:T.outlineV}`,background:sel.L===p.L?T.primaryC:"#fff",fontWeight:900,fontSize:16,color:T.ink,cursor:"pointer" }}>{p.L}</button>)}
       </div>
       <div style={{ background:T.card,borderRadius:20,padding:16,border:"none",boxShadow:"0 4px 16px rgba(0,0,0,0.06)" }}>
         <div style={{ display:"flex",alignItems:"center",gap:14 }}>
-          <div style={{ width:84,height:84,borderRadius:20,background:"linear-gradient(135deg,#ede9fe,#cffafe)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:44,fontWeight:900,color:"#4c1d95" }}>{sel.L}{sel.L.toLowerCase()}</div>
+          <div style={{ width:84,height:84,borderRadius:20,background:T.grad,display:"flex",alignItems:"center",justifyContent:"center",fontSize:44,fontWeight:900,color:T.primary }}>{sel.L}{sel.L.toLowerCase()}</div>
           <div style={{ flex:1 }}>
             <div style={{ fontSize:13,color:T.ink2 }}>ชื่อตัวอักษร: <b style={{ color:T.ink }}>{sel.name}</b></div>
-            <div style={{ fontSize:13,color:T.ink2 }}>เสียง: <b style={{ color:"#7c3aed",fontSize:16 }}>{sel.sound}</b></div>
+            <div style={{ fontSize:13,color:T.ink2 }}>เสียง: <b style={{ color:T.primary,fontSize:16 }}>{sel.sound}</b></div>
             <div style={{ display:"flex",gap:6,marginTop:6 }}>
-              <button onClick={() => speak(sel.L, `ตัว ${sel.name}`)} style={{ minHeight:44,padding:"0 12px",borderRadius:10,border:"none",background:"#ede9fe",color:"#5b21b6",fontWeight:800,fontSize:12,cursor:"pointer" }}>🔊 ชื่อ</button>
-              {ex[0] && <button onClick={() => speakAt(`${sel.L}. ${ex[0].word}. ${sel.L} is for ${ex[0].word.toLowerCase()}.`, `${sel.sound} ${ex[0].meaning}`, 0.8)} style={{ minHeight:44,padding:"0 12px",borderRadius:10,border:"none",background:"#cffafe",color:"#155e75",fontWeight:800,fontSize:12,cursor:"pointer" }}>🔊 {sel.L} is for {ex[0].word}</button>}
+              <button onClick={() => speak(sel.L, `ตัว ${sel.name}`)} style={{ minHeight:44,padding:"0 12px",borderRadius:14,border:"none",background:T.primaryC,color:T.onPrimaryC,fontWeight:800,fontSize:12,cursor:"pointer" }}>🔊 ชื่อ</button>
+              {ex[0] && <button onClick={() => speakAt(`${sel.L}. ${ex[0].word}. ${sel.L} is for ${ex[0].word.toLowerCase()}.`, `${sel.sound} ${ex[0].meaning}`, 0.8)} style={{ minHeight:44,padding:"0 12px",borderRadius:14,border:"none",background:"#cffafe",color:"#155e75",fontWeight:800,fontSize:12,cursor:"pointer" }}>🔊 {sel.L} is for {ex[0].word}</button>}
             </div>
           </div>
         </div>
@@ -4352,13 +4353,13 @@ function PhonicsScreen({ words, speak, speakAt, showToast, progress, setProgress
           {ex.map(w => (
             <button key={w.id} onClick={() => speak(w.word, w.meaning)} style={{ background:T.surfHigh,border:"none",borderRadius:14,padding:8,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:4,minHeight:44 }}>
               <Pic w={w} size={34} radius={10} />
-              <div style={{ fontWeight:900,fontSize:13,color:T.ink }}><span style={{ color:"#7c3aed" }}>{w.word[0]}</span>{w.word.slice(1)}</div>
+              <div style={{ fontWeight:900,fontSize:13,color:T.ink }}><span style={{ color:T.primary }}>{w.word[0]}</span>{w.word.slice(1)}</div>
               <div style={{ fontSize:11,color:T.ink2 }}>{w.meaning}</div>
             </button>
           ))}
         </div>
       </div>
-      <button onClick={() => { sfx.tap(); onGame(); }} style={{ width:"100%",minHeight:60,marginTop:14,borderRadius:16,border:"none",background:"linear-gradient(135deg,#06b6d4,#3b82f6)",color:"#fff",fontWeight:900,fontSize:15,cursor:"pointer",boxShadow:"0 6px 18px rgba(6,182,212,0.3)" }}>
+      <button onClick={() => { sfx.tap(); onGame(); }} style={{ width:"100%",minHeight:60,marginTop:14,borderRadius:16,border:"none",background:T.grad,color:"#fff",fontWeight:900,fontSize:15,cursor:"pointer",boxShadow:"0 6px 18px rgba(6,182,212,0.3)" }}>
         🎯 เกมเสียงแรก — ฟังคำแล้วเลือกตัวอักษรตัวแรก {best > 0 && `· ⭐${best}`}
       </button>
     </div>
@@ -4389,14 +4390,14 @@ function PhonicsGame({ words, speakAt, track, onBack }) {
         <div style={{ display:"flex",justifyContent:"center",marginBottom:6 }}><Pic w={q.w} size={60} fill style={{ maxHeight:"30vh" }} /></div>
         <SndBtn onClick={() => { setPlayed(true); speakAt(q.w.word, null, 0.75); }} />
         <p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:T.ink2,margin:"0 0 10px",minHeight:20 }}>
-          {picked ? <span style={{ color:"#7c3aed" }}>{q.w.word} · {q.w.read} · {q.w.meaning}</span> : played ? "คำนี้ขึ้นต้นด้วยตัวอะไร?" : "แตะฟังก่อน แล้วเลือกตัวอักษรตัวแรก"}
+          {picked ? <span style={{ color:T.primary }}>{q.w.word} · {q.w.read} · {q.w.meaning}</span> : played ? "คำนี้ขึ้นต้นด้วยตัวอะไร?" : "แตะฟังก่อน แล้วเลือกตัวอักษรตัวแรก"}
         </p>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
           {opts.map(L => {
             const ic = L === q.L, ip = picked === L;
             let bg = "#f0fdfa", bo = "#99f6e4", c = "#134e4a";
-            if (picked && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; c = "#065f46"; }
-            if (picked && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; c = "#991b1b"; }
+            if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
+            if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
             return <button key={L} onClick={() => pick(L)} disabled={!!picked || !played} style={{ minHeight:64,borderRadius:14,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:900,fontSize:28,cursor:"pointer",opacity:played?1:0.5 }}>{L}</button>;
           })}
         </div>
@@ -4423,9 +4424,9 @@ function GrammarScreen({ words, speak, progress, onPractice }) {
           <div key={i} style={{ background:T.card,borderRadius:18,padding:14,marginBottom:10,border:"none",display:"flex",gap:12,alignItems:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.05)" }}>
             {w && <Pic w={w} size={30} radius={12} style={{ flexShrink:0 }} />}
             <div style={{ flex:1,minWidth:0 }}>
-              <div style={{ fontSize:11,fontWeight:800,color:"#f59e0b",marginBottom:2 }}>กฎข้อ {i+1}</div>
+              <div style={{ fontSize:11,fontWeight:800,color:T.tertiary,marginBottom:2 }}>กฎข้อ {i+1}</div>
               <div style={{ fontSize:14,fontWeight:700,color:T.ink,lineHeight:1.5 }}>{r.th}</div>
-              <button onClick={() => speak(r.en.replace(/·/g, "."), null)} style={{ marginTop:6,minHeight:44,border:"none",background:"#fef3c7",color:"#92400e",borderRadius:10,padding:"0 12px",fontWeight:700,fontSize:14,cursor:"pointer",textAlign:"left",lineHeight:1.4 }}>🔊 {r.en}</button>
+              <button onClick={() => speak(r.en.replace(/·/g, "."), null)} style={{ marginTop:6,minHeight:44,border:"none",background:T.tertiaryC,color:T.onTertiaryC,borderRadius:14,padding:"0 12px",fontWeight:700,fontSize:14,cursor:"pointer",textAlign:"left",lineHeight:1.4 }}>🔊 {r.en}</button>
             </div>
           </div>
         );
@@ -4470,21 +4471,21 @@ function GrammarGame({ cat, speak, track, onBack }) {
     <GameCard>
       <Bar left={`✍️ ${i+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <div style={{ fontSize:11,fontWeight:800,color:"#f59e0b",marginBottom:4 }}>{g.emoji} {g.title}</div>
+        <div style={{ fontSize:11,fontWeight:800,color:T.tertiary,marginBottom:4 }}>{g.emoji} {g.title}</div>
         <div style={{ fontSize:20,fontWeight:800,color:T.ink,lineHeight:1.5 }}>
-          {parts[0]}<span style={{ display:"inline-block",minWidth:56,borderBottom:"3px solid #f59e0b",textAlign:"center",color:picked?(picked===q.answer?"#059669":"#dc2626"):"#f59e0b" }}>{picked || "___"}</span>{parts[1]}
+          {parts[0]}<span style={{ display:"inline-block",minWidth:56,borderBottom:"3px solid #f59e0b",textAlign:"center",color:picked?(picked===q.answer?T.ok:T.error):T.tertiary }}>{picked || "___"}</span>{parts[1]}
         </div>
         <div style={{ fontSize:13,color:T.ink2,margin:"4px 0 12px" }}>{q.th}</div>
         <div style={{ display:"grid",gridTemplateColumns:`repeat(${q.options.length},1fr)`,gap:8 }}>
           {q.options.map(o => {
             const ic = o === q.answer, ip = picked === o;
-            let bg = "#fff7ed", bo = "#fdba74", c = "#9a3412";
-            if (picked && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; c = "#065f46"; }
-            if (picked && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; c = "#991b1b"; }
+            let bg = T.tertiaryC, bo = T.tertiary, c = T.onTertiaryC;
+            if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
+            if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
             return <button key={o} onClick={() => pick(o)} disabled={!!picked} style={{ minHeight:56,borderRadius:14,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:900,fontSize:20,cursor:"pointer" }}>{o}</button>;
           })}
         </div>
-        {picked && picked !== q.answer && <div style={{ textAlign:"center",fontSize:13,color:"#991b1b",marginTop:10 }}>ที่ถูกคือ <b>{q.answer}</b></div>}
+        {picked && picked !== q.answer && <div style={{ textAlign:"center",fontSize:13,color:T.onErrorC,marginTop:10 }}>ที่ถูกคือ <b>{q.answer}</b></div>}
       </div>
     </GameCard>
   );
@@ -4498,10 +4499,10 @@ function ClockFace({ h, m, size = 150 }) {
   const hand = (deg, len, w, c) => { const a = (deg - 90) * Math.PI / 180; return <line x1={r} y1={r} x2={r + Math.cos(a) * len} y2={r + Math.sin(a) * len} stroke={c} strokeWidth={w} strokeLinecap="round" />; };
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ display:"block",margin:"0 auto" }}>
-      <circle cx={r} cy={r} r={r - 3} fill="#fff" stroke="#1f2937" strokeWidth="4" />
-      {Array.from({ length: 12 }, (_, i) => { const a = (i * 30 - 90) * Math.PI / 180; const x = r + Math.cos(a) * (r - 20), y = r + Math.sin(a) * (r - 20); return <text key={i} x={x} y={y + 5} textAnchor="middle" fontSize={size*0.1} fontWeight="800" fill="#374151">{i === 0 ? 12 : i}</text>; })}
-      {hand(hh, r * 0.5, 6, "#1f2937")}{hand(mm, r * 0.72, 4, "#ef4444")}
-      <circle cx={r} cy={r} r={5} fill="#1f2937" />
+      <circle cx={r} cy={r} r={r - 3} fill="#fff" stroke={T.ink} strokeWidth="4" />
+      {Array.from({ length: 12 }, (_, i) => { const a = (i * 30 - 90) * Math.PI / 180; const x = r + Math.cos(a) * (r - 20), y = r + Math.sin(a) * (r - 20); return <text key={i} x={x} y={y + 5} textAnchor="middle" fontSize={size*0.1} fontWeight="800" fill={T.ink2}>{i === 0 ? 12 : i}</text>; })}
+      {hand(hh, r * 0.5, 6, T.ink)}{hand(mm, r * 0.72, 4, T.error)}
+      <circle cx={r} cy={r} r={5} fill={T.ink} />
     </svg>
   );
 }
@@ -4513,7 +4514,7 @@ function DailyScreen({ words, speak, speakAt, progress, onGame }) {
   const [num, setNum] = useState(null);
   const tabs = [["time","🕐 เวลา"],["money","💰 เงินบาท"],["calendar","📅 วัน-เดือน"],["numbers100","🔢 ตัวเลข"]];
   const best = k => progress.stars[`daily:${k}:${k}`] || 0;
-  const btn = { minHeight:44,borderRadius:12,border:"none",background:T.surfHigh,color:T.ink2,fontWeight:800,fontSize:14,cursor:"pointer",padding:"0 14px" };
+  const btn = { minHeight:44,borderRadius:16,border:"none",background:T.surfHigh,color:T.ink2,fontWeight:800,fontSize:14,cursor:"pointer",padding:"0 14px" };
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
       <div style={{ background:T.primaryC,color:T.onPrimaryC,borderRadius:28,padding:18,marginBottom:12 }}>
@@ -4521,7 +4522,7 @@ function DailyScreen({ words, speak, speakAt, progress, onGame }) {
         <div style={{ fontSize:13,opacity:0.9 }}>บอกเวลา · นับเงินบาท · วันและเดือน · ตัวเลขถึง 100</div>
       </div>
       <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6,marginBottom:12 }}>
-        {tabs.map(([k,l]) => <button key={k} onClick={() => { sfx.tap(); setTab(k); }} style={{ minHeight:44,borderRadius:12,border:"none",fontWeight:800,fontSize:12,cursor:"pointer",background:tab===k?"#0ea5e9":"#f3f4f6",color:tab===k?"#fff":"#374151" }}>{l}</button>)}
+        {tabs.map(([k,l]) => <button key={k} onClick={() => { sfx.tap(); setTab(k); }} style={{ minHeight:44,borderRadius:16,border:"none",fontWeight:800,fontSize:12,cursor:"pointer",background:tab===k?T.primary:T.surfHigh,color:tab===k?"#fff":T.ink2 }}>{l}</button>)}
       </div>
       <div style={{ background:T.card,borderRadius:20,padding:16,border:"none",boxShadow:"0 4px 16px rgba(0,0,0,0.06)",marginBottom:12 }}>
         {tab === "time" && (
@@ -4543,8 +4544,8 @@ function DailyScreen({ words, speak, speakAt, progress, onGame }) {
             <div style={{ fontSize:13,color:T.ink2,marginBottom:8 }}>แตะเพื่อฟังชื่อเงินแต่ละแบบ</div>
             <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
               {MONEY.map(mo => (
-                <button key={mo.v} onClick={() => speak(`${numberWord(mo.v)} baht`, `${numberThai(mo.v)}บาท`)} style={{ minHeight:72,borderRadius:14,border:"2px solid #fde68a",background:"#fffbeb",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:2 }}>
-                  <span style={{ fontSize:26 }}>{mo.emoji}</span><b style={{ fontSize:14,color:"#92400e" }}>{mo.v} ฿</b><span style={{ fontSize:9,color:T.ink2 }}>{numberWord(mo.v)}</span>
+                <button key={mo.v} onClick={() => speak(`${numberWord(mo.v)} baht`, `${numberThai(mo.v)}บาท`)} style={{ minHeight:72,borderRadius:14,border:"2px solid #fde68a",background:T.tertiaryC,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:2 }}>
+                  <span style={{ fontSize:26 }}>{mo.emoji}</span><b style={{ fontSize:14,color:T.onTertiaryC }}>{mo.v} ฿</b><span style={{ fontSize:9,color:T.ink2 }}>{numberWord(mo.v)}</span>
                 </button>
               ))}
             </div>
@@ -4558,20 +4559,20 @@ function DailyScreen({ words, speak, speakAt, progress, onGame }) {
           <div>
             <div style={{ fontWeight:800,fontSize:13,color:T.ink,marginBottom:6 }}>7 วัน</div>
             <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:12 }}>
-              {DAYS.map(([en, th, read, e]) => <button key={en} onClick={() => speak(en, th)} style={{ minHeight:44,borderRadius:12,border:"1px solid var(--md-outline-variant)",background:T.surfHigh,cursor:"pointer",textAlign:"left",padding:"4px 10px" }}><b style={{ fontSize:14,color:T.ink }}>{e} {en}</b><div style={{ fontSize:11,color:T.ink2 }}>{read} · {th}</div></button>)}
+              {DAYS.map(([en, th, read, e]) => <button key={en} onClick={() => speak(en, th)} style={{ minHeight:44,borderRadius:16,border:"1px solid var(--md-outline-variant)",background:T.surfHigh,cursor:"pointer",textAlign:"left",padding:"4px 10px" }}><b style={{ fontSize:14,color:T.ink }}>{e} {en}</b><div style={{ fontSize:11,color:T.ink2 }}>{read} · {th}</div></button>)}
             </div>
             <div style={{ fontWeight:800,fontSize:13,color:T.ink,marginBottom:6 }}>12 เดือน</div>
             <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6 }}>
-              {MONTHS.map(([en, th, read], i) => <button key={en} onClick={() => speak(en, th)} style={{ minHeight:44,borderRadius:12,border:"1px solid var(--md-outline-variant)",background:T.surfHigh,cursor:"pointer",padding:"4px 6px" }}><b style={{ fontSize:12,color:T.ink }}>{i+1}. {en}</b><div style={{ fontSize:10,color:T.ink2 }}>{th}</div></button>)}
+              {MONTHS.map(([en, th, read], i) => <button key={en} onClick={() => speak(en, th)} style={{ minHeight:44,borderRadius:16,border:"1px solid var(--md-outline-variant)",background:T.surfHigh,cursor:"pointer",padding:"4px 6px" }}><b style={{ fontSize:12,color:T.ink }}>{i+1}. {en}</b><div style={{ fontSize:10,color:T.ink2 }}>{th}</div></button>)}
             </div>
             <div style={{ fontSize:12,color:T.ink2,marginTop:12,lineHeight:1.7 }}><b>What day is it today?</b> — It's Monday.<br/><b>When is your birthday?</b> — In May.</div>
           </div>
         )}
         {tab === "numbers100" && (
           <div>
-            <div style={{ fontSize:13,color:T.ink2,marginBottom:8 }}>แตะตัวเลขเพื่อฟัง {num != null && <b style={{ color:"#0ea5e9" }}>· {num} = {numberWord(num)} ({numberThai(num)})</b>}</div>
+            <div style={{ fontSize:13,color:T.ink2,marginBottom:8 }}>แตะตัวเลขเพื่อฟัง {num != null && <b style={{ color:T.primary }}>· {num} = {numberWord(num)} ({numberThai(num)})</b>}</div>
             <div style={{ display:"grid",gridTemplateColumns:"repeat(10,1fr)",gap:3 }}>
-              {Array.from({ length: 100 }, (_, i) => i + 1).map(n => <button key={n} onClick={() => { setNum(n); speak(numberWord(n), numberThai(n)); }} style={{ minHeight:30,height:30,borderRadius:6,border:"none",background:num===n?"#0ea5e9":n%10===0?"#e0f2fe":"#f3f4f6",color:num===n?"#fff":"#1f2937",fontWeight:700,fontSize:10,cursor:"pointer",padding:0 }}>{n}</button>)}
+              {Array.from({ length: 100 }, (_, i) => i + 1).map(n => <button key={n} onClick={() => { setNum(n); speak(numberWord(n), numberThai(n)); }} style={{ minHeight:30,height:30,borderRadius:6,border:"none",background:num===n?T.primary:n%10===0?T.secondaryC:T.surfHigh,color:num===n?"#fff":T.ink,fontWeight:700,fontSize:10,cursor:"pointer",padding:0 }}>{n}</button>)}
             </div>
             <div style={{ fontSize:11,color:T.ink3,marginTop:8 }}>ปุ่มเล็กเพราะต้องใส่ 100 ตัว — แตะตัวไหนก็ได้ใกล้ๆ แล้วใช้ปุ่มด้านล่างเลื่อนทีละ 1</div>
             <div style={{ display:"flex",gap:6,justifyContent:"center",marginTop:8 }}>
@@ -4581,7 +4582,7 @@ function DailyScreen({ words, speak, speakAt, progress, onGame }) {
           </div>
         )}
       </div>
-      <button onClick={() => { sfx.tap(); onGame(tab); }} style={{ width:"100%",minHeight:56,borderRadius:16,border:"none",background:"linear-gradient(135deg,#0ea5e9,#22c55e)",color:"#fff",fontWeight:900,fontSize:15,cursor:"pointer",boxShadow:"0 6px 18px rgba(14,165,233,0.3)" }}>
+      <button onClick={() => { sfx.tap(); onGame(tab); }} style={{ width:"100%",minHeight:56,borderRadius:16,border:"none",background:T.grad,color:"#fff",fontWeight:900,fontSize:15,cursor:"pointer",boxShadow:"0 6px 18px rgba(14,165,233,0.3)" }}>
         🎯 เล่นเกม{tabs.find(x => x[0] === tab)[1].slice(2)} {best(tab) > 0 && `· ⭐${best(tab)}`}
       </button>
     </div>
@@ -4640,7 +4641,7 @@ function DailyGame({ cat, speak, speakAt, track, onBack }) {
       <Bar left={`${icon} ${i+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
         {kind === "time" && <ClockFace h={q.h} m={q.m} size={140} />}
-        {kind === "money" && <div style={{ display:"flex",justifyContent:"center",gap:6,flexWrap:"wrap",padding:"10px 0" }}>{q.items.map((it, k) => <div key={k} style={{ background:"#fffbeb",border:"2px solid #fde68a",borderRadius:12,padding:"6px 10px",textAlign:"center" }}><div style={{ fontSize:28 }}>{it.emoji}</div><b style={{ fontSize:13,color:"#92400e" }}>{it.v} ฿</b></div>)}</div>}
+        {kind === "money" && <div style={{ display:"flex",justifyContent:"center",gap:6,flexWrap:"wrap",padding:"10px 0" }}>{q.items.map((it, k) => <div key={k} style={{ background:T.tertiaryC,border:"2px solid #fde68a",borderRadius:16,padding:"6px 10px",textAlign:"center" }}><div style={{ fontSize:28 }}>{it.emoji}</div><b style={{ fontSize:13,color:T.onTertiaryC }}>{it.v} ฿</b></div>)}</div>}
         {kind === "calendar" && <div style={{ textAlign:"center",fontSize:48,padding:"6px 0" }}>{q.emoji}</div>}
         {kind === "numbers100" && <div style={{ textAlign:"center",fontSize:48,padding:"6px 0" }}>👂</div>}
         <SndBtn onClick={say} />
@@ -4649,10 +4650,10 @@ function DailyGame({ cat, speak, speakAt, track, onBack }) {
         <div style={{ display:"grid",gridTemplateColumns:kind==="numbers100"?"repeat(4,1fr)":"1fr 1fr",gap:8 }}>
           {q.options.map(o => {
             const ic = o === q.answer, ip = picked === o;
-            let bg = "#f0f9ff", bo = "#bae6fd", c = "#075985";
-            if (picked && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; c = "#065f46"; }
-            if (picked && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; c = "#991b1b"; }
-            return <button key={o} onClick={() => pick(o)} disabled={!!picked || !played} style={{ minHeight:52,borderRadius:12,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:kind==="numbers100"?22:14,cursor:"pointer",opacity:played?1:0.5,padding:"6px" }}>{o}</button>;
+            let bg = "#f0f9ff", bo = "#bae6fd", c = T.onPrimaryC;
+            if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
+            if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
+            return <button key={o} onClick={() => pick(o)} disabled={!!picked || !played} style={{ minHeight:52,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:kind==="numbers100"?22:14,cursor:"pointer",opacity:played?1:0.5,padding:"6px" }}>{o}</button>;
           })}
         </div>
       </div>
@@ -4693,20 +4694,20 @@ function TestGame({ cat, speak, speakAt, track, onBack }) {
   return (
     <GameCard>
       <Bar left={`📝 ข้อ ${i+1}/${qs.length}`} right={`✓ ${score}`} />
-      <div style={{ height:5,background:T.surfHigh }}><div style={{ height:"100%",width:`${(i/qs.length)*100}%`,background:"#6366f1",transition:"width .3s" }} /></div>
+      <div style={{ height:5,background:T.surfHigh }}><div style={{ height:"100%",width:`${(i/qs.length)*100}%`,background:T.primary,transition:"width .3s" }} /></div>
       <div style={GS.body}>
-        <div style={{ fontSize:11,fontWeight:800,color:"#6366f1",marginBottom:6 }}>{label}</div>
+        <div style={{ fontSize:11,fontWeight:800,color:T.primary,marginBottom:6 }}>{label}</div>
         {q.type === "pic" && <Emoji e={q.w.emoji} w={q.w} size={64} />}
         {q.type === "listen" && <><div style={{ textAlign:"center",fontSize:44,padding:"6px 0" }}>👂</div><SndBtn onClick={() => { setPlayed(true); speakAt(q.w.word, null, 0.8); }} /></>}
-        {q.type === "fill" && <div style={{ fontSize:18,fontWeight:800,color:T.ink,marginBottom:10,lineHeight:1.5 }}>{q.line.en.split(new RegExp(`\\b${q.line.blank}\\b`))[0]}<span style={{ borderBottom:"3px solid #6366f1",minWidth:60,display:"inline-block",textAlign:"center",color:"#6366f1" }}>{picked || "____"}</span>{q.line.en.split(new RegExp(`\\b${q.line.blank}\\b`))[1]}<div style={{ fontSize:12,color:T.ink2,fontWeight:500 }}>{q.line.th}</div></div>}
-        {q.type === "grammar" && <div style={{ fontSize:18,fontWeight:800,color:T.ink,marginBottom:10,lineHeight:1.5 }}>{q.p.q.split("___")[0]}<span style={{ borderBottom:"3px solid #6366f1",minWidth:50,display:"inline-block",textAlign:"center",color:"#6366f1" }}>{picked || "___"}</span>{q.p.q.split("___")[1]}<div style={{ fontSize:12,color:T.ink2,fontWeight:500 }}>{q.p.th}</div></div>}
+        {q.type === "fill" && <div style={{ fontSize:18,fontWeight:800,color:T.ink,marginBottom:10,lineHeight:1.5 }}>{q.line.en.split(new RegExp(`\\b${q.line.blank}\\b`))[0]}<span style={{ borderBottom:"3px solid #6366f1",minWidth:60,display:"inline-block",textAlign:"center",color:T.primary }}>{picked || "____"}</span>{q.line.en.split(new RegExp(`\\b${q.line.blank}\\b`))[1]}<div style={{ fontSize:12,color:T.ink2,fontWeight:500 }}>{q.line.th}</div></div>}
+        {q.type === "grammar" && <div style={{ fontSize:18,fontWeight:800,color:T.ink,marginBottom:10,lineHeight:1.5 }}>{q.p.q.split("___")[0]}<span style={{ borderBottom:"3px solid #6366f1",minWidth:50,display:"inline-block",textAlign:"center",color:T.primary }}>{picked || "___"}</span>{q.p.q.split("___")[1]}<div style={{ fontSize:12,color:T.ink2,fontWeight:500 }}>{q.p.th}</div></div>}
         <div style={{ display:"grid",gridTemplateColumns:options.length>3?"1fr 1fr":`repeat(${options.length},1fr)`,gap:8 }}>
           {options.map(o => {
             const ic = o === answerOf(), ip = picked === o;
-            let bg = "#eef2ff", bo = "#c7d2fe", c = "#3730a3";
-            if (picked && ic) { bg = "#d1fae5"; bo = "#6ee7b7"; c = "#065f46"; }
-            if (picked && ip && !ic) { bg = "#fee2e2"; bo = "#fca5a5"; c = "#991b1b"; }
-            return <button key={o} onClick={() => pick(o)} disabled={!!picked || (q.type === "listen" && !played)} style={{ minHeight:52,borderRadius:12,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:15,cursor:"pointer",opacity:(q.type==="listen"&&!played)?0.5:1 }}>{o}</button>;
+            let bg = T.secondaryC, bo = T.primaryC, c = T.onPrimaryC;
+            if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
+            if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
+            return <button key={o} onClick={() => pick(o)} disabled={!!picked || (q.type === "listen" && !played)} style={{ minHeight:52,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:15,cursor:"pointer",opacity:(q.type==="listen"&&!played)?0.5:1 }}>{o}</button>;
           })}
         </div>
       </div>
@@ -4722,19 +4723,19 @@ function CertificateScreen({ progress, profile, words, onStart }) {
   const save = async () => {
     try {
       const c = document.createElement("canvas"); c.width = 1080; c.height = 1350; const g = c.getContext("2d");
-      const gr = g.createLinearGradient(0, 0, 1080, 1350); gr.addColorStop(0, "#fdf2f8"); gr.addColorStop(1, "#eef2ff"); g.fillStyle = gr; g.fillRect(0, 0, 1080, 1350);
-      g.strokeStyle = "#f59e0b"; g.lineWidth = 18; g.strokeRect(50, 50, 980, 1250);
-      g.fillStyle = "#1f2937"; g.textAlign = "center";
+      const gr = g.createLinearGradient(0, 0, 1080, 1350); gr.addColorStop(0, T.tertiaryC); gr.addColorStop(1, T.secondaryC); g.fillStyle = gr; g.fillRect(0, 0, 1080, 1350);
+      g.strokeStyle = T.tertiary; g.lineWidth = 18; g.strokeRect(50, 50, 980, 1250);
+      g.fillStyle = T.ink; g.textAlign = "center";
       g.font = "900 64px system-ui, sans-serif"; g.fillText("ใบประกาศนียบัตร", 540, 220);
-      g.font = "700 40px system-ui, sans-serif"; g.fillStyle = "#6b7280"; g.fillText("Smart VocabPlay · Certificate of Achievement", 540, 285);
-      g.font = "400 44px system-ui, sans-serif"; g.fillStyle = "#374151"; g.fillText("ขอมอบให้", 540, 420);
-      g.font = "900 96px system-ui, sans-serif"; g.fillStyle = "#1f2937"; g.fillText(`${profile?.avatar || ""} ${profile?.name || "นักเรียน"}`, 540, 540);
-      g.font = "400 40px system-ui, sans-serif"; g.fillStyle = "#374151"; g.fillText("ผ่านการทดสอบวัดระดับภาษาอังกฤษ ระดับ", 540, 650);
-      g.font = "900 180px system-ui, sans-serif"; g.fillStyle = "#7c3aed"; g.fillText(lv.level, 540, 850);
-      g.font = "700 48px system-ui, sans-serif"; g.fillStyle = "#374151"; g.fillText(`${lv.emoji} ${lv.th} · คะแนน ${cert.score}/${cert.total}`, 540, 930);
-      g.font = "400 36px system-ui, sans-serif"; g.fillStyle = "#6b7280"; g.fillText(`คำศัพท์ที่จำได้แม่น ${mastered} คำ · ดาวสะสม ${Object.values(progress.stars).reduce((a, b) => a + b, 0)} ดวง`, 540, 1010);
+      g.font = "700 40px system-ui, sans-serif"; g.fillStyle = T.ink2; g.fillText("Smart VocabPlay · Certificate of Achievement", 540, 285);
+      g.font = "400 44px system-ui, sans-serif"; g.fillStyle = T.ink2; g.fillText("ขอมอบให้", 540, 420);
+      g.font = "900 96px system-ui, sans-serif"; g.fillStyle = T.ink; g.fillText(`${profile?.avatar || ""} ${profile?.name || "นักเรียน"}`, 540, 540);
+      g.font = "400 40px system-ui, sans-serif"; g.fillStyle = T.ink2; g.fillText("ผ่านการทดสอบวัดระดับภาษาอังกฤษ ระดับ", 540, 650);
+      g.font = "900 180px system-ui, sans-serif"; g.fillStyle = T.primary; g.fillText(lv.level, 540, 850);
+      g.font = "700 48px system-ui, sans-serif"; g.fillStyle = T.ink2; g.fillText(`${lv.emoji} ${lv.th} · คะแนน ${cert.score}/${cert.total}`, 540, 930);
+      g.font = "400 36px system-ui, sans-serif"; g.fillStyle = T.ink2; g.fillText(`คำศัพท์ที่จำได้แม่น ${mastered} คำ · ดาวสะสม ${Object.values(progress.stars).reduce((a, b) => a + b, 0)} ดวง`, 540, 1010);
       g.fillText(`วันที่ ${cert.date}`, 540, 1130);
-      g.font = "400 30px system-ui, sans-serif"; g.fillStyle = "#9ca3af"; g.fillText("xarif09.github.io/Smart-VocabPlay-", 540, 1230);
+      g.font = "400 30px system-ui, sans-serif"; g.fillStyle = T.ink3; g.fillText("xarif09.github.io/Smart-VocabPlay-", 540, 1230);
       const blob = await new Promise(r => c.toBlob(r, "image/png"));
       const file = new File([blob], `vocabplay-certificate-${lv.level}.png`, { type: "image/png" });
       if (navigator.share && navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: "ใบประกาศ Smart VocabPlay" }); return; }
@@ -4754,14 +4755,14 @@ function CertificateScreen({ progress, profile, words, onStart }) {
           <div style={{ fontSize:13,color:T.ink2,marginTop:10 }}>ขอมอบให้</div>
           <div style={{ fontSize:26,fontWeight:900,color:T.ink }}>{profile?.avatar} {profile?.name}</div>
           <div style={{ fontSize:13,color:T.ink2,marginTop:8 }}>ผ่านการทดสอบวัดระดับภาษาอังกฤษ</div>
-          <div style={{ fontSize:64,fontWeight:900,color:"#7c3aed",lineHeight:1.1 }}>{lv.level}</div>
+          <div style={{ fontSize:64,fontWeight:900,color:T.primary,lineHeight:1.1 }}>{lv.level}</div>
           <div style={{ fontSize:15,fontWeight:800,color:T.ink2 }}>{lv.emoji} {lv.th} · {cert.score}/{cert.total} คะแนน</div>
           <div style={{ fontSize:12,color:T.ink2,marginTop:6 }}>{lv.desc}</div>
           <div style={{ fontSize:11,color:T.ink3,marginTop:10 }}>วันที่ {cert.date} · จำได้แม่น {mastered} คำ</div>
-          <button onClick={save} style={{ marginTop:12,minHeight:48,padding:"0 18px",borderRadius:12,border:"none",background:"#7c3aed",color:"#fff",fontWeight:800,fontSize:14,cursor:"pointer" }}>💾 บันทึก / แชร์ใบประกาศ</button>
+          <button onClick={save} style={{ marginTop:12,minHeight:48,padding:"0 18px",borderRadius:16,border:"none",background:T.primary,color:"#fff",fontWeight:800,fontSize:14,cursor:"pointer" }}>💾 บันทึก / แชร์ใบประกาศ</button>
         </div>
       )}
-      <button onClick={() => { sfx.tap(); onStart(); }} style={{ width:"100%",minHeight:56,borderRadius:16,border:"none",background:"#10b981",color:"#fff",fontWeight:900,fontSize:15,cursor:"pointer" }}>{cert ? "📝 สอบใหม่อีกครั้ง" : "📝 เริ่มสอบ 20 ข้อ"}</button>
+      <button onClick={() => { sfx.tap(); onStart(); }} style={{ width:"100%",minHeight:56,borderRadius:16,border:"none",background:T.ok,color:"#fff",fontWeight:900,fontSize:15,cursor:"pointer" }}>{cert ? "📝 สอบใหม่อีกครั้ง" : "📝 เริ่มสอบ 20 ข้อ"}</button>
       <div style={{ marginTop:12,background:T.card,borderRadius:16,padding:12,border:"none",fontSize:12,color:T.ink2,lineHeight:1.7 }}>
         {LEVELS_TEST.slice().reverse().map(l => <div key={l.level}><b>{l.emoji} {l.level} {l.th}</b> · {l.min}{l.level==="A2"?"–20":`–${LEVELS_TEST[LEVELS_TEST.findIndex(x=>x.level===l.level)-1].min-1}`} คะแนน — {l.desc}</div>)}
       </div>
@@ -4810,7 +4811,7 @@ function VersusScreen({ words, categories, speak, setProgress, showToast, onExit
           {categories.map(c => <option key={c.id} value={c.id}>{c.emoji} {c.label} ({words.filter(w => w.cat === c.id).length})</option>)}
         </select>
       </div>
-      <button onClick={start} style={{ width:"100%",minHeight:56,borderRadius:16,border:"none",background:"#ef4444",color:"#fff",fontWeight:900,fontSize:16,cursor:"pointer" }}>▶ เริ่มแข่ง!</button>
+      <button onClick={start} style={{ width:"100%",minHeight:56,borderRadius:16,border:"none",background:T.error,color:"#fff",fontWeight:900,fontSize:16,cursor:"pointer" }}>▶ เริ่มแข่ง!</button>
     </div>
   );
   if (stage === "end") {
@@ -4821,9 +4822,9 @@ function VersusScreen({ words, categories, speak, setProgress, showToast, onExit
         <div style={{ fontSize:70 }}>{w == null ? "🤝" : "🏆"}</div>
         <h2 style={{ fontWeight:900,fontSize:24,color:T.ink,margin:"6px 0" }}>{w == null ? "เสมอกัน!" : `${names[w]} ชนะ!`}</h2>
         <div style={{ fontSize:16,color:T.ink2,marginBottom:14 }}>{names[0]} {score[0]} — {score[1]} {names[1]}</div>
-        <div style={{ fontSize:13,color:"#92400e",background:"#fef3c7",display:"inline-block",padding:"6px 14px",borderRadius:999,fontWeight:800 }}>+20 🪙 สำหรับเจ้าของเครื่อง</div>
+        <div style={{ fontSize:13,color:T.onTertiaryC,background:T.tertiaryC,display:"inline-block",padding:"6px 14px",borderRadius:999,fontWeight:800 }}>+20 🪙 สำหรับเจ้าของเครื่อง</div>
         <div style={{ display:"flex",gap:8,marginTop:18 }}>
-          <button onClick={start} style={{ flex:1,minHeight:50,borderRadius:14,border:"none",background:"#ef4444",color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>🔄 แข่งอีก</button>
+          <button onClick={start} style={{ flex:1,minHeight:50,borderRadius:14,border:"none",background:T.error,color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>🔄 แข่งอีก</button>
           <button onClick={onExit} style={{ flex:1,minHeight:50,borderRadius:14,border:"none",background:T.surfHigh,color:T.ink2,fontWeight:800,fontSize:15,cursor:"pointer" }}>กลับ</button>
         </div>
       </div>
@@ -4831,26 +4832,26 @@ function VersusScreen({ words, categories, speak, setProgress, showToast, onExit
   }
   const cur = rounds[r];
   const half = (p, flip) => (
-    <div style={{ flex:1,display:"flex",flexDirection:"column",transform:flip?"rotate(180deg)":"none",padding:"8px 10px",background:p===0?"#fff7ed":"#eff6ff" }}>
+    <div style={{ flex:1,display:"flex",flexDirection:"column",transform:flip?"rotate(180deg)":"none",padding:"8px 10px",background:p===0?T.tertiaryC:T.secondaryC }}>
       <div style={{ display:"flex",justifyContent:"space-between",fontSize:13,fontWeight:800,color:T.ink2 }}><span>{names[p]}</span><span>⭐ {score[p]}</span></div>
       <div style={{ flex:1,display:"grid",gridTemplateColumns:"1fr 1fr",gap:6,alignContent:"center" }}>
         {cur.opts.map(o => {
           const show = winner != null; const ic = o.id === cur.w.id;
-          return <button key={o.id} onClick={() => tap(p, o)} disabled={locked[p] || winner != null} style={{ minHeight:48,borderRadius:12,border:`2px solid ${show&&ic?"#6ee7b7":p===0?"#fdba74":"#93c5fd"}`,background:show&&ic?"#d1fae5":"#fff",fontWeight:800,fontSize:15,color:T.ink,cursor:"pointer",opacity:locked[p]?0.4:1 }}>{o.word}</button>;
+          return <button key={o.id} onClick={() => tap(p, o)} disabled={locked[p] || winner != null} style={{ minHeight:48,borderRadius:16,border:`2px solid ${show&&ic?T.ok:p===0?T.tertiary:"#93c5fd"}`,background:show&&ic?T.okC:"#fff",fontWeight:800,fontSize:15,color:T.ink,cursor:"pointer",opacity:locked[p]?0.4:1 }}>{o.word}</button>;
         })}
       </div>
-      {locked[p] && winner == null && <div style={{ textAlign:"center",fontSize:12,color:"#dc2626",fontWeight:800 }}>ผิด! รอรอบหน้า</div>}
+      {locked[p] && winner == null && <div style={{ textAlign:"center",fontSize:12,color:T.error,fontWeight:800 }}>ผิด! รอรอบหน้า</div>}
       {winner === p && <div style={{ textAlign:"center",fontSize:12,color:"#059669",fontWeight:800 }}>ถูก! +1 🎉</div>}
     </div>
   );
   return (
     <div style={{ position:"fixed",inset:0,top:54,display:"flex",flexDirection:"column",background:T.card,zIndex:50 }}>
       {half(1, true)}
-      <div style={{ display:"flex",alignItems:"center",justifyContent:"center",gap:14,padding:"6px 12px",background:"#1f2937",color:"#fff" }}>
+      <div style={{ display:"flex",alignItems:"center",justifyContent:"center",gap:14,padding:"6px 12px",background:T.ink,color:"#fff" }}>
         <span style={{ fontSize:12,fontWeight:800 }}>รอบ {r+1}/10</span>
-        <div style={{ width:76,height:58,borderRadius:12,overflow:"hidden",position:"relative",background:"#374151",display:"flex",alignItems:"center",justifyContent:"center" }}><PicFill w={cur.w} emojiSize={34} /></div>
-        <button onClick={() => speak(cur.w.word, null)} style={{ minHeight:44,minWidth:44,borderRadius:12,border:"none",background:"#374151",color:"#fff",fontSize:18,cursor:"pointer" }}>🔊</button>
-        <button onClick={onExit} style={{ minHeight:44,borderRadius:12,border:"none",background:"transparent",color:T.ink3,fontSize:12,fontWeight:700,cursor:"pointer" }}>ออก</button>
+        <div style={{ width:76,height:58,borderRadius:16,overflow:"hidden",position:"relative",background:T.ink2,display:"flex",alignItems:"center",justifyContent:"center" }}><PicFill w={cur.w} emojiSize={34} /></div>
+        <button onClick={() => speak(cur.w.word, null)} style={{ minHeight:44,minWidth:44,borderRadius:16,border:"none",background:T.ink2,color:"#fff",fontSize:18,cursor:"pointer" }}>🔊</button>
+        <button onClick={onExit} style={{ minHeight:44,borderRadius:16,border:"none",background:"transparent",color:T.ink3,fontSize:12,fontWeight:700,cursor:"pointer" }}>ออก</button>
       </div>
       {half(0, false)}
     </div>
@@ -4897,8 +4898,8 @@ function PetRoom({ progress, setProgress, speak, showToast, onShop }) {
   };
   const Stat = ({ icon, label, v, color }) => (
     <div style={{ flex:1,minWidth:0 }}>
-      <div style={{ display:"flex",justifyContent:"space-between",fontSize:11,fontWeight:800,color:T.ink2 }}><span>{icon} {label}</span><span style={{ color:v<30?"#dc2626":T.ink2 }}>{Math.round(v)}</span></div>
-      <div style={{ height:8,background:"rgba(148,163,184,.25)",borderRadius:999,overflow:"hidden",marginTop:3 }}><div style={{ height:"100%",width:`${v}%`,background:v<30?"linear-gradient(90deg,#f43f5e,#fb923c)":color,borderRadius:999,transition:"width .6s" }} /></div>
+      <div style={{ display:"flex",justifyContent:"space-between",fontSize:11,fontWeight:800,color:T.ink2 }}><span>{icon} {label}</span><span style={{ color:v<30?T.error:T.ink2 }}>{Math.round(v)}</span></div>
+      <div style={{ height:8,background:"rgba(148,163,184,.25)",borderRadius:999,overflow:"hidden",marginTop:3 }}><div style={{ height:"100%",width:`${v}%`,background:v<30?T.grad:color,borderRadius:999,transition:"width .6s" }} /></div>
     </div>
   );
   const on = slot => ROOM_ITEMS.find(i => i.id === progress.roomOn?.[slot]);
@@ -4924,22 +4925,22 @@ function PetRoom({ progress, setProgress, speak, showToast, onShop }) {
         {anim === "wash" && [...Array(8)].map((_, i) => <span key={i} style={{ position:"absolute",left:`${35+(i*9)%30}%`,bottom:60+(i*17)%80,fontSize:20+i%3*6,animation:`vpFloatY ${1+i%3*.3}s infinite`,opacity:.9 }}>🫧</span>)}
         {anim === "eat" && <span style={{ position:"absolute",left:"58%",bottom:120,fontSize:30,animation:"vpInScale .4s both" }}>😋</span>}
         {anim === "play" && <span style={{ position:"absolute",left:"30%",bottom:150,fontSize:34,animation:"vpFloatY .5s infinite" }}>⚽</span>}
-        {(anim === "sleep" || care.sleeping) && <span style={{ position:"absolute",left:"60%",bottom:170,fontSize:22,color:"#c4b5fd",fontWeight:900,animation:"petZ 2s infinite" }}>z z</span>}
+        {(anim === "sleep" || care.sleeping) && <span style={{ position:"absolute",left:"60%",bottom:170,fontSize:22,color:T.primary,fontWeight:900,animation:"petZ 2s infinite" }}>z z</span>}
         {bubble && <div style={{ position:"absolute",left:"50%",top:70,transform:"translateX(-50%)",background:T.card,borderRadius:16,padding:"8px 14px",fontWeight:800,fontSize:14,color:T.ink,boxShadow:T.shadow,animation:"vpInScale .3s both",maxWidth:"80%",textAlign:"center" }}>{bubble}<span style={{ position:"absolute",left:"50%",bottom:-8,transform:"translateX(-50%)",borderLeft:"8px solid transparent",borderRight:"8px solid transparent",borderTop:"8px solid #fff" }} /></div>}
         <div style={{ position:"absolute",top:12,left:14,background:"rgba(255,255,255,.85)",borderRadius:999,padding:"4px 12px",fontSize:12,fontWeight:800,color:T.ink }}>{pet.name} · Lv.{pet.level} · {avg >= 75 ? "😊 มีความสุข" : avg >= 40 ? "🙂 สบายดี" : "😢 ต้องการดูแล"}</div>
-        <div style={{ position:"absolute",top:12,right:14,background:"rgba(255,255,255,.85)",borderRadius:999,padding:"4px 12px",fontSize:12,fontWeight:800,color:"#92400e" }}>🪙 {progress.coins}</div>
+        <div style={{ position:"absolute",top:12,right:14,background:"rgba(255,255,255,.85)",borderRadius:999,padding:"4px 12px",fontSize:12,fontWeight:800,color:T.onTertiaryC }}>🪙 {progress.coins}</div>
       </div>
 
       {/* สถานะ */}
       <div style={{ ...card(),padding:"12px 14px",margin:"12px 0",display:"flex",gap:12 }}>
-        <Stat icon="🍎" label="อิ่ม" v={care.hunger} color="linear-gradient(90deg,#fb923c,#f59e0b)" />
-        <Stat icon="🫧" label="สะอาด" v={care.clean} color="linear-gradient(90deg,#22d3ee,#3b82f6)" />
-        <Stat icon="⚽" label="สนุก" v={care.fun} color="linear-gradient(90deg,#a855f7,#ec4899)" />
-        <Stat icon="⚡" label="พลัง" v={care.energy} color="linear-gradient(90deg,#34d399,#10b981)" />
+        <Stat icon="🍎" label="อิ่ม" v={care.hunger} color={T.grad} />
+        <Stat icon="🫧" label="สะอาด" v={care.clean} color={T.grad} />
+        <Stat icon="⚽" label="สนุก" v={care.fun} color={T.grad} />
+        <Stat icon="⚡" label="พลัง" v={care.energy} color={T.grad} />
       </div>
 
       <div style={{ display:"flex",gap:6,marginBottom:10 }}>
-        {[["care","💖 ดูแล"],["room","🛋️ แต่งห้อง"]].map(([k,l]) => <button key={k} onClick={() => { sfx.tap(); setTab(k); }} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",fontWeight:800,fontSize:14,cursor:"pointer",background:tab===k?T.grad:"rgba(148,163,184,.18)",color:tab===k?"#fff":T.ink,fontFamily:FONT }}>{l}</button>)}
+        {[["care","💖 ดูแล"],["room","🛋️ แต่งห้อง"]].map(([k,l]) => <button key={k} onClick={() => { sfx.tap(); setTab(k); }} style={{ flex:1,minHeight:44,borderRadius:16,border:"none",fontWeight:800,fontSize:14,cursor:"pointer",background:tab===k?T.grad:"rgba(148,163,184,.18)",color:tab===k?"#fff":T.ink,fontFamily:FONT }}>{l}</button>)}
       </div>
 
       {tab === "care" && !feedOpen && (
@@ -4974,7 +4975,7 @@ function PetRoom({ progress, setProgress, speak, showToast, onShop }) {
                 }} style={{ ...card(),minHeight:92,padding:"8px 4px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3,fontFamily:FONT,border:placed?"2px solid #a855f7":undefined }}>
                   <span style={{ fontSize:30 }}>{it.emoji}</span>
                   <span style={{ fontSize:11,fontWeight:800,color:T.ink }}>{it.name}</span>
-                  <span style={{ fontSize:10,fontWeight:800,color:placed?"#7c3aed":owned?T.ink3:"#b45309" }}>{placed ? "วางอยู่ ✓" : owned ? "แตะเพื่อวาง" : `🪙 ${it.cost}`}</span>
+                  <span style={{ fontSize:10,fontWeight:800,color:placed?T.primary:owned?T.ink3:"#b45309" }}>{placed ? "วางอยู่ ✓" : owned ? "แตะเพื่อวาง" : `🪙 ${it.cost}`}</span>
                 </button>
               );
             })}

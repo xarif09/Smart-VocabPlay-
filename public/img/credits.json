@@ -1959,26 +1959,12 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Chicken_soup"
  },
- "Teaching": {
-  "file": "teaching.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Students_of_Nan_Hua_High_School%2C_Singapore%2C_in_the_school_hall_-_20060127.jpg",
-  "artist": "mailer_diablo.",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Teaching"
- },
  "Paint": {
   "file": "paint.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Multicolored_tempera_paints.jpg",
   "artist": "Joyful spherical creature",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Paint"
- },
- "Long hair": {
-  "file": "long-hair.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Pierre_Auguste_Renoir_-_Portrait_de_Julie_Manet.jpg",
-  "artist": "Pierre-Auguste Renoir",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Long_hair"
  },
  "Sunrise": {
   "file": "sunrise.jpg",
@@ -2029,13 +2015,6 @@
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Dining_room"
  },
- "Television": {
-  "file": "television.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Cptvdisplay.jpg",
-  "artist": "Wags05 at English Wikipedia",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Television"
- },
  "Lampshade": {
   "file": "lampshade.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Lampshades.jpg",
@@ -2064,13 +2043,6 @@
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Tableware"
  },
- "Sea": {
-  "file": "sea.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Mediterranean_Sea_16.61811E_38.99124N.jpg",
-  "artist": "of the modification : Eric Gaba (Sting)",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Sea"
- },
  "Pebble": {
   "file": "pebble.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Pebble_Dash_(15366562092).jpg",
@@ -2098,20 +2070,6 @@
   "artist": "Luxure",
   "license": "CC BY 3.0 au",
   "page": "https://en.wikipedia.org/wiki/Phi_Phi_Islands"
- },
- "Daylight": {
-  "file": "daylight.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Daylight.png",
-  "artist": "",
-  "license": "GPL",
-  "page": "https://en.wikipedia.org/wiki/Daylight"
- },
- "Alpine skiing": {
-  "file": "alpine-skiing.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Alpine_skiing_pictogram.svg.png",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Alpine_skiing"
  },
  "Yoga as exercise": {
   "file": "yoga-as-exercise.jpg",
@@ -2182,5 +2140,12 @@
   "artist": "Benoît Prieur",
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Airport_terminal"
+ },
+ "Wind wave": {
+  "file": "wind-wave.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Porto_Covo_Outubro_2014-3.jpg",
+  "artist": "Alvesgaspar",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Wind_wave"
  }
 }

@@ -8,6 +8,7 @@ import { lexOf } from "./lexicon.js";
 import { sfx, unlockSfx, setSfxEnabled, startMusic, stopMusic } from "./sfx.js";
 import { fx, fxPoint, setFxEnabled, installRipple, Ambient, Reveal, CountUp } from "./fx.jsx";
 import Pet, { PET_CSS } from "./Pet.jsx";
+import { CatIcon, GameIcon, hasGameIcon } from "./Icons.jsx";
 
 // ═══════════════════════════════════════════════════════
 // SPEECH ENGINE — iOS-safe
@@ -1836,7 +1837,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
           <span className="vp-shimmer" style={{ position:"absolute",inset:0,pointerEvents:"none",opacity:.5 }} />
           <div style={{ display:"flex",alignItems:"center",gap:14,position:"relative" }}>
             <button onClick={() => { sfx.tap(); speak(`Hi! Let's learn English!`, `สวัสดี มาเรียนภาษาอังกฤษกันเถอะ`); }} style={{ width:92,height:92,borderRadius:28,background:"rgba(255,255,255,0.22)",backdropFilter:"blur(8px)",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0,flexShrink:0 }}>
-              <PetAvatar pet={pet} hat={progress.hat} size={pet.stage===0?46:52} mood={missedCount > 5 ? "sad" : "idle"} bounce />
+              <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={pet.stage===0?46:52} mood={missedCount > 5 ? "sad" : "idle"} bounce />
             </button>
             <div style={{ flex:1,minWidth:0 }}>
               <div style={{ fontSize:12,opacity:0.85,fontWeight:600 }}>เพื่อนคู่หู · Lv.{pet.level}</div>
@@ -1877,7 +1878,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
           <Reveal step={50} style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10,marginBottom:14 }}>
             {tiles.map(([e,t,sub,g,fn]) => (
               <button key={t} className="vp-card-hover" onClick={()=>{ sfx.tap(); fn(); }} style={{ ...card(),minHeight:104,padding:"12px 8px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:FONT }}>
-                <span style={{ width:44,height:44,borderRadius:14,background:g,display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,boxShadow:"0 6px 14px rgba(15,23,42,0.12)" }}>{e}</span>
+                {({ "บทสนทนา":"droleplay","นิทานภาพ":"squiz","โฟนิกส์":"phonics","ไวยากรณ์":"grammar","ชีวิตประจำวัน":"time","สอบวัดระดับ":"test" })[t] ? <GameIcon id={({ "บทสนทนา":"droleplay","นิทานภาพ":"squiz","โฟนิกส์":"phonics","ไวยากรณ์":"grammar","ชีวิตประจำวัน":"time","สอบวัดระดับ":"test" })[t]} size={46} /> : <span style={{ width:44,height:44,borderRadius:14,background:g,display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,boxShadow:"0 6px 14px rgba(15,23,42,0.12)" }}>{e}</span>}
                 <span style={{ fontWeight:800,fontSize:12.5,color:T.ink }}>{t}</span>
                 <span style={{ fontSize:10,color:T.ink3,fontWeight:600,textAlign:"center" }}>{sub}</span>
               </button>
@@ -1905,7 +1906,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
               style={{ position:"relative",minHeight:150,borderRadius:24,border:"none",cursor:"pointer",overflow:"hidden",padding:0,textAlign:"left",boxShadow:T.shadow,background:`linear-gradient(135deg,${cat.color},${cat.color}aa)`,fontFamily:FONT }}>
               {tw && <span style={{ position:"absolute",inset:0 }}><PicFill w={tw} emojiSize={0} /></span>}
               <span style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(15,23,42,0) 25%,rgba(15,23,42,0.82) 100%)" }} />
-              <span style={{ position:"absolute",top:10,left:10,width:40,height:40,borderRadius:14,background:"rgba(255,255,255,0.92)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,boxShadow:"0 4px 12px rgba(0,0,0,0.15)" }}>{cat.emoji}</span>
+              <span style={{ position:"absolute",top:10,left:10 }}><CatIcon id={cat.id} size={44} /></span>
               {crown && <span style={{ position:"absolute",top:12,right:12,fontSize:20 }}>👑</span>}
               <span style={{ position:"absolute",left:12,right:12,bottom:10,color:"#fff" }}>
                 <span style={{ display:"block",fontWeight:800,fontSize:16,lineHeight:1.1 }}>{cat.label}</span>
@@ -1923,10 +1924,10 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
 // ═══════════════════════════════════════════════════════
 // HUBS — แท็บ เรียน / เล่น / ของฉัน
 // ═══════════════════════════════════════════════════════
-function HubRow({ emoji, title, sub, grad, onClick, right }) {
+function HubRow({ emoji, icon, title, sub, grad, onClick, right }) {
   return (
     <button className="vp-card-hover" onClick={() => { sfx.tap(); onClick(); }} style={{ ...card(),width:"100%",minHeight:72,padding:"12px 14px",display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",marginBottom:10,fontFamily:FONT }}>
-      <span style={{ width:48,height:48,borderRadius:16,background:grad,display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,flexShrink:0,boxShadow:"0 6px 14px rgba(15,23,42,0.12)" }}>{emoji}</span>
+      {icon ? <span style={{ flexShrink:0 }}>{icon}</span> : <span style={{ width:48,height:48,borderRadius:16,background:grad,display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,flexShrink:0,boxShadow:"0 6px 14px rgba(15,23,42,0.12)" }}>{emoji}</span>}
       <span style={{ flex:1,minWidth:0 }}><span style={{ display:"block",fontWeight:800,fontSize:15,color:T.ink }}>{title}</span><span style={{ display:"block",fontSize:12,color:T.ink3 }}>{sub}</span></span>
       {right ?? <span style={{ color:T.ink3,fontSize:20 }}>›</span>}
     </button>
@@ -1937,14 +1938,14 @@ function LearnHub({ words, categories, progress, units, onPath, onCat, onTalk, o
   return (
     <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
       <HubRow emoji="🗺️" title="เส้นทางบทเรียน A1 → A2" sub={`ผ่านแล้ว ${unitsDone}/${units.length} บท · เรียนการ์ด → ทดสอบ → ฟัง`} grad={T.grad2} onClick={onPath} />
-      <HubRow emoji="💬" title="บทสนทนา" sub={`${DIALOGUES.length} สถานการณ์ · ฟัง เล่นบทบาท เติมคำ`} grad="linear-gradient(135deg,#fb923c,#f43f5e)" onClick={onTalk} />
+      <HubRow icon={<GameIcon id="droleplay" size={48} />} title="บทสนทนา" sub={`${DIALOGUES.length} สถานการณ์ · ฟัง เล่นบทบาท เติมคำ`} grad="linear-gradient(135deg,#fb923c,#f43f5e)" onClick={onTalk} />
       <HubRow emoji="📖" title="นิทานภาพ" sub={`${STORIES.length} เรื่อง · อ่านพร้อมเสียง + คำถาม`} grad="linear-gradient(135deg,#a855f7,#6366f1)" onClick={onStories} />
-      <HubRow emoji="🔤" title="โฟนิกส์ A–Z" sub="เสียงตัวอักษร + คำตัวอย่าง + เกม" grad="linear-gradient(135deg,#22d3ee,#3b82f6)" onClick={onPhonics} />
-      <HubRow emoji="✍️" title="ไวยากรณ์เด็ก" sub={`${GRAMMAR.length} บท · กฎง่ายๆ + แบบฝึก`} grad="linear-gradient(135deg,#f59e0b,#ef4444)" onClick={onGrammar} />
-      <HubRow emoji="🧭" title="ชีวิตประจำวัน" sub="บอกเวลา · เงินบาท · วัน-เดือน · ตัวเลข" grad="linear-gradient(135deg,#34d399,#0ea5e9)" onClick={onDaily} />
+      <HubRow icon={<GameIcon id="phonics" size={48} />} title="โฟนิกส์ A–Z" sub="เสียงตัวอักษร + คำตัวอย่าง + เกม" grad="linear-gradient(135deg,#22d3ee,#3b82f6)" onClick={onPhonics} />
+      <HubRow icon={<GameIcon id="grammar" size={48} />} title="ไวยากรณ์เด็ก" sub={`${GRAMMAR.length} บท · กฎง่ายๆ + แบบฝึก`} grad="linear-gradient(135deg,#f59e0b,#ef4444)" onClick={onGrammar} />
+      <HubRow icon={<GameIcon id="time" size={48} />} title="ชีวิตประจำวัน" sub="บอกเวลา · เงินบาท · วัน-เดือน · ตัวเลข" grad="linear-gradient(135deg,#34d399,#0ea5e9)" onClick={onDaily} />
       <div style={{ fontWeight:800,fontSize:16,color:T.ink,margin:"14px 0 10px" }}>การ์ดคำศัพท์ตามหมวด</div>
       <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
-        {categories.map(c => <button key={c.id} onClick={() => { sfx.tap(); onCat(c); }} style={{ ...card(),minHeight:76,padding:"8px 4px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3,fontFamily:FONT }}><span style={{ fontSize:26 }}>{c.emoji}</span><span style={{ fontSize:11,fontWeight:800,color:T.ink }}>{c.thai}</span></button>)}
+        {categories.map(c => <button key={c.id} onClick={() => { sfx.tap(); onCat(c); }} style={{ ...card(),minHeight:76,padding:"8px 4px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3,fontFamily:FONT }}><CatIcon id={c.id} size={38} /><span style={{ fontSize:11,fontWeight:800,color:T.ink }}>{c.thai}</span></button>)}
       </div>
     </div>
   );
@@ -1956,13 +1957,13 @@ function PlayHub({ words, categories, progress, missedCount, onCat, onReview, on
       <div style={{ ...card(),padding:16,marginBottom:12,display:"flex",alignItems:"center",gap:12 }}>
         <span style={{ fontSize:36 }}>⭐</span><div><div style={{ fontWeight:800,fontSize:18,color:T.ink }}>{totalStars} ดาว</div><div style={{ fontSize:12,color:T.ink3 }}>จาก 24 เกมใน {categories.length} หมวด · บอสชนะแล้ว {Object.keys(progress.boss).length} หมวด</div></div>
       </div>
-      <HubRow emoji="🔁" title="ทบทวนวันนี้" sub={missedCount ? `${missedCount} คำถึงเวลาทบทวน` : "ยังไม่มีคำค้าง"} grad="linear-gradient(135deg,#fb923c,#f59e0b)" onClick={() => missedCount && onReview()} />
+      <HubRow icon={<GameIcon id="quiz" size={48} />} title="ทบทวนวันนี้" sub={missedCount ? `${missedCount} คำถึงเวลาทบทวน` : "ยังไม่มีคำค้าง"} grad="linear-gradient(135deg,#fb923c,#f59e0b)" onClick={() => missedCount && onReview()} />
       <HubRow emoji="⚔️" title="แข่ง 2 คน จอเดียว" sub="นั่งตรงข้ามกัน ใครแตะคำถูกก่อนชนะ" grad="linear-gradient(135deg,#f43f5e,#fb923c)" onClick={onVersus} />
-      <HubRow emoji="📝" title="สอบวัดระดับ + ใบประกาศ" sub={progress.cert ? `ล่าสุด ${progress.cert.score}/${progress.cert.total} คะแนน` : "20 ข้อ ผสมทุกทักษะ"} grad="linear-gradient(135deg,#6366f1,#a855f7)" onClick={onTest} />
+      <HubRow icon={<GameIcon id="test" size={48} />} title="สอบวัดระดับ + ใบประกาศ" sub={progress.cert ? `ล่าสุด ${progress.cert.score}/${progress.cert.total} คะแนน` : "20 ข้อ ผสมทุกทักษะ"} grad="linear-gradient(135deg,#6366f1,#a855f7)" onClick={onTest} />
       <div style={{ fontWeight:800,fontSize:16,color:T.ink,margin:"14px 0 10px" }}>เลือกหมวดเพื่อเล่นเกม</div>
       {categories.map(c => {
         const got = c.games.reduce((a,g)=>a+(progress.stars[`${c.id}:${g}`]||0),0);
-        return <HubRow key={c.id} emoji={c.emoji} title={`${c.label} · ${c.thai}`} sub={`${c.games.length} เกม${progress.boss[c.id] ? " · 👑 ชนะบอสแล้ว" : ""}`} grad={`linear-gradient(135deg,${c.color},${c.color}99)`} onClick={() => onCat(c)} right={<span style={{ fontSize:12,fontWeight:800,color:got?"#d97706":T.ink3 }}>⭐ {got}/{c.games.length*3}</span>} />;
+        return <HubRow key={c.id} icon={<CatIcon id={c.id} size={48} />} title={`${c.label} · ${c.thai}`} sub={`${c.games.length} เกม${progress.boss[c.id] ? " · 👑 ชนะบอสแล้ว" : ""}`} grad={`linear-gradient(135deg,${c.color},${c.color}99)`} onClick={() => onCat(c)} right={<span style={{ fontSize:12,fontWeight:800,color:got?"#d97706":T.ink3 }}>⭐ {got}/{c.games.length*3}</span>} />;
       })}
     </div>
   );
@@ -2008,7 +2009,7 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
         {(imageTitleOf(coverWord(cat)) || words.find(w => imageTitleOf(w))) && <span style={{ position:"absolute",inset:0 }}><PicFill w={imageTitleOf(coverWord(cat)) ? coverWord(cat) : words.find(w => imageTitleOf(w))} emojiSize={0} /></span>}
         <span style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(15,23,42,0.05) 20%,rgba(15,23,42,0.85) 100%)" }} />
         <div style={{ position:"absolute",left:16,right:16,bottom:14,color:"#fff",display:"flex",alignItems:"flex-end",gap:12 }}>
-          <span style={{ width:52,height:52,borderRadius:18,background:"rgba(255,255,255,0.92)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:30,flexShrink:0 }}>{cat.emoji}</span>
+          <span style={{ flexShrink:0 }}><CatIcon id={cat.id} size={56} /></span>
           <div style={{ flex:1 }}>
             <div style={{ fontWeight:800,fontSize:22,lineHeight:1.1 }}>{cat.label} {crowned && "👑"}</div>
             <div style={{ fontSize:13,opacity:0.9 }}>{cat.thai} · {words.length} คำ · ⭐ {cat.games.reduce((a,g)=>a+starOf(g),0)}/{cat.games.length*3}</div>
@@ -2034,7 +2035,7 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
           return (
             <button key={gid} onClick={()=>{ sfx.tap(); onPickGame(gid); }}
               style={{ ...card(),padding:"12px 14px",minHeight:64,display:"flex",alignItems:"center",gap:12,cursor:"pointer",textAlign:"left",fontFamily:FONT }}>
-              <span style={{ width:44,height:44,borderRadius:14,background:`${cat.color}22`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,flexShrink:0 }}>{g.emoji}</span>
+              <span style={{ flexShrink:0 }}><GameIcon id={gid} size={46} /></span>
               <div style={{ flex:1,minWidth:0 }}>
                 <div style={{ fontWeight:800,fontSize:14,color:"#1f2937" }}>{g.label}</div>
                 <div style={{ fontSize:11,color:"#6b7280",marginTop:1 }}>{g.thai}</div>
@@ -3126,7 +3127,7 @@ function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, 
         {profile && <div style={{ textAlign:"right",marginBottom:4 }}><button onClick={() => { sfx.tap(); onProfiles(); }} style={{ minHeight:44,display:"inline-flex",alignItems:"center",gap:4,background:"rgba(255,255,255,0.85)",border:"none",borderRadius:999,padding:"0 10px",fontSize:12,fontWeight:800,color:"#374151",cursor:"pointer" }}>{profile.avatar} {profile.name} ▾</button></div>}
         <div style={{ fontWeight:900,fontSize:16,color:"#1f2937" }}>เลือกเพื่อนคู่หูของ{profile?.name || "หนู"} 🥚</div>
         <div style={{ fontSize:12,color:"#6b7280",margin:"2px 0 12px" }}>ยิ่งตอบถูก เพื่อนยิ่งโต!</div>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
           {PETS.map(p => (
             <button key={p.id} onClick={() => { sfx.coin(); speak("Hello! Let's play!", "สวัสดี มาเล่นกันเถอะ"); setProgress(x => ({ ...x, pet: p.id })); }}
               style={{ background:"#fff",border:"2px solid #e5e7eb",borderRadius:16,padding:"10px 4px",minHeight:72,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:4 }}>
@@ -3148,7 +3149,7 @@ function PetCard({ progress, setProgress, stickerCount, totalWords, onStickers, 
       <div style={{ display:"flex",alignItems:"center",gap:12 }}>
         <button onClick={() => { sfx.tap(); speak(`Hi! I'm ${pet.id === "cat" ? "a cat" : pet.id === "dog" ? "a dog" : pet.id === "bunny" ? "a bunny" : "a dragon"}!`, `สวัสดี ฉันชื่อ${pet.name}`); }}
           style={{ width:80,height:80,borderRadius:22,background:"#fff",border:"none",cursor:"pointer",boxShadow:"0 4px 14px rgba(139,92,246,0.25)",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center",padding:0 }}>
-          <PetAvatar pet={pet} hat={progress.hat} size={pet.stage===0?38:pet.stage===1?42:pet.stage===2?46:50} bounce />
+          <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={pet.stage===0?38:pet.stage===1?42:pet.stage===2?46:50} bounce />
         </button>
         <div style={{ flex:1,minWidth:0 }}>
           <div style={{ display:"flex",alignItems:"center",gap:6 }}>
@@ -3196,7 +3197,7 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
         return (
           <div key={cat.id} style={{ marginBottom:16 }}>
             <div style={{ display:"flex",alignItems:"center",gap:8,marginBottom:8 }}>
-              <span style={{ fontSize:20 }}>{cat.emoji}</span>
+              <CatIcon id={cat.id} size={28} />
               <span style={{ fontWeight:800,fontSize:14,color:"#1f2937" }}>{cat.label}</span>
               <span style={{ fontSize:11,fontWeight:700,color:cat.color,background:`${cat.color}18`,padding:"2px 8px",borderRadius:999 }}>{got}/{ws.length}</span>
               {got === ws.length && <span>🏅</span>}
@@ -3318,11 +3319,11 @@ function NoWords({ onBack }) {
 // PET AVATAR — อีโมจิเพื่อนคู่หู + หมวกที่ซื้อจากร้าน
 // ═══════════════════════════════════════════════════════
 // ตัวละคร SVG (src/Pet.jsx) · mood: idle/happy/sad/sleepy/excited · ขนาดอิงจาก size เดิม (อีโมจิ) ×1.6
-function PetAvatar({ pet, hat, size = 48, bounce = false, mood = "idle", talk = false }) {
+function PetAvatar({ pet, hat, outfit, size = 48, bounce = false, mood = "idle", talk = false }) {
   const h = SHOP_ITEMS.find(i => i.id === hat);
   const hour = new Date().getHours();
   const m = mood !== "idle" ? mood : (hour >= 21 || hour < 6) ? "sleepy" : "idle";
-  return <Pet kind={pet?.id || "cat"} stage={pet?.stage ?? 0} mood={m} size={size * 1.6} hat={h?.emoji} talk={talk} />;
+  return <Pet kind={pet?.id || "cat"} stage={pet?.stage ?? 0} mood={m} size={size * 1.6} hat={h?.emoji} outfit={outfit || []} talk={talk} />;
 }
 
 // ═══════════════════════════════════════════════════════
@@ -3615,26 +3616,30 @@ function ShopScreen({ progress, setProgress, showToast }) {
   const bg = SHOP_ITEMS.find(i => i.id === progress.bg)?.css || "linear-gradient(135deg,#fdf2f8,#eef2ff)";
   const buy = it => {
     if (progress.coins < it.cost) { sfx.bad(); showToast(`เหรียญไม่พอ ขาดอีก ${it.cost - progress.coins} 🪙`, "warn"); return; }
-    sfx.coin(); setProgress(p => ({ ...p, coins:p.coins-it.cost, owned:{ ...p.owned, [it.id]:true }, [it.type]: it.id }));
+    sfx.coin(); fx.burst(innerWidth/2, 160, { count: 24 }); setProgress(p => it.type === "outfit"
+      ? { ...p, coins:p.coins-it.cost, owned:{ ...p.owned, [it.id]:true }, outfit:[...(p.outfit || []), it.id] }
+      : { ...p, coins:p.coins-it.cost, owned:{ ...p.owned, [it.id]:true }, [it.type]: it.id });
     showToast(`ซื้อ ${it.name} แล้ว ✓`);
   };
-  const wear = it => { sfx.tap(); setProgress(p => ({ ...p, [it.type]: p[it.type] === it.id ? null : it.id })); };
+  const wear = it => { sfx.tap(); setProgress(p => it.type === "outfit"
+    ? { ...p, outfit: (p.outfit || []).includes(it.id) ? (p.outfit || []).filter(x => x !== it.id) : [...(p.outfit || []), it.id] }
+    : { ...p, [it.type]: p[it.type] === it.id ? null : it.id }); };
   return (
     <div style={{ padding:"14px 12px 40px",maxWidth:480,margin:"0 auto" }}>
       <div style={{ background:bg,borderRadius:20,padding:16,textAlign:"center",border:"2px solid #e9d5ff",marginBottom:12 }}>
-        <PetAvatar pet={pet} hat={progress.hat} size={64} bounce />
+        <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={76} bounce mood="happy" />
         <div style={{ fontWeight:900,fontSize:16,color:progress.bg==="bgSpace"?"#fff":"#1f2937",marginTop:4 }}>{pet?.name || "เพื่อนคู่หู"}</div>
         <div style={{ display:"inline-flex",background:"#fef3c7",color:"#92400e",fontWeight:900,borderRadius:999,padding:"4px 14px",marginTop:6 }}>🪙 {progress.coins}</div>
       </div>
       <div style={{ display:"flex",gap:6,marginBottom:12 }}>
-        {[["hat","🎩 หมวก"],["bg","🖼️ พื้นหลัง"],["theme","🎨 ธีมแอป"]].map(([k,l]) => (
+        {[["hat","🎩 หมวก"],["outfit","👕 ชุด"],["bg","🖼️ พื้นหลัง"],["theme","🎨 ธีมแอป"]].map(([k,l]) => (
           <button key={k} onClick={() => { sfx.tap(); setTab(k); }} style={{ flex:1,minHeight:44,borderRadius:12,border:"none",fontWeight:800,fontSize:14,cursor:"pointer",background:tab===k?"#7c3aed":"#f3f4f6",color:tab===k?"#fff":"#374151" }}>{l}</button>
         ))}
       </div>
       {tab === "theme" && <div style={{ fontSize:12,color:T.ink2,marginBottom:10,textAlign:"center" }}>ธีมเปลี่ยนสีทั้งแอป (พื้นหลัง · hero · แท็บ) · "ออโรรา" คือธีมเริ่มต้นฟรี</div>}
       <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }}>
         {items.map(it => {
-          const owned = !!progress.owned[it.id] || it.cost === 0; const on = (progress[it.type] || (it.type === "theme" ? "aurora" : null)) === it.id;
+          const owned = !!progress.owned[it.id] || it.cost === 0; const on = it.type === "outfit" ? (progress.outfit || []).includes(it.id) : (progress[it.type] || (it.type === "theme" ? "aurora" : null)) === it.id;
           return (
             <div key={it.id} style={{ background:"#fff",borderRadius:16,padding:12,border:`2px solid ${on?"#7c3aed":"#f3f4f6"}`,textAlign:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.05)" }}>
               <div style={{ height:64,borderRadius:12,background:it.css||it.preview||"#f9fafb",display:"flex",alignItems:"center",justifyContent:"center",fontSize:38,marginBottom:6 }}>{it.emoji}</div>
@@ -3683,7 +3688,7 @@ function ReportScreen({ words, categories, progress }) {
           const st = c.games.reduce((a, g) => a + (progress.stars[`${c.id}:${g}`] || 0), 0);
           return (
             <div key={c.id} style={{ display:"flex",alignItems:"center",gap:8,padding:"5px 0" }}>
-              <span style={{ fontSize:18,width:24 }}>{c.emoji}</span>
+              <CatIcon id={c.id} size={24} />
               <span style={{ fontSize:12,fontWeight:700,color:"#374151",width:72 }}>{c.label}{progress.boss[c.id] ? " 👑" : ""}</span>
               <div style={{ flex:1,height:8,background:"#f3f4f6",borderRadius:999,overflow:"hidden" }}><div style={{ height:"100%",width:`${(m/ws.length)*100}%`,background:c.color,borderRadius:999 }} /></div>
               <span style={{ fontSize:11,color:"#6b7280",width:88,textAlign:"right" }}>{m}/{ws.length} · ⭐{st}</span>

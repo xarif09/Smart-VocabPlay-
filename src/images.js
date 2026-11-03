@@ -93,6 +93,31 @@ add("places", [
   ["RESTAURANT","Restaurant"],["BANK","Bank"],["AIRPORT","Airport terminal"],["LIBRARY","Library"],["SUPERMARKET","Supermarket"],["PLAYGROUND","Playground"],
 ]);
 
+// ── ชุดขยาย v2.1 ──
+add("colors", [["GOLD","Gold"],["SILVER","Silver"]]);
+add("fruits", [["DRAGON FRUIT","Pitaya"],["ROSE APPLE","Syzygium samarangense"],["TAMARIND","Tamarind"],["PLUM","Plum"],["STAR FRUIT","Carambola"]]);
+add("school", [["BLACKBOARD","Blackboard"],["MARKER","Marker pen"],["GLUE","Glue stick"],["PAPER","Paper"],["PAINTBRUSH","Paintbrush"],["SCHOOL BUS","School bus"],["LUNCH BOX","Lunch box"],["BELL","School bell"],["FLAG","Flag of Thailand"],["TAPE","Adhesive tape"]]);
+add("body", [["KNEE","Knee"],["ELBOW","Elbow"],["CHIN","Chin"],["CHEEK","Cheek"],["LIPS","Lip"],["EYEBROW","Eyebrow"],["TOE","Toe"],["THUMB","Thumb"],["NAIL","Nail (anatomy)"],["WRIST","Wrist"]]);
+add("weather", [["CLOUDY","Overcast"],["WINDY","Wind"],["RAINY","Rain"],["FLOOD","Flood"],["ICE","Ice"],["SUMMER","Summer"],["WINTER","Winter"],["SPRING","Spring (season)"],["AUTUMN","Autumn"],["SNOWMAN","Snowman"]]);
+add("vehicles", [["SPACESHIP","Space Shuttle"],["SAILBOAT","Sailboat"],["FERRY","Ferry"],["PICKUP TRUCK","Pickup truck"],["GARBAGE TRUCK","Garbage truck"],["CRANE","Crane (machine)"],["HOT AIR BALLOON","Hot air balloon"],["TRAM","Tram"],["SPEEDBOAT","Motorboat"],["SKYTRAIN","BTS Skytrain"]]);
+add("jobs", [["VET","Veterinarian"],["MAIL CARRIER","Mail carrier"],["FISHERMAN","Fisherman"],["MECHANIC","Auto mechanic"],["HAIRDRESSER","Hairdresser"],["DANCER","Dancer"],["FOOTBALL PLAYER","Association football"],["SHOPKEEPER","Shopkeeper"],["ASTRONAUT","Astronaut"],["MONK","Bhikkhu"]]);
+add("clothes", [["SHORTS","Shorts"],["SWEATER","Sweater"],["RAINCOAT","Raincoat"],["PAJAMAS","Pajamas"],["CAP","Baseball cap"],["SLIPPERS","Slipper"],["APRON","Apron"],["MASK","Surgical mask"],["WATCH","Wristwatch"],["NECKLACE","Necklace"]]);
+add("nature", [["SAND","Sand"],["WAVE","Wind wave"],["HILL","Hill"],["FIELD","Paddy field"],["POND","Pond"],["SEED","Seed"],["CACTUS","Cactus"],["BAMBOO","Bamboo"]]);
+add("sports", [["KARATE","Karate"],["TAEKWONDO","Taekwondo"],["ICE SKATING","Ice skating"],["FISHING","Fishing"],["HIKING","Hiking"],["BOWLING","Ten-pin bowling"],["CHESS","Chess"],["HORSE RIDING","Equestrianism"],["RUGBY","Rugby football"],["JUMP ROPE","Skipping rope"]]);
+add("family", [["TWINS","Twin"],["FRIEND","Friendship"]]);
+add("actions", [["HUG","Hug"],["SMILE","Smile"],["CLAP","Clapping"],["KICK","Kick"],["THROW","Throwing"]]);
+add("feelings", [["BRAVE","Firefighter"]]);
+add("shapes", []);
+add("toys", [["TOY CAR","Model car"],["BUBBLES","Soap bubble"],["SLIDE","Playground slide"],["SWING","Swing (seat)"],["SEESAW","Seesaw"],["ROCKING HORSE","Rocking horse"],["PUPPET","Puppet"],["DICE","Dice"],["BOARD GAME","Board game"],["MARBLES","Marble (toy)"]]);
+add("places", [["CINEMA","Movie theater"],["POST OFFICE","Post office"],["POLICE STATION","Police station"],["FIRE STATION","Fire station"],["PHARMACY","Pharmacy"],["GAS STATION","Filling station"],["BUS STOP","Bus stop"],["TRAIN STATION","Train station"],["SWIMMING POOL","Swimming pool"],["SHOPPING MALL","Shopping mall"],["CAFE","Coffeehouse"],["BAKERY","Bakery"]]);
+
+// ── รูปปกหมวด (ภาพรวมของหมวด) key = cover|<catId> ──
+add("cover", [
+  ["animals","Fauna"],["fruits","Fruit"],["food","Food"],["colors","Color"],["school","Primary education"],["body","Face"],["weather","Weather"],
+  ["numbers","Numerical digit"],["vehicles","Vehicle"],["jobs","Profession"],["clothes","Clothing"],["home","House"],["nature","Nature"],["sports","Sport"],
+  ["family","Family"],["actions","Exercise"],["feelings","Emotion"],["shapes","Shape"],["toys","Toy"],["places","City"],
+]);
+
 export const IMAGE_TITLES = T;
 export const imageTitleOf = w => (w && T[`${w.cat}|${w.word}`]) || null;
 

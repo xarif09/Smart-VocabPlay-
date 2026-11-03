@@ -153,6 +153,9 @@ const REVIEW_CAT = { id:"review", label:"ทบทวนคำที่พลา
 const EXTRA_GAMES = ["listen", "sentence", "speak"];
 CATEGORIES.forEach(c => c.games.push(...EXTRA_GAMES));
 
+// รูปปกหมวด = คำเสมือน { cat:"cover", word:<id> } → ดึงรูปจาก images.js key "cover|<id>"
+const coverWord = cat => ({ id:`cover:${cat.id}`, cat:"cover", word:cat.id, emoji:cat.emoji });
+
 const GAME_META = {
   quiz:    { label:"Quiz",          thai:"ตอบ 4 ตัวเลือก",      emoji:"🏆" },
   spell:   { label:"Spelling",      thai:"ฟัง→สะกดคำ",           emoji:"✍️" },
@@ -617,6 +620,56 @@ const INITIAL_WORDS = [
   W("places","LIBRARY","ห้องสมุด","📚"),
   W("places","SUPERMARKET","ซูเปอร์มาร์เก็ต","🛒"),
   W("places","PLAYGROUND","สนามเด็กเล่น","🛝"),
+
+  // ── ชุดขยาย v2.1 (ต่อท้ายเสมอ) ทำให้แต่ละหมวดมี ~30 คำ ──
+  // Colors +4 → 15
+  W("colors","GOLD","สีทอง","🟡"), W("colors","SILVER","สีเงิน","⚪"), W("colors","LIGHT BLUE","สีฟ้า","🩵"), W("colors","DARK GREEN","สีเขียวเข้ม","🟢"),
+  // Fruits +5 → 30
+  W("fruits","DRAGON FRUIT","แก้วมังกร","🐉"), W("fruits","ROSE APPLE","ชมพู่","🍎"), W("fruits","TAMARIND","มะขาม","🟤"), W("fruits","PLUM","ลูกพลัม","🟣"), W("fruits","STAR FRUIT","มะเฟือง","⭐"),
+  // School +10 → 30
+  W("school","BLACKBOARD","กระดานดำ","🖤"), W("school","MARKER","ปากกาเมจิก","🖊️"), W("school","GLUE","กาว","🧴"), W("school","PAPER","กระดาษ","📄"), W("school","PAINTBRUSH","พู่กัน","🖌️"),
+  W("school","SCHOOL BUS","รถโรงเรียน","🚌"), W("school","LUNCH BOX","กล่องข้าว","🍱"), W("school","BELL","กระดิ่ง","🔔"), W("school","FLAG","ธง","🇹🇭"), W("school","TAPE","เทปกาว","📏"),
+  // Body +10 → 30
+  W("body","KNEE","เข่า","🦵"), W("body","ELBOW","ข้อศอก","💪"), W("body","CHIN","คาง","🙂"), W("body","CHEEK","แก้ม","☺️"), W("body","LIPS","ริมฝีปาก","👄"),
+  W("body","EYEBROW","คิ้ว","🤨"), W("body","TOE","นิ้วเท้า","🦶"), W("body","THUMB","นิ้วโป้ง","👍"), W("body","NAIL","เล็บ","💅"), W("body","WRIST","ข้อมือ","⌚"),
+  // Weather +10 → 25
+  W("weather","CLOUDY","มีเมฆมาก","☁️"), W("weather","WINDY","ลมแรง","🍃"), W("weather","RAINY","ฝนตกทั้งวัน","🌧️"), W("weather","FLOOD","น้ำท่วม","🌊"), W("weather","ICE","น้ำแข็ง","🧊"),
+  W("weather","SUMMER","ฤดูร้อน","☀️"), W("weather","WINTER","ฤดูหนาว","❄️"), W("weather","SPRING","ฤดูใบไม้ผลิ","🌸"), W("weather","AUTUMN","ฤดูใบไม้ร่วง","🍂"), W("weather","SNOWMAN","ตุ๊กตาหิมะ","⛄"),
+  // Numbers +5 → 25
+  W("numbers","THIRTEEN","สิบสาม","1️⃣3️⃣"), W("numbers","FOURTEEN","สิบสี่","1️⃣4️⃣"), W("numbers","FIFTEEN","สิบห้า","1️⃣5️⃣"), W("numbers","SIXTY","หกสิบ","6️⃣0️⃣"), W("numbers","SEVENTY","เจ็ดสิบ","7️⃣0️⃣"),
+  // Vehicles +10 → 30
+  W("vehicles","SPACESHIP","ยานอวกาศ","🛸"), W("vehicles","SAILBOAT","เรือใบ","⛵"), W("vehicles","FERRY","เรือข้ามฟาก","⛴️"), W("vehicles","PICKUP TRUCK","รถกระบะ","🛻"), W("vehicles","GARBAGE TRUCK","รถขยะ","🚛"),
+  W("vehicles","CRANE","รถเครน","🏗️"), W("vehicles","HOT AIR BALLOON","บอลลูน","🎈"), W("vehicles","TRAM","รถราง","🚋"), W("vehicles","SPEEDBOAT","เรือเร็ว","🚤"), W("vehicles","SKYTRAIN","รถไฟฟ้า","🚝"),
+  // Jobs +10 → 30
+  W("jobs","VET","สัตวแพทย์","🐾"), W("jobs","MAIL CARRIER","บุรุษไปรษณีย์","📮"), W("jobs","FISHERMAN","ชาวประมง","🎣"), W("jobs","MECHANIC","ช่างซ่อมรถ","🔧"), W("jobs","HAIRDRESSER","ช่างทำผม","💇"),
+  W("jobs","DANCER","นักเต้น","💃"), W("jobs","FOOTBALL PLAYER","นักฟุตบอล","⚽"), W("jobs","SHOPKEEPER","เจ้าของร้าน","🏪"), W("jobs","ASTRONAUT","นักบินอวกาศ","👩‍🚀"), W("jobs","MONK","พระ","🧘"),
+  // Clothes +10 → 30
+  W("clothes","SHORTS","กางเกงขาสั้น","🩳"), W("clothes","SWEATER","เสื้อกันหนาว","🧶"), W("clothes","RAINCOAT","เสื้อกันฝน","🧥"), W("clothes","PAJAMAS","ชุดนอน","🛌"), W("clothes","CAP","หมวกแก๊ป","🧢"),
+  W("clothes","SLIPPERS","รองเท้าแตะในบ้าน","🩴"), W("clothes","APRON","ผ้ากันเปื้อน","🥼"), W("clothes","MASK","หน้ากาก","😷"), W("clothes","WATCH","นาฬิกาข้อมือ","⌚"), W("clothes","NECKLACE","สร้อยคอ","📿"),
+  // Nature +8 → 30
+  W("nature","SAND","ทราย","🏖️"), W("nature","WAVE","คลื่น","🌊"), W("nature","HILL","เนินเขา","⛰️"), W("nature","FIELD","ทุ่งนา","🌾"), W("nature","POND","บ่อน้ำ","🪷"),
+  W("nature","SEED","เมล็ด","🌱"), W("nature","CACTUS","กระบองเพชร","🌵"), W("nature","BAMBOO","ไม้ไผ่","🎋"),
+  // Sports +10 → 30
+  W("sports","KARATE","คาราเต้","🥋"), W("sports","TAEKWONDO","เทควันโด","🥋"), W("sports","ICE SKATING","สเก็ตน้ำแข็ง","⛸️"), W("sports","FISHING","ตกปลา","🎣"), W("sports","HIKING","เดินป่า","🥾"),
+  W("sports","BOWLING","โบว์ลิ่ง","🎳"), W("sports","CHESS","หมากรุก","♟️"), W("sports","HORSE RIDING","ขี่ม้า","🏇"), W("sports","RUGBY","รักบี้","🏉"), W("sports","JUMP ROPE","กระโดดเชือก","🪢"),
+  // Family +8 → 20
+  W("family","PARENTS","พ่อแม่","👫"), W("family","GRANDPARENTS","ปู่ย่าตายาย","👴👵"), W("family","COUSIN","ลูกพี่ลูกน้อง","🧑‍🤝‍🧑"), W("family","TWINS","ฝาแฝด","👯"),
+  W("family","HUSBAND","สามี","🤵"), W("family","WIFE","ภรรยา","👰"), W("family","FRIEND","เพื่อน","🫂"), W("family","NEIGHBOR","เพื่อนบ้าน","🏘️"),
+  // Actions +10 → 30
+  W("actions","OPEN","เปิด","🚪"), W("actions","CLOSE","ปิด","🔒"), W("actions","PUSH","ผลัก","👐"), W("actions","PULL","ดึง","🪢"), W("actions","THROW","ขว้าง","🤾"),
+  W("actions","CATCH","รับ","🧤"), W("actions","KICK","เตะ","🦵"), W("actions","HUG","กอด","🤗"), W("actions","SMILE","ยิ้ม","😊"), W("actions","CLAP","ปรบมือ","👏"),
+  // Feelings +8 → 18
+  W("feelings","BORED","เบื่อ","😑"), W("feelings","SHY","อาย","😳"), W("feelings","PROUD","ภูมิใจ","😌"), W("feelings","NERVOUS","ประหม่า","😬"),
+  W("feelings","SLEEPY","ง่วง","😴"), W("feelings","CALM","สงบ","😇"), W("feelings","LONELY","เหงา","🥺"), W("feelings","BRAVE","กล้าหาญ","🦁"),
+  // Shapes +4 → 12
+  W("shapes","PENTAGON","ห้าเหลี่ยม","⬠"), W("shapes","HEXAGON","หกเหลี่ยม","⬡"), W("shapes","CUBE","ลูกบาศก์","🧊"), W("shapes","CRESCENT","จันทร์เสี้ยว","🌙"),
+  // Toys +10 → 22
+  W("toys","TOY CAR","รถของเล่น","🚗"), W("toys","BUBBLES","ฟองสบู่","🫧"), W("toys","SLIDE","กระดานลื่น","🛝"), W("toys","SWING","ชิงช้า","🎠"), W("toys","SEESAW","ไม้กระดก","⚖️"),
+  W("toys","ROCKING HORSE","ม้าโยก","🐴"), W("toys","PUPPET","หุ่นเชิด","🧙"), W("toys","DICE","ลูกเต๋า","🎲"), W("toys","BOARD GAME","เกมกระดาน","🎯"), W("toys","MARBLES","ลูกแก้ว","🔮"),
+  // Places +12 → 26
+  W("places","CINEMA","โรงหนัง","🎬"), W("places","POST OFFICE","ไปรษณีย์","📮"), W("places","POLICE STATION","สถานีตำรวจ","🚓"), W("places","FIRE STATION","สถานีดับเพลิง","🚒"),
+  W("places","PHARMACY","ร้านขายยา","💊"), W("places","GAS STATION","ปั๊มน้ำมัน","⛽"), W("places","BUS STOP","ป้ายรถเมล์","🚏"), W("places","TRAIN STATION","สถานีรถไฟ","🚉"),
+  W("places","SWIMMING POOL","สระว่ายน้ำ","🏊"), W("places","SHOPPING MALL","ห้างสรรพสินค้า","🏬"), W("places","CAFE","ร้านกาแฟ","☕"), W("places","BAKERY","ร้านขนมปัง","🥐"),
 ];
 
 // เติมคำอ่าน + ประโยคตัวอย่างจาก lexicon.js
@@ -1124,7 +1177,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
   const unitsDone = units.filter(u => unitDone(progress.path, u)).length;
   const nextUnit = units.find(u => !unitDone(progress.path, u));
   const pet = getPet(progress);
-  const thumbOf = cat => words.find(w => w.cat === cat.id && imageTitleOf(w));
+  const thumbOf = cat => (imageTitleOf(coverWord(cat)) ? coverWord(cat) : words.find(w => w.cat === cat.id && imageTitleOf(w)));
   const tiles = [["💬","บทสนทนา",`${DIALOGUES.length} สถานการณ์`,"linear-gradient(135deg,#fb923c,#f43f5e)",onTalk],["📖","นิทานภาพ",`${STORIES.length} เรื่อง`,"linear-gradient(135deg,#a855f7,#6366f1)",onStories],["🔤","โฟนิกส์","A–Z + เกม","linear-gradient(135deg,#22d3ee,#3b82f6)",onPhonics],
     ["✍️","ไวยากรณ์",`${GRAMMAR.length} บทเรียน`,"linear-gradient(135deg,#f59e0b,#ef4444)",onGrammar],["🧭","ชีวิตประจำวัน","เวลา เงิน วัน","linear-gradient(135deg,#34d399,#0ea5e9)",onDaily],["📝","สอบวัดระดับ",progress.cert?`ได้ระดับ ${LEVELS_TEST.find(l=>progress.cert.score>=l.min)?.level}`:"20 ข้อ + ใบประกาศ","linear-gradient(135deg,#6366f1,#a855f7)",onTest]];
   return (
@@ -1306,7 +1359,7 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
   return (
     <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
       <div style={{ position:"relative",borderRadius:28,overflow:"hidden",minHeight:150,marginBottom:16,boxShadow:T.shadowLg,background:`linear-gradient(135deg,${cat.color},${cat.color}aa)` }}>
-        {words.find(w => imageTitleOf(w)) && <span style={{ position:"absolute",inset:0 }}><PicFill w={words.find(w => imageTitleOf(w))} emojiSize={0} /></span>}
+        {(imageTitleOf(coverWord(cat)) || words.find(w => imageTitleOf(w))) && <span style={{ position:"absolute",inset:0 }}><PicFill w={imageTitleOf(coverWord(cat)) ? coverWord(cat) : words.find(w => imageTitleOf(w))} emojiSize={0} /></span>}
         <span style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(15,23,42,0.05) 20%,rgba(15,23,42,0.85) 100%)" }} />
         <div style={{ position:"absolute",left:16,right:16,bottom:14,color:"#fff",display:"flex",alignItems:"flex-end",gap:12 }}>
           <span style={{ width:52,height:52,borderRadius:18,background:"rgba(255,255,255,0.92)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:30,flexShrink:0 }}>{cat.emoji}</span>

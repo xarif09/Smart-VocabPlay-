@@ -471,5 +471,93 @@ add("places", [
   ["PLAYGROUND","เพลย์-กราวด์","Let's go to the playground!","ไปสนามเด็กเล่นกันเถอะ!"],
 ]);
 
+// ── ชุดขยาย v2.1 ──
+add("colors", [
+  ["GOLD","โกลด์","The medal is gold.","เหรียญสีทอง"],["SILVER","ซิล-เวอร์","The spoon is silver.","ช้อนสีเงิน"],
+  ["LIGHT BLUE","ไลท์-บลู","The sky is light blue.","ท้องฟ้าสีฟ้าอ่อน"],["DARK GREEN","ดาร์ค-กรีน","The forest is dark green.","ป่าสีเขียวเข้ม"],
+]);
+add("fruits", [
+  ["DRAGON FRUIT","ดรา-ก้อน-ฟรุท","Dragon fruit is pink outside.","แก้วมังกรข้างนอกสีชมพู"],["ROSE APPLE","โรส-แอป-เปิ้ล","Rose apples are crunchy.","ชมพู่กรอบ"],
+  ["TAMARIND","แท-มะ-รินด์","Tamarind is sweet and sour.","มะขามหวานอมเปรี้ยว"],["PLUM","พลัม","The plum is purple.","ลูกพลัมสีม่วง"],["STAR FRUIT","สตาร์-ฟรุท","Star fruit looks like a star.","มะเฟืองรูปร่างเหมือนดาว"],
+]);
+add("school", [
+  ["BLACKBOARD","แบล็ค-บอร์ด","The teacher writes on the blackboard.","ครูเขียนบนกระดานดำ"],["MARKER","มาร์ค-เกอร์","I draw with a red marker.","ฉันวาดด้วยปากกาเมจิกสีแดง"],
+  ["GLUE","กลู","Use glue to stick the paper.","ใช้กาวติดกระดาษ"],["PAPER","เพ-เพอร์","I need a piece of paper.","ฉันต้องการกระดาษหนึ่งแผ่น"],["PAINTBRUSH","เพนท์-บรัช","Wash the paintbrush after painting.","ล้างพู่กันหลังระบายสี"],
+  ["SCHOOL BUS","สคูล-บัส","The school bus is yellow.","รถโรงเรียนสีเหลือง"],["LUNCH BOX","ลันช์-บ็อกซ์","My lunch box has rice and egg.","กล่องข้าวของฉันมีข้าวกับไข่"],
+  ["BELL","เบล","The bell rings at eight.","กระดิ่งดังตอนแปดโมง"],["FLAG","แฟล็ก","We sing to the flag every morning.","เราร้องเพลงเคารพธงทุกเช้า"],["TAPE","เทป","Cut the tape with scissors.","ตัดเทปด้วยกรรไกร"],
+]);
+add("body", [
+  ["KNEE","นี","I hurt my knee.","ฉันเจ็บเข่า"],["ELBOW","เอล-โบว์","Bend your elbow.","งอข้อศอก"],["CHIN","ชิน","Touch your chin.","แตะคางของหนู"],["CHEEK","ชีค","The baby has soft cheeks.","เด็กทารกแก้มนุ่ม"],
+  ["LIPS","ลิปส์","My lips are dry.","ริมฝีปากของฉันแห้ง"],["EYEBROW","อาย-บราว","I have two eyebrows.","ฉันมีคิ้วสองข้าง"],["TOE","โท","I have ten toes.","ฉันมีนิ้วเท้าสิบนิ้ว"],
+  ["THUMB","ธัม","Thumbs up!","ยกนิ้วโป้งให้!"],["NAIL","เนล","Cut your nails.","ตัดเล็บนะ"],["WRIST","ริสท์","I wear a watch on my wrist.","ฉันใส่นาฬิกาที่ข้อมือ"],
+]);
+add("weather", [
+  ["CLOUDY","คลาว-ดี้","It is cloudy today.","วันนี้มีเมฆมาก"],["WINDY","วิน-ดี้","It is windy. Hold your hat!","ลมแรง จับหมวกไว้!"],["RAINY","เรน-นี่","It is a rainy day.","วันนี้ฝนตก"],
+  ["FLOOD","ฟลัด","The flood covers the road.","น้ำท่วมถนน"],["ICE","ไอซ์","Ice is cold and hard.","น้ำแข็งเย็นและแข็ง"],
+  ["SUMMER","ซัม-เมอร์","Summer in Thailand is very hot.","ฤดูร้อนในไทยร้อนมาก"],["WINTER","วิน-เทอร์","Winter is cold.","ฤดูหนาวอากาศหนาว"],
+  ["SPRING","สปริง","Flowers bloom in spring.","ดอกไม้บานในฤดูใบไม้ผลิ"],["AUTUMN","ออ-ทัม","Leaves fall in autumn.","ใบไม้ร่วงในฤดูใบไม้ร่วง"],["SNOWMAN","สโนว์-แมน","We build a snowman.","เราปั้นตุ๊กตาหิมะ"],
+]);
+add("numbers", [
+  ["THIRTEEN","เธอร์-ทีน","I have thirteen stickers.","ฉันมีสติกเกอร์สิบสามใบ"],["FOURTEEN","โฟร์-ทีน","Fourteen days is two weeks.","สิบสี่วันคือสองสัปดาห์"],
+  ["FIFTEEN","ฟิฟ-ทีน","The bus comes in fifteen minutes.","รถบัสมาในสิบห้านาที"],["SIXTY","ซิกซ์-ตี้","Sixty minutes is one hour.","หกสิบนาทีคือหนึ่งชั่วโมง"],["SEVENTY","เซ-เว่น-ตี้","Grandpa is seventy years old.","คุณปู่อายุเจ็ดสิบปี"],
+]);
+add("vehicles", [
+  ["SPACESHIP","สเปซ-ชิพ","The spaceship flies to the moon.","ยานอวกาศบินไปดวงจันทร์"],["SAILBOAT","เซล-โบท","The sailboat uses the wind.","เรือใบใช้ลม"],["FERRY","เฟอ-รี่","We take the ferry to the island.","เรานั่งเรือข้ามฟากไปเกาะ"],
+  ["PICKUP TRUCK","พิค-อัพ-ทรัค","Dad drives a pickup truck.","พ่อขับรถกระบะ"],["GARBAGE TRUCK","การ์-บิจ-ทรัค","The garbage truck comes on Monday.","รถขยะมาวันจันทร์"],
+  ["CRANE","เครน","The crane lifts heavy things.","รถเครนยกของหนัก"],["HOT AIR BALLOON","ฮอท-แอร์-บะ-ลูน","The hot air balloon is colorful.","บอลลูนสีสันสดใส"],
+  ["TRAM","แทรม","The tram runs on rails in the city.","รถรางวิ่งบนรางในเมือง"],["SPEEDBOAT","สปีด-โบท","The speedboat is very fast.","เรือเร็วเร็วมาก"],["SKYTRAIN","สกาย-เทรน","I take the skytrain in Bangkok.","ฉันนั่งรถไฟฟ้าในกรุงเทพฯ"],
+]);
+add("jobs", [
+  ["VET","เว็ท","The vet helps sick animals.","สัตวแพทย์ช่วยสัตว์ป่วย"],["MAIL CARRIER","เมล-แค-ริ-เออร์","The mail carrier brings letters.","บุรุษไปรษณีย์เอาจดหมายมาส่ง"],
+  ["FISHERMAN","ฟิช-เชอร์-แมน","The fisherman catches fish.","ชาวประมงจับปลา"],["MECHANIC","มะ-แค-นิค","The mechanic fixes cars.","ช่างซ่อมรถ"],
+  ["HAIRDRESSER","แฮร์-เดรส-เซอร์","The hairdresser cuts my hair.","ช่างทำผมตัดผมให้ฉัน"],["DANCER","แดน-เซอร์","The dancer moves to the music.","นักเต้นเต้นตามเพลง"],
+  ["FOOTBALL PLAYER","ฟุต-บอล-เพล-เยอร์","The football player kicks the ball.","นักฟุตบอลเตะลูกบอล"],["SHOPKEEPER","ช็อป-คีพ-เพอร์","The shopkeeper sells candy.","เจ้าของร้านขายลูกอม"],
+  ["ASTRONAUT","แอส-โทร-นอท","The astronaut goes to space.","นักบินอวกาศไปอวกาศ"],["MONK","มังค์","The monk wears orange.","พระห่มจีวรสีส้ม"],
+]);
+add("clothes", [
+  ["SHORTS","ชอร์ทส์","I wear shorts in summer.","ฉันใส่กางเกงขาสั้นหน้าร้อน"],["SWEATER","สเว็ท-เทอร์","The sweater is warm.","เสื้อกันหนาวอุ่น"],["RAINCOAT","เรน-โค้ท","Wear your raincoat. It is raining.","ใส่เสื้อกันฝน ฝนตกอยู่"],
+  ["PAJAMAS","พะ-จา-มัส","I wear pajamas to bed.","ฉันใส่ชุดนอนเข้านอน"],["CAP","แค็พ","His cap is blue.","หมวกแก๊ปของเขาสีน้ำเงิน"],["SLIPPERS","สลิป-เพอร์ส","Wear slippers in the house.","ใส่รองเท้าแตะในบ้าน"],
+  ["APRON","เอ-พร่อน","Mom wears an apron to cook.","แม่ใส่ผ้ากันเปื้อนทำอาหาร"],["MASK","มาสค์","Wear a mask when you are sick.","ใส่หน้ากากเมื่อป่วย"],
+  ["WATCH","ว็อทช์","My watch says ten o'clock.","นาฬิกาข้อมือบอกสิบโมง"],["NECKLACE","เน็ค-เลซ","She wears a gold necklace.","เธอใส่สร้อยคอทอง"],
+]);
+add("nature", [
+  ["SAND","แซนด์","I build a castle with sand.","ฉันก่อปราสาททราย"],["WAVE","เวฟ","The wave is big!","คลื่นลูกใหญ่!"],["HILL","ฮิล","We walk up the hill.","เราเดินขึ้นเนินเขา"],["FIELD","ฟีลด์","Cows eat in the field.","วัวกินหญ้าในทุ่ง"],
+  ["POND","พอนด์","Ducks swim in the pond.","เป็ดว่ายน้ำในบ่อ"],["SEED","ซีด","Plant the seed in the soil.","ปลูกเมล็ดลงดิน"],["CACTUS","แค็ค-ตัส","A cactus lives in the desert.","กระบองเพชรอยู่ในทะเลทราย"],["BAMBOO","แบม-บู","Pandas eat bamboo.","แพนด้ากินไม้ไผ่"],
+]);
+add("sports", [
+  ["KARATE","คะ-รา-เต้","Karate comes from Japan.","คาราเต้มาจากญี่ปุ่น"],["TAEKWONDO","เทค-วัน-โด","Taekwondo uses kicks.","เทควันโดใช้การเตะ"],["ICE SKATING","ไอซ์-สเก็ต-ติ้ง","Ice skating is on ice.","สเก็ตน้ำแข็งเล่นบนน้ำแข็ง"],
+  ["FISHING","ฟิช-ชิ่ง","Grandpa likes fishing.","คุณปู่ชอบตกปลา"],["HIKING","ไฮ-คิ่ง","We go hiking in the mountains.","เราเดินป่าบนภูเขา"],["BOWLING","โบว์-ลิ่ง","I knock down all the pins in bowling.","ฉันล้มพินโบว์ลิ่งได้หมด"],
+  ["CHESS","เชส","Chess is a thinking game.","หมากรุกเป็นเกมใช้ความคิด"],["HORSE RIDING","ฮอร์ส-ไร-ดิ้ง","Horse riding is fun.","ขี่ม้าสนุก"],["RUGBY","รัก-บี้","Rugby uses an oval ball.","รักบี้ใช้ลูกบอลรี"],["JUMP ROPE","จัมพ์-โรพ","I can jump rope fifty times.","ฉันกระโดดเชือกได้ห้าสิบครั้ง"],
+]);
+add("family", [
+  ["PARENTS","แพ-เรนท์ส","I love my parents.","ฉันรักพ่อแม่"],["GRANDPARENTS","แกรนด์-แพ-เรนท์ส","My grandparents live in the country.","ปู่ย่าตายายอยู่ต่างจังหวัด"],
+  ["COUSIN","คัส-ซิ่น","My cousin is my age.","ลูกพี่ลูกน้องอายุเท่าฉัน"],["TWINS","ทวินส์","The twins look the same.","ฝาแฝดหน้าเหมือนกัน"],
+  ["HUSBAND","ฮัส-เบินด์","Dad is Mom's husband.","พ่อเป็นสามีของแม่"],["WIFE","ไวฟ์","Mom is Dad's wife.","แม่เป็นภรรยาของพ่อ"],["FRIEND","เฟรนด์","Mina is my best friend.","มีนาเป็นเพื่อนสนิทของฉัน"],["NEIGHBOR","เน-เบอร์","Our neighbor has a dog.","เพื่อนบ้านของเรามีหมา"],
+]);
+add("actions", [
+  ["OPEN","โอ-เพ่น","Open the door, please.","เปิดประตูหน่อย"],["CLOSE","โคลส","Close the window.","ปิดหน้าต่าง"],["PUSH","พุช","Push the door.","ผลักประตู"],["PULL","พูล","Pull the rope.","ดึงเชือก"],["THROW","โธรว์","Throw the ball to me.","ขว้างลูกบอลมาให้ฉัน"],
+  ["CATCH","แคทช์","Catch the ball!","รับลูกบอล!"],["KICK","คิค","Kick the ball into the goal.","เตะลูกบอลเข้าประตู"],["HUG","ฮัก","I hug my mom.","ฉันกอดแม่"],["SMILE","สไมล์","Smile for the photo!","ยิ้มถ่ายรูป!"],["CLAP","แคล็พ","Clap your hands.","ปรบมือ"],
+]);
+add("feelings", [
+  ["BORED","บอร์ด","I am bored. Let's play!","ฉันเบื่อ ไปเล่นกันเถอะ"],["SHY","ชาย","She is shy with new people.","เธอขี้อายกับคนแปลกหน้า"],["PROUD","พราวด์","I am proud of you!","ฉันภูมิใจในตัวเธอ!"],["NERVOUS","เนอร์-เวิส","I am nervous before the test.","ฉันประหม่าก่อนสอบ"],
+  ["SLEEPY","สลี-ปี้","I am sleepy. Good night.","ฉันง่วง ราตรีสวัสดิ์"],["CALM","คาล์ม","Take a deep breath and be calm.","หายใจลึกๆ แล้วใจเย็น"],["LONELY","โลน-ลี่","He is lonely without his friends.","เขาเหงาเมื่อไม่มีเพื่อน"],["BRAVE","เบรฟ","The firefighter is brave.","นักดับเพลิงกล้าหาญ"],
+]);
+add("shapes", [
+  ["PENTAGON","เพน-ทะ-ก้อน","A pentagon has five sides.","ห้าเหลี่ยมมีห้าด้าน"],["HEXAGON","เฮ็ก-ซะ-ก้อน","A honeycomb has hexagons.","รังผึ้งเป็นรูปหกเหลี่ยม"],["CUBE","คิวบ์","A dice is a cube.","ลูกเต๋าเป็นลูกบาศก์"],["CRESCENT","เครส-เซ่นท์","The moon is a crescent tonight.","คืนนี้พระจันทร์เป็นเสี้ยว"],
+]);
+add("toys", [
+  ["TOY CAR","ทอย-คาร์","My toy car is red.","รถของเล่นของฉันสีแดง"],["BUBBLES","บับ-เบิ้ลส์","I blow bubbles in the garden.","ฉันเป่าฟองสบู่ในสวน"],["SLIDE","สไลด์","Go down the slide!","ลื่นลงกระดานลื่น!"],["SWING","สวิง","I sit on the swing.","ฉันนั่งชิงช้า"],
+  ["SEESAW","ซี-ซอ","Two kids play on the seesaw.","เด็กสองคนเล่นไม้กระดก"],["ROCKING HORSE","ร็อค-กิ้ง-ฮอร์ส","The baby rides a rocking horse.","เด็กเล็กขี่ม้าโยก"],["PUPPET","พัพ-เพ็ท","The puppet can talk!","หุ่นเชิดพูดได้!"],
+  ["DICE","ไดซ์","Roll the dice.","ทอยลูกเต๋า"],["BOARD GAME","บอร์ด-เกม","We play a board game on Sunday.","เราเล่นเกมกระดานวันอาทิตย์"],["MARBLES","มาร์-เบิ้ลส์","I have ten marbles.","ฉันมีลูกแก้วสิบลูก"],
+]);
+add("places", [
+  ["CINEMA","ซิ-เนะ-ม่า","We watch a movie at the cinema.","เราดูหนังที่โรงหนัง"],["POST OFFICE","โพสท์-ออ-ฟิศ","Send the letter at the post office.","ส่งจดหมายที่ไปรษณีย์"],
+  ["POLICE STATION","โพ-ลีซ-สเต-ชั่น","The police station is on this street.","สถานีตำรวจอยู่ถนนนี้"],["FIRE STATION","ไฟ-เออร์-สเต-ชั่น","Fire engines are at the fire station.","รถดับเพลิงอยู่ที่สถานีดับเพลิง"],
+  ["PHARMACY","ฟาร์-มะ-ซี","Buy medicine at the pharmacy.","ซื้อยาที่ร้านขายยา"],["GAS STATION","แก๊ส-สเต-ชั่น","Dad stops at the gas station.","พ่อแวะปั๊มน้ำมัน"],
+  ["BUS STOP","บัส-สต็อป","Wait at the bus stop.","รอที่ป้ายรถเมล์"],["TRAIN STATION","เทรน-สเต-ชั่น","The train leaves the station at nine.","รถไฟออกจากสถานีตอนเก้าโมง"],
+  ["SWIMMING POOL","สวิม-มิ่ง-พูล","We swim in the swimming pool.","เราว่ายน้ำในสระ"],["SHOPPING MALL","ช็อป-ปิ้ง-มอล","The shopping mall is big and cool.","ห้างใหญ่และเย็นสบาย"],
+  ["CAFE","คา-เฟ่","Mom drinks coffee at the cafe.","แม่ดื่มกาแฟที่ร้านกาแฟ"],["BAKERY","เบ-เกอ-รี่","The bakery smells like bread.","ร้านขนมปังหอมกลิ่นขนมปัง"],
+]);
+
 export const LEXICON = L;
 export const lexOf = w => L[`${w.cat}|${w.word}`] || null;

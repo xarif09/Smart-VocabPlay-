@@ -12,6 +12,8 @@ import Pet, { PET_CSS } from "./Pet.jsx";
 import { CatIcon, GameIcon, hasGameIcon } from "./Icons.jsx";
 import audioManifest from "./audioManifest.json";
 import { conceptFor, CONCEPT_WORDS } from "./Concept.jsx";
+import qrcode from "qrcode-generator";
+import { encodeSet, decodeSet, setLink, readIncomingSet } from "./share.js";
 import { MD, M3, TYPE, Shape, M3Switch, M3NavBar, M3TopBar, M3Sheet, WavyProgress, ButtonGroup, applyM3Theme, injectM3Css, isDarkTheme } from "./m3.jsx";
 
 // ═══════════════════════════════════════════════════════
@@ -1434,6 +1436,7 @@ export default function App() {
   const [bilingual, setBilingual] = useState(true);
   const [rate, setRate] = useState(0.85);
   const [showSettings, setShowSettings] = useState(false);
+  const [incomingSet, setIncomingSet] = useState(() => readIncomingSet());   // #set=... จาก QR/ลิงก์
   const [musicOn, setMusicOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:music") === "1"; } catch (_) { return false; } });
   useEffect(() => { try { localStorage.setItem("smart-vocabplay:music", musicOn ? "1" : "0"); } catch (_) {} if (musicOn && soundOn && soundUnlocked) startMusic(); else stopMusic(); }, [musicOn, soundOn, soundUnlocked]);
   useEffect(() => { const h = () => { if (document.hidden) stopMusic(); else if (musicOn && soundOn && soundUnlocked) startMusic(); }; document.addEventListener("visibilitychange", h); return () => document.removeEventListener("visibilitychange", h); }, [musicOn, soundOn, soundUnlocked]);
@@ -1795,6 +1798,7 @@ export default function App() {
         <ProfileSheet profiles={profiles} onSwitch={switchProfile} onAdd={addProfile} onDelete={removeProfile} onClose={() => setShowProfiles(false)} />
       )}
 
+      {incomingSet && soundUnlocked && <ImportSetSheet encoded={incomingSet} words={words} setWords={setWords} showToast={showToast} onClose={() => setIncomingSet(null)} />}
       {showSettings && (
         <SettingsSheet
           soundOn={soundOn} setSoundOn={setSoundOn}
@@ -2154,10 +2158,91 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
 // ═══════════════════════════════════════════════════════
 // WORD MANAGEMENT SCREEN
 // ═══════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+// แชร์ชุดคำด้วย QR / ลิงก์ (โหมดครู/ผู้ปกครอง) — ไม่มีเซิร์ฟเวอร์ ข้อมูลอยู่ในลิงก์
+// ═══════════════════════════════════════════════════════
+const INITIAL_IDS = new Set(INITIAL_WORDS.map(w => w.id));
+const isCustomWord = w => !INITIAL_IDS.has(w.id) || !INITIAL_WORDS.find(x => x.id === w.id && x.word === w.word && x.cat === w.cat);
+function ShareSetSheet({ words, filtered, filterActive, showToast, onClose }) {
+  const custom = words.filter(isCustomWord);
+  const [mode, setMode] = useState(custom.length ? "custom" : "filtered");
+  const [name, setName] = useState(""); const [from, setFrom] = useState("");
+  const list = (mode === "custom" ? custom : filtered).slice(0, 60);
+  const [link, setLinkState] = useState(""); const [svg, setSvg] = useState("");
+  useEffect(() => {
+    let alive = true;
+    if (!list.length) { setLinkState(""); setSvg(""); return; }
+    encodeSet({ name, from, words: list }).then(enc => {
+      if (!alive) return; const url = setLink(enc); setLinkState(url);
+      try { const q = qrcode(0, "L"); q.addData(url, "Byte"); q.make(); setSvg(q.createSvgTag({ cellSize: 4, margin: 2, scalable: true })); } catch (_) { setSvg(""); }
+    }).catch(() => { setLinkState(""); setSvg(""); });
+    return () => { alive = false; };
+  }, [mode, name, from, words, filtered]);
+  const copy = async () => { try { await navigator.clipboard.writeText(link); showToast("คัดลอกลิงก์แล้ว ✓"); } catch (_) { showToast("คัดลอกไม่ได้ กดค้างที่ลิงก์เพื่อคัดลอก", "warn"); } };
+  const share = async () => { try { if (navigator.share) await navigator.share({ title: `ชุดคำ ${name || ""}`.trim(), text: `ชุดคำศัพท์ ${list.length} คำ จาก Smart VocabPlay`, url: link }); else copy(); } catch (_) {} };
+  const inp = { flex:1,minHeight:44,borderRadius:14,border:`1px solid ${MD.outlineV}`,background:T.card,color:T.ink,padding:"0 12px",fontFamily:FONT,fontSize:14 };
+  return (
+    <M3Sheet onClose={onClose}>
+      <h3 style={{ ...TYPE.headlineS,color:T.ink,margin:"0 0 4px" }}>แชร์ชุดคำด้วย QR</h3>
+      <div style={{ ...TYPE.bodyS,color:T.ink2,marginBottom:12 }}>ให้เด็กคนอื่น/ผู้ปกครองสแกนแล้วกด "เพิ่มเข้าแอป" ได้เลย · ข้อมูลอยู่ในลิงก์ทั้งหมด ไม่ผ่านเซิร์ฟเวอร์ · สูงสุด 60 คำต่อชุด</div>
+      <div style={{ display:"flex",gap:6,marginBottom:10 }}>
+        <button onClick={() => setMode("custom")} className="m3-press" style={M3.chip(mode === "custom", { flex:1,minHeight:44,borderRadius:999 })}>คำที่เพิ่มเอง ({custom.length})</button>
+        <button onClick={() => setMode("filtered")} className="m3-press" style={M3.chip(mode === "filtered", { flex:1,minHeight:44,borderRadius:999 })}>{filterActive ? "คำที่กรองอยู่" : "คำที่แสดงอยู่"} ({Math.min(filtered.length, 60)})</button>
+      </div>
+      <div style={{ display:"flex",gap:6,marginBottom:12 }}>
+        <input placeholder="ชื่อชุด เช่น ป.2 สัปดาห์ 3" value={name} onChange={e => setName(e.target.value)} style={inp} />
+        <input placeholder="จากใคร เช่น ครูแอน" value={from} onChange={e => setFrom(e.target.value)} style={inp} />
+      </div>
+      {list.length === 0
+        ? <div style={{ ...card({ background:T.surfHigh }),padding:16,textAlign:"center",color:T.ink2 }}>ยังไม่มีคำในชุดนี้ · เพิ่มคำเองก่อน หรือค้นหา/เลือกหมวดเพื่อแชร์คำที่กรองอยู่</div>
+        : <>
+          <div style={{ ...card({ background:"#fff" }),padding:12,display:"flex",justifyContent:"center" }}>
+            {svg ? <div style={{ width:"min(78vw, 320px)" }} dangerouslySetInnerHTML={{ __html: svg }} /> : <div style={{ color:T.ink3,padding:30 }}>กำลังสร้าง QR…</div>}
+          </div>
+          <div style={{ ...TYPE.labelM,color:T.ink2,textAlign:"center",margin:"8px 0 10px" }}>{list.length} คำ{name ? ` · ${name}` : ""}{from ? ` · ${from}` : ""} · ลิงก์ยาว {link.length.toLocaleString()} ตัวอักษร</div>
+          <div style={{ display:"flex",gap:8 }}>
+            <button onClick={share} className="m3-press" style={M3.filled({ flex:1,minHeight:48 })}>📤 ส่งลิงก์</button>
+            <button onClick={copy} className="m3-press" style={M3.tonal({ flex:1,minHeight:48 })}>📋 คัดลอกลิงก์</button>
+          </div>
+          <div style={{ ...TYPE.bodyS,color:T.ink3,marginTop:8,wordBreak:"break-all",maxHeight:60,overflow:"hidden" }}>{link.slice(0, 120)}…</div>
+        </>}
+    </M3Sheet>
+  );
+}
+function ImportSetSheet({ encoded, words, setWords, showToast, onClose }) {
+  const [set, setSet] = useState(undefined);
+  useEffect(() => { decodeSet(encoded).then(setSet).catch(() => setSet(null)); }, [encoded]);
+  const dup = w => words.find(x => x.cat === w.cat && x.word.toUpperCase() === w.word.toUpperCase());
+  const fresh = set ? set.words.filter(w => !dup(w)) : [];
+  const add = () => {
+    let maxId = Math.max(0, ...words.map(w => w.id));
+    const added = fresh.map(w => ({ id: ++maxId, cat: w.cat, word: w.word.toUpperCase(), meaning: w.meaning, emoji: w.emoji || "📦", read: w.read, sen: w.sen, senTh: w.senTh }));
+    setWords([...words, ...added]); sfx.coin(); showToast(`เพิ่ม ${added.length} คำแล้ว ✓`); onClose();
+  };
+  return (
+    <M3Sheet onClose={onClose} z={260}>
+      <h3 style={{ ...TYPE.headlineS,color:T.ink,margin:"0 0 4px" }}>📥 ได้รับชุดคำ</h3>
+      {set === undefined && <div style={{ color:T.ink2 }}>กำลังอ่าน…</div>}
+      {set === null && <div style={{ color:T.error }}>ลิงก์นี้อ่านไม่ได้ (อาจถูกตัดตอนคัดลอก) ขอให้ส่งใหม่อีกครั้ง</div>}
+      {set && <>
+        <div style={{ ...TYPE.bodyM,color:T.ink2,marginBottom:10 }}>{set.name ? <b style={{ color:T.ink }}>{set.name}</b> : "ชุดคำ"}{set.from ? ` · จาก ${set.from}` : ""} · {set.words.length} คำ{fresh.length < set.words.length ? ` (มีอยู่แล้ว ${set.words.length - fresh.length} คำ)` : ""}</div>
+        <div style={{ ...card({ background:T.surfHigh }),padding:"6px 12px",maxHeight:"34vh",overflowY:"auto",marginBottom:12 }}>
+          {set.words.map((w, i) => <div key={i} style={{ display:"flex",gap:8,alignItems:"center",padding:"6px 0",borderBottom:`1px solid ${MD.outlineV}`,opacity: dup(w) ? .5 : 1 }}><span style={{ fontSize:20 }}>{w.emoji}</span><div style={{ flex:1 }}><b style={{ color:T.ink }}>{w.word}</b> <span style={{ color:T.ink2,fontSize:13 }}>{w.meaning}</span></div><span style={{ ...TYPE.labelS,color:T.ink3 }}>{w.cat}</span></div>)}
+        </div>
+        <div style={{ display:"flex",gap:8 }}>
+          <button onClick={add} disabled={!fresh.length} className="m3-press" style={M3.filled({ flex:2,minHeight:52,...(fresh.length ? {} : { background:T.surfHighest,color:T.ink3 }) })}>➕ เพิ่ม {fresh.length} คำเข้าแอป</button>
+          <button onClick={onClose} className="m3-press" style={M3.tonal({ flex:1,minHeight:52 })}>ไม่เอา</button>
+        </div>
+      </>}
+    </M3Sheet>
+  );
+}
+
 function ManageScreen({ words, setWords, categories, showToast, speak, onReset }) {
   const [search, setSearch] = useState("");
   const [filterCat, setFilterCat] = useState("all");
   const [showAdd, setShowAdd] = useState(false);
+  const [showShare, setShowShare] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const EMPTY_DRAFT = { word:"", meaning:"", emoji:"📦", cat: categories[0]?.id, read:"", sen:"", senTh:"" };
   const [draft, setDraft] = useState(EMPTY_DRAFT);
@@ -2213,11 +2298,12 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
           <div style={{ fontWeight:800,fontSize:18,color:T.ink }}>คลังคำศัพท์</div>
           <div style={{ fontSize:12,color:T.ink2 }}>{words.length} คำรวม · แสดง {filtered.length}</div>
         </div>
-        <button onClick={()=>setShowAdd(s=>!s)}
-          style={{ background:"#EF4444",color:"#fff",borderRadius:16,padding:"8px 16px",minHeight:44,fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>
-          + เพิ่มคำ
-        </button>
+        <div style={{ display:"flex",gap:6 }}>
+          <button onClick={()=>{ sfx.tap(); setShowShare(true); }} className="m3-press" style={M3.tonal({ minHeight:44,padding:"0 14px",fontSize:13 })}>📤 แชร์ QR</button>
+          <button onClick={()=>setShowAdd(s=>!s)} className="m3-press" style={M3.filled({ minHeight:44,padding:"0 16px",fontSize:13 })}>+ เพิ่มคำ</button>
+        </div>
       </div>
+      {showShare && <ShareSetSheet words={words} filtered={filtered} filterActive={!!search || filterCat !== "all"} showToast={showToast} onClose={() => setShowShare(false)} />}
 
       {/* Add form */}
       {showAdd && (

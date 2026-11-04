@@ -110,11 +110,25 @@ const audioUrlsFor = en => {
   const urls = parts.map(audioUrlFor); return urls.every(Boolean) ? urls : null;
 };
 export const hasNativeAudio = en => nativeOn && !!audioUrlsFor(en);
+// ── รอให้เสียง (ไฟล์ EN + ไทย) จบก่อนค่อยไปข้อถัดไป ──
+//  เกมเรียก afterSpeech(fn, min, max): ถ้ากำลังพูดอยู่ รอจนจบ (ไม่เกิน max) · ถ้าไม่ได้พูด (ปิดเสียง) รอแค่ min
+let speakingNow = false; let speechWaiters = []; let speechGen = 0;
+function speechBegin() { speakingNow = true; return ++speechGen; }
+// gen = รุ่นของการพูดที่จบ · ถ้ามีการพูดใหม่เริ่มไปแล้ว (gen ไม่ตรง) ไม่ถือว่าจบ (กัน utterance เก่ามาปลดล็อกก่อนเวลา)
+function speechDone(gen) { if (gen !== undefined && gen !== speechGen) return; speakingNow = false; const w = speechWaiters; speechWaiters = []; w.forEach(f => f()); }
+function afterSpeech(fn, min = 900, max = 5000) {
+  const t0 = Date.now(); let fired = false;
+  const go = () => { if (fired) return; fired = true; const wait = Math.max(0, min - (Date.now() - t0)); setTimeout(fn, wait); };
+  if (!speakingNow) { setTimeout(go, min); return; }
+  speechWaiters.push(go); setTimeout(go, max);
+}
 function stopNative() { if (curAudio) { try { const el = curAudio.el || curAudio; el.onended = null; el.pause?.(); } catch (_) {} curAudio = null; } }
-function speakThOnly(th, rate) {
-  if (!window.speechSynthesis || !th) return;
+function speakThOnly(th, rate, onDone) {
+  if (!window.speechSynthesis || !th) { onDone?.(); return; }
   const u = new SpeechSynthesisUtterance(th); u.lang = "th-TH"; u.rate = rate; u.volume = 1;
   const v = getVoice("th"); if (v) u.voice = v;
+  let done = false; const fin = () => { if (done) return; done = true; onDone?.(); };
+  u.onend = fin; u.onerror = fin; setTimeout(fin, Math.max(1200, th.length * 140 / rate) + 400);   // กันเครื่องที่ไม่ยิง onend
   window.speechSynthesis.speak(u);
 }
 
@@ -124,11 +138,11 @@ function speakWord(en, th, rate = 0.85, bilingual = true) {
   const urls = nativeOn ? audioUrlsFor(en) : null;
   if (urls) {
     try { window.speechSynthesis?.cancel(); } catch (_) {}
-    const token = {}; curAudio = token;
+    const token = {}; curAudio = token; const gen = speechBegin();
     const fallback = () => { if (curAudio !== token) return; curAudio = null; ttsWord(en, th, rate, bilingual); };
     const playAt = i => {
       if (curAudio !== token) return;
-      if (i >= urls.length) { curAudio = null; if (bilingual && th) speakThOnly(th, rate); return; }
+      if (i >= urls.length) { curAudio = null; if (bilingual && th) speakThOnly(th, rate, () => speechDone(gen)); else speechDone(gen); return; }
       const a = new Audio(urls[i]); a.preload = "auto"; token.el = a;
       try { a.playbackRate = Math.min(1, Math.max(0.65, rate + 0.1)); } catch (_) {}
       a.onended = () => playAt(i + 1);
@@ -142,8 +156,8 @@ function speakWord(en, th, rate = 0.85, bilingual = true) {
 }
 // เสียงเครื่อง (Web Speech) อังกฤษ → ไทย
 function ttsWord(en, th, rate = 0.85, bilingual = true) {
-  if (!window.speechSynthesis) return;
-  window.speechSynthesis.cancel();
+  if (!window.speechSynthesis) { speechDone(); return; }
+  window.speechSynthesis.cancel(); const gen = speechBegin();
 
   setTimeout(() => {
     // English first
@@ -160,13 +174,7 @@ function ttsWord(en, th, rate = 0.85, bilingual = true) {
       const doThai = () => {
         if (thDone) return;
         thDone = true;
-        const thU = new SpeechSynthesisUtterance(th);
-        thU.lang = "th-TH";
-        thU.rate = rate;
-        thU.volume = 1;
-        const thV = getVoice("th");
-        if (thV) thU.voice = thV;
-        window.speechSynthesis.speak(thU);
+        speakThOnly(th, rate, () => speechDone(gen));
       };
       enU.onend = doThai;
       // iOS sometimes doesn't fire onend — fallback timer
@@ -174,6 +182,7 @@ function ttsWord(en, th, rate = 0.85, bilingual = true) {
       setTimeout(doThai, ms + 300);
     }
 
+    if (!(bilingual && th)) { let d = false; const fin = () => { if (d) return; d = true; speechDone(gen); }; enU.onend = fin; enU.onerror = fin; setTimeout(fin, Math.max(900, en.length * 110 / rate) + 300); }
     window.speechSynthesis.speak(enU);
   }, 50); // 50ms gap after cancel() — iOS needs this
 }
@@ -2587,7 +2596,7 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
     const ok = c.id===cur.id;
     if(ok){ setScore(s=>s+1); track.correct(cur, e); speak(cur.word,cur.meaning); }
     else track.wrong(cur);
-    setTimeout(()=>{
+    afterSpeech(()=>{
       if(idx+1<qs.length){ setIdx(i=>i+1); setPicked(null); setLock(false); }
       else track.finish(ok?score+1:score, qs.length);
     },950);
@@ -3028,7 +3037,7 @@ function CountGame({ words, speak, showToast, track }) {
         <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:7}}>
           {nw.sort((a,b)=>a.num-b.num).slice(0,8).map(w=>(
             <button key={w.id} onClick={()=>{
-              if(w.num===target){ track.correct(w); setScore(s=>s+1); speak(w.word,w.meaning); if(round>=MAX) setTimeout(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),600); else setTimeout(()=>setRound(r=>r+1),600); }
+              if(w.num===target){ track.correct(w); setScore(s=>s+1); speak(w.word,w.meaning); if(round>=MAX) afterSpeech(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),600); else afterSpeech(()=>setRound(r=>r+1),600); }
               else { wrongs.current+=1; track.wrong(w); showToast("ลองอีก","warn"); }
             }}
               style={{background:T.card,border:"2px solid #6ee7b7",borderRadius:11,padding:"9px 3px",minHeight:56,display:"flex",flexDirection:"column",alignItems:"center",gap:3,cursor:"pointer"}}>
@@ -3069,7 +3078,7 @@ function BodyDoctorGame({ words, speak, showToast, track }) {
           {words.slice(0,9).map(w=>(
             <button key={w.id} onClick={()=>{
               if(!target||fb) return;
-              if(w.id===target.id){ track.correct(w); setScore(s=>s+1); setFb("ok"); speak(w.word,w.meaning); if(round>=MAX) setTimeout(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),800); else setTimeout(()=>setRound(r=>r+1),800); }
+              if(w.id===target.id){ track.correct(w); setScore(s=>s+1); setFb("ok"); speak(w.word,w.meaning); if(round>=MAX) afterSpeech(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),800); else afterSpeech(()=>setRound(r=>r+1),800); }
               else { wrongs.current+=1; track.wrong(target); setFb("no"); showToast("ลองอีก 🩺","warn"); setTimeout(()=>setFb(null),500); }
             }} style={{background:fb==="ok"&&w.id===target?.id?T.okC:T.tertiaryC,border:`2px solid ${fb==="ok"&&w.id===target?.id?T.ok:T.tertiaryC}`,borderRadius:16,padding:"9px 4px",minHeight:60,display:"flex",flexDirection:"column",alignItems:"center",gap:4,cursor:"pointer",opacity:fb==="no"&&w.id!==target?.id?0.5:1}}>
               <span style={{fontSize:26}}>{w.emoji}</span>
@@ -3158,7 +3167,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
     const ns=ok?score+1:score, nh=ok?hearts:hearts-1;
     if(ok){ setScore(ns); track.correct(q.w); speak(q.w.word,q.w.meaning); }
     else { setHearts(nh); track.wrong(q.w); }
-    setTimeout(()=>{
+    afterSpeech(()=>{
       if(nh<=0||idx+1>=qs.length) end(ns,nh);
       else { setIdx(i=>i+1); setPicked(null); setLock(false); }
     },950);
@@ -3489,7 +3498,7 @@ function ListenGame({ words, speakAt, track, onBack, pool }) {
     setLock(true); setPicked(c.id);
     const ok = c.id === cur.id;
     if (ok) { setScore(s => s + 1); track.correct(cur); } else track.wrong(cur);
-    setTimeout(() => {
+    afterSpeech(() => {
       if (idx + 1 < qs.length) { setIdx(i => i + 1); setPicked(null); setLock(false); setPlayed(false); }
       else track.finish(ok ? score + 1 : score, qs.length);
     }, 1000);
@@ -4224,7 +4233,7 @@ function FillGame({ cat, speak, track, onBack }) {
     setPicked(o);
     const ok = o === q.blank;
     if (ok) { setScore(s => s + 1); track.correct(null); speak(q.en, q.th); } else track.wrong(null);
-    setTimeout(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
+    afterSpeech(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
   };
   return (
     <GameCard>
@@ -4364,7 +4373,7 @@ function StoryQuizGame({ cat, speak, track, onBack }) {
     if (picked) return; setPicked(o);
     const ok = o === q.answer;
     if (ok) { setScore(x => x + 1); track.correct(null); } else track.wrong(null);
-    setTimeout(() => { if (i + 1 < s.quiz.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, s.quiz.length, { label:`ตอบถูก ${ok ? score + 1 : score}/${s.quiz.length} ข้อ` }); }, 1100);
+    afterSpeech(() => { if (i + 1 < s.quiz.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, s.quiz.length, { label:`ตอบถูก ${ok ? score + 1 : score}/${s.quiz.length} ข้อ` }); }, 1100);
   };
   return (
     <GameCard>
@@ -4448,7 +4457,7 @@ function PhonicsGame({ words, speakAt, track, onBack }) {
     if (picked || !played) return; setPicked(L);
     const ok = L === q.L;
     if (ok) { setScore(s => s + 1); track.correct(q.w); } else track.wrong(q.w);
-    setTimeout(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(false); } else track.finish(ok ? score + 1 : score, qs.length); }, 1100);
+    afterSpeech(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(false); } else track.finish(ok ? score + 1 : score, qs.length); }, 1100);
   };
   return (
     <GameCard>
@@ -4532,7 +4541,7 @@ function GrammarGame({ cat, speak, track, onBack }) {
     if (picked) return; setPicked(o);
     const ok = o === q.answer;
     if (ok) { setScore(s => s + 1); track.correct(null); speak(q.q.replace("___", q.answer).replace(/\(.*?\)/, ""), q.th); } else track.wrong(null);
-    setTimeout(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
+    afterSpeech(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
   };
   return (
     <GameCard>
@@ -4700,7 +4709,7 @@ function DailyGame({ cat, speak, speakAt, track, onBack }) {
     const ok = o === q.answer;
     if (ok) { setScore(s => s + 1); track.correct(null); if (kind === "time") speak(`It's ${q.answer}.`, timeThai(q.h, q.m)); else if (kind === "money") speak(`It's ${q.answer}.`, `${numberThai(q.total)}บาท`); else if (kind === "calendar") speak(q.answer, null); }
     else track.wrong(null);
-    setTimeout(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(kind !== "numbers100"); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
+    afterSpeech(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(kind !== "numbers100"); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
   };
   const icon = { time:"🕐", money:"💰", calendar:"📅", numbers100:"🔢" }[kind];
   return (
@@ -4752,7 +4761,7 @@ function TestGame({ cat, speak, speakAt, track, onBack }) {
     if (picked || (q.type === "listen" && !played)) return; setPicked(o);
     const ok = o === answerOf();
     if (ok) { setScore(s => s + 1); track.correct(q.w || null); sfx.ok(); } else { track.wrong(q.w || null); }
-    setTimeout(() => {
+    afterSpeech(() => {
       if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(false); }
       else { const s = ok ? score + 1 : score; track.finish(s, qs.length, { label:`ตอบถูก ${s}/${qs.length} ข้อ`, stars: s >= 18 ? 3 : s >= 14 ? 2 : s >= 8 ? 1 : 0 }); cat.onTestDone?.(s, qs.length); /* หลัง finish เพื่อไม่ให้ถูกเขียนทับ */ }
     }, 1000);
@@ -4861,7 +4870,7 @@ function VersusScreen({ words, categories, speak, setProgress, showToast, onExit
     if (o.id === cur.w.id) { sfx.ok(); setWinner(p); setScore(s => { const n = [...s]; n[p] += 1; return n; }); speak(cur.w.word, cur.w.meaning); nextSoon(); }
     else { sfx.bad(); const nl = [...locked]; nl[p] = true; setLocked(nl); if (nl[0] && nl[1]) { setWinner(-1); nextSoon(); } }
   };
-  const nextSoon = () => setTimeout(() => {
+  const nextSoon = () => afterSpeech(() => {
     if (r + 1 < rounds.length) { setR(x => x + 1); setLocked([false, false]); setWinner(null); }
     else { setStage("end"); sfx.win(); setProgress(pr => ({ ...pr, coins: pr.coins + 20 })); }
   }, 1200);

@@ -12,6 +12,8 @@ import Pet, { PET_CSS } from "./Pet.jsx";
 import { CatIcon, GameIcon, hasGameIcon } from "./Icons.jsx";
 import audioManifest from "./audioManifest.json";
 import { conceptFor, CONCEPT_WORDS } from "./Concept.jsx";
+import qrcode from "qrcode-generator";
+import { encodeSet, decodeSet, setLink, readIncomingSet } from "./share.js";
 import { MD, M3, TYPE, Shape, M3Switch, M3NavBar, M3TopBar, M3Sheet, WavyProgress, ButtonGroup, applyM3Theme, injectM3Css, isDarkTheme } from "./m3.jsx";
 
 // ═══════════════════════════════════════════════════════
@@ -110,11 +112,25 @@ const audioUrlsFor = en => {
   const urls = parts.map(audioUrlFor); return urls.every(Boolean) ? urls : null;
 };
 export const hasNativeAudio = en => nativeOn && !!audioUrlsFor(en);
+// ── รอให้เสียง (ไฟล์ EN + ไทย) จบก่อนค่อยไปข้อถัดไป ──
+//  เกมเรียก afterSpeech(fn, min, max): ถ้ากำลังพูดอยู่ รอจนจบ (ไม่เกิน max) · ถ้าไม่ได้พูด (ปิดเสียง) รอแค่ min
+let speakingNow = false; let speechWaiters = []; let speechGen = 0;
+function speechBegin() { speakingNow = true; return ++speechGen; }
+// gen = รุ่นของการพูดที่จบ · ถ้ามีการพูดใหม่เริ่มไปแล้ว (gen ไม่ตรง) ไม่ถือว่าจบ (กัน utterance เก่ามาปลดล็อกก่อนเวลา)
+function speechDone(gen) { if (gen !== undefined && gen !== speechGen) return; speakingNow = false; const w = speechWaiters; speechWaiters = []; w.forEach(f => f()); }
+function afterSpeech(fn, min = 900, max = 5000) {
+  const t0 = Date.now(); let fired = false;
+  const go = () => { if (fired) return; fired = true; const wait = Math.max(0, min - (Date.now() - t0)); setTimeout(fn, wait); };
+  if (!speakingNow) { setTimeout(go, min); return; }
+  speechWaiters.push(go); setTimeout(go, max);
+}
 function stopNative() { if (curAudio) { try { const el = curAudio.el || curAudio; el.onended = null; el.pause?.(); } catch (_) {} curAudio = null; } }
-function speakThOnly(th, rate) {
-  if (!window.speechSynthesis || !th) return;
+function speakThOnly(th, rate, onDone) {
+  if (!window.speechSynthesis || !th) { onDone?.(); return; }
   const u = new SpeechSynthesisUtterance(th); u.lang = "th-TH"; u.rate = rate; u.volume = 1;
   const v = getVoice("th"); if (v) u.voice = v;
+  let done = false; const fin = () => { if (done) return; done = true; onDone?.(); };
+  u.onend = fin; u.onerror = fin; setTimeout(fin, Math.max(1200, th.length * 140 / rate) + 400);   // กันเครื่องที่ไม่ยิง onend
   window.speechSynthesis.speak(u);
 }
 
@@ -124,11 +140,11 @@ function speakWord(en, th, rate = 0.85, bilingual = true) {
   const urls = nativeOn ? audioUrlsFor(en) : null;
   if (urls) {
     try { window.speechSynthesis?.cancel(); } catch (_) {}
-    const token = {}; curAudio = token;
+    const token = {}; curAudio = token; const gen = speechBegin();
     const fallback = () => { if (curAudio !== token) return; curAudio = null; ttsWord(en, th, rate, bilingual); };
     const playAt = i => {
       if (curAudio !== token) return;
-      if (i >= urls.length) { curAudio = null; if (bilingual && th) speakThOnly(th, rate); return; }
+      if (i >= urls.length) { curAudio = null; if (bilingual && th) speakThOnly(th, rate, () => speechDone(gen)); else speechDone(gen); return; }
       const a = new Audio(urls[i]); a.preload = "auto"; token.el = a;
       try { a.playbackRate = Math.min(1, Math.max(0.65, rate + 0.1)); } catch (_) {}
       a.onended = () => playAt(i + 1);
@@ -142,8 +158,8 @@ function speakWord(en, th, rate = 0.85, bilingual = true) {
 }
 // เสียงเครื่อง (Web Speech) อังกฤษ → ไทย
 function ttsWord(en, th, rate = 0.85, bilingual = true) {
-  if (!window.speechSynthesis) return;
-  window.speechSynthesis.cancel();
+  if (!window.speechSynthesis) { speechDone(); return; }
+  window.speechSynthesis.cancel(); const gen = speechBegin();
 
   setTimeout(() => {
     // English first
@@ -160,13 +176,7 @@ function ttsWord(en, th, rate = 0.85, bilingual = true) {
       const doThai = () => {
         if (thDone) return;
         thDone = true;
-        const thU = new SpeechSynthesisUtterance(th);
-        thU.lang = "th-TH";
-        thU.rate = rate;
-        thU.volume = 1;
-        const thV = getVoice("th");
-        if (thV) thU.voice = thV;
-        window.speechSynthesis.speak(thU);
+        speakThOnly(th, rate, () => speechDone(gen));
       };
       enU.onend = doThai;
       // iOS sometimes doesn't fire onend — fallback timer
@@ -174,6 +184,7 @@ function ttsWord(en, th, rate = 0.85, bilingual = true) {
       setTimeout(doThai, ms + 300);
     }
 
+    if (!(bilingual && th)) { let d = false; const fin = () => { if (d) return; d = true; speechDone(gen); }; enU.onend = fin; enU.onerror = fin; setTimeout(fin, Math.max(900, en.length * 110 / rate) + 300); }
     window.speechSynthesis.speak(enU);
   }, 50); // 50ms gap after cancel() — iOS needs this
 }
@@ -1425,6 +1436,7 @@ export default function App() {
   const [bilingual, setBilingual] = useState(true);
   const [rate, setRate] = useState(0.85);
   const [showSettings, setShowSettings] = useState(false);
+  const [incomingSet, setIncomingSet] = useState(() => readIncomingSet());   // #set=... จาก QR/ลิงก์
   const [musicOn, setMusicOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:music") === "1"; } catch (_) { return false; } });
   useEffect(() => { try { localStorage.setItem("smart-vocabplay:music", musicOn ? "1" : "0"); } catch (_) {} if (musicOn && soundOn && soundUnlocked) startMusic(); else stopMusic(); }, [musicOn, soundOn, soundUnlocked]);
   useEffect(() => { const h = () => { if (document.hidden) stopMusic(); else if (musicOn && soundOn && soundUnlocked) startMusic(); }; document.addEventListener("visibilitychange", h); return () => document.removeEventListener("visibilitychange", h); }, [musicOn, soundOn, soundUnlocked]);
@@ -1786,6 +1798,7 @@ export default function App() {
         <ProfileSheet profiles={profiles} onSwitch={switchProfile} onAdd={addProfile} onDelete={removeProfile} onClose={() => setShowProfiles(false)} />
       )}
 
+      {incomingSet && soundUnlocked && <ImportSetSheet encoded={incomingSet} words={words} setWords={setWords} showToast={showToast} onClose={() => setIncomingSet(null)} />}
       {showSettings && (
         <SettingsSheet
           soundOn={soundOn} setSoundOn={setSoundOn}
@@ -2145,10 +2158,95 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
 // ═══════════════════════════════════════════════════════
 // WORD MANAGEMENT SCREEN
 // ═══════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+// แชร์ชุดคำด้วย QR / ลิงก์ (โหมดครู/ผู้ปกครอง) — ไม่มีเซิร์ฟเวอร์ ข้อมูลอยู่ในลิงก์
+// ═══════════════════════════════════════════════════════
+const INITIAL_IDS = new Set(INITIAL_WORDS.map(w => w.id));
+const isCustomWord = w => !INITIAL_IDS.has(w.id) || !INITIAL_WORDS.find(x => x.id === w.id && x.word === w.word && x.cat === w.cat);
+function ShareSetSheet({ words, filtered, filterActive, showToast, onClose }) {
+  const custom = words.filter(isCustomWord);
+  const [mode, setMode] = useState(custom.length ? "custom" : "filtered");
+  const [name, setName] = useState(""); const [from, setFrom] = useState("");
+  const source = mode === "custom" ? custom : filtered;
+  const [link, setLinkState] = useState(""); const [svg, setSvg] = useState(""); const [list, setList] = useState([]);
+  // QR สแกนง่ายต้องไม่ยาวเกิน ~1,500 ตัวอักษร → ลดจำนวนคำลงอัตโนมัติจนพอดี
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      if (!source.length) { setList([]); setLinkState(""); setSvg(""); return; }
+      let n = Math.min(source.length, 60), url = "", chosen = [];
+      for (;;) { chosen = source.slice(0, n); url = setLink(await encodeSet({ name, from, words: chosen })); if (url.length <= 1500 || n <= 3) break; n = Math.max(3, Math.floor(n * 0.7)); }
+      if (!alive) return;
+      setList(chosen); setLinkState(url);
+      try { const q = qrcode(0, "L"); q.addData(url, "Byte"); q.make(); setSvg(q.createSvgTag({ cellSize: 4, margin: 2, scalable: true })); } catch (_) { setSvg(""); }
+    })().catch(() => { if (alive) { setLinkState(""); setSvg(""); } });
+    return () => { alive = false; };
+  }, [mode, name, from, words, filtered]);
+  const copy = async () => { try { await navigator.clipboard.writeText(link); showToast("คัดลอกลิงก์แล้ว ✓"); } catch (_) { showToast("คัดลอกไม่ได้ กดค้างที่ลิงก์เพื่อคัดลอก", "warn"); } };
+  const share = async () => { try { if (navigator.share) await navigator.share({ title: `ชุดคำ ${name || ""}`.trim(), text: `ชุดคำศัพท์ ${list.length} คำ จาก Smart VocabPlay`, url: link }); else copy(); } catch (_) {} };
+  const inp = { flex:1,minWidth:0,width:"50%",minHeight:44,borderRadius:14,border:`1px solid ${MD.outlineV}`,background:T.card,color:T.ink,padding:"0 12px",fontFamily:FONT,fontSize:14 };
+  return (
+    <M3Sheet onClose={onClose}>
+      <h3 style={{ ...TYPE.headlineS,color:T.ink,margin:"0 0 4px" }}>แชร์ชุดคำด้วย QR</h3>
+      <div style={{ ...TYPE.bodyS,color:T.ink2,marginBottom:12 }}>ให้เด็กคนอื่น/ผู้ปกครองสแกนแล้วกด "เพิ่มเข้าแอป" ได้เลย · ข้อมูลอยู่ในลิงก์ทั้งหมด ไม่ผ่านเซิร์ฟเวอร์ · สูงสุด 60 คำต่อชุด</div>
+      <div style={{ display:"flex",gap:6,marginBottom:10 }}>
+        <button onClick={() => setMode("custom")} className="m3-press" style={M3.chip(mode === "custom", { flex:1,minHeight:44,borderRadius:999 })}>คำที่เพิ่มเอง ({custom.length})</button>
+        <button onClick={() => setMode("filtered")} className="m3-press" style={M3.chip(mode === "filtered", { flex:1,minHeight:44,borderRadius:999 })}>{filterActive ? "คำที่กรองอยู่" : "คำที่แสดงอยู่"} ({filtered.length})</button>
+      </div>
+      <div style={{ display:"flex",gap:6,marginBottom:12 }}>
+        <input placeholder="ชื่อชุด เช่น ป.2 สัปดาห์ 3" value={name} onChange={e => setName(e.target.value)} style={inp} />
+        <input placeholder="จากใคร เช่น ครูแอน" value={from} onChange={e => setFrom(e.target.value)} style={inp} />
+      </div>
+      {source.length === 0
+        ? <div style={{ ...card({ background:T.surfHigh }),padding:16,textAlign:"center",color:T.ink2 }}>ยังไม่มีคำในชุดนี้ · เพิ่มคำเองก่อน หรือค้นหา/เลือกหมวดเพื่อแชร์คำที่กรองอยู่</div>
+        : <>
+          <div style={{ ...card({ background:"#fff" }),padding:12,display:"flex",justifyContent:"center" }}>
+            {svg ? <div style={{ width:"min(78vw, 320px)" }} dangerouslySetInnerHTML={{ __html: svg }} /> : <div style={{ color:T.ink3,padding:30 }}>กำลังสร้าง QR…</div>}
+          </div>
+          <div style={{ ...TYPE.labelM,color:T.ink2,textAlign:"center",margin:"8px 0 10px" }}>{list.length} คำ{list.length < source.length ? ` (จาก ${source.length} · ลดให้ QR สแกนได้ · ค้นหา/เลือกหมวดเพื่อเลือกคำที่ต้องการ)` : ""}{name ? ` · ${name}` : ""}{from ? ` · ${from}` : ""}</div>
+          <div style={{ display:"flex",gap:8 }}>
+            <button onClick={share} className="m3-press" style={M3.filled({ flex:1,minHeight:48 })}>📤 ส่งลิงก์</button>
+            <button onClick={copy} className="m3-press" style={M3.tonal({ flex:1,minHeight:48 })}>📋 คัดลอกลิงก์</button>
+          </div>
+          <div style={{ ...TYPE.bodyS,color:T.ink3,marginTop:8,wordBreak:"break-all",maxHeight:60,overflow:"hidden" }}>{link.slice(0, 120)}…</div>
+        </>}
+    </M3Sheet>
+  );
+}
+function ImportSetSheet({ encoded, words, setWords, showToast, onClose }) {
+  const [set, setSet] = useState(undefined);
+  useEffect(() => { decodeSet(encoded).then(setSet).catch(() => setSet(null)); }, [encoded]);
+  const dup = w => words.find(x => x.cat === w.cat && x.word.toUpperCase() === w.word.toUpperCase());
+  const fresh = set ? set.words.filter(w => !dup(w)) : [];
+  const add = () => {
+    let maxId = Math.max(0, ...words.map(w => w.id));
+    const added = fresh.map(w => ({ id: ++maxId, cat: w.cat, word: w.word.toUpperCase(), meaning: w.meaning, emoji: w.emoji || "📦", read: w.read, sen: w.sen, senTh: w.senTh }));
+    setWords([...words, ...added]); sfx.coin(); showToast(`เพิ่ม ${added.length} คำแล้ว ✓`); onClose();
+  };
+  return (
+    <M3Sheet onClose={onClose} z={260}>
+      <h3 style={{ ...TYPE.headlineS,color:T.ink,margin:"0 0 4px" }}>📥 ได้รับชุดคำ</h3>
+      {set === undefined && <div style={{ color:T.ink2 }}>กำลังอ่าน…</div>}
+      {set === null && <div style={{ color:T.error }}>ลิงก์นี้อ่านไม่ได้ (อาจถูกตัดตอนคัดลอก) ขอให้ส่งใหม่อีกครั้ง</div>}
+      {set && <>
+        <div style={{ ...TYPE.bodyM,color:T.ink2,marginBottom:10 }}>{set.name ? <b style={{ color:T.ink }}>{set.name}</b> : "ชุดคำ"}{set.from ? ` · จาก ${set.from}` : ""} · {set.words.length} คำ{fresh.length < set.words.length ? ` (มีอยู่แล้ว ${set.words.length - fresh.length} คำ)` : ""}</div>
+        <div style={{ ...card({ background:T.surfHigh }),padding:"6px 12px",maxHeight:"34vh",overflowY:"auto",marginBottom:12 }}>
+          {set.words.map((w, i) => <div key={i} style={{ display:"flex",gap:8,alignItems:"center",padding:"6px 0",borderBottom:`1px solid ${MD.outlineV}`,opacity: dup(w) ? .5 : 1 }}><span style={{ fontSize:20 }}>{w.emoji}</span><div style={{ flex:1 }}><b style={{ color:T.ink }}>{w.word}</b> <span style={{ color:T.ink2,fontSize:13 }}>{w.meaning}</span></div><span style={{ ...TYPE.labelS,color:T.ink3 }}>{w.cat}</span></div>)}
+        </div>
+        <div style={{ display:"flex",gap:8 }}>
+          <button onClick={add} disabled={!fresh.length} className="m3-press" style={M3.filled({ flex:2,minHeight:52,...(fresh.length ? {} : { background:T.surfHighest,color:T.ink3 }) })}>➕ เพิ่ม {fresh.length} คำเข้าแอป</button>
+          <button onClick={onClose} className="m3-press" style={M3.tonal({ flex:1,minHeight:52 })}>ไม่เอา</button>
+        </div>
+      </>}
+    </M3Sheet>
+  );
+}
+
 function ManageScreen({ words, setWords, categories, showToast, speak, onReset }) {
   const [search, setSearch] = useState("");
   const [filterCat, setFilterCat] = useState("all");
   const [showAdd, setShowAdd] = useState(false);
+  const [showShare, setShowShare] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const EMPTY_DRAFT = { word:"", meaning:"", emoji:"📦", cat: categories[0]?.id, read:"", sen:"", senTh:"" };
   const [draft, setDraft] = useState(EMPTY_DRAFT);
@@ -2204,11 +2302,12 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
           <div style={{ fontWeight:800,fontSize:18,color:T.ink }}>คลังคำศัพท์</div>
           <div style={{ fontSize:12,color:T.ink2 }}>{words.length} คำรวม · แสดง {filtered.length}</div>
         </div>
-        <button onClick={()=>setShowAdd(s=>!s)}
-          style={{ background:"#EF4444",color:"#fff",borderRadius:16,padding:"8px 16px",minHeight:44,fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>
-          + เพิ่มคำ
-        </button>
+        <div style={{ display:"flex",gap:6 }}>
+          <button onClick={()=>{ sfx.tap(); setShowShare(true); }} className="m3-press" style={M3.tonal({ minHeight:44,padding:"0 14px",fontSize:13 })}>📤 แชร์ QR</button>
+          <button onClick={()=>setShowAdd(s=>!s)} className="m3-press" style={M3.filled({ minHeight:44,padding:"0 16px",fontSize:13 })}>+ เพิ่มคำ</button>
+        </div>
       </div>
+      {showShare && <ShareSetSheet words={words} filtered={filtered} filterActive={!!search || filterCat !== "all"} showToast={showToast} onClose={() => setShowShare(false)} />}
 
       {/* Add form */}
       {showAdd && (
@@ -2587,7 +2686,7 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
     const ok = c.id===cur.id;
     if(ok){ setScore(s=>s+1); track.correct(cur, e); speak(cur.word,cur.meaning); }
     else track.wrong(cur);
-    setTimeout(()=>{
+    afterSpeech(()=>{
       if(idx+1<qs.length){ setIdx(i=>i+1); setPicked(null); setLock(false); }
       else track.finish(ok?score+1:score, qs.length);
     },950);
@@ -3028,7 +3127,7 @@ function CountGame({ words, speak, showToast, track }) {
         <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:7}}>
           {nw.sort((a,b)=>a.num-b.num).slice(0,8).map(w=>(
             <button key={w.id} onClick={()=>{
-              if(w.num===target){ track.correct(w); setScore(s=>s+1); speak(w.word,w.meaning); if(round>=MAX) setTimeout(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),600); else setTimeout(()=>setRound(r=>r+1),600); }
+              if(w.num===target){ track.correct(w); setScore(s=>s+1); speak(w.word,w.meaning); if(round>=MAX) afterSpeech(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),600); else afterSpeech(()=>setRound(r=>r+1),600); }
               else { wrongs.current+=1; track.wrong(w); showToast("ลองอีก","warn"); }
             }}
               style={{background:T.card,border:"2px solid #6ee7b7",borderRadius:11,padding:"9px 3px",minHeight:56,display:"flex",flexDirection:"column",alignItems:"center",gap:3,cursor:"pointer"}}>
@@ -3069,7 +3168,7 @@ function BodyDoctorGame({ words, speak, showToast, track }) {
           {words.slice(0,9).map(w=>(
             <button key={w.id} onClick={()=>{
               if(!target||fb) return;
-              if(w.id===target.id){ track.correct(w); setScore(s=>s+1); setFb("ok"); speak(w.word,w.meaning); if(round>=MAX) setTimeout(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),800); else setTimeout(()=>setRound(r=>r+1),800); }
+              if(w.id===target.id){ track.correct(w); setScore(s=>s+1); setFb("ok"); speak(w.word,w.meaning); if(round>=MAX) afterSpeech(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),800); else afterSpeech(()=>setRound(r=>r+1),800); }
               else { wrongs.current+=1; track.wrong(target); setFb("no"); showToast("ลองอีก 🩺","warn"); setTimeout(()=>setFb(null),500); }
             }} style={{background:fb==="ok"&&w.id===target?.id?T.okC:T.tertiaryC,border:`2px solid ${fb==="ok"&&w.id===target?.id?T.ok:T.tertiaryC}`,borderRadius:16,padding:"9px 4px",minHeight:60,display:"flex",flexDirection:"column",alignItems:"center",gap:4,cursor:"pointer",opacity:fb==="no"&&w.id!==target?.id?0.5:1}}>
               <span style={{fontSize:26}}>{w.emoji}</span>
@@ -3158,7 +3257,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
     const ns=ok?score+1:score, nh=ok?hearts:hearts-1;
     if(ok){ setScore(ns); track.correct(q.w); speak(q.w.word,q.w.meaning); }
     else { setHearts(nh); track.wrong(q.w); }
-    setTimeout(()=>{
+    afterSpeech(()=>{
       if(nh<=0||idx+1>=qs.length) end(ns,nh);
       else { setIdx(i=>i+1); setPicked(null); setLock(false); }
     },950);
@@ -3489,7 +3588,7 @@ function ListenGame({ words, speakAt, track, onBack, pool }) {
     setLock(true); setPicked(c.id);
     const ok = c.id === cur.id;
     if (ok) { setScore(s => s + 1); track.correct(cur); } else track.wrong(cur);
-    setTimeout(() => {
+    afterSpeech(() => {
       if (idx + 1 < qs.length) { setIdx(i => i + 1); setPicked(null); setLock(false); setPlayed(false); }
       else track.finish(ok ? score + 1 : score, qs.length);
     }, 1000);
@@ -4224,7 +4323,7 @@ function FillGame({ cat, speak, track, onBack }) {
     setPicked(o);
     const ok = o === q.blank;
     if (ok) { setScore(s => s + 1); track.correct(null); speak(q.en, q.th); } else track.wrong(null);
-    setTimeout(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
+    afterSpeech(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
   };
   return (
     <GameCard>
@@ -4364,7 +4463,7 @@ function StoryQuizGame({ cat, speak, track, onBack }) {
     if (picked) return; setPicked(o);
     const ok = o === q.answer;
     if (ok) { setScore(x => x + 1); track.correct(null); } else track.wrong(null);
-    setTimeout(() => { if (i + 1 < s.quiz.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, s.quiz.length, { label:`ตอบถูก ${ok ? score + 1 : score}/${s.quiz.length} ข้อ` }); }, 1100);
+    afterSpeech(() => { if (i + 1 < s.quiz.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, s.quiz.length, { label:`ตอบถูก ${ok ? score + 1 : score}/${s.quiz.length} ข้อ` }); }, 1100);
   };
   return (
     <GameCard>
@@ -4448,7 +4547,7 @@ function PhonicsGame({ words, speakAt, track, onBack }) {
     if (picked || !played) return; setPicked(L);
     const ok = L === q.L;
     if (ok) { setScore(s => s + 1); track.correct(q.w); } else track.wrong(q.w);
-    setTimeout(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(false); } else track.finish(ok ? score + 1 : score, qs.length); }, 1100);
+    afterSpeech(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(false); } else track.finish(ok ? score + 1 : score, qs.length); }, 1100);
   };
   return (
     <GameCard>
@@ -4532,7 +4631,7 @@ function GrammarGame({ cat, speak, track, onBack }) {
     if (picked) return; setPicked(o);
     const ok = o === q.answer;
     if (ok) { setScore(s => s + 1); track.correct(null); speak(q.q.replace("___", q.answer).replace(/\(.*?\)/, ""), q.th); } else track.wrong(null);
-    setTimeout(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
+    afterSpeech(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
   };
   return (
     <GameCard>
@@ -4700,7 +4799,7 @@ function DailyGame({ cat, speak, speakAt, track, onBack }) {
     const ok = o === q.answer;
     if (ok) { setScore(s => s + 1); track.correct(null); if (kind === "time") speak(`It's ${q.answer}.`, timeThai(q.h, q.m)); else if (kind === "money") speak(`It's ${q.answer}.`, `${numberThai(q.total)}บาท`); else if (kind === "calendar") speak(q.answer, null); }
     else track.wrong(null);
-    setTimeout(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(kind !== "numbers100"); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
+    afterSpeech(() => { if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(kind !== "numbers100"); } else track.finish(ok ? score + 1 : score, qs.length); }, 1300);
   };
   const icon = { time:"🕐", money:"💰", calendar:"📅", numbers100:"🔢" }[kind];
   return (
@@ -4752,7 +4851,7 @@ function TestGame({ cat, speak, speakAt, track, onBack }) {
     if (picked || (q.type === "listen" && !played)) return; setPicked(o);
     const ok = o === answerOf();
     if (ok) { setScore(s => s + 1); track.correct(q.w || null); sfx.ok(); } else { track.wrong(q.w || null); }
-    setTimeout(() => {
+    afterSpeech(() => {
       if (i + 1 < qs.length) { setI(i + 1); setPicked(null); setPlayed(false); }
       else { const s = ok ? score + 1 : score; track.finish(s, qs.length, { label:`ตอบถูก ${s}/${qs.length} ข้อ`, stars: s >= 18 ? 3 : s >= 14 ? 2 : s >= 8 ? 1 : 0 }); cat.onTestDone?.(s, qs.length); /* หลัง finish เพื่อไม่ให้ถูกเขียนทับ */ }
     }, 1000);
@@ -4861,7 +4960,7 @@ function VersusScreen({ words, categories, speak, setProgress, showToast, onExit
     if (o.id === cur.w.id) { sfx.ok(); setWinner(p); setScore(s => { const n = [...s]; n[p] += 1; return n; }); speak(cur.w.word, cur.w.meaning); nextSoon(); }
     else { sfx.bad(); const nl = [...locked]; nl[p] = true; setLocked(nl); if (nl[0] && nl[1]) { setWinner(-1); nextSoon(); } }
   };
-  const nextSoon = () => setTimeout(() => {
+  const nextSoon = () => afterSpeech(() => {
     if (r + 1 < rounds.length) { setR(x => x + 1); setLocked([false, false]); setWinner(null); }
     else { setStage("end"); sfx.win(); setProgress(pr => ({ ...pr, coins: pr.coins + 20 })); }
   }, 1200);

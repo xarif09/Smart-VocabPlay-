@@ -1471,6 +1471,18 @@ export default function App() {
   const [soundOn, setSoundOn] = useState(true);
   const [bilingual, setBilingual] = useState(true);
   const [rate, setRate] = useState(0.85);
+  // ด่านผู้ปกครอง: ก่อนเข้าตั้งค่า/จัดการคำ ต้องตอบโจทย์คูณ (กันเด็กกดมั่ว) · ผ่านแล้วจำ 10 นาที
+  const [parentGate, setParentGate] = useState(() => { try { return localStorage.getItem("smart-vocabplay:gate") !== "0"; } catch (_) { return true; } });
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:gate", parentGate ? "1" : "0"); } catch (_) {} }, [parentGate]);
+  const [gateFn, setGateFn] = useState(null);
+  const gateOk = useRef(0);
+  const guard = useCallback(fn => { if (!parentGate || gateOk.current > Date.now()) fn(); else setGateFn(() => fn); }, [parentGate]);
+  // ตัวหนังสือใหญ่ (เด็กเล็ก/สายตา): ขยายทั้งแอป 12%
+  const [bigText, setBigText] = useState(() => { try { return localStorage.getItem("smart-vocabplay:bigtext") === "1"; } catch (_) { return false; } });
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:bigtext", bigText ? "1" : "0"); document.body.style.zoom = bigText ? "1.12" : ""; } catch (_) {} }, [bigText]);
+  // แนะนำวิธีใช้ครั้งแรก (หลังเลือกเพื่อนคู่หู)
+  const [onboard, setOnboard] = useState(() => { try { return localStorage.getItem("smart-vocabplay:onboarded") !== "1"; } catch (_) { return true; } });
+  const finishOnboard = () => { setOnboard(false); try { localStorage.setItem("smart-vocabplay:onboarded", "1"); } catch (_) {} };
   const [showSettings, setShowSettings] = useState(false);
   const [incomingSet, setIncomingSet] = useState(() => readIncomingSet());   // #set=... จาก QR/ลิงก์
   const [musicOn, setMusicOn] = useState(() => { try { return localStorage.getItem("smart-vocabplay:music") === "1"; } catch (_) { return false; } });
@@ -1532,7 +1544,9 @@ export default function App() {
   const [thaiGuide, setThaiGuide] = useState(() => { try { return localStorage.getItem("smart-vocabplay:thaiguide") !== "0"; } catch (_) { return true; } });
   useEffect(() => { try { localStorage.setItem("smart-vocabplay:thaiguide", thaiGuide ? "1" : "0"); } catch (_) {} }, [thaiGuide]);
   const speakTh = useCallback((th) => {
-    if (!thaiGuide || !soundOn || !soundUnlocked || !window.speechSynthesis || !th) return;
+    if (!thaiGuide || !soundOn || !soundUnlocked || !th) return;
+    const clip = clipUrl(th); if (clip) { try { window.speechSynthesis?.cancel(); } catch (_) {} playClips([clip], { rate: 1 }); return; }
+    if (!window.speechSynthesis) return;
     const ss = window.speechSynthesis; if (ss.speaking || ss.pending) ss.cancel();
     const u = new SpeechSynthesisUtterance(th); u.lang = "th-TH"; u.rate = Math.min(1, rate + 0.1); const v = getVoice("th"); if (v) u.voice = v; ss.speak(u);
   }, [thaiGuide, soundOn, soundUnlocked, rate]);
@@ -1568,7 +1582,8 @@ export default function App() {
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
   const GUIDE = { quiz:"ดูรูปแล้วเลือกคำภาษาอังกฤษที่ตรงกับรูป", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาคำกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะคำให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
-  const goManage   = () => setScreen("manage");
+  const goManage   = () => guard(() => setScreen("manage"));
+  const openSettings = () => guard(() => setShowSettings(true));
   const goStickers = () => setScreen("stickers");
   const goShop     = () => setScreen("shop");
   const goRoom     = () => setScreen("room");
@@ -1728,7 +1743,7 @@ export default function App() {
         )}
         {screen === "me" && (
           <MeHub words={words} progress={progress} setProgress={setProgress} stickerCount={stickerCount} profile={profiles.list.find(x => x.id === profiles.current)}
-            onProfiles={() => setShowProfiles(true)} onStickers={goStickers} onShop={goShop} onRoom={goRoom} onReport={goReport} onManage={goManage} onSettings={() => setShowSettings(true)} onCredits={goCredits} speak={speak} />
+            onProfiles={() => setShowProfiles(true)} onStickers={goStickers} onShop={goShop} onRoom={goRoom} onReport={goReport} onManage={goManage} onSettings={openSettings} onCredits={goCredits} speak={speak} />
         )}
         {screen === "learn" && activeCat && (
           <FlashCards cat={activeCat} words={catWords} speak={speak} speakAt={speakAt} setProgress={setProgress} showToast={showToast}
@@ -1810,7 +1825,7 @@ export default function App() {
       {!immersive && (
         <Header screen={screen} title={headerTitle} onBack={screen !== "home" && !HUBS.includes(screen) ? goBack : null}
           profile={profiles.list.find(x => x.id === profiles.current)} onProfiles={() => setShowProfiles(true)}
-          soundOn={soundOn} onToggleSound={() => setSoundOn(v => !v)} onSettings={() => setShowSettings(true)} coins={progress.coins} streak={progress.streak.count} />
+          soundOn={soundOn} onToggleSound={() => setSoundOn(v => !v)} onSettings={openSettings} coins={progress.coins} streak={progress.streak.count} />
       )}
 
       {/* CONTENT */}
@@ -1839,6 +1854,8 @@ export default function App() {
         <ProfileSheet profiles={profiles} onSwitch={switchProfile} onAdd={addProfile} onDelete={removeProfile} onClose={() => setShowProfiles(false)} />
       )}
 
+      {gateFn && <ParentGate onPass={() => { gateOk.current = Date.now() + 10 * 60 * 1000; const fn = gateFn; setGateFn(null); fn(); }} onClose={() => setGateFn(null)} />}
+      {onboard && progress.pet && !incomingSet && <OnboardingSheet speakTh={speakTh} onDone={finishOnboard} />}
       {incomingSet && soundUnlocked && <ImportSetSheet encoded={incomingSet} words={words} setWords={setWords} showToast={showToast} onClose={() => setIncomingSet(null)} />}
       {showSettings && (
         <SettingsSheet
@@ -1853,6 +1870,7 @@ export default function App() {
           thaiGuide={thaiGuide} setThaiGuide={setThaiGuide}
           fxOn={fxOn} setFxOn={setFxOn} musicOn={musicOn} setMusicOn={setMusicOn}
           nativeVoice={nativeVoice} setNativeVoiceOn={setNativeVoiceOn}
+          bigText={bigText} setBigText={setBigText} parentGate={parentGate} setParentGate={setParentGate}
           onClose={() => setShowSettings(false)}
         />
       )}
@@ -3456,7 +3474,7 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
 // ═══════════════════════════════════════════════════════
 // SETTINGS SHEET
 // ═══════════════════════════════════════════════════════
-function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn, musicOn, setMusicOn, nativeVoice, setNativeVoiceOn }) {
+function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn, musicOn, setMusicOn, nativeVoice, setNativeVoiceOn, bigText, setBigText, parentGate, setParentGate }) {
   const [vr, setVr] = useState(() => voiceReport());
   useEffect(() => { loadVoices(); setVr(voiceReport()); const t = setTimeout(() => { loadVoices(); setVr(voiceReport()); }, 800); return () => clearTimeout(t); }, []);
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -3472,6 +3490,8 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <TRow label="ผู้ช่วยเสียงไทย" desc="อ่านวิธีเล่นเป็นภาษาไทยทุกครั้งที่เข้าเกม (สำหรับเด็กที่ยังอ่านไทยไม่คล่อง)" on={thaiGuide} set={setThaiGuide} />
         <TRow label="เต็มจอเมื่อเข้าเกม" desc="ซ่อนแถบเบราว์เซอร์ตอนเล่น (Android/คอม · iPhone ใช้ได้เมื่อติดตั้งเป็นแอป)" on={fullscreenOn} set={setFullscreenOn} />
         <TRow label="รูปภาพจริง" desc={`รูปถ่ายจาก Wikipedia ${bundledCount()} รูปมากับแอป (ไม่ต้องใช้เน็ต) · ปิด = ใช้อีโมจิ`} on={realPics} set={setRealPics} />
+        <TRow label="ตัวหนังสือใหญ่" desc="ขยายทุกอย่างในแอป 12% สำหรับเด็กเล็กหรือจอเล็ก" on={bigText} set={setBigText} />
+        <TRow label="ด่านผู้ปกครอง" desc="ก่อนเข้าตั้งค่า/จัดการคำศัพท์ ต้องตอบโจทย์คูณ กันเด็กกดล้างข้อมูลหรือแก้คำเอง (ผ่านแล้วจำ 10 นาที)" on={parentGate} set={setParentGate} />
         <button onClick={onCredits} style={{ width:"100%",minHeight:44,marginBottom:10,borderRadius:16,background:T.surfHigh,color:T.ink2,border:"1px solid var(--md-outline-variant)",fontWeight:700,fontSize:12,cursor:"pointer" }}>🖼️ เครดิตรูปภาพ (ที่มา / สัญญาอนุญาต)</button>
         <div style={{ background:vr.th.length?"#ecfdf5":T.tertiaryC,border:`1px solid ${vr.th.length?"#a7f3d0":T.tertiary}`,borderRadius:14,padding:"10px 14px",marginBottom:10,fontSize:12,color:T.ink2 }}>
           <div style={{ fontWeight:800,marginBottom:2 }}>{vr.th.length ? `✅ เสียงไทยพร้อมใช้: ${vr.thPick}` : "⚠️ ยังไม่พบเสียงภาษาไทยในเครื่องนี้"}</div>
@@ -3513,6 +3533,53 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
   );
 }
 
+// ด่านผู้ปกครอง: โจทย์คูณสุ่ม + แป้นตัวเลข · ตอบผิดสุ่มใหม่
+function ParentGate({ onPass, onClose }) {
+  const mk = () => { const a = 3 + Math.floor(Math.random() * 7), b = 3 + Math.floor(Math.random() * 7); return { a, b }; };
+  const [q, setQ] = useState(mk); const [ans, setAns] = useState(""); const [shake, setShake] = useState(false);
+  const push = d => { const n = (ans + d).slice(0, 3); setAns(n); if (+n === q.a * q.b) { sfx.ok(); onPass(); } else if (n.length >= String(q.a * q.b).length) { sfx.bad(); setShake(true); setTimeout(() => { setShake(false); setAns(""); setQ(mk()); }, 500); } };
+  return (
+    <M3Sheet onClose={onClose} z={320}>
+      <h3 style={{ ...TYPE.headlineS,color:T.ink,margin:"0 0 2px" }}>🔒 ผู้ปกครองเท่านั้น</h3>
+      <div style={{ ...TYPE.bodyS,color:T.ink2,marginBottom:12 }}>ตอบโจทย์เพื่อเข้าตั้งค่า (ปิดด่านนี้ได้ในตั้งค่า)</div>
+      <div style={{ ...card({ background:T.primaryC,color:T.onPrimaryC }),padding:"16px 18px",textAlign:"center",marginBottom:12,animation: shake ? "vpWiggle .4s" : "none" }}>
+        <div style={{ ...TYPE.displayS }}>{q.a} × {q.b} = <span style={{ display:"inline-block",minWidth:60,borderBottom:`3px solid ${MD.primary}` }}>{ans || " "}</span></div>
+      </div>
+      <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
+        {["1","2","3","4","5","6","7","8","9","ลบ","0","ปิด"].map(k => (
+          <button key={k} data-key={k} onClick={() => { if (k === "ปิด") onClose(); else if (k === "ลบ") setAns(a => a.slice(0, -1)); else push(k); }} className="m3-press"
+            style={k === "ปิด" ? M3.text({ minHeight:56,fontSize:16 }) : k === "ลบ" ? M3.tonal({ minHeight:56,fontSize:16 }) : M3.filled({ minHeight:56,fontSize:22,background:T.surfHigh,color:T.ink })}>{k}</button>
+        ))}
+      </div>
+    </M3Sheet>
+  );
+}
+// แนะนำวิธีใช้ครั้งแรก 3 ขั้น (อ่านไทยให้ฟังด้วย)
+const ONBOARD_STEPS = [
+  { icon:"📚", shape:"cookie12", title:"เรียนคำศัพท์ก่อน", th:"แตะหมวดที่ชอบ แล้วกดเรียนคำศัพท์ก่อนเล่น การ์ดมีรูปจริง เสียงอ่าน และคำแปล" },
+  { icon:"🎮", shape:"burst", title:"เล่นเกมเก็บดาว", th:"เล่นเกมในหมวดให้ครบ ได้ดาวและเหรียญ สะสมดาวครบจะปลดล็อกด่านบอส" },
+  { icon:"🐾", shape:"clover", title:"ดูแลเพื่อนคู่หู", th:"เพื่อนคู่หูจะโตขึ้นเมื่อหนูตอบถูก อย่าลืมให้อาหารและเล่นกับเขาทุกวันนะ" },
+];
+function OnboardingSheet({ speakTh, onDone }) {
+  const [i, setI] = useState(0); const st = ONBOARD_STEPS[i];
+  return (
+    <M3Sheet onClose={onDone} z={310}>
+      <div style={{ textAlign:"center",padding:"6px 0 4px" }}>
+        <Shape kind={st.shape} size={132} fill={T.primaryC} morph><span style={{ fontSize:64 }}>{st.icon}</span></Shape>
+        <div style={{ ...TYPE.headlineS,color:T.ink,marginTop:12 }}>{st.title}</div>
+        <div style={{ ...TYPE.bodyL,color:T.ink2,margin:"6px auto 14px",maxWidth:360 }}>{st.th}</div>
+        <div style={{ display:"flex",justifyContent:"center",gap:6,marginBottom:14 }}>{ONBOARD_STEPS.map((_, k) => <span key={k} style={{ width:k===i?22:8,height:8,borderRadius:999,background:k===i?MD.primary:MD.outlineV,transition:"width .25s" }} />)}</div>
+        <div style={{ display:"flex",gap:8 }}>
+          <button onClick={() => { sfx.tap(); speakTh(st.th); }} className="m3-press" style={M3.tonal({ minHeight:52,padding:"0 18px" })}>🔊 ฟัง</button>
+          {i < ONBOARD_STEPS.length - 1
+            ? <button onClick={() => { sfx.tap(); const n = i + 1; setI(n); speakTh(ONBOARD_STEPS[n].th); }} className="m3-press" style={M3.filled({ flex:1,minHeight:52 })}>ถัดไป ›</button>
+            : <button onClick={() => { sfx.coin(); onDone(); }} className="m3-press" style={M3.filled({ flex:1,minHeight:52 })}>เริ่มใช้งาน ›</button>}
+        </div>
+        <button onClick={onDone} style={{ ...M3.text({ minHeight:44,fontSize:13,marginTop:6 }),color:T.ink3 }}>ข้าม</button>
+      </div>
+    </M3Sheet>
+  );
+}
 function TRow({ label, desc, on, set }) {
   return (
     <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,padding:"10px 4px 10px 12px",borderBottom:"1px solid var(--md-outline-variant)" }}>

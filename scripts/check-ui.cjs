@@ -4,6 +4,9 @@ const { chromium } = require('playwright');
 const URL = 'http://localhost:4173/Smart-VocabPlay-/';
 const OUT = require('path').join(__dirname, '..', 'docs', 'screenshots');
 const START = 'text=แตะเพื่อเริ่มเลย';
+// ด่านผู้ปกครอง (โจทย์คูณ) → อ่านโจทย์แล้วกดแป้นตัวเลข
+const solveGate = async p => { if (!(await p.isVisible('text=ผู้ปกครองเท่านั้น'))) return; const t = await p.textContent('body'); const m = t.match(/(\d+)\s*×\s*(\d+)\s*=/); if (!m) return; for (const d of String(+m[1] * +m[2])) await p.click(`button[data-key="${d}"]`); await p.waitForTimeout(400); };
+const skipOnboard = async p => { if (await p.isVisible('text=เริ่มใช้งาน')) { await p.click('button:has-text("ถัดไป")').catch(()=>{}); await p.click('button:has-text("ถัดไป")').catch(()=>{}); await p.click('button:has-text("เริ่มใช้งาน")'); await p.waitForTimeout(300); } else if (await p.isVisible('text=เรียนคำศัพท์ก่อน') && await p.isVisible('button:has-text("ข้าม")')) { await p.click('button:has-text("ข้าม")'); await p.waitForTimeout(300); } };
 
 async function audit(page, label) {
   // รอให้แอนิเมชันเลื่อนเข้า (Reveal/stagger) จบก่อนวัด
@@ -39,7 +42,8 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.goto(URL); await shot(p, `${name}-0-start`); await a('start');
     await p.click(START); await p.waitForTimeout(300);
     await shot(p, `${name}-1-home-pick-pet`); await a('home-pick-pet');
-    await p.click('text=มิว'); await p.waitForTimeout(200);
+    await p.click('text=มิว'); await p.waitForTimeout(400);
+    await shot(p, `${name}-1-onboarding`); await a('onboarding'); await skipOnboard(p);
     await shot(p, `${name}-1-home`); await a('home');
     const counts = await p.evaluate(() => [...document.querySelectorAll('button')].map(b => b.innerText).filter(t => /\d+ คำ/.test(t)).map(t => +t.match(/(\d+) คำ/)[1]));
     res.push({ label: name + ' count', cats: counts.length, total: counts.reduce((x, c) => x + c, 0) });
@@ -86,10 +90,10 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
     await p.click('button:has-text("📒")'); await p.waitForTimeout(200); await shot(p, `${name}-7-stickers`); await a('stickers');
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
-    await p.click('text=ของฉัน'); await p.waitForTimeout(200); await shot(p, `${name}-7b-me`); await a('me'); await p.click('text=จัดการคำศัพท์'); await p.waitForTimeout(200); await shot(p, `${name}-8-manage`); await a('manage');
+    await p.click('text=ของฉัน'); await p.waitForTimeout(200); await shot(p, `${name}-7b-me`); await a('me'); await p.click('text=จัดการคำศัพท์'); await p.waitForTimeout(200); await solveGate(p); await p.waitForTimeout(200); await shot(p, `${name}-8-manage`); await a('manage');
     await p.click('text=+ เพิ่มคำ'); await p.waitForTimeout(100); await shot(p, `${name}-9-manage-add`); await a('manage-add');
     await p.click('text=ยกเลิก'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=หน้าแรก');
-    await p.click('button[aria-label="ตั้งค่า"]'); await p.waitForTimeout(200); await shot(p, `${name}-10-settings`); await a('settings');
+    await p.click('button[aria-label="ตั้งค่า"]'); await p.waitForTimeout(200); await solveGate(p); await shot(p, `${name}-10-settings`); await a('settings');
     await p.click('text=รายงานผู้ปกครอง'); await p.waitForTimeout(200); await shot(p, `${name}-10a-report`); await a('report');
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
     await p.click('text=ร้านค้า'); await p.waitForTimeout(200); await shot(p, `${name}-10b-shop`); await a('shop');
@@ -206,7 +210,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await shot(p, 'mobile-pics-4-match'); const r4 = await audit(p, 'pics match'); res.push(r4); if (r4.overlaps.length || r4.hScroll) bad('pics match', r4);
     // ปิดรูปจริงในตั้งค่า → กลับเป็นอีโมจิ (ออกจากโหมดเกมก่อน เพราะในเกมไม่มีปุ่มตั้งค่า)
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.waitForTimeout(200);
-    await p.click('button[aria-label="ตั้งค่า"]'); await p.waitForTimeout(200); await shot(p, 'mobile-pics-5-settings-voice');
+    await p.click('button[aria-label="ตั้งค่า"]'); await p.waitForTimeout(200); await solveGate(p); await shot(p, 'mobile-pics-5-settings-voice');
     await p.locator('text=รูปภาพจริง').locator('xpath=../..').locator('button').click(); await p.click('text=เสร็จสิ้น');
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=Animals'); await p.click('text=Quiz'); await p.waitForTimeout(300);
     res.push({ label: 'pics toggle-off-no-img', imgs: await p.locator('img[alt]').count(), errs });

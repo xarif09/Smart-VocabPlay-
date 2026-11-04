@@ -36,6 +36,10 @@ for (const d of DIALOGUES) for (const l of d.lines) {
   add(l.en, kidNames.test(who || "") ? V.enKid : (/tom|boy/i.test(who || "") ? V.enKid : V.enMan), "en");
   add(l.th, V.th, "th");
 }
+// 2b) ผู้ช่วยเสียงไทยในเกม (GUIDE) + แนะนำครั้งแรก + ประโยคนำทางที่เป็น literal
+const guide = app.match(/const GUIDE = \{([\s\S]*?)\};/); if (guide) for (const m of guide[1].matchAll(/:"([^"]+)"/g)) add(m[1], V.th, "th");
+const onb = app.match(/const ONBOARD_STEPS = \[([\s\S]*?)\];/); if (onb) for (const m of onb[1].matchAll(/th:"([^"]+)"/g)) add(m[1], V.th, "th");
+for (const m of app.matchAll(/speakTh\("([^"]+)"\)/g)) add(m[1], V.th, "th");
 // 3) นิทาน
 for (const s of STORIES) for (const p of s.pages) { add(p.en, V.en, "en"); add(p.th, V.th, "th"); }
 

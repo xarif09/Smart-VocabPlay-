@@ -9,7 +9,7 @@ const { chromium } = require('playwright');
   const pct = (a, b) => `${a}/${b} (${Math.round(a / b * 100)}%)`;
   console.log(`Smart VocabPlay v${r.version} · คำ ${r.words}`);
   console.log(`ภาพ: รูปถ่าย ${r.photo} · ภาพออกแบบ ${r.concept} · อีโมจิเปล่า ${r.emoji}  → มีภาพ ${pct(r.photo + r.concept, r.words)}`);
-  console.log(`เสียงคนจริง: ${pct(r.audio, r.words)} (รวมคำประสมต่อเสียง)`);
+  console.log(`เสียงคนจริง: ${pct(r.audio, r.words)} (รวมคำประสมต่อเสียง) · ประโยคตัวอย่างมีเสียง neural ${pct(r.sentenceClips || 0, r.words)} · ท่อนเสียง neural ทั้งหมด ${r.ttsClips || 0}`);
   console.log(`คำอ่านไทย: ขาด ${r.noRead.length} · ประโยคตัวอย่าง: ขาด ${r.noSentence.length}`);
   console.log(`บทสนทนา ${r.dialogues} · นิทาน ${r.stories} · ไวยากรณ์ ${r.grammar} · โฟนิกส์ ${r.phonics} · เกม ${r.games}`);
   const cats = Object.entries(r.byCat).filter(([, v]) => v.emoji.length).map(([k, v]) => `${k} ${v.emoji.length}: ${v.emoji.join(' ')}`);

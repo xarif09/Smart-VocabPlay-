@@ -11,6 +11,7 @@ import { fx, fxPoint, setFxEnabled, installRipple, Ambient, Reveal, CountUp } fr
 import Pet, { PET_CSS } from "./Pet.jsx";
 import { CatIcon, GameIcon, hasGameIcon } from "./Icons.jsx";
 import audioManifest from "./audioManifest.json";
+import ttsManifest from "./ttsManifest.json";
 import { conceptFor, CONCEPT_WORDS } from "./Concept.jsx";
 import qrcode from "qrcode-generator";
 import { encodeSet, decodeSet, setLink, readIncomingSet } from "./share.js";
@@ -111,7 +112,42 @@ const audioUrlsFor = en => {
   if (parts.length < 2) return null;
   const urls = parts.map(audioUrlFor); return urls.every(Boolean) ? urls : null;
 };
-export const hasNativeAudio = en => nativeOn && !!audioUrlsFor(en);
+export const hasNativeAudio = en => nativeOn && !!(audioUrlsFor(en) || clipUrl(en));
+// ── เสียง neural (edge-tts) สำหรับประโยค/บทสนทนา/นิทาน/คำแปลไทย: public/tts/<fnv1a(text)>.mp3 (สร้างโดย workflow fetch-tts.yml)
+const TTS_SET = new Set(ttsManifest);
+const fnv1a = s => { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(16).padStart(8, "0"); };
+const normTxt = s => (s || "").replace(/\s+/g, " ").trim();
+function clipUrl(text) {
+  if (!nativeOn || !text) return null;
+  const t = normTxt(text); const title = t.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  for (const cand of [t, title, t.toLowerCase()]) { const k = fnv1a(cand); if (TTS_SET.has(k)) return `${import.meta.env.BASE_URL}tts/${k}.mp3`; }
+  return null;
+}
+export const ttsClipCount = () => ttsManifest.length;
+// เล่นไฟล์เสียงต่อกันเป็นคิว · onStart(i) ก่อนเริ่มแต่ละไฟล์ · onDone เมื่อจบ/ล้มเหลว (ok=false)
+function playClips(urls, { onStart, onDone, rate = 1 } = {}) {
+  stopNative(); const token = {}; curAudio = token;
+  const playAt = i => {
+    if (curAudio !== token) return;
+    if (i >= urls.length) { curAudio = null; onDone?.(true); return; }
+    const a = new Audio(urls[i]); a.preload = "auto"; token.el = a;
+    try { a.playbackRate = Math.min(1.1, Math.max(0.65, rate)); } catch (_) {}
+    onStart?.(i);
+    a.onended = () => playAt(i + 1);
+    a.onerror = () => { if (curAudio === token) { curAudio = null; onDone?.(false, i); } };
+    try { const p = a.play(); if (p && p.catch) p.catch(() => { if (curAudio === token) { curAudio = null; onDone?.(false, i); } }); } catch (_) { onDone?.(false, i); }
+  };
+  playAt(0);
+}
+// พูดไทย: มีไฟล์ neural → เล่นไฟล์ · ไม่มี → เสียงเครื่อง
+function playThai(th, rate, onDone) {
+  const u = clipUrl(th);
+  if (!u) return speakThOnly(th, rate, onDone);
+  const a = new Audio(u); curAudio = { el: a }; let d = false; const fin = () => { if (d) return; d = true; onDone?.(); };
+  try { a.playbackRate = Math.min(1, Math.max(0.7, rate + 0.1)); } catch (_) {}
+  a.onended = fin; a.onerror = () => { d = true; speakThOnly(th, rate, onDone); };
+  try { const p = a.play(); if (p && p.catch) p.catch(() => { d = true; speakThOnly(th, rate, onDone); }); } catch (_) { speakThOnly(th, rate, onDone); }
+}
 // ── รอให้เสียง (ไฟล์ EN + ไทย) จบก่อนค่อยไปข้อถัดไป ──
 //  เกมเรียก afterSpeech(fn, min, max): ถ้ากำลังพูดอยู่ รอจนจบ (ไม่เกิน max) · ถ้าไม่ได้พูด (ปิดเสียง) รอแค่ min
 let speakingNow = false; let speechWaiters = []; let speechGen = 0;
@@ -137,14 +173,14 @@ function speakThOnly(th, rate, onDone) {
 // Speak EN then TH — must be called from onClick
 function speakWord(en, th, rate = 0.85, bilingual = true) {
   stopNative();
-  const urls = nativeOn ? audioUrlsFor(en) : null;
+  const urls = nativeOn ? (audioUrlsFor(en) || (clipUrl(en) ? [clipUrl(en)] : null)) : null;
   if (urls) {
     try { window.speechSynthesis?.cancel(); } catch (_) {}
     const token = {}; curAudio = token; const gen = speechBegin();
     const fallback = () => { if (curAudio !== token) return; curAudio = null; ttsWord(en, th, rate, bilingual); };
     const playAt = i => {
       if (curAudio !== token) return;
-      if (i >= urls.length) { curAudio = null; if (bilingual && th) speakThOnly(th, rate, () => speechDone(gen)); else speechDone(gen); return; }
+      if (i >= urls.length) { curAudio = null; if (bilingual && th) playThai(th, rate, () => speechDone(gen)); else speechDone(gen); return; }
       const a = new Audio(urls[i]); a.preload = "auto"; token.el = a;
       try { a.playbackRate = Math.min(1, Math.max(0.65, rate + 0.1)); } catch (_) {}
       a.onended = () => playAt(i + 1);
@@ -176,7 +212,7 @@ function ttsWord(en, th, rate = 0.85, bilingual = true) {
       const doThai = () => {
         if (thDone) return;
         thDone = true;
-        speakThOnly(th, rate, () => speechDone(gen));
+        playThai(th, rate, () => speechDone(gen));
       };
       enU.onend = doThai;
       // iOS sometimes doesn't fire onend — fallback timer
@@ -1502,7 +1538,11 @@ export default function App() {
   }, [thaiGuide, soundOn, soundUnlocked, rate]);
   // อ่านหลายประโยคต่อกัน (บทสนทนา) — คิวทั้งหมดทันทีใน onClick ไม่ใช้ timer
   const speakSeq = useCallback((items) => {
-    if (!soundOn || !soundUnlocked || !window.speechSynthesis) return;
+    if (!soundOn || !soundUnlocked) return;
+    // ไฟล์เสียงจริงครบทุกท่อน → เล่นต่อกัน (ไม่งั้นใช้เสียงเครื่องทั้งชุด เพื่อให้โทนเดียวกัน)
+    const segs = items.flatMap(({ en, th }) => bilingual && th ? [clipUrl(en), clipUrl(th)] : [clipUrl(en)]);
+    if (segs.length && segs.every(Boolean)) { try { window.speechSynthesis?.cancel(); } catch (_) {} playClips(segs, { rate: rate + 0.1 }); return; }
+    if (!window.speechSynthesis) return;
     const ss = window.speechSynthesis;
     if (ss.speaking || ss.pending) ss.cancel();
     items.forEach(({ en, th }) => {
@@ -1643,7 +1683,8 @@ export default function App() {
     const byCat = {}; rows.forEach(r => { const c = r.key.split("|")[0]; byCat[c] = byCat[c] || { n:0, emoji:[] }; byCat[c].n++; if (r.visual === "emoji") byCat[c].emoji.push(r.key.split("|")[1]); });
     const report = { version: APP_VERSION, words: rows.length, photo: cnt("photo"), concept: cnt("concept"), emoji: cnt("emoji"), emojiWords: rows.filter(r => r.visual === "emoji").map(r => r.key),
       audio: rows.filter(r => r.audio).length, noAudio: rows.filter(r => !r.audio).map(r => r.key), noRead: rows.filter(r => !r.read).map(r => r.key), noSentence: rows.filter(r => !r.sen).map(r => r.key),
-      dialogues: DIALOGUES.length, stories: STORIES.length, grammar: GRAMMAR.length, phonics: PHONICS.length, games: Object.keys(GAME_META).length, byCat };
+      dialogues: DIALOGUES.length, stories: STORIES.length, grammar: GRAMMAR.length, phonics: PHONICS.length, games: Object.keys(GAME_META).length, byCat,
+      ttsClips: ttsManifest.length, sentenceClips: rows.filter(r => { const w = INITIAL_WORDS.find(x => `${x.cat}|${x.word}` === r.key); const lx = lexOf(w); return lx?.sen && clipUrl(lx.sen); }).length };
     return <pre id="audit" style={{ fontFamily:"monospace",fontSize:11,padding:12,whiteSpace:"pre-wrap" }}>{JSON.stringify(report, null, 1)}</pre>;
   }
   // หน้าตรวจภาพออกแบบทั้งชุด (dev): เปิด ?concepts=1 → ตารางทุกคำที่มีภาพใน Concept.jsx
@@ -3425,7 +3466,7 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
         <div style={{ fontSize:11,color:T.ink3,marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
         <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
-        <TRow label="เสียงเจ้าของภาษา" desc={nativeCount() ? `เสียงอ่านจริงโดยเจ้าของภาษา ${nativeCount()} คำ (Wikimedia Commons · มากับแอป ใช้ออฟไลน์ได้) · คำที่ไม่มีใช้เสียงเครื่องแทน` : "กำลังเตรียมไฟล์เสียง (รอบถัดไป) · ตอนนี้ใช้เสียงเครื่อง"} on={nativeVoice} set={setNativeVoiceOn} />
+        <TRow label="เสียงเจ้าของภาษา" desc={`คำศัพท์ ${nativeCount()} คำ (Wikimedia Commons) · ประโยค/บทสนทนา/นิทาน/คำแปลไทย ${ttsClipCount().toLocaleString()} ท่อน (เสียง neural) · โหลดครั้งแรกแล้วจำไว้ใช้ออฟไลน์ · ที่ไม่มีใช้เสียงเครื่องแทน`} on={nativeVoice} set={setNativeVoiceOn} />
         <TRow label="ดนตรีประกอบ" desc="เพลงกล่องดนตรีเบาๆ ตลอดแอป (สร้างในเครื่อง ไม่ใช้เน็ต) · ปิดอัตโนมัติเมื่อสลับแอป" on={musicOn} set={setMusicOn} />
         <TRow label="เอฟเฟกต์และแอนิเมชัน" desc="ระเบิดดาว คอนเฟตตี สั่นจอ พื้นหลังเคลื่อนไหว · ปิดถ้าเครื่องช้า" on={fxOn} set={setFxOn} />
         <TRow label="ผู้ช่วยเสียงไทย" desc="อ่านวิธีเล่นเป็นภาษาไทยทุกครั้งที่เข้าเกม (สำหรับเด็กที่ยังอ่านไทยไม่คล่อง)" on={thaiGuide} set={setThaiGuide} />
@@ -4388,9 +4429,16 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
   useEffect(() => () => { try { if (window.speechSynthesis?.speaking) window.speechSynthesis.cancel(); } catch (_) {} }, []);
   // อ่านทั้งเรื่องต่อเนื่อง: คิวทุกหน้าทันทีใน onClick (กฎ iOS) · onstart ของแต่ละหน้า → เปลี่ยนหน้า/ไฮไลต์ · จบ → ปิดโหมด
   const readAll = (from = 0) => {
+    const pages = s.pages.slice(from);
+    const segs = pages.flatMap(pg => showTh ? [clipUrl(pg.en), clipUrl(pg.th)] : [clipUrl(pg.en)]);
+    if (segs.length && segs.every(Boolean)) {   // เสียง neural ครบ → เล่นไฟล์ต่อกัน เปลี่ยนหน้าตอนเริ่มแต่ละหน้า
+      try { window.speechSynthesis?.cancel(); } catch (_) {}
+      setAuto(true); setPopup(null); const per = showTh ? 2 : 1;
+      playClips(segs, { rate: 1, onStart: i => setI(from + Math.floor(i / per)), onDone: () => setAuto(false) });
+      return;
+    }
     const ss = window.speechSynthesis; if (!ss) return;
     ss.cancel(); setAuto(true); setPopup(null);
-    const pages = s.pages.slice(from);
     pages.forEach((pg, k) => {
       const u = new SpeechSynthesisUtterance(pg.en); u.lang = "en-US"; u.rate = 0.82; const v = getVoice("en"); if (v) u.voice = v;
       u.onstart = () => setI(from + k);
@@ -4399,7 +4447,7 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
       if (showTh) { const t = new SpeechSynthesisUtterance(pg.th); t.lang = "th-TH"; t.rate = 0.9; const tv = getVoice("th"); if (tv) t.voice = tv; if (k === pages.length - 1) t.onend = () => setAuto(false); ss.speak(t); }
     });
   };
-  const stopAll = () => { try { window.speechSynthesis?.cancel(); } catch (_) {} setAuto(false); };
+  const stopAll = () => { try { window.speechSynthesis?.cancel(); } catch (_) {} stopNative(); setAuto(false); };
   if (quiz) return <GameRouter gameId="squiz" cat={cat} words={words.slice(0, 8)} speak={speak} speakAt={speakAt} showToast={showToast} onBack={onBack} progress={progress} setProgress={setProgress} allWords={words} />;
   const tokens = page.en.split(" ");
   return (

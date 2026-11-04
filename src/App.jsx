@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback, useMemo, createContext, useCo
 import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl, bundledCount } from "./images.js";
 import { DIALOGUES, STORIES, PHONICS, GRAMMAR, DAYS, MONTHS, MONEY, numberWord, numberThai, timeWord, timeThai, LEVELS_TEST } from "./content.js";
 import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER_NEED, PETS, getPet, petLevel, EMPTY_PROGRESS,
-  srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today,
+  srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today, weekStats,
   tickCare, careMood, CARE_ACTIONS, CARE_MAX, FOODS, ROOM_ITEMS,
   loadProfiles, saveProfiles, deleteProgress, AVATARS, buildUnits, UNIT_STEPS, unitDone, unitSteps, markUnitStep, similarity } from "./progress.js";
 import { lexOf } from "./lexicon.js";
@@ -1731,7 +1731,7 @@ export default function App() {
           <ShopScreen progress={progress} setProgress={setProgress} showToast={showToast} />
         )}
         {screen === "report" && (
-          <ReportScreen words={words} categories={CATEGORIES} progress={progress} />
+          <ReportScreen words={words} categories={CATEGORIES} progress={progress} profile={profiles.list.find(x => x.id === profiles.current)} />
         )}
         {screen === "credits" && (
           <CreditsScreen words={words} />
@@ -3741,7 +3741,53 @@ function ShopScreen({ progress, setProgress, showToast }) {
 // ═══════════════════════════════════════════════════════
 // PARENT REPORT — รายงานผู้ปกครอง
 // ═══════════════════════════════════════════════════════
-function ReportScreen({ words, categories, progress }) {
+function WeeklyCard({ progress, profile, words }) {
+  const wk = weekStats(progress, 7);
+  const sum = k => wk.reduce((a, d) => a + d[k], 0);
+  const active = wk.filter(d => d.active).length;
+  const max = Math.max(1, ...wk.map(d => d.correct));
+  const DOW = ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"];
+  const mastered = words.filter(w => isMastered(progress.srs, w.id)).length;
+  const share = async () => {
+    try {
+      const c = document.createElement("canvas"); c.width = 1080; c.height = 1080; const g = c.getContext("2d");
+      const cs = getComputedStyle(document.documentElement); const col = k => cs.getPropertyValue(`--md-${k}`).trim() || "#999";
+      g.fillStyle = col("primary-container"); g.fillRect(0, 0, 1080, 1080);
+      g.fillStyle = col("surface-container-lowest"); g.beginPath(); g.roundRect(60, 60, 960, 960, 56); g.fill();
+      g.fillStyle = col("on-surface"); g.textAlign = "left";
+      g.font = "900 56px Prompt, system-ui, sans-serif"; g.fillText("สรุปสัปดาห์นี้", 110, 170);
+      g.font = "500 36px Prompt, system-ui, sans-serif"; g.fillStyle = col("on-surface-variant"); g.fillText(`${profile?.avatar || ""} ${profile?.name || "นักเรียน"} · ${wk[0].date} → ${wk[6].date}`, 110, 225);
+      const stats = [[sum("correct"), "ตอบถูก"], [sum("cards"), "การ์ดที่เรียน"], [sum("games"), "รอบที่เล่น"], [active, "วันที่เล่น /7"]];
+      stats.forEach(([v, l], k) => { const x = 110 + (k % 2) * 440, y = 290 + Math.floor(k / 2) * 170; g.fillStyle = col("secondary-container"); g.beginPath(); g.roundRect(x, y, 400, 140, 32); g.fill(); g.fillStyle = col("on-secondary-container"); g.font = "900 64px Prompt, system-ui, sans-serif"; g.fillText(String(v), x + 30, y + 80); g.font = "500 30px Prompt, system-ui, sans-serif"; g.fillText(l, x + 30, y + 120); });
+      // กราฟแท่ง 7 วัน
+      g.fillStyle = col("on-surface"); g.font = "700 34px Prompt, system-ui, sans-serif"; g.fillText("ตอบถูกต่อวัน", 110, 690);
+      wk.forEach((d, k) => { const h = Math.round((d.correct / max) * 180); const x = 110 + k * 125; g.fillStyle = d.correct ? col("primary") : col("surface-container-highest"); g.beginPath(); g.roundRect(x, 900 - h, 90, Math.max(h, 12), 18); g.fill(); g.fillStyle = col("on-surface-variant"); g.font = "500 28px Prompt, system-ui, sans-serif"; g.textAlign = "center"; g.fillText(DOW[d.dow], x + 45, 950); if (d.correct) g.fillText(String(d.correct), x + 45, 885 - h); g.textAlign = "left"; });
+      g.fillStyle = col("outline"); g.font = "400 26px Prompt, system-ui, sans-serif"; g.fillText(`จำได้แม่นสะสม ${mastered} คำ · Smart VocabPlay`, 110, 1000);
+      const blob = await new Promise(r => c.toBlob(r, "image/png"));
+      const file = new File([blob], `vocabplay-week-${wk[6].date}.png`, { type: "image/png" });
+      if (navigator.share && navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: "สรุปสัปดาห์ Smart VocabPlay" }); return; }
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+    } catch (_) {}
+  };
+  return (
+    <div style={{ ...card({ background:T.secondaryC,color:T.onSecondaryC }),padding:16,marginBottom:12 }}>
+      <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8 }}>
+        <div style={{ ...TYPE.titleM }}>📅 สัปดาห์นี้</div>
+        <button onClick={() => { sfx.tap(); share(); }} className="m3-press" style={M3.filled({ minHeight:40,padding:"0 16px",fontSize:13 })}>แชร์รูปสรุป</button>
+      </div>
+      <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6,marginBottom:12 }}>
+        {[[sum("correct"), "ตอบถูก"], [sum("cards"), "การ์ด"], [sum("games"), "รอบ"], [`${active}/7`, "วันที่เล่น"]].map(([v, l]) => <div key={l} style={{ textAlign:"center" }}><div style={{ ...TYPE.headlineS }}>{v}</div><div style={{ ...TYPE.labelS,opacity:.8 }}>{l}</div></div>)}
+      </div>
+      <div style={{ display:"flex",alignItems:"flex-end",gap:6,height:64 }}>
+        {wk.map(d => <div key={d.date} style={{ flex:1,display:"flex",flexDirection:"column",alignItems:"center",gap:3,height:"100%",justifyContent:"flex-end" }}>
+          <div style={{ width:"100%",maxWidth:28,height:`${Math.max(8, (d.correct / max) * 46)}px`,borderRadius:8,background:d.correct ? T.primary : "color-mix(in oklab, var(--md-on-secondary-container) 15%, transparent)" }} title={`${d.date}: ${d.correct}`} />
+          <span style={{ ...TYPE.labelS,opacity:.8 }}>{DOW[d.dow]}</span>
+        </div>)}
+      </div>
+    </div>
+  );
+}
+function ReportScreen({ words, categories, progress, profile }) {
   const total = progress.totalCorrect || 0, wrong = progress.wrongTotal || 0;
   const acc = total + wrong ? Math.round((total / (total + wrong)) * 100) : 0;
   const mastered = words.filter(w => isMastered(progress.srs, w.id));
@@ -3755,6 +3801,7 @@ function ReportScreen({ words, categories, progress }) {
         <div style={{ fontWeight:900,fontSize:20 }}>📊 รายงานผู้ปกครอง</div>
         <div style={{ fontSize:13,opacity:0.9 }}>ความคืบหน้าทั้งหมดของลูก · อัปเดตอัตโนมัติ</div>
       </div>
+      <WeeklyCard progress={progress} profile={profile} words={words} />
       <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:12 }}>
         <Stat v={mastered.length} l={`คำที่จำได้แม่น / ${words.length}`} c={T.ok} />
         <Stat v={learned.length} l="คำที่เคยเรียน" c="#2563eb" />
@@ -4218,7 +4265,7 @@ function StoriesScreen({ words, progress, onOpen }) {
           return (
             <button key={s.id} onClick={() => { sfx.tap(); onOpen(s); }} style={{ background:T.card,border:"none",borderRadius:18,padding:10,cursor:"pointer",textAlign:"left",boxShadow:"0 2px 8px rgba(0,0,0,0.05)",minHeight:160,display:"flex",flexDirection:"column",gap:6 }}>
               <div style={{ width:"100%",aspectRatio:"4/3",borderRadius:16,overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center",background:T.surfHigh,position:"relative" }}>
-                <PicFill w={wordByKey(words, s.pages[0].pic) || { emoji:s.emoji, word:s.title }} emojiSize={40} />
+                <PicFill w={wordByKey(words, s.cover || s.pages[0].pic) || { emoji:s.emoji, word:s.title }} emojiSize={40} />
                 {done && <span style={{ position:"absolute",top:6,right:6,background:T.ok,color:"#fff",fontSize:11,fontWeight:800,padding:"2px 8px",borderRadius:999 }}>✓ อ่านแล้ว</span>}
               </div>
               <div style={{ fontWeight:800,fontSize:14,color:T.ink }}>{s.emoji} {s.title}</div>
@@ -4236,8 +4283,24 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
   const [showTh, setShowTh] = useState(true);
   const [popup, setPopup] = useState(null);   // คำที่แตะ
   const [quiz, setQuiz] = useState(false);
+  const [auto, setAuto] = useState(false);   // กำลังอ่านทั้งเรื่องอัตโนมัติ
   const page = s.pages[i];
   const cat = useMemo(() => ({ id:`story:${s.id}`, label:s.title, thai:s.titleTh, emoji:s.emoji, color:T.primary, games:["squiz"], story:s }), [s]);
+  useEffect(() => () => { try { if (window.speechSynthesis?.speaking) window.speechSynthesis.cancel(); } catch (_) {} }, []);
+  // อ่านทั้งเรื่องต่อเนื่อง: คิวทุกหน้าทันทีใน onClick (กฎ iOS) · onstart ของแต่ละหน้า → เปลี่ยนหน้า/ไฮไลต์ · จบ → ปิดโหมด
+  const readAll = (from = 0) => {
+    const ss = window.speechSynthesis; if (!ss) return;
+    ss.cancel(); setAuto(true); setPopup(null);
+    const pages = s.pages.slice(from);
+    pages.forEach((pg, k) => {
+      const u = new SpeechSynthesisUtterance(pg.en); u.lang = "en-US"; u.rate = 0.82; const v = getVoice("en"); if (v) u.voice = v;
+      u.onstart = () => setI(from + k);
+      if (k === pages.length - 1 && !showTh) u.onend = () => setAuto(false);
+      ss.speak(u);
+      if (showTh) { const t = new SpeechSynthesisUtterance(pg.th); t.lang = "th-TH"; t.rate = 0.9; const tv = getVoice("th"); if (tv) t.voice = tv; if (k === pages.length - 1) t.onend = () => setAuto(false); ss.speak(t); }
+    });
+  };
+  const stopAll = () => { try { window.speechSynthesis?.cancel(); } catch (_) {} setAuto(false); };
   if (quiz) return <GameRouter gameId="squiz" cat={cat} words={words.slice(0, 8)} speak={speak} speakAt={speakAt} showToast={showToast} onBack={onBack} progress={progress} setProgress={setProgress} allWords={words} />;
   const tokens = page.en.split(" ");
   return (
@@ -4246,9 +4309,13 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
         <span>{s.emoji} {s.title}</span><span>หน้า {i+1}/{s.pages.length}</span>
       </div>
       <div style={{ height:6,background:T.surfHigh,borderRadius:999,marginBottom:10,overflow:"hidden" }}><div style={{ height:"100%",width:`${((i+1)/s.pages.length)*100}%`,background:T.primary,borderRadius:999,transition:"width .3s" }} /></div>
-      <div style={{ background:T.card,borderRadius:22,overflow:"hidden",boxShadow:"0 8px 28px rgba(0,0,0,0.08)",border:"none" }}>
+      <button onClick={() => { sfx.tap(); if (auto) stopAll(); else readAll(i); }} className="m3-press" style={{ ...(auto ? M3.tonal({ width:"100%",minHeight:52,marginBottom:10 }) : M3.filled({ width:"100%",minHeight:52,marginBottom:10 })) }}>
+        {auto ? "⏹ หยุดอ่าน" : `▶ ฟังทั้งเรื่อง${i > 0 ? ` (ต่อจากหน้า ${i + 1})` : ""}`}
+      </button>
+      <div style={{ background:T.card,borderRadius:22,overflow:"hidden",boxShadow:"0 8px 28px rgba(0,0,0,0.08)",border:"none",outline:auto?`3px solid ${MD.primary}`:"none",transition:"outline .2s" }}>
         <div style={{ width:"100%",aspectRatio:"4/3",position:"relative",background:T.surfHigh,display:"flex",alignItems:"center",justifyContent:"center" }}>
           <PicFill w={wordByKey(words, page.pic) || { emoji:page.pic, word:"" }} emojiSize={80} />
+          {auto && <span style={{ position:"absolute",top:8,left:8,...M3.assist({ minHeight:30,fontSize:12,background:MD.primary,color:MD.onPrimary }) }}>🔊 กำลังอ่าน · หน้า {i + 1}/{s.pages.length}</span>}
         </div>
         <div style={{ padding:"14px 16px 10px" }}>
           <div style={{ fontSize:20,fontWeight:800,color:T.ink,lineHeight:1.6 }}>
@@ -4275,9 +4342,9 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
         </div>
       </div>
       <div style={{ display:"flex",gap:8,marginTop:12 }}>
-        <button onClick={() => { sfx.tap(); setPopup(null); setI(Math.max(0, i - 1)); }} disabled={i === 0} style={{ flex:1,minHeight:50,borderRadius:14,border:"none",background:i===0?T.surfHigh:"#fff",color:i===0?T.outlineV:T.ink2,fontWeight:800,fontSize:15,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.06)" }}>‹ ก่อนหน้า</button>
+        <button onClick={() => { sfx.tap(); stopAll(); setPopup(null); setI(Math.max(0, i - 1)); }} disabled={i === 0} style={{ flex:1,minHeight:50,borderRadius:14,border:"none",background:i===0?T.surfHigh:"#fff",color:i===0?T.outlineV:T.ink2,fontWeight:800,fontSize:15,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.06)" }}>‹ ก่อนหน้า</button>
         {i + 1 < s.pages.length
-          ? <button onClick={() => { sfx.tap(); setPopup(null); setI(i + 1); }} style={{ flex:2,minHeight:50,borderRadius:14,border:"none",background:T.primary,color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>หน้าถัดไป ›</button>
+          ? <button onClick={() => { sfx.tap(); stopAll(); setPopup(null); setI(i + 1); }} style={{ flex:2,minHeight:50,borderRadius:14,border:"none",background:T.primary,color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>หน้าถัดไป ›</button>
           : <button onClick={() => { sfx.coin(); setQuiz(true); }} style={{ flex:2,minHeight:50,borderRadius:14,border:"none",background:T.ok,color:"#fff",fontWeight:800,fontSize:15,cursor:"pointer" }}>🎯 ตอบคำถามท้ายเรื่อง</button>}
       </div>
       <p style={{ textAlign:"center",fontSize:11,color:T.ink3,marginTop:10 }}>แตะคำสีม่วงเพื่อฟังและดูความหมาย</p>

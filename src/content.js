@@ -729,3 +729,85 @@ STORIES.push(
       { q:"What does the rainbow fish learn?", qTh:"ปลาสีรุ้งเรียนรู้อะไร", options:["To share","To hide","To swim fast"], answer:"To share" },
     ] },
 );
+
+// ═══════════════════════════════════════════════════════
+// บทสนทนาสถานการณ์ไทย (ชุดที่ 4 · v3.2) — เด็กไทยอธิบายเมืองไทยเป็นอังกฤษ
+// ═══════════════════════════════════════════════════════
+DIALOGUES.push(
+  { id:"temple", emoji:"🛕", title:"At the temple", titleTh:"พาเพื่อนต่างชาติไปวัด", scene:"places|TEMPLE", a:"Mina", b:"Emma",
+    lines:[
+      { who:"A", en:"Welcome to the temple, Emma!", th:"ยินดีต้อนรับสู่วัดนะเอ็มมา", blank:"temple" },
+      { who:"B", en:"Wow, it is so beautiful! Can I go inside?", th:"ว้าว สวยมาก ฉันเข้าไปข้างในได้ไหม" },
+      { who:"A", en:"Yes, but please take off your shoes first.", th:"ได้ แต่ถอดรองเท้าก่อนนะ", blank:"shoes" },
+      { who:"B", en:"OK. What is that golden building?", th:"โอเค ตึกสีทองนั่นคืออะไร", blank:"golden" },
+      { who:"A", en:"That is a pagoda. People pray there.", th:"นั่นคือเจดีย์ คนมาสวดมนต์ที่นั่น", blank:"pray" },
+      { who:"B", en:"Who are the men in orange?", th:"ผู้ชายในชุดสีส้มคือใคร", blank:"orange" },
+      { who:"A", en:"They are monks. We must be quiet near them.", th:"พวกเขาคือพระ เราต้องเงียบๆ เมื่ออยู่ใกล้", blank:"quiet" },
+      { who:"B", en:"Thank you for teaching me, Mina.", th:"ขอบคุณที่สอนฉันนะมีนา" },
+    ] },
+  { id:"floating", emoji:"🛶", title:"At the floating market", titleTh:"ตลาดน้ำ", scene:"places|FLOATING MARKET", a:"Seller", b:"Tom",
+    lines:[
+      { who:"A", en:"Hello! Fresh mangoes from my boat!", th:"สวัสดีค่ะ มะม่วงสดจากเรือป้า", blank:"boat" },
+      { who:"B", en:"How much for one kilo?", th:"กิโลละเท่าไหร่ครับ", blank:"kilo" },
+      { who:"A", en:"Sixty baht. Very sweet!", th:"หกสิบบาท หวานมาก", blank:"Sixty" },
+      { who:"B", en:"Can I try one first?", th:"ขอชิมก่อนได้ไหมครับ", blank:"try" },
+      { who:"A", en:"Of course. Here you are.", th:"ได้สิ นี่จ้ะ" },
+      { who:"B", en:"Mmm, delicious! I will take two kilos.", th:"อืม อร่อย ขอสองกิโลครับ", blank:"delicious" },
+      { who:"A", en:"Thank you! Be careful, the boat is moving.", th:"ขอบใจจ้ะ ระวังนะ เรือกำลังขยับ", blank:"careful" },
+    ] },
+  { id:"songkran", emoji:"💦", title:"Songkran Day", titleTh:"วันสงกรานต์", scene:"time|APRIL", a:"Tom", b:"Emma",
+    lines:[
+      { who:"A", en:"Happy Songkran, Emma! It is Thai New Year.", th:"สุขสันต์วันสงกรานต์เอ็มมา วันนี้ปีใหม่ไทย", blank:"New" },
+      { who:"B", en:"Why is everyone playing with water?", th:"ทำไมทุกคนเล่นน้ำกัน", blank:"water" },
+      { who:"A", en:"Water means good luck. It washes away bad things.", th:"น้ำหมายถึงโชคดี ล้างสิ่งไม่ดีออกไป", blank:"luck" },
+      { who:"B", en:"Can I splash you?", th:"ฉันสาดเธอได้ไหม", blank:"splash" },
+      { who:"A", en:"Yes! But not on the old people. We pour water on their hands gently.", th:"ได้ แต่ไม่สาดผู้ใหญ่นะ เรารดน้ำที่มือท่านเบาๆ", blank:"hands" },
+      { who:"B", en:"I see. It is hot today, so this is fun!", th:"เข้าใจแล้ว วันนี้ร้อนด้วย สนุกจัง", blank:"hot" },
+      { who:"A", en:"Let's go to the street. Bring your water gun!", th:"ไปที่ถนนกัน เอาปืนฉีดน้ำมาด้วย", blank:"gun" },
+    ] },
+  { id:"tuktuk", emoji:"🛺", title:"Taking a tuk-tuk", titleTh:"นั่งตุ๊กตุ๊ก", scene:"vehicles|TUK-TUK", a:"Driver", b:"Emma",
+    lines:[
+      { who:"A", en:"Hello! Where do you want to go?", th:"สวัสดีครับ จะไปไหนครับ", blank:"go" },
+      { who:"B", en:"To the night market, please. How much?", th:"ไปตลาดกลางคืนค่ะ เท่าไหร่คะ", blank:"night" },
+      { who:"A", en:"One hundred baht.", th:"ร้อยบาทครับ", blank:"hundred" },
+      { who:"B", en:"That is too much. Eighty baht?", th:"แพงไป แปดสิบได้ไหม", blank:"Eighty" },
+      { who:"A", en:"OK, eighty. Hold on tight!", th:"ได้ แปดสิบ จับให้แน่นนะ", blank:"tight" },
+      { who:"B", en:"It is so fast and loud! I love it!", th:"เร็วและเสียงดังมาก ชอบจัง", blank:"loud" },
+      { who:"A", en:"We are here. Enjoy the market!", th:"ถึงแล้วครับ ขอให้สนุกกับตลาด" },
+    ] },
+);
+
+STORIES.push(
+  { id:"loykrathong", emoji:"🪷", title:"The Little Krathong", titleTh:"กระทงน้อย", level:"A1+",
+    pages:[
+      { en:"Tonight is Loy Krathong. The moon is full and bright.", th:"คืนนี้วันลอยกระทง พระจันทร์เต็มดวงสว่างไสว", pic:"time|NOVEMBER" },
+      { en:"Mina makes a krathong from a banana leaf and flowers.", th:"มีนาทำกระทงจากใบตองและดอกไม้", pic:"nature|LOTUS" },
+      { en:"She puts a candle and three incense sticks on it.", th:"เธอปักเทียนและธูปสามดอก", pic:"home|CANDLE" },
+      { en:"The family walks to the river together.", th:"ครอบครัวเดินไปที่แม่น้ำด้วยกัน", pic:"nature|RIVER" },
+      { en:"\"Make a wish,\" says Grandma. Mina closes her eyes.", th:"\"อธิษฐานสิ\" คุณยายบอก มีนาหลับตา", pic:"family|GRANDMOTHER" },
+      { en:"She puts the krathong on the water. It floats away slowly.", th:"เธอวางกระทงลงน้ำ มันค่อยๆ ลอยไป", pic:"actions|GIVE" },
+      { en:"Hundreds of little lights shine on the river.", th:"แสงไฟเล็กๆ นับร้อยส่องแสงบนแม่น้ำ", pic:"nature|STAR" },
+      { en:"\"Thank you, river,\" Mina whispers. \"Good night.\"", th:"\"ขอบคุณนะแม่น้ำ\" มีนากระซิบ \"ราตรีสวัสดิ์\"", pic:"feelings|THANKFUL" },
+    ],
+    quiz:[
+      { q:"What does Mina make?", qTh:"มีนาทำอะไร", options:["A kite","A krathong","A cake"], answer:"A krathong" },
+      { q:"Where do they go?", qTh:"พวกเขาไปที่ไหน", options:["To the river","To the zoo","To school"], answer:"To the river" },
+      { q:"How many incense sticks?", qTh:"ธูปกี่ดอก", options:["One","Two","Three"], answer:"Three" },
+    ] },
+  { id:"elephant", emoji:"🐘", title:"The Elephant Who Loved Bananas", titleTh:"ช้างน้อยรักกล้วย", level:"A1",
+    pages:[
+      { en:"Boon is a baby elephant. He lives in the forest.", th:"บุญเป็นลูกช้าง อาศัยอยู่ในป่า", pic:"animals|ELEPHANT" },
+      { en:"Boon loves bananas more than anything.", th:"บุญรักกล้วยมากกว่าอะไรทั้งหมด", pic:"fruits|BANANA" },
+      { en:"One day, he sees a banana tree across the river.", th:"วันหนึ่งเขาเห็นต้นกล้วยอยู่อีกฝั่งแม่น้ำ", pic:"nature|RIVER" },
+      { en:"\"The water is deep. I am scared,\" says Boon.", th:"\"น้ำลึก ฉันกลัว\" บุญพูด", pic:"feelings|SCARED" },
+      { en:"A turtle says, \"Elephants can swim! Use your trunk like a snorkel.\"", th:"เต่าบอกว่า \"ช้างว่ายน้ำได้นะ ใช้งวงเหมือนท่อหายใจสิ\"", pic:"animals|TURTLE" },
+      { en:"Boon tries. Splash! He swims across the river.", th:"บุญลอง ตูม! เขาว่ายข้ามแม่น้ำได้", pic:"actions|SWIM" },
+      { en:"He eats ten bananas. His tummy is very full.", th:"เขากินกล้วยสิบลูก ท้องอิ่มมาก", pic:"numbers|TEN" },
+      { en:"\"Being brave is sweet,\" Boon says with a big smile.", th:"\"ความกล้าหาญนั้นหวานจริงๆ\" บุญพูดพร้อมยิ้มกว้าง", pic:"feelings|BRAVE" },
+    ],
+    quiz:[
+      { q:"What does Boon love?", qTh:"บุญรักอะไร", options:["Apples","Bananas","Fish"], answer:"Bananas" },
+      { q:"Who helps Boon?", qTh:"ใครช่วยบุญ", options:["A turtle","A monkey","A bird"], answer:"A turtle" },
+      { q:"How many bananas does he eat?", qTh:"เขากินกล้วยกี่ลูก", options:["Five","Ten","Two"], answer:"Ten" },
+    ] },
+);

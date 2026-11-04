@@ -262,7 +262,7 @@ const CATEGORIES = [
 const REVIEW_CAT = { id:"review", label:"ทบทวนคำที่พลาด", thai:"ทบทวน", emoji:"🔁", color:"#F97316", games:["quiz"] };
 
 // เกมเสริมที่ทุกหมวดมี (ฟัง / เรียงประโยค / พูดตาม)
-const EXTRA_GAMES = ["listen", "sentence", "speak"];
+const EXTRA_GAMES = ["listen", "sentence", "speak", "mole", "balloon", "ninja", "bingo"];
 CATEGORIES.forEach(c => c.games.push(...EXTRA_GAMES));
 
 // รูปปกหมวด = คำเสมือน { cat:"cover", word:<id> } → ดึงรูปจาก images.js key "cover|<id>"
@@ -283,6 +283,10 @@ const GAME_META = {
   listen:  { label:"Listen",        thai:"ฟังอย่างเดียว เลือกรูป 👂", emoji:"👂" },
   sentence:{ label:"Sentence",      thai:"เรียงคำให้เป็นประโยค 🧩",  emoji:"🧩" },
   speak:   { label:"Speak",         thai:"พูดตาม เช็คเสียง 🎤",       emoji:"🎤" },
+  mole:    { label:"Whack-a-Mole",  thai:"ตีตัวตุ่นที่ถือรูปถูก 🔨",   emoji:"🔨" },
+  balloon: { label:"Balloon Pop",   thai:"เจาะลูกโป่งคำที่ถูก 🎈",     emoji:"🎈" },
+  ninja:   { label:"Word Ninja",    thai:"ปาดนิ้วฟันคำที่ถูก 🗡️",      emoji:"🗡️" },
+  bingo:   { label:"Bingo",         thai:"ฟังคำ แตะรูป ครบแถว 🎱",     emoji:"🎱" },
 };
 
 let _id = 1;
@@ -1580,7 +1584,7 @@ export default function App() {
   const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
   const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const GUIDE = { quiz:"ดูรูปแล้วเลือกคำภาษาอังกฤษที่ตรงกับรูป", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาคำกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะคำให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน" };
+  const GUIDE = { quiz:"ดูรูปแล้วเลือกคำภาษาอังกฤษที่ตรงกับรูป", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาคำกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะคำให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ดูรูป แล้วเจาะลูกโป่งที่มีคำตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านคำที่ตรงกับรูป ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => guard(() => setScreen("manage"));
   const openSettings = () => guard(() => setShowSettings(true));
@@ -2151,7 +2155,7 @@ function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles
 // ═══════════════════════════════════════════════════════
 function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }) {
   const starOf = g => progress.stars[`${cat.id}:${g}`] || 0;
-  const needForBoss = cat.games.filter(g => g !== "speak");   // พูดตามไม่บังคับ (บางเครื่องไม่รองรับ)
+  const needForBoss = cat.games.filter(g => g !== "speak" && !ARCADE_GAMES.includes(g));   // พูดตาม/เกมอาร์เคดไม่บังคับ
   const bossOpen = needForBoss.every(g => starOf(g) >= 1);
   const learnedN = words.filter(w => progress.learned[w.id] || progress.srs[w.id]).length;
   const crowned = !!progress.boss[cat.id];
@@ -2478,6 +2482,202 @@ function EditWordRow({ word, categories, onSave, onCancel }) {
 // ═══════════════════════════════════════════════════════
 // GAME ROUTER — ครอบทุกเกมด้วยระบบรางวัล (ดาว/เหรียญ/สติกเกอร์)
 // ═══════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+// ARCADE GAMES (v3.7) — เกมแอ็กชันที่ปรับจากกลไกยอดนิยม: ตีตัวตุ่น · ลูกโป่ง · ฟันคำ · บิงโก
+//  ทุกเกมรายงานผ่าน track.correct/wrong/finish เหมือนเดิม · ใช้รูปจริง (PicFill) + เสียง
+// ═══════════════════════════════════════════════════════
+const ARCADE_GAMES = ["mole", "balloon", "ninja", "bingo"];
+const pickOthers = (words, w, n) => shuffle(words.filter(x => x.id !== w.id)).slice(0, n);
+
+// ── ตีตัวตุ่น: ได้ยินคำ → ตุ่นโผล่พร้อมรูป ตีตัวที่ตรงให้ทัน (40 วิ) ──
+function MoleGame({ words, speak, track }) {
+  const DUR = 40;
+  const [time, setTime] = useState(DUR); const [on, setOn] = useState(false);
+  const [cur, setCur] = useState(null); const [holes, setHoles] = useState(Array(9).fill(null));
+  const [score, setScore] = useState(0); const scoreRef = useRef(0); const curRef = useRef(null); const tick = useRef(0);
+  const newTarget = useCallback(() => { const w = words[Math.floor(Math.random() * words.length)]; curRef.current = w; setCur(w); speak(w.word, w.meaning); }, [words, speak]);
+  useEffect(() => {
+    if (!on) return;
+    const t = setInterval(() => setTime(x => { if (x <= 1) { clearInterval(t); setOn(false); const s = scoreRef.current; track.finish(s, Math.max(s, 1), { stars: s >= 12 ? 3 : s >= 7 ? 2 : s >= 1 ? 1 : 0, label:`ตีถูก ${s} ตัวใน ${DUR} วิ` }); return 0; } return x - 1; }), 1000);
+    const pop = setInterval(() => {
+      tick.current++;
+      setHoles(h => {
+        const free = h.map((v, i) => v ? -1 : i).filter(i => i >= 0); if (!free.length) return h;
+        const i = free[Math.floor(Math.random() * free.length)];
+        const target = curRef.current; const showTarget = target && !h.some(v => v && v.w.id === target.id) && (tick.current % 2 === 0);
+        const w = showTarget ? target : pickOthers(words, target || words[0], 1)[0];
+        const nh = [...h]; nh[i] = { w, key: Date.now() + i };
+        setTimeout(() => setHoles(hh => { const c = [...hh]; if (c[i] && c[i].key === nh[i].key) c[i] = null; return c; }), 1500 - Math.min(600, tick.current * 8));
+        return nh;
+      });
+    }, 650);
+    return () => { clearInterval(t); clearInterval(pop); };
+  }, [on, words]);
+  const hit = (i, e) => { const m = holes[i]; if (!m || !cur) return; if (m.w.id === cur.id) { scoreRef.current += 1; setScore(s => s + 1); track.correct(cur, e); setHoles(h => { const c = [...h]; c[i] = null; return c; }); newTarget(); } else { track.wrong(cur); sfx.bad(); } };
+  return (
+    <GameCard>
+      <Bar left={`⏱ ${time}s`} right={`⭐${score}`} />
+      <div style={GS.body}>
+        {!on ? <div style={{ textAlign:"center",padding:"26px 0" }}>
+          <Shape kind="burst" size={110} fill={T.tertiaryC}><span style={{ fontSize:54 }}>🔨</span></Shape>
+          <p style={{ ...TYPE.headlineS,color:T.ink,margin:"12px 0 4px" }}>ตีตัวตุ่น</p>
+          <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>ฟังคำ แล้วตีตุ่นที่ถือรูปตรงกัน · ตุ่นโผล่เร็วขึ้นเรื่อยๆ<br/>7 ตัว = ⭐⭐ · 12 ตัว = ⭐⭐⭐</p>
+          <Pill onClick={() => { setTime(DUR); setScore(0); scoreRef.current = 0; tick.current = 0; setHoles(Array(9).fill(null)); setOn(true); newTarget(); }}>▶ เริ่ม!</Pill>
+        </div> : <>
+          <div style={{ display:"flex",alignItems:"center",justifyContent:"center",gap:10,marginBottom:10 }}>
+            <button onClick={() => cur && speak(cur.word, cur.meaning)} className="m3-press" style={M3.tonal({ minHeight:48,padding:"0 18px",fontSize:18,fontWeight:800 })}>🔊 {cur?.word}</button>
+            <span style={{ ...TYPE.bodyS,color:T.ink2 }}>{cur?.meaning}</span>
+          </div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10 }}>
+            {holes.map((m, i) => (
+              <button key={i} onPointerDown={e => hit(i, e)} style={{ position:"relative",aspectRatio:"1",borderRadius:24,border:"none",background:`radial-gradient(ellipse at 50% 85%, ${MD.inverseSurface} 0 38%, transparent 40%), ${T.surfHigh}`,overflow:"hidden",cursor:"pointer",padding:0 }}>
+                {m && <span key={m.key} style={{ position:"absolute",left:"12%",right:"12%",bottom:"8%",top:"10%",borderRadius:20,overflow:"hidden",background:T.card,boxShadow:MD.shadow,animation:"vpMolePop .25s cubic-bezier(.34,1.56,.64,1) both" }}><PicFill w={m.w} emojiSize={40} /></span>}
+              </button>
+            ))}
+          </div>
+        </>}
+      </div>
+    </GameCard>
+  );
+}
+
+// ── ลูกโป่ง: รูปอยู่บน ลูกโป่งคำลอยขึ้น เจาะลูกที่ถูกก่อนลอยพ้นจอ ──
+function BalloonGame({ words, speak, track }) {
+  const ROUNDS = 10; const COLORS = ["#f472b6", "#60a5fa", "#fbbf24", "#34d399", "#a78bfa", "#fb923c"];
+  const [round, setRound] = useState(0); const [hearts, setHearts] = useState(3); const [score, setScore] = useState(0);
+  const [cur, setCur] = useState(null); const [bal, setBal] = useState([]); const [on, setOn] = useState(false); const [popped, setPopped] = useState({});
+  const busy = useRef(false); const scoreRef = useRef(0); const heartsRef = useRef(3); const roundRef = useRef(0);
+  const launch = useCallback(() => {
+    const w = words[Math.floor(Math.random() * words.length)]; setCur(w); speak(w.word, w.meaning);
+    const list = shuffle([w, ...pickOthers(words, w, 3)]).map((x, i) => ({ w: x, key: `${roundRef.current}-${i}`, col: i, color: COLORS[(roundRef.current + i) % COLORS.length], delay: i * 0.35, dur: Math.max(3.2, 6 - roundRef.current * 0.3) }));
+    setBal(list); setPopped({}); busy.current = false;
+  }, [words, speak]);
+  const endOrNext = () => { roundRef.current += 1; if (heartsRef.current <= 0 || roundRef.current >= ROUNDS) { setOn(false); track.finish(scoreRef.current, ROUNDS, { stars: starsFor(scoreRef.current, ROUNDS) }); } else { setRound(roundRef.current); launch(); } };
+  const loseHeart = () => { heartsRef.current -= 1; setHearts(heartsRef.current); };
+  const tap = (b, e) => {
+    if (busy.current || popped[b.key]) return;
+    if (b.w.id === cur.id) { busy.current = true; setPopped(p => ({ ...p, [b.key]: true })); scoreRef.current += 1; setScore(scoreRef.current); track.correct(cur, e); afterSpeech(endOrNext, 700, 2500); }
+    else { setPopped(p => ({ ...p, [b.key]: true })); track.wrong(cur); loseHeart(); if (heartsRef.current <= 0) { busy.current = true; setTimeout(endOrNext, 500); } }
+  };
+  const escaped = b => { if (busy.current || popped[b.key] || b.w.id !== cur?.id) return; busy.current = true; track.wrong(cur); loseHeart(); setTimeout(endOrNext, 400); };
+  return (
+    <GameCard>
+      <Bar left={`🎈 ${Math.min(round + 1, ROUNDS)}/${ROUNDS}`} right={<Hearts n={hearts} />} />
+      <div style={{ ...GS.body,paddingBottom:8 }}>
+        {!on ? <div style={{ textAlign:"center",padding:"26px 0" }}>
+          <Shape kind="cookie9" size={110} fill={T.secondaryC}><span style={{ fontSize:54 }}>🎈</span></Shape>
+          <p style={{ ...TYPE.headlineS,color:T.ink,margin:"12px 0 4px" }}>เจาะลูกโป่ง</p>
+          <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>ดูรูป แล้วเจาะลูกโป่งที่มีคำตรงกันก่อนลอยพ้นจอ · มี 3 หัวใจ · ลอยเร็วขึ้นทุกรอบ</p>
+          <Pill onClick={() => { roundRef.current = 0; scoreRef.current = 0; heartsRef.current = 3; setRound(0); setScore(0); setHearts(3); setOn(true); launch(); }}>▶ เริ่ม!</Pill>
+        </div> : <>
+          <div style={{ display:"flex",justifyContent:"center" }}><Pic w={cur} size={44} /></div>
+          <div style={{ position:"relative",height:"min(46vh,380px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.secondaryC}, ${T.surf})`,marginTop:8 }}>
+            {bal.map(b => !popped[b.key] && (
+              <button key={b.key} onPointerDown={e => tap(b, e)} onAnimationEnd={() => escaped(b)}
+                style={{ position:"absolute",left:`${6 + b.col * 23}%`,bottom:-120,width:"20%",minWidth:64,border:"none",background:"transparent",cursor:"pointer",padding:0,animation:`vpRise ${b.dur}s ${b.delay}s linear both` }}>
+                <span style={{ display:"block",width:"100%",aspectRatio:"0.85",borderRadius:"50% 50% 50% 50% / 45% 45% 55% 55%",background:`radial-gradient(circle at 35% 30%, #fff8 0 18%, transparent 20%), ${b.color}`,boxShadow:"inset -6px -8px 14px rgba(0,0,0,.15)",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:900,fontSize:b.w.word.length > 9 ? "clamp(9px, 2.6vw, 11px)" : b.w.word.length > 6 ? "clamp(10px, 3vw, 13px)" : "clamp(11px, 3.4vw, 15px)",color:"#1f2937",textAlign:"center",padding:4,lineHeight:1.1,wordBreak:"break-word" }}>{b.w.word}</span>
+                <span style={{ display:"block",width:2,height:26,margin:"0 auto",background:"rgba(0,0,0,.25)" }} />
+              </button>
+            ))}
+            {bal.map(b => popped[b.key] && b.w.id === cur?.id && <span key={"p" + b.key} style={{ position:"absolute",left:`${12 + b.col * 23}%`,top:"40%",fontSize:34,animation:"vpStarPop .5s both" }}>✨</span>)}
+          </div>
+          <div style={{ textAlign:"center",...TYPE.labelM,color:T.ink2,marginTop:6 }}>{cur?.meaning} · ⭐{score}</div>
+        </>}
+      </div>
+    </GameCard>
+  );
+}
+
+// ── ฟันคำ (นินจา): คำลอยขึ้นมา ปาดนิ้วผ่านคำที่ตรงกับรูป ──
+function NinjaGame({ words, speak, track }) {
+  const ROUNDS = 8;
+  const [round, setRound] = useState(0); const [hearts, setHearts] = useState(3); const [score, setScore] = useState(0);
+  const [cur, setCur] = useState(null); const [items, setItems] = useState([]); const [on, setOn] = useState(false); const [cut, setCut] = useState({});
+  const busy = useRef(false); const scoreRef = useRef(0); const heartsRef = useRef(3); const roundRef = useRef(0); const down = useRef(false); const lastHit = useRef(null);
+  const launch = useCallback(() => {
+    const w = words[Math.floor(Math.random() * words.length)]; setCur(w); speak(w.word, w.meaning);
+    setItems(shuffle([w, ...pickOthers(words, w, 3)]).map((x, i) => ({ w: x, key: `${roundRef.current}-${i}`, x: 10 + i * 22 + Math.random() * 6, delay: i * 0.25, dur: Math.max(2.4, 3.6 - roundRef.current * 0.15) })));
+    setCut({}); busy.current = false; lastHit.current = null;
+  }, [words, speak]);
+  const loseHeart = () => { heartsRef.current -= 1; setHearts(heartsRef.current); };
+  const endOrNext = () => { roundRef.current += 1; if (heartsRef.current <= 0 || roundRef.current >= ROUNDS) { setOn(false); track.finish(scoreRef.current, ROUNDS, { stars: starsFor(scoreRef.current, ROUNDS) }); } else { setRound(roundRef.current); launch(); } };
+  const slice = (it, e) => {
+    if (busy.current || cut[it.key] || lastHit.current === it.key) return; lastHit.current = it.key;
+    setCut(c => ({ ...c, [it.key]: true }));
+    if (it.w.id === cur.id) { busy.current = true; scoreRef.current += 1; setScore(scoreRef.current); track.correct(cur, e); fx.burst?.(e.clientX, e.clientY, { count: 18 }); afterSpeech(endOrNext, 600, 2500); }
+    else { track.wrong(cur); loseHeart(); if (heartsRef.current <= 0) { busy.current = true; setTimeout(endOrNext, 500); } }
+  };
+  const onMove = e => { if (!down.current) return; const el = document.elementFromPoint(e.clientX, e.clientY)?.closest?.("[data-ninja]"); if (el) { const it = items.find(i => i.key === el.dataset.ninja); if (it) slice(it, e); } };
+  const fell = it => { if (busy.current || cut[it.key] || it.w.id !== cur?.id) return; busy.current = true; track.wrong(cur); loseHeart(); setTimeout(endOrNext, 400); };
+  return (
+    <GameCard>
+      <Bar left={`🗡️ ${Math.min(round + 1, ROUNDS)}/${ROUNDS}`} right={<Hearts n={hearts} />} />
+      <div style={{ ...GS.body,paddingBottom:8 }}>
+        {!on ? <div style={{ textAlign:"center",padding:"26px 0" }}>
+          <Shape kind="cookie6" size={110} fill={T.errorC}><span style={{ fontSize:54 }}>🗡️</span></Shape>
+          <p style={{ ...TYPE.headlineS,color:T.ink,margin:"12px 0 4px" }}>นินจาฟันคำ</p>
+          <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>คำจะกระเด็นขึ้นมา ปาดนิ้วผ่านคำที่ตรงกับรูป · ฟันผิดเสียหัวใจ · ปล่อยให้คำที่ถูกตกก็เสียหัวใจ</p>
+          <Pill onClick={() => { roundRef.current = 0; scoreRef.current = 0; heartsRef.current = 3; setRound(0); setScore(0); setHearts(3); setOn(true); launch(); }}>▶ เริ่ม!</Pill>
+        </div> : <>
+          <div style={{ display:"flex",justifyContent:"center" }}><Pic w={cur} size={44} /></div>
+          <div onPointerDown={e => { down.current = true; onMove(e); }} onPointerMove={onMove} onPointerUp={() => { down.current = false; lastHit.current = null; }} onPointerLeave={() => { down.current = false; }}
+            style={{ position:"relative",height:"min(46vh,380px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.surf}, ${T.tertiaryC})`,marginTop:8,touchAction:"none",userSelect:"none" }}>
+            {items.map(it => (
+              <span key={it.key} data-ninja={cut[it.key] ? undefined : it.key} onAnimationEnd={() => fell(it)}
+                style={{ position:"absolute",left:`${it.x}%`,bottom:-60,padding:"12px 14px",borderRadius:999,background:cut[it.key] ? T.surfHighest : T.card,color:cut[it.key] ? T.ink3 : T.ink,boxShadow:cut[it.key] ? "none" : MD.shadow,fontWeight:900,fontSize:"clamp(13px, 3.8vw, 17px)",animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,textDecoration:cut[it.key] ? "line-through" : "none",transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
+                {it.w.word}
+              </span>
+            ))}
+          </div>
+          <div style={{ textAlign:"center",...TYPE.labelM,color:T.ink2,marginTop:6 }}>{cur?.meaning} · ⭐{score} · ปาดนิ้วผ่านคำ</div>
+        </>}
+      </div>
+    </GameCard>
+  );
+}
+
+// ── บิงโก: ตาราง 3×3 รูป ฟังคำแล้วแตะช่อง ครบแถวได้โบนัส ──
+function BingoGame({ words, speak, track }) {
+  const grid = useMemo(() => shuffle(words).slice(0, 9), [words]);
+  const [marked, setMarked] = useState({}); const [cur, setCur] = useState(null); const [hearts, setHearts] = useState(3); const [lines, setLines] = useState(0); const [on, setOn] = useState(false);
+  const scoreRef = useRef(0); const heartsRef = useRef(3); const markedRef = useRef({});
+  const LINES = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  const countLines = m => LINES.filter(l => l.every(i => m[grid[i].id])).length;
+  const next = useCallback(() => { const left = grid.filter(w => !markedRef.current[w.id]); if (!left.length) return; const w = left[Math.floor(Math.random() * left.length)]; setCur(w); speak(w.word, w.meaning); }, [grid, speak]);
+  const finish = () => { setOn(false); track.finish(scoreRef.current, 9, { stars: scoreRef.current >= 9 ? 3 : scoreRef.current >= 6 ? 2 : scoreRef.current >= 3 ? 1 : 0, label:`ถูก ${scoreRef.current}/9 · บิงโก ${countLines(markedRef.current)} แถว` }); };
+  const tap = (w, e) => {
+    if (!cur || markedRef.current[w.id]) return;
+    if (w.id === cur.id) {
+      markedRef.current = { ...markedRef.current, [w.id]: true }; setMarked(markedRef.current); scoreRef.current += 1; track.correct(cur, e);
+      const nl = countLines(markedRef.current); if (nl > lines) { setLines(nl); fx.win?.(1); sfx.win(); }
+      if (Object.keys(markedRef.current).length >= 9) { setTimeout(finish, 900); } else afterSpeech(next, 500, 2500);
+    } else { track.wrong(cur); heartsRef.current -= 1; setHearts(heartsRef.current); if (heartsRef.current <= 0) setTimeout(finish, 500); }
+  };
+  return (
+    <GameCard>
+      <Bar left={`🎱 บิงโก ${lines} แถว`} right={<Hearts n={hearts} />} />
+      <div style={GS.body}>
+        {!on ? <div style={{ textAlign:"center",padding:"26px 0" }}>
+          <Shape kind="clover" size={110} fill={T.okC}><span style={{ fontSize:54 }}>🎱</span></Shape>
+          <p style={{ ...TYPE.headlineS,color:T.ink,margin:"12px 0 4px" }}>บิงโกฟังคำ</p>
+          <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>ฟังคำ แล้วแตะรูปในตาราง · ครบ 3 ช่องเป็นแถว = บิงโก! · กดผิดเสียหัวใจ</p>
+          <Pill onClick={() => { setOn(true); next(); }}>▶ เริ่ม!</Pill>
+        </div> : <>
+          <button onClick={() => cur && speak(cur.word, cur.meaning)} className="m3-press" style={{ ...M3.tonal({ minHeight:52,padding:"0 22px",fontSize:18,fontWeight:800 }),margin:"0 auto 10px",display:"flex" }}>🔊 ฟังอีกครั้ง</button>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
+            {grid.map(w => (
+              <button key={w.id} onClick={e => tap(w, e)} style={{ position:"relative",aspectRatio:"1",borderRadius:20,border:"none",overflow:"hidden",background:T.surfHigh,cursor:"pointer",padding:0,outline:marked[w.id] ? `4px solid ${MD.ok}` : "none",outlineOffset:-4 }}>
+                <PicFill w={w} emojiSize={36} />
+                {marked[w.id] && <span style={{ position:"absolute",inset:0,background:"color-mix(in oklab, var(--md-ok) 55%, transparent)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:40,animation:"vpStarPop .5s both" }}>✓</span>}
+              </button>
+            ))}
+          </div>
+        </>}
+      </div>
+    </GameCard>
+  );
+}
+
 function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, progress, setProgress, allWords }) {
   const [result, setResult] = useState(null);
   const [run, setRun] = useState(0);
@@ -2548,6 +2748,10 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
   if (gameId === "spell")    game = <SpellGame {...p} />;
   if (gameId === "memory")   game = <MemoryGame {...p} />;
   if (gameId === "speed")    game = <SpeedGame {...p} />;
+  if (gameId === "mole")     game = <MoleGame {...p} />;
+  if (gameId === "balloon")  game = <BalloonGame {...p} />;
+  if (gameId === "ninja")    game = <NinjaGame {...p} />;
+  if (gameId === "bingo")    game = <BingoGame {...p} />;
   if (gameId === "habitat")  game = <HabitatGame {...p} />;
   if (gameId === "match")    game = <MatchGame {...p} />;
   if (gameId === "colormix") game = <ColorMixGame {...p} />;

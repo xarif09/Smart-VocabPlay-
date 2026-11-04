@@ -97,7 +97,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
     res.push({ label: name + ' missions-card', ok: await p.isVisible('text=ภารกิจวันนี้') });
     // บทสนทนา: ฟัง → เล่นบทบาท (ไม่มีไมค์ → ปุ่มแตะ) → เติมคำ
-    await p.click('text=บทสนทนา'); await p.waitForTimeout(200); await shot(p, `${name}-13a-talk`); await a('talk');
+    await p.click('button:has-text("บทสนทนา")'); await p.waitForTimeout(200); await shot(p, `${name}-13a-talk`); await a('talk');
     await p.click('text=Hello!'); await p.waitForTimeout(300); await shot(p, `${name}-13b-dialog`); await a('dialog-listen');
     await p.click('text=🎭 เล่นบทบาท'); await p.click('button:has-text("Mina")'); await p.waitForTimeout(300); await shot(p, `${name}-13c-roleplay`); await a('roleplay');
     for (let k = 0; k < 8; k++) { if (await p.isVisible('button:has-text("🎤")')) { await p.click('button:has-text("🎤")'); await p.waitForTimeout(150); } await p.locator('button:has-text("ถัดไป ›"), button:has-text("ข้าม ›")').first().click(); await p.waitForTimeout(150); }

@@ -811,3 +811,9 @@ STORIES.push(
       { q:"How many bananas does he eat?", qTh:"เขากินกล้วยกี่ลูก", options:["Five","Ten","Two"], answer:"Ten" },
     ] },
 );
+
+// ── ปกนิทาน (รูปที่สื่อถึงเรื่อง ไม่ใช่หน้าแรกเสมอไป) key = "หมวด|คำ" ──
+const STORY_COVERS = { cat:"animals|CAT", rain:"weather|RAINBOW", zoo:"animals|GIRAFFE", lost:"toys|TEDDY BEAR", beach:"places|BEACH", school:"school|CLASSROOM",
+  ant:"animals|ANT", market:"fruits|MANGO", sick:"jobs|DOCTOR", kite:"toys|KITE", turtle:"animals|TURTLE", seed:"nature|SUNFLOWER", moon:"nature|MOON",
+  birthday:"food|CAKE", rainbowfish:"animals|CLOWNFISH", loykrathong:"nature|LOTUS", elephant:"animals|ELEPHANT" };
+STORIES.forEach(s => { if (STORY_COVERS[s.id]) s.cover = STORY_COVERS[s.id]; });

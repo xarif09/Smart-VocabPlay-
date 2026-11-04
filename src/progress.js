@@ -5,6 +5,7 @@
 const KEY = "smart-vocabplay:progress:v1";
 
 export const EMPTY_PROGRESS = {
+  history: {},         // { "YYYY-MM-DD": { correct, games, cards, stars, stickers, ... } } ย้อนหลังสำหรับสรุปรายสัปดาห์ (เก็บ 60 วัน)
   coins: 0,            // เหรียญสะสม
   stars: {},           // { "cat:game": 0..3 } ดาวสูงสุดต่อเกม
   stickers: {},        // { wordId: จำนวนครั้งที่ตอบถูก } ปลดล็อกเมื่อถึง STICKER_NEED
@@ -159,7 +160,15 @@ export function ensureDaily(p) {
 }
 export function bumpDaily(p, key, n = 1) {
   const q = ensureDaily(p);
-  return { ...q, daily: { ...q.daily, counters: { ...q.daily.counters, [key]: (q.daily.counters[key] || 0) + n } } };
+  const t = today(); const h = { ...(q.history || {}) }; h[t] = { ...(h[t] || {}), [key]: ((h[t] || {})[key] || 0) + n };
+  const keys = Object.keys(h).sort(); while (keys.length > 60) delete h[keys.shift()];   // เก็บแค่ 60 วัน
+  return { ...q, history: h, daily: { ...q.daily, counters: { ...q.daily.counters, [key]: (q.daily.counters[key] || 0) + n } } };
+}
+// สถิติ 7 วันล่าสุด (วันนี้อยู่ท้ายสุด) · ใช้ทำสรุปรายสัปดาห์ให้ผู้ปกครอง
+export function weekStats(p, days = 7) {
+  const out = []; const h = p.history || {};
+  for (let i = days - 1; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); const k = fmt(d); const r = h[k] || {}; out.push({ date: k, dow: d.getDay(), correct: r.correct || 0, games: r.games || 0, cards: r.cards || 0, stars: r.stars || 0, stickers: r.stickers || 0, active: !!h[k] }); }
+  return out;
 }
 
 // ═══════════════════════════════════════════════════════

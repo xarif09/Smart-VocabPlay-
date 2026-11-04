@@ -6,7 +6,9 @@ const OUT = require('path').join(__dirname, '..', 'docs', 'screenshots');
 const START = 'text=แตะเพื่อเริ่มเลย';
 // ด่านผู้ปกครอง (โจทย์คูณ) → อ่านโจทย์แล้วกดแป้นตัวเลข
 const solveGate = async p => { if (!(await p.isVisible('text=ผู้ปกครองเท่านั้น'))) return; const t = await p.textContent('body'); const m = t.match(/(\d+)\s*×\s*(\d+)\s*=/); if (!m) return; for (const d of String(+m[1] * +m[2])) await p.click(`button[data-key="${d}"]`); await p.waitForTimeout(400); };
-const skipOnboard = async p => { if (await p.isVisible('text=เริ่มใช้งาน')) { await p.click('button:has-text("ถัดไป")').catch(()=>{}); await p.click('button:has-text("ถัดไป")').catch(()=>{}); await p.click('button:has-text("เริ่มใช้งาน")'); await p.waitForTimeout(300); } else if (await p.isVisible('text=เรียนคำศัพท์ก่อน') && await p.isVisible('button:has-text("ข้าม")')) { await p.click('button:has-text("ข้าม")'); await p.waitForTimeout(300); } };
+// กดปุ่มลำโพงในการ์ดเกม (ข้อแบบฟัง ต้องกดฟังก่อนถึงจะตอบได้)
+const pressSpeaker = async p => { if (await p.isVisible('text=ฟัง EN+TH')) { await p.click('text=ฟัง EN+TH'); return; } const sp = p.locator('button:has-text("🔊")').nth(1); if (await sp.count()) await sp.click({ force: true }).catch(() => {}); };
+const skipOnboard = async p => { if (await p.isVisible('text=เรียนคำศัพท์ก่อน') && await p.isVisible('button:text-is("ข้าม")')) { await p.click('button:text-is("ข้าม")'); await p.waitForTimeout(300); } };
 
 async function audit(page, label) {
   // รอให้แอนิเมชันเลื่อนเข้า (Reveal/stagger) จบก่อนวัด
@@ -152,7 +154,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     // สอบวัดระดับ 20 ข้อ → ใบประกาศ
     await p.click('text=สอบวัดระดับ'); await p.waitForTimeout(200); await shot(p, `${name}-18a-test-intro`); await a('test-intro');
     await p.click('text=เริ่มสอบ'); await p.waitForTimeout(300); await shot(p, `${name}-18b-test`); await a('test');
-    for (let k = 0; k < 20; k++) { if (await p.isVisible('text=ฟัง EN+TH')) await p.click('text=ฟัง EN+TH'); await p.waitForTimeout(100); await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1100); }
+    for (let k = 0; k < 20; k++) { await pressSpeaker(p); await p.waitForTimeout(100); await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1100); }
     await p.waitForSelector('text=เล่นอีก', { timeout: 20000 }); await p.click('text=กลับ ›'); await p.waitForTimeout(300);
     await shot(p, `${name}-18c-certificate`); await a('certificate'); res.push({ label: name + ' certificate', ok: await p.isVisible('text=ใบประกาศนียบัตร') });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
@@ -197,7 +199,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     const jpg = Buffer.from(mk.split(',')[1], 'base64');
     await p.route('https://en.wikipedia.org/api/rest_v1/page/summary/**', r => { const t = decodeURIComponent(r.request().url().split('/summary/')[1]); r.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ title: t, thumbnail: { source: `https://upload.wikimedia.org/wikipedia/commons/thumb/x/${encodeURIComponent(t)}.jpg/320px-${encodeURIComponent(t)}.jpg` } }) }); });
     await p.route('https://upload.wikimedia.org/**', r => r.fulfill({ status: 200, contentType: 'image/jpeg', body: jpg }));
-    await p.goto(URL); await p.click(START); await p.click('text=มิว');
+    await p.goto(URL); await p.click(START); await p.click('text=มิว'); await skipOnboard(p);
     await p.click('text=Animals'); await p.click('text=Quiz'); await p.waitForTimeout(600);
     await shot(p, 'mobile-pics-1-quiz'); const r1 = await audit(p, 'pics quiz'); res.push(r1); if (r1.overlaps.length || r1.hScroll) bad('pics quiz', r1);
     res.push({ label: 'pics quiz-has-img', ok: (await p.locator('img[alt]').count()) >= 1 });
@@ -211,8 +213,8 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     // ปิดรูปจริงในตั้งค่า → กลับเป็นอีโมจิ (ออกจากโหมดเกมก่อน เพราะในเกมไม่มีปุ่มตั้งค่า)
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.waitForTimeout(200);
     await p.click('button[aria-label="ตั้งค่า"]'); await p.waitForTimeout(200); await solveGate(p); await shot(p, 'mobile-pics-5-settings-voice');
-    await p.locator('text=รูปภาพจริง').locator('xpath=../..').locator('button').click(); await p.click('text=เสร็จสิ้น');
-    await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=Animals'); await p.click('text=Quiz'); await p.waitForTimeout(300);
+    await p.locator('text=รูปภาพจริง').locator('xpath=../..').locator('button').click(); await p.click('text=เสร็จสิ้น'); await p.waitForTimeout(800);
+    await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.waitForTimeout(800); await p.click('text=Animals', { force: true }); await p.waitForTimeout(400); await p.click('text=Quiz'); await p.waitForTimeout(300);
     res.push({ label: 'pics toggle-off-no-img', imgs: await p.locator('img[alt]').count(), errs });
     if (errs.length) bad('pics errors', errs);
     await ctx.close();
@@ -232,7 +234,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
   // localStorage blocked → still works
   const c4 = await b.newContext(); await c4.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new Error('blocked'); } }); });
   const q = await c4.newPage(); const e2 = []; q.on('pageerror', e => e2.push(e.message));
-  await q.goto(URL); await q.click(START); await q.click('text=มิว'); await q.click('text=Fruits'); await q.click('text=Quiz'); await q.waitForTimeout(300);
+  await q.goto(URL); await q.click(START); await q.click('text=มิว'); await q.waitForTimeout(400); await skipOnboard(q); await q.click('text=Fruits'); await q.click('text=Quiz'); await q.waitForTimeout(300);
   res.push({ label: 'ls-blocked', quizVisible: await q.isVisible('text=เลือกคำที่ตรงกับรูป'), errors: e2 });
   if (e2.length) bad('ls-blocked', e2);
   await b.close();

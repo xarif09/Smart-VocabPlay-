@@ -2570,7 +2570,7 @@ function BalloonGame({ words, speak, track }) {
           <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>ดูรูป แล้วเจาะลูกโป่งที่มีคำตรงกันก่อนลอยพ้นจอ · มี 3 หัวใจ · ลอยเร็วขึ้นทุกรอบ</p>
           <Pill onClick={() => { roundRef.current = 0; scoreRef.current = 0; heartsRef.current = 3; setRound(0); setScore(0); setHearts(3); setOn(true); launch(); }}>▶ เริ่ม!</Pill>
         </div> : <>
-          <div style={{ display:"flex",justifyContent:"center" }}><Pic w={cur} size={44} /></div>
+          <div style={{ display:"flex",justifyContent:"center" }}><Pic w={cur} fill style={{ height:"min(26vh, 240px)" }} /></div>
           <div style={{ position:"relative",height:"min(46vh,380px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.secondaryC}, ${T.surf})`,marginTop:8 }}>
             {bal.map(b => !popped[b.key] && (
               <button key={b.key} onPointerDown={e => tap(b, e)} onAnimationEnd={() => escaped(b)}
@@ -2619,7 +2619,7 @@ function NinjaGame({ words, speak, track }) {
           <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>คำจะกระเด็นขึ้นมา ปาดนิ้วผ่านคำที่ตรงกับรูป · ฟันผิดเสียหัวใจ · ปล่อยให้คำที่ถูกตกก็เสียหัวใจ</p>
           <Pill onClick={() => { roundRef.current = 0; scoreRef.current = 0; heartsRef.current = 3; setRound(0); setScore(0); setHearts(3); setOn(true); launch(); }}>▶ เริ่ม!</Pill>
         </div> : <>
-          <div style={{ display:"flex",justifyContent:"center" }}><Pic w={cur} size={44} /></div>
+          <div style={{ display:"flex",justifyContent:"center" }}><Pic w={cur} fill style={{ height:"min(26vh, 240px)" }} /></div>
           <div onPointerDown={e => { down.current = true; onMove(e); }} onPointerMove={onMove} onPointerUp={() => { down.current = false; lastHit.current = null; }} onPointerLeave={() => { down.current = false; }}
             style={{ position:"relative",height:"min(46vh,380px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.surf}, ${T.tertiaryC})`,marginTop:8,touchAction:"none",userSelect:"none" }}>
             {items.map(it => (
@@ -2885,13 +2885,14 @@ function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
   const concept = (!url || err) ? conceptFor(w) : null;
   if ((!url || err) && !concept) return <span style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
   const box = fill ? "100%" : size * 2.2;
+  const fillBox = fill ? { width:"100%", height:"min(46vh, 430px, 92vw)" } : { width:box, aspectRatio:"4/3" };
   if (concept) return (
-    <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:"16/11",maxHeight:fill?"44vh":undefined,borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
+    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
       {concept}
     </span>
   );
   return (
-    <span style={{ position:"relative",display:"inline-block",width:box,maxWidth:"100%",aspectRatio:fill?"16/11":"4/3",maxHeight:fill?"44vh":undefined,borderRadius:fill?22:radius,overflow:"hidden",background:T.surfHighest,boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
+    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",background:T.surfHighest,boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
       {/* พื้นหลังเบลอจากรูปเดียวกัน + รูปเต็มใบ (contain) → ไม่ตัดหัว/ตัวสัตว์ */}
       <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75 }} />
       <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"relative",width:"100%",height:"100%",objectFit:"contain",display:"block" }} />
@@ -3850,7 +3851,7 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
         style={{ width:"100%",minHeight:"min(62vh, 520px)",borderRadius:28,border:"none",background:"transparent",cursor:"pointer",padding:0,perspective:1200,position:"relative",fontFamily:FONT }}>
         <span key={w.id} style={{ position:"absolute",inset:0,transformStyle:"preserve-3d",transition:"transform .65s cubic-bezier(.2,.8,.2,1)",transform:flip?"rotateY(180deg)":"rotateY(0deg)",animation:"vpInScale .45s both" }}>
           <span style={{ position:"absolute",inset:0,borderRadius:28,backfaceVisibility:"hidden",WebkitBackfaceVisibility:"hidden",background:T.card,border:`3px solid ${cat.color}50`,boxShadow:"0 18px 44px rgba(0,0,0,.18)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:20 }}>
-            <Pic w={w} size={84} fill style={{ maxHeight:"36vh" }} />
+            <Pic w={w} size={84} fill style={{ height:"min(42vh, 400px)" }} />
             <span style={{ fontSize:34,fontWeight:900,color:T.ink,letterSpacing:1 }}>{w.word}</span>
             {w.read && <span style={{ fontSize:18,fontWeight:700,color:T.primary }}>{w.read}</span>}
             <span style={{ fontSize:11,color:T.ink3,marginTop:8 }}>แตะการ์ดเพื่อพลิกดูความหมาย</span>
@@ -3922,7 +3923,7 @@ function ListenGame({ words, speakAt, track, onBack, pool }) {
             if (sr && ic) { bg = T.okC; bo = T.ok; }
             if (sr && ip && !ic) { bg = T.errorC; bo = T.error; }
             return <button key={c.id} onClick={() => pick(c)} disabled={lock || !played}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,minHeight:"min(22vh, 150px)",fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,minHeight:"min(27vh, 210px)",fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
           })}
         </div>
       </div>
@@ -4872,7 +4873,7 @@ function PhonicsGame({ words, speakAt, track, onBack }) {
     <GameCard>
       <Bar left={`🔤 ${i+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <div style={{ display:"flex",justifyContent:"center",marginBottom:6 }}><Pic w={q.w} size={60} fill style={{ maxHeight:"30vh" }} /></div>
+        <div style={{ display:"flex",justifyContent:"center",marginBottom:6 }}><Pic w={q.w} size={60} fill style={{ height:"min(36vh, 340px)" }} /></div>
         <SndBtn onClick={() => { setPlayed(true); speakAt(q.w.word, null, 0.75); }} />
         <p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:T.ink2,margin:"0 0 10px",minHeight:20 }}>
           {picked ? <span style={{ color:T.primary }}>{q.w.word} · {q.w.read} · {q.w.meaning}</span> : played ? "คำนี้ขึ้นต้นด้วยตัวอะไร?" : "แตะฟังก่อน แล้วเลือกตัวอักษรตัวแรก"}

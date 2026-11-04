@@ -20,6 +20,27 @@ if LIMIT: todo = todo[:LIMIT]
 print(f"ทั้งหมด {len(items)} · มีแล้ว {len(items) - len(todo)} · ต้องสร้าง {len(todo)}")
 ok, failed = 0, []
 sem = asyncio.Semaphore(CONCURRENCY)
+CHECKPOINT = 400   # ใน CI: commit+push ทุกๆ N ไฟล์ กันงานหายถ้า job หมดเวลา
+
+def write_manifest():
+    keys = {i["key"] for i in items}
+    present = sorted(f[:-4] for f in os.listdir(OUT) if f.endswith(".mp3") and f[:-4] in keys)
+    json.dump(present, open(MANIFEST, "w", encoding="utf-8"), separators=(",", ":"))
+    return present
+
+def checkpoint(msg):
+    if not os.environ.get("GITHUB_ACTIONS"): return
+    write_manifest()
+    try:
+        subprocess.run(["git", "add", "public/tts", "src/ttsManifest.json"], cwd=ROOT, check=True)
+        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode == 0: return
+        subprocess.run(["git", "commit", "-q", "-m", msg], cwd=ROOT, check=True)
+        ref = os.environ.get("GITHUB_REF_NAME", "")
+        subprocess.run(["git", "pull", "--rebase", "--autostash", "-q", "origin", ref], cwd=ROOT, check=True)
+        subprocess.run(["git", "push", "-q", "origin", f"HEAD:{ref}"], cwd=ROOT, check=True)
+        print(f"  ✓ checkpoint pushed ({msg})", flush=True)
+    except Exception as e:  # noqa
+        print(f"  checkpoint failed: {e}", flush=True)
 
 async def one(it):
     global ok
@@ -36,6 +57,7 @@ async def one(it):
                                 "-ac", "1", "-ar", "22050", "-codec:a", "libmp3lame", "-b:a", "24k", dst], check=True)
                 os.remove(tmp); ok += 1
                 if ok % 50 == 0: print(f"  … {ok} ไฟล์", flush=True)
+                if ok % CHECKPOINT == 0: checkpoint(f"TTS checkpoint: {ok} clips")
                 return
             except Exception as e:  # noqa
                 err = e; await asyncio.sleep(2 * (attempt + 1))
@@ -49,14 +71,9 @@ asyncio.run(main())
 
 # manifest = key ที่มีไฟล์จริง (ลบไฟล์ของข้อความที่ไม่ใช้แล้ว)
 keys = {i["key"] for i in items}
-present = []
 for f in os.listdir(OUT):
-    if not f.endswith(".mp3"): continue
-    k = f[:-4]
-    if k in keys: present.append(k)
-    else: os.remove(os.path.join(OUT, f))
-present.sort()
-json.dump(present, open(MANIFEST, "w", encoding="utf-8"), separators=(",", ":"))
+    if f.endswith(".mp3") and f[:-4] not in keys: os.remove(os.path.join(OUT, f))
+present = write_manifest()
 total = sum(os.path.getsize(os.path.join(OUT, k + ".mp3")) for k in present)
 print(f"รวมมีเสียง {len(present)}/{len(items)} · {total / 1e6:.1f} MB")
 if failed: print("\n".join(failed[:40]))

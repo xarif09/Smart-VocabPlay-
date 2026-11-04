@@ -38,6 +38,9 @@ jobs:
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
       - run: pip install edge-tts==7.0.2
       - run: node scripts/tts-list.mjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: python3 scripts/fetch-tts.py ${{ (github.event_name == 'workflow_dispatch' && inputs.force) && '--force' || '' }}
       - name: Commit audio
         run: |

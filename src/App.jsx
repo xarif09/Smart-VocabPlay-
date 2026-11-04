@@ -2167,39 +2167,43 @@ function ShareSetSheet({ words, filtered, filterActive, showToast, onClose }) {
   const custom = words.filter(isCustomWord);
   const [mode, setMode] = useState(custom.length ? "custom" : "filtered");
   const [name, setName] = useState(""); const [from, setFrom] = useState("");
-  const list = (mode === "custom" ? custom : filtered).slice(0, 60);
-  const [link, setLinkState] = useState(""); const [svg, setSvg] = useState("");
+  const source = mode === "custom" ? custom : filtered;
+  const [link, setLinkState] = useState(""); const [svg, setSvg] = useState(""); const [list, setList] = useState([]);
+  // QR สแกนง่ายต้องไม่ยาวเกิน ~1,500 ตัวอักษร → ลดจำนวนคำลงอัตโนมัติจนพอดี
   useEffect(() => {
     let alive = true;
-    if (!list.length) { setLinkState(""); setSvg(""); return; }
-    encodeSet({ name, from, words: list }).then(enc => {
-      if (!alive) return; const url = setLink(enc); setLinkState(url);
+    (async () => {
+      if (!source.length) { setList([]); setLinkState(""); setSvg(""); return; }
+      let n = Math.min(source.length, 60), url = "", chosen = [];
+      for (;;) { chosen = source.slice(0, n); url = setLink(await encodeSet({ name, from, words: chosen })); if (url.length <= 1500 || n <= 3) break; n = Math.max(3, Math.floor(n * 0.7)); }
+      if (!alive) return;
+      setList(chosen); setLinkState(url);
       try { const q = qrcode(0, "L"); q.addData(url, "Byte"); q.make(); setSvg(q.createSvgTag({ cellSize: 4, margin: 2, scalable: true })); } catch (_) { setSvg(""); }
-    }).catch(() => { setLinkState(""); setSvg(""); });
+    })().catch(() => { if (alive) { setLinkState(""); setSvg(""); } });
     return () => { alive = false; };
   }, [mode, name, from, words, filtered]);
   const copy = async () => { try { await navigator.clipboard.writeText(link); showToast("คัดลอกลิงก์แล้ว ✓"); } catch (_) { showToast("คัดลอกไม่ได้ กดค้างที่ลิงก์เพื่อคัดลอก", "warn"); } };
   const share = async () => { try { if (navigator.share) await navigator.share({ title: `ชุดคำ ${name || ""}`.trim(), text: `ชุดคำศัพท์ ${list.length} คำ จาก Smart VocabPlay`, url: link }); else copy(); } catch (_) {} };
-  const inp = { flex:1,minHeight:44,borderRadius:14,border:`1px solid ${MD.outlineV}`,background:T.card,color:T.ink,padding:"0 12px",fontFamily:FONT,fontSize:14 };
+  const inp = { flex:1,minWidth:0,width:"50%",minHeight:44,borderRadius:14,border:`1px solid ${MD.outlineV}`,background:T.card,color:T.ink,padding:"0 12px",fontFamily:FONT,fontSize:14 };
   return (
     <M3Sheet onClose={onClose}>
       <h3 style={{ ...TYPE.headlineS,color:T.ink,margin:"0 0 4px" }}>แชร์ชุดคำด้วย QR</h3>
       <div style={{ ...TYPE.bodyS,color:T.ink2,marginBottom:12 }}>ให้เด็กคนอื่น/ผู้ปกครองสแกนแล้วกด "เพิ่มเข้าแอป" ได้เลย · ข้อมูลอยู่ในลิงก์ทั้งหมด ไม่ผ่านเซิร์ฟเวอร์ · สูงสุด 60 คำต่อชุด</div>
       <div style={{ display:"flex",gap:6,marginBottom:10 }}>
         <button onClick={() => setMode("custom")} className="m3-press" style={M3.chip(mode === "custom", { flex:1,minHeight:44,borderRadius:999 })}>คำที่เพิ่มเอง ({custom.length})</button>
-        <button onClick={() => setMode("filtered")} className="m3-press" style={M3.chip(mode === "filtered", { flex:1,minHeight:44,borderRadius:999 })}>{filterActive ? "คำที่กรองอยู่" : "คำที่แสดงอยู่"} ({Math.min(filtered.length, 60)})</button>
+        <button onClick={() => setMode("filtered")} className="m3-press" style={M3.chip(mode === "filtered", { flex:1,minHeight:44,borderRadius:999 })}>{filterActive ? "คำที่กรองอยู่" : "คำที่แสดงอยู่"} ({filtered.length})</button>
       </div>
       <div style={{ display:"flex",gap:6,marginBottom:12 }}>
         <input placeholder="ชื่อชุด เช่น ป.2 สัปดาห์ 3" value={name} onChange={e => setName(e.target.value)} style={inp} />
         <input placeholder="จากใคร เช่น ครูแอน" value={from} onChange={e => setFrom(e.target.value)} style={inp} />
       </div>
-      {list.length === 0
+      {source.length === 0
         ? <div style={{ ...card({ background:T.surfHigh }),padding:16,textAlign:"center",color:T.ink2 }}>ยังไม่มีคำในชุดนี้ · เพิ่มคำเองก่อน หรือค้นหา/เลือกหมวดเพื่อแชร์คำที่กรองอยู่</div>
         : <>
           <div style={{ ...card({ background:"#fff" }),padding:12,display:"flex",justifyContent:"center" }}>
             {svg ? <div style={{ width:"min(78vw, 320px)" }} dangerouslySetInnerHTML={{ __html: svg }} /> : <div style={{ color:T.ink3,padding:30 }}>กำลังสร้าง QR…</div>}
           </div>
-          <div style={{ ...TYPE.labelM,color:T.ink2,textAlign:"center",margin:"8px 0 10px" }}>{list.length} คำ{name ? ` · ${name}` : ""}{from ? ` · ${from}` : ""} · ลิงก์ยาว {link.length.toLocaleString()} ตัวอักษร</div>
+          <div style={{ ...TYPE.labelM,color:T.ink2,textAlign:"center",margin:"8px 0 10px" }}>{list.length} คำ{list.length < source.length ? ` (จาก ${source.length} · ลดให้ QR สแกนได้ · ค้นหา/เลือกหมวดเพื่อเลือกคำที่ต้องการ)` : ""}{name ? ` · ${name}` : ""}{from ? ` · ${from}` : ""}</div>
           <div style={{ display:"flex",gap:8 }}>
             <button onClick={share} className="m3-press" style={M3.filled({ flex:1,minHeight:48 })}>📤 ส่งลิงก์</button>
             <button onClick={copy} className="m3-press" style={M3.tonal({ flex:1,minHeight:48 })}>📋 คัดลอกลิงก์</button>

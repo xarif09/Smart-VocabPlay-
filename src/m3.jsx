@@ -6,6 +6,7 @@
 //  ใช้ร่วมกับโทเค็น T ใน App.jsx (T.* อ่านจาก --md-* ที่ตั้งไว้ที่นี่)
 // ═══════════════════════════════════════════════════════
 import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 // ── 1) สีไดนามิก ───────────────────────────────────────
 // ธีมที่ซื้อในร้าน → hue หลัก (องศา oklch) · space = โหมดมืด
@@ -213,15 +214,17 @@ export function M3TopBar({ title, onBack, actions, large = false }) {
 }
 
 // Bottom sheet M3: surfaceContainerLow · มุมบน 28 · drag handle 32×4
+// วาดบน document.body เสมอ (portal) → ไม่โดนกรอบที่มี transform/animation ครอบ position:fixed
 export function M3Sheet({ onClose, children, maxWidth = 560, z = 200 }) {
-  return (
-    <div style={{ position:"fixed", inset:0, zIndex:z, display:"flex", flexDirection:"column", justifyContent:"flex-end", background:MD.scrim, animation:"m3Fade .2s both" }} onClick={onClose}>
+  const el = (
+    <div style={{ position:"fixed", inset:0, zIndex:z, display:"flex", flexDirection:"column", justifyContent:"flex-end", background:MD.scrim, animation:"m3Fade .2s both", fontFamily:FONT }} onClick={onClose}>
       <div onClick={e => e.stopPropagation()} style={{ background:MD.surfLow, color:MD.onSurface, borderRadius:`${MD.rXL}px ${MD.rXL}px 0 0`, padding:"8px 20px calc(env(safe-area-inset-bottom, 0px) + 28px)", maxWidth, width:"100%", margin:"0 auto", maxHeight:"92dvh", overflowY:"auto", animation:`m3SheetUp .35s ${MD.emph} both` }}>
         <div style={{ width:32, height:4, background:MD.onSurfaceV, opacity:.4, borderRadius:999, margin:"6px auto 14px" }} />
         {children}
       </div>
     </div>
   );
+  return typeof document !== "undefined" ? createPortal(el, document.body) : el;
 }
 
 // แถบความคืบหน้าแบบคลื่น (M3 Expressive wavy linear progress)

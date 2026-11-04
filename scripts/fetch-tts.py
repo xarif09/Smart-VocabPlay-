@@ -11,13 +11,13 @@ OUT = os.path.join(ROOT, "public", "tts")
 MANIFEST = os.path.join(ROOT, "src", "ttsManifest.json")
 FORCE = "--force" in sys.argv
 LIMIT = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else None
-CONCURRENCY = 4
+CONCURRENCY = 3
 os.makedirs(OUT, exist_ok=True)
 items = json.load(open(os.path.join(ROOT, "scripts", "tts-list.json"), encoding="utf-8"))
 have = set(json.load(open(MANIFEST, encoding="utf-8"))) if os.path.exists(MANIFEST) else set()
 todo = [i for i in items if FORCE or i["key"] not in have or not os.path.exists(os.path.join(OUT, i["key"] + ".mp3"))]
 if LIMIT: todo = todo[:LIMIT]
-print(f"ทั้งหมด {len(items)} · มีแล้ว {len(items) - len(todo)} · ต้องสร้าง {len(todo)}")
+print(f"ทั้งหมด {len(items)} · มีแล้ว {len(items) - len(todo)} · ต้องสร้าง {len(todo)}", flush=True)
 ok, failed = 0, []
 sem = asyncio.Semaphore(CONCURRENCY)
 CHECKPOINT = 400   # ใน CI: commit+push ทุกๆ N ไฟล์ กันงานหายถ้า job หมดเวลา
@@ -49,7 +49,7 @@ async def one(it):
         for attempt in range(3):
             try:
                 # rate ช้าลงเล็กน้อยสำหรับเด็ก
-                await edge_tts.Communicate(it["text"], it["voice"], rate="-8%").save(tmp)
+                await asyncio.wait_for(edge_tts.Communicate(it["text"], it["voice"], rate="-8%").save(tmp), timeout=60)
                 if os.path.getsize(tmp) < 500: raise RuntimeError("empty audio")
                 dst = os.path.join(OUT, it["key"] + ".mp3")
                 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", tmp,
@@ -65,6 +65,14 @@ async def one(it):
 
 async def main():
     t0 = time.time()
+    # preflight: ลอง 1 ท่อน ถ้าบริการใช้ไม่ได้ ให้ล้มเร็ว (ไม่แขวน 2 ชม.)
+    if todo:
+        try:
+            probe = os.path.join(tempfile.gettempdir(), "tts-probe.mp3")
+            await asyncio.wait_for(edge_tts.Communicate("Hello, let's learn English.", "en-US-JennyNeural").save(probe), timeout=60)
+            print(f"preflight ok ({os.path.getsize(probe)} bytes)", flush=True)
+        except Exception as e:  # noqa
+            print(f"preflight FAILED: {e!r} → บริการ TTS ใช้ไม่ได้ตอนนี้ หยุดงาน", flush=True); sys.exit(2)
     await asyncio.gather(*(one(it) for it in todo))
     print(f"สร้างใหม่ {ok} · ล้มเหลว {len(failed)} · {time.time() - t0:.0f} วิ")
 asyncio.run(main())

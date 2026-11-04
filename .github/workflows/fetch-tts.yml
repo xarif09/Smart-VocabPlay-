@@ -38,7 +38,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
-      - run: pip install edge-tts==7.0.2
+      - run: pip install -U edge-tts && python3 -c "import edge_tts,sys;print(edge_tts.__version__ if hasattr(edge_tts,'__version__') else 'edge-tts')"
       - run: node scripts/tts-list.mjs
       - run: |
           git config user.name "github-actions[bot]"

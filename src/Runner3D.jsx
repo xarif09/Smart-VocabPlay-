@@ -11,6 +11,8 @@ import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPa
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { Water } from "three/examples/jsm/objects/Water.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { setupEnvironment } from "./runner/environment.js";
+import { loadPropKit, faceRoadRotation } from "./runner/props.js";
 
 const BASE = (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.BASE_URL) || "/";
 const L = 120;                         // ความยาวช่วงพื้นที่วนซ้ำ (เนินเขา/หญ้าต่อกันพอดี)
@@ -31,17 +33,21 @@ const THEMES = {
 const CAT_THEME = { animals:"jungle", nature:"jungle", fruits:"candy", food:"candy", vegetables:"park", vehicles:"city", places:"city", jobs:"city",
   weather:"snow", time:"snow", technology:"space", music:"space", shapes:"space", numbers:"space", countries:"beach", school:"school",
   sports:"park", toys:"park", family:"park", feelings:"park", body:"park", clothes:"park", home:"park", colors:"candy", actions:"park", opposites:"space" };
-export const themeOf = catId => THEMES[CAT_THEME[catId] || "park"];
+export const themeKey = catId => CAT_THEME[catId] || "park";
+export const themeOf = catId => THEMES[themeKey(catId)];
 
 export const CHARS = [
-  { id:"fox",   name:"จิ้งจอก",  emoji:"🦊", url:"models/fox.glb",   scale:.021, run:"Run",     idle:"Survey" },
-  { id:"robot", name:"หุ่นยนต์", emoji:"🤖", url:"models/robot.glb", scale:.42,  run:"Running", idle:"Idle", happy:"Jump", sad:"No" },
-  { id:"cat",   name:"แมวส้ม",   emoji:"🐱", proc:"cat" },
-  { id:"bunny", name:"กระต่าย",  emoji:"🐰", proc:"bunny" },
-  { id:"panda", name:"แพนด้า",   emoji:"🐼", proc:"panda" },
+  { id:"fox",      name:"จิ้งจอก",   emoji:"🦊", url:"models/fox.glb",      scale:.021, run:"Run",       idle:"Survey" },
+  { id:"shiba",    name:"หมาชิบะ",   emoji:"🐕", url:"models/shiba.glb",    scale:.6,   run:"Gallop",    idle:"Idle", happy:"Gallop_Jump" },
+  { id:"bunnykid", name:"กระต่ายน้อย", emoji:"🐰", url:"models/bunnykid.glb", scale:.5,   run:"Run",       idle:"Idle", happy:"Wave", sad:"No" },
+  { id:"redpanda", name:"แพนด้าแดง", emoji:"🦝", url:"models/redpanda.glb", scale:.62,  run:"Run",       idle:"Idle", happy:"Wave", sad:"No" },
+  { id:"mage",     name:"พ่อมดน้อย", emoji:"🧙", url:"models/mage.glb",     scale:.64,  run:"Running_A", idle:"Idle", happy:"Cheer" },
+  { id:"robot",    name:"หุ่นยนต์",  emoji:"🤖", url:"models/robot.glb",    scale:.42,  run:"Running",   idle:"Idle", happy:"Jump", sad:"No" },
+  { id:"deer",     name:"กวาง",     emoji:"🦌", url:"models/deer.glb",     scale:.42,  run:"Gallop",    idle:"Idle", happy:"Gallop_Jump" },
+  { id:"horse",    name:"ม้า",      emoji:"🐴", url:"models/horse.glb",    scale:.37,  run:"Gallop",    idle:"Idle", happy:"Gallop_Jump" },
 ];
 const CHAR_KEY = "smart-vocabplay:runner-char";
-const loadChar = () => { try { return localStorage.getItem(CHAR_KEY) || "fox"; } catch (_) { return "fox"; } };
+const loadChar = () => { try { const v = localStorage.getItem(CHAR_KEY); return CHARS.some(c => c.id === v) ? v : "fox"; } catch (_) { return "fox"; } };
 const saveChar = id => { try { localStorage.setItem(CHAR_KEY, id); } catch (_) {} };
 
 // ── ความสูงเนินเขา (ฟังก์ชันเดียวกันใน JS และ GLSL · วนซ้ำทุก L หน่วย จึงต่อกันไร้รอย) ──
@@ -243,6 +249,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = .95; renderer.outputColorSpace = THREE.SRGBColorSpace;
     el.appendChild(renderer.domElement); renderer.domElement.style.display = "block"; renderer.domElement.style.touchAction = "none";
 
+    let alive = true;
     const scene = new THREE.Scene();
     scene.fog = new THREE.Fog(th.fog, 60, 190);
     const camera = new THREE.PerspectiveCamera(60, W() / H(), .1, 1200);
@@ -270,7 +277,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     if (th.stars) { const n = 2500, p = new Float32Array(n * 3), cl = new Float32Array(n * 3); for (let i = 0; i < n; i++) { const v = new THREE.Vector3().randomDirection().multiplyScalar(600); v.y = Math.abs(v.y) * .9 + 10; p.set([v.x, v.y, v.z], i * 3); const c = new THREE.Color().setHSL(.6 + Math.random() * .3, .6, .75 + Math.random() * .25); cl.set([c.r, c.g, c.b], i * 3); }
       const sg = new THREE.BufferGeometry(); sg.setAttribute("position", new THREE.BufferAttribute(p, 3)); sg.setAttribute("color", new THREE.BufferAttribute(cl, 3));
       scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ size:2.2, vertexColors:true, fog:false, sizeAttenuation:false, transparent:true, depthWrite:false }))); }
-    scene.add(new THREE.HemisphereLight(th.sky[1], th.low, .6));
+    const hemi = new THREE.HemisphereLight(th.sky[1], th.low, .6); scene.add(hemi);
     const sun = new THREE.DirectionalLight(th.stars ? "#c4b5fd" : "#fff4e0", th.stars ? 1.6 : 2.6);
     sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -.0004; sun.shadow.normalBias = .02;
     Object.assign(sun.shadow.camera, { left:-14, right:14, top:16, bottom:-12, near:1, far:80 }); scene.add(sun); scene.add(sun.target);
@@ -293,6 +300,21 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     const rt = roadTexture(th);
     const road = new THREE.Mesh(new THREE.PlaneGeometry(8, 400), new THREE.MeshStandardMaterial({ map:rt, roughness:th.sprinkles ? .5 : .85, metalness:0 }));
     road.rotation.x = -Math.PI / 2; road.position.set(0, .02, -180); road.receiveShadow = true; scene.add(road);
+    // ── ของจริงจาก Poly Haven: ท้องฟ้า HDRI + พื้น/ถนน PBR (โหลดเสร็จแล้วสลับเข้าแทน) ──
+    let roadScroll = dz => { rt.offset.y += dz / (400 / 6); };
+    let env = null;
+    setupEnvironment({ THREE, renderer, scene, theme:themeKey(catId), BASE }).then(e => {
+      if (!alive) { e.dispose(); return; }
+      env = e;
+      const keepSky = !!th.stars;                 // อวกาศ: ใช้ท้องฟ้าดาวเดิม (HDRI กลางคืนออกน้ำตาล)
+      if (!keepSky && e.hasSky) { scene.remove(sky); clouds.forEach(c => scene.remove(c)); clouds.length = 0; scene.fog.color.copy(e.fogColor); }
+      if (keepSky) scene.background = null;
+      sunDir.copy(e.sunDir); sun.color.copy(e.sunColor); sun.intensity = e.sunIntensity; hemi.intensity = e.hemiIntensity;
+      if (grassMat) grassMat.uniforms.uSun.value.copy(e.sunDir);
+      tiles.forEach(m => { m.material = e.groundMaterial; });
+      road.material = e.roadMaterial; roadScroll = dz => e.roadScroll(dz);
+      if (water) water.material.uniforms.sunDirection.value.copy(e.sunDir);
+    }).catch(() => {});
     if (th.sidewalk) for (const s of [-1, 1]) { const sw = new THREE.Mesh(new THREE.BoxGeometry(2.2, .25, 400), new THREE.MeshStandardMaterial({ color:"#a8b0ba", roughness:.9 })); sw.position.set(s * 5.1, .12, -180); sw.receiveShadow = true; scene.add(sw); }
 
     // น้ำทะเล (ชายหาด)
@@ -338,11 +360,17 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
 
     // ของประกอบฉาก
     const extra = { win:th.props.includes("building") ? windowTexture() : null, space:!!th.stars };
-    const props = []; const SPAN = 132;
-    for (let i = 0; i < 24; i++) { const side = i % 2 ? 1 : -1; if (th.water && side > 0 && Math.random() < .7) continue;
-      const kind = th.props[Math.floor(Math.random() * th.props.length)];
-      const pr = makeProp(kind, Math.random(), extra); const x = side * (th.sidewalk ? 8 + Math.random() * 6 : 6.5 + Math.random() * 9);
-      pr.position.set(x, 0, -i * 5.5); pr.rotation.y = Math.random() * 6; pr.userData.x = x; scene.add(pr); props.push(pr); }
+    const props = []; const SPAN = 132; let kit = null;
+    const placeProp = (pr, i, side, kind) => { const x = side * (th.sidewalk ? 8 + Math.random() * 6 : 6.5 + Math.random() * 9);
+      pr.position.set(x, 0, -i * 5.5); pr.rotation.y = pr.userData.faceRoad ? faceRoadRotation(x) : Math.random() * 6; pr.userData.x = x; scene.add(pr); props.push(pr); };
+    // ของประกอบฉากจริง (Poly Haven) + ต้นไม้ใบจริง · ระหว่างโหลดยังไม่มีอะไรข้างทาง
+    loadPropKit({ THREE, theme:themeKey(catId), BASE, renderer }).then(k => {
+      if (!alive) { k.dispose(); return; } kit = k;
+      for (let i = 0; i < 24; i++) { const side = i % 2 ? 1 : -1; if (th.water && side > 0 && Math.random() < .7) continue;
+        const useBuilding = th.sidewalk && Math.random() < .55;
+        const kind = useBuilding ? "building" : k.kinds[Math.floor(Math.random() * k.kinds.length)];
+        placeProp(useBuilding ? makeProp("building", Math.random(), extra) : k.spawn(kind, Math.random()), i, side, kind); }
+    }).catch(() => { for (let i = 0; i < 24; i++) { const side = i % 2 ? 1 : -1; const kind = th.props[Math.floor(Math.random() * th.props.length)]; placeProp(makeProp(kind, Math.random(), extra), i, side, kind); } });
 
     // หิมะตก
     let snow = null;
@@ -458,7 +486,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     const ro = new ResizeObserver(() => { renderer.setSize(W(), H()); camera.aspect = W() / H(); camera.updateProjectionMatrix(); composer?.setSize(W(), H()); }); ro.observe(el);
 
     // ── ลูปหลัก ──
-    let raf = 0, last = performance.now(), alive = true;
+    let raf = 0, last = performance.now();
     const tick = now => {
       if (!alive) return; raf = requestAnimationFrame(tick);
       const dt = Math.min(.05, (now - last) / 1000); last = now; S.t += dt;
@@ -466,7 +494,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       const v = running ? S.speed : 0; const dz = v * dt; S.scroll += dz;
       const sMod = S.scroll % L;
       tiles.forEach(m => { m.position.z = sMod - m.userData.i * L; });
-      rt.offset.y += dz / (400 / 6);
+      roadScroll(dz);
       if (grassMat) { grassMat.uniforms.uTime.value = S.t; grassMat.uniforms.uScroll.value = sMod; }
       if (water) water.material.uniforms.time.value += dt * .6;
       props.forEach(p => { p.position.z += dz; if (p.position.z > 14) p.position.z -= SPAN; p.position.y = th.hills ? hgt(p.userData.x, p.position.z - S.scroll) - .1 : 0; });
@@ -524,7 +552,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     return () => { alive = false; S.over = true; cancelAnimationFrame(raf); ro.disconnect(); window.removeEventListener("keydown", key);
       renderer.domElement.removeEventListener("pointerdown", dn); renderer.domElement.removeEventListener("pointerup", up);
       scene.traverse(o => { o.geometry?.dispose?.(); const m = o.material; (Array.isArray(m) ? m : m ? [m] : []).forEach(x => { x.map?.dispose?.(); x.dispose?.(); }); });
-      pmrem.dispose(); composer?.dispose?.(); renderer.dispose(); renderer.domElement.remove(); };
+      env?.dispose?.(); kit?.dispose?.(); pmrem.dispose(); composer?.dispose?.(); renderer.dispose(); renderer.domElement.remove(); };
   }, []); // eslint-disable-line
 
   const tk = ui.tokens;
@@ -546,9 +574,9 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
           </div>
           <div style={{ position:"absolute", left:0, right:0, bottom:0, padding:"30px 10px 12px", display:"flex", flexDirection:"column", alignItems:"center", gap:8, background:"linear-gradient(180deg, transparent, rgba(0,0,0,.55))" }}>
             <div style={{ fontWeight:800, fontSize:13, color:"#fff" }}>เลือกตัวละคร {hud.loading && "· กำลังโหลด…"}</div>
-            <div style={{ display:"flex", gap:5, flexWrap:"nowrap", justifyContent:"center", maxWidth:"100%" }}>
+            <div style={{ display:"flex", gap:5, flexWrap:"nowrap", overflowX:"auto", maxWidth:"100%", padding:"2px 4px", scrollbarWidth:"none" }}>
               {CHARS.map(c => <button key={c.id} onClick={() => { setCharId(c.id); api.current.setChar?.(c.id); sfx.tap(); }} className="m3-press" aria-label={c.name}
-                style={{ flex:"1 1 0", minWidth:0, maxWidth:68, minHeight:58, padding:"4px 2px", borderRadius:18, border:`3px solid ${charId === c.id ? tk.primary : "transparent"}`, background:charId === c.id ? tk.card : "rgba(255,255,255,.75)", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", fontFamily:"inherit" }}>
+                style={{ flex:"none", width:62, minHeight:58, padding:"4px 2px", borderRadius:18, border:`3px solid ${charId === c.id ? tk.primary : "transparent"}`, background:charId === c.id ? tk.card : "rgba(255,255,255,.75)", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", fontFamily:"inherit" }}>
                 <span style={{ fontSize:26, lineHeight:1 }}>{c.emoji}</span><span style={{ fontSize:10, fontWeight:800, color:tk.ink }}>{c.name}</span></button>)}
             </div>
             <button onClick={() => { ui.unlock?.(); api.current.start?.(); }} className="m3-press" style={{ ...btn, minWidth:200, fontSize:22, background:tk.primary, color:tk.onPrimary }}>▶ เริ่มวิ่ง!</button>

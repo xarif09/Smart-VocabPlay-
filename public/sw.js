@@ -1,6 +1,6 @@
 // Service Worker — ให้เล่นออฟไลน์ได้หลังเปิดครั้งแรก
 // หน้า (navigate) = ลองเน็ตก่อน ไม่ได้ค่อยใช้แคช · ไฟล์อื่นในโดเมนเดียวกัน = ใช้แคชก่อน
-const CACHE = "vocabplay-v7";
+const CACHE = "vocabplay-v8";
 const IMG_CACHE = "vocabplay-img-v1";   // รูปจาก Wikipedia (แยกแคช ไม่ล้างตอนอัปเดตแอป)
 const SHELL = ["./", "./index.html", "./manifest.webmanifest"];
 
@@ -70,7 +70,7 @@ self.addEventListener("fetch", e => {
   }
   if (url.origin !== self.location.origin) return;           // API ภายนอก (แปล) ไม่แคช
   // รูปคำศัพท์ที่บรรจุมา → แคชแยก (IMG_CACHE) ไม่ถูกล้างตอนอัปเดตแอป
-  if (url.pathname.includes("/img/") || url.pathname.includes("/audio/") || url.pathname.includes("/tts/") || url.pathname.includes("/models/")) {
+  if (url.pathname.includes("/img/") || url.pathname.includes("/audio/") || url.pathname.includes("/tts/") || url.pathname.includes("/models/") || url.pathname.includes("/3d/")) {
     e.respondWith(caches.open(IMG_CACHE).then(async c => {
       const hit = await c.match(req, { ignoreVary: true });
       if (hit) return hit;

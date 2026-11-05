@@ -7,7 +7,7 @@ const START = 'text=แตะเพื่อเริ่มเลย';
 // ด่านผู้ปกครอง (โจทย์คูณ) → อ่านโจทย์แล้วกดแป้นตัวเลข
 const solveGate = async p => { if (!(await p.isVisible('text=ผู้ปกครองเท่านั้น'))) return; const t = await p.textContent('body'); const m = t.match(/(\d+)\s*×\s*(\d+)\s*=/); if (!m) return; for (const d of String(+m[1] * +m[2])) await p.click(`button[data-key="${d}"]`); await p.waitForTimeout(400); };
 // กดปุ่มลำโพงในการ์ดเกม (ข้อแบบฟัง ต้องกดฟังก่อนถึงจะตอบได้)
-const pressSpeaker = async p => { if (await p.isVisible('text=ฟัง EN+TH')) { await p.click('text=ฟัง EN+TH'); return; } const sp = p.locator('button:has-text("🔊")').nth(1); if (await sp.count()) await sp.click({ force: true }).catch(() => {}); };
+const pressSpeaker = async p => { const sp0 = p.locator('button[aria-label="ฟังคำ"]'); if (await sp0.count() && await sp0.first().isVisible()) { await sp0.first().dispatchEvent('click'); return; } if (await p.isVisible('text=ฟัง EN+TH')) { await p.click('text=ฟัง EN+TH'); return; } const sp = p.locator('button:has-text("🔊")').nth(1); if (await sp.count()) await sp.click({ force: true }).catch(() => {}); };
 const skipOnboard = async p => { if (await p.isVisible('text=เรียนคำศัพท์ก่อน') && await p.isVisible('button:text-is("ข้าม")')) { await p.click('button:text-is("ข้าม")'); await p.waitForTimeout(300); } };
 
 async function audit(page, label) {
@@ -50,10 +50,10 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     const counts = await p.evaluate(() => [...document.querySelectorAll('button')].map(b => b.innerText).filter(t => /\d+ คำ/.test(t)).map(t => +t.match(/(\d+) คำ/)[1]));
     res.push({ label: name + ' count', cats: counts.length, total: counts.reduce((x, c) => x + c, 0) });
     if (counts.length !== 26 || counts.reduce((x, c) => x + c, 0) !== 1165) bad('count', counts);
-    await p.click('text=เรียน'); await p.waitForTimeout(300); await shot(p, `${name}-1b-learnhub`); await a('learnhub');
-    await p.click('text=เล่น'); await p.waitForTimeout(300); await shot(p, `${name}-1c-playhub`); await a('playhub');
-    await p.click('text=หน้าแรก'); await p.waitForTimeout(300);
-    await p.click('text=Animals'); await p.waitForTimeout(300);
+    await p.click('nav >> text=เรียน'); await p.waitForTimeout(300); await shot(p, `${name}-1b-learnhub`); await a('learnhub');
+    await p.click('nav >> text=เล่น'); await p.waitForTimeout(300); await shot(p, `${name}-1c-playhub`); await a('playhub');
+    await p.click('nav >> text=หน้าแรก'); await p.waitForTimeout(300);
+    await p.locator('button', { hasText: /^Animals/ }).last().click(); await p.waitForTimeout(300);
     await shot(p, `${name}-2-category`); await a('category');
     // learn mode (flash cards)
     await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await p.waitForTimeout(200);
@@ -92,9 +92,9 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
     await p.click('button:has-text("📒")'); await p.waitForTimeout(200); await shot(p, `${name}-7-stickers`); await a('stickers');
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
-    await p.click('text=ของฉัน'); await p.waitForTimeout(200); await shot(p, `${name}-7b-me`); await a('me'); await p.click('text=จัดการคำศัพท์'); await p.waitForTimeout(200); await solveGate(p); await p.waitForTimeout(200); await shot(p, `${name}-8-manage`); await a('manage');
+    await p.click('nav >> text=ของฉัน'); await p.waitForTimeout(200); await shot(p, `${name}-7b-me`); await a('me'); await p.click('text=จัดการคำศัพท์'); await p.waitForTimeout(200); await solveGate(p); await p.waitForTimeout(200); await shot(p, `${name}-8-manage`); await a('manage');
     await p.click('text=+ เพิ่มคำ'); await p.waitForTimeout(100); await shot(p, `${name}-9-manage-add`); await a('manage-add');
-    await p.click('text=ยกเลิก'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=หน้าแรก');
+    await p.click('text=ยกเลิก'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('nav >> text=หน้าแรก');
     await p.click('button[aria-label="ตั้งค่า"]'); await p.waitForTimeout(200); await solveGate(p); await shot(p, `${name}-10-settings`); await a('settings');
     await p.click('text=รายงานผู้ปกครอง'); await p.waitForTimeout(200); await shot(p, `${name}-10a-report`); await a('report');
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
@@ -116,7 +116,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('button:has-text("cat")').catch(()=>{}); await p.waitForTimeout(200); res.push({ label: name + ' reader-word-popup', ok: await p.isVisible('text=แมว') });
     for (let k = 0; k < 7; k++) await p.click('text=หน้าถัดไป');
     await p.click('text=ตอบคำถามท้ายเรื่อง'); await p.waitForTimeout(300); await shot(p, `${name}-14c-storyquiz`); await a('storyquiz');
-    for (let k = 0; k < 3; k++) { await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1300); }
+    for (let k = 0; k < 3; k++) { await p.locator('button[data-ok]').first().click();  /* ตอบถูกเพื่อให้ได้ดาว (ป้าย "อ่านแล้ว") */ await p.waitForTimeout(1300); }
     await p.waitForSelector('text=เล่นอีก', { timeout: 20000 }); await p.click('text=กลับ ›'); await p.waitForTimeout(200);
     res.push({ label: name + ' story-done-badge', ok: await p.isVisible('text=อ่านแล้ว') });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
@@ -132,7 +132,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.waitForTimeout(300);
     res.push({ label: name + ' unit-learn-marked', ok: await p.isVisible('text=✅'), backOnPath: await p.isVisible('text=2. ทำแบบทดสอบ') });
     await p.click('text=2. ทำแบบทดสอบ'); await p.waitForTimeout(200);
-    res.push({ label: name + ' unit-quiz', ok: await p.isVisible('text=เลือกคำที่ตรงกับรูป'), title: await p.innerText('text=/บทที่ 1/') });
+    res.push({ label: name + ' unit-quiz', ok: await p.isVisible('text=ฟังแล้วแตะรูปที่ตรงกัน'), title: await p.innerText('text=/บทที่ 1/') });
     await shot(p, `${name}-12b-path-unit`); await a('path-unit');
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
     // ไวยากรณ์: เปิดบท → ฝึก → ตอบ 8 ข้อ
@@ -154,7 +154,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     // สอบวัดระดับ 20 ข้อ → ใบประกาศ
     await p.click('text=สอบวัดระดับ'); await p.waitForTimeout(200); await shot(p, `${name}-18a-test-intro`); await a('test-intro');
     await p.click('text=เริ่มสอบ'); await p.waitForTimeout(300); await shot(p, `${name}-18b-test`); await a('test');
-    for (let k = 0; k < 20; k++) { await pressSpeaker(p); await p.waitForTimeout(100); await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1100); }
+    for (let k = 0; k < 20; k++) { const gb = p.locator('div[style*="display: grid"] > button').first(); await pressSpeaker(p); await p.waitForTimeout(250); for (let t = 0; t < 20 && await gb.isDisabled().catch(() => false); t++) { await p.locator('button[aria-label="ฟังคำ"], button:has-text("ฟัง EN+TH")').first().click({ force: true }).catch(() => {}); await p.waitForTimeout(400); } await gb.click(); await p.waitForTimeout(1100); }
     await p.waitForSelector('text=เล่นอีก', { timeout: 20000 }); await p.click('text=กลับ ›'); await p.waitForTimeout(300);
     await shot(p, `${name}-18c-certificate`); await a('certificate'); res.push({ label: name + ' certificate', ok: await p.isVisible('text=ใบประกาศนียบัตร') });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
@@ -183,7 +183,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     res.push({ label: name + ' shop-buy', wearing: await p.isVisible('text=ใส่อยู่'), coinsLeft: await p.innerText('text=/🪙 \\d+$/') });
     await shot(p, `${name}-11a-shop-bought`); await a('shop-bought');
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');
-    await p.click('text=Animals'); await p.waitForTimeout(200); await shot(p, `${name}-12-category-boss-open`); await a('category-boss-open');
+    await p.locator('button', { hasText: /^Animals/ }).last().click(); await p.waitForTimeout(200); await shot(p, `${name}-12-category-boss-open`); await a('category-boss-open');
     await p.click('text=ด่านบอส'); await p.waitForTimeout(300); await shot(p, `${name}-13-boss`); await a('boss');
     res.push({ label: name + ' boss-screen', ok: await p.isVisible('text=บอส Animals') });
     if (errs.length) bad(name + ' pageerror', errs);
@@ -200,7 +200,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.route('https://en.wikipedia.org/api/rest_v1/page/summary/**', r => { const t = decodeURIComponent(r.request().url().split('/summary/')[1]); r.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ title: t, thumbnail: { source: `https://upload.wikimedia.org/wikipedia/commons/thumb/x/${encodeURIComponent(t)}.jpg/320px-${encodeURIComponent(t)}.jpg` } }) }); });
     await p.route('https://upload.wikimedia.org/**', r => r.fulfill({ status: 200, contentType: 'image/jpeg', body: jpg }));
     await p.goto(URL); await p.click(START); await p.click('text=มิว'); await skipOnboard(p);
-    await p.click('text=Animals'); await p.click('text=Quiz'); await p.waitForTimeout(600);
+    await p.locator('button', { hasText: /^Animals/ }).last().click(); await p.click('text=Quiz'); await p.waitForTimeout(600);
     await shot(p, 'mobile-pics-1-quiz'); const r1 = await audit(p, 'pics quiz'); res.push(r1); if (r1.overlaps.length || r1.hScroll) bad('pics quiz', r1);
     res.push({ label: 'pics quiz-has-img', ok: (await p.locator('img[alt]').count()) >= 1 });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await p.waitForTimeout(600);
@@ -208,13 +208,13 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=Listen'); await p.waitForTimeout(300); await p.click('button:has-text("🔊") >> nth=1', { force: true }); await p.waitForTimeout(600);
     await shot(p, 'mobile-pics-3-listen'); const r3 = await audit(p, 'pics listen'); res.push(r3); if (r3.overlaps.length || r3.hScroll) bad('pics listen', r3);
     res.push({ label: 'pics listen-imgs', n: await p.locator('img[alt]').count() });
-    await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=Colors'); await p.click('text=Picture Match'); await p.waitForTimeout(400);
+    await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.locator('button', { hasText: /^Colors/ }).last().click(); await p.click('text=Picture Match'); await p.waitForTimeout(400);
     await shot(p, 'mobile-pics-4-match'); const r4 = await audit(p, 'pics match'); res.push(r4); if (r4.overlaps.length || r4.hScroll) bad('pics match', r4);
     // ปิดรูปจริงในตั้งค่า → กลับเป็นอีโมจิ (ออกจากโหมดเกมก่อน เพราะในเกมไม่มีปุ่มตั้งค่า)
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.waitForTimeout(200);
     await p.click('button[aria-label="ตั้งค่า"]'); await p.waitForTimeout(200); await solveGate(p); await shot(p, 'mobile-pics-5-settings-voice');
     await p.locator('text=รูปภาพจริง').locator('xpath=../..').locator('button').click(); await p.click('text=เสร็จสิ้น'); await p.waitForTimeout(800);
-    await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.waitForTimeout(800); await p.click('text=Animals', { force: true }); await p.waitForTimeout(400); await p.click('text=Quiz'); await p.waitForTimeout(300);
+    await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.waitForTimeout(800); await p.locator('text=Animals').first().click({ force: true }); await p.waitForTimeout(400); await p.click('text=Quiz'); await p.waitForTimeout(300);
     res.push({ label: 'pics toggle-off-no-img', imgs: await p.locator('img[alt]').count(), errs });
     if (errs.length) bad('pics errors', errs);
     await ctx.close();
@@ -226,7 +226,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
   const swReady = await pp.evaluate(async () => { try { const r = await navigator.serviceWorker.ready; return !!r.active; } catch (e) { return 'ERR ' + e.message; } });
   await pp.waitForTimeout(800);
   await pw.setOffline(true);
-  let offlineOk = false; try { await pp.reload(); await pp.click(START, { timeout: 5000 }); offlineOk = await pp.isVisible('text=หมวดคำศัพท์'); } catch (e) { offlineOk = 'ERR ' + e.message.slice(0, 60); }
+  let offlineOk = false; try { await pp.reload(); await pp.click(START, { timeout: 5000 }); offlineOk = await pp.isVisible('text=โลกคำศัพท์'); } catch (e) { offlineOk = 'ERR ' + e.message.slice(0, 60); }
   await pw.setOffline(false);
   res.push({ label: 'pwa', manifest: man.status(), sw: swr.status(), icon: ico.status(), swReady, offlineOk });
   if (man.status() !== 200 || swr.status() !== 200 || swReady !== true || offlineOk !== true) bad('pwa', { man: man.status(), sw: swr.status(), swReady, offlineOk });
@@ -234,8 +234,8 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
   // localStorage blocked → still works
   const c4 = await b.newContext(); await c4.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new Error('blocked'); } }); });
   const q = await c4.newPage(); const e2 = []; q.on('pageerror', e => e2.push(e.message));
-  await q.goto(URL); await q.click(START); await q.click('text=มิว'); await q.waitForTimeout(400); await skipOnboard(q); await q.click('text=Fruits'); await q.click('text=Quiz'); await q.waitForTimeout(300);
-  res.push({ label: 'ls-blocked', quizVisible: await q.isVisible('text=เลือกคำที่ตรงกับรูป'), errors: e2 });
+  await q.goto(URL); await q.click(START); await q.click('text=มิว'); await q.waitForTimeout(400); await skipOnboard(q); await q.locator('button', { hasText: /^Fruits/ }).last().click(); await q.click('text=Quiz'); await q.waitForTimeout(300);
+  res.push({ label: 'ls-blocked', quizVisible: await q.isVisible('text=ฟังแล้วแตะรูปที่ตรงกัน'), errors: e2 });
   if (e2.length) bad('ls-blocked', e2);
   await b.close();
   console.log(JSON.stringify(res, null, 1));

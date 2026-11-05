@@ -6,13 +6,6 @@
   "license": "",
   "page": "https://en.wikipedia.org/wiki/House_mouse"
  },
- "Human nose": {
-  "file": "human-nose.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Fort_Ross_Elena_wearing_Traditional_Russian_Costume_(cropped).jpg%3Futm_source%3Den.wikipedia.org%26utm_campaign%3Dapi%26utm_content%3Dthumbnail_unscaled",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Human_nose"
- },
  "Mirror": {
   "file": "mirror.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Mirror.jpg%3Futm_source%3Den.wikipedia.org%26utm_campaign%3Dapi%26utm_content%3Dthumbnail_unscaled",
@@ -881,13 +874,6 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Human_tooth"
  },
- "Finger": {
-  "file": "finger.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Human_fingers_both_sides_2.jpg",
-  "artist": "Sciencia58",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Finger"
- },
  "Arm": {
   "file": "arm.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Extended_arm.jpg",
@@ -964,20 +950,6 @@
   "artist": "Eric Rolph at English Wikipedia",
   "license": "CC BY-SA 2.5",
   "page": "https://en.wikipedia.org/wiki/Rainbow"
- },
- "Fog": {
-  "file": "fog.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:A_foggy_winter_morning.jpg",
-  "artist": "Abdul Momin",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Fog"
- },
- "Sunlight": {
-  "file": "sunlight.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:STS-134_EVA4_view_to_the_Russian_Orbital_Segment.jpg",
-  "artist": "NASA",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Sunlight"
  },
  "Lightning": {
   "file": "lightning.jpg",
@@ -1125,13 +1097,6 @@
   "artist": "Vauxford",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Van"
- },
- "Kick scooter": {
-  "file": "kick-scooter.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Kickboards_Jahrhunderthalle_Probe_Zauberfl%C3%B6te_04-09-03.JPG",
-  "artist": "No machine-readable author provided. Maschinenjunge assumed (based on copyright claims).",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Kick_scooter"
  },
  "Auto rickshaw": {
   "file": "auto-rickshaw.jpg",
@@ -1349,13 +1314,6 @@
   "artist": "Affärside",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Necktie"
- },
- "Coat (clothing)": {
-  "file": "coat-clothing.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:FalatJulian.PortretAntoniegoWodzickiego.1900.ws.jpg",
-  "artist": "Julian Fałat",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Coat"
  },
  "Window": {
   "file": "window.jpg",
@@ -1707,13 +1665,6 @@
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Trophy"
  },
- "Gold medal": {
-  "file": "gold-medal.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:1964_Winter_Olympics_medals.JPG",
-  "artist": "Christophe95",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Gold_medal"
- },
  "Long jump": {
   "file": "long-jump.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:2013_IPC_Athletics_World_Championships_-_26072013_-_Maximiliano_Rodriguez_Magi_of_Spain_during_the_Men's_Long_jump_-_T12.jpg",
@@ -1980,13 +1931,6 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Pediatrics"
  },
- "Laboratory": {
-  "file": "laboratory.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:At_Manchester_2023_2023_006.jpg",
-  "artist": "Photograph by Mike Peel (www.mikepeel.net).",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Laboratory"
- },
  "Chef's uniform": {
   "file": "chef-s-uniform.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:William_Orpen_Le_Chef_de_l'H%C3%B4tel_Chatham%2C_Paris.jpg",
@@ -2169,13 +2113,6 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Dragon_fruit"
  },
- "Syzygium samarangense": {
-  "file": "syzygium-samarangense.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Hoa_c%E1%BB%A7a_lo%C3%A0i_roi.jpg",
-  "artist": "Bùi Thụy Đào Nguyên",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Syzygium_samarangense"
- },
  "Tamarind": {
   "file": "tamarind.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Tamarindus_indica_pods.JPG",
@@ -2218,13 +2155,6 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Glue_stick"
  },
- "Paper": {
-  "file": "paper.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Various_products_made_from_paper.JPG",
-  "artist": "Meganbeckett27",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Paper"
- },
  "Paintbrush": {
   "file": "paintbrush.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Paintbrushes.jpg",
@@ -2246,13 +2176,6 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Lunchbox"
  },
- "School bell": {
-  "file": "school-bell.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:SLNSW_479558_55_St_Johns_School_SH_717.jpg",
-  "artist": "Pickering, Charles Percy (New South Wales. Government Printing Office)",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/School_bell"
- },
  "Adhesive tape": {
   "file": "adhesive-tape.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Adhesive_tapes_clear.JPG",
@@ -2266,20 +2189,6 @@
   "artist": "Genusfotografen (Tomas Gunnarsson) / Wikimedia Sverige",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Knee"
- },
- "Chin": {
-  "file": "chin.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Crane3chin.png",
-  "artist": "Pied Kiwi",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Chin"
- },
- "Cheek": {
-  "file": "cheek.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Cheek.jpg",
-  "artist": "Paolo Neo",
-  "license": "CC0",
-  "page": "https://en.wikipedia.org/wiki/Cheek"
  },
  "Lip": {
   "file": "lip.jpg",
@@ -2322,13 +2231,6 @@
   "artist": "S. Kleinmichel",
   "license": "CC BY 4.0",
   "page": "https://en.wikipedia.org/wiki/Overcast"
- },
- "Flood": {
-  "file": "flood.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Urban_flood_cropped.jpg",
-  "artist": "johndal",
-  "license": "CC BY-SA 2.0",
-  "page": "https://en.wikipedia.org/wiki/Flood"
  },
  "Ice": {
   "file": "ice.jpg",
@@ -2638,20 +2540,6 @@
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Smile"
  },
- "Clapping": {
-  "file": "clapping.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Clapping_hand.jpg",
-  "artist": "Mona Hassan Abo-Abda",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Clapping"
- },
- "Throwing": {
-  "file": "throwing.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Throwing_rocks_(3843366278).jpg",
-  "artist": "Julia from Sydney, Australia",
-  "license": "CC BY-SA 2.0",
-  "page": "https://en.wikipedia.org/wiki/Throwing"
- },
  "Model car": {
   "file": "model-car.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:ToyCars.jpg",
@@ -2665,13 +2553,6 @@
   "artist": "Brocken Inaglory. The image was edited by user:Alvesgaspar",
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Soap_bubble"
- },
- "Playground slide": {
-  "file": "playground-slide.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:A_girl_sliding_in_Valparaiso%2C_Chile.jpg",
-  "artist": "Havardtl",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Playground_slide"
  },
  "Swing (seat)": {
   "file": "swing-seat.jpg",
@@ -3646,13 +3527,6 @@
   "license": "No restrictions",
   "page": "https://en.wikipedia.org/wiki/Lawyer"
  },
- "Fashion design": {
-  "file": "fashion-design.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-N0409-0320%2C_VEB_Bekleidungswerk_%22Steppke%22_G%C3%B6rlitz%2C_Gestaltung_Kinderkonfektion_(cropped).jpg",
-  "artist": "Ulrich Haessler",
-  "license": "CC BY-SA 3.0 de",
-  "page": "https://en.wikipedia.org/wiki/Fashion_design"
- },
  "Photographer": {
   "file": "photographer.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Photograph_of_a_Photographer.jpg",
@@ -3687,20 +3561,6 @@
   "artist": "photo taken by flickr user rick",
   "license": "CC BY 2.0",
   "page": "https://en.wikipedia.org/wiki/Plumber"
- },
- "Electrician": {
-  "file": "electrician.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:thumbnail.jpg",
-  "artist": "",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Electrician"
- },
- "Carpentry": {
-  "file": "carpentry.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:PalmercarpenterA.jpg",
-  "artist": "Alfred T. Palmer",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Carpentry"
  },
  "Janitor": {
   "file": "janitor.jpg",
@@ -3841,13 +3701,6 @@
   "artist": "Mrbeastmodeallday",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Microwave_oven"
- },
- "Oven": {
-  "file": "oven.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Four_%C3%A0_c%C3%A9ramique_-_Japan_Aur%C3%A9a_-_2011-0403-_P1070446.JPG",
-  "artist": "Esby",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Oven"
  },
  "Kettle": {
   "file": "kettle.jpg",
@@ -4129,13 +3982,6 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Convenience_store"
  },
- "Physical education": {
-  "file": "physical-education.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Calhan_Colorado_High_School_Physical_Education_equipment_by_David_Shankbone.jpg",
-  "artist": "David Shankbone",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Physical_education"
- },
  "Dictionary": {
   "file": "dictionary.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Woerterbuchstapel_Langenscheidt.jpg",
@@ -4178,26 +4024,12 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Cafeteria"
  },
- "Human head": {
-  "file": "human-head.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Proportions_of_the_Head.jpg",
-  "artist": "",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Human_head"
- },
  "Beard": {
   "file": "beard.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Photography-wallpaper-facial-hair-man-beard-chin-moustache-human-elder-portrait-1453095.jpg",
   "artist": "@nazanin",
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Beard"
- },
- "Moustache": {
-  "file": "moustache.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Gaishi_Nagaoka.jpg",
-  "artist": "Unknown authorUnknown author",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Moustache"
  },
  "Ankle": {
   "file": "ankle.jpg",
@@ -4212,13 +4044,6 @@
   "artist": "Wesalius",
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Blood"
- },
- "Sea": {
-  "file": "sea.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Mediterranean_Sea_16.61811E_38.99124N.jpg",
-  "artist": "of the modification : Eric Gaba (Sting)",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Sea"
  },
  "Stream": {
   "file": "stream.jpg",
@@ -4437,13 +4262,6 @@
   "license": "CC BY-SA 2.0 de",
   "page": "https://en.wikipedia.org/wiki/High-visibility_clothing"
  },
- "Suit": {
-  "file": "suit.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Matt_Smith_on_%22Christopher_And_His_Kind%22_set.jpg",
-  "artist": "Cliff Donaldson from Belfast, Northern Ireland",
-  "license": "CC BY-SA 2.0",
-  "page": "https://en.wikipedia.org/wiki/Suit"
- },
  "High-heeled shoe": {
   "file": "high-heeled-shoe.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:High-heeled_shoes_on_display_in_Huangpu%2C_Shanghai_(20180211145140).jpg",
@@ -4506,13 +4324,6 @@
   "artist": "Zephyris at English Wikipedia",
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Whistle"
- },
- "Team": {
-  "file": "team.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Team_work.jpg",
-  "artist": "Japuraalwis",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Team"
  },
  "Coach (sport)": {
   "file": "coach-sport.jpg",
@@ -4766,13 +4577,6 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Pea"
  },
- "Bean sprout": {
-  "file": "bean-sprout.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Organic_mixed_beans_shoots.jpg",
-  "artist": "",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Sprouting"
- },
  "Cauliflower": {
   "file": "cauliflower.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Chou-fleur_02.jpg",
@@ -4983,26 +4787,12 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Electric_battery"
  },
- "USB": {
-  "file": "usb.png",
-  "source": "https://commons.wikimedia.org/wiki/File:USB_icon.svg.png",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/USB"
- },
  "Wi-Fi": {
   "file": "wi-fi.png",
   "source": "https://commons.wikimedia.org/wiki/File:WiFi_Logo.svg.png",
   "artist": "",
   "license": "",
   "page": "https://en.wikipedia.org/wiki/Wi-Fi"
- },
- "Video game": {
-  "file": "video-game.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Universum_TV_Multispiel_2006.jpg",
-  "artist": "Shadowgate",
-  "license": "CC BY 2.0",
-  "page": "https://en.wikipedia.org/wiki/Video_game"
  },
  "Robotic vacuum cleaner": {
   "file": "robotic-vacuum-cleaner.jpg",
@@ -5102,13 +4892,6 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Microphone"
  },
- "Songkran (Thailand)": {
-  "file": "songkran-thailand.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Songkran_Day_%40_Chiangmai_Wall.jpg",
-  "artist": "Khunmoohan",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Songkran_(Thailand)"
- },
  "Loy Krathong": {
   "file": "loy-krathong.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Thai_people_setting_their_candle-lit_krathongs_in_the_Ping_river_at_night_during_Loy_Krathong_2015-10_(22715933524).jpg",
@@ -5157,13 +4940,6 @@
   "artist": "AskALotl",
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
- },
- "Eiffel Tower": {
-  "file": "eiffel-tower.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_logo.svg.png",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Eiffel_Tower"
  },
  "Egyptian pyramids": {
   "file": "egyptian-pyramids.jpg",
@@ -5284,13 +5060,6 @@
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Wedding_ring"
  },
- "Lego minifigure": {
-  "file": "lego-minifigure.png",
-  "source": "https://commons.wikimedia.org/wiki/File:USD253711-2.png",
-  "artist": "Interlego AG",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Lego_minifigure"
- },
  "Refrigerator magnet": {
   "file": "refrigerator-magnet.png",
   "source": "https://commons.wikimedia.org/wiki/File:Colecci%C3%B3n_de_imanes_de_frigor%C3%ADfico_(RPS_28-06-2015).png",
@@ -5318,13 +5087,6 @@
   "artist": "File:Yamaha Saxophone YAS-62.tif: Yamaha Corporation;\nremove backround: Habitator terrae",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Alto_saxophone"
- },
- "Concert harp": {
-  "file": "concert-harp.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Range_harp.svg.png",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Pedal_harp"
  },
  "Wat Arun": {
   "file": "wat-arun.jpg",
@@ -5367,13 +5129,6 @@
   "artist": "Bjørn Christian Tørrissen",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Shwedagon_Pagoda"
- },
- "Petronas Towers": {
-  "file": "petronas-towers.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Petronas_Towers_Logo.svg.png",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Petronas_Towers"
  },
  "Merlion": {
   "file": "merlion.jpg",
@@ -5438,13 +5193,6 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Exam"
  },
- "Report card": {
-  "file": "report-card.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Arlington_College_progress_report_(report_card)_for_Miss_Fannie_Watson_(10013167).jpg",
-  "artist": "Clarence Denman Papers",
-  "license": "CC BY 4.0",
-  "page": "https://en.wikipedia.org/wiki/Report_card"
- },
  "English alphabet": {
   "file": "english-alphabet.png",
   "source": "https://commons.wikimedia.org/wiki/File:File-Dax_sample.png",
@@ -5472,13 +5220,6 @@
   "artist": "Solomon203",
   "license": "CC BY 3.0",
   "page": "https://en.wikipedia.org/wiki/Library_card"
- },
- "Sticker": {
-  "file": "sticker.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Bananas_on_countertop.JPG",
-  "artist": "N734LQ",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Sticker"
  },
  "Human skin": {
   "file": "human-skin.jpg",
@@ -5515,26 +5256,12 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Baby_transport"
  },
- "Writer": {
-  "file": "writer.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_y_Lucientes_-_Gaspar_Melchor_de_Jovellanos.jpg",
-  "artist": "Unknown authorUnknown author",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Writer"
- },
  "House painter and decorator": {
   "file": "house-painter-and-decorator.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:House_painters_in_Capri_(cropped).jpg",
   "artist": "Jorge Royan",
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/House_painter_and_decorator"
- },
- "Sea captain": {
-  "file": "sea-captain.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Kristina_Regina_wheelhouse.jpg",
-  "artist": "Hervé Cozanet",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Sea_captain"
  },
  "Crown (headgear)": {
   "file": "crown-headgear.jpg",
@@ -5550,20 +5277,6 @@
   "license": "CC BY 3.0",
   "page": "https://en.wikipedia.org/wiki/Tiara"
  },
- "Prince": {
-  "file": "prince.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Prince_William_attends_Holocaust_Memorial_Day_(54290704867)(cropped_3).jpg",
-  "artist": "Number 10",
-  "license": "CC BY 2.0",
-  "page": "https://en.wikipedia.org/wiki/Prince"
- },
- "Princess": {
-  "file": "princess.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Sigrid_Eriksdotter_Vasa.jpg",
-  "artist": "Unidentified painter",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Princess"
- },
  "Superhero": {
   "file": "superhero.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Front_cover%2C_%22Wow_Comics%22_no._38_(art_by_Jack_Binder).jpg",
@@ -5577,20 +5290,6 @@
   "artist": "",
   "license": "",
   "page": "https://en.wikipedia.org/wiki/Piracy"
- },
- "Magic (illusion)": {
-  "file": "magic-illusion.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Hieronymus_Bosch_051.jpg",
-  "artist": "Hieronymus Bosch and workshop / Workshop of Hieronymus Bosch / After Hieronymus Bosch",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Magic_(illusion)"
- },
- "Earring": {
-  "file": "earring.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Positions_of_earrings.jpg",
-  "artist": "Modified by User:Nicor",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Earring"
  },
  "Karate": {
   "file": "karate.jpg",
@@ -5648,13 +5347,6 @@
   "license": "GFDL 1.2",
   "page": "https://en.wikipedia.org/wiki/Green_bean"
  },
- "Ginger": {
-  "file": "ginger.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Koeh-146-no_text.jpg",
-  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Ginger"
- },
  "Alpinia galanga": {
   "file": "alpinia-galanga.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_7562_qsbg11mar.jpg",
@@ -5662,26 +5354,12 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Alpinia_galanga"
  },
- "Battery charger": {
-  "file": "battery-charger.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Car_Battery_Charger.jpg",
-  "artist": "Tatu Kosonen",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Battery_charger"
- },
  "Wireless router": {
   "file": "wireless-router.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:D-Link_DI-524.jpg",
   "artist": "Weihao Chiu @ Chinese Wikipedia",
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Wireless_router"
- },
- "Email": {
-  "file": "email.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Evolution_36_mail.png",
-  "artist": "AlexanderVanLoon",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Email"
  },
  "Video camera": {
   "file": "video-camera.jpg",
@@ -5696,13 +5374,6 @@
   "artist": "Tomasz Sienicki [user: tsca, mail: tomasz.sienicki at gmail.com]",
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Padlock"
- },
- "Screenshot": {
-  "file": "screenshot.png",
-  "source": "https://commons.wikimedia.org/wiki/File:QEMU_6.2_screenshot_(cropped).png",
-  "artist": "Software:\nThe OpenIndiana Project, KDE developers, MATE developers, htop developers, and QEMU team\nWallpaper:\nKen Vermette (KDE), The OpenIndiana Project (MATE)\nScreenshot: \n\nVulcanSphere",
-  "license": "CDDL",
-  "page": "https://en.wikipedia.org/wiki/Screenshot"
  },
  "Trumpet": {
   "file": "trumpet.jpg",
@@ -5753,34 +5424,6 @@
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Father"
  },
- "Sister": {
-  "file": "sister.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Little_Julia_tending_the_baby_at_home.jpg",
-  "artist": "Lewis Hine, 1874-1940, photographer.",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Sister"
- },
- "Brother": {
-  "file": "brother.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Jackson_5_1969.jpg",
-  "artist": "Bernie Ilson, Inc., public relations, New York.",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Brother"
- },
- "Grandmother": {
-  "file": "grandmother.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:The_Favorite_by_Georgios_Iakovidis.jpg",
-  "artist": "Georgios Jakobides",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Grandparent"
- },
- "Grandfather": {
-  "file": "grandfather.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:The_Favorite_by_Georgios_Iakovidis.jpg",
-  "artist": "Georgios Jakobides",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Grandparent"
- },
  "Infant": {
   "file": "infant.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:The_newborn_baby_in_men.jpg",
@@ -5809,13 +5452,6 @@
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Parent"
  },
- "Grandparent": {
-  "file": "grandparent.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:The_Favorite_by_Georgios_Iakovidis.jpg",
-  "artist": "Georgios Jakobides",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Grandparent"
- },
  "Twin": {
   "file": "twin.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Mauch_Twins.jpg",
@@ -5830,13 +5466,6 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Friendship"
  },
- "Neighbourhood": {
-  "file": "neighbourhood.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Chelsea1217.JPG",
-  "artist": "GK tramrunner229",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Neighbourhood"
- },
  "Man": {
   "file": "man.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Outdoors-man-portrait_(cropped).jpg",
@@ -5850,13 +5479,6 @@
   "artist": "John Ragai",
   "license": "CC BY 2.0",
   "page": "https://en.wikipedia.org/wiki/Woman"
- },
- "Reading": {
-  "file": "reading.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Muse_reading_Louvre_CA2220_(cropped).jpg",
-  "artist": "Klügmann Painter",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Reading"
  },
  "Sitting": {
   "file": "sitting.jpg",
@@ -5878,13 +5500,6 @@
   "artist": "Shimer College",
   "license": "CC BY 2.0",
   "page": "https://en.wikipedia.org/wiki/Listening"
- },
- "Door handle": {
-  "file": "door-handle.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Paris_4e_H%C3%B4tel_Lambert_Heurtoir_313.jpg",
-  "artist": "GFreihalter",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Door_handle"
  },
  "Shopping cart": {
   "file": "shopping-cart.jpg",
@@ -5963,13 +5578,6 @@
   "license": "CC BY 4.0",
   "page": "https://en.wikipedia.org/wiki/Cash_register"
  },
- "Queue area": {
-  "file": "queue-area.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Tai_Po_Voting_queue-20200712.jpg",
-  "artist": "Studio Incendo",
-  "license": "CC BY 2.0",
-  "page": "https://en.wikipedia.org/wiki/Queue_area"
- },
  "Starting blocks": {
   "file": "starting-blocks.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:PressureSensitiveStartingBlocks.jpg",
@@ -6040,13 +5648,6 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Seedling"
  },
- "Fruit picking": {
-  "file": "fruit-picking.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Orchard.ladders.jpg",
-  "artist": "Red58bill",
-  "license": "CC BY 3.0",
-  "page": "https://en.wikipedia.org/wiki/Fruit_picking"
- },
  "Shovel": {
   "file": "shovel.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Skovl.jpg",
@@ -6075,20 +5676,6 @@
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Electric_light"
  },
- "Photo album": {
-  "file": "photo-album.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Black_and_white_photo_album%2C_Rostov-on-Don%2C_Russia.jpg",
-  "artist": "Vyacheslav Argenberg",
-  "license": "CC BY 4.0",
-  "page": "https://en.wikipedia.org/wiki/Photo_album"
- },
- "Lost and found": {
-  "file": "lost-and-found.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-M0125-421%2C_Fundb%C3%BCro_in_Berlin.jpg",
-  "artist": "Klaus Franke",
-  "license": "CC BY-SA 3.0 de",
-  "page": "https://en.wikipedia.org/wiki/Lost_and_found"
- },
  "Abacus": {
   "file": "abacus.png",
   "source": "https://commons.wikimedia.org/wiki/File:Abacus_(PSF).png",
@@ -6116,13 +5703,6 @@
   "artist": "Pinerineks",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Thumb_signal"
- },
- "Wish list": {
-  "file": "wish-list.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Wish_list.jpg",
-  "artist": "Genealogyphotos on Flickr",
-  "license": "CC BY 2.0",
-  "page": "https://en.wikipedia.org/wiki/Wish_list"
  },
  "Sharing": {
   "file": "sharing.jpg",
@@ -6159,20 +5739,6 @@
   "license": "CC BY-SA 2.0",
   "page": "https://en.wikipedia.org/wiki/Primary_education"
  },
- "Hairstyle": {
-  "file": "hairstyle.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Old_Chinese_woman_with_elaborate_hair_style._John_Thomson._China%2C_1869._The_Wellcome_Collection%2C_London.jpg",
-  "artist": "Osama Shukir Muhammed Amin FRCP(Glasg)",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Hairstyle"
- },
- "Manicure": {
-  "file": "manicure.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Hastings_County_Archives_OSD_1938-1939-54_(39912414015).jpg",
-  "artist": "Community Archives",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Manicure"
- },
  "Campfire": {
   "file": "campfire.png",
   "source": "https://commons.wikimedia.org/wiki/File:Campfire_Pinecone.png",
@@ -6186,27 +5752,6 @@
   "artist": "Daderot",
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/V8_engine"
- },
- "Postal worker": {
-  "file": "postal-worker.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Mailman_on_Break.jpg",
-  "artist": "Fester Frump",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Postal_worker"
- },
- "Pleated skirt": {
-  "file": "pleated-skirt.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Rochet_Plissage.JPG",
-  "artist": "Carolus",
-  "license": "CC BY 3.0",
-  "page": "https://en.wikipedia.org/wiki/Pleat"
- },
- "Rash guard": {
-  "file": "rash-guard.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Rashguard.jpg",
-  "artist": "Peter Pusztai",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Rash_guard"
  },
  "Television": {
   "file": "television.jpg",
@@ -6250,40 +5795,12 @@
   "license": "CC BY 2.0",
   "page": "https://en.wikipedia.org/wiki/Nuclear_family"
  },
- "Child": {
-  "file": "child.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:thumbnail.jpeg",
-  "artist": "",
-  "license": "",
-  "page": "https://en.wikipedia.org/wiki/Child"
- },
- "Bridegroom": {
-  "file": "bridegroom.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Wedding-1942.png",
-  "artist": "",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Bridegroom"
- },
- "Bride": {
-  "file": "bride.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Wed-dress-001.jpg",
-  "artist": "Charles W. Lindner, active 1890-1894 in Chicago",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Bride"
- },
  "Nap": {
   "file": "nap.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Hammock_nap_on_patio.jpg",
   "artist": "Michael Nutt from New York, US",
   "license": "CC BY-SA 2.0",
   "page": "https://en.wikipedia.org/wiki/Nap"
- },
- "Quiz": {
-  "file": "quiz.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Health_Quiz%2C_RAMC%3B_651-3_Wellcome_L0024826_(cropped).jpg",
-  "artist": "",
-  "license": "CC BY 4.0",
-  "page": "https://en.wikipedia.org/wiki/Quiz"
  },
  "First aid": {
   "file": "first-aid.png",
@@ -6326,5 +5843,243 @@
   "artist": "",
   "license": "",
   "page": "https://en.wikipedia.org/wiki/Alpine_skiing"
+ },
+ "Mist": {
+  "file": "mist.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B0_%D1%81%D0%B5%D0%BB%D0%BE%D0%BC_2.jpg",
+  "artist": "Михайло Пецкович",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Mist"
+ },
+ "Sun": {
+  "file": "sun.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Sun_in_white_light.jpg",
+  "artist": "Matúš Motlo",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Sun"
+ },
+ "Motor scooter": {
+  "file": "motor-scooter.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Yamaha_Aerox_2011_.jpg",
+  "artist": "Thomas Wiersma",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Scooter_(motorcycle)"
+ },
+ "Artist": {
+  "file": "artist.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Artists_Collage.png",
+  "artist": "OboeBlanket (as collagist), User:Llywelyn2000, User:TitiaHouplain, and Joi Ito (as photographers)",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Artist"
+ },
+ "Scientist": {
+  "file": "scientist.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Pierre_and_Marie_Curie.jpg",
+  "artist": "Unknown photographer",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Scientist"
+ },
+ "Trench coat": {
+  "file": "trench-coat.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:WWITrenchcoat.jpeg",
+  "artist": "Hephaestos",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Trench_coat"
+ },
+ "Medal": {
+  "file": "medal.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Portrait_medal_of_Cecilia_Gonzaga_(obverse)%3B_Innocence_and_a_Unicorn_in_a_Moonlit_Landscape_(reverse)_MET_DP-1241-015_(cropped).jpg",
+  "artist": "Pisanello",
+  "license": "CC0",
+  "page": "https://en.wikipedia.org/wiki/Medal"
+ },
+ "Syzygium jambos": {
+  "file": "syzygium-jambos.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Syzygium_jambos.JPG",
+  "artist": "B.Navez",
+  "license": "CC BY-SA 3.0",
+  "page": "https://en.wikipedia.org/wiki/Syzygium_jambos"
+ },
+ "Notepad": {
+  "file": "notepad.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Notebooks.jpg",
+  "artist": "L.Marie",
+  "license": "CC BY 2.0",
+  "page": "https://en.wikipedia.org/wiki/Notebook"
+ },
+ "2011 Thailand floods": {
+  "file": "2011-thailand-floods.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Defense.gov_photo_essay_111016-M-ZN194-162.jpg",
+  "artist": "Cpl. Robert J. Maurer",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/2011_Thailand_floods"
+ },
+ "Applause": {
+  "file": "applause.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Arabic_arts_festival_applause.jpg",
+  "artist": "Indigo Goat from Liverpool",
+  "license": "CC BY 2.0",
+  "page": "https://en.wikipedia.org/wiki/Applause"
+ },
+ "Javelin throw": {
+  "file": "javelin-throw.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Thomas_R%C3%B6hler_2011.jpg",
+  "artist": "TRJavelin",
+  "license": "CC BY-SA 3.0",
+  "page": "https://en.wikipedia.org/wiki/Javelin_throw"
+ },
+ "Woodworking": {
+  "file": "woodworking.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Ing%C3%A5_hembygdsmuseum_Gammelg%C3%A5rden_09.jpg",
+  "artist": "Sofia Ek",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Woodworking"
+ },
+ "Toaster oven": {
+  "file": "toaster-oven.png",
+  "source": "https://commons.wikimedia.org/wiki/File:lossless-page1-330px-Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff.png",
+  "artist": "",
+  "license": "",
+  "page": "https://en.wikipedia.org/wiki/Toaster"
+ },
+ "Calisthenics": {
+  "file": "calisthenics.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Planche.jpg",
+  "artist": "Jonathanfv",
+  "license": "CC BY 3.0",
+  "page": "https://en.wikipedia.org/wiki/Calisthenics"
+ },
+ "Coast": {
+  "file": "coast.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Spring_Lake%2C_New_Jersey_Beach_at_Sunrise.jpg",
+  "artist": "Nick Harris",
+  "license": "CC BY 2.5",
+  "page": "https://en.wikipedia.org/wiki/Coast"
+ },
+ "Lounge suit": {
+  "file": "lounge-suit.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Matt_Smith_on_%22Christopher_And_His_Kind%22_set.jpg",
+  "artist": "Cliff Donaldson from Belfast, Northern Ireland",
+  "license": "CC BY-SA 2.0",
+  "page": "https://en.wikipedia.org/wiki/Suit"
+ },
+ "Team sport": {
+  "file": "team-sport.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:IIHF_Ice_Hockey_Women_20170405_08.jpg",
+  "artist": "Jeon Han",
+  "license": "CC BY-SA 2.0",
+  "page": "https://en.wikipedia.org/wiki/Team_sport"
+ },
+ "Lego": {
+  "file": "lego.png",
+  "source": "https://commons.wikimedia.org/wiki/File:LEGO_logo.svg.png",
+  "artist": "",
+  "license": "",
+  "page": "https://en.wikipedia.org/wiki/Lego"
+ },
+ "Sprouting": {
+  "file": "sprouting.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Organic_mixed_beans_shoots.jpg",
+  "artist": "",
+  "license": "CC BY-SA 3.0",
+  "page": "https://en.wikipedia.org/wiki/Sprouting"
+ },
+ "Electrical cable": {
+  "file": "electrical-cable.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Leitungsende_Abisoliert_en.svg.png",
+  "artist": "",
+  "license": "",
+  "page": "https://en.wikipedia.org/wiki/Electrical_cable"
+ },
+ "Gamepad": {
+  "file": "gamepad.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Nintendo-Switch-Pro-Controller-FL.jpg",
+  "artist": "Evan-Amos",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Gamepad"
+ },
+ "Harp": {
+  "file": "harp.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Harp.png",
+  "artist": "",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Harp"
+ },
+ "Songkran": {
+  "file": "songkran.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Songkran_Day_%40_Chiangmai_Wall.jpg",
+  "artist": "Khunmoohan",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Songkran_(Thailand)"
+ },
+ "Kuala Lumpur": {
+  "file": "kuala-lumpur.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Bukit_Bintang_junction_in_2024_2.jpg",
+  "artist": "Renek78",
+  "license": "CC0",
+  "page": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+ },
+ "Louvre": {
+  "file": "louvre.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg",
+  "artist": "Benh LIEU SONG (Flickr)",
+  "license": "CC BY-SA 3.0",
+  "page": "https://en.wikipedia.org/wiki/Louvre"
+ },
+ "Sunbathing": {
+  "file": "sunbathing.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Tan_lines_on_human_female_chest.jpg",
+  "artist": "Evil Erin",
+  "license": "CC BY 2.0",
+  "page": "https://en.wikipedia.org/wiki/Sun_tanning"
+ },
+ "Stage magic": {
+  "file": "stage-magic.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Hieronymus_Bosch_051.jpg",
+  "artist": "Hieronymus Bosch and workshop / Workshop of Hieronymus Bosch / After Hieronymus Bosch",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Magic_(illusion)"
+ },
+ "Miniskirt": {
+  "file": "miniskirt.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:PattiKensit23_(cropped)_(cropped).JPG",
+  "artist": "Roland Godefroy",
+  "license": "CC BY-SA 3.0",
+  "page": "https://en.wikipedia.org/wiki/Miniskirt"
+ },
+ "One-piece swimsuit": {
+  "file": "one-piece-swimsuit.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Surfing_in_a_one-piece_swimsuit.jpg",
+  "artist": "Phuket@photographer.net",
+  "license": "CC BY 2.0",
+  "page": "https://en.wikipedia.org/wiki/One-piece_swimsuit"
+ },
+ "Stud earring": {
+  "file": "stud-earring.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Positions_of_earrings.jpg",
+  "artist": "Modified by User:Nicor",
+  "license": "CC BY-SA 3.0",
+  "page": "https://en.wikipedia.org/wiki/Earring"
+ },
+ "Zingiber": {
+  "file": "zingiber.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Koeh-146-no_text.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/Zingiber"
+ },
+ "AC adapter": {
+  "file": "ac-adapter.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Notebook-Computer-AC-Adapter.jpg",
+  "artist": "Evan-Amos",
+  "license": "Public domain",
+  "page": "https://en.wikipedia.org/wiki/AC_adapter"
+ },
+ "Vacation": {
+  "file": "vacation.jpg",
+  "source": "https://commons.wikimedia.org/wiki/File:Vacation_Village_at_Weston_Pool%2C_Weston%2C_Florida_February_24%2C_2022_B.jpg",
+  "artist": "AITFFan1",
+  "license": "CC BY-SA 4.0",
+  "page": "https://en.wikipedia.org/wiki/Vacation"
  }
 }

@@ -2641,7 +2641,7 @@ function NinjaGame({ words, speak, track }) {
             style={{ position:"relative",height:"min(40vh,340px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.surf}, ${T.tertiaryC})`,marginTop:8,touchAction:"none",userSelect:"none" }}>
             {items.map(it => (
               <span key={it.key} data-ninja={cut[it.key] ? undefined : it.key} onAnimationEnd={() => fell(it)}
-                style={{ position:"absolute",left:`${Math.min(it.x, 72)}%`,bottom:-110,width:"clamp(84px, 24vw, 120px)",aspectRatio:"1",borderRadius:20,overflow:"hidden",border:`3px solid ${cut[it.key] ? T.outlineV : T.primary}`,background:T.card,boxShadow:cut[it.key] ? "none" : MD.shadow,animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,opacity:cut[it.key] ? 0.35 : 1,transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
+                style={{ position:"absolute",left:`${Math.min(it.x, 72)}%`,bottom:-110,width:"clamp(92px, 28vw, 130px)",aspectRatio:"1",borderRadius:20,overflow:"hidden",border:`3px solid ${cut[it.key] ? T.outlineV : T.primary}`,background:T.card,boxShadow:cut[it.key] ? "none" : MD.shadow,animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,opacity:cut[it.key] ? 0.35 : 1,transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
                 <PicFill w={it.w} emojiSize={36} />
               </span>
             ))}
@@ -2908,7 +2908,7 @@ function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
   const [asp, setAsp] = useState(0);   // สัดส่วนจริงของรูป (กว้าง/สูง) → กรอบเปลี่ยนตามรูป ไม่มีขอบว่าง ไม่เบลอ
   useEffect(() => setAsp(0), [url]);
   const MAXH = "min(46vh, 430px, 92vw)";
-  const fa = asp ? Math.min(1.5, Math.max(0.72, asp)) : 4/3;
+  const fa = asp ? Math.min(1.3, Math.max(0.72, asp)) : 4/3;
   const fillBox = fill ? { width:"100%", maxWidth:`calc(${MAXH} * ${fa})`, aspectRatio:String(fa) } : { width:box, aspectRatio:String(fa) };
   if (concept) return (
     <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...(fill ? { width:"100%",height:MAXH } : fillBox),borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>

@@ -44,7 +44,7 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
   await game('Animals', 'Sentence', 'single');
   await game('Animals', 'Speak', 'single');
   await game('Animals', 'Whack-a-Mole', 'multi', startBtn);
-  await game('Animals', 'Balloon Pop', 'single', startBtn);
+  await game('Animals', 'Balloon Pop', 'multi', startBtn);
   await game('Animals', 'Word Ninja', 'multi', startBtn);
   await game('Animals', 'Bingo', 'multi', startBtn);
   await game('Fruits', 'Speed', 'multi', startBtn);

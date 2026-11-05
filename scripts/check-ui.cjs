@@ -7,7 +7,7 @@ const START = 'text=แตะเพื่อเริ่มเลย';
 // ด่านผู้ปกครอง (โจทย์คูณ) → อ่านโจทย์แล้วกดแป้นตัวเลข
 const solveGate = async p => { if (!(await p.isVisible('text=ผู้ปกครองเท่านั้น'))) return; const t = await p.textContent('body'); const m = t.match(/(\d+)\s*×\s*(\d+)\s*=/); if (!m) return; for (const d of String(+m[1] * +m[2])) await p.click(`button[data-key="${d}"]`); await p.waitForTimeout(400); };
 // กดปุ่มลำโพงในการ์ดเกม (ข้อแบบฟัง ต้องกดฟังก่อนถึงจะตอบได้)
-const pressSpeaker = async p => { if (await p.isVisible('text=ฟัง EN+TH')) { await p.click('text=ฟัง EN+TH'); return; } const sp = p.locator('button:has-text("🔊")').nth(1); if (await sp.count()) await sp.click({ force: true }).catch(() => {}); };
+const pressSpeaker = async p => { const sp0 = p.locator('button[aria-label="ฟังคำ"]'); if (await sp0.count() && await sp0.first().isVisible()) { await sp0.first().dispatchEvent('click'); return; } if (await p.isVisible('text=ฟัง EN+TH')) { await p.click('text=ฟัง EN+TH'); return; } const sp = p.locator('button:has-text("🔊")').nth(1); if (await sp.count()) await sp.click({ force: true }).catch(() => {}); };
 const skipOnboard = async p => { if (await p.isVisible('text=เรียนคำศัพท์ก่อน') && await p.isVisible('button:text-is("ข้าม")')) { await p.click('button:text-is("ข้าม")'); await p.waitForTimeout(300); } };
 
 async function audit(page, label) {
@@ -154,7 +154,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     // สอบวัดระดับ 20 ข้อ → ใบประกาศ
     await p.click('text=สอบวัดระดับ'); await p.waitForTimeout(200); await shot(p, `${name}-18a-test-intro`); await a('test-intro');
     await p.click('text=เริ่มสอบ'); await p.waitForTimeout(300); await shot(p, `${name}-18b-test`); await a('test');
-    for (let k = 0; k < 20; k++) { await pressSpeaker(p); await p.waitForTimeout(100); await p.locator('div[style*="display: grid"] > button').first().click(); await p.waitForTimeout(1100); }
+    for (let k = 0; k < 20; k++) { const gb = p.locator('div[style*="display: grid"] > button').first(); await pressSpeaker(p); await p.waitForTimeout(250); for (let t = 0; t < 20 && await gb.isDisabled().catch(() => false); t++) { await p.locator('button[aria-label="ฟังคำ"], button:has-text("ฟัง EN+TH")').first().click({ force: true }).catch(() => {}); await p.waitForTimeout(400); } await gb.click(); await p.waitForTimeout(1100); }
     await p.waitForSelector('text=เล่นอีก', { timeout: 20000 }); await p.click('text=กลับ ›'); await p.waitForTimeout(300);
     await shot(p, `${name}-18c-certificate`); await a('certificate'); res.push({ label: name + ' certificate', ok: await p.isVisible('text=ใบประกาศนียบัตร') });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")');

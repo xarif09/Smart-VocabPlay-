@@ -2091,26 +2091,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
       {/* โลกคำศัพท์: วงกลมรูปจริง + วงแหวนดาว */}
       {sec(<>🌍 โลกคำศัพท์ <span style={{ ...TYPE.labelM,color:T.ink3 }}>· {words.length} คำ</span></>)}
       <Reveal step={30} style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px 8px" }}>
-        {categories.map(cat => {
-          const n = words.filter(w => w.cat === cat.id).length;
-          const got = cat.games.reduce((a, g) => a + (progress.stars[`${cat.id}:${g}`] || 0), 0);
-          const pct = Math.round(got / Math.max(1, cat.games.length * 3) * 100);
-          const crown = !!progress.boss[cat.id];
-          const tw = thumbOf(cat);
-          return (
-            <button key={cat.id} onClick={() => { sfx.tap(); onPickCat(cat); }} className="m3-press" style={{ background:"none",border:"none",cursor:"pointer",padding:0,display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:FONT }}>
-              <span style={{ position:"relative",width:"min(27vw, 120px)",aspectRatio:"1",borderRadius:"50%",padding:5,background:`conic-gradient(${T.primary} ${pct}%, ${T.surfHigh} 0)` }}>
-                <span style={{ position:"relative",display:"block",width:"100%",height:"100%",borderRadius:"50%",overflow:"hidden",background:cat.color,border:`3px solid ${T.surf}` }}>
-                  {tw && <PicFill w={tw} emojiSize={36} fit="cover" />}
-                </span>
-                <span style={{ position:"absolute",left:-2,bottom:-2 }}><CatIcon id={cat.id} size={34} /></span>
-                {crown && <span style={{ position:"absolute",right:-2,top:-4,fontSize:22 }}>👑</span>}
-              </span>
-              <span style={{ fontWeight:800,fontSize:14,color:T.ink,lineHeight:1.1 }}>{cat.label}</span>
-              <span style={{ fontSize:11,color:T.ink2 }}>{cat.thai} · {n} คำ</span>
-            </button>
-          );
-        })}
+        {categories.map(cat => <CatBubble key={cat.id} cat={cat} words={words} progress={progress} onClick={() => { sfx.tap(); onPickCat(cat); }} />)}
       </Reveal>
       <div style={{ marginTop:18 }}><QrCard /></div>
     </div>
@@ -2120,71 +2101,120 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
 // ═══════════════════════════════════════════════════════
 // HUBS — แท็บ เรียน / เล่น / ของฉัน
 // ═══════════════════════════════════════════════════════
-function HubRow({ emoji, icon, title, sub, grad, onClick, right }) {
+// หมวดเป็นวงกลมรูปจริง + วงแหวนดาว (ใช้ทั้งหน้าแรกและแท็บ)
+function CatBubble({ cat, words, progress, onClick, size = "min(27vw, 120px)" }) {
+  const n = words.filter(w => w.cat === cat.id).length;
+  const got = cat.games.reduce((a, g) => a + (progress.stars[`${cat.id}:${g}`] || 0), 0);
+  const pct = Math.round(got / Math.max(1, cat.games.length * 3) * 100);
+  const tw = imageTitleOf(coverWord(cat)) ? coverWord(cat) : words.find(w => w.cat === cat.id && imageTitleOf(w));
   return (
-    <button className="m3-press" onClick={() => { sfx.tap(); onClick(); }} style={{ ...M3.listItem(),marginBottom:8,minHeight:76 }}>
-      {icon ? <span style={{ flexShrink:0 }}>{icon}</span> : <Shape kind="cookie9" size={48} fill={T.secondaryC}><span style={{ fontSize:24 }}>{emoji}</span></Shape>}
-      <span style={{ flex:1,minWidth:0 }}><span style={{ display:"block",...TYPE.titleM,color:T.ink }}>{title}</span><span style={{ display:"block",...TYPE.bodyS,color:T.ink2 }}>{sub}</span></span>
-      {right ?? <span style={{ color:T.ink3,fontSize:22 }}>›</span>}
+    <button onClick={onClick} className="m3-press" style={{ background:"none",border:"none",cursor:"pointer",padding:0,display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:FONT }}>
+      <span style={{ position:"relative",width:size,aspectRatio:"1",borderRadius:"50%",padding:5,background:`conic-gradient(${T.primary} ${pct}%, ${T.surfHigh} 0)` }}>
+        <span style={{ position:"relative",display:"block",width:"100%",height:"100%",borderRadius:"50%",overflow:"hidden",background:cat.color,border:`3px solid ${T.surf}` }}>
+          {tw && <PicFill w={tw} emojiSize={36} fit="cover" />}
+        </span>
+        <span style={{ position:"absolute",left:-2,bottom:-2 }}><CatIcon id={cat.id} size={34} /></span>
+        {progress.boss[cat.id] && <span style={{ position:"absolute",right:-2,top:-4,fontSize:22 }}>👑</span>}
+      </span>
+      <span style={{ fontWeight:800,fontSize:14,color:T.ink,lineHeight:1.1 }}>{cat.label}</span>
+      <span style={{ fontSize:11,color:T.ink2 }}>{cat.thai} · {n} คำ</span>
     </button>
   );
 }
+// การ์ดใหญ่สำหรับแท็บ: ไอคอนเด่น ตัวหนังสือน้อย แตะง่าย
+const TONES = () => [[T.primaryC,T.onPrimaryC],[T.secondaryC,T.onSecondaryC],[T.tertiaryC,T.onTertiaryC]];
+function BigTile({ icon, title, sub, i = 0, onClick, wide, children }) {
+  const [bg, fg] = TONES()[i % 3];
+  return (
+    <button onClick={() => { sfx.tap(); onClick(); }} className="m3-press" style={{ gridColumn:wide ? "1 / -1" : undefined,position:"relative",overflow:"hidden",minHeight:wide ? 108 : 150,borderRadius:32,border:"none",background:bg,color:fg,cursor:"pointer",display:"flex",flexDirection:wide ? "row" : "column",alignItems:"center",justifyContent:wide ? "flex-start" : "center",gap:wide ? 14 : 6,padding:wide ? "14px 18px" : "14px 8px 12px",textAlign:wide ? "left" : "center",fontFamily:FONT }}>
+      <Shape kind={["cookie6","clover","cookie9"][i % 3]} size={160} fill={"color-mix(in oklab, var(--md-surface) 30%, transparent)"} style={{ position:"absolute",right:-50,top:-50 }} />
+      <span style={{ position:"relative",flex:"none" }}>{icon}</span>
+      <span style={{ position:"relative",flex:wide ? 1 : undefined,minWidth:0 }}>
+        <span style={{ display:"block",fontWeight:900,fontSize:wide ? 19 : 16,lineHeight:1.15 }}>{title}</span>
+        {sub && <span style={{ display:"block",fontSize:12,opacity:.85,marginTop:3,lineHeight:1.25 }}>{sub}</span>}
+        {children}
+      </span>
+    </button>
+  );
+}
+const HubGrid = ({ children }) => <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }}>{children}</div>;
+const HubTitle = ({ children }) => <div style={{ ...TYPE.titleL,color:T.ink,margin:"20px 4px 10px" }}>{children}</div>;
 function LearnHub({ words, categories, progress, units, onPath, onCat, onTalk, onStories, onPhonics, onGrammar, onDaily }) {
   const unitsDone = units.filter(u => unitDone(progress.path, u)).length;
+  const nextUnit = units.find(u => !unitDone(progress.path, u));
   return (
-    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
-      <HubRow emoji="🗺️" title="เส้นทางบทเรียน A1 → A2" sub={`ผ่านแล้ว ${unitsDone}/${units.length} บท · เรียนการ์ด → ทดสอบ → ฟัง`} grad={T.grad2} onClick={onPath} />
-      <HubRow icon={<GameIcon id="droleplay" size={48} />} title="บทสนทนา" sub={`${DIALOGUES.length} สถานการณ์ · ฟัง เล่นบทบาท เติมคำ`} grad={T.grad} onClick={onTalk} />
-      <HubRow emoji="📖" title="นิทานภาพ" sub={`${STORIES.length} เรื่อง · อ่านพร้อมเสียง + คำถาม`} grad={T.grad} onClick={onStories} />
-      <HubRow icon={<GameIcon id="phonics" size={48} />} title="โฟนิกส์ A–Z" sub="เสียงตัวอักษร + คำตัวอย่าง + เกม" grad={T.grad} onClick={onPhonics} />
-      <HubRow icon={<GameIcon id="grammar" size={48} />} title="ไวยากรณ์เด็ก" sub={`${GRAMMAR.length} บท · กฎง่ายๆ + แบบฝึก`} grad={T.grad} onClick={onGrammar} />
-      <HubRow icon={<GameIcon id="time" size={48} />} title="ชีวิตประจำวัน" sub="บอกเวลา · เงินบาท · วัน-เดือน · ตัวเลข" grad={T.grad} onClick={onDaily} />
-      <div style={M3.sectionTitle()}>การ์ดคำศัพท์ตามหมวด</div>
-      <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8 }}>
-        {categories.map(c => <button key={c.id} onClick={() => { sfx.tap(); onCat(c); }} style={{ ...card(),minHeight:76,padding:"8px 4px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3,fontFamily:FONT }}><CatIcon id={c.id} size={38} /><span style={{ fontSize:11,fontWeight:800,color:T.ink }}>{c.thai}</span></button>)}
+    <div style={{ padding:"8px 16px 24px",maxWidth:560,margin:"0 auto" }}>
+      <HubGrid>
+        <BigTile wide i={0} icon={<span style={{ fontSize:52 }}>🗺️</span>} title="เส้นทางบทเรียน A1 → A2" sub={nextUnit ? `ต่อบทที่ ${nextUnit.n} · ${nextUnit.cat.thai}` : "ครบทุกบทแล้ว 🎓"} onClick={onPath}>
+          <span style={{ display:"block",marginTop:8 }}><WavyProgress value={units.length ? Math.round(unitsDone / units.length * 100) : 0} height={12} color={T.primary} track={"color-mix(in oklab, var(--md-on-primary-container) 18%, transparent)"} /></span>
+          <span style={{ display:"block",fontSize:11,opacity:.8,marginTop:3 }}>ผ่านแล้ว {unitsDone}/{units.length} บท</span>
+        </BigTile>
+        <BigTile i={1} icon={<GameIcon id="droleplay" size={64} />} title="บทสนทนา" sub={`${DIALOGUES.length} สถานการณ์`} onClick={onTalk} />
+        <BigTile i={2} icon={<GameIcon id="squiz" size={64} />} title="นิทานภาพ" sub={`${STORIES.length} เรื่อง`} onClick={onStories} />
+        <BigTile i={0} icon={<GameIcon id="phonics" size={64} />} title="โฟนิกส์ A–Z" sub="เสียงตัวอักษร" onClick={onPhonics} />
+        <BigTile i={1} icon={<GameIcon id="grammar" size={64} />} title="ไวยากรณ์เด็ก" sub={`${GRAMMAR.length} บท`} onClick={onGrammar} />
+        <BigTile wide i={2} icon={<GameIcon id="time" size={60} />} title="ชีวิตประจำวัน" sub="บอกเวลา · เงินบาท · วัน-เดือน · ตัวเลข" onClick={onDaily} />
+      </HubGrid>
+      <HubTitle>📖 การ์ดคำศัพท์ตามหมวด</HubTitle>
+      <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px 8px" }}>
+        {categories.map(c => <CatBubble key={c.id} cat={c} words={words} progress={progress} onClick={() => { sfx.tap(); onCat(c); }} />)}
       </div>
     </div>
   );
 }
 function PlayHub({ words, categories, progress, missedCount, onCat, onReview, onVersus, onTest }) {
   const totalStars = Object.values(progress.stars).reduce((a, b) => a + b, 0);
+  const crowns = Object.keys(progress.boss).length;
   return (
-    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
-      <div style={{ ...card(),padding:16,marginBottom:12,display:"flex",alignItems:"center",gap:12 }}>
-        <span style={{ fontSize:36 }}>⭐</span><div><div style={{ fontWeight:800,fontSize:18,color:T.ink }}>{totalStars} ดาว</div><div style={{ fontSize:12,color:T.ink3 }}>จาก 24 เกมใน {categories.length} หมวด · บอสชนะแล้ว {Object.keys(progress.boss).length} หมวด</div></div>
+    <div style={{ padding:"8px 16px 24px",maxWidth:560,margin:"0 auto" }}>
+      <div style={{ position:"relative",overflow:"hidden",borderRadius:36,background:`linear-gradient(150deg, ${T.tertiaryC}, ${T.primaryC})`,color:T.onPrimaryC,padding:"18px 20px",marginBottom:10,display:"flex",alignItems:"center",gap:16 }}>
+        <Shape kind="burst" size={220} fill={T.secondaryC} spin style={{ position:"absolute",right:-80,top:-90,opacity:.7 }} />
+        <Shape kind="burst" size={92} fill={T.tertiary}><span style={{ fontSize:44 }}>⭐</span></Shape>
+        <div style={{ position:"relative" }}>
+          <div style={{ fontWeight:900,fontSize:34,lineHeight:1 }}>{totalStars} <span style={{ fontSize:18 }}>ดาว</span></div>
+          <div style={{ fontSize:13,opacity:.9,marginTop:4 }}>👑 ชนะบอส {crowns}/{categories.length} หมวด · 🪙 {progress.coins}</div>
+        </div>
       </div>
-      <HubRow icon={<GameIcon id="quiz" size={48} />} title="ทบทวนวันนี้" sub={missedCount ? `${missedCount} คำถึงเวลาทบทวน` : "ยังไม่มีคำค้าง"} grad={T.grad} onClick={() => missedCount && onReview()} />
-      <HubRow emoji="⚔️" title="แข่ง 2 คน จอเดียว" sub="นั่งตรงข้ามกัน ใครแตะคำถูกก่อนชนะ" grad={T.grad} onClick={onVersus} />
-      <HubRow icon={<GameIcon id="test" size={48} />} title="สอบวัดระดับ + ใบประกาศ" sub={progress.cert ? `ล่าสุด ${progress.cert.score}/${progress.cert.total} คะแนน` : "20 ข้อ ผสมทุกทักษะ"} grad={T.grad} onClick={onTest} />
-      <div style={M3.sectionTitle()}>เลือกหมวดเพื่อเล่นเกม</div>
-      {categories.map(c => {
-        const got = c.games.reduce((a,g)=>a+(progress.stars[`${c.id}:${g}`]||0),0);
-        return <HubRow key={c.id} icon={<CatIcon id={c.id} size={48} />} title={`${c.label} · ${c.thai}`} sub={`${c.games.length} เกม${progress.boss[c.id] ? " · 👑 ชนะบอสแล้ว" : ""}`} grad={`linear-gradient(135deg,${c.color},${c.color}99)`} onClick={() => onCat(c)} right={<span style={{ fontSize:12,fontWeight:800,color:got?T.tertiary:T.ink3 }}>⭐ {got}/{c.games.length*3}</span>} />;
-      })}
+      <HubGrid>
+        <BigTile i={2} icon={<span style={{ fontSize:54 }}>🔁</span>} title="ทบทวนวันนี้" sub={missedCount ? `${missedCount} คำถึงเวลาทบทวน` : "ยังไม่มีคำค้าง 🎉"} onClick={() => missedCount && onReview()} />
+        <BigTile i={1} icon={<GameIcon id="test" size={64} />} title="สอบวัดระดับ + ใบประกาศ" sub={progress.cert ? `ล่าสุด ${progress.cert.score}/${progress.cert.total}` : "20 ข้อ"} onClick={onTest} />
+        <BigTile wide i={0} icon={<span style={{ fontSize:52 }}>⚔️</span>} title="แข่ง 2 คน จอเดียว" sub="ฟังเสียง ใครแตะรูปถูกก่อนชนะ!" onClick={onVersus} />
+      </HubGrid>
+      <HubTitle>🎮 เลือกหมวดเพื่อเล่นเกม</HubTitle>
+      <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px 8px" }}>
+        {categories.map(c => <CatBubble key={c.id} cat={c} words={words} progress={progress} onClick={() => { sfx.tap(); onCat(c); }} />)}
+      </div>
     </div>
   );
 }
 function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles, onStickers, onShop, onRoom, onReport, onManage, onSettings, onCredits, speak }) {
   const pet = getPet(progress);
   const mastered = words.filter(w => isMastered(progress.srs, w.id)).length;
-  const Stat = ({ v, l }) => <div style={{ textAlign:"center" }}><div style={{ fontWeight:800,fontSize:18,color:T.ink }}>{v}</div><div style={{ fontSize:11,color:T.ink3 }}>{l}</div></div>;
+  const Stat = ({ v, l, e }) => <div style={{ textAlign:"center",background:T.card,borderRadius:22,padding:"10px 4px" }}><div style={{ fontSize:22 }}>{e}</div><div style={{ fontWeight:900,fontSize:18,color:T.ink }}>{v}</div><div style={{ fontSize:11,color:T.ink2 }}>{l}</div></div>;
+  const Row = ({ e, t, sub, fn }) => <button onClick={() => { sfx.tap(); fn(); }} className="m3-press" style={{ ...M3.listItem(),marginBottom:6,minHeight:60 }}><span style={{ fontSize:24,width:36,textAlign:"center" }}>{e}</span><span style={{ flex:1,minWidth:0,textAlign:"left" }}><span style={{ display:"block",...TYPE.titleS,color:T.ink }}>{t}</span><span style={{ display:"block",...TYPE.bodyS,color:T.ink2 }}>{sub}</span></span><span style={{ color:T.ink3,fontSize:22 }}>›</span></button>;
   return (
-    <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
-      <div style={{ ...card(),padding:16,marginBottom:12,display:"flex",alignItems:"center",gap:14 }}>
-        <Shape kind="cookie12" size={76} fill={T.primaryC}><span style={{ fontSize:38 }}>{profile?.avatar}</span></Shape>
-        <div style={{ flex:1 }}><div style={{ fontWeight:800,fontSize:20,color:T.ink }}>{profile?.name}</div><div style={{ fontSize:12,color:T.ink3 }}>{pet ? `เพื่อนคู่หู ${pet.name} · Lv.${pet.level}` : "ยังไม่เลือกเพื่อนคู่หู"}</div></div>
-        <button onClick={() => { sfx.tap(); onProfiles(); }} className="m3-press" style={M3.tonal({ minHeight:44,padding:"0 16px",fontSize:13 })}>สลับ</button>
+    <div style={{ padding:"8px 16px 24px",maxWidth:560,margin:"0 auto" }}>
+      <div style={{ position:"relative",overflow:"hidden",borderRadius:36,background:`linear-gradient(160deg, ${T.primaryC}, ${T.secondaryC})`,color:T.onPrimaryC,padding:"18px 18px 14px",marginBottom:10 }}>
+        <Shape kind="cookie12" size={200} fill={T.tertiaryC} style={{ position:"absolute",right:-70,top:-70,opacity:.8 }} />
+        <div style={{ position:"relative",display:"flex",alignItems:"center",gap:14 }}>
+          <Shape kind="cookie12" size={96} fill={T.card}><span style={{ fontSize:48 }}>{profile?.avatar}</span></Shape>
+          <div style={{ flex:1,minWidth:0 }}><div style={{ fontWeight:900,fontSize:24,lineHeight:1.1 }}>{profile?.name}</div><div style={{ fontSize:13,opacity:.85 }}>{pet ? `เพื่อนคู่หู ${pet.name} · Lv.${pet.level}` : "ยังไม่เลือกเพื่อนคู่หู"}</div></div>
+          <button onClick={() => { sfx.tap(); onProfiles(); }} className="m3-press" style={M3.tonal({ minHeight:44,padding:"0 16px",fontSize:13 })}>สลับ</button>
+        </div>
+        <div style={{ position:"relative",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6,marginTop:14 }}>
+          <Stat e="🪙" v={progress.coins} l="เหรียญ" /><Stat e="⭐" v={Object.values(progress.stars).reduce((a,b)=>a+b,0)} l="ดาว" /><Stat e="🔥" v={progress.streak.count} l="วันต่อเนื่อง" /><Stat e="🧠" v={mastered} l="จำได้แม่น" />
+        </div>
       </div>
-      <div style={{ ...card(),padding:"14px 10px",marginBottom:12,display:"grid",gridTemplateColumns:"repeat(4,1fr)" }}>
-        <Stat v={progress.coins} l="🪙 เหรียญ" /><Stat v={Object.values(progress.stars).reduce((a,b)=>a+b,0)} l="⭐ ดาว" /><Stat v={`${progress.streak.count}`} l="🔥 วันต่อเนื่อง" /><Stat v={mastered} l="จำได้แม่น" />
+      <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10 }}>
+        <BigTile i={0} icon={<span style={{ fontSize:48 }}>🏠</span>} title="ห้องเพื่อนคู่หู" onClick={onRoom} />
+        <BigTile i={1} icon={<span style={{ fontSize:48 }}>📒</span>} title="สมุดสติกเกอร์" sub={`${stickerCount}/${words.length}`} onClick={onStickers} />
+        <BigTile i={2} icon={<span style={{ fontSize:48 }}>🛍️</span>} title="ร้านค้า" onClick={onShop} />
       </div>
-      <HubRow emoji="🏠" title="ห้องเพื่อนคู่หู" sub="ให้อาหาร อาบน้ำ เล่น นอน · แต่งห้อง" grad={T.grad} onClick={onRoom} />
-      <HubRow emoji="📒" title="สมุดสติกเกอร์" sub={`เก็บได้ ${stickerCount}/${words.length} ใบ`} grad={T.grad} onClick={onStickers} />
-      <HubRow emoji="🛍️" title="ร้านค้า" sub="หมวกและพื้นหลังให้เพื่อนคู่หู" grad={T.grad} onClick={onShop} />
-      <HubRow emoji="📊" title="รายงานผู้ปกครอง" sub="ความแม่นยำ หมวดที่อ่อน คำที่พลาดบ่อย" grad={T.grad} onClick={onReport} />
-      <HubRow emoji="✏️" title="จัดการคำศัพท์" sub="ค้นหา เพิ่ม แก้ ลบ แปลอัตโนมัติ" grad={T.grad} onClick={onManage} />
-      <HubRow emoji="⚙️" title="ตั้งค่า" sub="เสียง · รูปจริง · เต็มจอ · ล้างความคืบหน้า" grad={T.grad} onClick={onSettings} />
-      <HubRow emoji="🖼️" title="เครดิตรูปภาพ" sub="ที่มาและสัญญาอนุญาตของรูปจาก Wikimedia" grad={T.grad} onClick={onCredits} />
+      <HubTitle>👨‍👩‍👧 สำหรับผู้ปกครอง</HubTitle>
+      <Row e="📊" t="รายงานผู้ปกครอง" sub="ความแม่นยำ หมวดที่อ่อน คำที่พลาดบ่อย" fn={onReport} />
+      <Row e="✏️" t="จัดการคำศัพท์" sub="ค้นหา เพิ่ม แก้ ลบ แปลอัตโนมัติ" fn={onManage} />
+      <Row e="⚙️" t="ตั้งค่า" sub="เสียง · รูปจริง · เต็มจอ · ล้างความคืบหน้า" fn={onSettings} />
+      <Row e="🖼️" t="เครดิตรูปภาพ" sub="ที่มาและสัญญาอนุญาตของรูปจาก Wikimedia" fn={onCredits} />
       <div style={{ textAlign:"center",fontSize:11,color:T.ink3,marginTop:10 }}>Smart VocabPlay v{APP_VERSION}{BUILD_TIME && ` · build ${BUILD_TIME}`}</div>
     </div>
   );
@@ -2769,7 +2799,7 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
       setProgress(next);
       if (stars >= 2) { sfx.win(); fx.win(stars); } else if (stars === 1) { sfx.coin(); fx.confetti(40); } else sfx.lose();
       if (petLevel(totalCorrect) > lvBefore) setTimeout(() => fx.levelUp(), 700);
-      setResult({ score, total, stars, coins, newStickers, label: opts.label, boss: !!opts.boss, cleared, levelUp: petLevel(totalCorrect) > lvBefore });
+      setResult({ score, total, stars, coins, newStickers, gotIds: [...new Set(ids)].slice(0, 8), label: opts.label, boss: !!opts.boss, cleared, levelUp: petLevel(totalCorrect) > lvBefore });
     },
   }), [gameId, cat.id, setProgress]);
 
@@ -2819,13 +2849,21 @@ function ResultScreen({ r, words, speak, pet, onReplay, onExit }) {
     : r.stars === 3 ? "สุดยอดไปเลย!" : r.stars === 2 ? "เก่งมาก!" : r.stars === 1 ? "ดีแล้ว สู้ต่อ!" : "ลองใหม่อีกครั้งนะ";
   const big = r.boss ? (r.cleared ? "👑" : "🛡️") : r.stars >= 2 ? "🎉" : r.stars === 1 ? "🙂" : "💪";
   const newW = r.newStickers.map(id => words.find(w => w.id === id)).filter(Boolean);
+  const gotW = (r.gotIds || []).map(id => words.find(w => w.id === id)).filter(Boolean);
   const petLine = !pet ? null : r.levelUp ? `เลเวลอัป! ตอนนี้ Lv.${pet.level} แล้ว` : r.stars >= 2 ? "เย้! เก่งที่สุดเลย" : r.stars === 1 ? "ดีขึ้นเรื่อยๆ นะ" : "ไม่เป็นไร ลองอีกที!";
   return (
     <div style={{ position:"fixed",inset:0,zIndex:300,background:MD.scrim,display:"flex",alignItems:"center",justifyContent:"center",padding:16,animation:"m3Fade .2s both" }}>
       <div style={{ position:"absolute",inset:0,background:r.stars>=2?"radial-gradient(circle at 50% 30%, rgba(255,209,102,.35), transparent 60%)":"none",pointerEvents:"none" }} />
       <div style={{ background:T.surfHigh,color:T.ink,borderRadius:36,padding:"26px 18px 18px",maxWidth:380,width:"100%",textAlign:"center",boxShadow:MD.shadow,animation:"vpInScale .6s cubic-bezier(.2,.8,.2,1) both",maxHeight:"90dvh",overflowY:"auto",position:"relative",overflow:"hidden",fontFamily:FONT }}>
         {r.stars >= 2 && <div style={{ position:"absolute",left:"50%",top:60,width:360,height:360,marginLeft:-180,borderRadius:"50%",background:"conic-gradient(from 0deg, rgba(255,209,102,.25) 0 15deg, transparent 15deg 30deg)",animation:"vpSpin 14s linear infinite",pointerEvents:"none",maskImage:"radial-gradient(circle, #000 20%, transparent 70%)",WebkitMaskImage:"radial-gradient(circle, #000 20%, transparent 70%)" }} />}
-        <div style={{ fontSize:72,lineHeight:1,position:"relative",animation:"vpFloatY 2.4s ease-in-out infinite",filter:"drop-shadow(0 10px 20px rgba(0,0,0,.2))" }}>{big}</div>
+        {pet ? (
+          <div style={{ position:"relative",display:"flex",justifyContent:"center",animation:r.stars>=1?"vpBounce 1.2s ease-in-out infinite":"vpFloatY 2.4s ease-in-out infinite" }}>
+            <Shape kind="cookie12" size={132} fill={r.stars>=2?T.tertiaryC:T.primaryC} morph spin={r.stars>=2}>
+              <PetAvatar pet={pet} size={74} mood={r.stars >= 2 ? "excited" : r.stars === 1 ? "happy" : "sad"} talk />
+            </Shape>
+            <span style={{ position:"absolute",right:"18%",top:-6,fontSize:40,animation:"vpStarPop .7s .3s both" }}>{big}</span>
+          </div>
+        ) : <div style={{ fontSize:72,lineHeight:1,position:"relative",animation:"vpFloatY 2.4s ease-in-out infinite" }}>{big}</div>}
         <h2 style={{ margin:"12px 0 4px",fontSize:26,fontWeight:900,color:T.ink,position:"relative",letterSpacing:-.3 }}>{msg}</h2>
         <div style={{ color:T.ink2,fontSize:14,fontWeight:600,position:"relative" }}>{r.label || `ตอบถูก ${r.score}/${r.total}`}</div>
         <div style={{ display:"flex",justifyContent:"center",gap:4,margin:"14px 0 10px",position:"relative" }}>
@@ -2844,18 +2882,24 @@ function ResultScreen({ r, words, speak, pet, onReplay, onExit }) {
             <div style={{ display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center" }}>
               {newW.map(w => (
                 <button key={w.id} onClick={() => { sfx.tap(); speak(w.word, w.meaning); }}
-                  style={{ minWidth:52,minHeight:52,borderRadius:14,background:T.card,border:"2px solid #c4b5fd",fontSize:26,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",animation:"vpPop .4s both" }}>
-                  {w.emoji}
+                  data-thumb style={{ position:"relative",width:64,height:64,borderRadius:16,overflow:"hidden",background:T.card,border:`3px solid ${T.primary}`,padding:0,cursor:"pointer",animation:"vpPop .4s both" }}>
+                  <PicFill w={w} emojiSize={28} />
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {pet && (
-          <div style={{ marginTop:12,display:"flex",alignItems:"center",gap:10,background:T.surfHigh,borderRadius:14,padding:"8px 12px",textAlign:"left" }}>
-            <PetAvatar pet={pet} size={40} mood={r.stars >= 2 ? "excited" : r.stars === 1 ? "happy" : "sad"} talk />
-            <div style={{ fontSize:13,color:T.ink2 }}><b>{pet.name}:</b> "{petLine}" {r.levelUp && "🎊"}</div>
+        {pet && <div style={{ margin:"12px auto 0",display:"table",background:T.card,color:T.ink,borderRadius:"20px 20px 20px 6px",padding:"8px 14px",fontSize:14,fontWeight:700 }}><b style={{ color:T.primary }}>{pet.name}:</b> {petLine} {r.levelUp && "🎊"}</div>}
+        {gotW.length > 0 && (
+          <div style={{ marginTop:12,textAlign:"left" }}>
+            <div style={{ fontWeight:800,fontSize:13,color:T.ink2,margin:"0 4px 6px" }}>✅ คำที่ตอบถูก · แตะฟังอีกครั้ง</div>
+            <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6 }}>
+              {gotW.map(w => <button key={w.id} onClick={() => { sfx.tap(); speak(w.word, w.meaning); }} data-thumb className="m3-press" style={{ position:"relative",display:"flex",flexDirection:"column",padding:0,border:"none",borderRadius:14,overflow:"hidden",background:T.card,cursor:"pointer",fontFamily:FONT }}>
+                <span style={{ position:"relative",display:"block",width:"100%",aspectRatio:"1" }}><PicFill w={w} emojiSize={26} /></span>
+                <span style={{ fontSize:11,fontWeight:800,color:T.ink,padding:"2px 2px 4px",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{w.word}</span>
+              </button>)}
+            </div>
           </div>
         )}
 

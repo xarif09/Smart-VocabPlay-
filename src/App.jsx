@@ -4592,7 +4592,7 @@ function CreditsScreen({ words }) {
         <b style={{ color:T.ink }}>โมเดล 3 มิติในเกม Word Runner 3D</b><br/>
         🦊 Fox — model by PixelMannen (CC0), rigging &amp; animation by tomkranis (CC-BY 4.0), glTF conversion by AsoboStudio &amp; scurest (CC-BY 4.0) · จาก KhronosGroup glTF-Sample-Assets<br/>
         🤖 RobotExpressive — model by Tomás Laulhé (Quaternius), modifications by Don McCurdy (CC0 1.0) · จากตัวอย่าง three.js<br/>
-        🐕🦌🐴🐰🦝 Shiba Inu, Deer, Horse, Platformer Character, Rae the Red Panda — models by Quaternius (quaternius.com, CC0) · 🧙 Mage — KayKit by Kay Lousberg (kaylousberg.com, CC0)<br/>
+        🐕🐄🐴🦌🫏🦙🐺🦖🐸🐭🦀🐍🐝🕷️🐰🦝 สัตว์และตัวละคร, ผลไม้ ของใช้ในบ้าน เรือ ยานอวกาศ — models by Quaternius (quaternius.com, CC0) · 🧙⚔️🍔🪑🚕 KayKit by Kay Lousberg (kaylousberg.com, CC0) · 🚗🏎️🚓 Car Kit / Racing Kit by Kenney (kenney.nl, CC0)<br/>
         🌄 ท้องฟ้า HDRI · พื้นผิว PBR · หิน พุ่มไม้ เฟิร์น เสาไฟ ม้านั่ง ผลไม้ — จาก <b>Poly Haven</b> (polyhaven.com) สัญญาอนุญาต CC0 · เอนจิน three.js (MIT)
       </div>
       {list === null && <div style={{ textAlign:"center",color:T.ink3 }}>กำลังโหลด…</div>}

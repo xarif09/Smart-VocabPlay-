@@ -2905,17 +2905,19 @@ function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
     ? <span data-emoji-box style={{ display:"flex",alignItems:"center",justifyContent:"center",width:"100%",maxWidth:"100%",height:"min(46vh, 430px, 92vw)",borderRadius:22,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})`,fontSize:"min(26vh, 220px, 60vw)",lineHeight:1,...style }}><span style={{ filter:"drop-shadow(0 8px 14px rgba(0,0,0,.18))" }}>{w?.emoji}</span></span>
     : <span data-emoji-box style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
   const box = fill ? "100%" : size * 2.2;
-  const fillBox = fill ? { width:"100%", height:"min(46vh, 430px, 92vw)" } : { width:box, aspectRatio:"4/3" };
+  const [asp, setAsp] = useState(0);   // สัดส่วนจริงของรูป (กว้าง/สูง) → กรอบเปลี่ยนตามรูป ไม่มีขอบว่าง ไม่เบลอ
+  useEffect(() => setAsp(0), [url]);
+  const MAXH = "min(46vh, 430px, 92vw)";
+  const fa = asp ? Math.min(1.5, Math.max(0.72, asp)) : 4/3;
+  const fillBox = fill ? { width:"100%", maxWidth:`calc(${MAXH} * ${fa})`, aspectRatio:String(fa) } : { width:box, aspectRatio:String(fa) };
   if (concept) return (
-    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
+    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...(fill ? { width:"100%",height:MAXH } : fillBox),borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
       {concept}
     </span>
   );
   return (
-    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",background:T.surfHighest,boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
-      {/* พื้นหลังเบลอจากรูปเดียวกัน + รูปเต็มใบ (contain) → ไม่ตัดหัว/ตัวสัตว์ */}
-      <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75 }} />
-      <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"relative",width:"100%",height:"100%",objectFit:"contain",display:"block" }} />
+    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",background:T.surfHighest,...style }}>
+      <img src={url} alt={w.word} onLoad={e => { const im = e.currentTarget; if (im.naturalWidth) setAsp(im.naturalWidth / im.naturalHeight); }} onError={() => setErr(true)} loading="lazy" style={{ position:"relative",width:"100%",height:"100%",objectFit:"contain",display:"block" }} />
       {size >= 30 && <span style={{ position:"absolute",right:4,bottom:3,fontSize:Math.max(14, size*0.3),lineHeight:1,filter:"drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>{w.emoji}</span>}
     </span>
   );
@@ -2926,12 +2928,9 @@ function CoverImg({ url, word, onError }) {
   const chk = e => {
     const im = e.currentTarget, p = im.parentElement; if (!p || !im.naturalWidth) return;
     const fr = p.clientWidth / Math.max(1, p.clientHeight), ir = im.naturalWidth / im.naturalHeight;
-    setSafe(Math.max(fr / ir, ir / fr) > 1.35);
+    setSafe(Math.max(fr / ir, ir / fr) > 1.3);
   };
-  return <>
-    {safe && <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75 }} />}
-    <img src={url} alt={word} onLoad={chk} onError={onError} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:safe?"contain":"cover",objectPosition:"center 40%",borderRadius:"inherit" }} />
-  </>;
+  return <img src={url} alt={word} onLoad={chk} onError={onError} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:safe?"contain":"cover",objectPosition:"center 40%",borderRadius:"inherit",background:T.surfHighest }} />;
 }
 // รูปเล็กสำหรับตัวเลือก 4 ช่อง / การ์ดจับคู่: เต็มช่อง
 function PicFill({ w, emojiSize = 40, fit }) {
@@ -2942,12 +2941,8 @@ function PicFill({ w, emojiSize = 40, fit }) {
   if (concept) return <span style={{ position:"absolute",inset:0,borderRadius:"inherit",overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center" }}>{concept}</span>;
   if (!url || err) return <span data-emoji-box style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:`clamp(${emojiSize}px, 48%, 120px)`,lineHeight:1,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})` }}>{w?.emoji}</span>;
   // รูปปก/ภาพรวม (cover) ตัดขอบได้ · รูปคำศัพท์เดี่ยวใช้ contain ไม่ให้ตัวสัตว์ขาด
-  const mode = fit || (w?.cat === "cover" ? "cover" : "contain");
-  if (mode === "cover") return <CoverImg url={url} word={w.word} onError={() => setErr(true)} />;
-  return <>
-    <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75,borderRadius:"inherit" }} />
-    <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",borderRadius:"inherit" }} />
-  </>;
+  // รูปในช่อง: ถ้าสัดส่วนใกล้กรอบ (≤1.12 เท่า) → เต็มกรอบ (ตัดขอบนิดหน่อย) · ต่างมาก → แสดงทั้งรูปบนพื้นเรียบ ไม่เบลอ ไม่ตัดตัว
+  return <CoverImg url={url} word={w.word} onError={() => setErr(true)} />;
 }
 function Emoji({ e, w, size=72, fill=true }) {
   return <div style={{ textAlign:"center",lineHeight:1,padding:"6px 0 8px",display:"flex",justifyContent:"center" }}>{w ? <Pic w={w} size={size} fill={fill} /> : <span style={{ fontSize:size*1.3 }}>{e}</span>}</div>;

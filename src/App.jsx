@@ -1584,7 +1584,7 @@ export default function App() {
   const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
   const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const GUIDE = { quiz:"ดูรูปแล้วเลือกคำภาษาอังกฤษที่ตรงกับรูป", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาคำกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะคำให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ดูรูป แล้วเจาะลูกโป่งที่มีคำตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านคำที่ตรงกับรูป ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว" };
+  const GUIDE = { quiz:"ดูรูปแล้วเลือกคำภาษาอังกฤษที่ตรงกับรูป", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาคำกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะคำให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ดูรูป แล้วเจาะลูกโป่งที่มีคำตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => guard(() => setScreen("manage"));
   const openSettings = () => guard(() => setShowSettings(true));
@@ -2605,7 +2605,7 @@ function BalloonGame({ words, speak, track }) {
   );
 }
 
-// ── ฟันคำ (นินจา): คำลอยขึ้นมา ปาดนิ้วผ่านคำที่ตรงกับรูป ──
+// ── ฟันคำ (นินจา): คำลอยขึ้นมา ปาดนิ้วผ่านรูปที่ตรงกับเสียง ──
 function NinjaGame({ words, speak, track }) {
   const ROUNDS = 8;
   const [round, setRound] = useState(0); const [hearts, setHearts] = useState(3); const [score, setScore] = useState(0);
@@ -2633,20 +2633,20 @@ function NinjaGame({ words, speak, track }) {
         {!on ? <div style={{ textAlign:"center",padding:"26px 0" }}>
           <Shape kind="cookie6" size={110} fill={T.errorC}><span style={{ fontSize:54 }}>🗡️</span></Shape>
           <p style={{ ...TYPE.headlineS,color:T.ink,margin:"12px 0 4px" }}>นินจาฟันคำ</p>
-          <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>คำจะกระเด็นขึ้นมา ปาดนิ้วผ่านคำที่ตรงกับรูป · ฟันผิดเสียหัวใจ · ปล่อยให้คำที่ถูกตกก็เสียหัวใจ</p>
+          <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>รูปจะกระเด็นขึ้นมา ปาดนิ้วผ่านรูปที่ตรงกับเสียง · ฟันผิดเสียหัวใจ · ปล่อยให้คำที่ถูกตกก็เสียหัวใจ</p>
           <Pill onClick={() => { roundRef.current = 0; scoreRef.current = 0; heartsRef.current = 3; setRound(0); setScore(0); setHearts(3); setOn(true); launch(); }}>▶ เริ่ม!</Pill>
         </div> : <>
-          <div style={{ display:"flex",justifyContent:"center" }}><Pic w={cur} fill style={{ height:"min(31vh, 290px)" }} /></div>
+          <SoundPrompt onClick={() => cur && speak(cur.word, cur.meaning)} size={84} />
           <div onPointerDown={e => { down.current = true; onMove(e); }} onPointerMove={onMove} onPointerUp={() => { down.current = false; lastHit.current = null; }} onPointerLeave={() => { down.current = false; }}
             style={{ position:"relative",height:"min(40vh,340px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.surf}, ${T.tertiaryC})`,marginTop:8,touchAction:"none",userSelect:"none" }}>
             {items.map(it => (
               <span key={it.key} data-ninja={cut[it.key] ? undefined : it.key} onAnimationEnd={() => fell(it)}
-                style={{ position:"absolute",left:`${it.x}%`,bottom:-60,padding:"12px 14px",borderRadius:999,background:cut[it.key] ? T.surfHighest : T.card,color:cut[it.key] ? T.ink3 : T.ink,boxShadow:cut[it.key] ? "none" : MD.shadow,fontWeight:900,fontSize:"clamp(13px, 3.8vw, 17px)",animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,textDecoration:cut[it.key] ? "line-through" : "none",transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
-                {it.w.word}
+                style={{ position:"absolute",left:`${Math.min(it.x, 72)}%`,bottom:-110,width:"clamp(84px, 24vw, 120px)",aspectRatio:"1",borderRadius:20,overflow:"hidden",border:`3px solid ${cut[it.key] ? T.outlineV : T.primary}`,background:T.card,boxShadow:cut[it.key] ? "none" : MD.shadow,animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,opacity:cut[it.key] ? 0.35 : 1,transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
+                <PicFill w={it.w} emojiSize={36} />
               </span>
             ))}
           </div>
-          <div style={{ textAlign:"center",...TYPE.labelM,color:T.ink2,marginTop:6 }}>{cur?.meaning} · ⭐{score} · ปาดนิ้วผ่านคำ</div>
+          <div style={{ textAlign:"center",...TYPE.labelM,color:T.ink2,marginTop:6 }}>⭐{score} · ปาดนิ้วผ่านรูปที่ได้ยิน</div>
         </>}
       </div>
     </GameCard>
@@ -2952,6 +2952,10 @@ function PicFill({ w, emojiSize = 40, fit }) {
 function Emoji({ e, w, size=72, fill=true }) {
   return <div style={{ textAlign:"center",lineHeight:1,padding:"6px 0 8px",display:"flex",justifyContent:"center" }}>{w ? <Pic w={w} size={size} fill={fill} /> : <span style={{ fontSize:size*1.3 }}>{e}</span>}</div>;
 }
+// ปุ่มลำโพงใหญ่ สำหรับเกม "ฟังแล้วเลือกรูป" (เด็กที่ยังอ่านไม่ออกเล่นได้)
+function SoundPrompt({ onClick, pulse = true, size = 96 }) {
+  return <button onClick={onClick} aria-label="ฟังคำ" className="m3-press" style={{ width:size,height:size,borderRadius:size/2,margin:"4px auto 8px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:size*0.46,background:T.primary,color:T.onPrimary,border:"none",cursor:"pointer",boxShadow:MD.shadow,animation:pulse?"vpBounce 1.5s ease-in-out infinite":"none" }}>🔊</button>;
+}
 function SndBtn({ onClick }) { return <button onClick={onClick} className="m3-press" style={GS.soundBtn}>🔊 ฟัง EN+TH</button>; }
 function Pill({ onClick, disabled, bg, children }) {
   return <button onClick={onClick} disabled={disabled} className="m3-press" style={{ ...M3.filled({ minHeight:48,padding:"0 20px",fontSize:14 }),...(bg ? { background:bg } : {}),...(disabled ? { background:T.surfHighest,color:T.ink3,cursor:"not-allowed" } : {}) }}>{children}</button>;
@@ -2976,6 +2980,7 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
     return shuffle([cur,...shuffle(src.filter(w=>w.id!==cur.id)).slice(0,3)]);
   }, [idx, cur?.id, src]);
 
+  useEffect(()=>{ if(idx>0 && cur) speak(cur.word,cur.meaning); },[idx]); // eslint-disable-line
   if(!cur) return <NoWords onBack={onBack} />;
   const pick = (c, e) => {
     if(lock) return;
@@ -2992,9 +2997,8 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
     <GameCard>
       <Bar left={`${idx+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <Emoji e={cur.emoji} w={cur} />
-        <SndBtn onClick={()=>speak(cur.word,cur.meaning)} />
-        <p style={{ textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 10px",minHeight:18 }}>{lock ? <b style={{ color:T.primary,fontSize:14 }}>{cur.word} · {cur.read} · {cur.meaning}</b> : "เลือกคำที่ตรงกับรูป"}</p>
+        <SoundPrompt onClick={()=>speak(cur.word,cur.meaning)} pulse={!lock} />
+        <p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:T.ink2,margin:"0 0 8px",minHeight:20 }}>{lock ? <b style={{ color:T.primary,fontSize:14 }}>{cur.word} · {cur.read} · {cur.meaning}</b> : "👂 ฟังแล้วแตะรูปที่ตรงกัน"}</p>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {choices.map(c=>{
             const ic=c.id===cur.id,ip=picked===c.id,sr=lock&&(ic||ip);
@@ -3003,8 +3007,8 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
             if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
             if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
             return <button key={c.id} onClick={e=>pick(c, e)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:"14px 6px",minHeight:52,fontWeight:800,fontSize:15,color:tc,cursor:"pointer" }}>
-              {c.word}
+              style={{ background:bg,border:`3px solid ${bo}`,borderRadius:16,padding:0,minHeight:"min(27vh, 210px)",position:"relative",overflow:"hidden",cursor:"pointer" }}>
+              <PicFill w={c} emojiSize={44} />
             </button>;
           })}
         </div>
@@ -3204,12 +3208,11 @@ function SpeedGame({ words, speak, showToast, track }) {
           ?<div style={{textAlign:"center",padding:"30px 0"}}>
             <div style={{fontSize:48,marginBottom:8}}>⚡</div>
             <p style={{fontWeight:800,fontSize:17,color:T.ink,margin:"0 0 4px"}}>Speed Round</p>
-            <p style={{color:T.ink2,fontSize:13,margin:"0 0 20px"}}>ฟัง→แตะคำให้เร็วใน {T} วิ!<br/>7 คำ = ⭐⭐ · 12 คำ = ⭐⭐⭐</p>
+            <p style={{color:T.ink2,fontSize:13,margin:"0 0 20px"}}>ฟัง→แตะรูปให้เร็วใน {T} วิ!<br/>7 คำ = ⭐⭐ · 12 คำ = ⭐⭐⭐</p>
             <Pill onClick={()=>{setTime(T);setScore(0);scoreRef.current=0;setActive(true);next();}} bg={T.tertiary}>▶ เริ่ม!</Pill>
           </div>
           :<div>
-            <Emoji e={cur?.emoji} w={cur} size={60} />
-            <SndBtn onClick={()=>cur&&speak(cur.word,cur.meaning)} />
+            <SoundPrompt onClick={()=>cur&&speak(cur.word,cur.meaning)} size={84} />
             <div style={{ display:"flex",justifyContent:"center",margin:"0 0 10px" }}>
               <svg width="74" height="74" viewBox="0 0 74 74" style={{ animation:time<=5?"vpWiggle .4s infinite":"none" }}>
                 <circle cx="37" cy="37" r="30" fill="none" stroke={T.surfHigh} strokeWidth="8" />
@@ -3220,8 +3223,8 @@ function SpeedGame({ words, speak, showToast, track }) {
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
               {opts.map(o=>(
                 <button key={o.id} onClick={()=>{ if(o.id===cur.id){scoreRef.current+=1;setScore(s=>s+1);track.correct(cur);next();}else{track.wrong(cur);showToast("❌","err");} }}
-                  style={{background:T.tertiaryC,border:"2px solid #fbbf24",borderRadius:16,padding:"13px 6px",minHeight:52,fontWeight:800,fontSize:15,color:T.onTertiaryC,cursor:"pointer"}}>
-                  {o.word}
+                  style={{background:T.tertiaryC,border:`3px solid ${T.tertiary}`,borderRadius:16,padding:0,minHeight:"min(24vh, 190px)",position:"relative",overflow:"hidden",cursor:"pointer"}}>
+                  <PicFill w={o} emojiSize={40} />
                 </button>
               ))}
             </div>
@@ -3533,7 +3536,7 @@ function DressGame({ words, speak, showToast, track }) {
 function BossGame({ words, speak, track, cat, onBack }) {
   const N=10, WIN=7;
   const qs=useMemo(()=>{
-    const modes=["pic","th","rev"];
+    const modes=["rev"];
     return shuffle(words).slice(0,N).map((w,i)=>({ w, mode: modes[i%3] }));
   },[words]);
   const [idx,setIdx]=useState(0);
@@ -3546,6 +3549,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
     if(!q) return [];
     return shuffle([q.w,...shuffle(words.filter(w=>w.id!==q.w.id)).slice(0,3)]);
   },[idx,q?.w.id,words]);
+  useEffect(()=>{ if(idx>0 && q) speak(q.w.word,q.w.meaning); },[idx]); // eslint-disable-line
   if(!q||words.length<4) return <NoWords onBack={onBack} />;
 
   const end=(s,h)=>{
@@ -3564,9 +3568,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
       else { setIdx(i=>i+1); setPicked(null); setLock(false); }
     },950);
   };
-  const prompt = q.mode==="pic" ? <Emoji e={q.w.emoji} w={q.w} />
-    : q.mode==="th" ? <div style={{ textAlign:"center",padding:"18px 0 10px" }}><div style={{ fontSize:12,color:T.ink3 }}>คำนี้ภาษาอังกฤษคือ?</div><div style={{ fontSize:30,fontWeight:900,color:T.ink }}>{q.w.meaning}</div></div>
-    : <div style={{ textAlign:"center",padding:"18px 0 10px" }}><div style={{ fontSize:12,color:T.ink3 }}>รูปไหนคือ</div><div style={{ fontSize:30,fontWeight:900,color:T.ink,letterSpacing:1 }}>{q.w.word}</div></div>;
+  const prompt = <><SoundPrompt onClick={()=>speak(q.w.word,q.w.meaning)} pulse={!lock} /><p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:T.ink2,margin:"0 0 8px" }}>👂 ฟังแล้วแตะรูปที่ตรงกัน</p></>;
   return (
     <GameCard>
       <div style={{ background:"linear-gradient(160deg,#1f2937,#4c1d95 60%,#7c3aed)",color:"#fff",padding:"12px 16px 10px",position:"relative",overflow:"hidden" }}>
@@ -3586,7 +3588,6 @@ function BossGame({ words, speak, track, cat, onBack }) {
       </div>
       <div style={GS.body}>
         {prompt}
-        <SndBtn onClick={()=>speak(q.w.word,q.w.meaning)} />
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {choices.map(c=>{
             const ic=c.id===q.w.id,ip=picked===c.id,sr=lock&&(ic||ip);
@@ -3595,7 +3596,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
             if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
             if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
             return <button key={c.id} onClick={()=>pick(c)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:q.mode==="rev"?0:"12px 6px",minHeight:q.mode==="rev"?"min(20vh, 140px)":56,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:q.mode==="rev"?0:"12px 6px",minHeight:"min(24vh, 190px)",fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
               {q.mode==="rev"?<PicFill w={c} emojiSize={34} />:c.word}
             </button>;
           })}

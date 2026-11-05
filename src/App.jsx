@@ -2107,7 +2107,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
                 {crown && <span style={{ position:"absolute",right:-2,top:-4,fontSize:22 }}>👑</span>}
               </span>
               <span style={{ fontWeight:800,fontSize:14,color:T.ink,lineHeight:1.1 }}>{cat.label}</span>
-              <span style={{ fontSize:11,color:T.ink2 }}>{cat.thai} · {n}</span>
+              <span style={{ fontSize:11,color:T.ink2 }}>{cat.thai} · {n} คำ</span>
             </button>
           );
         })}
@@ -2610,8 +2610,8 @@ function BalloonGame({ words, speak, track }) {
           <div style={{ position:"relative",height:"min(52vh,440px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.secondaryC}, ${T.surf})`,marginTop:8 }}>
             {bal.map(b => !popped[b.key] && (
               <button key={b.key} onPointerDown={e => tap(b, e)} onAnimationEnd={() => escaped(b)}
-                style={{ position:"absolute",left:`${1 + b.col * 33}%`,bottom:-200,width:"32%",minWidth:90,border:"none",background:"transparent",cursor:"pointer",padding:0,animation:`vpRise ${b.dur}s ${b.delay}s linear both` }}>
-                <span style={{ display:"block",width:"100%",aspectRatio:"0.85",borderRadius:"50% 50% 50% 50% / 45% 45% 55% 55%",background:b.color,boxShadow:"inset -6px -8px 14px rgba(0,0,0,.15)",padding:"5%",boxSizing:"border-box" }}><span style={{ position:"relative",display:"block",width:"100%",height:"100%",borderRadius:"46%",overflow:"hidden",background:T.card }}><PicFill w={b.w} emojiSize={30} /></span></span>
+                style={{ position:"absolute",left:`${b.col * 33.2}%`,bottom:-200,width:"33.4%",minWidth:90,border:"none",background:"transparent",cursor:"pointer",padding:0,animation:`vpRise ${b.dur}s ${b.delay}s linear both` }}>
+                <span style={{ display:"block",width:"100%",aspectRatio:"0.85",borderRadius:"50% 50% 50% 50% / 45% 45% 55% 55%",background:b.color,boxShadow:"inset -6px -8px 14px rgba(0,0,0,.15)",padding:"3%",boxSizing:"border-box" }}><span style={{ position:"relative",display:"block",width:"100%",height:"100%",borderRadius:"46%",overflow:"hidden",background:T.card }}><PicFill w={b.w} emojiSize={30} /></span></span>
                 <span style={{ display:"block",width:2,height:26,margin:"0 auto",background:"rgba(0,0,0,.25)" }} />
               </button>
             ))}
@@ -2632,7 +2632,7 @@ function NinjaGame({ words, speak, track }) {
   const busy = useRef(false); const scoreRef = useRef(0); const heartsRef = useRef(3); const roundRef = useRef(0); const down = useRef(false); const lastHit = useRef(null);
   const launch = useCallback(() => {
     const w = words[Math.floor(Math.random() * words.length)]; setCur(w); speak(w.word, w.meaning);
-    setItems(shuffle([w, ...pickOthers(words, w, 2)]).map((x, i) => ({ w: x, key: `${roundRef.current}-${i}`, x: 2 + i * 34, delay: i * 0.25, dur: Math.max(2.4, 3.6 - roundRef.current * 0.15) })));
+    setItems(shuffle([w, ...pickOthers(words, w, 2)]).map((x, i) => ({ w: x, key: `${roundRef.current}-${i}`, x: 1 + i * 33.5, delay: i * 0.25, dur: Math.max(2.4, 3.6 - roundRef.current * 0.15) })));
     setCut({}); busy.current = false; lastHit.current = null;
   }, [words, speak]);
   const loseHeart = () => { heartsRef.current -= 1; setHearts(heartsRef.current); };
@@ -2660,7 +2660,7 @@ function NinjaGame({ words, speak, track }) {
             style={{ position:"relative",height:"min(40vh,340px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.surf}, ${T.tertiaryC})`,marginTop:8,touchAction:"none",userSelect:"none" }}>
             {items.map(it => (
               <span key={it.key} data-ninja={cut[it.key] ? undefined : it.key} onAnimationEnd={() => fell(it)}
-                style={{ position:"absolute",left:`${it.x}%`,bottom:-150,width:"30%",aspectRatio:"1",borderRadius:20,overflow:"hidden",border:`3px solid ${cut[it.key] ? T.outlineV : T.primary}`,background:T.card,boxShadow:cut[it.key] ? "none" : MD.shadow,animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,opacity:cut[it.key] ? 0.35 : 1,transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
+                style={{ position:"absolute",left:`${it.x}%`,bottom:-150,width:"32%",aspectRatio:"1",borderRadius:20,overflow:"hidden",border:`3px solid ${cut[it.key] ? T.outlineV : T.primary}`,background:T.card,boxShadow:cut[it.key] ? "none" : MD.shadow,animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,opacity:cut[it.key] ? 0.35 : 1,transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
                 <PicFill w={it.w} emojiSize={36} />
               </span>
             ))}
@@ -4708,11 +4708,11 @@ function ChoiceList({ opts, answer, picked, onPick, allWords, cols = 1, tone = "
       let { bg, bo, c } = C;
       if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
       if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
-      if (usePics) return <button key={o} onClick={() => onPick(o)} disabled={!!picked} aria-label={picked ? o : "รูปตัวเลือก"} style={{ display:"flex",flexDirection:"column",padding:0,borderRadius:16,border:`3px solid ${bo}`,background:bg,color:c,overflow:"hidden",cursor:"pointer" }}>
+      if (usePics) return <button key={o} data-ok={ic ? "1" : undefined} onClick={() => onPick(o)} disabled={!!picked} aria-label={picked ? o : "รูปตัวเลือก"} style={{ display:"flex",flexDirection:"column",padding:0,borderRadius:16,border:`3px solid ${bo}`,background:bg,color:c,overflow:"hidden",cursor:"pointer" }}>
         <span style={{ position:"relative",display:"block",width:"100%",aspectRatio:"4/3" }}><PicFill w={pics[k]} emojiSize={40} /></span>
         {picked && <span style={{ fontWeight:800,fontSize:14,padding:"4px 2px" }}>{o}</span>}
       </button>;
-      return <button key={o} onClick={() => onPick(o)} disabled={!!picked} style={{ minHeight:50,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:16,cursor:"pointer",padding:"0 14px" }}>{o}</button>;
+      return <button key={o} data-ok={ic ? "1" : undefined} onClick={() => onPick(o)} disabled={!!picked} style={{ minHeight:50,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:16,cursor:"pointer",padding:"0 14px" }}>{o}</button>;
     })}
   </div>;
 }

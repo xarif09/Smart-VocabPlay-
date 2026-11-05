@@ -1,6 +1,6 @@
 // วัดขนาดรูปคำศัพท์จริงบนจอมือถือ ทุกหน้า/ทุกเกม → ฟ้องหน้าที่รูปหลักเล็ก (ต้องเปิด preview ก่อน)
 // ใช้: node scripts/img-size-audit.cjs [width] [height]   (ค่าเริ่มต้น 390×844)
-// เกณฑ์ (แข่ง 2 คน: ฝั่งละ 4 รูปตัวเลือก → แต่ละรูปกว้าง ≥26% สูง ≥13%): เกม/การ์ดแบบรูปเดียว → รูปหลักสูง ≥ 30% ของจอ · แบบหลายรูป (ตัวเลือก/ตาราง) → แต่ละรูปกว้าง ≥ 26% ของจอ
+// เกณฑ์ (ข้อแบบ 4 รูป 4:3 นับเป็นตัวเลือก: กว้าง ≥26% และไม่แบนกว่า 0.6) (แข่ง 2 คน: ฝั่งละ 4 รูปตัวเลือก → แต่ละรูปกว้าง ≥26% สูง ≥13%): เกม/การ์ดแบบรูปเดียว → รูปหลักสูง ≥ 30% ของจอ · แบบหลายรูป (ตัวเลือก/ตาราง) → แต่ละรูปกว้าง ≥ 26% ของจอ
 const { chromium } = require('playwright');
 const URL = 'http://localhost:4173/Smart-VocabPlay-/';
 const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
@@ -24,7 +24,7 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
     const minW = n ? Math.min(...r.map(x => x[0])) : 0; const minH = n ? Math.min(...r.map(x => x[1])) : 0;
     let ok = true, why = '';
     if (!n) { ok = false; why = 'ไม่พบรูป'; }
-    else if (kind === 'single' && maxH < VH * 0.30 && !(n >= 3 && minW >= VW * 0.26 && minH >= VH * 0.18)) { ok = false; why = `รูปหลักสูง ${maxH}px < ${Math.round(VH * 0.30)}`; }
+    else if (kind === 'single' && maxH < VH * 0.30 && !(n >= 3 && minW >= VW * 0.26 && minH >= minW * 0.6)) { ok = false; why = `รูปหลักสูง ${maxH}px < ${Math.round(VH * 0.30)}`; }
     else if (kind === 'half' && maxH < VH * 0.22 && !(n >= 6 && minW >= VW * 0.26 && minH >= VH * 0.13)) { ok = false; why = `รูปต่อฝั่งสูง ${maxH}px < ${Math.round(VH * 0.22)}`; }
     else if (kind === 'multi' && minW < VW * 0.26) { ok = false; why = `รูปตัวเลือกกว้าง ${minW}px < ${Math.round(VW * 0.26)}`; }
     rows.push({ name, kind, n, max: `${maxW}×${maxH}`, min: `${minW}×${minH}`, ok, why });

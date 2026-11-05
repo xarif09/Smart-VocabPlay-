@@ -5844,26 +5844,12 @@
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Mist"
  },
- "Sun": {
-  "file": "sun.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:The_Sun_in_white_light.jpg",
-  "artist": "Matúš Motlo",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Sun"
- },
  "Motor scooter": {
   "file": "motor-scooter.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Yamaha_Aerox_2011_.jpg",
   "artist": "Thomas Wiersma",
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Scooter_(motorcycle)"
- },
- "Medal": {
-  "file": "medal.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Portrait_medal_of_Cecilia_Gonzaga_(obverse)%3B_Innocence_and_a_Unicorn_in_a_Moonlit_Landscape_(reverse)_MET_DP-1241-015_(cropped).jpg",
-  "artist": "Pisanello",
-  "license": "CC0",
-  "page": "https://en.wikipedia.org/wiki/Medal"
  },
  "Notepad": {
   "file": "notepad.jpg",

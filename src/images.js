@@ -37,14 +37,14 @@ add("body", [
   ["SHOULDER","Shoulder"]]);
 add("weather", [
   ["SUN","Sunrise"],["RAIN","Rain"],["SNOW","Snow"],["CLOUD","Cumulus cloud"],["WIND","Wind"],["STORM","Thunderstorm"],["RAINBOW","Rainbow"],["FOG","Mist"],
-  ["SNOW","Snow"],["SUNNY","Sun"],["THUNDER","Lightning"],["DRY","Drought"],["COLD","Winter"]]);
+  ["SNOW","Snow"],["THUNDER","Lightning"],["DRY","Drought"],["COLD","Winter"]]);
 add("vehicles", [
   ["CAR","Car"],["BUS","Bus"],["TRAIN","Train"],["PLANE","Airliner"],["BOAT","Boat"],["BIKE","Bicycle"],["TRUCK","Truck"],["TAXI","Taxicab"],
   ["HELICOPTER","Helicopter"],["SHIP","Cruise ship"],["MOTORCYCLE","Motorcycle"],["TRACTOR","Tractor"],["AMBULANCE","Ambulance"],["FIRETRUCK","Fire engine"],
   ["POLICE CAR","Police car"],["ROCKET","Rocket"],["SUBMARINE","Submarine"],["VAN","Van"],["SCOOTER","Motor scooter"],["TUK-TUK","Auto rickshaw"]]);
 add("jobs", [
   ["DOCTOR","Pediatrics"],["NURSE","Nursing"],["FARMER","Farmer"],["COOK","Cooking"],["PILOT","Aircraft pilot"],
-  ["POLICE","Police officer"],["FIREFIGHTER","Firefighter"],,["SINGER","Singing"],
+  ["POLICE","Police officer"],["FIREFIGHTER","Firefighter"],["SINGER","Singing"],
   ["SOLDIER","Soldier"],["WAITER","Waiting staff"],["DRIVER","Bus driver"],["BUILDER","Construction worker"],
   ["DENTIST","Dentist"],["BAKER","Baker"],["CHEF","Chef's uniform"]]);
 add("clothes", [
@@ -65,7 +65,7 @@ add("sports", [
   ["FOOTBALL","Association football"],["BASKETBALL","Basketball"],["TENNIS","Tennis"],["SWIMMING","Swimming (sport)"],["RUNNING","Running"],
   ["CYCLING","Cycling"],["BOXING","Muay Thai"],["GOLF","Golf"],["VOLLEYBALL","Volleyball"],["BASEBALL","Baseball"],["BADMINTON","Badminton"],
   ["SKATEBOARD","Skateboarding"],["SKIING","Ski"],["SURFING","Surfing"],["YOGA","Yoga as exercise"],["TABLE TENNIS","Table tennis"],["DANCING","Dance"],
-  ["TROPHY","Trophy"],["MEDAL","Medal"],["JUMP","Long jump"]]);
+  ["TROPHY","Trophy"],["JUMP","Long jump"]]);
 add("actions", [
   ["RUN","Running"],["WALK","Pedestrian"],["EAT","Lunch"],["DRINK","Drink"],
   ["SING","Singing"],["DANCE","Dance"],["SWIM","Swimming"],["PLAY","Toy"],["COOK","Cooking"],["WASH","Hand washing"],["DRAW","Colored pencil"],

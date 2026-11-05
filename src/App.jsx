@@ -3101,6 +3101,7 @@ function SpellGame({ words, speak, track, onBack }) {
   const [pool, setPool] = useState([]);
   const [picked, setPicked] = useState([]);
   const [score, setScore] = useState(0);
+  const [hint, setHint] = useState(true);   // โหมดช่วย: เงาตัวอักษร + ไฮไลต์ตัวถัดไป (เด็กที่ยังอ่านไม่คล่อง)
   const cur = qs[idx];
 
   useEffect(()=>{
@@ -3124,6 +3125,7 @@ function SpellGame({ words, speak, track, onBack }) {
     const a=np.map(p=>p.ch).join("");
     if(a===cur.word){ track.correct(cur); speak(cur.word,cur.meaning); }
     else if(a.length===cur.word.length) track.wrong(cur);
+    else if(/[A-Za-z]/.test(l.ch)) speak(l.ch.toLowerCase(),null);   // แตะแล้วได้ยินชื่อตัวอักษร
     else sfx.tap();
   };
   const removePick=i=>{
@@ -3146,7 +3148,11 @@ function SpellGame({ words, speak, track, onBack }) {
           background:correct?T.okC:wrong?T.errorC:T.surfHigh,
           border:`2px dashed ${correct?T.ok:wrong?T.error:T.outlineV}`,
         }}>
-          {picked.length===0
+          {hint && !correct && !wrong
+            ? cur.word.split("").map((ch,i)=> i<picked.length
+              ? <button key={"h"+i} onClick={()=>removePick(i)} style={{ width:ts,height:ts,borderRadius:16,background:T.primary,color:T.onPrimary,fontWeight:900,fontSize:tf,border:"none",cursor:"pointer",flexShrink:0 }}>{picked[i].ch}</button>
+              : <span key={"h"+i} style={{ width:ts,height:ts,borderRadius:16,border:`2px dashed ${i===picked.length?T.ok:T.outlineV}`,color:T.ink3,opacity:.45,fontWeight:900,fontSize:tf,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0 }}>{ch===" "?"␣":ch}</span>)
+            : picked.length===0
             ?<span style={{color:T.ink3,fontSize:11}}>เลือกตัวอักษร</span>
             :picked.map((l,i)=>(
               <button key={l.id+"p"+i} onClick={()=>removePick(i)}
@@ -3160,7 +3166,7 @@ function SpellGame({ words, speak, track, onBack }) {
         <div style={{ display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center",minHeight:ts+6,marginBottom:10 }}>
           {pool.map((l,i)=>(
             <button key={l.id} onClick={()=>tapLetter(l)} className="vp-card-hover"
-              style={{ width:ts,height:ts,borderRadius:16,background:T.card,color:T.primary,fontWeight:900,fontSize:tf,border:"2px solid #c4b5fd",cursor:"pointer",flexShrink:0,boxShadow:"0 4px 12px rgba(109,93,252,.18)",animation:`vpInUp .4s ${i*0.04}s both` }}>
+              style={{ width:ts,height:ts,borderRadius:16,background:hint&&l.ch===cur.word[picked.length]?T.okC:T.card,color:T.primary,fontWeight:900,fontSize:tf,border:`3px solid ${hint&&l.ch===cur.word[picked.length]?T.ok:T.primaryC}`,cursor:"pointer",flexShrink:0,boxShadow:"0 4px 12px rgba(109,93,252,.18)",animation:`vpInUp .4s ${i*0.04}s both` }}>
               {l.ch}
             </button>
           ))}
@@ -3170,6 +3176,7 @@ function SpellGame({ words, speak, track, onBack }) {
 
         <div style={{ display:"flex",gap:8 }}>
           <Pill onClick={()=>{setPool(shuffle(cur.word.split("").map((ch,i)=>({id:i,ch}))));setPicked([]);}} bg={T.ink3}>🔄 ใหม่</Pill>
+          <Pill onClick={()=>{ sfx.tap(); setHint(h=>!h); }} bg={hint?T.ok:T.ink3}>💡 ช่วย</Pill>
           <Pill onClick={()=>{ if(correct)setScore(s=>s+1); if(idx+1<qs.length)setIdx(i=>i+1); else track.finish(correct?score+1:score, qs.length); }} disabled={!correct} bg={T.primary}>ถัดไป ›</Pill>
         </div>
       </div>
@@ -4032,7 +4039,7 @@ function FeedGame({ words, speak, track, pet, hat, outfit, onBack }) {
         </div>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
           {opts.map(o => (
-            <button key={o.id} onClick={e => tap(o, e)} disabled={lock} aria-label="รูปอาหาร" style={{ position:"relative",aspectRatio:"1",padding:0,borderRadius:20,overflow:"hidden",border:`3px solid ${wrongId === o.id ? T.error : T.primaryC}`,background:T.card,cursor:"pointer",
+            <button key={o.id} onClick={e => tap(o, e)} disabled={lock} aria-label="รูปอาหาร" style={{ position:"relative",aspectRatio:"4/3",padding:0,borderRadius:20,overflow:"hidden",border:`3px solid ${wrongId === o.id ? T.error : T.primaryC}`,background:T.card,cursor:"pointer",
               transition:"transform .9s cubic-bezier(.5,-0.3,.7,1), opacity .9s",transform:fly === o.id ? "translateY(-230px) scale(.25) rotate(360deg)" : wrongId === o.id ? "translateX(6px)" : "none",opacity:fly === o.id ? 0 : lock && fly !== o.id ? .5 : 1,animation:wrongId === o.id ? "vpWiggle .4s" : "none" }}>
               <PicFill w={o} emojiSize={44} />
             </button>
@@ -4171,6 +4178,7 @@ function SentenceGame({ words, speak, track, onBack }) {
   const [pool, setPool] = useState([]);
   const [picked, setPicked] = useState([]);
   const [done, setDone] = useState(false);
+  const [hint, setHint] = useState(true);
   const cur = qs[idx];
   const tokens = useMemo(() => (cur ? cur.sen.split(" ") : []), [cur?.id]);
   useEffect(() => { setPool(shuffle(tokens.map((t, i) => ({ id: i, t })))); setPicked([]); setDone(false); }, [idx, tokens]);
@@ -4181,12 +4189,14 @@ function SentenceGame({ words, speak, track, onBack }) {
   const tap = l => {
     if (done) return;
     const np = [...picked, l]; setPicked(np); setPool(pool.filter(x => x.id !== l.id));
+    if (np.length < tokens.length) speak(l.t.replace(/[.,!?]/g, ""), null);   // แตะคำ → ได้ยินคำนั้น
     if (np.length === tokens.length) {
       setDone(true);
       if (np.map(p => p.t).join(" ") === cur.sen) { track.correct(cur); setScore(s => s + 1); speak(cur.sen, cur.senTh); }
       else track.wrong(cur);
-    } else sfx.tap();
+    }
   };
+  const nextTok = tokens[picked.length];
   const undo = i => { if (done) return; const r = picked[i]; setPicked(picked.filter((_, j) => j !== i)); setPool([...pool, r]); };
   const chip = (bg, bo, c) => ({ minHeight:44,padding:"8px 12px",borderRadius:16,background:bg,border:`2px solid ${bo}`,color:c,fontWeight:800,fontSize:15,cursor:"pointer" });
   return (
@@ -4204,12 +4214,13 @@ function SentenceGame({ words, speak, track, onBack }) {
           {picked.map((l, i) => <button key={l.id} onClick={() => undo(i)} style={chip(done?(correct?T.ok:T.error):T.primary,"transparent","#fff")}>{l.t}</button>)}
         </div>
         <div style={{ display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center",minHeight:50,marginBottom:10 }}>
-          {pool.map(l => <button key={l.id} onClick={() => tap(l)} style={chip(T.secondaryC,T.primaryC,T.onPrimaryC)}>{l.t}</button>)}
+          {pool.map(l => { const nx = hint && l.t === nextTok; return <button key={l.id} onClick={() => tap(l)} style={{ ...chip(nx ? T.okC : T.secondaryC, nx ? T.ok : T.primaryC, nx ? T.onOkC : T.onPrimaryC), animation:nx ? "vpBounce 1.6s ease-in-out infinite" : "none" }}>🔊 {l.t}</button>; })}
         </div>
         {done && !correct && <div style={{ textAlign:"center",fontSize:13,color:T.onErrorC,marginBottom:8 }}>ที่ถูกคือ: <b>{cur.sen}</b></div>}
         {done && correct && <div style={{ textAlign:"center",fontSize:13,color:T.onOkC,fontWeight:700,marginBottom:8 }}>🎉 {cur.sen}</div>}
         <div style={{ display:"flex",gap:8 }}>
           <Pill onClick={() => { setPool(shuffle(tokens.map((t, i) => ({ id: i, t })))); setPicked([]); setDone(false); }} bg={T.ink3}>🔄 ใหม่</Pill>
+          <Pill onClick={() => { sfx.tap(); setHint(h => !h); }} bg={hint ? T.ok : T.ink3}>💡 ช่วย</Pill>
           <Pill onClick={() => { if (idx + 1 < qs.length) setIdx(i => i + 1); else track.finish(score, qs.length); }} disabled={!done} bg={T.primary}>ถัดไป ›</Pill>
         </div>
       </div>

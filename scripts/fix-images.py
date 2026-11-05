@@ -11,7 +11,7 @@ DROP = {
  'technology': ['EMAIL','SCREENSHOT'],
  'toys': ['SCOOTER','SLIDE'],
  # รอบ 2 (v3.8): รูปใหม่ยังไม่สื่อ → ใช้ภาพออกแบบ/อีโมจิใหญ่
- 'weather': ['HOT'], 'opposites': ['OPEN','CLOSED','HOT'],
+ 'weather': ['HOT','SUNNY'], 'sports': ['MEDAL'], 'opposites': ['OPEN','CLOSED','HOT'],
  'jobs': ['PRINCE','PRINCESS','WRITER','DESIGNER','ELECTRICIAN','TAXI DRIVER','MAIL CARRIER','CAPTAIN','CARPENTER','MAGICIAN','SCIENTIST','ARTIST','ENGINEER'],
  'clothes': ['COAT','SUIT','SWIMSUIT','EARRINGS','SKIRT'],
  'fruits': ['ROSE APPLE'], 'time': ['APRIL'], 'vegetables': ['GINGER','BEAN SPROUTS'], 'music': ['HARP'],

@@ -3,6 +3,7 @@ import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl, bundledCount,
 const Runner3D = lazy(() => import("./Runner3D.jsx"));   // three.js โหลดเฉพาะตอนเปิดเกม 3D
 const Racer3D = lazy(() => import("./Racer3D.jsx"));
 const ActionStage3D = lazy(() => import("./ActionStage3D.jsx"));
+const FindRoom3D = lazy(() => import("./FindRoom3D.jsx"));
 import { DIALOGUES, STORIES, PHONICS, GRAMMAR, DAYS, MONTHS, MONEY, numberWord, numberThai, timeWord, timeThai, LEVELS_TEST } from "./content.js";
 import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER_NEED, PETS, getPet, petLevel, EMPTY_PROGRESS,
   srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today, weekStats,
@@ -238,21 +239,21 @@ const CATEGORIES = [
   { id:"fruits",   label:"Fruits",   thai:"ผลไม้",      emoji:"🍎", color:"#EF4444", games:["feed","quiz","spell","memory","speed"] },
   { id:"food",     label:"Food",     thai:"อาหาร",      emoji:"🍕", color:"#F97316", games:["feed","quiz","spell","memory"] },
   { id:"colors",   label:"Colors",   thai:"สี",         emoji:"🎨", color:"#8B5CF6", games:["colormix","quiz","match"] },
-  { id:"school",   label:"School",   thai:"โรงเรียน",   emoji:"🎒", color:"#3B82F6", games:["quiz","spell","memory"] },
+  { id:"school",   label:"School",   thai:"โรงเรียน",   emoji:"🎒", color:"#3B82F6", games:["findroom","quiz","spell","memory"] },
   { id:"body",     label:"Body",     thai:"ร่างกาย",    emoji:"👁️", color:"#EC4899", games:["bodydr","quiz"] },
   { id:"weather",  label:"Weather",  thai:"อากาศ",      emoji:"🌈", color:"#06B6D4", games:["dress","quiz"] },
   { id:"numbers",  label:"Numbers",  thai:"ตัวเลข",     emoji:"🔢", color:"#10B981", games:["count","quiz"] },
   { id:"vehicles", label:"Vehicles", thai:"ยานพาหนะ",   emoji:"🚗", color:"#6366F1", games:["racer","runner","quiz","spell","memory"] },
   { id:"jobs",     label:"Jobs",     thai:"อาชีพ",      emoji:"👨‍⚕️",color:"#14B8A6", games:["quiz","memory"] },
-  { id:"clothes",  label:"Clothes",  thai:"เสื้อผ้า",   emoji:"👕", color:"#D946EF", games:["quiz","spell","memory"] },
-  { id:"home",     label:"Home",     thai:"ของในบ้าน",  emoji:"🏠", color:"#84CC16", games:["quiz","spell","memory"] },
+  { id:"clothes",  label:"Clothes",  thai:"เสื้อผ้า",   emoji:"👕", color:"#D946EF", games:["findroom","quiz","spell","memory"] },
+  { id:"home",     label:"Home",     thai:"ของในบ้าน",  emoji:"🏠", color:"#84CC16", games:["findroom","quiz","spell","memory"] },
   { id:"nature",   label:"Nature",   thai:"ธรรมชาติ",   emoji:"🌿", color:"#22C55E", games:["quiz","memory","speed"] },
   { id:"sports",   label:"Sports",   thai:"กีฬา",       emoji:"⚽", color:"#60A5FA", games:["quiz","memory","speed"] },
   { id:"family",   label:"Family",   thai:"ครอบครัว",   emoji:"👨‍👩‍👧", color:"#FB7185", games:["quiz","memory","speed"] },
   { id:"actions",  label:"Actions",  thai:"กริยา",      emoji:"🏃", color:"#F472B6", games:["action","quiz","spell","memory"] },
   { id:"feelings", label:"Feelings", thai:"ความรู้สึก", emoji:"😊", color:"#FBBF24", games:["quiz","memory","speed"] },
   { id:"shapes",   label:"Shapes",   thai:"รูปทรง",     emoji:"🔺", color:"#A78BFA", games:["quiz","spell","memory"] },
-  { id:"toys",     label:"Toys",     thai:"ของเล่น",    emoji:"🧸", color:"#F59E0B", games:["quiz","spell","memory","speed"] },
+  { id:"toys",     label:"Toys",     thai:"ของเล่น",    emoji:"🧸", color:"#F59E0B", games:["findroom","quiz","spell","memory","speed"] },
   { id:"places",   label:"Places",   thai:"สถานที่",    emoji:"🏫", color:"#2DD4BF", games:["quiz","spell","memory","speed"] },
 
   { id:"vegetables", label:"Vegetables", thai:"ผัก",          emoji:"🥦", color:"#65A30D", games:["feed","quiz","spell","memory","speed"] },
@@ -300,6 +301,7 @@ const GAME_META = {
   ninja:   { label:"Word Ninja",    thai:"ปาดนิ้วฟันคำที่ถูก 🗡️",      emoji:"🗡️" },
   bingo:   { label:"Bingo",         thai:"ฟังคำ แตะรูป ครบแถว 🎱",     emoji:"🎱" },
   runner:  { label:"Word Runner 3D", thai:"วิ่ง 3 มิติ เก็บรูปที่ได้ยิน 🏃", emoji:"🏃" },
+  findroom:{ label:"Find It!", thai:"หาของในห้องรก แตะให้เจอ 🔎", emoji:"🔎" },
   action:  { label:"Who Is Doing It?", thai:"ใครทำท่านี้อยู่ แตะเลย 🎭", emoji:"🎭" },
   racer:   { label:"Word Racer 3D", thai:"แข่งรถ ขับผ่านประตูรูปที่ถูก 🏎️", emoji:"🏎️" },
   feed:    { label:"Feed the Pet",  thai:"ป้อนอาหารให้เพื่อนคู่หู 😋",  emoji:"😋" },
@@ -1600,7 +1602,7 @@ export default function App() {
   const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
   const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บของระหว่างทางด้วยนะ", racer:"เลือกรถ แล้วขับผ่านประตูรูปที่ได้ยินเพื่อเร่งเทอร์โบ", action:"ฟังคำ แล้วแตะคนที่กำลังทำท่านั้นอยู่", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
+  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บของระหว่างทางด้วยนะ", racer:"เลือกรถ แล้วขับผ่านประตูรูปที่ได้ยินเพื่อเร่งเทอร์โบ", action:"ฟังคำ แล้วแตะคนที่กำลังทำท่านั้นอยู่", findroom:"ห้องรกมาก ฟังคำแล้วหาของชิ้นนั้นให้เจอ แตะเลย", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => guard(() => setScreen("manage"));
   const openSettings = () => guard(() => setShowSettings(true));
@@ -2838,6 +2840,7 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
   if (gameId === "runner")   game = mount3D(Runner3D, "🏃 กำลังสร้างโลก 3 มิติ…");
   if (gameId === "racer")    game = mount3D(Racer3D, "🏎️ กำลังเตรียมสนามแข่ง…");
   if (gameId === "action")   game = mount3D(ActionStage3D, "🎭 กำลังเตรียมเวที…");
+  if (gameId === "findroom") game = mount3D(FindRoom3D, "🔎 กำลังจัดห้อง…");
   if (gameId === "habitat")  game = <HabitatGame {...p} />;
   if (gameId === "match")    game = <MatchGame {...p} />;
   if (gameId === "colormix") game = <ColorMixGame {...p} />;
@@ -4592,7 +4595,7 @@ function CreditsScreen({ words }) {
         <b style={{ color:T.ink }}>โมเดล 3 มิติในเกม Word Runner 3D</b><br/>
         🦊 Fox — model by PixelMannen (CC0), rigging &amp; animation by tomkranis (CC-BY 4.0), glTF conversion by AsoboStudio &amp; scurest (CC-BY 4.0) · จาก KhronosGroup glTF-Sample-Assets<br/>
         🤖 RobotExpressive — model by Tomás Laulhé (Quaternius), modifications by Don McCurdy (CC0 1.0) · จากตัวอย่าง three.js<br/>
-        🐕🐄🐴🦌🫏🦙🐺🦖🐸🐭🦀🐍🐝🕷️🐰🦝 สัตว์และตัวละคร, ผลไม้ ของใช้ในบ้าน เรือ ยานอวกาศ — models by Quaternius (quaternius.com, CC0) · 🧙⚔️🍔🪑🚕 KayKit by Kay Lousberg (kaylousberg.com, CC0) · 🚗🏎️🚓 Car Kit / Racing Kit by Kenney (kenney.nl, CC0)<br/>
+        🐕🐄🐴🦌🫏🦙🐺🦖🐸🐭🦀🐍🐝🕷️🐰🦝 สัตว์และตัวละคร, ผลไม้ ของใช้ในบ้าน เรือ ยานอวกาศ — models by Quaternius (quaternius.com, CC0) · 🧙⚔️🍔🪑🚕 KayKit by Kay Lousberg (kaylousberg.com, CC0) · 🚗🏎️🚓 Car Kit / Racing Kit by Kenney (kenney.nl, CC0) · 👟 Shoe model by Shopify (CC BY 4.0)<br/>
         🌄 ท้องฟ้า HDRI · พื้นผิว PBR · หิน พุ่มไม้ เฟิร์น เสาไฟ ม้านั่ง ผลไม้ — จาก <b>Poly Haven</b> (polyhaven.com) สัญญาอนุญาต CC0 · เอนจิน three.js (MIT)
       </div>
       {list === null && <div style={{ textAlign:"center",color:T.ink3 }}>กำลังโหลด…</div>}

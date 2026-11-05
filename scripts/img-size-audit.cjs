@@ -50,7 +50,8 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
   await game('Fruits', 'Feed the Pet', 'multi');
   await game('Animals', 'Word Runner 3D', 'info');
   await game('Vehicles', 'Word Racer 3D', 'info');
-  await game('Actions', 'Who Is Doing It?', 'info');   // ฉาก 3D (รูปเป็น texture บนป้าย ไม่ใช่ <img>)
+  await game('Actions', 'Who Is Doing It?', 'info');
+  await game('Toys', 'Find It!', 'info');   // ฉาก 3D (รูปเป็น texture บนป้าย ไม่ใช่ <img>)
   await game('Fruits', 'Speed', 'multi', startBtn);
   await game('Colors', 'Picture Match', 'multi');
   await game('Colors', 'Color Mix', 'single');

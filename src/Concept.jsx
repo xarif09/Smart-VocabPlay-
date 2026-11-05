@@ -6,17 +6,20 @@
 import React from "react";
 
 const VB = "0 0 160 110";
-const Frame = ({ bg = "#f1f5f9", bg2, children }) => (
+const Frame = ({ bg = "#f1f5f9", bg2, children }) => {
+  const uid = "cp-bg-" + React.useId().replace(/[^a-zA-Z0-9]/g, "");   // id ไม่ซ้ำ: หลายภาพบนหน้าเดียวกันต้องไม่ใช้สีพื้นของภาพแรก
+  return (
   <svg viewBox={VB} width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style={{ display:"block" }}>
     <defs>
-      <linearGradient id="cp-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={bg} /><stop offset="1" stopColor={bg2 || bg} /></linearGradient>
+      <linearGradient id={uid} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={bg} /><stop offset="1" stopColor={bg2 || bg} /></linearGradient>
       <radialGradient id="cp-gloss" cx="0.35" cy="0.3" r="0.7"><stop offset="0" stopColor="#fff" stopOpacity="0.85" /><stop offset="0.5" stopColor="#fff" stopOpacity="0.1" /><stop offset="1" stopColor="#000" stopOpacity="0.12" /></radialGradient>
       <filter id="cp-sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#0f172a" floodOpacity="0.22" /></filter>
     </defs>
-    <rect width="160" height="110" fill="url(#cp-bg)" />
+    <rect width="160" height="110" fill={`url(#${uid})`} />
     {children}
   </svg>
-);
+  );
+};
 
 // ── สี ──────────────────────────────────────────────────
 const COLORS = {
@@ -360,6 +363,35 @@ const MISC = {
   "time|AFTERNOON": <Fig bg="#fff7ed" bg2="#fed7aa"><circle cx="116" cy="34" r="14" fill="#f59e0b" />{[...Array(8)].map((_, i) => <line key={i} x1={116 + 18 * Math.cos(i * Math.PI / 4)} y1={34 + 18 * Math.sin(i * Math.PI / 4)} x2={116 + 24 * Math.cos(i * Math.PI / 4)} y2={34 + 24 * Math.sin(i * Math.PI / 4)} stroke="#f59e0b" strokeWidth="3" strokeLinecap="round" />)}<circle cx="52" cy="62" r="30" fill="#fff" stroke="#9a3412" strokeWidth="3" /><line x1="52" y1="62" x2="52" y2="42" stroke="#9a3412" strokeWidth="4" strokeLinecap="round" /><line x1="52" y1="62" x2="68" y2="62" stroke="#9a3412" strokeWidth="5" strokeLinecap="round" /><text x="52" y="104" textAnchor="middle" fontSize="10" fontWeight="800" fill="#9a3412">3 PM · บ่าย</text></Fig>,
 };
 
+// ── v3.8: ส่วนของใบหน้า/มือ/เกรด/สติกเกอร์/อีเมล/สกรีนช็อต (รูปถ่ายเดิมผิดหรือสื่อไม่ได้) ──
+const SK = "#f6cfa4";
+function FaceBase({ children, hair = "#5b3a1e", hl }) {
+  return <Frame bg="#eff6ff" bg2="#dbeafe">
+    <ellipse cx="80" cy="64" rx="34" ry="40" fill={SK} filter="url(#cp-sh)" />
+    <path d="M46 58 q-2 -34 34 -36 q36 2 34 36 q-8 -20 -34 -20 q-26 0 -34 20z" fill={hair} />
+    <ellipse cx="46" cy="66" rx="5" ry="9" fill={SK} /><ellipse cx="114" cy="66" rx="5" ry="9" fill={SK} />
+    <circle cx="68" cy="62" r="3.2" fill="#1f2937" /><circle cx="92" cy="62" r="3.2" fill="#1f2937" />
+    <path d="M62 54 q6 -4 12 0 M86 54 q6 -4 12 0" stroke="#3f2a14" strokeWidth="2.4" fill="none" strokeLinecap="round" />
+    <path d="M80 66 q-5 10 0 12 q5 -1 4 -3" stroke="#d6a77a" strokeWidth="2" fill="none" strokeLinecap="round" />
+    <path d="M70 90 q10 7 20 0" stroke="#be123c" strokeWidth="3" fill="none" strokeLinecap="round" />
+    {hl}
+  </Frame>;
+}
+const HLC = { fill:"none", stroke:"#ef4444", strokeWidth:"4", strokeDasharray:"5 4", style:{ filter:"drop-shadow(0 0 4px rgba(239,68,68,.8))" } };
+const FACE = {
+  "body|NOSE": <FaceBase hl={<><ellipse cx="80" cy="73" rx="10" ry="12" {...HLC} /><path d="M118 36 l-22 28" stroke="#ef4444" strokeWidth="3" strokeLinecap="round" /><text x="124" y="34" fontSize="13" fontWeight="900" fill="#b91c1c">NOSE</text></>} />,
+  "body|CHIN": <FaceBase hl={<><path d="M64 96 q16 14 32 0" {...HLC} strokeWidth="5" /><path d="M114 96 l-20 0" stroke="#ef4444" strokeWidth="3" strokeLinecap="round" /><text x="100" y="106" fontSize="13" fontWeight="900" fill="#b91c1c">CHIN</text></>} />,
+  "body|CHEEK": <FaceBase hl={<><circle cx="60" cy="78" r="10" {...HLC} /><circle cx="100" cy="78" r="10" {...HLC} /></>} />,
+  "body|HAIR": <FaceBase hair="#92400e" hl={<path d="M44 58 q-2 -38 36 -40 q38 2 36 40" {...HLC} strokeWidth="5" />} />,
+  "body|HEAD": <FaceBase hl={<ellipse cx="80" cy="56" rx="42" ry="46" {...HLC} strokeWidth="5" />} />,
+  "actions|SMELL": <FaceBase hl={<><ellipse cx="80" cy="73" rx="10" ry="12" {...HLC} /><path d="M104 74 q10 -6 18 0 t14 0 M104 82 q10 -6 18 0 t14 0" stroke="#22c55e" strokeWidth="3" fill="none" strokeLinecap="round" /><text x="124" y="64" fontSize="16">🌸</text></>} />,
+  "body|NAIL": <Frame bg="#fdf2f8" bg2="#fce7f3"><rect x="52" y="52" width="56" height="52" rx="16" fill={SK} filter="url(#cp-sh)" />{[0, 1, 2, 3].map(i => <rect key={i} x={50 + i * 14} y={22 + (i === 1 || i === 2 ? -8 : 0)} width="13" height={44 + (i === 1 || i === 2 ? 8 : 0)} rx="6.5" fill={SK} />)}<rect x="30" y="58" width="13" height="34" rx="6.5" fill={SK} transform="rotate(-35 36 75)" />{[0, 1, 2, 3].map(i => <rect key={"n" + i} x={52 + i * 14} y={24 + (i === 1 || i === 2 ? -8 : 0)} width="9" height="11" rx="4" fill="#fb7185" stroke="#be123c" strokeWidth="1.5" style={{ filter:"drop-shadow(0 0 3px rgba(239,68,68,.8))" }} />)}<text x="120" y="40" fontSize="13" fontWeight="900" fill="#b91c1c">NAIL</text></Frame>,
+  "school|GRADE": <Frame bg="#fef2f2" bg2="#fee2e2"><rect x="30" y="14" width="100" height="82" rx="10" fill="#fff" stroke="#fca5a5" strokeWidth="2" filter="url(#cp-sh)" /><text x="80" y="66" textAnchor="middle" fontSize="44" fontWeight="900" fill="#dc2626" fontFamily="Prompt, system-ui" transform="rotate(-8 80 56)">A+</text><path d="M42 80 q38 6 76 -2" stroke="#dc2626" strokeWidth="3" fill="none" strokeLinecap="round" /><text x="116" y="30" fontSize="18">⭐</text></Frame>,
+  "school|STICKER": <Frame bg="#fefce8" bg2="#fef3c7">{[[46, 40, "#f472b6", "⭐"], [86, 36, "#60a5fa", "❤️"], [122, 50, "#34d399", "😊"], [58, 78, "#fbbf24", "🌈"], [102, 80, "#a78bfa", "🦄"]].map(([x, y, c, e], i) => <g key={i} transform={`rotate(${(i - 2) * 9} ${x} ${y})`}><circle cx={x} cy={y} r="19" fill="#fff" stroke={c} strokeWidth="4" filter="url(#cp-sh)" /><text x={x} y={y + 7} textAnchor="middle" fontSize="20">{e}</text></g>)}</Frame>,
+  "technology|EMAIL": <Frame bg="#eff6ff" bg2="#dbeafe"><rect x="26" y="30" width="108" height="64" rx="10" fill="#fff" stroke="#60a5fa" strokeWidth="3" filter="url(#cp-sh)" /><path d="M28 34 l52 36 l52 -36" stroke="#2563eb" strokeWidth="4" fill="none" strokeLinejoin="round" /><circle cx="120" cy="34" r="14" fill="#ef4444" stroke="#fff" strokeWidth="3" /><text x="120" y="40" textAnchor="middle" fontSize="16" fontWeight="900" fill="#fff">@</text></Frame>,
+  "technology|SCREENSHOT": <Frame bg="#f5f3ff" bg2="#ede9fe"><rect x="22" y="22" width="116" height="72" rx="8" fill="#fff" stroke="#7c3aed" strokeWidth="3" filter="url(#cp-sh)" /><rect x="22" y="22" width="116" height="14" rx="8" fill="#a78bfa" /><circle cx="32" cy="29" r="2.4" fill="#fff" /><circle cx="40" cy="29" r="2.4" fill="#fff" /><rect x="32" y="46" width="50" height="8" rx="3" fill="#ddd6fe" /><rect x="32" y="60" width="72" height="8" rx="3" fill="#ddd6fe" /><rect x="32" y="74" width="40" height="8" rx="3" fill="#ddd6fe" />{[[14, 14], [146, 14], [14, 104], [146, 104]].map(([x, y], i) => <path key={i} d={`M${x} ${y + (y < 60 ? 10 : -10)} V${y} H${x + (x < 80 ? 10 : -10)}`} stroke="#ef4444" strokeWidth="4" fill="none" strokeLinecap="round" />)}<text x="128" y="82" fontSize="20">📸</text></Frame>,
+};
+
 // ── ทางเข้า ── (คืน null เมื่อไม่มีภาพของคำนั้น → <Pic> จะใช้อีโมจิแทน)
 const TIME_WORDS = new Set([...DAYS, ...MONTHS, "TODAY", "TOMORROW", "YESTERDAY", "WEEK", "WEEKEND", "MONTH", "YEAR", "HOUR", "MINUTE", "O'CLOCK"]);
 const OPP_WORDS = new Set(["TALL", "SHORT", "LONG", "THICK", "THIN", "UP", "DOWN", "LEFT", "RIGHT", "IN", "OUT", "FRONT", "BACK", "NEAR", "FAR", "FULL", "EMPTY", "SAME", "DIFFERENT", "EASY", "DIFFICULT", "POOR", "WEAK", "NEW"]);
@@ -367,6 +399,7 @@ export function conceptFor(w) {
   if (!w) return null;
   const word = (w.word || "").toUpperCase();
   if (MISC[`${w.cat}|${word}`]) return MISC[`${w.cat}|${word}`];
+  if (FACE[`${w.cat}|${word}`]) return FACE[`${w.cat}|${word}`];
   switch (w.cat) {
     case "colors": return COLORS[word] ? <ColorCard word={word} /> : null;
     case "numbers": return (typeof w.num === "number" || word in NUM_WORDS || ["FIRST", "SECOND", "THIRD", "HALF"].includes(word)) ? <NumberCard w={w} /> : null;
@@ -381,4 +414,4 @@ export function conceptFor(w) {
 }
 export const hasConcept = w => !!conceptFor(w);
 // รายการคำทั้งหมดที่มีภาพออกแบบ (ใช้ทำหน้าตรวจ ?concepts=1)
-export const CONCEPT_WORDS = { misc:Object.keys(MISC), body:Object.keys(BODY_PARTS), colors:Object.keys(COLORS), shapes:[...Object.keys(SHAPES)], time:[...TIME_WORDS], feelings:Object.keys(FACES), opposites:[...OPP_WORDS] };
+export const CONCEPT_WORDS = { face:Object.keys(FACE), misc:Object.keys(MISC), body:Object.keys(BODY_PARTS), colors:Object.keys(COLORS), shapes:[...Object.keys(SHAPES)], time:[...TIME_WORDS], feelings:Object.keys(FACES), opposites:[...OPP_WORDS] };

@@ -1584,7 +1584,7 @@ export default function App() {
   const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
   const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const GUIDE = { quiz:"ดูรูปแล้วเลือกคำภาษาอังกฤษที่ตรงกับรูป", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาคำกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะคำให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ดูรูป แล้วเจาะลูกโป่งที่มีคำตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านคำที่ตรงกับรูป ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว" };
+  const GUIDE = { quiz:"ดูรูปแล้วเลือกคำภาษาอังกฤษที่ตรงกับรูป", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาคำกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะคำให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ดูรูป แล้วเจาะลูกโป่งที่มีคำตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => guard(() => setScreen("manage"));
   const openSettings = () => guard(() => setShowSettings(true));
@@ -1972,6 +1972,22 @@ const Btn = ({ onClick, children, style={} }) => (
 // ═══════════════════════════════════════════════════════
 // HOME SCREEN
 // ═══════════════════════════════════════════════════════
+// QR ลิงก์เว็บเกม: ให้เพื่อน/ผู้ปกครองสแกนเปิดบนมือถือ
+function QrCard() {
+  const svg = useMemo(() => {
+    try { const url = (typeof location !== "undefined" ? location.origin + location.pathname : "https://xarif09.github.io/Smart-VocabPlay-/"); const q = qrcode(0, "M"); q.addData(url, "Byte"); q.make(); return q.createSvgTag({ cellSize: 4, margin: 2, scalable: true }); } catch (_) { return ""; }
+  }, []);
+  if (!svg) return null;
+  return (
+    <div style={{ ...M3.card({ margin:"8px 0",padding:12 }),display:"flex",alignItems:"center",gap:14 }}>
+      <div aria-label="QR code เปิดเกม" style={{ width:96,height:96,flex:"none",background:"#fff",borderRadius:12,padding:2,overflow:"hidden" }} dangerouslySetInnerHTML={{ __html: svg }} />
+      <div style={{ flex:1,minWidth:0 }}>
+        <div style={{ fontWeight:800,fontSize:15,color:T.ink }}>📱 สแกนเล่นบนมือถือ</div>
+        <div style={{ fontSize:12,color:T.ink2,marginTop:2 }}>ให้เพื่อนหรือพ่อแม่สแกนเพื่อเปิดเกมนี้ได้เลย</div>
+      </div>
+    </div>
+  );
+}
 function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, onRoom, onPath, onTalk, onStories, onPhonics, onGrammar, onDaily, onTest, onVersus, speak, units, profile, onProfiles, install }) {
   const careNow = progress.pet ? tickCare(progress.care) : null;
   const careAvg = careNow ? (careNow.hunger + careNow.clean + careNow.fun + careNow.energy) / 4 : 100;
@@ -2010,6 +2026,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
         </div>
       )}
       {install && <InstallBanner deferred={install.evt} onInstall={install.onInstall} onDismiss={install.onDismiss} />}
+      <QrCard />
 
       {/* ทำต่อวันนี้ */}
       {progress.pet && (
@@ -2588,7 +2605,7 @@ function BalloonGame({ words, speak, track }) {
   );
 }
 
-// ── ฟันคำ (นินจา): คำลอยขึ้นมา ปาดนิ้วผ่านคำที่ตรงกับรูป ──
+// ── ฟันคำ (นินจา): คำลอยขึ้นมา ปาดนิ้วผ่านรูปที่ตรงกับเสียง ──
 function NinjaGame({ words, speak, track }) {
   const ROUNDS = 8;
   const [round, setRound] = useState(0); const [hearts, setHearts] = useState(3); const [score, setScore] = useState(0);
@@ -2616,20 +2633,20 @@ function NinjaGame({ words, speak, track }) {
         {!on ? <div style={{ textAlign:"center",padding:"26px 0" }}>
           <Shape kind="cookie6" size={110} fill={T.errorC}><span style={{ fontSize:54 }}>🗡️</span></Shape>
           <p style={{ ...TYPE.headlineS,color:T.ink,margin:"12px 0 4px" }}>นินจาฟันคำ</p>
-          <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>คำจะกระเด็นขึ้นมา ปาดนิ้วผ่านคำที่ตรงกับรูป · ฟันผิดเสียหัวใจ · ปล่อยให้คำที่ถูกตกก็เสียหัวใจ</p>
+          <p style={{ ...TYPE.bodyM,color:T.ink2,margin:"0 0 18px" }}>รูปจะกระเด็นขึ้นมา ปาดนิ้วผ่านรูปที่ตรงกับเสียง · ฟันผิดเสียหัวใจ · ปล่อยให้คำที่ถูกตกก็เสียหัวใจ</p>
           <Pill onClick={() => { roundRef.current = 0; scoreRef.current = 0; heartsRef.current = 3; setRound(0); setScore(0); setHearts(3); setOn(true); launch(); }}>▶ เริ่ม!</Pill>
         </div> : <>
-          <div style={{ display:"flex",justifyContent:"center" }}><Pic w={cur} fill style={{ height:"min(31vh, 290px)" }} /></div>
+          <SoundPrompt onClick={() => cur && speak(cur.word, cur.meaning)} size={84} />
           <div onPointerDown={e => { down.current = true; onMove(e); }} onPointerMove={onMove} onPointerUp={() => { down.current = false; lastHit.current = null; }} onPointerLeave={() => { down.current = false; }}
             style={{ position:"relative",height:"min(40vh,340px)",overflow:"hidden",borderRadius:20,background:`linear-gradient(180deg, ${T.surf}, ${T.tertiaryC})`,marginTop:8,touchAction:"none",userSelect:"none" }}>
             {items.map(it => (
               <span key={it.key} data-ninja={cut[it.key] ? undefined : it.key} onAnimationEnd={() => fell(it)}
-                style={{ position:"absolute",left:`${it.x}%`,bottom:-60,padding:"12px 14px",borderRadius:999,background:cut[it.key] ? T.surfHighest : T.card,color:cut[it.key] ? T.ink3 : T.ink,boxShadow:cut[it.key] ? "none" : MD.shadow,fontWeight:900,fontSize:"clamp(13px, 3.8vw, 17px)",animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,textDecoration:cut[it.key] ? "line-through" : "none",transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
-                {it.w.word}
+                style={{ position:"absolute",left:`${Math.min(it.x, 72)}%`,bottom:-110,width:"clamp(92px, 28vw, 130px)",aspectRatio:"1",borderRadius:20,overflow:"hidden",border:`3px solid ${cut[it.key] ? T.outlineV : T.primary}`,background:T.card,boxShadow:cut[it.key] ? "none" : MD.shadow,animation:`vpFly ${it.dur}s ${it.delay}s ease-out both`,opacity:cut[it.key] ? 0.35 : 1,transform:cut[it.key] ? "rotate(18deg)" : "none",pointerEvents:"auto" }}>
+                <PicFill w={it.w} emojiSize={36} />
               </span>
             ))}
           </div>
-          <div style={{ textAlign:"center",...TYPE.labelM,color:T.ink2,marginTop:6 }}>{cur?.meaning} · ⭐{score} · ปาดนิ้วผ่านคำ</div>
+          <div style={{ textAlign:"center",...TYPE.labelM,color:T.ink2,marginTop:6 }}>⭐{score} · ปาดนิ้วผ่านรูปที่ได้ยิน</div>
         </>}
       </div>
     </GameCard>
@@ -2883,22 +2900,37 @@ function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
   const [err, setErr] = useState(false);
   useEffect(() => setErr(false), [url]);
   const concept = (!url || err) ? conceptFor(w) : null;
-  if ((!url || err) && !concept) return <span style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
+  // คำที่ไม่มีรูปถ่าย/ภาพออกแบบ → อีโมจิตัวใหญ่เต็มกล่องสีอ่อน (ไม่ทิ้งที่ว่าง)
+  if ((!url || err) && !concept) return fill
+    ? <span data-emoji-box style={{ display:"flex",alignItems:"center",justifyContent:"center",width:"100%",maxWidth:"100%",height:"min(46vh, 430px, 92vw)",borderRadius:22,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})`,fontSize:"min(26vh, 220px, 60vw)",lineHeight:1,...style }}><span style={{ filter:"drop-shadow(0 8px 14px rgba(0,0,0,.18))" }}>{w?.emoji}</span></span>
+    : <span data-emoji-box style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
   const box = fill ? "100%" : size * 2.2;
-  const fillBox = fill ? { width:"100%", height:"min(46vh, 430px, 92vw)" } : { width:box, aspectRatio:"4/3" };
+  const [asp, setAsp] = useState(0);   // สัดส่วนจริงของรูป (กว้าง/สูง) → กรอบเปลี่ยนตามรูป ไม่มีขอบว่าง ไม่เบลอ
+  useEffect(() => setAsp(0), [url]);
+  const MAXH = "min(46vh, 430px, 92vw)";
+  const fa = asp ? Math.min(1.3, Math.max(0.72, asp)) : 4/3;
+  const fillBox = fill ? { width:"100%", maxWidth:`calc(${MAXH} * ${fa})`, aspectRatio:String(fa) } : { width:box, aspectRatio:String(fa) };
   if (concept) return (
-    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
+    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...(fill ? { width:"100%",height:MAXH } : fillBox),borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
       {concept}
     </span>
   );
   return (
-    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",background:T.surfHighest,boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
-      {/* พื้นหลังเบลอจากรูปเดียวกัน + รูปเต็มใบ (contain) → ไม่ตัดหัว/ตัวสัตว์ */}
-      <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75 }} />
-      <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"relative",width:"100%",height:"100%",objectFit:"contain",display:"block" }} />
+    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",background:T.surfHighest,...style }}>
+      <img src={url} alt={w.word} onLoad={e => { const im = e.currentTarget; if (im.naturalWidth) setAsp(im.naturalWidth / im.naturalHeight); }} onError={() => setErr(true)} loading="lazy" style={{ position:"relative",width:"100%",height:"100%",objectFit:"contain",display:"block" }} />
       {size >= 30 && <span style={{ position:"absolute",right:4,bottom:3,fontSize:Math.max(14, size*0.3),lineHeight:1,filter:"drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>{w.emoji}</span>}
     </span>
   );
+}
+// รูปปก: เต็มกรอบ (cover) แต่ถ้าสัดส่วนรูปต่างจากกรอบมาก (แนวตั้ง/แนวนอนสลับ) → แสดงเต็มใบ (contain) บนพื้นเบลอ จุดโฟกัสไม่ล้นขอบ
+function CoverImg({ url, word, onError }) {
+  const [safe, setSafe] = useState(false);
+  const chk = e => {
+    const im = e.currentTarget, p = im.parentElement; if (!p || !im.naturalWidth) return;
+    const fr = p.clientWidth / Math.max(1, p.clientHeight), ir = im.naturalWidth / im.naturalHeight;
+    setSafe(Math.max(fr / ir, ir / fr) > 1.3);
+  };
+  return <img src={url} alt={word} onLoad={chk} onError={onError} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:safe?"contain":"cover",objectPosition:"center 40%",borderRadius:"inherit",background:T.surfHighest }} />;
 }
 // รูปเล็กสำหรับตัวเลือก 4 ช่อง / การ์ดจับคู่: เต็มช่อง
 function PicFill({ w, emojiSize = 40, fit }) {
@@ -2907,17 +2939,17 @@ function PicFill({ w, emojiSize = 40, fit }) {
   useEffect(() => setErr(false), [url]);
   const concept = (!url || err) ? conceptFor(w) : null;
   if (concept) return <span style={{ position:"absolute",inset:0,borderRadius:"inherit",overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center" }}>{concept}</span>;
-  if (!url || err) return <span style={{ fontSize:emojiSize,lineHeight:1 }}>{w?.emoji}</span>;
+  if (!url || err) return <span data-emoji-box style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:`clamp(${emojiSize}px, 48%, 120px)`,lineHeight:1,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})` }}>{w?.emoji}</span>;
   // รูปปก/ภาพรวม (cover) ตัดขอบได้ · รูปคำศัพท์เดี่ยวใช้ contain ไม่ให้ตัวสัตว์ขาด
-  const mode = fit || (w?.cat === "cover" ? "cover" : "contain");
-  if (mode === "cover") return <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",borderRadius:"inherit" }} />;
-  return <>
-    <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75,borderRadius:"inherit" }} />
-    <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",borderRadius:"inherit" }} />
-  </>;
+  // รูปในช่อง: ถ้าสัดส่วนใกล้กรอบ (≤1.12 เท่า) → เต็มกรอบ (ตัดขอบนิดหน่อย) · ต่างมาก → แสดงทั้งรูปบนพื้นเรียบ ไม่เบลอ ไม่ตัดตัว
+  return <CoverImg url={url} word={w.word} onError={() => setErr(true)} />;
 }
 function Emoji({ e, w, size=72, fill=true }) {
   return <div style={{ textAlign:"center",lineHeight:1,padding:"6px 0 8px",display:"flex",justifyContent:"center" }}>{w ? <Pic w={w} size={size} fill={fill} /> : <span style={{ fontSize:size*1.3 }}>{e}</span>}</div>;
+}
+// ปุ่มลำโพงใหญ่ สำหรับเกม "ฟังแล้วเลือกรูป" (เด็กที่ยังอ่านไม่ออกเล่นได้)
+function SoundPrompt({ onClick, pulse = true, size = 96 }) {
+  return <button onClick={onClick} aria-label="ฟังคำ" className="m3-press" style={{ width:size,height:size,borderRadius:size/2,margin:"4px auto 8px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:size*0.46,background:T.primary,color:T.onPrimary,border:"none",cursor:"pointer",boxShadow:MD.shadow,animation:pulse?"vpBounce 1.5s ease-in-out infinite":"none" }}>🔊</button>;
 }
 function SndBtn({ onClick }) { return <button onClick={onClick} className="m3-press" style={GS.soundBtn}>🔊 ฟัง EN+TH</button>; }
 function Pill({ onClick, disabled, bg, children }) {
@@ -2943,6 +2975,7 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
     return shuffle([cur,...shuffle(src.filter(w=>w.id!==cur.id)).slice(0,3)]);
   }, [idx, cur?.id, src]);
 
+  useEffect(()=>{ if(idx>0 && cur) speak(cur.word,cur.meaning); },[idx]); // eslint-disable-line
   if(!cur) return <NoWords onBack={onBack} />;
   const pick = (c, e) => {
     if(lock) return;
@@ -2959,9 +2992,8 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
     <GameCard>
       <Bar left={`${idx+1}/${qs.length}`} right={`⭐${score}`} />
       <div style={GS.body}>
-        <Emoji e={cur.emoji} w={cur} />
-        <SndBtn onClick={()=>speak(cur.word,cur.meaning)} />
-        <p style={{ textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 10px",minHeight:18 }}>{lock ? <b style={{ color:T.primary,fontSize:14 }}>{cur.word} · {cur.read} · {cur.meaning}</b> : "เลือกคำที่ตรงกับรูป"}</p>
+        <SoundPrompt onClick={()=>speak(cur.word,cur.meaning)} pulse={!lock} />
+        <p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:T.ink2,margin:"0 0 8px",minHeight:20 }}>{lock ? <b style={{ color:T.primary,fontSize:14 }}>{cur.word} · {cur.read} · {cur.meaning}</b> : "👂 ฟังแล้วแตะรูปที่ตรงกัน"}</p>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {choices.map(c=>{
             const ic=c.id===cur.id,ip=picked===c.id,sr=lock&&(ic||ip);
@@ -2970,8 +3002,8 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
             if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
             if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
             return <button key={c.id} onClick={e=>pick(c, e)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:"14px 6px",minHeight:52,fontWeight:800,fontSize:15,color:tc,cursor:"pointer" }}>
-              {c.word}
+              style={{ background:bg,border:`3px solid ${bo}`,borderRadius:16,padding:0,minHeight:"min(27vh, 210px)",position:"relative",overflow:"hidden",cursor:"pointer" }}>
+              <PicFill w={c} emojiSize={44} />
             </button>;
           })}
         </div>
@@ -3171,12 +3203,11 @@ function SpeedGame({ words, speak, showToast, track }) {
           ?<div style={{textAlign:"center",padding:"30px 0"}}>
             <div style={{fontSize:48,marginBottom:8}}>⚡</div>
             <p style={{fontWeight:800,fontSize:17,color:T.ink,margin:"0 0 4px"}}>Speed Round</p>
-            <p style={{color:T.ink2,fontSize:13,margin:"0 0 20px"}}>ฟัง→แตะคำให้เร็วใน {T} วิ!<br/>7 คำ = ⭐⭐ · 12 คำ = ⭐⭐⭐</p>
+            <p style={{color:T.ink2,fontSize:13,margin:"0 0 20px"}}>ฟัง→แตะรูปให้เร็วใน {T} วิ!<br/>7 คำ = ⭐⭐ · 12 คำ = ⭐⭐⭐</p>
             <Pill onClick={()=>{setTime(T);setScore(0);scoreRef.current=0;setActive(true);next();}} bg={T.tertiary}>▶ เริ่ม!</Pill>
           </div>
           :<div>
-            <Emoji e={cur?.emoji} w={cur} size={60} />
-            <SndBtn onClick={()=>cur&&speak(cur.word,cur.meaning)} />
+            <SoundPrompt onClick={()=>cur&&speak(cur.word,cur.meaning)} size={84} />
             <div style={{ display:"flex",justifyContent:"center",margin:"0 0 10px" }}>
               <svg width="74" height="74" viewBox="0 0 74 74" style={{ animation:time<=5?"vpWiggle .4s infinite":"none" }}>
                 <circle cx="37" cy="37" r="30" fill="none" stroke={T.surfHigh} strokeWidth="8" />
@@ -3187,8 +3218,8 @@ function SpeedGame({ words, speak, showToast, track }) {
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
               {opts.map(o=>(
                 <button key={o.id} onClick={()=>{ if(o.id===cur.id){scoreRef.current+=1;setScore(s=>s+1);track.correct(cur);next();}else{track.wrong(cur);showToast("❌","err");} }}
-                  style={{background:T.tertiaryC,border:"2px solid #fbbf24",borderRadius:16,padding:"13px 6px",minHeight:52,fontWeight:800,fontSize:15,color:T.onTertiaryC,cursor:"pointer"}}>
-                  {o.word}
+                  style={{background:T.tertiaryC,border:`3px solid ${T.tertiary}`,borderRadius:16,padding:0,minHeight:"min(24vh, 190px)",position:"relative",overflow:"hidden",cursor:"pointer"}}>
+                  <PicFill w={o} emojiSize={40} />
                 </button>
               ))}
             </div>
@@ -3263,12 +3294,12 @@ function MatchGame({ words, speak, showToast, track, onBack }) {
   useEffect(()=>{setPics(shuffle(rw));setMatches({});setSel(null);},[round,rw.length]);
   const done=rw.length>0&&rw.every(w=>matches[w.id]===w.id);
   if(!rw.length) return <NoWords onBack={onBack}/>;
-  const H=Math.round(Math.min((typeof innerHeight!=="undefined"?innerHeight:800)*0.14,118));
+  const H=Math.round(Math.min((typeof innerHeight!=="undefined"?innerHeight:800)*0.15,124));
   return (
     <GameCard>
       <Bar left={`รอบ${round+1}/${total}`} right={`${Object.keys(matches).length}/${rw.length}`} />
       <div style={GS.body}>
-        <p style={{textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 10px"}}>แตะคำ → แตะรูปที่ตรงกัน</p>
+        <p style={{textAlign:"center",...TYPE.titleS,color:T.ink2,margin:"0 0 10px"}}>👆 แตะคำ แล้วแตะรูปที่ตรงกัน</p>
         {rw.map((w,i)=>{
           const p=pics[i];
           const im=matches[w.id]===w.id;
@@ -3276,17 +3307,18 @@ function MatchGame({ words, speak, showToast, track, onBack }) {
           const pu=p&&Object.values(matches).includes(p.id);
           return <div key={w.id} style={{display:"flex",gap:8,alignItems:"center",marginBottom:8,height:H}}>
             <button onClick={()=>{if(!im){sfx.tap();setSel(w.id);speak(w.word,w.meaning);}}} disabled={im}
-              style={{flex:1,height:H,borderRadius:16,background:im?T.okC:is?T.primary:T.secondaryC,border:`2px solid ${im?T.ok:is?T.primary:T.outlineV}`,fontWeight:800,fontSize:15,color:im?T.onOkC:is?T.onPrimary:T.onSecondaryC,cursor:"pointer"}}>
-              {w.word}
+              style={{flex:1,minWidth:0,height:H,borderRadius:18,background:im?T.okC:is?T.primary:T.secondaryC,border:`3px solid ${im?T.ok:is?T.primary:T.outlineV}`,color:im?T.onOkC:is?T.onPrimary:T.onSecondaryC,cursor:"pointer",padding:"4px 6px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:2,transition:"background .15s, transform .15s",transform:is?"scale(1.03)":"none"}}>
+              <span style={{fontWeight:900,fontSize:w.word.length>9?"clamp(15px,4.6vw,19px)":w.word.length>6?"clamp(18px,5.6vw,24px)":"clamp(22px,6.8vw,30px)",lineHeight:1.05,wordBreak:"break-word",textAlign:"center"}}>{w.word}</span>
+              {(w.read||w.meaning)&&<span style={{fontSize:"clamp(12px,3.4vw,15px)",fontWeight:600,opacity:.85,lineHeight:1.1}}>{w.meaning}</span>}
             </button>
-            <span style={{color:T.outlineV,fontSize:18,flexShrink:0}}>→</span>
+            <span style={{color:T.ink3,fontSize:22,fontWeight:900,flexShrink:0}}>→</span>
             {p&&<button onClick={()=>{
               if(sel==null||pu) return;
               if(sel===p.id){track.correct(p);setMatches(m=>({...m,[sel]:p.id}));speak(p.word,p.meaning);}
               else{wrongs.current+=1;track.wrong(rw.find(x=>x.id===sel));showToast("ลองอีก 💡","warn");}
               setSel(null);
             }} disabled={pu}
-              style={{width:"46%",height:H,borderRadius:16,background:pu?T.okC:T.surfHigh,border:`2px solid ${pu?T.ok:T.ok}`,fontSize:28,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,cursor:"pointer",position:"relative",overflow:"hidden",padding:0,opacity:pu?0.55:1}}>
+              style={{width:"44%",height:H,borderRadius:18,background:pu?T.okC:T.surfHigh,border:`3px solid ${pu?T.ok:T.outlineV}`,fontSize:28,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,cursor:"pointer",position:"relative",overflow:"hidden",padding:0,opacity:pu?0.55:1}}>
               <PicFill w={p} emojiSize={44} />
             </button>}
           </div>;
@@ -3499,7 +3531,7 @@ function DressGame({ words, speak, showToast, track }) {
 function BossGame({ words, speak, track, cat, onBack }) {
   const N=10, WIN=7;
   const qs=useMemo(()=>{
-    const modes=["pic","th","rev"];
+    const modes=["rev"];
     return shuffle(words).slice(0,N).map((w,i)=>({ w, mode: modes[i%3] }));
   },[words]);
   const [idx,setIdx]=useState(0);
@@ -3512,6 +3544,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
     if(!q) return [];
     return shuffle([q.w,...shuffle(words.filter(w=>w.id!==q.w.id)).slice(0,3)]);
   },[idx,q?.w.id,words]);
+  useEffect(()=>{ if(idx>0 && q) speak(q.w.word,q.w.meaning); },[idx]); // eslint-disable-line
   if(!q||words.length<4) return <NoWords onBack={onBack} />;
 
   const end=(s,h)=>{
@@ -3530,9 +3563,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
       else { setIdx(i=>i+1); setPicked(null); setLock(false); }
     },950);
   };
-  const prompt = q.mode==="pic" ? <Emoji e={q.w.emoji} w={q.w} />
-    : q.mode==="th" ? <div style={{ textAlign:"center",padding:"18px 0 10px" }}><div style={{ fontSize:12,color:T.ink3 }}>คำนี้ภาษาอังกฤษคือ?</div><div style={{ fontSize:30,fontWeight:900,color:T.ink }}>{q.w.meaning}</div></div>
-    : <div style={{ textAlign:"center",padding:"18px 0 10px" }}><div style={{ fontSize:12,color:T.ink3 }}>รูปไหนคือ</div><div style={{ fontSize:30,fontWeight:900,color:T.ink,letterSpacing:1 }}>{q.w.word}</div></div>;
+  const prompt = <><SoundPrompt onClick={()=>speak(q.w.word,q.w.meaning)} pulse={!lock} /><p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:T.ink2,margin:"0 0 8px" }}>👂 ฟังแล้วแตะรูปที่ตรงกัน</p></>;
   return (
     <GameCard>
       <div style={{ background:"linear-gradient(160deg,#1f2937,#4c1d95 60%,#7c3aed)",color:"#fff",padding:"12px 16px 10px",position:"relative",overflow:"hidden" }}>
@@ -3552,7 +3583,6 @@ function BossGame({ words, speak, track, cat, onBack }) {
       </div>
       <div style={GS.body}>
         {prompt}
-        <SndBtn onClick={()=>speak(q.w.word,q.w.meaning)} />
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {choices.map(c=>{
             const ic=c.id===q.w.id,ip=picked===c.id,sr=lock&&(ic||ip);
@@ -3561,7 +3591,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
             if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
             if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
             return <button key={c.id} onClick={()=>pick(c)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:q.mode==="rev"?0:"12px 6px",minHeight:q.mode==="rev"?"min(20vh, 140px)":56,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
+              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:q.mode==="rev"?0:"12px 6px",minHeight:"min(24vh, 190px)",fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
               {q.mode==="rev"?<PicFill w={c} emojiSize={34} />:c.word}
             </button>;
           })}

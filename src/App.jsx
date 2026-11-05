@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef, useCallback, useMemo, createContext, useContext } from "react";
-import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl, bundledCount } from "./images.js";
+import { useState, useEffect, useRef, useCallback, useMemo, createContext, useContext, lazy, Suspense } from "react";
+import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl, bundledCount, bundledImageUrl } from "./images.js";
+const Runner3D = lazy(() => import("./Runner3D.jsx"));   // three.js โหลดเฉพาะตอนเปิดเกม 3D
 import { DIALOGUES, STORIES, PHONICS, GRAMMAR, DAYS, MONTHS, MONEY, numberWord, numberThai, timeWord, timeThai, LEVELS_TEST } from "./content.js";
 import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER_NEED, PETS, getPet, petLevel, EMPTY_PROGRESS,
   srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today, weekStats,
@@ -229,15 +230,15 @@ function ttsWord(en, th, rate = 0.85, bilingual = true) {
 // VOCABULARY DATA — 300+ words
 // ═══════════════════════════════════════════════════════
 const CATEGORIES = [
-  { id:"animals",  label:"Animals",  thai:"สัตว์",      emoji:"🦁", color:"#F59E0B", games:["quiz","spell","memory","habitat"] },
-  { id:"fruits",   label:"Fruits",   thai:"ผลไม้",      emoji:"🍎", color:"#EF4444", games:["quiz","spell","memory","speed"] },
-  { id:"food",     label:"Food",     thai:"อาหาร",      emoji:"🍕", color:"#F97316", games:["quiz","spell","memory"] },
-  { id:"colors",   label:"Colors",   thai:"สี",         emoji:"🎨", color:"#8B5CF6", games:["quiz","match","colormix"] },
+  { id:"animals",  label:"Animals",  thai:"สัตว์",      emoji:"🦁", color:"#F59E0B", games:["habitat","quiz","spell","memory"] },
+  { id:"fruits",   label:"Fruits",   thai:"ผลไม้",      emoji:"🍎", color:"#EF4444", games:["feed","quiz","spell","memory","speed"] },
+  { id:"food",     label:"Food",     thai:"อาหาร",      emoji:"🍕", color:"#F97316", games:["feed","quiz","spell","memory"] },
+  { id:"colors",   label:"Colors",   thai:"สี",         emoji:"🎨", color:"#8B5CF6", games:["colormix","quiz","match"] },
   { id:"school",   label:"School",   thai:"โรงเรียน",   emoji:"🎒", color:"#3B82F6", games:["quiz","spell","memory"] },
-  { id:"body",     label:"Body",     thai:"ร่างกาย",    emoji:"👁️", color:"#EC4899", games:["quiz","bodydr"] },
-  { id:"weather",  label:"Weather",  thai:"อากาศ",      emoji:"🌈", color:"#06B6D4", games:["quiz","dress"] },
-  { id:"numbers",  label:"Numbers",  thai:"ตัวเลข",     emoji:"🔢", color:"#10B981", games:["quiz","count"] },
-  { id:"vehicles", label:"Vehicles", thai:"ยานพาหนะ",   emoji:"🚗", color:"#6366F1", games:["quiz","spell","memory"] },
+  { id:"body",     label:"Body",     thai:"ร่างกาย",    emoji:"👁️", color:"#EC4899", games:["bodydr","quiz"] },
+  { id:"weather",  label:"Weather",  thai:"อากาศ",      emoji:"🌈", color:"#06B6D4", games:["dress","quiz"] },
+  { id:"numbers",  label:"Numbers",  thai:"ตัวเลข",     emoji:"🔢", color:"#10B981", games:["count","quiz"] },
+  { id:"vehicles", label:"Vehicles", thai:"ยานพาหนะ",   emoji:"🚗", color:"#6366F1", games:["runner","quiz","spell","memory"] },
   { id:"jobs",     label:"Jobs",     thai:"อาชีพ",      emoji:"👨‍⚕️",color:"#14B8A6", games:["quiz","memory"] },
   { id:"clothes",  label:"Clothes",  thai:"เสื้อผ้า",   emoji:"👕", color:"#D946EF", games:["quiz","spell","memory"] },
   { id:"home",     label:"Home",     thai:"ของในบ้าน",  emoji:"🏠", color:"#84CC16", games:["quiz","spell","memory"] },
@@ -250,7 +251,7 @@ const CATEGORIES = [
   { id:"toys",     label:"Toys",     thai:"ของเล่น",    emoji:"🧸", color:"#F59E0B", games:["quiz","spell","memory","speed"] },
   { id:"places",   label:"Places",   thai:"สถานที่",    emoji:"🏫", color:"#2DD4BF", games:["quiz","spell","memory","speed"] },
 
-  { id:"vegetables", label:"Vegetables", thai:"ผัก",          emoji:"🥦", color:"#65A30D", games:["quiz","spell","memory","speed"] },
+  { id:"vegetables", label:"Vegetables", thai:"ผัก",          emoji:"🥦", color:"#65A30D", games:["feed","quiz","spell","memory","speed"] },
   { id:"technology", label:"Technology", thai:"เทคโนโลยี",     emoji:"📱", color:"#0EA5E9", games:["quiz","spell","memory"] },
   { id:"music",      label:"Music",      thai:"ดนตรี",         emoji:"🎵", color:"#D946EF", games:["quiz","memory","speed"] },
   { id:"opposites",  label:"Opposites",  thai:"คำตรงข้าม",     emoji:"↔️", color:"#F97316", games:["quiz","memory","speed"] },
@@ -262,8 +263,8 @@ const CATEGORIES = [
 const REVIEW_CAT = { id:"review", label:"ทบทวนคำที่พลาด", thai:"ทบทวน", emoji:"🔁", color:"#F97316", games:["quiz"] };
 
 // เกมเสริมที่ทุกหมวดมี (ฟัง / เรียงประโยค / พูดตาม)
-const EXTRA_GAMES = ["listen", "sentence", "speak", "mole", "balloon", "ninja", "bingo"];
-CATEGORIES.forEach(c => c.games.push(...EXTRA_GAMES));
+const EXTRA_GAMES = ["runner", "listen", "sentence", "speak", "mole", "balloon", "ninja", "bingo"];
+CATEGORIES.forEach(c => { c.games.push(...EXTRA_GAMES); c.games = [...new Set(c.games)]; });   // เกมเฉพาะหมวดอยู่หน้าเสมอ
 
 // รูปปกหมวด = คำเสมือน { cat:"cover", word:<id> } → ดึงรูปจาก images.js key "cover|<id>"
 const coverWord = cat => ({ id:`cover:${cat.id}`, cat:"cover", word:cat.id, emoji:cat.emoji });
@@ -287,6 +288,8 @@ const GAME_META = {
   balloon: { label:"Balloon Pop",   thai:"เจาะลูกโป่งคำที่ถูก 🎈",     emoji:"🎈" },
   ninja:   { label:"Word Ninja",    thai:"ปาดนิ้วฟันคำที่ถูก 🗡️",      emoji:"🗡️" },
   bingo:   { label:"Bingo",         thai:"ฟังคำ แตะรูป ครบแถว 🎱",     emoji:"🎱" },
+  runner:  { label:"Word Runner 3D", thai:"วิ่ง 3 มิติ เก็บรูปที่ได้ยิน 🏃", emoji:"🏃" },
+  feed:    { label:"Feed the Pet",  thai:"ป้อนอาหารให้เพื่อนคู่หู 😋",  emoji:"😋" },
 };
 
 let _id = 1;
@@ -1584,7 +1587,7 @@ export default function App() {
   const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
   const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว" };
+  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บเหรียญด้วยนะ", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => guard(() => setScreen("manage"));
   const openSettings = () => guard(() => setShowSettings(true));
@@ -1999,8 +2002,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
     ["✍️","ไวยากรณ์",`${GRAMMAR.length} บทเรียน`,T.grad,onGrammar],["🧭","ชีวิตประจำวัน","เวลา เงิน วัน",T.grad,onDaily],["📝","สอบวัดระดับ",progress.cert?`ได้ระดับ ${LEVELS_TEST.find(l=>progress.cert.score>=l.min)?.level}`:"20 ข้อ + ใบประกาศ",T.grad,onTest]];
   // เกมแนะนำ: หมวดของบทถัดไป · เกมแรกที่ยังไม่ได้ดาว (เน้นเกมฟัง-แตะรูป)
   const fCat = (nextUnit && categories.find(c => c.id === nextUnit.cat.id)) || categories[0];
-  const PICK_FIRST = ["listen","quiz","balloon","mole","bingo","ninja","match","memory"];
-  const fGames = [...fCat.games].sort((x, y) => (PICK_FIRST.indexOf(x) + 1 || 99) - (PICK_FIRST.indexOf(y) + 1 || 99));
+  const fGames = fCat.games.filter(g => g !== "boss");   // ลำดับของหมวด: เกมเฉพาะหมวดมาก่อน
   const fGame = fGames.find(g => !progress.stars[`${fCat.id}:${g}`]) || fGames[0];
   const fWord = thumbOf(fCat);
   const go = (cat, g) => { sfx.tap(); onQuickGame ? onQuickGame(cat, g) : onPickCat(cat); };
@@ -2555,7 +2557,7 @@ function EditWordRow({ word, categories, onSave, onCancel }) {
 // ARCADE GAMES (v3.7) — เกมแอ็กชันที่ปรับจากกลไกยอดนิยม: ตีตัวตุ่น · ลูกโป่ง · ฟันคำ · บิงโก
 //  ทุกเกมรายงานผ่าน track.correct/wrong/finish เหมือนเดิม · ใช้รูปจริง (PicFill) + เสียง
 // ═══════════════════════════════════════════════════════
-const ARCADE_GAMES = ["mole", "balloon", "ninja", "bingo"];
+const ARCADE_GAMES = ["mole", "balloon", "ninja", "bingo", "runner", "feed"];
 const pickOthers = (words, w, n) => shuffle(words.filter(x => x.id !== w.id)).slice(0, n);
 
 // ── ตีตัวตุ่น: ได้ยินคำ → ตุ่นโผล่พร้อมรูป ตีตัวที่ตรงให้ทัน (40 วิ) ──
@@ -2804,7 +2806,7 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
   }), [gameId, cat.id, setProgress]);
 
   const replay = () => { correctRef.current = []; setResult(null); setRun(r => r + 1); };
-  const p = { words, speak, speakAt, showToast, onBack, cat, track, allWords, key: run };
+  const p = { words, speak, speakAt, showToast, onBack, cat, track, allWords, key: run, pet: getPet(progress), hat: progress.hat, outfit: progress.outfit };
   let game = null;
   const catPool = cat.unit ? allWords.filter(w => w.cat === cat.unit.cat.id) : words;
   if (gameId === "quiz")     game = <QuizGame {...p} pool={cat.id === "review" ? allWords : catPool} />;
@@ -2818,6 +2820,12 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
   if (gameId === "balloon")  game = <BalloonGame {...p} />;
   if (gameId === "ninja")    game = <NinjaGame {...p} />;
   if (gameId === "bingo")    game = <BingoGame {...p} />;
+  if (gameId === "feed")     game = <FeedGame {...p} />;
+  if (gameId === "runner")   game = <GameCard><div style={GS.body}><Suspense fallback={<div style={{ textAlign:"center",padding:40,...TYPE.titleM,color:T.ink2 }}>🏃 กำลังสร้างโลก 3 มิติ…</div>}>
+    <Runner3D key={run} words={words} speak={speak} track={track} catId={cat.id} sfx={sfx} Prompt={SoundPrompt}
+      ui={{ imageUrl: w => { const t = imageTitleOf(w); return t ? bundledImageUrl(t) : null; }, say: w => speak(w.word, w.meaning), correct: w => track.correct(w), wrong: w => track.wrong(w), unlock: unlockSfx,
+        tokens: { card:T.card, ink:T.ink, primary:T.primary, onPrimary:T.onPrimary, shadow:MD.shadow } }} />
+  </Suspense></div></GameCard>;
   if (gameId === "habitat")  game = <HabitatGame {...p} />;
   if (gameId === "match")    game = <MatchGame {...p} />;
   if (gameId === "colormix") game = <ColorMixGame {...p} />;
@@ -3992,6 +4000,48 @@ function FlashCards({ words, cat, speak, speakAt, setProgress, showToast, onDone
 // ═══════════════════════════════════════════════════════
 // LISTEN — ฟังอย่างเดียว (ไม่มีรูป) แล้วเลือกรูป · 10 ข้อ
 // ═══════════════════════════════════════════════════════
+// ป้อนอาหารเพื่อนคู่หู (หมวดอาหาร/ผลไม้/ผัก): ฟังคำ+เห็นคำ → แตะรูปอาหาร → บินเข้าปากเพื่อนคู่หู
+function FeedGame({ words, speak, track, pet, hat, outfit, onBack }) {
+  const N = 10;
+  const qs = useMemo(() => shuffle(words).slice(0, N), [words]);
+  const [i, setI] = useState(0); const [score, setScore] = useState(0);
+  const [fly, setFly] = useState(null); const [mood, setMood] = useState("happy"); const [lock, setLock] = useState(false); const [wrongId, setWrongId] = useState(null);
+  const cur = qs[i];
+  const opts = useMemo(() => cur ? shuffle([cur, ...pickOthers(words, cur, 2)]) : [], [i, cur?.id]);
+  useEffect(() => { if (i > 0 && cur) speak(cur.word, cur.meaning); }, [i]); // eslint-disable-line
+  if (!cur || words.length < 3) return <NoWords onBack={onBack} />;
+  const tap = (o, e) => {
+    if (lock) return;
+    if (o.id === cur.id) {
+      setLock(true); setFly(o.id); setMood("excited"); setScore(s => s + 1); track.correct(cur, e); speak(`Yummy! ${cur.word}!`, `อร่อย ${cur.meaning}`);
+      afterSpeech(() => { setFly(null); setMood("happy"); setLock(false); if (i + 1 < qs.length) setI(i + 1); else track.finish(score + 1, qs.length); }, 1300);
+    } else { setWrongId(o.id); setMood("sad"); track.wrong(cur); sfx.bad(); setTimeout(() => { setWrongId(null); setMood("happy"); }, 700); }
+  };
+  return (
+    <GameCard>
+      <Bar left={`😋 ${i + 1}/${qs.length}`} right={`⭐${score}`} />
+      <div style={GS.body}>
+        <SoundPrompt onClick={() => speak(cur.word, cur.meaning)} w={cur} pulse={!lock} />
+        <div style={{ position:"relative",display:"flex",justifyContent:"center",margin:"4px 0 10px" }}>
+          <span style={{ position:"absolute",left:"8%",top:6,background:T.card,color:T.ink,borderRadius:"18px 18px 6px 18px",padding:"6px 12px",fontWeight:800,fontSize:14,boxShadow:MD.shadow,zIndex:1 }}>{mood === "sad" ? "ไม่ใช่อันนี้~" : mood === "excited" ? "อร่อย! 😋" : "หิวแล้ว~"}</span>
+          <div style={{ animation:mood === "excited" ? "vpBounce .5s ease-in-out 2" : mood === "sad" ? "vpWiggle .5s" : "vpFloatY 2.4s ease-in-out infinite" }}>
+            <Shape kind="cookie12" size={170} fill={mood === "excited" ? T.tertiaryC : T.primaryC} morph={mood === "excited"}>
+              {pet ? <PetAvatar pet={pet} hat={hat} outfit={outfit} size={96} mood={mood === "excited" ? "excited" : mood === "sad" ? "sad" : "happy"} talk={mood === "excited"} /> : <span style={{ fontSize:80 }}>😋</span>}
+            </Shape>
+          </div>
+        </div>
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
+          {opts.map(o => (
+            <button key={o.id} onClick={e => tap(o, e)} disabled={lock} aria-label="รูปอาหาร" style={{ position:"relative",aspectRatio:"1",padding:0,borderRadius:20,overflow:"hidden",border:`3px solid ${wrongId === o.id ? T.error : T.primaryC}`,background:T.card,cursor:"pointer",
+              transition:"transform .9s cubic-bezier(.5,-0.3,.7,1), opacity .9s",transform:fly === o.id ? "translateY(-230px) scale(.25) rotate(360deg)" : wrongId === o.id ? "translateX(6px)" : "none",opacity:fly === o.id ? 0 : lock && fly !== o.id ? .5 : 1,animation:wrongId === o.id ? "vpWiggle .4s" : "none" }}>
+              <PicFill w={o} emojiSize={44} />
+            </button>
+          ))}
+        </div>
+      </div>
+    </GameCard>
+  );
+}
 function ListenGame({ words, speakAt, track, onBack, pool }) {
   const qs = useMemo(() => shuffle(words).slice(0, 10), [words]);
   const src = pool && pool.length >= 4 ? pool : words;

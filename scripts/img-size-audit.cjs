@@ -1,6 +1,6 @@
 // วัดขนาดรูปคำศัพท์จริงบนจอมือถือ ทุกหน้า/ทุกเกม → ฟ้องหน้าที่รูปหลักเล็ก (ต้องเปิด preview ก่อน)
 // ใช้: node scripts/img-size-audit.cjs [width] [height]   (ค่าเริ่มต้น 390×844)
-// เกณฑ์: เกม/การ์ดแบบรูปเดียว → รูปหลักสูง ≥ 30% ของจอ · แบบหลายรูป (ตัวเลือก/ตาราง) → แต่ละรูปกว้าง ≥ 26% ของจอ
+// เกณฑ์ (แข่ง 2 คน: ฝั่งละ 4 รูปตัวเลือก → แต่ละรูปกว้าง ≥26% สูง ≥13%): เกม/การ์ดแบบรูปเดียว → รูปหลักสูง ≥ 30% ของจอ · แบบหลายรูป (ตัวเลือก/ตาราง) → แต่ละรูปกว้าง ≥ 26% ของจอ
 const { chromium } = require('playwright');
 const URL = 'http://localhost:4173/Smart-VocabPlay-/';
 const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
@@ -25,7 +25,7 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
     let ok = true, why = '';
     if (!n) { ok = false; why = 'ไม่พบรูป'; }
     else if (kind === 'single' && maxH < VH * 0.30 && !(n >= 3 && minW >= VW * 0.26 && minH >= VH * 0.18)) { ok = false; why = `รูปหลักสูง ${maxH}px < ${Math.round(VH * 0.30)}`; }
-    else if (kind === 'half' && maxH < VH * 0.22) { ok = false; why = `รูปต่อฝั่งสูง ${maxH}px < ${Math.round(VH * 0.22)}`; }
+    else if (kind === 'half' && maxH < VH * 0.22 && !(n >= 6 && minW >= VW * 0.26 && minH >= VH * 0.13)) { ok = false; why = `รูปต่อฝั่งสูง ${maxH}px < ${Math.round(VH * 0.22)}`; }
     else if (kind === 'multi' && minW < VW * 0.26) { ok = false; why = `รูปตัวเลือกกว้าง ${minW}px < ${Math.round(VW * 0.26)}`; }
     rows.push({ name, kind, n, max: `${maxW}×${maxH}`, min: `${minW}×${minH}`, ok, why });
   };
@@ -36,7 +36,7 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
   const flip2 = async () => { const c = p.locator('div[style*="grid"] > button'); await c.nth(0).click().catch(() => {}); await p.waitForTimeout(900); };
   const listen = async () => { await p.locator('button:has-text("🔊")').nth(1).click({ force: true }).catch(() => {}); };
   try { await cat('Animals'); await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await measure('การ์ดเรียน (หน้า)', 'single'); await p.click('text=แตะการ์ดเพื่อพลิกดูความหมาย').catch(() => {}); await measure('การ์ดเรียน (หลัง)', 'single'); } catch (e) {}
-  await game('Animals', 'Quiz', 'single');
+  await game('Animals', 'Quiz', 'multi');
   await game('Animals', 'Spelling', 'single');
   await game('Animals', 'Memory', 'multi', flip2);
   await game('Animals', 'Habitat Hunt', 'multi');

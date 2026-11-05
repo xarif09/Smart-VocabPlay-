@@ -4014,9 +4014,9 @@ function FeedGame({ words, speak, track, pet, hat, outfit, onBack }) {
   const [i, setI] = useState(0); const [score, setScore] = useState(0);
   const [fly, setFly] = useState(null); const [mood, setMood] = useState("happy"); const [lock, setLock] = useState(false); const [wrongId, setWrongId] = useState(null);
   const cur = qs[i];
-  const opts = useMemo(() => cur ? shuffle([cur, ...pickOthers(words, cur, 2)]) : [], [i, cur?.id]);
+  const opts = useMemo(() => cur ? shuffle([cur, ...pickOthers(words, cur, 3)]) : [], [i, cur?.id]);
   useEffect(() => { if (i > 0 && cur) speak(cur.word, cur.meaning); }, [i]); // eslint-disable-line
-  if (!cur || words.length < 3) return <NoWords onBack={onBack} />;
+  if (!cur || words.length < 4) return <NoWords onBack={onBack} />;
   const tap = (o, e) => {
     if (lock) return;
     if (o.id === cur.id) {
@@ -4032,15 +4032,15 @@ function FeedGame({ words, speak, track, pet, hat, outfit, onBack }) {
         <div style={{ position:"relative",display:"flex",justifyContent:"center",margin:"4px 0 10px" }}>
           <span style={{ position:"absolute",left:"8%",top:6,background:T.card,color:T.ink,borderRadius:"18px 18px 6px 18px",padding:"6px 12px",fontWeight:800,fontSize:14,boxShadow:MD.shadow,zIndex:1 }}>{mood === "sad" ? "ไม่ใช่อันนี้~" : mood === "excited" ? "อร่อย! 😋" : "หิวแล้ว~"}</span>
           <div style={{ animation:mood === "excited" ? "vpBounce .5s ease-in-out 2" : mood === "sad" ? "vpWiggle .5s" : "vpFloatY 2.4s ease-in-out infinite" }}>
-            <Shape kind="cookie12" size={170} fill={mood === "excited" ? T.tertiaryC : T.primaryC} morph={mood === "excited"}>
-              {pet ? <PetAvatar pet={pet} hat={hat} outfit={outfit} size={96} mood={mood === "excited" ? "excited" : mood === "sad" ? "sad" : "happy"} talk={mood === "excited"} /> : <span style={{ fontSize:80 }}>😋</span>}
+            <Shape kind="cookie12" size={136} fill={mood === "excited" ? T.tertiaryC : T.primaryC} morph={mood === "excited"}>
+              {pet ? <PetAvatar pet={pet} hat={hat} outfit={outfit} size={78} mood={mood === "excited" ? "excited" : mood === "sad" ? "sad" : "happy"} talk={mood === "excited"} /> : <span style={{ fontSize:80 }}>😋</span>}
             </Shape>
           </div>
         </div>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
+        <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {opts.map(o => (
             <button key={o.id} onClick={e => tap(o, e)} disabled={lock} aria-label="รูปอาหาร" style={{ position:"relative",aspectRatio:"4/3",padding:0,borderRadius:20,overflow:"hidden",border:`3px solid ${wrongId === o.id ? T.error : T.primaryC}`,background:T.card,cursor:"pointer",
-              transition:"transform .9s cubic-bezier(.5,-0.3,.7,1), opacity .9s",transform:fly === o.id ? "translateY(-230px) scale(.25) rotate(360deg)" : wrongId === o.id ? "translateX(6px)" : "none",opacity:fly === o.id ? 0 : lock && fly !== o.id ? .5 : 1,animation:wrongId === o.id ? "vpWiggle .4s" : "none" }}>
+              transition:"transform .9s cubic-bezier(.5,-0.3,.7,1), opacity .9s",transform:fly === o.id ? "translateY(-200px) scale(.25) rotate(360deg)" : wrongId === o.id ? "translateX(6px)" : "none",opacity:fly === o.id ? 0 : lock && fly !== o.id ? .5 : 1,animation:wrongId === o.id ? "vpWiggle .4s" : "none" }}>
               <PicFill w={o} emojiSize={44} />
             </button>
           ))}
@@ -4573,6 +4573,12 @@ function CreditsScreen({ words }) {
     <div style={{ padding:"14px 12px 40px",maxWidth:560,margin:"0 auto" }}>
       <div style={{ background:T.card,borderRadius:16,padding:14,border:"none",marginBottom:12,fontSize:13,color:T.ink2,lineHeight:1.6 }}>
         รูปถ่ายและเสียงอ่านคำศัพท์มาจาก <b>Wikipedia / Wikimedia Commons</b> ภายใต้สัญญาอนุญาตแบบเปิด (CC BY / CC BY-SA / สาธารณสมบัติ ฯลฯ) ผู้สร้างและสัญญาอนุญาตของแต่ละรายการอยู่ด้านล่าง (🔊 = ไฟล์เสียง) · แตะเพื่อเปิดหน้าต้นทาง
+      </div>
+      <div style={{ background:T.card,borderRadius:16,padding:14,marginBottom:12,fontSize:12,color:T.ink2,lineHeight:1.6 }}>
+        <b style={{ color:T.ink }}>โมเดล 3 มิติในเกม Word Runner 3D</b><br/>
+        🦊 Fox — model by PixelMannen (CC0), rigging &amp; animation by tomkranis (CC-BY 4.0), glTF conversion by AsoboStudio &amp; scurest (CC-BY 4.0) · จาก KhronosGroup glTF-Sample-Assets<br/>
+        🤖 RobotExpressive — model by Tomás Laulhé (Quaternius), modifications by Don McCurdy (CC0 1.0) · จากตัวอย่าง three.js<br/>
+        🐱🐰🐼 ตัวละครอื่นๆ และฉากทั้งหมด ปั้นด้วยโค้ดในแอปนี้ · เอนจิน three.js (MIT)
       </div>
       {list === null && <div style={{ textAlign:"center",color:T.ink3 }}>กำลังโหลด…</div>}
       {list && list.length === 0 && <div style={{ textAlign:"center",color:T.ink3 }}>ยังไม่มีรายการ</div>}

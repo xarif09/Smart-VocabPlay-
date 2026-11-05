@@ -1972,6 +1972,22 @@ const Btn = ({ onClick, children, style={} }) => (
 // ═══════════════════════════════════════════════════════
 // HOME SCREEN
 // ═══════════════════════════════════════════════════════
+// QR ลิงก์เว็บเกม: ให้เพื่อน/ผู้ปกครองสแกนเปิดบนมือถือ
+function QrCard() {
+  const svg = useMemo(() => {
+    try { const url = (typeof location !== "undefined" ? location.origin + location.pathname : "https://xarif09.github.io/Smart-VocabPlay-/"); const q = qrcode(0, "M"); q.addData(url, "Byte"); q.make(); return q.createSvgTag({ cellSize: 4, margin: 2, scalable: true }); } catch (_) { return ""; }
+  }, []);
+  if (!svg) return null;
+  return (
+    <div style={{ ...M3.card({ margin:"8px 0",padding:12 }),display:"flex",alignItems:"center",gap:14 }}>
+      <div aria-label="QR code เปิดเกม" style={{ width:96,height:96,flex:"none",background:"#fff",borderRadius:12,padding:2,overflow:"hidden" }} dangerouslySetInnerHTML={{ __html: svg }} />
+      <div style={{ flex:1,minWidth:0 }}>
+        <div style={{ fontWeight:800,fontSize:15,color:T.ink }}>📱 สแกนเล่นบนมือถือ</div>
+        <div style={{ fontSize:12,color:T.ink2,marginTop:2 }}>ให้เพื่อนหรือพ่อแม่สแกนเพื่อเปิดเกมนี้ได้เลย</div>
+      </div>
+    </div>
+  );
+}
 function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, onRoom, onPath, onTalk, onStories, onPhonics, onGrammar, onDaily, onTest, onVersus, speak, units, profile, onProfiles, install }) {
   const careNow = progress.pet ? tickCare(progress.care) : null;
   const careAvg = careNow ? (careNow.hunger + careNow.clean + careNow.fun + careNow.energy) / 4 : 100;
@@ -2010,6 +2026,7 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
         </div>
       )}
       {install && <InstallBanner deferred={install.evt} onInstall={install.onInstall} onDismiss={install.onDismiss} />}
+      <QrCard />
 
       {/* ทำต่อวันนี้ */}
       {progress.pet && (

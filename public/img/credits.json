@@ -1147,13 +1147,6 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Painting"
  },
- "Engineer": {
-  "file": "engineer.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Kitty_Joyner_-_Electrical_Engineer_-_GPN-2000-001933.jpg",
-  "artist": "NACA",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Engineer"
- },
  "Singing": {
   "file": "singing.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Ah_cricket_20122_(7364759010).jpg",
@@ -5865,40 +5858,12 @@
   "license": "CC BY-SA 4.0",
   "page": "https://en.wikipedia.org/wiki/Scooter_(motorcycle)"
  },
- "Artist": {
-  "file": "artist.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Artists_Collage.png",
-  "artist": "OboeBlanket (as collagist), User:Llywelyn2000, User:TitiaHouplain, and Joi Ito (as photographers)",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Artist"
- },
- "Scientist": {
-  "file": "scientist.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Pierre_and_Marie_Curie.jpg",
-  "artist": "Unknown photographer",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Scientist"
- },
- "Trench coat": {
-  "file": "trench-coat.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:WWITrenchcoat.jpeg",
-  "artist": "Hephaestos",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Trench_coat"
- },
  "Medal": {
   "file": "medal.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Portrait_medal_of_Cecilia_Gonzaga_(obverse)%3B_Innocence_and_a_Unicorn_in_a_Moonlit_Landscape_(reverse)_MET_DP-1241-015_(cropped).jpg",
   "artist": "Pisanello",
   "license": "CC0",
   "page": "https://en.wikipedia.org/wiki/Medal"
- },
- "Syzygium jambos": {
-  "file": "syzygium-jambos.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Syzygium_jambos.JPG",
-  "artist": "B.Navez",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Syzygium_jambos"
  },
  "Notepad": {
   "file": "notepad.jpg",
@@ -5928,13 +5893,6 @@
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Javelin_throw"
  },
- "Woodworking": {
-  "file": "woodworking.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Ing%C3%A5_hembygdsmuseum_Gammelg%C3%A5rden_09.jpg",
-  "artist": "Sofia Ek",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Woodworking"
- },
  "Toaster oven": {
   "file": "toaster-oven.png",
   "source": "https://commons.wikimedia.org/wiki/File:lossless-page1-330px-Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff.png",
@@ -5956,13 +5914,6 @@
   "license": "CC BY 2.5",
   "page": "https://en.wikipedia.org/wiki/Coast"
  },
- "Lounge suit": {
-  "file": "lounge-suit.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Matt_Smith_on_%22Christopher_And_His_Kind%22_set.jpg",
-  "artist": "Cliff Donaldson from Belfast, Northern Ireland",
-  "license": "CC BY-SA 2.0",
-  "page": "https://en.wikipedia.org/wiki/Suit"
- },
  "Team sport": {
   "file": "team-sport.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:IIHF_Ice_Hockey_Women_20170405_08.jpg",
@@ -5976,13 +5927,6 @@
   "artist": "",
   "license": "",
   "page": "https://en.wikipedia.org/wiki/Lego"
- },
- "Sprouting": {
-  "file": "sprouting.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Organic_mixed_beans_shoots.jpg",
-  "artist": "",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Sprouting"
  },
  "Electrical cable": {
   "file": "electrical-cable.png",
@@ -5998,20 +5942,6 @@
   "license": "Public domain",
   "page": "https://en.wikipedia.org/wiki/Gamepad"
  },
- "Harp": {
-  "file": "harp.png",
-  "source": "https://commons.wikimedia.org/wiki/File:Harp.png",
-  "artist": "",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Harp"
- },
- "Songkran": {
-  "file": "songkran.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Songkran_Day_%40_Chiangmai_Wall.jpg",
-  "artist": "Khunmoohan",
-  "license": "CC BY-SA 4.0",
-  "page": "https://en.wikipedia.org/wiki/Songkran_(Thailand)"
- },
  "Kuala Lumpur": {
   "file": "kuala-lumpur.jpg",
   "source": "https://commons.wikimedia.org/wiki/File:Bukit_Bintang_junction_in_2024_2.jpg",
@@ -6025,48 +5955,6 @@
   "artist": "Benh LIEU SONG (Flickr)",
   "license": "CC BY-SA 3.0",
   "page": "https://en.wikipedia.org/wiki/Louvre"
- },
- "Sunbathing": {
-  "file": "sunbathing.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Tan_lines_on_human_female_chest.jpg",
-  "artist": "Evil Erin",
-  "license": "CC BY 2.0",
-  "page": "https://en.wikipedia.org/wiki/Sun_tanning"
- },
- "Stage magic": {
-  "file": "stage-magic.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Hieronymus_Bosch_051.jpg",
-  "artist": "Hieronymus Bosch and workshop / Workshop of Hieronymus Bosch / After Hieronymus Bosch",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Magic_(illusion)"
- },
- "Miniskirt": {
-  "file": "miniskirt.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:PattiKensit23_(cropped)_(cropped).JPG",
-  "artist": "Roland Godefroy",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Miniskirt"
- },
- "One-piece swimsuit": {
-  "file": "one-piece-swimsuit.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Surfing_in_a_one-piece_swimsuit.jpg",
-  "artist": "Phuket@photographer.net",
-  "license": "CC BY 2.0",
-  "page": "https://en.wikipedia.org/wiki/One-piece_swimsuit"
- },
- "Stud earring": {
-  "file": "stud-earring.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Positions_of_earrings.jpg",
-  "artist": "Modified by User:Nicor",
-  "license": "CC BY-SA 3.0",
-  "page": "https://en.wikipedia.org/wiki/Earring"
- },
- "Zingiber": {
-  "file": "zingiber.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Koeh-146-no_text.jpg",
-  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
-  "license": "Public domain",
-  "page": "https://en.wikipedia.org/wiki/Zingiber"
  },
  "AC adapter": {
   "file": "ac-adapter.jpg",

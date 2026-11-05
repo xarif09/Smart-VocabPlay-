@@ -10,7 +10,7 @@
 1. ห้ามเปลี่ยนหน้าตา / เกม / พฤติกรรมเดิม ถ้าไม่ได้สั่ง · ธีมปัจจุบัน = **Material 3 Expressive** (v3.0 · `src/m3.jsx`): สีไดนามิก oklch จาก seed ของธีม (`applyM3Theme`) → CSS var `--md-*` · โทเค็น `MD.*`/`T.*` · สไตล์สำเร็จรูป `M3.filled/tonal/listItem/card…` · คอมโพเนนต์ `Shape` (cookie/clover/burst) `M3NavBar` `M3TopBar` `M3Sheet` `M3Switch` `WavyProgress` `ButtonGroup` · มุม 28 ปุ่มแคปซูล ไม่มีเงาหนัก · ฟอนต์ Prompt · โหมดเกม immersive · ของใหม่ต้องใช้โทเค็นนี้ **ห้าม hardcode สี** (ธีม space = โหมดมืด ต้องดูได้ทั้งสองโหมด)
 2. `speechSynthesis.speak()` ต้องเรียกตรงใน `onClick` — ห้ามอยู่ใน `setTimeout` / Promise / async (iOS จะไม่ออกเสียง)
 3. หน้าแรก "แตะเพื่อเริ่ม" ต้องเรียก `unlockAudio()` ตรงใน `onClick`
-4. มือถือห้ามมีอะไรซ้อนกัน · ปุ่มสูง ≥ 44px
+4. มือถือห้ามมีอะไรซ้อนกัน · ปุ่มสูง ≥ 44px · **รูปคำศัพท์ในเกม/การ์ดต้องใหญ่เต็มพื้นที่เสมอ**: ใช้ `<Pic fill>` (สูง `min(46vh, 430px, 92vw)`) หรือ `<Emoji w>` ห้ามใช้ `<Pic size=เล็ก>` เป็นรูปหลักของข้อ (ผู้ใช้ตำหนิเรื่องนี้หลายครั้ง) · ก่อนส่งต้องรัน `node scripts/img-size-audit.cjs` และ `node scripts/img-size-audit.cjs 360 640` ให้ผ่านทุกหน้า (วัดขนาดรูปจริงทุกเกม) · เกมใหม่ต้องเพิ่มเข้าสคริปต์นี้ด้วย
 5. เพิ่มไลบรารีได้เมื่อทำให้ดีขึ้นจริง (ผู้ใช้อนุญาตแล้ว v2.4) แต่ต้องใช้งานออฟไลน์ได้และไม่หนัก · ใช้ inline CSS (ไม่ใช้ Tailwind) · ตัวละครเพื่อนคู่หูคือ `src/Pet.jsx` (SVG วาดเอง มี mood + outfit) · ไอคอนหมวด/เกมใช้ `src/Icons.jsx` (`<CatIcon>`/`<GameIcon>`) ไม่ใช้อีโมจิบนการ์ดหลัก
 6. localStorage ใช้ไม่ได้ แอปต้องยังทำงาน (ครอบ try/catch เสมอ)
 7. ก่อน commit ต้องรัน `npm run build` และ `node scripts/check-ui.cjs` ให้ขึ้น ✅ ALL PASS · และ `node scripts/audit.cjs` (ความครบของรูป/เสียง/คำอ่าน) แล้วรายงานตัวเลขในสรุป
@@ -25,6 +25,7 @@ npm run build      # build ลง dist/
 npm run preview    # ดูผล build → http://localhost:4173/Smart-VocabPlay-/
 node scripts/check-ui.cjs   # (ต้องเปิด preview ก่อน) ถ่ายภาพ + ตรวจซ้อน/นับคำ/localStorage
 node scripts/audit.cjs      # (ต้องเปิด preview ก่อน) รายงานความครบ: รูป/ภาพออกแบบ/อีโมจิ · เสียงคนจริง · คำอ่าน/ประโยค
+node scripts/img-size-audit.cjs [w h]  # (ต้องเปิด preview ก่อน) วัดขนาดรูปจริงทุกหน้า/ทุกเกม ฟ้องหน้าที่รูปเล็ก
 ```
 
 ## โครงสำคัญ

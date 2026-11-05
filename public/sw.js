@@ -1,6 +1,6 @@
 // Service Worker — ให้เล่นออฟไลน์ได้หลังเปิดครั้งแรก
 // หน้า (navigate) = ลองเน็ตก่อน ไม่ได้ค่อยใช้แคช · ไฟล์อื่นในโดเมนเดียวกัน = ใช้แคชก่อน
-const CACHE = "vocabplay-v8";
+const CACHE = "vocabplay-v9";
 const IMG_CACHE = "vocabplay-img-v1";   // รูปจาก Wikipedia (แยกแคช ไม่ล้างตอนอัปเดตแอป)
 const SHELL = ["./", "./index.html", "./manifest.webmanifest"];
 

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo, createContext, useContext, lazy, Suspense } from "react";
 import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl, bundledCount, bundledImageUrl } from "./images.js";
 const Runner3D = lazy(() => import("./Runner3D.jsx"));   // three.js โหลดเฉพาะตอนเปิดเกม 3D
+const Racer3D = lazy(() => import("./Racer3D.jsx"));
 import { DIALOGUES, STORIES, PHONICS, GRAMMAR, DAYS, MONTHS, MONEY, numberWord, numberThai, timeWord, timeThai, LEVELS_TEST } from "./content.js";
 import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER_NEED, PETS, getPet, petLevel, EMPTY_PROGRESS,
   srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today, weekStats,
@@ -240,7 +241,7 @@ const CATEGORIES = [
   { id:"body",     label:"Body",     thai:"ร่างกาย",    emoji:"👁️", color:"#EC4899", games:["bodydr","quiz"] },
   { id:"weather",  label:"Weather",  thai:"อากาศ",      emoji:"🌈", color:"#06B6D4", games:["dress","quiz"] },
   { id:"numbers",  label:"Numbers",  thai:"ตัวเลข",     emoji:"🔢", color:"#10B981", games:["count","quiz"] },
-  { id:"vehicles", label:"Vehicles", thai:"ยานพาหนะ",   emoji:"🚗", color:"#6366F1", games:["runner","quiz","spell","memory"] },
+  { id:"vehicles", label:"Vehicles", thai:"ยานพาหนะ",   emoji:"🚗", color:"#6366F1", games:["racer","runner","quiz","spell","memory"] },
   { id:"jobs",     label:"Jobs",     thai:"อาชีพ",      emoji:"👨‍⚕️",color:"#14B8A6", games:["quiz","memory"] },
   { id:"clothes",  label:"Clothes",  thai:"เสื้อผ้า",   emoji:"👕", color:"#D946EF", games:["quiz","spell","memory"] },
   { id:"home",     label:"Home",     thai:"ของในบ้าน",  emoji:"🏠", color:"#84CC16", games:["quiz","spell","memory"] },
@@ -298,6 +299,7 @@ const GAME_META = {
   ninja:   { label:"Word Ninja",    thai:"ปาดนิ้วฟันคำที่ถูก 🗡️",      emoji:"🗡️" },
   bingo:   { label:"Bingo",         thai:"ฟังคำ แตะรูป ครบแถว 🎱",     emoji:"🎱" },
   runner:  { label:"Word Runner 3D", thai:"วิ่ง 3 มิติ เก็บรูปที่ได้ยิน 🏃", emoji:"🏃" },
+  racer:   { label:"Word Racer 3D", thai:"แข่งรถ ขับผ่านประตูรูปที่ถูก 🏎️", emoji:"🏎️" },
   feed:    { label:"Feed the Pet",  thai:"ป้อนอาหารให้เพื่อนคู่หู 😋",  emoji:"😋" },
 };
 
@@ -1596,7 +1598,7 @@ export default function App() {
   const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
   const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บเหรียญด้วยนะ", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
+  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บของระหว่างทางด้วยนะ", racer:"เลือกรถ แล้วขับผ่านประตูรูปที่ได้ยินเพื่อเร่งเทอร์โบ", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => guard(() => setScreen("manage"));
   const openSettings = () => guard(() => setShowSettings(true));
@@ -2563,7 +2565,7 @@ function EditWordRow({ word, categories, onSave, onCancel }) {
 // ARCADE GAMES (v3.7) — เกมแอ็กชันที่ปรับจากกลไกยอดนิยม: ตีตัวตุ่น · ลูกโป่ง · ฟันคำ · บิงโก
 //  ทุกเกมรายงานผ่าน track.correct/wrong/finish เหมือนเดิม · ใช้รูปจริง (PicFill) + เสียง
 // ═══════════════════════════════════════════════════════
-const ARCADE_GAMES = ["mole", "balloon", "ninja", "bingo", "runner", "feed"];
+const ARCADE_GAMES = ["mole", "balloon", "ninja", "bingo", "runner", "feed", "racer", "findroom", "action", "penalty"];
 const pickOthers = (words, w, n) => shuffle(words.filter(x => x.id !== w.id)).slice(0, n);
 
 // ── ตีตัวตุ่น: ได้ยินคำ → ตุ่นโผล่พร้อมรูป ตีตัวที่ตรงให้ทัน (40 วิ) ──
@@ -2827,11 +2829,12 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
   if (gameId === "ninja")    game = <NinjaGame {...p} />;
   if (gameId === "bingo")    game = <BingoGame {...p} />;
   if (gameId === "feed")     game = <FeedGame {...p} />;
-  if (gameId === "runner")   game = <GameCard><div style={GS.body}><Suspense fallback={<div style={{ textAlign:"center",padding:40,...TYPE.titleM,color:T.ink2 }}>🏃 กำลังสร้างโลก 3 มิติ…</div>}>
-    <Runner3D key={run} words={words} speak={speak} track={track} catId={cat.id} sfx={sfx} Prompt={SoundPrompt}
-      ui={{ imageUrl: w => { const t = imageTitleOf(w); return t ? bundledImageUrl(t) : null; }, say: w => speak(w.word, w.meaning), correct: w => track.correct(w), wrong: w => track.wrong(w), unlock: unlockSfx,
-        tokens: { card:T.card, ink:T.ink, primary:T.primary, onPrimary:T.onPrimary, shadow:MD.shadow } }} />
-  </Suspense></div></GameCard>;
+  const ui3d = { imageUrl: w => { const t = imageTitleOf(w); return t ? bundledImageUrl(t) : null; }, say: w => speak(w.word, w.meaning), correct: w => track.correct(w), wrong: w => track.wrong(w), unlock: unlockSfx,
+    tokens: { card:T.card, ink:T.ink, primary:T.primary, onPrimary:T.onPrimary, shadow:MD.shadow } };
+  const mount3D = (Comp, msg) => <GameCard><div style={GS.body}><Suspense fallback={<div style={{ textAlign:"center",padding:40,...TYPE.titleM,color:T.ink2 }}>{msg}</div>}>
+    <Comp key={run} words={words} speak={speak} track={track} catId={cat.id} sfx={sfx} Prompt={SoundPrompt} ui={ui3d} /></Suspense></div></GameCard>;
+  if (gameId === "runner")   game = mount3D(Runner3D, "🏃 กำลังสร้างโลก 3 มิติ…");
+  if (gameId === "racer")    game = mount3D(Racer3D, "🏎️ กำลังเตรียมสนามแข่ง…");
   if (gameId === "habitat")  game = <HabitatGame {...p} />;
   if (gameId === "match")    game = <MatchGame {...p} />;
   if (gameId === "colormix") game = <ColorMixGame {...p} />;

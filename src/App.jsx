@@ -2883,7 +2883,10 @@ function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
   const [err, setErr] = useState(false);
   useEffect(() => setErr(false), [url]);
   const concept = (!url || err) ? conceptFor(w) : null;
-  if ((!url || err) && !concept) return <span style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
+  // คำที่ไม่มีรูปถ่าย/ภาพออกแบบ → อีโมจิตัวใหญ่เต็มกล่องสีอ่อน (ไม่ทิ้งที่ว่าง)
+  if ((!url || err) && !concept) return fill
+    ? <span data-emoji-box style={{ display:"flex",alignItems:"center",justifyContent:"center",width:"100%",maxWidth:"100%",height:"min(46vh, 430px, 92vw)",borderRadius:22,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})`,fontSize:"min(26vh, 220px, 60vw)",lineHeight:1,...style }}><span style={{ filter:"drop-shadow(0 8px 14px rgba(0,0,0,.18))" }}>{w?.emoji}</span></span>
+    : <span data-emoji-box style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
   const box = fill ? "100%" : size * 2.2;
   const fillBox = fill ? { width:"100%", height:"min(46vh, 430px, 92vw)" } : { width:box, aspectRatio:"4/3" };
   if (concept) return (
@@ -2907,7 +2910,7 @@ function PicFill({ w, emojiSize = 40, fit }) {
   useEffect(() => setErr(false), [url]);
   const concept = (!url || err) ? conceptFor(w) : null;
   if (concept) return <span style={{ position:"absolute",inset:0,borderRadius:"inherit",overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center" }}>{concept}</span>;
-  if (!url || err) return <span style={{ fontSize:emojiSize,lineHeight:1 }}>{w?.emoji}</span>;
+  if (!url || err) return <span data-emoji-box style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:`clamp(${emojiSize}px, 48%, 120px)`,lineHeight:1,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})` }}>{w?.emoji}</span>;
   // รูปปก/ภาพรวม (cover) ตัดขอบได้ · รูปคำศัพท์เดี่ยวใช้ contain ไม่ให้ตัวสัตว์ขาด
   const mode = fit || (w?.cat === "cover" ? "cover" : "contain");
   if (mode === "cover") return <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",borderRadius:"inherit" }} />;
@@ -3263,12 +3266,12 @@ function MatchGame({ words, speak, showToast, track, onBack }) {
   useEffect(()=>{setPics(shuffle(rw));setMatches({});setSel(null);},[round,rw.length]);
   const done=rw.length>0&&rw.every(w=>matches[w.id]===w.id);
   if(!rw.length) return <NoWords onBack={onBack}/>;
-  const H=Math.round(Math.min((typeof innerHeight!=="undefined"?innerHeight:800)*0.14,118));
+  const H=Math.round(Math.min((typeof innerHeight!=="undefined"?innerHeight:800)*0.15,124));
   return (
     <GameCard>
       <Bar left={`รอบ${round+1}/${total}`} right={`${Object.keys(matches).length}/${rw.length}`} />
       <div style={GS.body}>
-        <p style={{textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 10px"}}>แตะคำ → แตะรูปที่ตรงกัน</p>
+        <p style={{textAlign:"center",...TYPE.titleS,color:T.ink2,margin:"0 0 10px"}}>👆 แตะคำ แล้วแตะรูปที่ตรงกัน</p>
         {rw.map((w,i)=>{
           const p=pics[i];
           const im=matches[w.id]===w.id;
@@ -3276,17 +3279,18 @@ function MatchGame({ words, speak, showToast, track, onBack }) {
           const pu=p&&Object.values(matches).includes(p.id);
           return <div key={w.id} style={{display:"flex",gap:8,alignItems:"center",marginBottom:8,height:H}}>
             <button onClick={()=>{if(!im){sfx.tap();setSel(w.id);speak(w.word,w.meaning);}}} disabled={im}
-              style={{flex:1,height:H,borderRadius:16,background:im?T.okC:is?T.primary:T.secondaryC,border:`2px solid ${im?T.ok:is?T.primary:T.outlineV}`,fontWeight:800,fontSize:15,color:im?T.onOkC:is?T.onPrimary:T.onSecondaryC,cursor:"pointer"}}>
-              {w.word}
+              style={{flex:1,minWidth:0,height:H,borderRadius:18,background:im?T.okC:is?T.primary:T.secondaryC,border:`3px solid ${im?T.ok:is?T.primary:T.outlineV}`,color:im?T.onOkC:is?T.onPrimary:T.onSecondaryC,cursor:"pointer",padding:"4px 6px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:2,transition:"background .15s, transform .15s",transform:is?"scale(1.03)":"none"}}>
+              <span style={{fontWeight:900,fontSize:w.word.length>9?"clamp(15px,4.6vw,19px)":w.word.length>6?"clamp(18px,5.6vw,24px)":"clamp(22px,6.8vw,30px)",lineHeight:1.05,wordBreak:"break-word",textAlign:"center"}}>{w.word}</span>
+              {(w.read||w.meaning)&&<span style={{fontSize:"clamp(12px,3.4vw,15px)",fontWeight:600,opacity:.85,lineHeight:1.1}}>{w.meaning}</span>}
             </button>
-            <span style={{color:T.outlineV,fontSize:18,flexShrink:0}}>→</span>
+            <span style={{color:T.ink3,fontSize:22,fontWeight:900,flexShrink:0}}>→</span>
             {p&&<button onClick={()=>{
               if(sel==null||pu) return;
               if(sel===p.id){track.correct(p);setMatches(m=>({...m,[sel]:p.id}));speak(p.word,p.meaning);}
               else{wrongs.current+=1;track.wrong(rw.find(x=>x.id===sel));showToast("ลองอีก 💡","warn");}
               setSel(null);
             }} disabled={pu}
-              style={{width:"46%",height:H,borderRadius:16,background:pu?T.okC:T.surfHigh,border:`2px solid ${pu?T.ok:T.ok}`,fontSize:28,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,cursor:"pointer",position:"relative",overflow:"hidden",padding:0,opacity:pu?0.55:1}}>
+              style={{width:"44%",height:H,borderRadius:18,background:pu?T.okC:T.surfHigh,border:`3px solid ${pu?T.ok:T.outlineV}`,fontSize:28,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,cursor:"pointer",position:"relative",overflow:"hidden",padding:0,opacity:pu?0.55:1}}>
               <PicFill w={p} emojiSize={44} />
             </button>}
           </div>;

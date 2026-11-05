@@ -16,7 +16,7 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
     await p.waitForTimeout(700);
     const r = await p.evaluate(() => {
       const vis = e => { const r = e.getBoundingClientRect(); return r.width > 4 && r.height > 4 && r.bottom > 0 && r.top < innerHeight * 1.5; };
-      const els = [...document.querySelectorAll('img[alt], svg[viewBox="0 0 160 110"]')].filter(vis)
+      const els = [...document.querySelectorAll('img[alt], svg[viewBox="0 0 160 110"], [data-emoji-box]')].filter(vis)
         .filter(e => !e.closest('nav') && !e.closest('[data-thumb]'));
       return els.map(e => { const q = e.getBoundingClientRect(); return [Math.round(q.width), Math.round(q.height)]; });
     });

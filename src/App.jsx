@@ -2903,6 +2903,19 @@ function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
     </span>
   );
 }
+// รูปปก: เต็มกรอบ (cover) แต่ถ้าสัดส่วนรูปต่างจากกรอบมาก (แนวตั้ง/แนวนอนสลับ) → แสดงเต็มใบ (contain) บนพื้นเบลอ จุดโฟกัสไม่ล้นขอบ
+function CoverImg({ url, word, onError }) {
+  const [safe, setSafe] = useState(false);
+  const chk = e => {
+    const im = e.currentTarget, p = im.parentElement; if (!p || !im.naturalWidth) return;
+    const fr = p.clientWidth / Math.max(1, p.clientHeight), ir = im.naturalWidth / im.naturalHeight;
+    setSafe(Math.max(fr / ir, ir / fr) > 1.35);
+  };
+  return <>
+    {safe && <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75 }} />}
+    <img src={url} alt={word} onLoad={chk} onError={onError} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:safe?"contain":"cover",objectPosition:"center 40%",borderRadius:"inherit" }} />
+  </>;
+}
 // รูปเล็กสำหรับตัวเลือก 4 ช่อง / การ์ดจับคู่: เต็มช่อง
 function PicFill({ w, emojiSize = 40, fit }) {
   const { url } = useWordImage(w);
@@ -2913,7 +2926,7 @@ function PicFill({ w, emojiSize = 40, fit }) {
   if (!url || err) return <span data-emoji-box style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:`clamp(${emojiSize}px, 48%, 120px)`,lineHeight:1,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})` }}>{w?.emoji}</span>;
   // รูปปก/ภาพรวม (cover) ตัดขอบได้ · รูปคำศัพท์เดี่ยวใช้ contain ไม่ให้ตัวสัตว์ขาด
   const mode = fit || (w?.cat === "cover" ? "cover" : "contain");
-  if (mode === "cover") return <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",borderRadius:"inherit" }} />;
+  if (mode === "cover") return <CoverImg url={url} word={w.word} onError={() => setErr(true)} />;
   return <>
     <span style={{ position:"absolute",inset:-12,backgroundImage:`url("${url}")`,backgroundSize:"cover",backgroundPosition:"center",filter:"blur(14px) saturate(1.3)",opacity:0.75,borderRadius:"inherit" }} />
     <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",borderRadius:"inherit" }} />

@@ -6,12 +6,15 @@ p = 'src/images.js'; s = open(p, encoding='utf-8').read()
 DROP = {
  'body': ['NOSE','CHIN','NAIL','HEAD','HAIR','CHEEK','FINGER','MUSTACHE'],
  'actions': ['SMELL','OPEN','CLOSE','ANSWER','WAIT','PICK','REMEMBER','FORGET','WANT','NEED','WIN','READ','SLIDE'],
- 'opposites': ['OPEN','CLOSED'],
  'family': ['GRANDMOTHER','GRANDFATHER','GRANDPARENTS','COUSIN','NEIGHBOR','WIFE','HUSBAND','SISTER','BROTHER'],
- 'jobs': ['PRINCE','PRINCESS','WRITER','DESIGNER','ELECTRICIAN','TAXI DRIVER','MAIL CARRIER','CAPTAIN'],
- 'school': ['GRADE','STICKER'],
+ 'school': ['GRADE','STICKER','BELL'],
  'technology': ['EMAIL','SCREENSHOT'],
  'toys': ['SCOOTER','SLIDE'],
+ # รอบ 2 (v3.8): รูปใหม่ยังไม่สื่อ → ใช้ภาพออกแบบ/อีโมจิใหญ่
+ 'weather': ['HOT'], 'opposites': ['OPEN','CLOSED','HOT'],
+ 'jobs': ['PRINCE','PRINCESS','WRITER','DESIGNER','ELECTRICIAN','TAXI DRIVER','MAIL CARRIER','CAPTAIN','CARPENTER','MAGICIAN','SCIENTIST','ARTIST','ENGINEER'],
+ 'clothes': ['COAT','SUIT','SWIMSUIT','EARRINGS','SKIRT'],
+ 'fruits': ['ROSE APPLE'], 'time': ['APRIL'], 'vegetables': ['GINGER','BEAN SPROUTS'], 'music': ['HARP'],
 }
 RENAME = {
  ('weather','SUNNY'):'Sun', ('weather','HOT'):'Sunbathing', ('opposites','HOT'):'Sunbathing', ('weather','FOG'):'Mist', ('weather','FLOOD'):'2011 Thailand floods',

@@ -13,7 +13,13 @@ import { makeProcedural } from "./findroom/procedural.js";
 export { FIND_ROOM_WORDS };
 
 const BASE = (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.BASE_URL) || "/";
-const ROUNDS = 8;
+// 4 ด่าน (~33 ชิ้น ≈ 5–6 นาที): show = สัดส่วนของชิ้นเล็กที่โผล่ในห้อง · scatter = ลมพัดของบนพื้นสลับที่ · plan: S = หา 1 อย่าง, T = หา 3 อย่าง
+const LEVELS = [
+  { name:"ห้องเริ่มรก", sub:"", show:.45, scatter:false, plan:["S", "S", "S", "S", "S", "S"] },
+  { name:"รกขึ้นอีก!", sub:"🌪️ ลมพัดของกระจาย · ของโผล่มาเพิ่ม", show:.75, scatter:true, plan:["S", "S", "S", "S", "S", "S", "S"] },
+  { name:"รกสุดๆ!", sub:"🔎 มีรอบหา 3 อย่าง!", show:1, scatter:true, plan:["S", "S", "T", "S", "S", "T"] },
+  { name:"ภารกิจหา 3 อย่าง", sub:"🌙 ตอนเย็นแล้ว · หาให้ครบ!", show:1, scatter:true, plan:["T", "T", "S", "T"] },
+];
 const RW = 3, RD = 2.5, RH = 2.7;            // ครึ่งกว้าง · ครึ่งลึก · สูง (เมตร)
 const LOOK = new THREE.Vector3(0, .32, -.75);
 const norm = s => String(s || "").toUpperCase().replace(/[^A-Z]/g, "");
@@ -52,12 +58,12 @@ export default function FindRoom3D({ words = [], speak, track, catId, sfx, Promp
   const api = useRef({});
   const roomKey = useRef(pickRoom(catId, words)).current;
   const room = ROOMS[roomKey];
-  const [hud, setHud] = useState({ load:0, ready:false, on:false, round:0, score:0, target:null, msg:null, bubble:null, done:false });
+  const [hud, setHud] = useState({ load:0, ready:false, on:false, level:0, lr:0, nr:0, found:0, total:0, sec:0, score:0, target:null, multi:null, banner:null, paused:false, msg:null, bubble:null, done:false });
 
   useEffect(() => {
     const el = host.current; if (!el) return;
     let alive = true;
-    const timers = new Set(); const later = (fn, ms) => { const t = setTimeout(() => { timers.delete(t); if (alive) fn(); }, ms); timers.add(t); return t; };
+    const timers = new Set();
     const W = () => Math.max(1, el.clientWidth), H = () => Math.max(1, el.clientHeight);
 
     let renderer;
@@ -184,7 +190,7 @@ export default function FindRoom3D({ words = [], speak, track, catId, sfx, Promp
         root.position.set(x - c0.x, y - b0.min.y, z - c0.z);
         itemsGroup.add(root); root.updateMatrixWorld(true);
         const box = new THREE.Box3().setFromObject(root);
-        const it = { key, root, box, base:root.position.clone(), baseRot:root.rotation.clone(), words:(o.w || []).map(norm), wordsRaw:o.w || [], big:!!o.big, hop:0, shake:0 };
+        const it = { key, root, box, base:root.position.clone(), baseRot:root.rotation.clone(), words:(o.w || []).map(norm), wordsRaw:o.w || [], big:!!o.big, hop:0, shake:0, opt:o, spot:new THREE.Vector3(x, 0, z), hidden:false, pop:1, fly:null, asked:0 };
         it.center = box.getCenter(new THREE.Vector3()); it.radius = Math.max(.09, box.getSize(new THREE.Vector3()).length() / 2);
         root.traverse(m => { if (m.isMesh) m.userData.item = it; });
         items.push(it); if (o.id) byId[o.id] = it;
@@ -199,27 +205,92 @@ export default function FindRoom3D({ words = [], speak, track, catId, sfx, Promp
       buildWalls(holes);
     };
 
-    // ── เกม ──
-    const S = { started:false, over:false, round:0, score:0, target:null, misses:0, busy:false, t:0, yaw:0, pitch:0, zoom:1 };
+    // ── เกม: 4 ด่าน ห้องรกขึ้นเรื่อยๆ (ของโผล่เพิ่ม + ลมพัดของสลับที่) · ด่านหลังมีรอบ "หา 3 อย่าง" ──
+    const S = { started:false, over:false, paused:false, level:-1, lr:0, rounds:[], round:null, focus:0, score:0, done:0, n:0, busy:false, t:0, gt:0, playT:0, sec:-1, yaw:0, pitch:0, zoom:1, bigUsed:0, lvClean:0, lvTotal:0 };
     const wordMap = new Map(); words.forEach(w => { const k = norm(w.word); if (!wordMap.has(k)) wordMap.set(k, w); });
-    let plan = [];
-    const makePlan = () => {
-      const cands = items.filter(it => it.words.some(k => wordMap.has(k)));
-      const shuffle = a => a.map(v => [Math.random(), v]).sort((p, q) => p[0] - q[0]).map(p => p[1]);
-      const small = shuffle(cands.filter(c => !c.big)), big = shuffle(cands.filter(c => c.big));
-      let list = [...small.slice(0, ROUNDS - Math.min(2, big.length)), ...big.slice(0, 2)];
-      if (list.length < ROUNDS) list = [...list, ...shuffle([...small, ...big].filter(c => !list.includes(c)))];
-      list = shuffle(list.slice(0, ROUNDS));
-      while (list.length && list.length < ROUNDS) list.push(list[list.length % Math.max(1, cands.length)] || list[0]);
-      return list.map(it => ({ it, w:wordMap.get(it.words.find(k => wordMap.has(k))) }));
+    const shuffle = a => a.map(v => [Math.random(), v]).sort((p, q) => p[0] - q[0]).map(p => p[1]);
+    // เวลาเกม (หยุดเมื่อพัก) · window.__VP_FAST = เร่งจังหวะสำหรับชุดทดสอบ
+    const FAST = (typeof window !== "undefined" && +window.__VP_FAST) || 1;
+    const events = [];
+    const later = (fn, ms) => { events.push({ at:S.gt + ms / 1000 / FAST, fn }); };
+    const FIXED = new Set(["bed", "couch", "chair", "table", "tvstand", "lampstand", "wallshelf", "bookshelf", "rugstripes", "rugoval", "rugrect", "picture", "plant", "fridge", "sink", "stove", "curtains", "window", "window2", "door", "dresser", "nightstand", "desk", "schoolchair", "chalkboard", "mirror", "map", "lamptable", "booksdeco", "pillowb", "clock"]);
+    const wordOf = it => wordMap.get(it.words.find(k => wordMap.has(k)));
+    let hideable = [], floorItems = [];
+    const classify = () => {
+      const supports = new Set(room.items.map(r => r[3]?.on).filter(Boolean));
+      for (const it of items) {
+        const o = it.opt || {};
+        it.fixed = it.big || FIXED.has(it.key) || (o.id && supports.has(o.id));
+        it.floor = !it.fixed && !o.on && !o.wall && o.y == null && it.radius < .62;
+      }
+      hideable = items.filter(it => !it.fixed); floorItems = items.filter(it => it.floor);
+    };
+    const totalTargets = LEVELS.reduce((a, L) => a + L.plan.reduce((b, k) => b + (k === "T" ? 3 : 1), 0), 0);
+    // เลือกของที่จะให้หาในด่าน (ของที่ยังไม่เคยถามมาก่อน → ของที่ถามน้อยสุด)
+    const pickTargets = (n, avoid) => {
+      const cands = items.filter(it => !it.hidden && wordOf(it) && !avoid.has(it) && (!it.big || S.bigUsed < 3));
+      const seenW = new Set([...avoid].map(it => norm(wordOf(it)?.word)));
+      const out = [];
+      for (const it of shuffle(cands).sort((a, b) => a.asked - b.asked)) {
+        if (out.length >= n) break; const k = norm(wordOf(it).word); if (seenW.has(k)) continue;
+        seenW.add(k); out.push(it); if (it.big) S.bigUsed++;
+      }
+      return out;
+    };
+    const planLevel = L => {
+      const rounds = []; const used = new Set();
+      for (const k of L.plan) {
+        const n = k === "T" ? 3 : 1;
+        let got = pickTargets(n, used);
+        if (got.length < n) { used.clear(); got = got.concat(pickTargets(n - got.length, new Set(got))); }
+        if (!got.length) continue;
+        got.forEach(it => { used.add(it); it.asked++; });
+        if (k === "T" && got.length === 3) rounds.push({ kind:"three", list:got.map(it => ({ it, w:wordOf(it), found:false, misses:0 })) });
+        else got.forEach(it => rounds.push({ kind:"one", list:[{ it, w:wordOf(it), found:false, misses:0 }] }));
+      }
+      return rounds;
+    };
+    const refreshBox = it => { it.root.updateMatrixWorld(true); it.box.setFromObject(it.root); it.box.getCenter(it.center); };
+    // เปิดของเพิ่ม (ให้มีคำให้หาพอเสมอ) แล้วลมพัดของบนพื้นสลับที่กัน
+    const messUp = (L, animate) => {
+      const want = Math.ceil(hideable.length * L.show);
+      let shown = hideable.filter(it => !it.hidden).length;
+      const need = L.plan.reduce((b, k) => b + (k === "T" ? 3 : 1), 0);
+      const hiddenC = shuffle(hideable.filter(it => it.hidden)).sort((a, b) => (wordOf(a) ? 0 : 1) - (wordOf(b) ? 0 : 1));
+      let visCands = items.filter(it => !it.hidden && wordOf(it)).length;
+      for (const it of hiddenC) {
+        if (shown >= want && visCands >= need + 2) break;
+        it.hidden = false; it.root.visible = true; shown++; if (wordOf(it)) visCands++;
+        if (animate) { it.pop = 0; it.root.scale.setScalar(.001); }
+      }
+      if (!L.scatter) return 0;
+      // จับกลุ่มของขนาดใกล้กัน แล้วสลับตำแหน่งในกลุ่ม
+      const fl = floorItems.filter(it => !it.hidden).sort((a, b) => a.radius - b.radius);
+      let moved = 0;
+      for (let i = 0; i < fl.length; i += 4) {
+        const grp = fl.slice(i, i + 4); if (grp.length < 2) continue;
+        const spots = grp.map(it => it.spot.clone()); let perm = shuffle(spots.map((_, j) => j));
+        if (perm.every((p, j) => p === j)) perm = perm.map((_, j) => (j + 1) % perm.length);
+        grp.forEach((it, j) => {
+          const to = spots[perm[j]].clone().add(new THREE.Vector3((Math.random() - .5) * .12, 0, (Math.random() - .5) * .12));
+          to.x = Math.max(-RW + .3, Math.min(RW - .3, to.x)); to.z = Math.max(-RD + .3, Math.min(RD - .1, to.z));
+          const d = to.clone().sub(it.spot); it.spot.copy(to);
+          const end = it.base.clone().add(d);
+          if (animate) { it.fly = { from:it.base.clone(), to:end, t:-Math.random() * .35, spin:(Math.random() < .5 ? -1 : 1) * Math.PI * 2 }; }
+          else { it.root.position.copy(end); it.base.copy(end); refreshBox(it); }
+          moved++;
+        });
+      }
+      return moved;
     };
 
-    // วงแหวน + คำใบ้ + ประกาย
-    const ring = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), ringMaterial("#fde047")); ring.renderOrder = 10; ring.visible = false; scene.add(ring);
+    // วงแหวน (3 วงสำหรับรอบหา 3 อย่าง) + คำใบ้ + ประกาย
+    const rings = [0, 1, 2].map(() => { const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), ringMaterial("#fde047")); m.renderOrder = 10; m.visible = false; scene.add(m); return m; });
+    const ring = rings[0];
     const hint = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), ringMaterial("#ffffff")); hint.material.uniforms.uPulse.value = 1; hint.material.uniforms.uP.value = 1; hint.renderOrder = 9; hint.visible = false; scene.add(hint);
     const glow = keep(glowTexture());
     const hintGlow = new THREE.Sprite(new THREE.SpriteMaterial({ map:glow, color:"#fff7c2", transparent:true, depthTest:false, depthWrite:false, blending:THREE.AdditiveBlending, opacity:0 })); hintGlow.renderOrder = 8; scene.add(hintGlow);
-    const PN = 260, pPos = new Float32Array(PN * 3).fill(-99), pCol = new Float32Array(PN * 3), pVel = Array.from({ length:PN }, () => new THREE.Vector3()), pLife = new Float32Array(PN);
+    const PN = 320, pPos = new Float32Array(PN * 3).fill(-99), pCol = new Float32Array(PN * 3), pVel = Array.from({ length:PN }, () => new THREE.Vector3()), pLife = new Float32Array(PN);
     const pg = new THREE.BufferGeometry(); pg.setAttribute("position", new THREE.BufferAttribute(pPos, 3)); pg.setAttribute("color", new THREE.BufferAttribute(pCol, 3));
     const pts = new THREE.Points(pg, new THREE.PointsMaterial({ size:.09, map:glow, vertexColors:true, transparent:true, depthWrite:false, depthTest:false, blending:THREE.AdditiveBlending, toneMapped:false }));
     pts.frustumCulled = false; pts.renderOrder = 11; scene.add(pts); let pIdx = 0;
@@ -228,37 +299,80 @@ export default function FindRoom3D({ words = [], speak, track, catId, sfx, Promp
       pPos.set([pos.x + d.x * r * .6, pos.y + d.y * r * .6, pos.z + d.z * r * .6], i * 3); const c = new THREE.Color(C[k % C.length]); pCol.set([c.r, c.g, c.b], i * 3);
       pVel[i].copy(d).multiplyScalar(1.2 + Math.random() * 2.2).add(new THREE.Vector3(0, 1.4, 0)); pLife[i] = .7 + Math.random() * .6; } };
 
-    const sayTarget = () => { if (S.target) ui.say(S.target.w); };
+    const cur = () => S.round?.list[S.focus];
+    const sayTarget = () => { const c = cur(); if (c) ui.say(c.w); };
+    const hudRound = (extra = {}) => setHud(h => ({ ...h, level:S.level, lr:S.lr, nr:S.rounds.length, found:S.done, score:S.score, target:cur()?.w || null,
+      multi:S.round?.kind === "three" ? S.round.list.map((c, i) => ({ w:c.w, found:c.found, focus:i === S.focus })) : null, ...extra }));
+    const hideRings = () => { rings.forEach(r => { r.visible = false; }); hint.visible = false; hintGlow.material.opacity = 0; };
     const nextRound = (first) => {
-      if (S.round >= ROUNDS || !plan.length) return finish();
-      S.target = plan[S.round]; S.round += 1; S.misses = 0; S.busy = false;
-      ring.visible = false; hint.visible = false; hintGlow.material.opacity = 0;
-      setHud(h => ({ ...h, round:S.round, target:S.target.w, bubble:null }));
+      if (S.over) return;
+      if (S.lr >= S.rounds.length) return levelDone();
+      S.round = S.rounds[S.lr]; S.lr += 1; S.focus = 0; S.busy = false;
+      hideRings();
+      hudRound({ bubble:null });
       S.pan = 2.6;                                  // ของอยู่นอกจอ → ค่อยๆ หันกล้องจนเห็น (แค่ขอบจอ ไม่ชี้ให้)
       if (!first) sayTarget();
     };
-    const finish = () => { if (S.over) return; S.over = true; S.target = null; setHud(h => ({ ...h, on:false, done:true, target:null }));
-      later(() => track.finish(S.score, ROUNDS, { label:`หาเจอ ${S.score}/${ROUNDS} ชิ้น` }), 900); };
+    const LIGHT = [["#ffe7c2", 3.2, 9], ["#fff3dc", 3.6, 8], ["#ffd9a8", 3.0, 10], ["#ffb27a", 2.2, 13]];
+    S.light = 0;
+    const startLevel = (k, first) => {
+      S.level = k; S.lr = 0; S.lvClean = 0; S.lvTotal = 0; const L = LEVELS[k];
+      S.light = k;
+      const moved = messUp(L, !first);
+      S.rounds = planLevel(L);
+      if (!S.rounds.length) return finish();
+      if (first) { hudRound({ banner:{ kind:"start", title:`ด่าน 1 · ${L.name}`, id:Math.random() } }); later(() => setHud(h => ({ ...h, banner:null })), 1700); nextRound(true); return; }
+      S.busy = true; S.round = null; hideRings();
+      hudRound({ target:null, multi:null, banner:{ kind:"next", title:`ด่าน ${k + 1} · ${L.name}`, sub:L.sub, id:Math.random() } });
+      if (moved) { S.yaw = 0; S.pitch = 0; S.zoom = 1; }
+      later(() => { setHud(h => ({ ...h, banner:null })); nextRound(false); }, moved ? 2900 : 2200);
+    };
+    const levelDone = () => {
+      S.busy = true; S.round = null; hideRings();
+      const stars = S.lvTotal ? (S.lvClean / S.lvTotal >= .9 ? 3 : S.lvClean / S.lvTotal >= .6 ? 2 : 1) : 1;
+      const lastLevel = S.level >= LEVELS.length - 1;
+      sfx?.win?.();
+      hudRound({ target:null, multi:null, banner:{ kind:"done", title:lastLevel ? "เก่งมาก! หาครบทุกด่าน 🏆" : `ผ่านด่าน ${S.level + 1}! 🎉`, stars, id:Math.random() } });
+      const spots = [[-1.6, 1.2, -1], [0, 1.6, -.6], [1.6, 1.2, -1], [0, .9, .6]];
+      spots.forEach(([x, y, z], i) => later(() => burst(new THREE.Vector3(x, y, z), .5, 80), i * 260));
+      later(() => { if (lastLevel) finish(); else startLevel(S.level + 1, false); }, 2900);
+    };
+    const finish = (early) => { if (S.over) return; S.over = true; S.round = null; hideRings();
+      const total = Math.max(1, S.done);              // นับเฉพาะชิ้นที่ได้ถามจริง (จบก่อนก็ไม่เสียเปรียบ)
+      setHud(h => ({ ...h, on:false, done:true, finished:true, target:null, multi:null, paused:false, banner:null }));
+      setTimeout(() => { if (alive) track.finish(S.score, total, { label:`หาเจอ ${S.score}/${total} ชิ้น` }); }, early ? 50 : 900); };
 
     const showRing = (it, mesh, color, pulse) => {
       const r = Math.min(1.25, Math.max(.17, it.radius * 1.15 + .06));
       mesh.position.copy(it.center); mesh.scale.setScalar(r * 2); mesh.visible = true;
       mesh.material.uniforms.uColor.value.set(color); if (!pulse) mesh.material.uniforms.uP.value = 0;
     };
-    const onFound = (it) => {
-      S.busy = true; const t = S.target; const clean = S.misses < 2; if (clean) S.score += 1;
-      ui.correct(t.w); showRing(it, ring, "#fde047", false); hint.visible = false; hintGlow.material.opacity = 0;
+    const onFound = (c) => {
+      const it = c.it; const R = S.round; c.found = true;
+      const clean = c.misses < 2; if (clean) { S.score += 1; S.lvClean += 1; } S.lvTotal += 1; S.done += 1;
+      ui.correct(c.w); const k = R.list.filter(x => x.found).length - 1;
+      showRing(it, rings[Math.min(2, k)], "#fde047", false); hint.visible = false; hintGlow.material.opacity = 0;
       it.hop = 1; burst(it.center, it.radius, 120);
-      setHud(h => ({ ...h, score:S.score, bubble:{ ok:true, text:`${t.w.word} ✓`, id:Math.random() } }));
-      later(() => burst(it.center, it.radius, 60), 450);
-      later(() => nextRound(false), 1900);
+      const left = R.list.filter(x => !x.found);
+      if (!left.length) {
+        S.busy = true;
+        hudRound({ bubble:{ ok:true, text:R.kind === "three" ? "ครบ 3 อย่าง! 🎉" : `${c.w.word} ✓`, id:Math.random() } });
+        later(() => burst(it.center, it.radius, 60), 450);
+        if (R.kind === "three") R.list.forEach((x, i) => later(() => { x.it.hop = 1; burst(x.it.center, x.it.radius, 50); }, 300 + i * 220));
+        later(() => nextRound(false), R.kind === "three" ? 2400 : 1900);
+      } else {
+        S.focus = R.list.indexOf(left[0]); S.busy = true; S.pan = 2.4;
+        hudRound({ bubble:{ ok:true, text:`${c.w.word} ✓`, id:Math.random() } });
+        later(() => { S.busy = false; sayTarget(); }, 900);
+      }
     };
     const onMiss = (it, px, py) => {
-      S.misses += 1; ui.wrong(S.target.w);
+      const c = cur(); if (!c) return;
+      c.misses += 1; ui.wrong(c.w);
       if (it) it.shake = 1;
       const name = it?.wordsRaw?.[0] && wordMap.has(norm(it.wordsRaw[0])) ? it.wordsRaw[0] : null;
       setHud(h => ({ ...h, bubble:{ ok:false, x:px, y:py, text:name ? `ไม่ใช่ · ${name}` : "ไม่ใช่", id:Math.random() } }));
-      if (S.misses >= 2) { showRing(S.target.it, hint, "#ffffff", true); S.pan = 3; later(sayTarget, 500); }
+      if (c.misses >= 2) { showRing(c.it, hint, "#ffffff", true); S.pan = 3; later(sayTarget, 500); }
     };
 
     // ── การแตะ (raycast + พื้นที่แตะเผื่อรอบชิ้นของ) ──
@@ -269,17 +383,19 @@ export default function FindRoom3D({ words = [], speak, track, catId, sfx, Promp
       return [x0, y0, x1, y1]; };
     const inRect = (q, x, y, pad) => x >= q[0] - pad && x <= q[2] + pad && y >= q[1] - pad && y <= q[3] + pad;
     const tap = (cx, cy) => {
-      if (!S.started || S.over || S.busy || !S.target) return;
+      if (!S.started || S.over || S.busy || S.paused || !S.round) return;
       const r = renderer.domElement.getBoundingClientRect(); const x = cx - r.left, y = cy - r.top;
       ray.setFromCamera(new THREE.Vector2(x / r.width * 2 - 1, -(y / r.height) * 2 + 1), camera);
-      const hit = ray.intersectObject(itemsGroup, true).find(h => h.object.userData.item);
+      const hit = ray.intersectObject(itemsGroup, true).find(h => h.object.userData.item && !h.object.userData.item.hidden);
       const hitIt = hit?.object.userData.item || null;
-      const tgt = S.target.it;
-      // small objects get a bigger forgiving margin
-      const tr = screenRect(tgt), small = (tr[2] - tr[0]) * (tr[3] - tr[1]) < 70 * 70;
-      if (hitIt === tgt || inRect(tr, x, y, small ? 30 : 14)) return onFound(tgt);
+      const open = S.round.list.filter(c => !c.found);
+      // ของที่แตะโดน = ของที่ต้องหา (หรือของอื่นที่ชื่อเดียวกัน)
+      const byHit = hitIt && open.find(c => c.it === hitIt || hitIt.words.includes(norm(c.w.word)));
+      if (byHit) return onFound(byHit);
+      // ของชิ้นเล็กได้ขอบแตะเผื่อกว้างกว่า
+      for (const c of [cur(), ...open].filter(Boolean)) { const tr = screenRect(c.it), small = (tr[2] - tr[0]) * (tr[3] - tr[1]) < 70 * 70; if (!c.found && inRect(tr, x, y, small ? 30 : 14)) return onFound(c); }
       if (hitIt && hitIt.words.length) return onMiss(hitIt, x, y);
-      const near = items.filter(it => it.words.length && it !== tgt).find(it => inRect(screenRect(it), x, y, 6));
+      const near = items.filter(it => it.words.length && !it.hidden && !open.some(c => c.it === it)).find(it => inRect(screenRect(it), x, y, 6));
       if (near) return onMiss(near, x, y);
       if (hitIt) { hitIt.shake = .5; sfx?.tap?.(); } // แตะของตกแต่ง: แค่สั่นเบาๆ ไม่นับผิด
     };
@@ -303,20 +419,32 @@ export default function FindRoom3D({ words = [], speak, track, catId, sfx, Promp
     const ro = new ResizeObserver(() => { renderer.setSize(W(), H()); camera.aspect = W() / H(); camera.updateProjectionMatrix(); }); ro.observe(el);
 
     api.current = {
-      start: () => { if (S.started || !plan.length) return; S.started = true; setHud(h => ({ ...h, on:true })); nextRound(true); sayTarget(); }, // เสียงแรกใน onClick (iOS)
+      start: () => { if (S.started || !items.length) return; S.started = true; setHud(h => ({ ...h, on:true })); startLevel(0, true); sayTarget(); }, // เสียงแรกใน onClick (iOS)
       say: sayTarget,
+      sayWord: i => { const R = S.round; if (!R || !R.list[i] || R.list[i].found) return; S.focus = i; S.pan = 2; hudRound(); ui.say(R.list[i].w); },
       zoom: d => { S.zoom = Math.min(2.2, Math.max(1, S.zoom * d)); },
+      pause: p => { if (S.over || !S.started) return; S.paused = p; setHud(h => ({ ...h, paused:p })); },
+      end: () => finish(true),
     };
 
-    loadAll.then(() => { if (!alive) return; build(); plan = makePlan();
-      if (typeof window !== "undefined" && window.__FR_DEBUG) window.__FR = { S, items, camera, screenRect, renderer, plan, tap };
-      setHud(h => ({ ...h, ready:true, load:1, msg:plan.length ? null : "หมวดนี้ยังไม่มีของในห้องให้หา" })); });
+    loadAll.then(() => { if (!alive) return; build(); classify();
+      // เริ่มจากห้องที่รกน้อยกว่า: ซ่อนของบางส่วนไว้ก่อน (ด่านต่อไปของจะโผล่มาเพิ่ม)
+      hideable.forEach(it => { it.hidden = true; it.root.visible = false; });
+      const ok = items.some(it => wordOf(it));
+      if (!ok) hideable.forEach(it => { it.hidden = false; it.root.visible = true; });
+      if (typeof window !== "undefined" && window.__FR_DEBUG) window.__FR = { S, items, camera, screenRect, renderer, tap, api:api.current, cur };
+      setHud(h => ({ ...h, ready:true, load:1, total:totalTargets, msg:ok ? null : "หมวดนี้ยังไม่มีของในห้องให้หา" })); });
 
     // ── ลูปหลัก ──
-    const clock = new THREE.Clock(); let raf = 0; const camPos = new THREE.Vector3(), look = new THREE.Vector3(), tmpV = new THREE.Vector3(), tmpL = new THREE.Vector3(); look.copy(LOOK);
+    const clock = new THREE.Clock(); let raf = 0; const camPos = new THREE.Vector3(), look = new THREE.Vector3(), tmpV = new THREE.Vector3(), tmpL = new THREE.Vector3(), tmpC = new THREE.Color(); look.copy(LOOK);
     const tick = () => {
       if (!alive) return; raf = requestAnimationFrame(tick);
       const dt = Math.min(.05, clock.getDelta()); S.t += dt;
+      // เวลาเกม: เดินเฉพาะตอนไม่ได้พัก → คิวเหตุการณ์ (later) + นาฬิกาบนจอ
+      if (!S.paused) { S.gt += dt; if (S.started && !S.over) { S.playT += dt; const sec = Math.floor(S.playT); if (sec !== S.sec) { S.sec = sec; setHud(h => ({ ...h, sec })); } } }
+      for (let i = 0; i < events.length; i++) if (events[i].at <= S.gt) { const ev = events.splice(i, 1)[0]; i--; if (alive) ev.fn(); }
+      // แสงตามด่าน (เช้า → เย็น)
+      { const L = LIGHT[S.light] || LIGHT[0]; sun.color.lerp(tmpC.set(L[0]), Math.min(1, dt * 1.5)); sun.intensity += (L[1] - sun.intensity) * Math.min(1, dt * 1.5); lamp.intensity += (L[2] - lamp.intensity) * Math.min(1, dt * 1.5); }
       // กล้องโคจรรอบจุดกลางห้อง (จำกัดมุม) · ก่อนเริ่มส่ายช้าๆ ให้เห็นทั้งห้อง
       const idle = !S.started ? Math.sin(S.t * .35) * .22 : 0;
       const yaw = S.yaw + idle, asp = camera.aspect;
@@ -326,20 +454,25 @@ export default function FindRoom3D({ words = [], speak, track, catId, sfx, Promp
       // ซูม: เลื่อนจุดมองเข้าไปหาจุดที่กล้องเล็ง
       const fov0 = asp < 1 ? 64 : 52; camera.fov += (fov0 / S.zoom - camera.fov) * Math.min(1, dt * 8);
       look.lerp(tmpL.set(LOOK.x - Math.sin(yaw) * 3.2, LOOK.y, LOOK.z), Math.min(1, dt * 8)); camera.lookAt(look); camera.updateProjectionMatrix();
-      if (S.pan > 0 && S.target) { S.pan -= dt; const v = tmpV.copy(S.target.it.center).project(camera), m = S.misses >= 2 ? .4 : .6;
+      const ct = cur();
+      if (S.pan > 0 && ct && !S.paused) { S.pan -= dt; const v = tmpV.copy(ct.it.center).project(camera), m = ct.misses >= 2 ? .4 : .6;
         if (v.x > m) S.yaw = Math.max(-.7, S.yaw - dt * .9); else if (v.x < -m) S.yaw = Math.min(.7, S.yaw + dt * .9);
         if (v.y < -m) S.pitch = Math.min(.2, S.pitch + dt * .3); else if (v.y > .8) S.pitch = Math.max(-.16, S.pitch - dt * .3);
         if (S.zoom > 1 && (Math.abs(v.x) > .85 || Math.abs(v.y) > .85)) S.zoom = Math.max(1, S.zoom - dt * 1.5); }
       // ของเด้ง (ถูก) / สั่น (ผิด)
       for (const it of items) {
+        if (it.pop < 1 && !it.hidden) { it.pop = Math.min(1, it.pop + dt * 2.2); const k = it.pop; it.root.scale.setScalar(Math.max(.001, k < 1 ? 1 + Math.sin(k * Math.PI) * .25 - (1 - k) * (1 - k) * .9 : 1)); }
+        if (it.fly) { const f = it.fly; f.t += dt / 1.15; const k = Math.max(0, Math.min(1, f.t)), e = k * k * (3 - 2 * k);
+          it.root.position.lerpVectors(f.from, f.to, e); it.root.position.y += Math.sin(k * Math.PI) * 1.1; it.root.rotation.y = it.baseRot.y + f.spin * e;
+          if (k >= 1) { it.fly = null; it.root.position.copy(f.to); it.root.rotation.y = it.baseRot.y; it.base.copy(f.to); refreshBox(it); } continue; }
         if (it.hop > 0) { it.hop = Math.max(0, it.hop - dt * .9); const k = 1 - it.hop; const h = Math.abs(Math.sin(k * Math.PI * 2)) * (1 - k) * .28;
           it.root.position.y = it.base.y + h; it.root.rotation.y = it.baseRot.y + Math.sin(k * Math.PI * 2) * .35 * (1 - k); }
         if (it.shake > 0) { it.shake = Math.max(0, it.shake - dt * 2.2); it.root.rotation.z = Math.sin(S.t * 42) * .07 * it.shake; it.root.position.x = it.base.x + Math.sin(S.t * 50) * .015 * it.shake; if (it.shake === 0) { it.root.rotation.z = 0; it.root.position.x = it.base.x; } }
       }
       // วงแหวนหันหน้าเข้าหากล้อง
-      for (const m of [ring, hint]) { if (!m.visible) continue; m.quaternion.copy(camera.quaternion); m.material.uniforms.uT.value = S.t; }
-      if (ring.visible) { const u = ring.material.uniforms; u.uP.value = Math.min(1, u.uP.value + dt * 1.9); }
-      if (hint.visible) { const tgt = S.target?.it; const p = .5 + .5 * Math.sin(S.t * 6); hint.material.uniforms.uA.value = .55 + .45 * p;
+      for (const m of [...rings, hint]) { if (!m.visible) continue; m.quaternion.copy(camera.quaternion); m.material.uniforms.uT.value = S.t; }
+      rings.forEach(r => { if (r.visible) { const u = r.material.uniforms; u.uP.value = Math.min(1, u.uP.value + dt * 1.9); } });
+      if (hint.visible) { const tgt = ct?.it; const p = .5 + .5 * Math.sin(S.t * 6); hint.material.uniforms.uA.value = .55 + .45 * p;
         if (tgt) { hintGlow.position.copy(tgt.center); hintGlow.scale.setScalar(tgt.radius * (1.6 + p * .5)); hintGlow.material.opacity = .08 + p * .14; } }
       for (let i = 0; i < PN; i++) { if (pLife[i] <= 0) continue; pLife[i] -= dt; const q = pVel[i]; q.y -= 3.2 * dt; q.multiplyScalar(1 - dt * 1.2);
         pPos[i * 3] += q.x * dt; pPos[i * 3 + 1] += q.y * dt; pPos[i * 3 + 2] += q.z * dt; if (pLife[i] <= 0) pPos[i * 3 + 1] = -99; }
@@ -366,36 +499,64 @@ export default function FindRoom3D({ words = [], speak, track, catId, sfx, Promp
   useEffect(() => { if (!hud.bubble) return; const t = setTimeout(() => setHud(h => ({ ...h, bubble:null })), hud.bubble.ok ? 1500 : 1100); return () => clearTimeout(t); }, [hud.bubble?.id]); // eslint-disable-line
 
   const tk = ui.tokens;
-  const small = { width:48, height:48, borderRadius:24, border:"none", background:tk.card, color:tk.ink, fontSize:22, fontWeight:900, cursor:"pointer", boxShadow:tk.shadow, display:"flex", alignItems:"center", justifyContent:"center", pointerEvents:"auto" };
+  const small = { width:48, height:48, borderRadius:24, border:"none", background:tk.card, color:tk.ink, fontSize:22, fontWeight:900, cursor:"pointer", boxShadow:tk.shadow, display:"flex", alignItems:"center", justifyContent:"center", pointerEvents:"auto", fontFamily:"inherit" };
+  const big = { minWidth:200, minHeight:60, borderRadius:30, border:"none", fontSize:22, fontWeight:900, cursor:"pointer", boxShadow:tk.shadow, fontFamily:"inherit" };
   const pct = Math.round((hud.load || 0) * 100);
+  const mmss = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  const prog = hud.total ? Math.min(1, hud.found / hud.total) : 0;
   return (
     <div style={{ position:"relative", display:"flex", flexDirection:"column", gap:6 }}>
+      <style>{`@keyframes frPop{0%{transform:translate(-50%,-50%) scale(.3);opacity:0}20%{transform:translate(-50%,-50%) scale(1.08);opacity:1}30%{transform:translate(-50%,-50%) scale(1)}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}`}</style>
       {hud.on && hud.target && <Prompt w={hud.target} onClick={() => api.current.say?.()} />}
-      <div style={{ position:"relative", height:hud.on ? "min(60vh, 580px)" : "min(68vh, 640px)", minHeight:300, borderRadius:28, overflow:"hidden", background:"#2a2320" }}>
+      {hud.on && hud.multi && <div style={{ display:"flex", gap:6, marginTop:-6 }}>
+        {hud.multi.map((m, i) => <button key={i} onClick={() => api.current.sayWord?.(i)} className="m3-press" aria-label={`ฟัง ${m.w.word}`}
+          style={{ flex:1, minWidth:0, minHeight:44, borderRadius:22, border:m.focus && !m.found ? `3px solid ${tk.primary}` : "3px solid transparent", background:m.found ? tk.primary : tk.card, color:m.found ? tk.onPrimary : tk.ink, boxShadow:tk.shadow,
+            fontWeight:900, fontSize:13, padding:"2px 6px", cursor:"pointer", fontFamily:"inherit", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{m.found ? "✓ " : "🔊 "}{m.w.word}</button>)}
+      </div>}
+      <div style={{ position:"relative", height:hud.on ? (hud.multi ? "min(54vh, 540px)" : "min(60vh, 580px)") : "min(68vh, 640px)", minHeight:290, borderRadius:28, overflow:"hidden", background:"#2a2320" }}>
         <div ref={host} data-findroom3d style={{ position:"absolute", inset:0 }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(ellipse at center, transparent 62%, rgba(0,0,0,.22))" }} />
         {hud.on && <>
-          <div style={{ position:"absolute", left:10, top:10, padding:"6px 12px", borderRadius:18, background:tk.card, color:tk.ink, fontWeight:900, fontSize:15, boxShadow:tk.shadow, pointerEvents:"none" }}>
-            🔎 {Math.min(hud.round, ROUNDS)}/{ROUNDS} · ⭐ {hud.score}
+          <div data-hud style={{ position:"absolute", left:10, top:10, padding:"6px 12px 8px", borderRadius:18, background:tk.card, color:tk.ink, fontWeight:900, fontSize:14, boxShadow:tk.shadow, pointerEvents:"none", minWidth:148 }}>
+            <div style={{ display:"flex", justifyContent:"space-between", gap:10 }}><span>ด่าน {hud.level + 1}/{LEVELS.length}</span><span>⏱ {mmss(hud.sec || 0)}</span></div>
+            <div style={{ position:"relative", height:8, borderRadius:4, background:tk.ink, opacity:.9, marginTop:5, overflow:"hidden" }}>
+              <div style={{ position:"absolute", inset:0, background:tk.card, opacity:.75 }} />
+              <div style={{ position:"absolute", left:0, top:0, bottom:0, width:`${prog * 100}%`, background:tk.primary, transition:"width .4s" }} />
+            </div>
+            <div style={{ fontSize:12, marginTop:3, fontWeight:800 }}>🔎 {hud.found}/{hud.total} · ⭐ {hud.score}</div>
           </div>
           <div style={{ position:"absolute", right:10, top:10, display:"flex", flexDirection:"column", gap:8 }}>
+            <button aria-label="พัก" className="m3-press" style={small} onClick={() => api.current.pause?.(true)}>⏸</button>
             <button aria-label="ซูมเข้า" className="m3-press" style={small} onClick={() => api.current.zoom?.(1.25)}>＋</button>
             <button aria-label="ซูมออก" className="m3-press" style={small} onClick={() => api.current.zoom?.(.8)}>－</button>
           </div>
           <div style={{ position:"absolute", left:10, bottom:12, padding:"4px 10px", borderRadius:14, background:"rgba(0,0,0,.35)", color:"#fff", fontSize:12, fontWeight:700, pointerEvents:"none" }}>👆 แตะของ · ลากเพื่อมองรอบห้อง</div>
         </>}
+        {hud.banner && <div key={hud.banner.id} style={{ position:"absolute", left:"50%", top:hud.banner.kind === "next" ? "30%" : "50%", width:"min(86%, 340px)", padding:"14px 16px", borderRadius:28, background:hud.banner.kind === "done" ? tk.primary : tk.card, color:hud.banner.kind === "done" ? tk.onPrimary : tk.ink,
+          boxShadow:tk.shadow, textAlign:"center", pointerEvents:"none", animation:"frPop .5s ease-out forwards", boxSizing:"border-box" }}>
+          <div style={{ fontWeight:900, fontSize:hud.banner.kind === "start" ? 22 : 26, lineHeight:1.2 }}>{hud.banner.title}</div>
+          {hud.banner.stars != null && <div style={{ fontSize:34, marginTop:4, letterSpacing:4 }}>{"⭐".repeat(hud.banner.stars)}<span style={{ opacity:.3 }}>{"⭐".repeat(3 - hud.banner.stars)}</span></div>}
+          {hud.banner.sub && <div style={{ fontWeight:800, fontSize:15, marginTop:6 }}>{hud.banner.sub}</div>}
+        </div>}
         {hud.bubble && (hud.bubble.ok
           ? <div key={hud.bubble.id} style={{ position:"absolute", left:"50%", top:"14%", transform:"translateX(-50%)", padding:"8px 18px", borderRadius:22, background:tk.primary, color:tk.onPrimary, fontWeight:900, fontSize:22, boxShadow:tk.shadow, pointerEvents:"none", whiteSpace:"nowrap", animation:"vpBounce .6s ease-out" }}>{hud.bubble.text}</div>
           : <div key={hud.bubble.id} style={{ position:"absolute", left:`clamp(70px, ${hud.bubble.x}px, calc(100% - 70px))`, top:Math.max(8, hud.bubble.y - 64), transform:"translateX(-50%)", padding:"6px 14px", borderRadius:18, background:tk.card, color:tk.ink, fontWeight:900, fontSize:17, boxShadow:tk.shadow, pointerEvents:"none", whiteSpace:"nowrap" }}>🙅 {hud.bubble.text}</div>)}
+        {hud.on && hud.paused && <div style={{ position:"absolute", inset:0, background:"rgba(0,0,0,.55)", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:14, padding:16 }}>
+          <div style={{ color:"#fff", fontWeight:900, fontSize:26 }}>⏸ พักก่อน</div>
+          <div style={{ color:"#fff", fontWeight:700, fontSize:14 }}>หาเจอแล้ว {hud.found} ชิ้น · ⏱ {mmss(hud.sec || 0)}</div>
+          <button className="m3-press" onClick={() => api.current.pause?.(false)} style={{ ...big, background:tk.primary, color:tk.onPrimary }}>▶ เล่นต่อ</button>
+          <button className="m3-press" onClick={() => api.current.end?.()} style={{ ...big, minHeight:52, fontSize:18, background:tk.card, color:tk.ink }}>🏁 จบเกม</button>
+        </div>}
         {!hud.on && !hud.done && !hud.msg && <>
           <div style={{ position:"absolute", top:14, left:0, right:0, textAlign:"center", pointerEvents:"none", padding:"0 12px" }}>
             <div style={{ fontWeight:900, fontSize:26, color:"#fff", textShadow:"0 3px 12px rgba(0,0,0,.6)" }}>Find It! 3D</div>
             <div style={{ fontWeight:700, fontSize:14, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.75)" }}>{room.name}รกมาก! · ฟังคำ แล้วแตะของชิ้นนั้น</div>
+            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.75)", marginTop:2 }}>{LEVELS.length} ด่าน · ยิ่งเล่นยิ่งรก!</div>
           </div>
           <div style={{ position:"absolute", left:0, right:0, bottom:0, padding:"34px 12px 16px", display:"flex", flexDirection:"column", alignItems:"center", gap:8, background:"linear-gradient(180deg, transparent, rgba(0,0,0,.55))" }}>
             {!hud.ready && <div style={{ color:"#fff", fontWeight:800, fontSize:14 }}>กำลังจัดห้อง… {pct}%</div>}
             <button disabled={!hud.ready} onClick={() => { ui.unlock?.(); api.current.start?.(); }} className="m3-press"
-              style={{ minWidth:200, minHeight:60, borderRadius:30, border:"none", background:hud.ready ? tk.primary : tk.card, color:hud.ready ? tk.onPrimary : tk.ink, fontSize:22, fontWeight:900, cursor:hud.ready ? "pointer" : "wait", boxShadow:tk.shadow, opacity:hud.ready ? 1 : .8 }}>
+              style={{ ...big, background:hud.ready ? tk.primary : tk.card, color:hud.ready ? tk.onPrimary : tk.ink, cursor:hud.ready ? "pointer" : "wait", opacity:hud.ready ? 1 : .8 }}>
               {hud.ready ? "▶ เริ่ม!" : "⏳ รอแป๊บ…"}
             </button>
           </div>

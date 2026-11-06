@@ -17,23 +17,26 @@ export const THEME_SEEDS = {
 const ok = (l, c, h) => `oklch(${l} ${c} ${((h % 360) + 360) % 360})`;
 export function m3Roles(h, dark) {
   const h2 = h + 60, h3 = h - 40;   // tertiary = hue เสริม · accent ที่สาม
+  // v3.16 "สดใส ตัวหนา": สีหลักสด 1 สี + เหลืองแดด/ฟ้า คงที่ · พื้นครีมอุ่น · ทุกปุ่มมีขอบล่างนูน (…Edge)
   if (!dark) return {
-    primary: ok(0.5, 0.17, h), onPrimary: "#ffffff", primaryContainer: ok(0.92, 0.07, h), onPrimaryContainer: ok(0.28, 0.1, h),
-    secondary: ok(0.5, 0.06, h), onSecondary: "#ffffff", secondaryContainer: ok(0.91, 0.045, h), onSecondaryContainer: ok(0.28, 0.06, h),
-    tertiary: ok(0.52, 0.13, h2), onTertiary: "#ffffff", tertiaryContainer: ok(0.92, 0.07, h2), onTertiaryContainer: ok(0.28, 0.09, h2),
-    accent: ok(0.62, 0.17, h3), accentContainer: ok(0.93, 0.06, h3),
-    error: "oklch(0.55 0.2 27)", onError: "#ffffff", errorContainer: "oklch(0.93 0.05 27)", onErrorContainer: "oklch(0.3 0.12 27)",
-    ok: "oklch(0.56 0.15 150)", okContainer: "oklch(0.92 0.08 150)", onOkContainer: "oklch(0.28 0.09 150)",
-    surface: ok(0.985, 0.006, h), surfaceDim: ok(0.9, 0.012, h), surfaceBright: ok(0.985, 0.006, h),
-    surfaceContainerLowest: "#ffffff", surfaceContainerLow: ok(0.972, 0.008, h), surfaceContainer: ok(0.957, 0.01, h),
-    surfaceContainerHigh: ok(0.94, 0.012, h), surfaceContainerHighest: ok(0.92, 0.014, h),
-    onSurface: ok(0.2, 0.02, h), onSurfaceVariant: ok(0.42, 0.03, h), outline: ok(0.6, 0.025, h), outlineVariant: ok(0.85, 0.02, h),
-    inverseSurface: ok(0.25, 0.02, h), inverseOnSurface: ok(0.95, 0.01, h), inversePrimary: ok(0.82, 0.1, h),
-    scrim: "rgba(0,0,0,.45)", shadow: "0 1px 3px rgba(0,0,0,.12), 0 6px 18px rgba(0,0,0,.08)",
-    heroGrad: `linear-gradient(135deg, ${ok(0.55, 0.18, h)}, ${ok(0.6, 0.17, h2)})`,
+    primary: ok(0.55, 0.23, h), primaryEdge: ok(0.45, 0.21, h), onPrimary: "#ffffff", primaryContainer: ok(0.94, 0.05, h), onPrimaryContainer: ok(0.3, 0.12, h),
+    secondary: "#FFC531", secondaryEdge: "#E0A200", onSecondary: "#3A2A00", secondaryContainer: "#FFF1C7", onSecondaryContainer: "#4A3600",
+    tertiary: "#1CB0F6", tertiaryEdge: "#1290CC", onTertiary: "#ffffff", tertiaryContainer: "#DDF3FF", onTertiaryContainer: "#0B4A6B",
+    accent: "#FF5FA2", accentContainer: "#FFE1EE",
+    error: "#FF4B4B", errorEdge: "#D93636", onError: "#ffffff", errorContainer: "#FFE3E3", onErrorContainer: "#7A1414",
+    ok: "#58CC02", okEdge: "#46A302", okContainer: "#E3F8CF", onOkContainer: "#1F4D00",
+    surface: "#FFF8EE", surfaceDim: "#F3ECE0", surfaceBright: "#FFFDF8",
+    surfaceContainerLowest: "#ffffff", surfaceContainerLow: "#ffffff", surfaceContainer: "#F7F1E6",
+    surfaceContainerHigh: "#F3ECE0", surfaceContainerHighest: "#EDE4D6",
+    cardBorder: "#F0E8DA", cardEdge: "#E8DFCF",
+    onSurface: "#2B2340", onSurfaceVariant: "#5E5672", outline: "#9A92AA", outlineVariant: "#EADFCC",
+    inverseSurface: "#2B2340", inverseOnSurface: "#FFF8EE", inversePrimary: ok(0.82, 0.1, h),
+    scrim: "rgba(43,35,64,.5)", shadow: "0 10px 24px rgba(43,35,64,.14)",
+    heroGrad: `linear-gradient(160deg, ${ok(0.6, 0.22, h)} 0%, ${ok(0.5, 0.23, h)} 100%)`,
   };
   return {
-    primary: ok(0.82, 0.12, h), onPrimary: ok(0.3, 0.12, h), primaryContainer: ok(0.4, 0.12, h), onPrimaryContainer: ok(0.93, 0.05, h),
+    primary: ok(0.82, 0.12, h), primaryEdge: ok(0.62, 0.12, h), secondaryEdge: ok(0.6, 0.05, h), tertiaryEdge: ok(0.62, 0.1, h + 60), okEdge: "oklch(0.6 0.12 150)", errorEdge: "oklch(0.6 0.1 27)", cardBorder: ok(0.3, 0.02, h), cardEdge: ok(0.12, 0.015, h),
+    onPrimary: ok(0.3, 0.12, h), primaryContainer: ok(0.4, 0.12, h), onPrimaryContainer: ok(0.93, 0.05, h),
     secondary: ok(0.8, 0.05, h), onSecondary: ok(0.3, 0.06, h), secondaryContainer: ok(0.38, 0.05, h), onSecondaryContainer: ok(0.92, 0.04, h),
     tertiary: ok(0.82, 0.1, h2), onTertiary: ok(0.3, 0.1, h2), tertiaryContainer: ok(0.4, 0.1, h2), onTertiaryContainer: ok(0.93, 0.05, h2),
     accent: ok(0.78, 0.14, h3), accentContainer: ok(0.4, 0.09, h3),
@@ -75,6 +78,8 @@ export const MD = {
   accent: v("accent"), accentC: v("accent-container"),
   error: v("error"), onError: v("on-error"), errorC: v("error-container"), onErrorC: v("on-error-container"),
   ok: v("ok"), okC: v("ok-container"), onOkC: v("on-ok-container"),
+  primaryEdge: v("primary-edge"), secondaryEdge: v("secondary-edge"), tertiaryEdge: v("tertiary-edge"), okEdge: v("ok-edge"), errorEdge: v("error-edge"),
+  cardBorder: v("card-border"), cardEdge: v("card-edge"),
   surface: v("surface"), surfDim: v("surface-dim"), surfLowest: v("surface-container-lowest"), surfLow: v("surface-container-low"),
   surf: v("surface-container"), surfHigh: v("surface-container-high"), surfHighest: v("surface-container-highest"),
   onSurface: v("on-surface"), onSurfaceV: v("on-surface-variant"), outline: v("outline"), outlineV: v("outline-variant"),
@@ -85,29 +90,31 @@ export const MD = {
   spring: "cubic-bezier(.34,1.56,.64,1)", emph: "cubic-bezier(.2,0,0,1)", quick: "cubic-bezier(.3,0,.8,.15)",
 };
 export const FONT = "'Prompt', 'Noto Sans Thai', 'Roboto', system-ui, -apple-system, sans-serif";
+export const HFONT = "'Mitr', 'Prompt', 'Noto Sans Thai', system-ui, sans-serif";       // หัวข้อ/ปุ่ม
+export const WFONT = "'Fredoka', 'Mitr', system-ui, sans-serif";                         // คำภาษาอังกฤษตัวใหญ่
 // type scale (ปรับขนาดสำหรับเด็ก/ภาษาไทย)
-export const TYPE = {
-  displayS: { fontSize:36, lineHeight:1.15, fontWeight:700, letterSpacing:-0.5 },
-  headlineL: { fontSize:30, lineHeight:1.2, fontWeight:700, letterSpacing:-0.3 },
-  headlineM: { fontSize:26, lineHeight:1.2, fontWeight:700 },
-  headlineS: { fontSize:22, lineHeight:1.25, fontWeight:700 },
-  titleL: { fontSize:20, lineHeight:1.3, fontWeight:600 },
-  titleM: { fontSize:16, lineHeight:1.4, fontWeight:600 },
-  titleS: { fontSize:14, lineHeight:1.4, fontWeight:600 },
-  bodyL: { fontSize:16, lineHeight:1.5, fontWeight:400 },
-  bodyM: { fontSize:14, lineHeight:1.5, fontWeight:400 },
-  bodyS: { fontSize:12, lineHeight:1.45, fontWeight:400 },
-  labelL: { fontSize:14, lineHeight:1.3, fontWeight:600 },
-  labelM: { fontSize:12, lineHeight:1.3, fontWeight:600 },
-  labelS: { fontSize:11, lineHeight:1.3, fontWeight:600 },
+export const TYPE = {   // v3.16: หัวข้อ/ปุ่ม Mitr น้ำหนัก 500–600 (ไม่หนาเกิน) · เนื้อหา Prompt · ไม่มีอะไรเล็กกว่า 13px
+  displayS: { fontSize:32, lineHeight:1.2, fontWeight:600, fontFamily:HFONT },
+  headlineL: { fontSize:28, lineHeight:1.2, fontWeight:600, fontFamily:HFONT },
+  headlineM: { fontSize:26, lineHeight:1.2, fontWeight:600, fontFamily:HFONT },
+  headlineS: { fontSize:24, lineHeight:1.25, fontWeight:600, fontFamily:HFONT },
+  titleL: { fontSize:20, lineHeight:1.3, fontWeight:600, fontFamily:HFONT },
+  titleM: { fontSize:18, lineHeight:1.3, fontWeight:600, fontFamily:HFONT },
+  titleS: { fontSize:16, lineHeight:1.35, fontWeight:600, fontFamily:HFONT },
+  bodyL: { fontSize:17, lineHeight:1.5, fontWeight:400 },
+  bodyM: { fontSize:15, lineHeight:1.5, fontWeight:400 },
+  bodyS: { fontSize:13, lineHeight:1.45, fontWeight:500 },
+  labelL: { fontSize:15, lineHeight:1.3, fontWeight:500, fontFamily:HFONT },
+  labelM: { fontSize:13, lineHeight:1.3, fontWeight:500, fontFamily:HFONT },
+  labelS: { fontSize:13, lineHeight:1.3, fontWeight:500 },
 };
 
 // ── 3) สไตล์สำเร็จรูป ──────────────────────────────────
 const base = { border:"none", cursor:"pointer", fontFamily:FONT, display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8, transition:`transform .18s ${MD.spring}, background .2s, box-shadow .2s` };
 export const M3 = {
   // ปุ่ม (ทรงแคปซูล · ขนาด M = 40 / L = 56 ตาม expressive)
-  filled: (extra = {}) => ({ ...base, background:MD.primary, color:MD.onPrimary, borderRadius:MD.rFull, minHeight:48, padding:"0 24px", ...TYPE.labelL, boxShadow:"none", ...extra }),
-  tonal: (extra = {}) => ({ ...base, background:MD.secondaryC, color:MD.onSecondaryC, borderRadius:MD.rFull, minHeight:48, padding:"0 22px", ...TYPE.labelL, ...extra }),
+  filled: (extra = {}) => ({ ...base, background:MD.primary, color:MD.onPrimary, borderRadius:20, minHeight:52, padding:"0 24px", ...TYPE.labelL, fontWeight:600, boxShadow:`0 5px 0 ${MD.primaryEdge}`, ...extra }),
+  tonal: (extra = {}) => ({ ...base, background:MD.surfLowest, color:MD.onSurface, border:`2px solid ${MD.cardBorder}`, borderRadius:20, minHeight:52, padding:"0 22px", ...TYPE.labelL, fontWeight:600, boxShadow:`0 4px 0 ${MD.cardEdge}`, ...extra }),
   tertiaryBtn: (extra = {}) => ({ ...base, background:MD.tertiaryC, color:MD.onTertiaryC, borderRadius:MD.rFull, minHeight:48, padding:"0 22px", ...TYPE.labelL, ...extra }),
   outlined: (extra = {}) => ({ ...base, background:"transparent", color:MD.primary, border:`1px solid ${MD.outline}`, borderRadius:MD.rFull, minHeight:48, padding:"0 22px", ...TYPE.labelL, ...extra }),
   text: (extra = {}) => ({ ...base, background:"transparent", color:MD.primary, borderRadius:MD.rFull, minHeight:44, padding:"0 14px", ...TYPE.labelL, ...extra }),
@@ -116,14 +123,14 @@ export const M3 = {
   iconTonal: (extra = {}) => ({ ...base, width:48, height:48, borderRadius:MD.rFull, background:MD.secondaryC, color:MD.onSecondaryC, fontSize:20, padding:0, ...extra }),
   fab: (extra = {}) => ({ ...base, minHeight:56, padding:"0 20px", borderRadius:MD.rM, background:MD.primaryC, color:MD.onPrimaryC, ...TYPE.titleM, boxShadow:MD.shadow, ...extra }),
   // การ์ด
-  card: (extra = {}) => ({ background:MD.surfLow, borderRadius:MD.rXL, color:MD.onSurface, ...extra }),
+  card: (extra = {}) => ({ background:MD.surfLowest, borderRadius:24, border:`2px solid ${MD.cardBorder}`, boxShadow:`0 4px 0 ${MD.cardEdge}`, color:MD.onSurface, ...extra }),
   cardHigh: (extra = {}) => ({ background:MD.surfHigh, borderRadius:MD.rXL, color:MD.onSurface, ...extra }),
   cardElev: (extra = {}) => ({ background:MD.surfLowest, borderRadius:MD.rXL, boxShadow:MD.shadow, color:MD.onSurface, ...extra }),
   cardOutl: (extra = {}) => ({ background:MD.surface, borderRadius:MD.rXL, border:`1px solid ${MD.outlineV}`, color:MD.onSurface, ...extra }),
   chip: (on = false, extra = {}) => ({ ...base, minHeight:32, padding:"0 12px", borderRadius:MD.rXS, ...TYPE.labelL, background:on ? MD.secondaryC : "transparent", color:on ? MD.onSecondaryC : MD.onSurfaceV, border:`1px solid ${on ? "transparent" : MD.outlineV}`, ...extra }),
   assist: (extra = {}) => ({ display:"inline-flex", alignItems:"center", gap:6, minHeight:36, padding:"0 12px", borderRadius:MD.rFull, background:MD.surfHigh, color:MD.onSurface, ...TYPE.labelL, ...extra }),
-  listItem: (extra = {}) => ({ display:"flex", alignItems:"center", gap:14, minHeight:72, padding:"12px 16px", width:"100%", textAlign:"left", cursor:"pointer", border:"none", background:MD.surfLow, color:MD.onSurface, fontFamily:FONT, borderRadius:MD.rL, ...extra }),
-  sectionTitle: (extra = {}) => ({ ...TYPE.titleM, color:MD.onSurfaceV, margin:"18px 4px 10px", ...extra }),
+  listItem: (extra = {}) => ({ display:"flex", alignItems:"center", gap:14, minHeight:72, padding:"12px 16px", width:"100%", textAlign:"left", cursor:"pointer", border:"none", background:MD.surfLowest, border:`2px solid ${MD.cardBorder}`, boxShadow:`0 4px 0 ${MD.cardEdge}`, color:MD.onSurface, fontFamily:FONT, borderRadius:22, ...extra }),
+  sectionTitle: (extra = {}) => ({ ...TYPE.titleL, color:MD.onSurface, margin:"20px 4px 12px", ...extra }),
 };
 
 // ── 4) รูปทรง expressive (M3 shapes) ───────────────────
@@ -180,18 +187,19 @@ const NavIcon = ({ id, on }) => {
   }
 };
 // Navigation bar M3: เต็มความกว้าง สูง 80 · ตัวที่เลือกมี pill (secondaryContainer) หลังไอคอน
+const NAV_ON = { home:MD.primary, learnhub:MD.tertiary, playhub:MD.secondary, me:MD.accent };
 export function M3NavBar({ tabs, tab, onTab }) {
   return (
-    <nav style={{ position:"fixed", left:0, right:0, bottom:0, zIndex:120, background:MD.surf, paddingBottom:"env(safe-area-inset-bottom, 0px)", boxShadow:"0 -1px 0 var(--md-outline-variant)" }}>
+    <nav style={{ position:"fixed", left:0, right:0, bottom:0, zIndex:120, background:MD.surfLowest, paddingBottom:"env(safe-area-inset-bottom, 0px)", borderTop:`2px solid ${MD.cardBorder}` }}>
       <div style={{ maxWidth:560, margin:"0 auto", display:"flex", height:80 }}>
         {tabs.map(([k, label]) => {
           const on = tab === k;
           return (
             <button key={k} onClick={() => onTab(k)} aria-current={on ? "page" : undefined} style={{ flex:1, border:"none", background:"transparent", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:4, fontFamily:FONT, color: on ? MD.onSurface : MD.onSurfaceV, padding:"12px 0 16px" }}>
-              <span style={{ width:64, height:32, borderRadius:999, display:"flex", alignItems:"center", justifyContent:"center", background: on ? MD.secondaryC : "transparent", color: on ? MD.onSecondaryC : MD.onSurfaceV, transition:`background .25s, transform .3s ${MD.spring}`, transform: on ? "scale(1)" : "scale(.92)" }}>
+              <span style={{ width:64, height:32, borderRadius:999, display:"flex", alignItems:"center", justifyContent:"center", background: on ? NAV_ON[k] || MD.primary : "transparent", color: on ? (k === "playhub" ? MD.onSecondary : "#fff") : MD.outline, transition:"background .2s"}}>
                 <NavIcon id={k} on={on} />
               </span>
-              <span style={{ ...TYPE.labelM, fontWeight: on ? 700 : 600 }}>{label}</span>
+              <span style={{ ...TYPE.labelM, fontWeight: on ? 600 : 500, color: on ? MD.onSurface : MD.onSurfaceV }}>{label}</span>
             </button>
           );
         })}
@@ -271,6 +279,8 @@ export const M3_CSS = `
 @keyframes m3Pop { 0% { transform: scale(.6); opacity:0 } 60% { transform: scale(1.08) } 100% { transform: scale(1); opacity:1 } }
 button { -webkit-tap-highlight-color: transparent; }
 .m3-press { transition: transform .18s cubic-bezier(.34,1.56,.64,1) !important; }
+.vp-3d { box-shadow: 0 var(--d, 5px) 0 var(--edge, #E8DFCF) !important; transition: transform .08s ease, box-shadow .08s ease !important; }
+.vp-3d:active { transform: translateY(calc(var(--d, 5px) - 1px)) !important; box-shadow: 0 1px 0 var(--edge, #E8DFCF) !important; }
 .m3-press:active { transform: scale(.95) !important; }
 @media (prefers-reduced-motion: reduce) { .m3-press, .m3-press:active { transform: none !important; } }
 `;

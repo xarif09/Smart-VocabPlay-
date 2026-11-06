@@ -205,7 +205,7 @@ const shot = (p, n) => p.screenshot({ path: `${OUT}/${n}.png` });
     res.push({ label: 'pics quiz-has-img', ok: (await p.locator('img[alt]').count()) >= 1 });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await p.waitForTimeout(600);
     await shot(p, 'mobile-pics-2-card'); const r2 = await audit(p, 'pics card'); res.push(r2); if (r2.overlaps.length || r2.hScroll) bad('pics card', r2);
-    await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=Listen'); await p.waitForTimeout(300); await p.click('button:has-text("🔊") >> nth=1', { force: true }); await p.waitForTimeout(600);
+    await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('text=Listen'); await p.waitForTimeout(300); await p.locator('button[aria-label="ฟังคำ"]').first().dispatchEvent('click'); await p.waitForTimeout(600);
     await shot(p, 'mobile-pics-3-listen'); const r3 = await audit(p, 'pics listen'); res.push(r3); if (r3.overlaps.length || r3.hScroll) bad('pics listen', r3);
     res.push({ label: 'pics listen-imgs', n: await p.locator('img[alt]').count() });
     await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.click('button[aria-label="ย้อนกลับ"], button:has-text("‹")'); await p.locator('button', { hasText: /^Colors/ }).last().click(); await p.click('text=Picture Match'); await p.waitForTimeout(400);

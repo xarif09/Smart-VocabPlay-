@@ -1,7 +1,7 @@
 // Word Runner 3D — วิ่ง 3 เลน ฟังคำ แล้ววิ่งชนป้ายรูปที่ถูก (three.js โหลดเฉพาะตอนเปิดเกม)
 // กราฟิก: ท้องฟ้าจำลองบรรยากาศ (Sky) + แสงสะท้อนจากท้องฟ้า (PMREM) · เนินเขาต่อเนื่องไร้รอยต่อ · หญ้าหลายพันใบไหวตามลม
 //         เมฆนุ่ม · น้ำทะเลสะท้อนแสง (ชายหาด) · เงานุ่ม · bloom · อนุภาค · กล้องสั่น
-// ตัวละคร 5 ตัว: จิ้งจอก (glTF มีท่าวิ่งจริง · CC-BY 4.0) · หุ่นยนต์ (glTF · CC0) · แมวส้ม/กระต่าย/แพนด้า (ปั้นด้วยโค้ด มีท่าวิ่ง)
+// ตัวละคร: สัตว์จากคลังคำศัพท์ 15 ตัว (มีท่าวิ่งจริง · Quaternius CC0 · Fox CC-BY) + เด็ก/หุ่นยนต์ · ของสะสมระหว่างทาง = คำศัพท์ในหมวด (runner/collectibles.js)
 // สีของโลก 3D เป็นงานศิลป์ของฉาก (ไม่ใช่สี UI) · ปุ่ม/HUD ใช้โทเค็นจาก App ผ่าน ui.tokens
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -13,6 +13,7 @@ import { Water } from "three/examples/jsm/objects/Water.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { setupEnvironment } from "./runner/environment.js";
 import { loadPropKit, faceRoadRotation } from "./runner/props.js";
+import { createCollectibles, PICK_Y } from "./runner/collectibles.js";
 
 const BASE = (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.BASE_URL) || "/";
 const L = 120;                         // ความยาวช่วงพื้นที่วนซ้ำ (เนินเขา/หญ้าต่อกันพอดี)
@@ -36,18 +37,40 @@ const CAT_THEME = { animals:"jungle", nature:"jungle", fruits:"candy", food:"can
 export const themeKey = catId => CAT_THEME[catId] || "park";
 export const themeOf = catId => THEMES[themeKey(catId)];
 
+// ตัวละคร: สัตว์จากคลังคำศัพท์ (word = คำในหมวด Animals · h = ความสูงเป้าหมายในโลก 3D) + เด็ก/หุ่นยนต์ (ไม่ใช่คำศัพท์)
+// ทุกตัวหน้าอยู่ทาง +z · ไฟล์ใน public/models และ public/models/animals (CREDITS.md)
 export const CHARS = [
-  { id:"fox",      name:"จิ้งจอก",   emoji:"🦊", url:"models/fox.glb",      scale:.021, run:"Run",       idle:"Survey" },
-  { id:"shiba",    name:"หมาชิบะ",   emoji:"🐕", url:"models/shiba.glb",    scale:.6,   run:"Gallop",    idle:"Idle", happy:"Gallop_Jump" },
+  { id:"fox",      word:"FOX",      name:"จิ้งจอก",   emoji:"🦊", url:"models/fox.glb",               h:1.15, run:"Run",     idle:"Survey" },
+  { id:"shiba",    word:"DOG",      name:"หมา",      emoji:"🐕", url:"models/shiba.glb",             h:1.2,  run:"Gallop",  idle:"Idle", happy:"Gallop_Jump" },
+  { id:"cow",      word:"COW",      name:"วัว",      emoji:"🐄", url:"models/animals/cow.glb",       h:1.45, run:"Gallop",  idle:"Idle", happy:"Gallop_Jump" },
+  { id:"horse",    word:"HORSE",    name:"ม้า",      emoji:"🐴", url:"models/horse.glb",             h:1.6,  run:"Gallop",  idle:"Idle", happy:"Gallop_Jump" },
+  { id:"stag",     word:"DEER",     name:"กวาง",     emoji:"🦌", url:"models/animals/stag.glb",      h:1.7,  run:"Gallop",  idle:"Idle", happy:"Gallop_Jump" },
+  { id:"donkey",   word:"DONKEY",   name:"ลา",       emoji:"🫏", url:"models/animals/donkey.glb",    h:1.45, run:"Gallop",  idle:"Idle", happy:"Gallop_Jump" },
+  { id:"llama",    word:"LLAMA",    name:"ลามะ",     emoji:"🦙", url:"models/animals/llama.glb",     h:1.55, run:"Gallop",  idle:"Idle", happy:"Gallop_Jump" },
+  { id:"wolf",     word:"WOLF",     name:"หมาป่า",   emoji:"🐺", url:"models/animals/wolf.glb",      h:1.25, run:"Gallop",  idle:"Idle", happy:"Gallop_Jump" },
+  { id:"trex",     word:"DINOSAUR", name:"ไดโนเสาร์", emoji:"🦖", url:"models/animals/trex.glb",      h:1.75, run:"Run",     idle:"Idle", happy:"Jump" },
+  { id:"frog",     word:"FROG",     name:"กบ",       emoji:"🐸", url:"models/animals/frog.glb",      h:.6,   run:"Jump",    idle:"Idle", runRate:.75 },
+  { id:"mouse",    word:"MOUSE",    name:"หนู",      emoji:"🐭", url:"models/animals/mouse.glb",     h:.6,   run:"Run",     idle:"Idle", happy:"Jump" },
+  { id:"crab",     word:"CRAB",     name:"ปู",       emoji:"🦀", url:"models/animals/crab.glb",      h:.8,   run:"Walk",    idle:"Idle", happy:"Yes", sad:"No", runRate:1.5 },
+  { id:"snake",    word:"SNAKE",    name:"งู",       emoji:"🐍", url:"models/animals/snake.glb",     h:.65,  run:"Walk",    idle:"Idle", happy:"Jump", runRate:1.4 },
+  { id:"bee",      word:"BEE",      name:"ผึ้ง",      emoji:"🐝", url:"models/animals/bee.glb",       h:.9,   run:"Flying",  idle:"Flying", fly:.9 },
+  { id:"spider",   word:"SPIDER",   name:"แมงมุม",   emoji:"🕷️", url:"models/animals/spider.glb",    h:.75,  run:"Walk",    idle:"Idle", happy:"Jump", runRate:1.4 },
   { id:"bunnykid", name:"กระต่ายน้อย", emoji:"🐰", url:"models/bunnykid.glb", scale:.5,   run:"Run",       idle:"Idle", happy:"Wave", sad:"No" },
   { id:"redpanda", name:"แพนด้าแดง", emoji:"🦝", url:"models/redpanda.glb", scale:.62,  run:"Run",       idle:"Idle", happy:"Wave", sad:"No" },
   { id:"mage",     name:"พ่อมดน้อย", emoji:"🧙", url:"models/mage.glb",     scale:.64,  run:"Running_A", idle:"Idle", happy:"Cheer" },
   { id:"robot",    name:"หุ่นยนต์",  emoji:"🤖", url:"models/robot.glb",    scale:.42,  run:"Running",   idle:"Idle", happy:"Jump", sad:"No" },
-  { id:"deer",     name:"กวาง",     emoji:"🦌", url:"models/deer.glb",     scale:.42,  run:"Gallop",    idle:"Idle", happy:"Gallop_Jump" },
-  { id:"horse",    name:"ม้า",      emoji:"🐴", url:"models/horse.glb",    scale:.37,  run:"Gallop",    idle:"Idle", happy:"Gallop_Jump" },
 ];
+const ANIMAL_CHARS = CHARS.filter(c => c.word), KID_CHARS = CHARS.filter(c => !c.word);
+// รายการตัวละครที่เลือกได้ตามหมวด: หมวดสัตว์ = สัตว์ในคลังคำเท่านั้น · ป่า/สวน = สัตว์ก่อน · หมวดอื่น = เด็ก + สัตว์
+export const charsFor = (catId, words = []) => {
+  const have = new Set(words.map(w => (w.word || "").toUpperCase()));
+  const animals = [...ANIMAL_CHARS].sort((a, b) => have.has(b.word) - have.has(a.word));
+  if (catId === "animals") return animals;
+  const tk = themeKey(catId);
+  return tk === "jungle" || tk === "park" ? [...animals, ...KID_CHARS] : [...KID_CHARS, ...animals];
+};
 const CHAR_KEY = "smart-vocabplay:runner-char";
-const loadChar = () => { try { const v = localStorage.getItem(CHAR_KEY); return CHARS.some(c => c.id === v) ? v : "fox"; } catch (_) { return "fox"; } };
+const loadChar = list => { try { const v = localStorage.getItem(CHAR_KEY); return list.some(c => c.id === v) ? v : list[0].id; } catch (_) { return list[0].id; } };
 const saveChar = id => { try { localStorage.setItem(CHAR_KEY, id); } catch (_) {} };
 
 // ── ความสูงเนินเขา (ฟังก์ชันเดียวกันใน JS และ GLSL · วนซ้ำทุก L หน่วย จึงต่อกันไร้รอย) ──
@@ -234,8 +257,10 @@ function makeCard(tex, aspect) {
 export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }) {
   const host = useRef(null);
   const api = useRef({});
-  const [hud, setHud] = useState({ round:0, score:0, hearts:3, coins:0, target:null, on:false, msg:null, loading:false });
-  const [charId, setCharId] = useState(loadChar);
+  const [hud, setHud] = useState({ round:0, score:0, hearts:3, basket:[], target:null, on:false, msg:null, loading:false });
+  const [pops, setPops] = useState([]);       // คำที่ลอยขึ้นตอนเก็บของ (HTML label ~1 วิ)
+  const charList = useRef(null); if (!charList.current) charList.current = charsFor(catId, words);
+  const [charId, setCharId] = useState(() => loadChar(charList.current));
   const th = themeOf(catId);
 
   useEffect(() => {
@@ -384,7 +409,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     const shadowBlob = new THREE.Mesh(new THREE.CircleGeometry(.8, 32), new THREE.MeshBasicMaterial({ color:"#000", transparent:true, opacity:.2, depthWrite:false }));
     shadowBlob.rotation.x = -Math.PI / 2; shadowBlob.position.y = .04; player.add(shadowBlob);
     const rig = new THREE.Group(); player.add(rig); if (car) { rig.position.set(0, .55, .1); rig.scale.setScalar(.62); }
-    const S = { lane:1, x:0, speed:11, scroll:0, row:null, round:0, score:0, hearts:3, coinN:0, shake:0, flash:0, t:0, jump:0, over:false, started:false, turn:0 };
+    const S = { lane:1, x:0, speed:11, scroll:0, row:null, round:0, score:0, hearts:3, basket:[], shake:0, flash:0, t:0, jump:0, over:false, started:false, turn:0 };
     let C = null, mixer = null, actions = {}, cur = null, charToken = 0;
     const gltfCache = {};
     const playAct = (name, once) => { const a = actions[name]; if (!a) return;
@@ -400,7 +425,10 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       try {
         const gltf = gltfCache[def.url] || (gltfCache[def.url] = await new GLTFLoader().loadAsync(BASE + def.url));
         if (tok !== charToken) return;
-        const m = gltf.scene; m.scale.setScalar(def.scale); m.traverse(o => { if (o.isMesh) { o.castShadow = true; o.frustumCulled = false; } });
+        const m = gltf.scene; m.traverse(o => { if (o.isMesh) { o.castShadow = true; o.frustumCulled = false; } });
+        if (def.h) { m.scale.setScalar(1); m.position.set(0, 0, 0); m.updateMatrixWorld(true); const b = new THREE.Box3().setFromObject(m); const hh = Math.max(.001, b.max.y - b.min.y);
+          const k = def.h / hh; m.scale.setScalar(k); m.position.y = -b.min.y * k; }
+        else m.scale.setScalar(def.scale);
         rig.add(m); mixer = new THREE.AnimationMixer(m);
         gltf.animations.forEach(a => { actions[a.name] = mixer.clipAction(a); });
         C = { g:m, def, gltf:true };
@@ -422,9 +450,8 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     const sline = new THREE.LineSegments(slg, new THREE.LineBasicMaterial({ color:"#ffffff", transparent:true, opacity:0, fog:false })); sline.frustumCulled = false; scene.add(sline);
     const slSeed = Array.from({ length:SL }, () => ({ x:(Math.random() - .5) * 16, y:Math.random() * 6 + .3, z:-Math.random() * 40 }));
 
-    // เหรียญ
-    const coinGeo = new THREE.CylinderGeometry(.42, .42, .1, 32), coinMat = new THREE.MeshStandardMaterial({ color:"#fcd34d", metalness:1, roughness:.18, emissive:"#f59e0b", emissiveIntensity:.9 });
-    const coins = [];
+    // ของสะสม = คำศัพท์ในหมวด (โมเดล 3D จริง / การ์ดรูปลอยได้) แทนเหรียญทอง
+    const items = [];
 
     // bloom
     let composer = null;
@@ -432,7 +459,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       composer.addPass(new UnrealBloomPass(new THREE.Vector2(W(), H()), .5, .4, 1.0)); composer.addPass(new OutputPass()); } catch (e) { composer = null; }
 
     // ── สถานะเกม ──
-    setChar(loadChar());
+    setChar(loadChar(charList.current));
     const pool = words.length >= 3 ? words : words.concat(words, words);
     const loader = new THREE.TextureLoader(); const texCache = new Map();
     const texFor = w => new Promise(res => {
@@ -441,6 +468,22 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       if (!url) return fb();
       loader.load(url, t => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; const v = { tex:t, aspect:(t.image.width / t.image.height) || 4 / 3 }; texCache.set(w.id, v); res(v); }, undefined, fb);
     });
+    const col = createCollectibles({ THREE, BASE, words:pool.filter((w, i, a) => a.findIndex(x => x.id === w.id) === i), texFor, glow });
+    col.prepare().catch(() => {});
+    const spawnItems = async (target) => {
+      const list = col.pick(5, target.id); const scroll0 = S.scroll;
+      const lanes = list.map(() => Math.floor(Math.random() * 3));
+      await Promise.all(list.map(async (w, k) => { let it; try { it = await col.spawn(w); } catch { return; } if (!it || S.over || !alive) return;
+        it.obj.position.set(LANES[lanes[k]], PICK_Y, ROW_Z + 12 + k * 8.5 + (S.scroll - scroll0));
+        if (it.obj.position.z > -6) return;   // โหลดช้าจนเลยมาแล้ว
+        it.ph = Math.random() * 6; scene.add(it.obj); items.push(it); }));
+    };
+    const popWord = (it) => {
+      const v = it.obj.getWorldPosition(new THREE.Vector3()); v.y += .6; v.project(camera);
+      const id = Math.random().toString(36).slice(2);
+      setPops(p => [...p.slice(-3), { id, text:it.word.word, x:(v.x + 1) / 2 * 100, y:(1 - v.y) / 2 * 100 }]);
+      setTimeout(() => { if (alive) setPops(p => p.filter(q => q.id !== id)); }, 1100);
+    };
     const used = new Set();
     const pickTarget = () => { const cand = pool.filter(w => !used.has(w.id)); const arr = cand.length ? cand : pool; const w = arr[Math.floor(Math.random() * arr.length)]; used.add(w.id); return w; };
     const spawnRow = async pre => {
@@ -455,11 +498,11 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
         return { ...c, halo, w, lane:i }; });
       const arch = new THREE.Mesh(new THREE.TorusGeometry(4.7, .1, 10, 64, Math.PI), new THREE.MeshStandardMaterial({ color:"#ffffff", emissive:"#f0abfc", emissiveIntensity:2.4 })); arch.position.set(0, .1, -.5); g.add(arch);
       S.row = { g, cards, target, hit:false }; S.round += 1;
-      for (let k = 0; k < 6; k++) { const c = new THREE.Mesh(coinGeo, coinMat); c.rotation.x = Math.PI / 2; c.castShadow = true; const ln = Math.floor(Math.random() * 3); c.position.set(LANES[ln], .95, ROW_Z + 10 + k * 6.5); scene.add(c); coins.push(c); }
+      spawnItems(target);
       setHud(h => ({ ...h, round:S.round, target }));
       if (!pre) ui.say(target);
     };
-    const finish = () => { S.over = true; setHud(h => ({ ...h, on:false })); if (C?.def?.idle) playAct(C.def.idle); setTimeout(() => track.finish(S.score, ROUNDS, { label:`เก็บรูปถูก ${S.score}/${ROUNDS} · 🪙 ${S.coinN}` }), 1000); };
+    const finish = () => { S.over = true; setHud(h => ({ ...h, on:false })); if (C?.def?.idle) playAct(C.def.idle); setTimeout(() => track.finish(S.score, ROUNDS, { label:`เก็บรูปถูก ${S.score}/${ROUNDS} · 🧺 เก็บของได้ ${S.basket.length} ชิ้น` }), 1000); };
     const resolveRow = () => {
       const r = S.row; if (!r || r.hit) return; r.hit = true;
       const card = r.cards.find(c => c.lane === S.lane);
@@ -478,6 +521,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       left: () => move(-1), right: () => move(1),
       lane: i => { if (!S.started || S.over) return; if (i !== S.lane) { S.lane = i; sfx.tap(); } },
       setChar: id => { saveChar(id); setChar(id); },
+      peek: () => ({ S, items:items.length, models:col.modelCount, char:C?.def?.id }),   // ใช้ทดสอบ
     };
     let sx = null; const dn = e => { sx = e.clientX; };
     const up = e => { if (sx == null) return; const dx = e.clientX - sx; if (Math.abs(dx) > 24) move(dx > 0 ? 1 : -1); else { const r = renderer.domElement.getBoundingClientRect(); const fx = (e.clientX - r.left) / r.width; move(fx < .36 ? -1 : fx > .64 ? 1 : 0); } sx = null; };
@@ -508,8 +552,8 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       S.jump = Math.max(0, S.jump - dt * 2);
       const hop = S.jump > 0 ? Math.sin((1 - S.jump) * Math.PI) * 1.7 : 0;
       if (car) { car.g.position.y = hop + Math.sin(S.t * 30) * .015 * (running ? 1 : 0); car.wheels.forEach(w => { w.rotation.x -= dz * 3.2; }); rig.position.y = .55 + hop; }
-      else rig.position.y = hop;
-      if (mixer) mixer.update(dt * (running ? .9 + S.speed / 22 : 1));
+      else rig.position.y = hop + (C?.def?.fly ? C.def.fly + Math.sin(S.t * 3) * .12 : 0);
+      if (mixer) mixer.update(dt * (running ? (.9 + S.speed / 22) * (C?.def?.runRate || 1) : 1));
       if (C?.proc) { const w = running ? 13 + S.speed * .3 : 2.5, a = running ? .9 : .08, ph = S.t * w;
         C.legs[0].rotation.x = Math.sin(ph) * a; C.legs[1].rotation.x = -Math.sin(ph) * a;
         C.arms[0].rotation.x = -Math.sin(ph) * a * .9; C.arms[1].rotation.x = Math.sin(ph) * a * .9;
@@ -527,9 +571,13 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
           if (c.g.userData.fall) { c.g.rotation.x -= dt * 5; c.g.position.y -= dt * 5; } });
         if (!r.hit && r.g.position.z > -.6) resolveRow(); }
       // เหรียญ
-      for (let i = coins.length - 1; i >= 0; i--) { const c = coins[i]; c.position.z += dz; c.rotation.z += dt * 5; c.position.y = .95 + Math.sin(S.t * 4 + i) * .1;
-        if (Math.abs(c.position.z) < .9 && Math.abs(c.position.x - S.x) < 1 && hop < 1.2) { burst(c.position, ["#fde047","#fbbf24","#ffffff"], 30, 5); scene.remove(c); coins.splice(i, 1); S.coinN += 1; sfx.coin(); setHud(h => ({ ...h, coins:S.coinN })); }
-        else if (c.position.z > 9) { scene.remove(c); coins.splice(i, 1); } }
+      for (let i = items.length - 1; i >= 0; i--) { const it = items[i], o = it.obj; o.position.z += dz;
+        if (it.popT != null) { it.popT += dt; const k = it.popT / .28; o.scale.setScalar(1 + k * .9); o.position.y += dt * 3; if (k >= 1) { scene.remove(o); items.splice(i, 1); } continue; }
+        it.update(dt, S.t); o.position.y = PICK_Y + Math.sin(S.t * 3 + it.ph) * .12;
+        if (running && Math.abs(o.position.z) < .9 && Math.abs(o.position.x - S.x) < 1 && hop < 1.2) {
+          it.popT = 0; burst(o.position, ["#fde047","#f472b6","#22d3ee","#ffffff"], 45, 6, 1.1); sfx.coin(); popWord(it);
+          S.basket.push(it.word); setHud(h => ({ ...h, basket:S.basket.slice() })); }
+        else if (o.position.z > 9) { scene.remove(o); items.splice(i, 1); } }
       // อนุภาค
       for (let i = 0; i < PN; i++) { if (pLife[i] <= 0) continue; pLife[i] -= dt; const q = pVel[i]; q.y -= 13 * dt; pPos[i * 3] += q.x * dt; pPos[i * 3 + 1] = Math.max(.05, pPos[i * 3 + 1] + q.y * dt); pPos[i * 3 + 2] += q.z * dt + dz; if (pLife[i] <= 0) pPos[i * 3 + 1] = -999; }
       pg.attributes.position.needsUpdate = true;
@@ -552,32 +600,48 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     return () => { alive = false; S.over = true; cancelAnimationFrame(raf); ro.disconnect(); window.removeEventListener("keydown", key);
       renderer.domElement.removeEventListener("pointerdown", dn); renderer.domElement.removeEventListener("pointerup", up);
       scene.traverse(o => { o.geometry?.dispose?.(); const m = o.material; (Array.isArray(m) ? m : m ? [m] : []).forEach(x => { x.map?.dispose?.(); x.dispose?.(); }); });
-      env?.dispose?.(); kit?.dispose?.(); pmrem.dispose(); composer?.dispose?.(); renderer.dispose(); renderer.domElement.remove(); };
+      env?.dispose?.(); kit?.dispose?.(); col.dispose(); pmrem.dispose(); composer?.dispose?.(); renderer.dispose(); renderer.domElement.remove(); };
   }, []); // eslint-disable-line
 
   const tk = ui.tokens;
   const btn = { minWidth:72, minHeight:64, borderRadius:32, border:"none", background:tk.card, color:tk.ink, fontSize:30, fontWeight:900, cursor:"pointer", boxShadow:tk.shadow };
+  const meaningOf = c => (words.find(w => (w.word || "").toUpperCase() === c.word) || {}).meaning || c.name;
+  const pickChar = c => { setCharId(c.id); api.current.setChar?.(c.id); if (c.word) ui.say({ word:c.word, meaning:meaningOf(c) }); else sfx.tap(); };
+  const icon = w => { const u = ui.imageUrl(w); return u ? <img src={u} alt="" style={{ width:"100%", height:"100%", objectFit:"cover" }} /> : <span style={{ fontSize:18, lineHeight:1 }}>{w.emoji || "⭐"}</span>; };
+  const shadowTxt = "0 2px 6px rgba(0,0,0,.6)";
   return (
     <div style={{ position:"relative", display:"flex", flexDirection:"column", gap:8 }}>
+      <style>{`@keyframes r3dPop{0%{transform:translate(-50%,-30%) scale(.6);opacity:0}15%{transform:translate(-50%,-60%) scale(1.15);opacity:1}70%{opacity:1}100%{transform:translate(-50%,-260%) scale(1);opacity:0}}
+        @keyframes r3dBump{0%{transform:scale(1)}40%{transform:scale(1.25)}100%{transform:scale(1)}}`}</style>
       {hud.target && hud.on && <Prompt w={hud.target} onClick={() => ui.say(hud.target)} />}
       <div style={{ position:"relative", height:hud.on || hud.round ? "min(58vh, 560px)" : "min(66vh, 620px)", borderRadius:28, overflow:"hidden", background:"#000" }}>
         <div ref={host} data-runner3d style={{ position:"absolute", inset:0 }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 55%, rgba(0,0,0,.28))" }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 40%, rgba(239,68,68,.75))", opacity:"var(--flash, 0)" }} />
-        {hud.on && <div style={{ position:"absolute", left:10, top:10, right:10, display:"flex", justifyContent:"space-between", pointerEvents:"none", fontWeight:900, fontSize:16, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.6)" }}>
-          <span>🏃 {Math.min(hud.round, ROUNDS)}/{ROUNDS} · ⭐ {hud.score}</span><span>🪙 {hud.coins} · {"❤️".repeat(Math.max(0, hud.hearts))}</span>
+        {hud.on && <div style={{ position:"absolute", left:10, top:10, right:10, display:"flex", justifyContent:"space-between", pointerEvents:"none", fontWeight:900, fontSize:16, color:"#fff", textShadow:shadowTxt }}>
+          <span>🏃 {Math.min(hud.round, ROUNDS)}/{ROUNDS} · ⭐ {hud.score}</span><span>{"❤️".repeat(Math.max(0, hud.hearts))}</span>
+        </div>}
+        {pops.map(p => <div key={p.id} style={{ position:"absolute", left:`${p.x}%`, top:`${p.y}%`, pointerEvents:"none", animation:"r3dPop 1.05s ease-out forwards",
+          padding:"4px 12px", borderRadius:999, background:tk.card, color:tk.ink, fontWeight:900, fontSize:20, letterSpacing:.5, boxShadow:"0 4px 14px rgba(0,0,0,.35)", whiteSpace:"nowrap" }}>{p.text}</div>)}
+        {(hud.on || hud.round > 0) && <div key={hud.basket.length} style={{ position:"absolute", left:10, bottom:10, display:"flex", alignItems:"center", gap:4, padding:"4px 8px 4px 6px", borderRadius:999,
+          background:"rgba(0,0,0,.38)", pointerEvents:"none", animation:hud.basket.length ? "r3dBump .35s ease-out" : "none" }}>
+          <span style={{ fontSize:24, lineHeight:1 }}>🧺</span>
+          <span style={{ fontWeight:900, fontSize:18, color:"#fff", textShadow:shadowTxt, minWidth:16 }}>{hud.basket.length}</span>
+          {hud.basket.slice(-4).map((w, i) => <span key={i} style={{ width:28, height:28, borderRadius:14, overflow:"hidden", background:"#fff", display:"flex", alignItems:"center", justifyContent:"center", border:"2px solid #fff" }}>{icon(w)}</span>)}
         </div>}
         {!hud.on && !hud.round && <>
           <div style={{ position:"absolute", top:14, left:0, right:0, textAlign:"center", pointerEvents:"none" }}>
             <div style={{ fontWeight:900, fontSize:26, color:"#fff", textShadow:"0 3px 12px rgba(0,0,0,.55)" }}>Word Runner 3D</div>
-            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.7)" }}>{th.name} · ฟังคำ แล้ววิ่งชนป้ายรูปที่ถูก</div>
+            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.7)" }}>{th.name} · ฟังคำ แล้ววิ่งชนป้ายรูปที่ถูก · 🧺 เก็บของระหว่างทาง</div>
           </div>
           <div style={{ position:"absolute", left:0, right:0, bottom:0, padding:"30px 10px 12px", display:"flex", flexDirection:"column", alignItems:"center", gap:8, background:"linear-gradient(180deg, transparent, rgba(0,0,0,.55))" }}>
-            <div style={{ fontWeight:800, fontSize:13, color:"#fff" }}>เลือกตัวละคร {hud.loading && "· กำลังโหลด…"}</div>
+            <div style={{ fontWeight:800, fontSize:13, color:"#fff" }}>เลือกตัวละคร (แตะเพื่อฟังชื่อ) {hud.loading && "· กำลังโหลด…"}</div>
             <div style={{ display:"flex", gap:5, flexWrap:"nowrap", overflowX:"auto", maxWidth:"100%", padding:"2px 4px", scrollbarWidth:"none" }}>
-              {CHARS.map(c => <button key={c.id} onClick={() => { setCharId(c.id); api.current.setChar?.(c.id); sfx.tap(); }} className="m3-press" aria-label={c.name}
-                style={{ flex:"none", width:62, minHeight:58, padding:"4px 2px", borderRadius:18, border:`3px solid ${charId === c.id ? tk.primary : "transparent"}`, background:charId === c.id ? tk.card : "rgba(255,255,255,.75)", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", fontFamily:"inherit" }}>
-                <span style={{ fontSize:26, lineHeight:1 }}>{c.emoji}</span><span style={{ fontSize:10, fontWeight:800, color:tk.ink }}>{c.name}</span></button>)}
+              {charList.current.map(c => <button key={c.id} onClick={() => pickChar(c)} className="m3-press" aria-label={c.word ? `${c.word} ${meaningOf(c)}` : c.name}
+                style={{ flex:"none", width:68, minHeight:64, padding:"4px 2px", borderRadius:18, border:`3px solid ${charId === c.id ? tk.primary : "transparent"}`, background:charId === c.id ? tk.card : "rgba(255,255,255,.78)", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:1, fontFamily:"inherit" }}>
+                <span style={{ fontSize:24, lineHeight:1 }}>{c.emoji}</span>
+                {c.word && <span style={{ fontSize:10.5, fontWeight:900, color:tk.ink, letterSpacing:.2, lineHeight:1.1 }}>{c.word}</span>}
+                <span style={{ fontSize:10, fontWeight:700, color:tk.ink, opacity:c.word ? .75 : 1, lineHeight:1.1, whiteSpace:"nowrap", overflow:"hidden", maxWidth:64, textOverflow:"ellipsis" }}>{c.word ? meaningOf(c) : c.name}</span></button>)}
             </div>
             <button onClick={() => { ui.unlock?.(); api.current.start?.(); }} className="m3-press" style={{ ...btn, minWidth:200, fontSize:22, background:tk.primary, color:tk.onPrimary }}>▶ เริ่มวิ่ง!</button>
           </div>

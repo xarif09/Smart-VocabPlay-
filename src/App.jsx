@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef, useCallback, useMemo, createContext, useContext, lazy, Suspense } from "react";
 import { imageTitleOf, cachedImageUrl, fetchImageUrl, wikiPageUrl, bundledCount, bundledImageUrl } from "./images.js";
 const Runner3D = lazy(() => import("./Runner3D.jsx"));   // three.js โหลดเฉพาะตอนเปิดเกม 3D
+const Racer3D = lazy(() => import("./Racer3D.jsx"));
+const ActionStage3D = lazy(() => import("./ActionStage3D.jsx"));
+const FindRoom3D = lazy(() => import("./FindRoom3D.jsx"));
+const PenaltyKick3D = lazy(() => import("./PenaltyKick3D.jsx"));
 import { DIALOGUES, STORIES, PHONICS, GRAMMAR, DAYS, MONTHS, MONEY, numberWord, numberThai, timeWord, timeThai, LEVELS_TEST } from "./content.js";
 import { loadProgress, saveProgress, bumpStreak, starsFor, starsByWrong, STICKER_NEED, PETS, getPet, petLevel, EMPTY_PROGRESS,
   srsCorrect, srsWrong, isDue, isMastered, missionsForDate, ensureDaily, bumpDaily, EMPTY_DAILY, SHOP_ITEMS, today, weekStats,
@@ -16,7 +20,7 @@ import ttsManifest from "./ttsManifest.json";
 import { conceptFor, CONCEPT_WORDS } from "./Concept.jsx";
 import qrcode from "qrcode-generator";
 import { encodeSet, decodeSet, setLink, readIncomingSet } from "./share.js";
-import { MD, M3, TYPE, Shape, M3Switch, M3NavBar, M3TopBar, M3Sheet, WavyProgress, ButtonGroup, applyM3Theme, injectM3Css, isDarkTheme } from "./m3.jsx";
+import { MD, M3, TYPE, HFONT, WFONT, Shape, M3Switch, M3NavBar, M3TopBar, M3Sheet, WavyProgress, ButtonGroup, applyM3Theme, injectM3Css, isDarkTheme } from "./m3.jsx";
 
 // ═══════════════════════════════════════════════════════
 // SPEECH ENGINE — iOS-safe
@@ -42,6 +46,8 @@ const T = {
   secondaryC: MD.secondaryC, onSecondaryC: MD.onSecondaryC, tertiaryC: MD.tertiaryC, onTertiaryC: MD.onTertiaryC,
   outlineV: MD.outlineV, error: MD.error, errorC: MD.errorC, onErrorC: MD.onErrorC, ok: MD.ok, okC: MD.okC, onOkC: MD.onOkC,
   tertiary: MD.tertiary, accent: MD.accent, inverse: MD.inverseSurface, onInverse: MD.inverseOnSurface,
+  secondary: MD.secondary, onSecondary: MD.onSecondary, onTertiary: MD.onTertiary, onError: MD.onError,
+  primaryEdge: MD.primaryEdge, secondaryEdge: MD.secondaryEdge, tertiaryEdge: MD.tertiaryEdge, okEdge: MD.okEdge, errorEdge: MD.errorEdge, cardBorder: MD.cardBorder, cardEdge: MD.cardEdge,
   grad: MD.heroGrad,
   grad2: MD.heroGrad,
   grad3: `linear-gradient(135deg, ${MD.tertiary}, ${MD.accent})`,
@@ -234,21 +240,21 @@ const CATEGORIES = [
   { id:"fruits",   label:"Fruits",   thai:"ผลไม้",      emoji:"🍎", color:"#EF4444", games:["feed","quiz","spell","memory","speed"] },
   { id:"food",     label:"Food",     thai:"อาหาร",      emoji:"🍕", color:"#F97316", games:["feed","quiz","spell","memory"] },
   { id:"colors",   label:"Colors",   thai:"สี",         emoji:"🎨", color:"#8B5CF6", games:["colormix","quiz","match"] },
-  { id:"school",   label:"School",   thai:"โรงเรียน",   emoji:"🎒", color:"#3B82F6", games:["quiz","spell","memory"] },
+  { id:"school",   label:"School",   thai:"โรงเรียน",   emoji:"🎒", color:"#3B82F6", games:["findroom","quiz","spell","memory"] },
   { id:"body",     label:"Body",     thai:"ร่างกาย",    emoji:"👁️", color:"#EC4899", games:["bodydr","quiz"] },
   { id:"weather",  label:"Weather",  thai:"อากาศ",      emoji:"🌈", color:"#06B6D4", games:["dress","quiz"] },
   { id:"numbers",  label:"Numbers",  thai:"ตัวเลข",     emoji:"🔢", color:"#10B981", games:["count","quiz"] },
-  { id:"vehicles", label:"Vehicles", thai:"ยานพาหนะ",   emoji:"🚗", color:"#6366F1", games:["runner","quiz","spell","memory"] },
+  { id:"vehicles", label:"Vehicles", thai:"ยานพาหนะ",   emoji:"🚗", color:"#6366F1", games:["racer","runner","quiz","spell","memory"] },
   { id:"jobs",     label:"Jobs",     thai:"อาชีพ",      emoji:"👨‍⚕️",color:"#14B8A6", games:["quiz","memory"] },
-  { id:"clothes",  label:"Clothes",  thai:"เสื้อผ้า",   emoji:"👕", color:"#D946EF", games:["quiz","spell","memory"] },
-  { id:"home",     label:"Home",     thai:"ของในบ้าน",  emoji:"🏠", color:"#84CC16", games:["quiz","spell","memory"] },
+  { id:"clothes",  label:"Clothes",  thai:"เสื้อผ้า",   emoji:"👕", color:"#D946EF", games:["findroom","quiz","spell","memory"] },
+  { id:"home",     label:"Home",     thai:"ของในบ้าน",  emoji:"🏠", color:"#84CC16", games:["findroom","quiz","spell","memory"] },
   { id:"nature",   label:"Nature",   thai:"ธรรมชาติ",   emoji:"🌿", color:"#22C55E", games:["quiz","memory","speed"] },
-  { id:"sports",   label:"Sports",   thai:"กีฬา",       emoji:"⚽", color:"#60A5FA", games:["quiz","memory","speed"] },
+  { id:"sports",   label:"Sports",   thai:"กีฬา",       emoji:"⚽", color:"#60A5FA", games:["penalty","quiz","memory","speed"] },
   { id:"family",   label:"Family",   thai:"ครอบครัว",   emoji:"👨‍👩‍👧", color:"#FB7185", games:["quiz","memory","speed"] },
-  { id:"actions",  label:"Actions",  thai:"กริยา",      emoji:"🏃", color:"#F472B6", games:["quiz","spell","memory"] },
+  { id:"actions",  label:"Actions",  thai:"กริยา",      emoji:"🏃", color:"#F472B6", games:["action","quiz","spell","memory"] },
   { id:"feelings", label:"Feelings", thai:"ความรู้สึก", emoji:"😊", color:"#FBBF24", games:["quiz","memory","speed"] },
   { id:"shapes",   label:"Shapes",   thai:"รูปทรง",     emoji:"🔺", color:"#A78BFA", games:["quiz","spell","memory"] },
-  { id:"toys",     label:"Toys",     thai:"ของเล่น",    emoji:"🧸", color:"#F59E0B", games:["quiz","spell","memory","speed"] },
+  { id:"toys",     label:"Toys",     thai:"ของเล่น",    emoji:"🧸", color:"#F59E0B", games:["findroom","quiz","spell","memory","speed"] },
   { id:"places",   label:"Places",   thai:"สถานที่",    emoji:"🏫", color:"#2DD4BF", games:["quiz","spell","memory","speed"] },
 
   { id:"vegetables", label:"Vegetables", thai:"ผัก",          emoji:"🥦", color:"#65A30D", games:["feed","quiz","spell","memory","speed"] },
@@ -267,6 +273,13 @@ const EXTRA_GAMES = ["runner", "listen", "sentence", "speak", "mole", "balloon",
 CATEGORIES.forEach(c => { c.games.push(...EXTRA_GAMES); c.games = [...new Set(c.games)]; });   // เกมเฉพาะหมวดอยู่หน้าเสมอ
 
 // รูปปกหมวด = คำเสมือน { cat:"cover", word:<id> } → ดึงรูปจาก images.js key "cover|<id>"
+// สีประจำหมวด (สด + ขอบนูน) · v3.16
+const ACCENTS = { orange:["#FF9F1C","#D97F00","#fff"], red:["#FF5A5F","#D63E44","#fff"], purple:["#9B5CFF","#7539E0","#fff"], blue:["#2F8CFF","#1E6FD6","#fff"],
+  pink:["#FF5FA2","#D9407F","#fff"], cyan:["#12B5D6","#0A8FAD","#fff"], green:["#2EBD59","#20994A","#fff"], yellow:["#FFC531","#E0A200","#3A2A00"] };
+const CAT_ACCENT = { animals:"orange", food:"orange", toys:"orange", opposites:"orange", fruits:"red", family:"red", colors:"purple", shapes:"purple",
+  school:"blue", sports:"blue", vehicles:"blue", body:"pink", clothes:"pink", music:"pink", actions:"pink", weather:"cyan", technology:"cyan", time:"cyan", places:"cyan",
+  numbers:"green", nature:"green", home:"green", vegetables:"green", countries:"green", feelings:"yellow", jobs:"yellow" };
+const accentOf = id => { const a = ACCENTS[CAT_ACCENT[id] || "purple"]; return { fill:a[0], edge:a[1], on:a[2] }; };
 const coverWord = cat => ({ id:`cover:${cat.id}`, cat:"cover", word:cat.id, emoji:cat.emoji });
 
 const GAME_META = {
@@ -289,6 +302,10 @@ const GAME_META = {
   ninja:   { label:"Word Ninja",    thai:"ปาดนิ้วฟันคำที่ถูก 🗡️",      emoji:"🗡️" },
   bingo:   { label:"Bingo",         thai:"ฟังคำ แตะรูป ครบแถว 🎱",     emoji:"🎱" },
   runner:  { label:"Word Runner 3D", thai:"วิ่ง 3 มิติ เก็บรูปที่ได้ยิน 🏃", emoji:"🏃" },
+  penalty: { label:"Penalty Kick 3D", thai:"ยิงจุดโทษ เตะใส่รูปที่ได้ยิน ⚽", emoji:"⚽" },
+  findroom:{ label:"Find It!", thai:"หาของในห้องรก แตะให้เจอ 🔎", emoji:"🔎" },
+  action:  { label:"Who Is Doing It?", thai:"ใครทำท่านี้อยู่ แตะเลย 🎭", emoji:"🎭" },
+  racer:   { label:"Word Racer 3D", thai:"แข่งรถ ขับผ่านประตูรูปที่ถูก 🏎️", emoji:"🏎️" },
   feed:    { label:"Feed the Pet",  thai:"ป้อนอาหารให้เพื่อนคู่หู 😋",  emoji:"😋" },
 };
 
@@ -1587,7 +1604,7 @@ export default function App() {
   const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
   const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บเหรียญด้วยนะ", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
+  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บของระหว่างทางด้วยนะ", racer:"เลือกรถ แล้วขับผ่านประตูรูปที่ได้ยินเพื่อเร่งเทอร์โบ", action:"ฟังคำ แล้วแตะคนที่กำลังทำท่านั้นอยู่", findroom:"ห้องรกมาก ฟังคำแล้วหาของชิ้นนั้นให้เจอ แตะเลย", penalty:"ฟังคำ แล้วแตะรูปที่ถูกเพื่อยิงประตู", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => guard(() => setScreen("manage"));
   const openSettings = () => guard(() => setShowSettings(true));
@@ -1669,9 +1686,7 @@ export default function App() {
   const immersive = ["game", "learn", "versus"].includes(screen);
   const showNav = !immersive && screen !== "credits" && !showSettings && !showProfiles;   // ซ่อนแท็บล่างตอนเปิดแผ่นตั้งค่า/โปรไฟล์
   // พื้นโหมดเกม: สีหมวดผสมกับ surface ของธีม (M3 tonal) → ยังรู้ว่าอยู่หมวดไหน แต่โทนเดียวกับทั้งแอปและใช้ได้ในโหมดมืด
-  const immersiveBg = activeCat?.color
-    ? `linear-gradient(170deg, color-mix(in oklab, ${activeCat.color} 45%, var(--md-surface)) 0%, color-mix(in oklab, ${activeCat.color} 12%, var(--md-surface)) 42%, var(--md-surface) 100%)`
-    : `linear-gradient(170deg, var(--md-primary-container) 0%, var(--md-surface) 55%)`;
+  const immersiveBg = `linear-gradient(180deg, color-mix(in oklab, ${CAT_ACCENT[activeCat?.id] ? accentOf(activeCat.id).fill : "var(--md-primary)"} 16%, var(--md-surface)) 0%, var(--md-surface) 32%)`;
   const headerTitle = ({ home:"", learnhub:"เรียน", playhub:"เล่น", me:"ของฉัน", manage:"จัดการคำศัพท์", stickers:"สมุดสติกเกอร์", shop:"ร้านค้า", room:"ห้องเพื่อนคู่หู", report:"รายงานผู้ปกครอง", credits:"เครดิตรูปภาพ", path:"เส้นทางบทเรียน", talk:"บทสนทนา", stories:"นิทานภาพ", phonics:"โฟนิกส์", grammar:"ไวยากรณ์", daily:"ชีวิตประจำวัน", test:"สอบวัดระดับ", versus:"แข่ง 2 คน" })[screen] ?? (activeCat?.label || "");
 
   // คำที่ถึงกำหนดทบทวนวันนี้ (SRS) + คำที่เคยพลาด เรียงจากพลาดบ่อยสุด
@@ -2007,91 +2022,85 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
   const fWord = thumbOf(fCat);
   const go = (cat, g) => { sfx.tap(); onQuickGame ? onQuickGame(cat, g) : onPickCat(cat); };
   const bubbles = [["droleplay","บทสนทนา",onTalk],["squiz","นิทานภาพ",onStories],["phonics","โฟนิกส์",onPhonics],["grammar","ไวยากรณ์",onGrammar],["time","ชีวิตประจำวัน",onDaily],["test","สอบวัดระดับ",onTest]];
-  const sec = t => <div style={{ ...TYPE.titleL,color:T.ink,margin:"18px 4px 10px",display:"flex",alignItems:"center",gap:8 }}>{t}</div>;
+  const sec = t => <div style={{ ...TYPE.titleL,color:T.ink,margin:"22px 4px 12px",display:"flex",alignItems:"baseline",gap:8 }}>{t}</div>;
   return (
     <div style={{ padding:"6px 16px 24px",maxWidth:560,margin:"0 auto" }}>
       {!progress.pet ? (
         <PetCard progress={progress} setProgress={setProgress} stickerCount={stickerCount} totalWords={words.length} onStickers={onStickers} onShop={onShop} speak={speak} profile={profile} onProfiles={onProfiles} />
       ) : (
-        /* เวทีหลัก: เพื่อนคู่หูชวนเล่น + รูปเด่นของวันนี้ + ปุ่มเล่นเลยปุ่มเดียว */
-        <div style={{ position:"relative",borderRadius:40,overflow:"hidden",background:`linear-gradient(160deg, ${T.primaryC}, ${T.tertiaryC})`,color:T.onPrimaryC,padding:"16px 16px 18px",marginBottom:6,animation:"vpInUp .7s cubic-bezier(.2,.8,.2,1) both" }}>
-          <Shape kind="burst" size={300} fill={T.secondaryC} spin style={{ position:"absolute",top:-150,right:-120,opacity:.7 }} />
-          <Shape kind="cookie12" size={160} fill={T.tertiaryC} style={{ position:"absolute",bottom:60,left:-70,opacity:.9 }} />
-          <div style={{ position:"relative",display:"flex",gap:8,flexWrap:"wrap" }}>
-            {[[`📒 ${stickerCount}/${words.length}`, onStickers], [`🏠 ห้อง${careAvg < 40 ? " ❗" : ""}`, onRoom], ["🛍️ ร้านค้า", onShop]].map(([t, fn]) => (
-              <button key={t} onClick={() => { sfx.tap(); fn(); }} className="m3-press" style={{ minHeight:44,padding:"0 14px",borderRadius:999,border:"none",background:"color-mix(in oklab, var(--md-surface) 70%, transparent)",color:T.ink,fontWeight:800,fontSize:13,cursor:"pointer",fontFamily:FONT }}>{t}</button>
-            ))}
-          </div>
-          <div style={{ position:"relative",height:"min(34vh, 290px)",marginTop:10 }}>
-            {/* รูปเด่น: การ์ดเอียงลอย */}
-            <span style={{ position:"absolute",right:"2%",top:4,width:"62%",aspectRatio:"1",borderRadius:32,overflow:"hidden",background:T.card,boxShadow:MD.shadow,transform:"rotate(4deg)",border:`6px solid ${T.card}`,animation:"vpFloatY 4s ease-in-out infinite" }}>
-              {fWord && <PicFill w={fWord} emojiSize={60} />}
-            </span>
-            <span style={{ position:"absolute",right:"8%",top:"68%",background:T.tertiary,color:MD.onTertiary,borderRadius:999,padding:"6px 14px",fontWeight:900,fontSize:16,boxShadow:MD.shadow,transform:"rotate(-4deg)",display:"flex",alignItems:"center",gap:6 }}><CatIcon id={fCat.id} size={26} />{fCat.label}</span>
-            {/* เพื่อนคู่หู + ลูกโป่งคำพูด */}
-            <button onClick={() => { sfx.tap(); speak(`Hi! Let's play ${fCat.label}!`, `มาเล่น${fCat.thai}กันเถอะ`); }} className="m3-press" aria-label="เพื่อนคู่หู" style={{ position:"absolute",left:0,bottom:0,background:"none",border:"none",padding:0,cursor:"pointer" }}>
-              <Shape kind="cookie12" size={128} fill={T.primary} morph>
-                <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={66} mood={careNow?.sleeping ? "sleepy" : careAvg < 40 || missedCount > 5 ? "sad" : "happy"} bounce />
-              </Shape>
+        /* เวทีหลัก v3.16: เพื่อนคู่หูตัวใหญ่ + ลูกโป่งคำพูด + แถบเลเวลเหลือง + ปุ่มเล่นเลยสีแดดนูน */
+        <>
+        <div style={{ position:"relative",borderRadius:28,overflow:"hidden",background:MD.heroGrad,color:"#fff",padding:20,marginBottom:14,boxShadow:`0 6px 0 ${T.primaryEdge}`,animation:"vpInUp .6s cubic-bezier(.2,.8,.2,1) both" }}>
+          <div style={{ display:"flex",alignItems:"center",gap:12 }}>
+            <button onClick={() => { sfx.tap(); speak(`Hi! Let's play ${fCat.label}!`, `มาเล่น${fCat.thai}กันเถอะ`); }} className="m3-press" aria-label="เพื่อนคู่หู" style={{ flex:"none",width:120,height:120,borderRadius:"50%",border:"none",cursor:"pointer",background:"radial-gradient(circle, rgba(255,255,255,.38), transparent 70%)",display:"flex",alignItems:"center",justifyContent:"center",padding:0 }}>
+              <PetAvatar pet={pet} hat={progress.hat} outfit={progress.outfit} size={84} mood={careNow?.sleeping ? "sleepy" : careAvg < 40 || missedCount > 5 ? "sad" : "happy"} bounce />
             </button>
-            <span style={{ position:"absolute",left:4,top:6,maxWidth:"38%",background:T.card,color:T.ink,borderRadius:"20px 20px 20px 6px",padding:"8px 12px",fontWeight:800,fontSize:14,lineHeight:1.25,boxShadow:MD.shadow }}>
-              {pet.name}: มาเล่น<br/><b style={{ color:T.primary }}>{fCat.thai}</b> กัน! 🔊
-            </span>
+            <div style={{ flex:1,minWidth:0,background:"#fff",color:T.ink,borderRadius:"20px 20px 20px 6px",padding:"12px 14px",fontFamily:HFONT,fontSize:17,fontWeight:600,lineHeight:1.3 }}>
+              มาเล่น <span style={{ color:accentOf(fCat.id).edge }}>{fCat.thai}</span> กัน!
+              <div style={{ display:"flex",alignItems:"center",gap:6,marginTop:6 }}><CatIcon id={fCat.id} size={26} /><span style={{ fontFamily:WFONT,fontSize:18,fontWeight:600,color:T.ink2 }}>{fCat.label}</span></div>
+            </div>
           </div>
-          <div style={{ position:"relative",display:"flex",alignItems:"center",gap:10,margin:"6px 2px 12px" }}>
-            <span style={{ ...TYPE.labelM,opacity:.85,whiteSpace:"nowrap" }}>Lv.{pet.level}</span>
-            <div style={{ flex:1 }}><WavyProgress value={pet.pct} height={12} color={T.primary} track={"color-mix(in oklab, var(--md-on-primary-container) 18%, transparent)"} /></div>
+          <div style={{ display:"flex",alignItems:"center",gap:10,margin:"14px 2px 16px" }}>
+            <span style={{ fontFamily:HFONT,fontSize:14,fontWeight:600,whiteSpace:"nowrap" }}>{pet.name} · Lv.{pet.level}</span>
+            <div style={{ flex:1,height:12,borderRadius:6,background:"rgba(255,255,255,.25)",overflow:"hidden" }}><div style={{ width:`${pet.pct}%`,height:"100%",background:T.secondary,borderRadius:6 }} /></div>
           </div>
-          <button onClick={() => go(fCat, fGame)} className="m3-press" style={{ position:"relative",width:"100%",minHeight:72,borderRadius:36,border:"none",background:T.primary,color:T.onPrimary,cursor:"pointer",display:"flex",alignItems:"center",gap:12,padding:"8px 20px 8px 10px",boxShadow:MD.shadow,fontFamily:FONT }}>
-            <span style={{ width:56,height:56,borderRadius:28,background:T.onPrimary,display:"flex",alignItems:"center",justifyContent:"center",flex:"none" }}><GameIcon id={fGame} size={44} /></span>
-            <span style={{ flex:1,textAlign:"left" }}><span style={{ display:"block",fontWeight:900,fontSize:24,lineHeight:1 }}>▶ เล่นเลย!</span><span style={{ fontSize:13,opacity:.9 }}>{GAME_META[fGame]?.label} · {GAME_META[fGame]?.thai}</span></span>
+          <button onClick={() => go(fCat, fGame)} className="vp-3d" style={{ "--edge":T.secondaryEdge,"--d":"6px",width:"100%",minHeight:76,borderRadius:24,border:"none",background:T.secondary,color:T.onSecondary,cursor:"pointer",display:"flex",alignItems:"center",gap:12,padding:"8px 18px 8px 10px",fontFamily:HFONT }}>
+            <span style={{ width:58,height:58,borderRadius:18,background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",flex:"none" }}><GameIcon id={fGame} size={48} /></span>
+            <span style={{ flex:1,textAlign:"left" }}><span style={{ display:"block",fontWeight:600,fontSize:26,lineHeight:1.05 }}>▶ เล่นเลย!</span><span style={{ fontSize:14,fontWeight:500,opacity:.85 }}>{GAME_META[fGame]?.label}</span></span>
           </button>
-          <div style={{ position:"relative",display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginTop:8 }}>
-            <button onClick={() => { sfx.tap(); onPath(); }} className="m3-press" style={{ minHeight:56,borderRadius:28,border:"none",background:T.card,color:T.ink,cursor:"pointer",fontFamily:FONT,padding:"6px 10px",textAlign:"left",display:"flex",alignItems:"center",gap:8 }}>
-              <span style={{ fontSize:24 }}>🗺️</span><span><span style={{ display:"block",fontWeight:800,fontSize:14 }}>เส้นทางบทเรียน</span><span style={{ fontSize:11,color:T.ink2 }}>{nextUnit ? `บทที่ ${nextUnit.n}` : "ครบแล้ว 🎓"} · {unitsDone}/{units.length}</span></span>
-            </button>
-            <button onClick={() => { sfx.tap(); if (missedCount) onReview(); }} className="m3-press" style={{ minHeight:56,borderRadius:28,border:"none",background:missedCount ? T.tertiary : T.card,color:missedCount ? MD.onTertiary : T.ink,cursor:"pointer",fontFamily:FONT,padding:"6px 10px",textAlign:"left",display:"flex",alignItems:"center",gap:8 }}>
-              <span style={{ fontSize:24 }}>🔁</span><span><span style={{ display:"block",fontWeight:800,fontSize:14 }}>ทบทวนวันนี้</span><span style={{ fontSize:11,opacity:.85 }}>{missedCount ? `${missedCount} คำ` : "ไม่มีค้าง 🎉"}</span></span>
-            </button>
-          </div>
         </div>
+        <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:4 }}>
+          <button onClick={() => { sfx.tap(); onPath(); }} className="vp-3d" style={{ "--edge":T.cardEdge,"--d":"4px",minHeight:64,borderRadius:22,border:`2px solid ${T.cardBorder}`,background:T.card,color:T.ink,cursor:"pointer",fontFamily:HFONT,padding:"8px 10px",textAlign:"left",display:"flex",alignItems:"center",gap:8 }}>
+            <GameIcon id="quiz" size={38} /><span><span style={{ display:"block",fontWeight:600,fontSize:15 }}>เส้นทางบทเรียน</span><span style={{ fontSize:13,color:T.ink2,fontFamily:FONT }}>{nextUnit ? `บทที่ ${nextUnit.n}` : "ครบแล้ว"} · {unitsDone}/{units.length}</span></span>
+          </button>
+          <button onClick={() => { sfx.tap(); if (missedCount) onReview(); }} className="vp-3d" style={{ "--edge":missedCount ? T.tertiaryEdge : T.cardEdge,"--d":"4px",minHeight:64,borderRadius:22,border:missedCount ? "none" : `2px solid ${T.cardBorder}`,background:missedCount ? T.tertiary : T.card,color:missedCount ? T.onTertiary : T.ink,cursor:"pointer",fontFamily:HFONT,padding:"8px 10px",textAlign:"left",display:"flex",alignItems:"center",gap:8 }}>
+            <GameIcon id="listen" size={38} /><span><span style={{ display:"block",fontWeight:600,fontSize:15 }}>ทบทวนวันนี้</span><span style={{ fontSize:13,opacity:.85,fontFamily:FONT }}>{missedCount ? `${missedCount} คำ` : "ไม่มีค้าง"}</span></span>
+          </button>
+        </div>
+        <div style={{ display:"flex",gap:8,margin:"12px 0 0" }}>
+          {[[`📒 ${stickerCount}/${words.length}`, onStickers], [`🏠 ห้อง${careAvg < 40 ? " ❗" : ""}`, onRoom], ["🛍️ ร้านค้า", onShop]].map(([t, fn]) => (
+            <button key={t} onClick={() => { sfx.tap(); fn(); }} className="vp-3d" style={{ "--edge":T.cardEdge,"--d":"3px",flex:1,minHeight:44,padding:"0 8px",borderRadius:999,border:`2px solid ${T.cardBorder}`,background:T.card,color:T.ink,fontFamily:HFONT,fontWeight:500,fontSize:14,cursor:"pointer",whiteSpace:"nowrap" }}>{t}</button>
+          ))}
+        </div>
+        </>
       )}
       {install && <InstallBanner deferred={install.evt} onInstall={install.onInstall} onDismiss={install.onDismiss} />}
 
       {/* ชั้นเกม: เลื่อนแนวนอน การ์ดเกมใหญ่ */}
       {progress.pet && <>
-        {sec(<>🎮 เกมสนุก <span style={{ ...TYPE.labelM,color:T.ink3 }}>· {fCat.label}</span></>)}
-        <div style={{ display:"flex",gap:10,overflowX:"auto",scrollSnapType:"x mandatory",margin:"0 -16px",padding:"2px 16px 8px",scrollbarWidth:"none" }}>
+        {sec(<>เกมสนุก <span style={{ ...TYPE.labelM,color:T.ink2 }}>{fCat.label}</span></>)}
+        <div style={{ display:"flex",gap:12,overflowX:"auto",scrollSnapType:"x mandatory",margin:"0 -16px",padding:"2px 16px 12px",scrollbarWidth:"none" }}>
           {fGames.filter(g => g !== "boss").map((g, i) => {
             const st = progress.stars[`${fCat.id}:${g}`] || 0;
-            return <button key={g} onClick={() => go(fCat, g)} className="m3-press" style={{ flex:"none",width:128,minHeight:150,scrollSnapAlign:"start",borderRadius:28,border:"none",background:[T.primaryC,T.secondaryC,T.tertiaryC][i % 3],color:T.ink,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:6,padding:10,fontFamily:FONT }}>
-              <GameIcon id={g} size={64} />
-              <span style={{ fontWeight:800,fontSize:14,lineHeight:1.1,textAlign:"center" }}>{GAME_META[g]?.label}</span>
-              <span style={{ fontSize:13,letterSpacing:1 }}>{"★".repeat(st)}<span style={{ opacity:.25 }}>{"★".repeat(3 - st)}</span></span>
+            const ac = accentOf(fCat.id);
+            return <button key={g} onClick={() => go(fCat, g)} className="vp-3d" style={{ "--edge":ac.edge,flex:"none",width:132,minHeight:160,scrollSnapAlign:"start",borderRadius:24,border:"none",background:ac.fill,color:ac.on,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:"12px 8px",fontFamily:HFONT }}>
+              <span style={{ width:84,height:84,borderRadius:"50%",background:"rgba(255,255,255,.95)",display:"flex",alignItems:"center",justifyContent:"center" }}><GameIcon id={g} size={62} /></span>
+              <span style={{ fontWeight:600,fontSize:15,lineHeight:1.15,textAlign:"center" }}>{GAME_META[g]?.label}</span>
+              <span style={{ fontSize:17,letterSpacing:1,lineHeight:1 }}>{[0,1,2].map(k => <span key={k} style={{ color:k < st ? T.secondary : "rgba(255,255,255,.45)" }}>★</span>)}</span>
             </button>;
           })}
         </div>
 
         {/* ฟองกิจกรรม */}
-        {sec("✨ เรียนแบบอื่น")}
+        {sec("เรียนแบบอื่น")}
         <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:10 }}>
           {bubbles.map(([id, t, fn]) => (
             <button key={t} onClick={() => { sfx.tap(); fn(); }} className="m3-press" style={{ background:"none",border:"none",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:6,padding:"4px 0",fontFamily:FONT }}>
-              <Shape kind="cookie6" size={84} fill={T.surfHigh}><GameIcon id={id} size={52} /></Shape>
+              <span className="vp-3d" style={{ "--edge":T.cardEdge,"--d":"4px",width:84,height:84,borderRadius:"50%",background:T.card,border:`2px solid ${T.cardBorder}`,display:"flex",alignItems:"center",justifyContent:"center" }}><GameIcon id={id} size={56} /></span>
               <span style={{ ...TYPE.labelL,color:T.ink,textAlign:"center" }}>{t}</span>
             </button>
           ))}
         </div>
-        <button onClick={() => { sfx.tap(); onVersus(); }} className="m3-press" style={{ width:"100%",minHeight:64,background:T.error,color:MD.onError,border:"none",borderRadius:32,padding:"8px 16px 8px 10px",margin:"14px 0 4px",display:"flex",alignItems:"center",gap:12,cursor:"pointer",fontFamily:FONT,textAlign:"left" }}>
+        <button onClick={() => { sfx.tap(); onVersus(); }} className="vp-3d" style={{ "--edge":T.tertiaryEdge,width:"100%",minHeight:68,background:T.tertiary,color:T.onTertiary,border:"none",borderRadius:24,padding:"8px 16px 8px 10px",margin:"18px 0 8px",display:"flex",alignItems:"center",gap:12,cursor:"pointer",fontFamily:FONT,textAlign:"left" }}>
           <span style={{ fontSize:32 }}>⚔️</span>
-          <div style={{ flex:1 }}><div style={{ fontWeight:900,fontSize:17 }}>แข่ง 2 คน จอเดียว</div><div style={{ fontSize:12,opacity:.9 }}>ฟังเสียง ใครแตะรูปถูกก่อนชนะ!</div></div>
+          <div style={{ flex:1,fontFamily:HFONT }}><div style={{ fontWeight:600,fontSize:18 }}>แข่ง 2 คน จอเดียว</div><div style={{ fontSize:13,opacity:.92 }}>ใครแตะรูปถูกก่อนชนะ!</div></div>
           <span style={{ fontSize:22 }}>›</span>
         </button>
         <MissionsCard progress={progress} setProgress={setProgress} />
       </>}
 
       {/* โลกคำศัพท์: วงกลมรูปจริง + วงแหวนดาว */}
-      {sec(<>🌍 โลกคำศัพท์ <span style={{ ...TYPE.labelM,color:T.ink3 }}>· {words.length} คำ</span></>)}
+      {sec(<>โลกคำศัพท์ <span style={{ ...TYPE.labelM,color:T.ink2 }}>{words.length} คำ</span></>)}
       <Reveal step={30} style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px 8px" }}>
         {categories.map(cat => <CatBubble key={cat.id} cat={cat} words={words} progress={progress} onClick={() => { sfx.tap(); onPickCat(cat); }} />)}
       </Reveal>
@@ -2105,42 +2114,49 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
 // ═══════════════════════════════════════════════════════
 // หมวดเป็นวงกลมรูปจริง + วงแหวนดาว (ใช้ทั้งหน้าแรกและแท็บ)
 function CatBubble({ cat, words, progress, onClick, size = "min(27vw, 120px)" }) {
-  const n = words.filter(w => w.cat === cat.id).length;
   const got = cat.games.reduce((a, g) => a + (progress.stars[`${cat.id}:${g}`] || 0), 0);
   const pct = Math.round(got / Math.max(1, cat.games.length * 3) * 100);
   const tw = imageTitleOf(coverWord(cat)) ? coverWord(cat) : words.find(w => w.cat === cat.id && imageTitleOf(w));
+  const ac = accentOf(cat.id);
   return (
-    <button onClick={onClick} className="m3-press" style={{ background:"none",border:"none",cursor:"pointer",padding:0,display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:FONT }}>
-      <span style={{ position:"relative",width:size,aspectRatio:"1",borderRadius:"50%",padding:5,background:`conic-gradient(${T.primary} ${pct}%, ${T.surfHigh} 0)` }}>
-        <span style={{ position:"relative",display:"block",width:"100%",height:"100%",borderRadius:"50%",overflow:"hidden",background:cat.color,border:`3px solid ${T.surf}` }}>
-          {tw && <PicFill w={tw} emojiSize={36} fit="cover" />}
+    <button onClick={onClick} className="m3-press" style={{ background:"none",border:"none",cursor:"pointer",padding:0,display:"flex",flexDirection:"column",alignItems:"center",gap:4,fontFamily:HFONT }}>
+      <span style={{ position:"relative",width:size,aspectRatio:"1",borderRadius:"50%",padding:6,background:`conic-gradient(${ac.fill} ${pct}%, ${T.surfHigh} 0)`,boxShadow:`0 4px 0 ${T.cardEdge}` }}>
+        <span style={{ position:"relative",display:"block",width:"100%",height:"100%",borderRadius:"50%",overflow:"hidden",background:ac.fill,border:"3px solid #fff" }}>
+          {tw ? <CoverFill w={tw} /> : <span style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center" }}><CatIcon id={cat.id} size={56} /></span>}
         </span>
-        <span style={{ position:"absolute",left:-2,bottom:-2 }}><CatIcon id={cat.id} size={34} /></span>
-        {progress.boss[cat.id] && <span style={{ position:"absolute",right:-2,top:-4,fontSize:22 }}>👑</span>}
+        <span style={{ position:"absolute",right:-2,bottom:-2,borderRadius:"50%",border:"3px solid #fff",display:"flex",background:"#fff" }}><CatIcon id={cat.id} size={30} /></span>
+        {progress.boss[cat.id] && <span style={{ position:"absolute",left:-2,top:-4,fontSize:22 }}>👑</span>}
       </span>
-      <span style={{ fontWeight:800,fontSize:14,color:T.ink,lineHeight:1.1 }}>{cat.label}</span>
-      <span style={{ fontSize:11,color:T.ink2 }}>{cat.thai} · {n} คำ</span>
+      <span style={{ fontWeight:600,fontSize:15,color:T.ink,lineHeight:1.1 }}>{cat.label}</span>
+      <span style={{ fontSize:13,fontWeight:500,color:T.ink2,fontFamily:FONT }}>{cat.thai} · {words.filter(w => w.cat === cat.id).length} คำ</span>
     </button>
   );
 }
+// รูปปกเต็มวง (cover จริง ไม่มีแถบเทา) · ใช้ในวงกลมหมวด/หัวหน้าหมวด
+function CoverFill({ w, pos = "center 40%" }) {
+  const { url } = useWordImage(w);
+  const [err, setErr] = useState(false);
+  if (!url || err) { const c = conceptFor(w); return c ? <span style={{ position:"absolute",inset:0 }}>{c}</span> : <span style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:44 }}>{w?.emoji}</span>; }
+  return <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",objectPosition:pos }} />;
+}
 // การ์ดใหญ่สำหรับแท็บ: ไอคอนเด่น ตัวหนังสือน้อย แตะง่าย
 const TONES = () => [[T.primaryC,T.onPrimaryC],[T.secondaryC,T.onSecondaryC],[T.tertiaryC,T.onTertiaryC]];
-function BigTile({ icon, title, sub, i = 0, onClick, wide, children }) {
-  const [bg, fg] = TONES()[i % 3];
+function BigTile({ icon, title, sub, i = 0, onClick, wide, children, fill }) {
+  // การ์ดขาวนูน (หรือสีทึบเมื่อมี fill) · ไอคอนใหญ่ ตัวหนังสือน้อย
+  const solid = fill || (wide && i === 0 ? { fill:T.primary, edge:T.primaryEdge, on:T.onPrimary } : null);
   return (
-    <button onClick={() => { sfx.tap(); onClick(); }} className="m3-press" style={{ gridColumn:wide ? "1 / -1" : undefined,position:"relative",overflow:"hidden",minHeight:wide ? 108 : 150,borderRadius:32,border:"none",background:bg,color:fg,cursor:"pointer",display:"flex",flexDirection:wide ? "row" : "column",alignItems:"center",justifyContent:wide ? "flex-start" : "center",gap:wide ? 14 : 6,padding:wide ? "14px 18px" : "14px 8px 12px",textAlign:wide ? "left" : "center",fontFamily:FONT }}>
-      <Shape kind={["cookie6","clover","cookie9"][i % 3]} size={160} fill={"color-mix(in oklab, var(--md-surface) 30%, transparent)"} style={{ position:"absolute",right:-50,top:-50 }} />
+    <button onClick={() => { sfx.tap(); onClick(); }} className="vp-3d" style={{ "--edge":solid ? solid.edge : T.cardEdge,"--d":"5px",gridColumn:wide ? "1 / -1" : undefined,position:"relative",overflow:"hidden",minHeight:wide ? 108 : 148,borderRadius:24,border:solid ? "none" : `2px solid ${T.cardBorder}`,background:solid ? solid.fill : T.card,color:solid ? solid.on : T.ink,cursor:"pointer",display:"flex",flexDirection:wide ? "row" : "column",alignItems:"center",justifyContent:wide ? "flex-start" : "center",gap:wide ? 14 : 8,padding:wide ? "14px 18px" : "14px 8px 12px",textAlign:wide ? "left" : "center",fontFamily:HFONT }}>
       <span style={{ position:"relative",flex:"none" }}>{icon}</span>
       <span style={{ position:"relative",flex:wide ? 1 : undefined,minWidth:0 }}>
-        <span style={{ display:"block",fontWeight:900,fontSize:wide ? 19 : 16,lineHeight:1.15 }}>{title}</span>
-        {sub && <span style={{ display:"block",fontSize:12,opacity:.85,marginTop:3,lineHeight:1.25 }}>{sub}</span>}
+        <span style={{ display:"block",fontWeight:600,fontSize:wide ? 19 : 17,lineHeight:1.2 }}>{title}</span>
+        {sub && <span style={{ display:"block",fontSize:13,fontWeight:500,color:solid ? "inherit" : T.ink2,opacity:solid ? .88 : 1,marginTop:3,lineHeight:1.3,fontFamily:FONT }}>{sub}</span>}
         {children}
       </span>
     </button>
   );
 }
 const HubGrid = ({ children }) => <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }}>{children}</div>;
-const HubTitle = ({ children }) => <div style={{ ...TYPE.titleL,color:T.ink,margin:"20px 4px 10px" }}>{children}</div>;
+const HubTitle = ({ children }) => <div style={{ ...TYPE.titleL,color:T.ink,margin:"22px 4px 12px" }}>{children}</div>;
 function LearnHub({ words, categories, progress, units, onPath, onCat, onTalk, onStories, onPhonics, onGrammar, onDaily }) {
   const unitsDone = units.filter(u => unitDone(progress.path, u)).length;
   const nextUnit = units.find(u => !unitDone(progress.path, u));
@@ -2148,7 +2164,7 @@ function LearnHub({ words, categories, progress, units, onPath, onCat, onTalk, o
     <div style={{ padding:"8px 16px 24px",maxWidth:560,margin:"0 auto" }}>
       <HubGrid>
         <BigTile wide i={0} icon={<span style={{ fontSize:52 }}>🗺️</span>} title="เส้นทางบทเรียน A1 → A2" sub={nextUnit ? `ต่อบทที่ ${nextUnit.n} · ${nextUnit.cat.thai}` : "ครบทุกบทแล้ว 🎓"} onClick={onPath}>
-          <span style={{ display:"block",marginTop:8 }}><WavyProgress value={units.length ? Math.round(unitsDone / units.length * 100) : 0} height={12} color={T.primary} track={"color-mix(in oklab, var(--md-on-primary-container) 18%, transparent)"} /></span>
+          <span style={{ display:"block",marginTop:10,height:12,borderRadius:6,background:"rgba(255,255,255,.28)",overflow:"hidden" }}><span style={{ display:"block",height:"100%",width:`${units.length ? Math.round(unitsDone / units.length * 100) : 0}%`,minWidth:8,background:T.secondary,borderRadius:6 }} /></span>
           <span style={{ display:"block",fontSize:11,opacity:.8,marginTop:3 }}>ผ่านแล้ว {unitsDone}/{units.length} บท</span>
         </BigTile>
         <BigTile i={1} icon={<GameIcon id="droleplay" size={64} />} title="บทสนทนา" sub={`${DIALOGUES.length} สถานการณ์`} onClick={onTalk} />
@@ -2157,7 +2173,7 @@ function LearnHub({ words, categories, progress, units, onPath, onCat, onTalk, o
         <BigTile i={1} icon={<GameIcon id="grammar" size={64} />} title="ไวยากรณ์เด็ก" sub={`${GRAMMAR.length} บท`} onClick={onGrammar} />
         <BigTile wide i={2} icon={<GameIcon id="time" size={60} />} title="ชีวิตประจำวัน" sub="บอกเวลา · เงินบาท · วัน-เดือน · ตัวเลข" onClick={onDaily} />
       </HubGrid>
-      <HubTitle>📖 การ์ดคำศัพท์ตามหมวด</HubTitle>
+      <HubTitle>การ์ดคำศัพท์ตามหมวด</HubTitle>
       <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px 8px" }}>
         {categories.map(c => <CatBubble key={c.id} cat={c} words={words} progress={progress} onClick={() => { sfx.tap(); onCat(c); }} />)}
       </div>
@@ -2169,11 +2185,10 @@ function PlayHub({ words, categories, progress, missedCount, onCat, onReview, on
   const crowns = Object.keys(progress.boss).length;
   return (
     <div style={{ padding:"8px 16px 24px",maxWidth:560,margin:"0 auto" }}>
-      <div style={{ position:"relative",overflow:"hidden",borderRadius:36,background:`linear-gradient(150deg, ${T.tertiaryC}, ${T.primaryC})`,color:T.onPrimaryC,padding:"18px 20px",marginBottom:10,display:"flex",alignItems:"center",gap:16 }}>
-        <Shape kind="burst" size={220} fill={T.secondaryC} spin style={{ position:"absolute",right:-80,top:-90,opacity:.7 }} />
-        <Shape kind="burst" size={92} fill={T.tertiary}><span style={{ fontSize:44 }}>⭐</span></Shape>
+      <div style={{ position:"relative",overflow:"hidden",borderRadius:28,background:T.secondary,color:T.onSecondary,padding:"18px 20px",marginBottom:14,display:"flex",alignItems:"center",gap:16,boxShadow:`0 5px 0 ${T.secondaryEdge}`,fontFamily:HFONT }}>
+        <span style={{ width:80,height:80,borderRadius:"50%",background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:44 }}>⭐</span>
         <div style={{ position:"relative" }}>
-          <div style={{ fontWeight:900,fontSize:34,lineHeight:1 }}>{totalStars} <span style={{ fontSize:18 }}>ดาว</span></div>
+          <div style={{ fontWeight:600,fontSize:34,lineHeight:1 }}>{totalStars} <span style={{ fontSize:18 }}>ดาว</span></div>
           <div style={{ fontSize:13,opacity:.9,marginTop:4 }}>👑 ชนะบอส {crowns}/{categories.length} หมวด · 🪙 {progress.coins}</div>
         </div>
       </div>
@@ -2182,7 +2197,7 @@ function PlayHub({ words, categories, progress, missedCount, onCat, onReview, on
         <BigTile i={1} icon={<GameIcon id="test" size={64} />} title="สอบวัดระดับ + ใบประกาศ" sub={progress.cert ? `ล่าสุด ${progress.cert.score}/${progress.cert.total}` : "20 ข้อ"} onClick={onTest} />
         <BigTile wide i={0} icon={<span style={{ fontSize:52 }}>⚔️</span>} title="แข่ง 2 คน จอเดียว" sub="ฟังเสียง ใครแตะรูปถูกก่อนชนะ!" onClick={onVersus} />
       </HubGrid>
-      <HubTitle>🎮 เลือกหมวดเพื่อเล่นเกม</HubTitle>
+      <HubTitle>เลือกหมวดเพื่อเล่นเกม</HubTitle>
       <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px 8px" }}>
         {categories.map(c => <CatBubble key={c.id} cat={c} words={words} progress={progress} onClick={() => { sfx.tap(); onCat(c); }} />)}
       </div>
@@ -2192,13 +2207,12 @@ function PlayHub({ words, categories, progress, missedCount, onCat, onReview, on
 function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles, onStickers, onShop, onRoom, onReport, onManage, onSettings, onCredits, speak }) {
   const pet = getPet(progress);
   const mastered = words.filter(w => isMastered(progress.srs, w.id)).length;
-  const Stat = ({ v, l, e }) => <div style={{ textAlign:"center",background:T.card,borderRadius:22,padding:"10px 4px" }}><div style={{ fontSize:22 }}>{e}</div><div style={{ fontWeight:900,fontSize:18,color:T.ink }}>{v}</div><div style={{ fontSize:11,color:T.ink2 }}>{l}</div></div>;
+  const Stat = ({ v, l, e }) => <div style={{ textAlign:"center",background:T.card,color:T.ink,borderRadius:20,padding:"10px 4px" }}><div style={{ fontSize:22 }}>{e}</div><div style={{ fontWeight:900,fontSize:18,color:T.ink }}>{v}</div><div style={{ fontSize:11,color:T.ink2 }}>{l}</div></div>;
   const Row = ({ e, t, sub, fn }) => <button onClick={() => { sfx.tap(); fn(); }} className="m3-press" style={{ ...M3.listItem(),marginBottom:6,minHeight:60 }}><span style={{ fontSize:24,width:36,textAlign:"center" }}>{e}</span><span style={{ flex:1,minWidth:0,textAlign:"left" }}><span style={{ display:"block",...TYPE.titleS,color:T.ink }}>{t}</span><span style={{ display:"block",...TYPE.bodyS,color:T.ink2 }}>{sub}</span></span><span style={{ color:T.ink3,fontSize:22 }}>›</span></button>;
   return (
     <div style={{ padding:"8px 16px 24px",maxWidth:560,margin:"0 auto" }}>
-      <div style={{ position:"relative",overflow:"hidden",borderRadius:36,background:`linear-gradient(160deg, ${T.primaryC}, ${T.secondaryC})`,color:T.onPrimaryC,padding:"18px 18px 14px",marginBottom:10 }}>
-        <Shape kind="cookie12" size={200} fill={T.tertiaryC} style={{ position:"absolute",right:-70,top:-70,opacity:.8 }} />
-        <div style={{ position:"relative",display:"flex",alignItems:"center",gap:14 }}>
+      <div style={{ position:"relative",overflow:"hidden",borderRadius:28,background:MD.heroGrad,color:"#fff",padding:"18px 18px 14px",marginBottom:14,boxShadow:`0 5px 0 ${T.primaryEdge}`,fontFamily:HFONT }}>
+                <div style={{ position:"relative",display:"flex",alignItems:"center",gap:14 }}>
           <Shape kind="cookie12" size={96} fill={T.card}><span style={{ fontSize:48 }}>{profile?.avatar}</span></Shape>
           <div style={{ flex:1,minWidth:0 }}><div style={{ fontWeight:900,fontSize:24,lineHeight:1.1 }}>{profile?.name}</div><div style={{ fontSize:13,opacity:.85 }}>{pet ? `เพื่อนคู่หู ${pet.name} · Lv.${pet.level}` : "ยังไม่เลือกเพื่อนคู่หู"}</div></div>
           <button onClick={() => { sfx.tap(); onProfiles(); }} className="m3-press" style={M3.tonal({ minHeight:44,padding:"0 16px",fontSize:13 })}>สลับ</button>
@@ -2212,7 +2226,7 @@ function MeHub({ words, progress, setProgress, stickerCount, profile, onProfiles
         <BigTile i={1} icon={<span style={{ fontSize:48 }}>📒</span>} title="สมุดสติกเกอร์" sub={`${stickerCount}/${words.length}`} onClick={onStickers} />
         <BigTile i={2} icon={<span style={{ fontSize:48 }}>🛍️</span>} title="ร้านค้า" onClick={onShop} />
       </div>
-      <HubTitle>👨‍👩‍👧 สำหรับผู้ปกครอง</HubTitle>
+      <HubTitle>สำหรับผู้ปกครอง</HubTitle>
       <Row e="📊" t="รายงานผู้ปกครอง" sub="ความแม่นยำ หมวดที่อ่อน คำที่พลาดบ่อย" fn={onReport} />
       <Row e="✏️" t="จัดการคำศัพท์" sub="ค้นหา เพิ่ม แก้ ลบ แปลอัตโนมัติ" fn={onManage} />
       <Row e="⚙️" t="ตั้งค่า" sub="เสียง · รูปจริง · เต็มจอ · ล้างความคืบหน้า" fn={onSettings} />
@@ -2234,41 +2248,41 @@ function CategoryScreen({ cat, words, onPickGame, onLearn, progress, showToast }
   const Stars = ({ n }) => <span style={{ fontSize:13,letterSpacing:1,flexShrink:0 }}>{[1,2,3].map(i => <span key={i} style={{ opacity:i<=n?1:0.2 }}>⭐</span>)}</span>;
   return (
     <div style={{ padding:"8px 16px 24px",maxWidth:520,margin:"0 auto" }}>
-      <div style={{ position:"relative",borderRadius:28,overflow:"hidden",minHeight:150,marginBottom:16,boxShadow:T.shadowLg,background:`linear-gradient(135deg,${cat.color},${cat.color}aa)` }}>
-        {(imageTitleOf(coverWord(cat)) || words.find(w => imageTitleOf(w))) && <span style={{ position:"absolute",inset:0 }}><PicFill w={imageTitleOf(coverWord(cat)) ? coverWord(cat) : words.find(w => imageTitleOf(w))} emojiSize={0} /></span>}
-        <span style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(15,23,42,0.05) 20%,rgba(15,23,42,0.85) 100%)" }} />
+      <div style={{ position:"relative",borderRadius:28,overflow:"hidden",height:180,marginBottom:16,background:accentOf(cat.id).fill,boxShadow:`0 5px 0 ${accentOf(cat.id).edge}` }}>
+        {(imageTitleOf(coverWord(cat)) || words.find(w => imageTitleOf(w))) && <CoverFill w={imageTitleOf(coverWord(cat)) ? coverWord(cat) : words.find(w => imageTitleOf(w))} />}
+        <span style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,transparent 35%,rgba(20,14,40,.78))" }} />
         <div style={{ position:"absolute",left:16,right:16,bottom:14,color:"#fff",display:"flex",alignItems:"flex-end",gap:12 }}>
-          <span style={{ flexShrink:0 }}><CatIcon id={cat.id} size={56} /></span>
-          <div style={{ flex:1 }}>
-            <div style={{ fontWeight:800,fontSize:22,lineHeight:1.1 }}>{cat.label} {crowned && "👑"}</div>
-            <div style={{ fontSize:13,opacity:0.9 }}>{cat.thai} · {words.length} คำ · ⭐ {cat.games.reduce((a,g)=>a+starOf(g),0)}/{cat.games.length*3}</div>
+          <span style={{ flexShrink:0,borderRadius:"50%",border:"3px solid #fff",display:"flex",background:"#fff" }}><CatIcon id={cat.id} size={52} /></span>
+          <div style={{ flex:1,fontFamily:HFONT }}>
+            <div style={{ fontWeight:600,fontSize:26,lineHeight:1.1 }}>{cat.label} {crowned && "👑"}</div>
+            <div style={{ fontSize:15,fontWeight:500,opacity:0.92 }}>{cat.thai} · {words.length} คำ · ⭐ {cat.games.reduce((a,g)=>a+starOf(g),0)}/{cat.games.length*3}</div>
           </div>
         </div>
       </div>
 
       {/* โหมดเรียน */}
       <button onClick={()=>{ sfx.tap(); onLearn(); }}
-        className="m3-press" style={{ width:"100%",background:T.primary,color:T.onPrimary,borderRadius:28,padding:"12px 16px 12px 12px",minHeight:72,marginBottom:16,display:"flex",alignItems:"center",gap:12,border:"none",cursor:"pointer",textAlign:"left",fontFamily:FONT }}>
-        <Shape kind="cookie9" size={48} fill={"color-mix(in oklab, #fff 22%, transparent)"}><span style={{ fontSize:24 }}>📖</span></Shape>
+        className="vp-3d" style={{ "--edge":T.primaryEdge,width:"100%",background:T.primary,color:T.onPrimary,borderRadius:22,padding:"10px 16px 10px 10px",minHeight:68,marginBottom:18,display:"flex",alignItems:"center",gap:12,border:"none",cursor:"pointer",textAlign:"left",fontFamily:HFONT }}>
+        <span style={{ width:48,height:48,borderRadius:16,background:"rgba(255,255,255,.2)",display:"flex",alignItems:"center",justifyContent:"center" }}><GameIcon id="squiz" size={40} /></span>
         <div style={{ flex:1,minWidth:0 }}>
-          <div style={{ fontWeight:900,fontSize:15 }}>เรียนคำศัพท์ก่อนเล่น</div>
-          <div style={{ fontSize:11,opacity:0.9,marginTop:1 }}>การ์ดพลิกได้ · คำอ่านไทย · ประโยคตัวอย่าง · เรียนแล้ว {learnedN}/{words.length} คำ</div>
+          <div style={{ fontWeight:600,fontSize:19 }}>เรียนคำศัพท์ก่อนเล่น</div>
         </div>
+        <span style={{ background:"rgba(255,255,255,.22)",borderRadius:999,padding:"4px 10px",fontSize:14,fontWeight:600 }}>{learnedN}/{words.length}</span>
         <span style={{ fontSize:20,flexShrink:0,opacity:0.8 }}>›</span>
       </button>
 
-      <p style={M3.sectionTitle({ margin:"0 4px 10px" })}>เลือกเกม</p>
+      <p style={M3.sectionTitle({ margin:"0 4px 12px" })}>เลือกเกม</p>
       <Reveal step={40} style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }}>
         {cat.games.map((gid,i)=>{
           const g=GAME_META[gid]; if(!g) return null;
-          const tone=[[T.primaryC,T.onPrimaryC],[T.secondaryC,T.onSecondaryC],[T.tertiaryC,T.onTertiaryC]][i%3];
+          const st=starOf(gid);
           return (
             <button key={gid} onClick={()=>{ sfx.tap(); onPickGame(gid); }}
-              className="m3-press" style={{ position:"relative",minHeight:150,borderRadius:28,border:"none",background:tone[0],color:tone[1],cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:6,padding:"14px 8px 12px",fontFamily:FONT }}>
+              className="vp-3d" style={{ "--edge":T.cardEdge,position:"relative",minHeight:156,borderRadius:24,border:`2px solid ${T.cardBorder}`,background:T.card,color:T.ink,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:6,padding:"14px 8px 12px",fontFamily:HFONT }}>
               <GameIcon id={gid} size={68} />
-              <span style={{ fontWeight:900,fontSize:16,lineHeight:1.1,textAlign:"center" }}>{g.label}</span>
-              <span style={{ fontSize:12,opacity:.85,textAlign:"center",lineHeight:1.2 }}>{g.thai}</span>
-              <Stars n={starOf(gid)} />
+              <span style={{ fontWeight:600,fontSize:16,lineHeight:1.15,textAlign:"center" }}>{g.label}</span>
+              <span style={{ fontSize:13,fontWeight:500,color:T.ink2,textAlign:"center",lineHeight:1.25,fontFamily:FONT }}>{g.thai}</span>
+              <span style={{ fontSize:20,letterSpacing:1,lineHeight:1 }}>{[0,1,2].map(k => <span key={k} style={{ color:k < st ? T.secondary : T.cardEdge }}>★</span>)}</span>
             </button>
           );
         })}
@@ -2557,7 +2571,7 @@ function EditWordRow({ word, categories, onSave, onCancel }) {
 // ARCADE GAMES (v3.7) — เกมแอ็กชันที่ปรับจากกลไกยอดนิยม: ตีตัวตุ่น · ลูกโป่ง · ฟันคำ · บิงโก
 //  ทุกเกมรายงานผ่าน track.correct/wrong/finish เหมือนเดิม · ใช้รูปจริง (PicFill) + เสียง
 // ═══════════════════════════════════════════════════════
-const ARCADE_GAMES = ["mole", "balloon", "ninja", "bingo", "runner", "feed"];
+const ARCADE_GAMES = ["mole", "balloon", "ninja", "bingo", "runner", "feed", "racer", "findroom", "action", "penalty"];
 const pickOthers = (words, w, n) => shuffle(words.filter(x => x.id !== w.id)).slice(0, n);
 
 // ── ตีตัวตุ่น: ได้ยินคำ → ตุ่นโผล่พร้อมรูป ตีตัวที่ตรงให้ทัน (40 วิ) ──
@@ -2821,11 +2835,15 @@ function GameRouter({ gameId, cat, words, speak, speakAt, showToast, onBack, pro
   if (gameId === "ninja")    game = <NinjaGame {...p} />;
   if (gameId === "bingo")    game = <BingoGame {...p} />;
   if (gameId === "feed")     game = <FeedGame {...p} />;
-  if (gameId === "runner")   game = <GameCard><div style={GS.body}><Suspense fallback={<div style={{ textAlign:"center",padding:40,...TYPE.titleM,color:T.ink2 }}>🏃 กำลังสร้างโลก 3 มิติ…</div>}>
-    <Runner3D key={run} words={words} speak={speak} track={track} catId={cat.id} sfx={sfx} Prompt={SoundPrompt}
-      ui={{ imageUrl: w => { const t = imageTitleOf(w); return t ? bundledImageUrl(t) : null; }, say: w => speak(w.word, w.meaning), correct: w => track.correct(w), wrong: w => track.wrong(w), unlock: unlockSfx,
-        tokens: { card:T.card, ink:T.ink, primary:T.primary, onPrimary:T.onPrimary, shadow:MD.shadow } }} />
-  </Suspense></div></GameCard>;
+  const ui3d = { imageUrl: w => { const t = imageTitleOf(w); return t ? bundledImageUrl(t) : null; }, say: w => speak(w.word, w.meaning), correct: w => track.correct(w), wrong: w => track.wrong(w), unlock: unlockSfx,
+    tokens: { card:T.card, ink:T.ink, primary:T.primary, onPrimary:T.onPrimary, shadow:MD.shadow } };
+  const mount3D = (Comp, msg) => <GameCard><div style={GS.body}><Suspense fallback={<div style={{ textAlign:"center",padding:40,...TYPE.titleM,color:T.ink2 }}>{msg}</div>}>
+    <Comp key={run} words={words} speak={speak} track={track} catId={cat.id} sfx={sfx} Prompt={SoundPrompt} ui={ui3d} /></Suspense></div></GameCard>;
+  if (gameId === "runner")   game = mount3D(Runner3D, "🏃 กำลังสร้างโลก 3 มิติ…");
+  if (gameId === "racer")    game = mount3D(Racer3D, "🏎️ กำลังเตรียมสนามแข่ง…");
+  if (gameId === "action")   game = mount3D(ActionStage3D, "🎭 กำลังเตรียมเวที…");
+  if (gameId === "findroom") game = mount3D(FindRoom3D, "🔎 กำลังจัดห้อง…");
+  if (gameId === "penalty")  game = mount3D(PenaltyKick3D, "⚽ กำลังเปิดสนาม…");
   if (gameId === "habitat")  game = <HabitatGame {...p} />;
   if (gameId === "match")    game = <MatchGame {...p} />;
   if (gameId === "colormix") game = <ColorMixGame {...p} />;
@@ -2940,8 +2958,8 @@ function Confetti({ count = 56 }) {
 // ═══════════════════════════════════════════════════════
 const GS = { // game styles (immersive)
   wrap: { padding:"6px 12px 24px",maxWidth:520,margin:"0 auto" },
-  card: { background:MD.surfLowest,color:MD.onSurface,borderRadius:28,boxShadow:MD.shadow,overflow:"hidden" },
-  bar: { display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 18px 8px",fontSize:13,fontWeight:700,color:MD.onSurfaceV },
+  card: { background:MD.surfLowest,color:MD.onSurface,borderRadius:28,border:`2px solid ${MD.cardBorder}`,boxShadow:`0 5px 0 ${MD.cardEdge}`,overflow:"hidden" },
+  bar: { display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 18px 8px",fontSize:15,fontWeight:600,fontFamily:HFONT,color:MD.onSurface },
   body: { padding:"6px 16px 18px" },
   soundBtn: { ...M3.tonal({ minHeight:48,padding:"0 22px",fontSize:14 }),margin:"0 auto 12px",display:"flex" },
 };
@@ -3019,15 +3037,17 @@ function Emoji({ e, w, size=72, fill=true }) {
   return <div style={{ textAlign:"center",lineHeight:1,padding:"6px 0 8px",display:"flex",justifyContent:"center" }}>{w ? <Pic w={w} size={size} fill={fill} /> : <span style={{ fontSize:size*1.3 }}>{e}</span>}</div>;
 }
 // ปุ่มลำโพงใหญ่ สำหรับเกม "ฟังแล้วเลือกรูป" (เด็กที่ยังอ่านไม่ออกเล่นได้)
-function SoundPrompt({ onClick, pulse = true, size = 84, w, word, sub }) {
-  // โจทย์ = เสียง + คำเขียนเสมอ: แตะทั้งแถบเพื่อฟังซ้ำ
+function SoundPrompt({ onClick, pulse = true, size = 80, w, word, sub }) {
+  // โจทย์ = เสียง + คำเขียนเสมอ: การ์ดขาว ปุ่มลำโพงม่วงนูน · คำอังกฤษตัวใหญ่ Fredoka
   const t = word ?? w?.word, m = sub ?? w?.meaning;
-  const fs = !t ? 0 : t.length > 12 ? "clamp(20px,6vw,26px)" : t.length > 7 ? "clamp(24px,7.4vw,32px)" : "clamp(30px,9vw,40px)";
-  return <button onClick={onClick} aria-label="ฟังคำ" className="m3-press" style={{ display:"flex",alignItems:"center",gap:14,width:t ? "100%" : size,maxWidth:t ? 460 : size,margin:"2px auto 10px",padding:t ? "8px 18px 8px 8px" : 0,borderRadius:size,background:t ? T.primaryC : "transparent",color:T.onPrimaryC,border:"none",cursor:"pointer",textAlign:"left",fontFamily:FONT }}>
-    <span style={{ flex:"none",width:size,height:size,borderRadius:size/2,display:"flex",alignItems:"center",justifyContent:"center",fontSize:size*0.46,background:T.primary,color:T.onPrimary,boxShadow:MD.shadow,animation:pulse?"vpBounce 1.5s ease-in-out infinite":"none" }}>🔊</span>
+  const fs = !t ? 0 : t.length > 12 ? "clamp(22px,6.4vw,28px)" : t.length > 7 ? "clamp(26px,8vw,34px)" : "clamp(32px,10vw,44px)";
+  return <button onClick={onClick} aria-label="ฟังคำ" style={{ display:"flex",alignItems:"center",gap:14,width:t ? "100%" : size,maxWidth:t ? 480 : size,margin:"2px auto 12px",padding:t ? "8px 16px 8px 8px" : 0,borderRadius:28,background:t ? T.card : "transparent",color:T.ink,border:t ? "2px solid #E3D9FF" : "none",boxShadow:t ? "0 4px 0 #E3D9FF" : "none",cursor:"pointer",textAlign:"left",fontFamily:HFONT }}>
+    <span className="vp-3d" style={{ "--edge":T.primaryEdge,"--d":"5px",flex:"none",width:size,height:size,borderRadius:size/2,display:"flex",alignItems:"center",justifyContent:"center",background:T.primary,color:T.onPrimary,animation:pulse?"vpBounce 1.5s ease-in-out infinite":"none" }}>
+      <svg width={size*0.46} height={size*0.46} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/><path d="M18.5 6a8 8 0 0 1 0 12" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/></svg>
+    </span>
     {t && <span style={{ flex:1,minWidth:0,display:"flex",flexDirection:"column" }}>
-      <span style={{ fontWeight:900,fontSize:fs,lineHeight:1.05,letterSpacing:.5,wordBreak:"break-word" }}>{t}</span>
-      {m && <span style={{ fontSize:"clamp(13px,3.8vw,16px)",fontWeight:600,opacity:.85,marginTop:2 }}>{m}</span>}
+      <span style={{ fontFamily:WFONT,fontWeight:700,fontSize:fs,lineHeight:1.05,letterSpacing:.5,wordBreak:"break-word",color:T.ink }}>{t}</span>
+      {m && <span style={{ fontSize:16,fontWeight:500,color:T.ink2,marginTop:3,fontFamily:FONT }}>{m}</span>}
     </span>}
   </button>;
 }
@@ -3074,15 +3094,15 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
       <div style={GS.body}>
         <SoundPrompt onClick={()=>speak(cur.word,cur.meaning)} pulse={!lock} w={cur} />
         <p style={{ textAlign:"center",fontSize:13,fontWeight:700,color:T.ink2,margin:"0 0 8px",minHeight:20 }}>{lock ? <b style={{ color:T.primary,fontSize:14 }}>{cur.word} · {cur.read} · {cur.meaning}</b> : "👂 ฟังแล้วแตะรูปที่ตรงกัน"}</p>
-        <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
+        <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:12 }}>
           {choices.map(c=>{
             const ic=c.id===cur.id,ip=picked===c.id,sr=lock&&(ic||ip);
-            let bg=T.tertiaryC,bo=T.tertiary,tc=T.onTertiaryC;
-            if(sr&&ic){bg=T.okC;bo=T.ok;tc=T.onOkC;}
-            if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
-            if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
+            let bg=T.card,bo=T.cardBorder,ed=T.cardEdge,op=1;
+            if(sr&&ic){bg=T.okC;bo=T.ok;ed=T.okEdge;}
+            if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;ed=T.errorEdge;}
+            if(lock&&!ip&&!ic){op=.45;}
             return <button key={c.id} onClick={e=>pick(c, e)} disabled={lock}
-              style={{ background:bg,border:`3px solid ${bo}`,borderRadius:16,padding:0,aspectRatio:"4/3",position:"relative",overflow:"hidden",cursor:"pointer" }}>
+              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${ed}`,borderRadius:20,padding:0,aspectRatio:"4/3",position:"relative",overflow:"hidden",cursor:"pointer",opacity:op,transform:sr&&ic?"scale(1.03)":"none",transition:"transform .15s, opacity .2s",animation:sr&&ip&&!ic?"vpWiggle .3s":"none" }}>
               <PicFill w={c} emojiSize={44} />
             </button>;
           })}
@@ -3306,7 +3326,7 @@ function SpeedGame({ words, speak, showToast, track }) {
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
               {opts.map(o=>(
                 <button key={o.id} onClick={()=>{ if(o.id===cur.id){scoreRef.current+=1;setScore(s=>s+1);track.correct(cur);next();}else{track.wrong(cur);showToast("❌","err");} }}
-                  style={{background:T.tertiaryC,border:`3px solid ${T.tertiary}`,borderRadius:16,padding:0,aspectRatio:"4/3",position:"relative",overflow:"hidden",cursor:"pointer"}}>
+                  style={{background:T.card,border:`3px solid ${T.cardBorder}`,boxShadow:`0 5px 0 ${T.cardEdge}`,borderRadius:20,padding:0,aspectRatio:"4/3",position:"relative",overflow:"hidden",cursor:"pointer"}}>
                   <PicFill w={o} emojiSize={40} />
                 </button>
               ))}
@@ -3674,12 +3694,12 @@ function BossGame({ words, speak, track, cat, onBack }) {
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {choices.map(c=>{
             const ic=c.id===q.w.id,ip=picked===c.id,sr=lock&&(ic||ip);
-            let bg=T.primaryC,bo=T.primary,tc=T.primary;
+            let bg=T.card,bo=T.cardBorder,tc=T.ink;
             if(sr&&ic){bg=T.okC;bo=T.ok;tc=T.onOkC;}
             if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
             if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
             return <button key={c.id} onClick={()=>pick(c)} disabled={lock}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,padding:q.mode==="rev"?0:"12px 6px",aspectRatio:"4/3",fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
+              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${T.cardEdge}`,borderRadius:20,padding:q.mode==="rev"?0:"12px 6px",aspectRatio:"4/3",fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
               {q.mode==="rev"?<PicFill w={c} emojiSize={34} />:c.word}
             </button>;
           })}
@@ -4080,11 +4100,11 @@ function ListenGame({ words, speakAt, track, onBack, pool }) {
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginTop:8 }}>
           {choices.map(c => {
             const ic = c.id === cur.id, ip = picked === c.id, sr = lock && (ic || ip);
-            let bg = T.primaryC, bo = T.primaryC;
-            if (sr && ic) { bg = T.okC; bo = T.ok; }
-            if (sr && ip && !ic) { bg = T.errorC; bo = T.error; }
+            let bg = T.card, bo = T.cardBorder, ed = T.cardEdge;
+            if (sr && ic) { bg = T.okC; bo = T.ok; ed = T.okEdge; }
+            if (sr && ip && !ic) { bg = T.errorC; bo = T.error; ed = T.errorEdge; }
             return <button key={c.id} onClick={() => pick(c)} disabled={lock || !played}
-              style={{ background:bg,border:`2px solid ${bo}`,borderRadius:16,aspectRatio:"4/3",fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
+              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${ed}`,borderRadius:20,aspectRatio:"4/3",fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
           })}
         </div>
       </div>
@@ -4236,7 +4256,7 @@ function MissionsCard({ progress, setProgress }) {
   const ms = missionsForDate(d.date || today());
   const doneAll = ms.every(m => d.claimed[m.id]);
   return (
-    <div style={{ ...card({ background:T.surfHigh }),padding:"14px 16px",marginBottom:14 }}>
+    <div style={{ ...M3.card(),padding:"14px 16px",marginBottom:14 }}>
       <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8 }}>
         <span style={{ ...TYPE.titleM,color:T.ink,display:"inline-flex",alignItems:"center",gap:8 }}><Shape kind="cookie6" size={28} fill={T.tertiaryC}><span style={{ fontSize:14 }}>🎯</span></Shape>ภารกิจวันนี้</span>
         <span style={{ ...TYPE.labelM,color:T.ink3 }}>{doneAll ? "ครบแล้ว เก่งมาก! 🎉" : "รีเซ็ตทุกวัน"}</span>
@@ -4578,7 +4598,7 @@ function CreditsScreen({ words }) {
         <b style={{ color:T.ink }}>โมเดล 3 มิติในเกม Word Runner 3D</b><br/>
         🦊 Fox — model by PixelMannen (CC0), rigging &amp; animation by tomkranis (CC-BY 4.0), glTF conversion by AsoboStudio &amp; scurest (CC-BY 4.0) · จาก KhronosGroup glTF-Sample-Assets<br/>
         🤖 RobotExpressive — model by Tomás Laulhé (Quaternius), modifications by Don McCurdy (CC0 1.0) · จากตัวอย่าง three.js<br/>
-        🐕🦌🐴🐰🦝 Shiba Inu, Deer, Horse, Platformer Character, Rae the Red Panda — models by Quaternius (quaternius.com, CC0) · 🧙 Mage — KayKit by Kay Lousberg (kaylousberg.com, CC0)<br/>
+        🐕🐄🐴🦌🫏🦙🐺🦖🐸🐭🦀🐍🐝🕷️🐰🦝 สัตว์และตัวละคร, ผลไม้ ของใช้ในบ้าน เรือ ยานอวกาศ — models by Quaternius (quaternius.com, CC0) · 🧙⚔️🍔🪑🚕 KayKit by Kay Lousberg (kaylousberg.com, CC0) · 🚗🏎️🚓 Car Kit / Racing Kit by Kenney (kenney.nl, CC0) · 👟 Shoe model by Shopify (CC BY 4.0)<br/>
         🌄 ท้องฟ้า HDRI · พื้นผิว PBR · หิน พุ่มไม้ เฟิร์น เสาไฟ ม้านั่ง ผลไม้ — จาก <b>Poly Haven</b> (polyhaven.com) สัญญาอนุญาต CC0 · เอนจิน three.js (MIT)
       </div>
       {list === null && <div style={{ textAlign:"center",color:T.ink3 }}>กำลังโหลด…</div>}

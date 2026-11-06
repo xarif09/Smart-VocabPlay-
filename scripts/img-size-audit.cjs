@@ -34,7 +34,7 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
   const game = async (c, g, kind, pre) => { try { await cat(c); await p.locator('button', { hasText: g }).first().click({ timeout: 4000 }); await p.waitForTimeout(400); if (pre) await pre(); await measure(`${c} · ${g}`, kind); } catch (e) { rows.push({ name: `${c} · ${g}`, kind, n: 0, max: '-', min: '-', ok: false, why: 'เปิดไม่ได้: ' + e.message.split('\n')[0].slice(0, 60) }); } };
   const startBtn = async () => { await p.click('text=▶ เริ่ม!').catch(() => {}); await p.waitForTimeout(1500); };
   const flip2 = async () => { const c = p.locator('div[style*="grid"] > button'); await c.nth(0).click().catch(() => {}); await p.waitForTimeout(900); };
-  const listen = async () => { await p.locator('button:has-text("🔊")').nth(1).click({ force: true }).catch(() => {}); };
+  const listen = async () => { await p.locator('button[aria-label="ฟังคำ"]').first().dispatchEvent('click').catch(() => {}); };
   try { await cat('Animals'); await p.click('text=เรียนคำศัพท์ก่อนเล่น'); await measure('การ์ดเรียน (หน้า)', 'single'); await p.click('text=แตะการ์ดเพื่อพลิกดูความหมาย').catch(() => {}); await measure('การ์ดเรียน (หลัง)', 'single'); } catch (e) {}
   await game('Animals', 'Quiz', 'multi');
   await game('Animals', 'Spelling', 'single');
@@ -48,7 +48,11 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
   await game('Animals', 'Word Ninja', 'multi', startBtn);
   await game('Animals', 'Bingo', 'multi', startBtn);
   await game('Fruits', 'Feed the Pet', 'multi');
-  await game('Animals', 'Word Runner 3D', 'info');   // ฉาก 3D (รูปเป็น texture บนป้าย ไม่ใช่ <img>)
+  await game('Animals', 'Word Runner 3D', 'info');
+  await game('Vehicles', 'Word Racer 3D', 'info');
+  await game('Actions', 'Who Is Doing It?', 'info');
+  await game('Toys', 'Find It!', 'info');
+  await game('Sports', 'Penalty Kick 3D', 'info');   // ฉาก 3D (รูปเป็น texture บนป้าย ไม่ใช่ <img>)
   await game('Fruits', 'Speed', 'multi', startBtn);
   await game('Colors', 'Picture Match', 'multi');
   await game('Colors', 'Color Mix', 'single');

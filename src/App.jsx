@@ -1604,7 +1604,7 @@ export default function App() {
   const goTab = t => { sfx.tap(); setNavTab(t); setActiveCat(null); setActiveGame(null); setActiveDialog(null); setActiveStory(null); setScreen(t === "home" ? "home" : t); exitFullscreen(); };
   const goHome     = () => { setScreen("home"); setNavTab("home"); setActiveCat(null); setActiveGame(null); exitFullscreen(); };
   const goCat      = cat => { setActiveCat(cat); setScreen("category"); };
-  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"แตะสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บของระหว่างทางด้วยนะ", racer:"เลือกรถ แล้วขับผ่านประตูรูปที่ได้ยินเพื่อเร่งเทอร์โบ", action:"ฟังคำ แล้วแตะคนที่กำลังทำท่านั้นอยู่", findroom:"ห้องรกมาก ฟังคำแล้วหาของชิ้นนั้นให้เจอ แตะเลย", penalty:"ฟังคำ แล้วแตะรูปที่ถูกเพื่อยิงประตู", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
+  const GUIDE = { quiz:"ฟังคำ แล้วแตะรูปที่ตรงกัน", spell:"ฟังคำ แล้วแตะตัวอักษรเรียงให้ถูก", memory:"พลิกการ์ดทีละสองใบ หาเสียงกับรูปที่เป็นคู่กัน", speed:"ฟังแล้วรีบแตะรูปให้เร็วที่สุดใน 30 วินาที", habitat:"ฟังชื่อสัตว์ แล้วแตะบ้านของมัน", match:"แตะลำโพงฟังคำ แล้วแตะรูปที่ตรงกัน", colormix:"เลือกสองสีผสมให้ได้สีเป้าหมาย", count:"นับจำนวนแล้วเลือกตัวเลข", bodydr:"ฟังแล้วแตะส่วนของร่างกาย", dress:"เลือกเสื้อผ้าให้เหมาะกับอากาศ", boss:"ด่านบอส ฟังแล้วแตะรูป สิบข้อ มีหัวใจสามดวง ตอบถูกเจ็ดข้อขึ้นไปจึงชนะ", listen:"แตะลำโพงเพื่อฟัง แล้วเลือกรูปที่ได้ยิน", sentence:"แตะคำเรียงให้เป็นประโยคภาษาอังกฤษ", speak:"แตะไมค์ แล้วพูดคำภาษาอังกฤษตาม", phonics:"ฟังคำ แล้วเลือกตัวอักษรตัวแรก", grammar:"เลือกคำที่ถูกต้องเติมในประโยค", time:"ดูนาฬิกาแล้วเลือกเวลาภาษาอังกฤษ", money:"รวมเงินแล้วเลือกจำนวนบาท", calendar:"ตอบคำถามเรื่องวันและเดือน", numbers100:"ฟังตัวเลขแล้วเลือก", test:"ข้อสอบยี่สิบข้อ ตั้งใจทำนะ", droleplay:"แอปจะพูดอีกฝ่าย ถึงตาหนูให้แตะไมค์แล้วพูดตาม", dfill:"เลือกคำเติมในบทสนทนา", squiz:"ตอบคำถามจากนิทานที่อ่าน", mole:"ฟังคำ แล้วตีตัวตุ่นที่ถือรูปตรงกันให้ทัน", balloon:"ฟังคำ แล้วเจาะลูกโป่งที่มีรูปตรงกันก่อนลอยพ้นจอ", ninja:"ปาดนิ้วผ่านรูปที่ตรงกับเสียง ระวังอย่าฟันผิด", bingo:"ฟังคำ แล้วแตะรูปในตาราง ให้ครบสามช่องเป็นแถว", runner:"วิ่งไปชนป้ายรูปที่ได้ยิน ปัดนิ้วซ้ายขวาเพื่อเปลี่ยนเลน เก็บของระหว่างทางด้วยนะ", racer:"เลือกรถ แล้วขับผ่านประตูรูปที่ได้ยินเพื่อเร่งเทอร์โบ", action:"ฟังคำ แล้วแตะคนที่กำลังทำท่านั้นอยู่", findroom:"ห้องรกมาก ฟังคำแล้วหาของชิ้นนั้นให้เจอ แตะเลย", penalty:"ฟังคำ แล้วแตะรูปที่ถูกเพื่อยิงประตู", feed:"เพื่อนคู่หูหิวแล้ว ฟังคำแล้วป้อนอาหารที่ถูกให้เลย" };
   const goGame     = gid => { setActiveGame(gid); setScreen("game"); enterFullscreen(); speakTh(GUIDE[gid]); };
   const goManage   = () => guard(() => setScreen("manage"));
   const openSettings = () => guard(() => setShowSettings(true));
@@ -3343,39 +3343,48 @@ function SpeedGame({ words, speak, showToast, track }) {
 // ═══════════════════════════════════════════════════════
 function HabitatGame({ words, speak, showToast, track }) {
   const ZN=[
-    {id:"farm",label:"ฟาร์ม",e:"🚜",bg:T.tertiaryC,bo:T.tertiary},
-    {id:"forest",label:"ป่า",e:"🌳",bg:"#dcfce7",bo:T.ok},
-    {id:"ocean",label:"ทะเล",e:"🌊",bg:T.secondaryC,bo:"#7dd3fc"},
+    {id:"farm",label:"ฟาร์ม",e:"🚜",bg:T.secondaryC,bo:T.secondaryEdge},
+    {id:"forest",label:"ป่า",e:"🌳",bg:T.okC,bo:T.okEdge},
+    {id:"ocean",label:"ทะเล",e:"🌊",bg:T.tertiaryC,bo:T.tertiaryEdge},
   ];
   const base=useMemo(()=>shuffle(words.filter(w=>w.habitat)).slice(0,9),[words]);
   const [pool,setPool]=useState(base);
   const [placed,setPlaced]=useState({farm:[],forest:[],ocean:[]});
-  const [sel,setSel]=useState(null);
+  const [shake,setShake]=useState(null);
   const wrongs=useRef(0);
+  const cur=pool[0];
   const done=pool.length===0&&base.length>0;
   useEffect(()=>{ if(done) track.finish(base.length,base.length,{ stars: starsByWrong(wrongs.current) }); },[done]);
-
+  // ตัวแรก: ลองพูดหลังคำแนะนำจบ (ตัวต่อๆ ไปพูดตรงในจังหวะที่แตะ → เสียงมาทันที ไม่ช้า)
+  useEffect(()=>{ if(cur) afterSpeech(()=>speak(cur.word,cur.meaning),300); },[]); // eslint-disable-line
+  const answer=(z,e)=>{
+    if(!cur) return;
+    if(cur.habitat===z.id){
+      track.correct(cur,e);
+      const next=pool[1];
+      setPlaced(p=>({...p,[z.id]:[...p[z.id],cur]})); setPool(p=>p.slice(1));
+      if(next) speak(next.word,next.meaning);          // พูดตัวถัดไปทันทีในคลิก
+    } else {
+      wrongs.current+=1; track.wrong(cur); setShake(z.id); setTimeout(()=>setShake(null),400);
+      speak(cur.word,cur.meaning);                       // ผิด → ฟังชื่อสัตว์อีกครั้ง
+    }
+  };
   return (
     <GameCard>
-      <Bar left="Habitat Hunt ⭐" right={`${base.length-pool.length}/${base.length}`} />
+      <Bar left="Habitat Hunt" right={`${base.length-pool.length}/${base.length}`} />
       <div style={GS.body}>
-        <p style={{textAlign:"center",fontSize:12,color:T.ink2,margin:"0 0 8px"}}>แตะสัตว์ → แตะที่อยู่ของมัน</p>
-        {pool.length===0
-          ? <div style={{background:T.okC,color:T.onOkC,borderRadius:20,padding:24,textAlign:"center",fontWeight:800,marginBottom:10}}>✅ ครบทุกตัว!</div>
-          : (()=>{ const a = sel && pool.find(x=>x.id===sel.id) ? sel : pool[0]; if (a !== sel) setTimeout(()=>setSel(a),0); return (
-            <button onClick={()=>{sfx.tap();setSel(a);speak(a.word,a.meaning);}} style={{display:"block",width:"100%",border:"none",background:"transparent",padding:0,cursor:"pointer",marginBottom:10}}>
-              <PicBox w={a} h="min(30vh, 280px)" />
-              <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:6,padding:"0 4px"}}><span style={{...TYPE.titleL,color:T.ink}}>🔊 {a.word}</span><span style={{...TYPE.labelM,color:T.ink3}}>เหลือ {pool.length} ตัว</span></div>
-            </button>); })()}
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7}}>
+        {!cur
+          ? <div style={{background:T.okC,color:T.onOkC,borderRadius:20,padding:24,textAlign:"center",fontWeight:600,fontFamily:HFONT,fontSize:20,marginBottom:10}}>✅ ครบทุกตัว!</div>
+          : <>
+            <SoundPrompt onClick={()=>speak(cur.word,cur.meaning)} w={cur} />
+            <PicBox w={cur} h="min(30vh, 280px)" style={{ marginBottom:10 }} />
+            <p style={{textAlign:"center",...TYPE.labelL,color:T.ink2,margin:"0 0 8px"}}>สัตว์ตัวนี้อยู่ที่ไหน? แตะบ้านของมัน · เหลือ {pool.length} ตัว</p>
+          </>}
+        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8}}>
           {ZN.map(z=>(
-            <button key={z.id} onClick={()=>{
-              if(!sel) return;
-              if(sel.habitat===z.id){track.correct(sel);setPlaced(p=>({...p,[z.id]:[...p[z.id],sel]}));setPool(p=>p.filter(x=>x.id!==sel.id));speak(sel.word,sel.meaning);setSel(null);}
-              else{wrongs.current+=1;track.wrong(sel);showToast("ลองอีก 🐾","warn");setSel(null);}
-            }} style={{background:z.bg,border:`2px solid ${z.bo}`,borderRadius:16,padding:"8px 4px",minHeight:100,display:"flex",flexDirection:"column",alignItems:"center",gap:3,cursor:"pointer"}}>
-              <span style={{fontSize:34}}>{z.e}</span>
-              <span style={{fontSize:13,fontWeight:800,color:T.ink}}>{z.label}</span>
+            <button key={z.id} onClick={e=>answer(z,e)} className="vp-3d" style={{"--edge":z.bo,background:z.bg,border:`2px solid ${z.bo}`,borderRadius:20,padding:"8px 4px",minHeight:108,display:"flex",flexDirection:"column",alignItems:"center",gap:3,cursor:"pointer",fontFamily:HFONT,animation:shake===z.id?"vpWiggle .35s":"none"}}>
+              <span style={{fontSize:36}}>{z.e}</span>
+              <span style={{fontSize:16,fontWeight:600,color:T.ink}}>{z.label}</span>
               <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center",gap:2,marginTop:3}}>
                 {placed[z.id].map(a=><span key={a.id} data-thumb style={{position:"relative",width:28,height:28,borderRadius:8,overflow:"hidden",display:"inline-block"}}><PicFill w={a} emojiSize={18} /></span>)}
               </div>

@@ -269,7 +269,7 @@ const CATEGORIES = [
 const REVIEW_CAT = { id:"review", label:"ทบทวนคำที่พลาด", thai:"ทบทวน", emoji:"🔁", color:"#F97316", games:["quiz"] };
 
 // เกมเสริมที่ทุกหมวดมี (ฟัง / เรียงประโยค / พูดตาม)
-const EXTRA_GAMES = ["runner", "listen", "sentence", "speak", "mole", "balloon", "ninja", "bingo"];
+const EXTRA_GAMES = ["runner", "racer", "penalty", "listen", "sentence", "speak", "mole", "balloon", "ninja", "bingo"];   // racer/penalty ใช้คำของหมวดไหนก็ได้ (ประตูรูป)
 CATEGORIES.forEach(c => { c.games.push(...EXTRA_GAMES); c.games = [...new Set(c.games)]; });   // เกมเฉพาะหมวดอยู่หน้าเสมอ
 
 // รูปปกหมวด = คำเสมือน { cat:"cover", word:<id> } → ดึงรูปจาก images.js key "cover|<id>"
@@ -1484,6 +1484,7 @@ export default function App() {
   const [screen, setScreen] = useState("home");   // home|category|game|manage
   const [activeCat, setActiveCat] = useState(null);
   const [activeGame, setActiveGame] = useState(null);
+  const [pickGame, setPickGame] = useState(null);     // v3.18: เลือกเกมก่อน → แล้วเลือกหมวดคำศัพท์
   const [words, setWords] = useState(loadSavedWords);
   const [profiles, setProfiles] = useState(loadProfiles);
   const [progress, setProgress] = useState(() => loadProgress(loadProfiles().current));
@@ -1654,6 +1655,7 @@ export default function App() {
       return { list, current };
     });
   };
+  const goPickGame = gid => { setPickGame(gid); setScreen("pickcat"); };
   const goReview   = () => { setActiveCat(REVIEW_CAT); setActiveGame("quiz"); setScreen("game"); enterFullscreen(); speakTh("มาทบทวนคำที่เคยพลาดกัน ฟังแล้วแตะรูปให้ถูกนะ"); };
   const goBack     = () => {
     if (screen === "game" || screen === "learn" || screen === "versus") exitFullscreen();
@@ -1687,7 +1689,7 @@ export default function App() {
   const showNav = !immersive && screen !== "credits" && !showSettings && !showProfiles;   // ซ่อนแท็บล่างตอนเปิดแผ่นตั้งค่า/โปรไฟล์
   // พื้นโหมดเกม: สีหมวดผสมกับ surface ของธีม (M3 tonal) → ยังรู้ว่าอยู่หมวดไหน แต่โทนเดียวกับทั้งแอปและใช้ได้ในโหมดมืด
   const immersiveBg = `linear-gradient(180deg, color-mix(in oklab, ${CAT_ACCENT[activeCat?.id] ? accentOf(activeCat.id).fill : "var(--md-primary)"} 16%, var(--md-surface)) 0%, var(--md-surface) 32%)`;
-  const headerTitle = ({ home:"", learnhub:"เรียน", playhub:"เล่น", me:"ของฉัน", manage:"จัดการคำศัพท์", stickers:"สมุดสติกเกอร์", shop:"ร้านค้า", room:"ห้องเพื่อนคู่หู", report:"รายงานผู้ปกครอง", credits:"เครดิตรูปภาพ", path:"เส้นทางบทเรียน", talk:"บทสนทนา", stories:"นิทานภาพ", phonics:"โฟนิกส์", grammar:"ไวยากรณ์", daily:"ชีวิตประจำวัน", test:"สอบวัดระดับ", versus:"แข่ง 2 คน" })[screen] ?? (activeCat?.label || "");
+  const headerTitle = ({ pickcat:GAME_META[pickGame]?.label || "เลือกคำศัพท์", home:"", learnhub:"เรียน", playhub:"เล่น", me:"ของฉัน", manage:"จัดการคำศัพท์", stickers:"สมุดสติกเกอร์", shop:"ร้านค้า", room:"ห้องเพื่อนคู่หู", report:"รายงานผู้ปกครอง", credits:"เครดิตรูปภาพ", path:"เส้นทางบทเรียน", talk:"บทสนทนา", stories:"นิทานภาพ", phonics:"โฟนิกส์", grammar:"ไวยากรณ์", daily:"ชีวิตประจำวัน", test:"สอบวัดระดับ", versus:"แข่ง 2 คน" })[screen] ?? (activeCat?.label || "");
 
   // คำที่ถึงกำหนดทบทวนวันนี้ (SRS) + คำที่เคยพลาด เรียงจากพลาดบ่อยสุด
   const missedWords = useMemo(() => {
@@ -1697,7 +1699,7 @@ export default function App() {
   const stickerCount = useMemo(() => words.filter(w => (progress.stickers[w.id] || 0) >= STICKER_NEED).length, [words, progress.stickers]);
 
   const catWords = useMemo(
-    () => !activeCat ? [] : activeCat.unit ? activeCat.unit.words : activeCat.id === "review" ? missedWords.slice(0, 10) : (activeCat.id === "phonics:all" || activeCat.back) ? words : words.filter(w => w.cat === activeCat.id),
+    () => !activeCat ? [] : activeCat.unit ? activeCat.unit.words : activeCat.id === "review" ? missedWords.slice(0, 10) : (activeCat.id === "phonics:all" || (activeCat.back && !CATEGORIES.some(c => c.id === activeCat.id))) ? words : words.filter(w => w.cat === activeCat.id),
     [words, activeCat, missedWords]
   );
   const units = useMemo(() => buildUnits(words, CATEGORIES), [words]);
@@ -1749,10 +1751,13 @@ export default function App() {
         {screen === "home" && (
           <HomeScreen categories={CATEGORIES} words={words} onPickCat={goCat}
             progress={progress} setProgress={setProgress} stickerCount={stickerCount}
-            missedCount={missedWords.length} onReview={goReview} onStickers={goStickers} onShop={goShop} onRoom={goRoom} onPath={goPath} onTalk={goTalk} onStories={goStories} onPhonics={goPhonics} onGrammar={goGrammar} onDaily={goDaily} onTest={goTest} onVersus={goVersus} onQuickGame={startPseudoGame} speak={speak}
+            missedCount={missedWords.length} onReview={goReview} onStickers={goStickers} onShop={goShop} onRoom={goRoom} onPath={goPath} onTalk={goTalk} onStories={goStories} onPhonics={goPhonics} onGrammar={goGrammar} onDaily={goDaily} onTest={goTest} onVersus={goVersus} onQuickGame={startPseudoGame} onPickGame={goPickGame} speak={speak}
             units={units} profile={profiles.list.find(x => x.id === profiles.current)} onProfiles={() => setShowProfiles(true)}
             install={!installHidden ? { evt: installEvt, onInstall: async () => { try { installEvt.prompt(); const r = await installEvt.userChoice; if (r?.outcome === "accepted") showToast("ติดตั้งแล้ว 📲"); } catch (_) {} setInstallEvt(null); },
               onDismiss: () => { setInstallHidden(true); try { localStorage.setItem("smart-vocabplay:install-hidden", "1"); } catch (_) {} } } : null} />
+        )}
+        {screen === "pickcat" && pickGame && (
+          <GamePickScreen gid={pickGame} categories={CATEGORIES} words={words} progress={progress} onPick={cat => startPseudoGame({ ...cat, back:"pickcat" }, pickGame)} />
         )}
         {screen === "category" && activeCat && (
           <CategoryScreen cat={activeCat} words={catWords} onPickGame={goGame} onLearn={goLearn} progress={progress} showToast={showToast} />
@@ -2006,7 +2011,45 @@ function QrCard() {
     </div>
   );
 }
-function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, onRoom, onPath, onTalk, onStories, onPhonics, onGrammar, onDaily, onTest, onVersus, speak, units, profile, onProfiles, install, onQuickGame }) {
+// กลุ่มเกมในหน้าแรก
+const GAME_GROUPS = [
+  ["เกม 3 มิติ", "วิ่ง แข่งรถ ยิงประตู หาของ", ["runner","racer","penalty","findroom","action"]],
+  ["ฟังแล้วแตะรูป", "เล่นได้ทุกหมวด", ["listen","quiz","speed","bingo","match","memory"]],
+  ["เกมแอ็กชัน", "ตี เจาะ ฟัน ให้ไว", ["mole","balloon","ninja"]],
+  ["เกมเฉพาะเรื่อง", "สัตว์ อาหาร สี ตัวเลข ร่างกาย อากาศ", ["habitat","feed","colormix","count","bodydr","dress"]],
+  ["สะกด พูด เรียงประโยค", "ฝึกอ่าน-พูด", ["spell","sentence","speak"]],
+];
+const GAME_TONES = [["#7B4DFF","#5A2FD6","#fff"],["#1CB0F6","#1290CC","#fff"],["#FF9F1C","#D97F00","#fff"],["#2EBD59","#20994A","#fff"],["#FF5FA2","#D9407F","#fff"],["#FFC531","#E0A200","#3A2A00"]];
+function GameTile({ gid, i, categories, progress, onClick }) {
+  const m = GAME_META[gid]; const [fill, edge, on] = GAME_TONES[i % GAME_TONES.length];
+  const cats = categories.filter(c => c.games.includes(gid));
+  const stars = cats.reduce((a, c) => a + (progress.stars[`${c.id}:${gid}`] || 0), 0);
+  return (
+    <button onClick={onClick} className="vp-3d" style={{ "--edge":edge,minHeight:168,borderRadius:24,border:"none",background:fill,color:on,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:"12px 8px",fontFamily:HFONT }}>
+      <span style={{ width:88,height:88,borderRadius:"50%",background:"rgba(255,255,255,.95)",display:"flex",alignItems:"center",justifyContent:"center" }}><GameIcon id={gid} size={64} /></span>
+      <span style={{ fontWeight:600,fontSize:16,lineHeight:1.15,textAlign:"center" }}>{m.label}</span>
+      <span style={{ fontSize:13,fontWeight:500,opacity:.9 }}>{cats.length} หมวด · ⭐ {stars}</span>
+    </button>
+  );
+}
+// เลือกหมวดคำศัพท์สำหรับเกมที่เลือก
+function GamePickScreen({ gid, categories, words, progress, onPick }) {
+  const m = GAME_META[gid] || {};
+  const cats = categories.filter(c => c.games.includes(gid));
+  return (
+    <div style={{ padding:"8px 16px 24px",maxWidth:560,margin:"0 auto" }}>
+      <div style={{ display:"flex",alignItems:"center",gap:14,background:MD.heroGrad,color:"#fff",borderRadius:28,padding:"16px 18px",marginBottom:16,boxShadow:`0 5px 0 ${T.primaryEdge}`,fontFamily:HFONT }}>
+        <span style={{ width:84,height:84,borderRadius:"50%",background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",flex:"none" }}><GameIcon id={gid} size={64} /></span>
+        <div><div style={{ fontWeight:600,fontSize:24,lineHeight:1.1 }}>{m.label}</div><div style={{ fontSize:15,opacity:.92,marginTop:4,fontFamily:FONT }}>{m.thai}</div></div>
+      </div>
+      <div style={M3.sectionTitle({ margin:"0 4px 12px" })}>เลือกคำศัพท์ที่จะเล่น</div>
+      <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px 8px" }}>
+        {cats.map(c => <CatBubble key={c.id} cat={c} words={words} progress={progress} onClick={() => { sfx.tap(); onPick(c); }} />)}
+      </div>
+    </div>
+  );
+}
+function HomeScreen({ categories, words, onPickCat, progress, setProgress, stickerCount, missedCount, onReview, onStickers, onShop, onRoom, onPath, onTalk, onStories, onPhonics, onGrammar, onDaily, onTest, onVersus, speak, units, profile, onProfiles, install, onQuickGame, onPickGame }) {
   const careNow = progress.pet ? tickCare(progress.care) : null;
   const careAvg = careNow ? (careNow.hunger + careNow.clean + careNow.fun + careNow.energy) / 4 : 100;
   const unitsDone = units.filter(u => unitDone(progress.path, u)).length;
@@ -2066,20 +2109,18 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
       )}
       {install && <InstallBanner deferred={install.evt} onInstall={install.onInstall} onDismiss={install.onDismiss} />}
 
-      {/* ชั้นเกม: เลื่อนแนวนอน การ์ดเกมใหญ่ */}
+      {/* คลังเกม (v3.18): เกมอยู่หน้าแรก · แตะเกม → เลือกหมวดคำศัพท์ */}
       {progress.pet && <>
-        {sec(<>เกมสนุก <span style={{ ...TYPE.labelM,color:T.ink2 }}>{fCat.label}</span></>)}
-        <div style={{ display:"flex",gap:12,overflowX:"auto",scrollSnapType:"x mandatory",margin:"0 -16px",padding:"2px 16px 12px",scrollbarWidth:"none" }}>
-          {fGames.filter(g => g !== "boss").map((g, i) => {
-            const st = progress.stars[`${fCat.id}:${g}`] || 0;
-            const ac = accentOf(fCat.id);
-            return <button key={g} onClick={() => go(fCat, g)} className="vp-3d" style={{ "--edge":ac.edge,flex:"none",width:132,minHeight:160,scrollSnapAlign:"start",borderRadius:24,border:"none",background:ac.fill,color:ac.on,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:"12px 8px",fontFamily:HFONT }}>
-              <span style={{ width:84,height:84,borderRadius:"50%",background:"rgba(255,255,255,.95)",display:"flex",alignItems:"center",justifyContent:"center" }}><GameIcon id={g} size={62} /></span>
-              <span style={{ fontWeight:600,fontSize:15,lineHeight:1.15,textAlign:"center" }}>{GAME_META[g]?.label}</span>
-              <span style={{ fontSize:17,letterSpacing:1,lineHeight:1 }}>{[0,1,2].map(k => <span key={k} style={{ color:k < st ? T.secondary : "rgba(255,255,255,.45)" }}>★</span>)}</span>
-            </button>;
-          })}
-        </div>
+        {GAME_GROUPS.map(([title, sub, ids]) => {
+          const list = ids.filter(g => GAME_META[g] && categories.some(c => c.games.includes(g)));
+          if (!list.length) return null;
+          return <div key={title}>
+            {sec(<>{title} <span style={{ ...TYPE.labelM,color:T.ink2 }}>{sub}</span></>)}
+            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:12 }}>
+              {list.map((g, i) => <GameTile key={g} gid={g} i={i} categories={categories} progress={progress} onClick={() => { sfx.tap(); onPickGame ? onPickGame(g) : go(fCat, g); }} />)}
+            </div>
+          </div>;
+        })}
 
         {/* ฟองกิจกรรม */}
         {sec("เรียนแบบอื่น")}
@@ -2099,11 +2140,6 @@ function HomeScreen({ categories, words, onPickCat, progress, setProgress, stick
         <MissionsCard progress={progress} setProgress={setProgress} />
       </>}
 
-      {/* โลกคำศัพท์: วงกลมรูปจริง + วงแหวนดาว */}
-      {sec(<>โลกคำศัพท์ <span style={{ ...TYPE.labelM,color:T.ink2 }}>{words.length} คำ</span></>)}
-      <Reveal step={30} style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px 8px" }}>
-        {categories.map(cat => <CatBubble key={cat.id} cat={cat} words={words} progress={progress} onClick={() => { sfx.tap(); onPickCat(cat); }} />)}
-      </Reveal>
       <div style={{ marginTop:18 }}><QrCard /></div>
     </div>
   );

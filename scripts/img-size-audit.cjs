@@ -30,7 +30,7 @@ const VW = +process.argv[2] || 390, VH = +process.argv[3] || 844;
     rows.push({ name, kind, n, max: `${maxW}×${maxH}`, min: `${minW}×${minH}`, ok, why });
   };
   const home = async () => { await p.goto(URL); await p.click('text=แตะเพื่อเริ่มเลย'); await p.waitForTimeout(300); await p.click('text=มิว').catch(() => {}); await p.waitForTimeout(400); };
-  const cat = async c => { await home(); await p.locator('button', { hasText: c }).first().click(); await p.waitForTimeout(300); };
+  const cat = async c => { await home(); await p.click('nav >> text=เรียน'); await p.waitForTimeout(300); await p.locator('button', { hasText: c }).filter({ hasText: ' คำ' }).last().click(); await p.waitForTimeout(300); };
   const game = async (c, g, kind, pre) => { try { await cat(c); await p.locator('button', { hasText: g }).first().click({ timeout: 4000 }); await p.waitForTimeout(400); if (pre) await pre(); await measure(`${c} · ${g}`, kind); } catch (e) { rows.push({ name: `${c} · ${g}`, kind, n: 0, max: '-', min: '-', ok: false, why: 'เปิดไม่ได้: ' + e.message.split('\n')[0].slice(0, 60) }); } };
   const startBtn = async () => { await p.click('text=▶ เริ่ม!').catch(() => {}); await p.waitForTimeout(1500); };
   const flip2 = async () => { const c = p.locator('div[style*="grid"] > button'); await c.nth(0).click().catch(() => {}); await p.waitForTimeout(900); };

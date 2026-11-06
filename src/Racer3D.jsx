@@ -1,10 +1,12 @@
-// Word Racer 3D — แข่งรถ 3 มิติ ฟังคำ แล้วขับผ่านประตูรูปที่ถูก = เทอร์โบ! (หมวดยานพาหนะ)
+// Word Racer GP 3D — แข่งรถ Grand Prix 3 สนาม (สวน 🌳 → เมือง 🏙️ → ภูเขาหิมะ ❄️) ฟังคำ แล้วขับผ่านประตูรูปที่ถูก = เทอร์โบ!
 // • เลือกรถก่อนแข่ง: รถ 3D จริง (Kenney Car Kit / Starter Kit Racing · CC0/MIT) หมุนบนแท่น + ชื่ออังกฤษ + ไทย (แตะเพื่อฟัง)
-// • สนาม: ถนนโค้งยาว ~2 กม. (ท้องฟ้า HDRI + พื้น PBR จาก setupEnvironment) ขอบทางแดงขาว ราวกันชน กรวย
-//   ต้นไม้/ม้านั่ง (loadPropKit) อาคาร KayKit · คู่แข่ง AI 3 คัน · กล้องไล่หลัง FOV ตามความเร็ว + สั่น
+// • แต่ละสนาม: ถนนโค้งยาว ~3 กม. (setupEnvironment ตามธีม) คู่แข่ง AI 3 คันเดิมตลอด GP
+//   ยากขึ้นทีละสนาม: รถเร็วขึ้น AI แม่นขึ้น โค้งแคบขึ้น (ไถลออกนอกโค้ง) ประตู 10/10/12 บาน สิ่งกีดขวางมากขึ้น
 // • ทุกช่วงจะได้ยินคำ (Prompt 🔊 + คำ + ไทย) แล้วมีประตูเรืองแสง 3 บาน (รูปจาก ui.imageUrl)
-//   ผ่านบานที่ถูก = TURBO (ไฟพ่น เส้นความเร็ว แซง) · ผิด = หมุนคว้าง ช้าลง · 10 ประตู แล้วเส้นชัย
-// • ผลลัพธ์: track.finish(ถูก, 10, { label:"อันดับ 1 · ถูก 8/10" })
+//   ถูก = TURBO · ผิด = หมุนคว้าง · สิ่งกีดขวางบนถนน: คราบน้ำมัน (ลื่นหมุน) กรวย/ถัง (ช้าลง)
+// • จบสนาม: ตารางคะแนน (1st=10, 2nd=6, 3rd=4, 4th=2) → สนามต่อไป · จบ GP: โพเดียม 3 มิติ
+// • ⏸ พัก / จบเกม (ผู้ปกครอง) · นาฬิกา + ความคืบหน้า · เวลาเล่นรวม ≈ 6 นาที
+// • ผลลัพธ์: track.finish(ถูก, ประตูทั้งหมด, { label:"Grand Prix อันดับ 1 · ถูก 25/32" }) ครั้งเดียว
 // สีในโลก 3D เป็นงานศิลป์ของฉาก · ปุ่ม/HUD ใช้ ui.tokens
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -52,22 +54,36 @@ const VEH_KEY = "smart-vocabplay:racer-vehicle";
 const loadVeh = () => { try { const v = localStorage.getItem(VEH_KEY); return RACER_VEHICLES.some(x => x.word === v) ? v : "RACE CAR"; } catch (_) { return "RACE CAR"; } };
 const saveVeh = w => { try { localStorage.setItem(VEH_KEY, w); } catch (_) {} };
 
-// ── สนาม ──
-const THEME = "park";                 // ท้องฟ้าสดใส + หญ้า (ถนนเปลี่ยนเป็นยางมะตอย)
+// ── Grand Prix: 3 สนาม ยากขึ้นเรื่อยๆ (เร็วขึ้น โค้งแคบขึ้น ประตู/สิ่งกีดขวางมากขึ้น) ──
+// เวลาเล่นรวม ≈ 6 นาที (สนามละ ~1.8–2 นาที + นับถอยหลัง + ตารางคะแนน)
+// hazOff: ระยะ (ม.) หลังประตูก่อนหน้าที่วางแถวสิ่งกีดขวาง · two: โอกาสกั้น 2 ช่องทาง · kinds: ชนิดที่สุ่ม
+// thr: สัดส่วนข้อถูกที่ต้องได้เพื่ออันดับ 1/2/3 (ทางตรงสุดท้าย)
+export const GP_RACES = [
+  { theme:"park", th:"สวนสาธารณะ", icon:"🌳", gates:10, gap:275, baseV:24, boostV:38, aiPace:[23.2, 24.1, 25.0], acc:[.6, .68, .76],
+    step:100, turn:[.18, .4], hMax:.9, drift:0, hazOff:[78], pre:[150, 215], two:0, kinds:["cone", "cone", "barrel"], announce:170, thr:[.7, .5, .3], buildings:true },
+  { theme:"city", th:"เมืองใหญ่", icon:"🏙️", gates:10, gap:262, baseV:26, boostV:41, aiPace:[25.3, 26.2, 27.1], acc:[.66, .74, .82],
+    step:88, turn:[.22, .55], hMax:1.05, drift:.16, hazOff:[55, 112], pre:[140, 200, 245], two:.2, kinds:["cone", "barrel", "oil"], announce:175, thr:[.75, .55, .35], buildings:true },
+  { theme:"snow", th:"ภูเขาหิมะ", icon:"❄️", gates:12, gap:248, baseV:28, boostV:44, aiPace:[27.4, 28.3, 29.3], acc:[.72, .8, .88],
+    step:78, turn:[.26, .68], hMax:1.15, drift:.26, hazOff:[42, 92, 140], pre:[130, 180, 230], two:.45, kinds:["cone", "barrel", "oil", "oil"], announce:180, thr:[.8, .6, .4], buildings:false },
+];
+export const GP_POINTS = [10, 6, 4, 2];
+export const GP_TOTAL_GATES = GP_RACES.reduce((a, r) => a + r.gates, 0);
+const START_S = 40, GATE0 = 300;
+const raceCfg = i => {
+  const r = GP_RACES[i] || GP_RACES[0];
+  const GATE_S = Array.from({ length:r.gates }, (_, k) => GATE0 + k * r.gap);
+  const FINISH_S = GATE_S[r.gates - 1] + 220;
+  return { ...r, idx:i, GATE_S, FINISH_S, TRACK_LEN:FINISH_S + 300, WIN_S:FINISH_S + 115 };
+};
 const ROAD_W = 13, HALF = ROAD_W / 2;
 const LANES = [-4.3, 0, 4.3];
-const GATES = 10;
-const START_S = 40, GATE0 = 270, GATE_GAP = 180;
-const GATE_S = Array.from({ length:GATES }, (_, i) => GATE0 + i * GATE_GAP);
-const FINISH_S = GATE_S[GATES - 1] + 220;
-const TRACK_LEN = FINISH_S + 220;
 const GRID_D = [-4.95, -1.65, 1.65, 4.95];
 const PLAYER_SLOT = 1;
 const VSCALE = 1.4;                   // ขนาดรถ (Kenney ~2.6 m → ~3.6 m)
-const BASE_V = 25, BOOST_V = 40, BOOST_T = 2.8, SPIN_T = 1.15;
+const BOOST_T = 2.8, SPIN_T = 1.15;
 const LANE_COL = ["#22d3ee", "#f472b6", "#facc15"];
-const AI_PACE = [24.4, 25.3, 26.2];
 const ORD = ["", "1st", "2nd", "3rd", "4th"];
+const fmtT = s => { s = Math.max(0, Math.floor(s)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; };
 const DT_MAX = (typeof window !== "undefined" && window.__RACER_DTMAX) || .05;   // ทดสอบอัตโนมัติบนเครื่องช้าเท่านั้น
 
 const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
@@ -131,15 +147,16 @@ class Particles {
 }
 
 // ── เส้นทาง (CatmullRom โค้งไปมา ไม่วกกลับ) → ตัวอย่างทุก 1 ม. ──
-function buildTrack() {
-  const pts = []; let h = 0, x = 0, z = 0; const step = 90, n = Math.ceil((TRACK_LEN + 300) / step) + 2;
+function buildTrack(R) {
+  const { TRACK_LEN, FINISH_S } = R;
+  const pts = []; let h = 0, x = 0, z = 0; const step = R.step, n = Math.ceil((TRACK_LEN + 300) / step) + 2;
   let dir = Math.random() < .5 ? -1 : 1;
   for (let i = 0; i < n; i++) {
     pts.push(new THREE.Vector3(x, 0, z));
     const s = i * step;
     let dh = 0;
-    if (s > 160 && s < FINISH_S - 260) { if (Math.random() < .35) dir = -dir; dh = dir * (.22 + Math.random() * .38); if (Math.abs(h + dh) > 1.0) dh = -dh; }
-    else if (s >= FINISH_S - 260) dh = -h * .5;               // ทางตรงเข้าเส้นชัย
+    if (s > 160 && s < FINISH_S - 260) { if (Math.random() < .35) dir = -dir; dh = dir * (R.turn[0] + Math.random() * (R.turn[1] - R.turn[0])); if (Math.abs(h + dh) > R.hMax) dh = -dh; }
+    else if (s >= FINISH_S - 260) dh = -h * .5;               // ทางตรงเข้าเส้นชัย + โพเดียม
     h += dh; x += Math.sin(h) * step; z -= Math.cos(h) * step;
   }
   const curve = new THREE.CatmullRomCurve3(pts, false, "centripetal");
@@ -211,16 +228,40 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
   const host = useRef(null);
   const api = useRef({});
   const barRef = useRef(null);
-  const [hud, setHud] = useState({ phase:"select", ready:false, loadP:0, target:null, gate:0, correct:0, rank:PLAYER_SLOT + 1, count:0, fx:null, done:null, msg:null });
+  const timerRef = useRef(null);
+  const [raceNo, setRaceNo] = useState(0);
+  // สถานะ Grand Prix ข้ามสนาม (ฉาก 3D สร้างใหม่ทุกสนาม): slot 0 = ผู้เล่น, 1..3 = คู่แข่ง
+  const gpRef = useRef({ points:[0, 0, 0, 0], correct:0, total:0, elapsed:0, aiDefs:null, results:[], finished:false });
+  const hud0 = r => ({ phase:r === 0 ? "select" : "loading", ready:false, loadP:0, target:null, gate:0, gates:raceCfg(r).gates, correct:0, rank:PLAYER_SLOT + 1, count:0, fx:null, done:null, msg:null, standings:null });
+  const [hud, setHud] = useState(() => hud0(0));
+  const [paused, setPaused] = useState(false);
+  const [adv, setAdv] = useState(0);          // นับถอยหลังไปสนามต่อไป / จบอัตโนมัติ
   const [veh, setVeh] = useState(loadVeh);
   const [racers, setRacers] = useState([]);   // [{ emoji, me }] สำหรับแถบความคืบหน้า
   const tk = ui.tokens;
   const vDef = RACER_VEHICLES.find(v => v.word === veh) || RACER_VEHICLES[0];
   const thOf = v => (words.find(w => String(w.word).toUpperCase() === v.word) || {}).meaning || v.th;
   const sayVeh = v => { const w = words.find(x => String(x.word).toUpperCase() === v.word); if (w) ui.say(w); else speak(v.word, v.th); };
+  const R0 = raceCfg(raceNo);
+
+  // ── จบ Grand Prix: เรียก track.finish ครั้งเดียวเท่านั้น ──
+  const finishGP = (rank, correct, total) => {
+    const gp = gpRef.current; if (gp.finished) return; gp.finished = true;
+    try { track.finish(correct, total, { label:`Grand Prix อันดับ ${rank} · ถูก ${correct}/${total}` }); } catch (_) {}
+  };
+  // ตารางคะแนน: นับถอยหลังไปสนามต่อไป (หยุดเมื่อพัก)
+  useEffect(() => {
+    if (!hud.standings || paused || adv <= 0) return;
+    const t = setTimeout(() => setAdv(a => a - 1), 1000);
+    return () => clearTimeout(t);
+  }, [hud.standings, paused, adv]);
+  useEffect(() => { if (hud.standings && adv === 0 && !paused) api.current.next?.(); }, [adv]); // eslint-disable-line
 
   useEffect(() => {
     const el = host.current; if (!el) return;
+    const R = raceCfg(raceNo), gp = gpRef.current, first = raceNo === 0;
+    const { gates:GATES, GATE_S, FINISH_S, baseV:BASE_V, boostV:BOOST_V } = R;
+    setHud(hud0(raceNo)); setPaused(false); setAdv(0);
     const W = () => Math.max(1, el.clientWidth), H = () => Math.max(1, el.clientHeight);
     let renderer;
     try { renderer = new THREE.WebGLRenderer({ antialias:true, powerPreference:"high-performance" }); if (!renderer.getContext()) throw new Error("no gl"); }
@@ -236,7 +277,7 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
     scene.background = new THREE.Color("#a9c7e8");
     scene.fog = new THREE.Fog("#c9d8e6", 90, 420);
     const camera = new THREE.PerspectiveCamera(60, W() / H(), .1, 1500); scene.add(camera);
-    const T = buildTrack();
+    const T = buildTrack(R);
     const tmpV = new THREE.Vector3(), tmpV2 = new THREE.Vector3();
 
     // ── แสง ──
@@ -251,7 +292,7 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
     const groundGeo = new THREE.PlaneGeometry(gx1 - gx0, gz1 - gz0, 48, 48); groundGeo.rotateX(-Math.PI / 2); groundGeo.translate((gx0 + gx1) / 2, 0, (gz0 + gz1) / 2);
     { // หญ้าเขียว (สีจุดยอด = โทนสีบนรูปถ่ายใบไม้แห้ง) แต้มสีเหลือง/เขียวเข้มสลับกัน
       const p = groundGeo.attributes.position, uv = groundGeo.attributes.uv, col = [], c = new THREE.Color(), a = new THREE.Color("#4f9a2a"), b2 = new THREE.Color("#8fbf3a");
-      for (let i = 0; i < p.count; i++) { const x = p.getX(i), z = p.getZ(i); uv.setXY(i, x / 260, z / 120); c.copy(a).lerp(b2, .5 + .5 * Math.sin(x * .013 + Math.cos(z * .011) * 2)); col.push(c.r, c.g, c.b); }
+      for (let i = 0; i < p.count; i++) { const x = p.getX(i), z = p.getZ(i); uv.setXY(i, x / 260, z / 120); if (R.theme === "park") c.copy(a).lerp(b2, .5 + .5 * Math.sin(x * .013 + Math.cos(z * .011) * 2)); else c.setRGB(1, 1, 1); col.push(c.r, c.g, c.b); }
       groundGeo.setAttribute("color", new THREE.Float32BufferAttribute(col, 3)); }
     const ground = new THREE.Mesh(groundGeo, new THREE.MeshStandardMaterial({ color:"#6a9a45", roughness:.95, vertexColors:true })); ground.receiveShadow = true; scene.add(ground);
 
@@ -315,11 +356,12 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
     const loadModel = file => { if (!templates.has(file)) templates.set(file, new Promise(res => { try { gltf.load(MDIR + file, g => res(g.scene), undefined, () => res(null)); } catch (e) { res(null); } })); return templates.get(file); };
 
     let loadN = 0; const loadTot = 3; const bump = () => { loadN++; if (alive) setHud(h => ({ ...h, loadP:loadN / loadTot })); };
-    setupEnvironment({ THREE, renderer, scene, theme:THEME, BASE }).then(async e => {
+    setupEnvironment({ THREE, renderer, scene, theme:R.theme, BASE }).then(async e => {
       if (!alive) { e.dispose(); return; }
       env = e; scene.fog.color.copy(e.fogColor); if (!e.hasSky) scene.background = e.fogColor.clone();
       sunDir.copy(e.sunDir); sun.color.copy(e.sunColor); sun.intensity = e.sunIntensity; hemi.intensity = e.hemiIntensity;
-      ground.material = e.groundMaterial; const gu = e.groundMaterial.userData.uniforms; if (gu?.uTintStrength) gu.uTintStrength.value = .78;
+      if (R.theme === "snow") hemi.groundColor.set("#dfe7ef"); else if (R.theme === "city") hemi.groundColor.set("#8a8f96");
+      ground.material = e.groundMaterial; const gu = e.groundMaterial.userData.uniforms; if (gu?.uTintStrength) gu.uTintStrength.value = R.theme === "park" ? .78 : 0;
       // ถนนยางมะตอยจริง (asphalt_02) แทนลูกรังของธีม park
       const rm = e.roadMaterial; const rep = [3, ROAD_V / 4.3];
       try {
@@ -333,7 +375,7 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
       const u = rm.userData.uniforms; if (u?.uRep) u.uRep.value.set(rep[0], rep[1]); if (u?.uLineXf) u.uLineXf.value.x = ROAD_V / 13;
       road.material = rm; bump();
     }).catch(() => bump());
-    loadPropKit({ THREE, theme:THEME, BASE, renderer }).then(k => {
+    loadPropKit({ THREE, theme:R.theme, BASE, renderer }).then(k => {
       if (!alive) { k.dispose(); return; } kit = k;
       let side = 1;
       for (let s = 10; s < T.len; s += 9 + Math.random() * 7) {
@@ -345,7 +387,7 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
       bump();
     }).catch(() => bump());
     // อาคาร KayKit (ไกลออกไป) + ป้ายไฟเสาธงข้างซุ้ม
-    Promise.all("ABCDEFGH".split("").map(c => loadModel(`kk_building_${c}.glb`))).then(bs => {
+    if (R.buildings) Promise.all("ABCDEFGH".split("").map(c => loadModel(`kk_building_${c}.glb`))).then(bs => {
       if (!alive) return; const ok = bs.filter(Boolean); if (!ok.length) return;
       ok.forEach(t => t.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } }));
       for (const sd of [-1, 1]) for (let s = Math.random() * 20; s < T.len; s += 22 + Math.random() * 16) {
@@ -370,7 +412,8 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
     const podium = new THREE.Group(); scene.add(podium);
     { const top = new THREE.Mesh(new THREE.CylinderGeometry(1.95, 2.1, .38, 48), new THREE.MeshPhysicalMaterial({ color:"#f8fafc", roughness:.25, clearcoat:1, metalness:.1 })); top.position.y = .19; top.receiveShadow = true; top.castShadow = true; podium.add(top);
       const ring = new THREE.Mesh(new THREE.TorusGeometry(2.02, .07, 10, 64), new THREE.MeshStandardMaterial({ color:"#ffffff", emissive:"#22d3ee", emissiveIntensity:2.2 })); ring.rotation.x = Math.PI / 2; ring.position.y = .3; podium.add(ring);
-      const yaw = T.at(START_S, GRID_D[PLAYER_SLOT], tmpV); podium.position.copy(tmpV); podium.rotation.y = yaw; }
+      const yaw = T.at(START_S, GRID_D[PLAYER_SLOT], tmpV); podium.position.copy(tmpV); podium.rotation.y = yaw;
+      if (!first) { podium.visible = false; podium.position.y = -2; } }
 
     // ── อนุภาค / เอฟเฟกต์ ──
     const dotTex = softDot(); owned.push(dotTex);
@@ -429,10 +472,62 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
       return { g, subs, gi, set, born:-1, resolved:false };
     };
 
+    // ── สิ่งกีดขวางบนถนน: คราบน้ำมัน (ลื่นหมุน) · กรวย (ช้าลง) · ถัง (ช้าลงมาก) ──
+    const hazGeo = { oil:new THREE.CircleGeometry(1.7, 28), cone:new THREE.ConeGeometry(.34, .95, 14), band:new THREE.CylinderGeometry(.2, .245, .16, 14), base:new THREE.BoxGeometry(.78, .08, .78), barrel:new THREE.CylinderGeometry(.55, .55, 1.15, 18), lid:new THREE.CircleGeometry(.55, 18) };
+    const oilTex = canvasTex(128, 128, (x, w, h) => {
+      const g = x.createRadialGradient(w / 2, h / 2, 4, w / 2, h / 2, w / 2); g.addColorStop(0, "rgba(10,10,14,1)"); g.addColorStop(.62, "rgba(18,16,30,.97)");
+      g.addColorStop(.74, "rgba(120,60,200,.9)"); g.addColorStop(.8, "rgba(40,200,190,.85)"); g.addColorStop(.86, "rgba(230,200,60,.75)"); g.addColorStop(.93, "rgba(20,20,26,.6)"); g.addColorStop(1, "rgba(0,0,0,0)");
+      x.fillStyle = g; x.fillRect(0, 0, w, h); x.fillStyle = "rgba(255,255,255,.35)"; x.beginPath(); x.ellipse(w * .4, h * .36, 14, 6, -.5, 0, 6.283); x.fill(); });
+    const barrelTex = canvasTex(128, 128, (x, w, h) => { x.fillStyle = "#dc2626"; x.fillRect(0, 0, w, h); x.fillStyle = "#f8fafc"; x.fillRect(0, h * .22, w, h * .14); x.fillRect(0, h * .64, w, h * .14); x.fillStyle = "rgba(0,0,0,.25)"; x.fillRect(0, 0, w, 5); x.fillRect(0, h - 5, w, 5); });
+    const hazMat = {
+      oil:new THREE.MeshStandardMaterial({ map:oilTex, transparent:true, depthWrite:false, roughness:.08, metalness:.35, polygonOffset:true, polygonOffsetFactor:-2, polygonOffsetUnits:-2 }),
+      cone:new THREE.MeshStandardMaterial({ color:"#f97316", roughness:.5 }), band:new THREE.MeshStandardMaterial({ color:"#ffffff", emissive:"#ffffff", emissiveIntensity:.35, roughness:.4 }),
+      base:new THREE.MeshStandardMaterial({ color:"#1f2937", roughness:.8 }), barrel:new THREE.MeshStandardMaterial({ map:barrelTex, roughness:.45, metalness:.25 }), lid:new THREE.MeshStandardMaterial({ color:"#991b1b", roughness:.5, metalness:.3 }),
+    };
+    owned.push(...Object.values(hazGeo), ...Object.values(hazMat), oilTex, barrelTex);
+    const hazards = [];   // { kind, s, d, hw, g, parts, gone, fly }
+    const hazRows = [];   // { s, items, lanes }
+    const makeHaz = (kind, s, d) => {
+      const g = new THREE.Group(); const yaw = T.at(s, d, tmpV); g.position.copy(tmpV); g.rotation.y = yaw; scene.add(g);
+      const parts = []; let hw = 1.5;
+      if (kind === "oil") { const m = new THREE.Mesh(hazGeo.oil, hazMat.oil); m.rotation.x = -Math.PI / 2; m.rotation.z = Math.random() * 6.28; m.scale.set(1, 1.35, 1); m.position.y = .065; m.renderOrder = 1; g.add(m); hw = 1.45; }
+      else if (kind === "cone") { for (const x of [-1.15, 0, 1.15]) { const c = new THREE.Group(); c.position.set(x, 0, (Math.random() - .5) * .6);
+          const b = new THREE.Mesh(hazGeo.base, hazMat.base); b.position.y = .04; c.add(b); const k = new THREE.Mesh(hazGeo.cone, hazMat.cone); k.position.y = .55; k.castShadow = true; c.add(k);
+          const bd = new THREE.Mesh(hazGeo.band, hazMat.band); bd.position.y = .62; c.add(bd); g.add(c); parts.push(c); } hw = 1.6; }
+      else { for (const x of [-.66, .66]) { const c = new THREE.Group(); c.position.set(x, 0, (Math.random() - .5) * .5);
+          const b = new THREE.Mesh(hazGeo.barrel, hazMat.barrel); b.position.y = .58; b.castShadow = true; c.add(b); const l = new THREE.Mesh(hazGeo.lid, hazMat.lid); l.rotation.x = -Math.PI / 2; l.position.y = 1.16; c.add(l); g.add(c); parts.push(c); } hw = 1.35; }
+      const it = { kind, s, d, hw, g, parts, gone:false, fly:0 }; hazards.push(it); return it;
+    };
+    {
+      const rowS = [...R.pre, ...GATE_S.slice(0, -1).flatMap(gs => R.hazOff.map(o => gs + o)), GATE_S[GATES - 1] + 95];
+      for (const s of rowS) {
+        const lanes = shuffle([0, 1, 2]).slice(0, Math.random() < R.two ? 2 : 1);
+        const items = lanes.map(li => makeHaz(R.kinds[Math.floor(Math.random() * R.kinds.length)], s + (Math.random() - .5) * 5, LANES[li] + (Math.random() - .5) * .5));
+        hazRows.push({ s, items, lanes });
+      }
+    }
+    // ── โพเดียมรวม Grand Prix (สนามสุดท้าย หลังเส้นชัย) ──
+    const isLast = R.idx >= GP_RACES.length - 1;
+    const win = { g:null, spots:[] };   // spots: [{ x, y }] ตำแหน่งบนแท่น (local) ตามอันดับ 1..4
+    if (isLast) {
+      const g = new THREE.Group(); const yaw = T.at(R.WIN_S, 0, tmpV); g.position.copy(tmpV); g.rotation.y = yaw; scene.add(g); win.g = g;
+      const steps = [[0, 1.5, "#facc15", "1"], [-4.1, 1.0, "#cbd5e1", "2"], [4.1, .65, "#f59e0b", "3"]];
+      for (const [x, h, col, n] of steps) {
+        const side = new THREE.MeshStandardMaterial({ color:col, roughness:.35, metalness:.25 });
+        const face = new THREE.MeshStandardMaterial({ map:canvasTex(256, 128, (c, w, hh) => { c.fillStyle = col; c.fillRect(0, 0, w, hh); c.fillStyle = "#fff"; c.font = "900 104px system-ui, sans-serif"; c.textAlign = "center"; c.textBaseline = "middle"; c.lineWidth = 10; c.strokeStyle = "rgba(0,0,0,.25)"; c.strokeText(n, w / 2, hh / 2 + 6); c.fillText(n, w / 2, hh / 2 + 6); }), roughness:.4 });
+        const m = new THREE.Mesh(new THREE.BoxGeometry(3.9, h, 4.6), [side, side, side, side, face, side]); m.position.set(x, h / 2, 0); m.castShadow = true; m.receiveShadow = true; g.add(m);
+        win.spots.push({ x, y:h });
+      }
+      win.spots.push({ x:8.6, y:0 });
+      const back = new THREE.Mesh(new THREE.PlaneGeometry(13.5, 2.3), new THREE.MeshStandardMaterial({ map:bannerTexture("GRAND PRIX"), roughness:.5, emissive:"#ffffff", emissiveIntensity:.15 }));
+      back.material.emissiveMap = back.material.map; back.position.set(0, 4.6, -4); g.add(back);
+      for (const sd of [-1, 1]) { const p = new THREE.Mesh(new THREE.BoxGeometry(.45, 5.8, .45), new THREE.MeshStandardMaterial({ color:"#1f2937", metalness:.5, roughness:.4 })); p.position.set(sd * 6.9, 2.9, -4.1); p.castShadow = true; g.add(p); }
+    }
+
     // ── สถานะเกม ──
-    const S = { phase:"select", t:0, cd:0, raceT:0, gate:0, correct:0, announced:-1, steer:0, keyL:false, keyR:false, btnL:false, btnR:false, drag:null, shake:0, flash:0, finishT:0, rankShown:0, camMode:"podium", camBlend:0, podSink:0, done:false, lastRank:0 };
+    const S = { phase:first ? "select" : "loading", t:0, cd:0, raceT:0, gate:0, correct:0, passed:0, hits:0, announced:-1, steer:0, keyL:false, keyR:false, btnL:false, btnR:false, drag:null, shake:0, flash:0, finishT:0, rankShown:0, camMode:first ? "podium" : "chase", camBlend:0, podSink:0, done:false, lastRank:0, paused:false, lastSec:-1 };
     const P = { s:START_S, d:GRID_D[PLAYER_SLOT], v:0, lat:0, boost:0, spin:0, spinA:0, yawVis:0, roll:0, model:null, def:null, finished:false };
-    const AIs = [0, 2, 3].map((slot, k) => ({ s:START_S, d:GRID_D[slot], v:0, lat:0, boost:0, spin:0, spinA:0, yawVis:0, roll:0, model:null, def:null, pace:AI_PACE[k], laneT:GRID_D[slot], acc:[.7, .78, .85][k], chosen:-1, nextG:0, finished:false, tag:null, avoid:0 }));
+    const AIs = [0, 2, 3].map((slot, k) => ({ s:START_S, d:GRID_D[slot], v:0, lat:0, boost:0, spin:0, spinA:0, yawVis:0, roll:0, model:null, def:null, pace:R.aiPace[k], laneT:GRID_D[slot], acc:R.acc[k], chosen:-1, nextG:0, finished:false, tag:null, avoid:0 }));
     const cars = [P, ...AIs];
     const finishOrder = [];
     const pool = words.length >= 3 ? words : words.concat(words, words);
@@ -453,7 +548,7 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
     const chooseAI = playerFile => shuffle(AI_FILES.filter(a => a.file !== playerFile)).slice(0, 3);
     let aiDefs = [];
     const setupAI = playerFile => {
-      aiDefs = chooseAI(playerFile);
+      aiDefs = (!first && gp.aiDefs && !gp.aiDefs.some(a => a.file === playerFile)) ? gp.aiDefs : chooseAI(playerFile); gp.aiDefs = aiDefs;
       AIs.forEach((a, i) => {
         const def = { ...aiDefs[i], front:-1 };
         if (a.tag) { a.tag.parent?.remove(a.tag); a.tag.material.map.dispose(); a.tag.material.dispose(); }
@@ -461,20 +556,23 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
         tag.scale.set(1.9, .48, 1); tag.renderOrder = 6; a.tag = tag;
         mountModel(a, def, "#64748b");
       });
-      setRacers([{ emoji:RACER_VEHICLES.find(v => v.file === playerFile)?.emoji || "🚗", me:true }, ...aiDefs.map(d => ({ emoji:d.emoji, me:false }))]);
+      const pv = RACER_VEHICLES.find(v => v.file === playerFile);
+      setRacers([{ emoji:pv?.emoji || "🚗", me:true, word:pv?.word || "" }, ...aiDefs.map(d => ({ emoji:d.emoji, me:false, word:d.word }))]);
     };
     const setVehicleById = word => {
       const def = RACER_VEHICLES.find(v => v.word === word) || RACER_VEHICLES[0];
-      return mountModel(P, def, "#ef4444").then(() => { if (alive && S.phase === "select") { const pf = def.file; if (!aiDefs.length || aiDefs.some(a => a.file === pf)) setupAI(pf); } });
+      gp.playerVeh = def.word;
+      return mountModel(P, def, "#ef4444").then(() => { if (alive && (S.phase === "select" || S.phase === "loading")) { const pf = def.file; if (!aiDefs.length || aiDefs.some(a => a.file === pf)) setupAI(pf); } });
     };
-    setVehicleById(loadVeh()).then(() => { bump(); });
+    setVehicleById(first ? loadVeh() : (gp.playerVeh || loadVeh())).then(() => { bump(); });
 
     // เลือกคำเป้าหมาย 10 คำ (เน้นคำที่มีรูป) + ตัวลวง 2 คำ → สร้างประตูล่วงหน้า
     const buildGates = async () => {
       let hasImg = pool.filter(w => { try { return !!ui.imageUrl(w); } catch (_) { return false; } });
       const src = hasImg.length >= 6 ? hasImg : pool;
-      let order = shuffle(src); while (order.length < GATES) order = order.concat(shuffle(src));
-      const targets = order.slice(0, GATES);
+      gp.used = gp.used || new Set();   // สนามถัดไปใช้คำที่ยังไม่ได้ออกก่อน
+      let order = shuffle(src.filter(w => !gp.used.has(w.id))); while (order.length < GATES) order = order.concat(shuffle(src));
+      const targets = order.slice(0, GATES); targets.forEach(t => gp.used.add(t.id));
       const sets = targets.map(t => { const others = shuffle(pool.filter(w => w.id !== t.id && w.word !== t.word)); const dd = []; for (const o of others) { if (dd.length >= 2) break; if (!dd.some(x => x.word === o.word)) dd.push(o); } while (dd.length < 2) dd.push(others[0] || t); return { target:t, set:shuffle([t, ...dd]) }; });
       const out = [];
       for (let i = 0; i < GATES; i++) { const texs = await Promise.all(sets[i].set.map(texFor)); if (!alive) return; const gt = makeGate(i, sets[i].set, texs); gt.target = sets[i].target; out.push(gt); }
@@ -483,7 +581,7 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
 
     // ── การผ่านประตู ──
     const resolveGate = gt => {
-      if (gt.resolved) return; gt.resolved = true;
+      if (gt.resolved) return; gt.resolved = true; S.passed++;
       let li = 0, best = 1e9; LANES.forEach((ld, i) => { const dd = Math.abs(P.d - ld); if (dd < best) { best = dd; li = i; } });
       const sub = gt.subs[li]; const ok = sub.w.id === gt.target.id || sub.w.word === gt.target.word;
       const wp = sub.panel.getWorldPosition(new THREE.Vector3());
@@ -491,22 +589,21 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
         S.correct++; P.boost = BOOST_T; P.spin = 0; S.shake = Math.max(S.shake, .35);
         sub.panel.userData.fly = 1; burst(wp, [COL.gold, CONF[0], CONF[2], CONF[3], new THREE.Color("#ffffff")], 160, 14, .5, 6);
         try { ui.correct(gt.target); } catch (_) {}
-        setHud(h => ({ ...h, correct:S.correct, fx:"turbo" }));
+        setHud(h => ({ ...h, correct:S.correct })); fxShow("turbo", 1800);
       } else {
         P.spin = SPIN_T; P.boost = 0; S.shake = 1; S.flash = 1;
         sub.panel.userData.fall = 1; burst(wp, [COL.red, new THREE.Color("#fecaca"), new THREE.Color("#ffffff")], 70, 8, .45, 9);
         try { ui.wrong(gt.target); } catch (_) {}
         setTimeout(() => { if (alive && !S.done) try { ui.say(gt.target); } catch (_) {} }, 900);
-        setHud(h => ({ ...h, fx:"spin" }));
+        fxShow("spin", 1800);
       }
       gt.subs.forEach(s2 => { if (s2.w.id === gt.target.id && s2 !== sub) { s2.frameM.emissive.set("#22c55e"); s2.frameM.emissiveIntensity = 2.2; } else if (s2 !== sub) s2.sg.userData.sink = 1; });
-      setTimeout(() => { if (alive) setHud(h => ({ ...h, fx:null })); }, 1800);
       setTimeout(() => { if (alive) { gt.g.visible = false; } }, 2600);
     };
 
     // ── ควบคุม ──
     const startRace = () => {
-      if (S.phase !== "select" || !gates.length) return false;
+      if ((S.phase !== "select" && S.phase !== "loading") || !gates.length) return false;
       S.phase = "countdown"; S.cd = 3.6; S.camMode = "chase"; S.camBlend = 0; S.lastCd = 4;
       setHud(h => ({ ...h, phase:"countdown", count:3 }));
       return true;
@@ -516,8 +613,19 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
       start: () => { if (S.phase !== "select") return; if (gates.length) startRace(); else gatesP.then(() => alive && startRace()); },
       setVehicle: word => { saveVeh(word); setVehicleById(word); },
       btn: (side, on) => { if (side < 0) S.btnL = on; else S.btnR = on; },
+      pause: on => { S.paused = !!on; S.btnL = S.btnR = false; S.drag = null; },
+      next: () => { if (S.nextDone) return; S.nextDone = true; if (isLast) finishGP(gpRank(), gp.correct, gp.total); else setRaceNo(R.idx + 1); },
+      endNow: () => {   // ผู้ปกครองกดจบก่อน: นับเฉพาะประตูที่ผ่านแล้ว
+        const add = S.raceAdded ? 0 : 1;
+        const rank = gp.results.length ? gpRank() : (S.lastRank || PLAYER_SLOT + 1);
+        finishGP(rank, gp.correct + S.correct * add, gp.total + S.passed * add);
+      },
     };
-    if (typeof window !== "undefined" && window.__RACER_TEST) window.__racer = { S, P, AIs, get gates() { return gates; }, LANES, GATE_S, FINISH_S, road, ground, T };   // ตะขอสำหรับทดสอบอัตโนมัติเท่านั้น
+    let fxTok = 0;
+    const fxShow = (fx, ms) => { const k = ++fxTok; setHud(h => ({ ...h, fx })); setTimeout(() => { if (alive && k === fxTok) setHud(h => ({ ...h, fx:null })); }, ms); };
+    const gpOrder = () => [0, 1, 2, 3].sort((a, b2) => (gp.points[b2] - gp.points[a]) || (a === 0 ? -1 : b2 === 0 ? 1 : a - b2));
+    const gpRank = () => gpOrder().indexOf(0) + 1;
+    if (typeof window !== "undefined" && window.__RACER_TEST) window.__racer = { S, P, AIs, get gates() { return gates; }, LANES, GATE_S, FINISH_S, road, ground, T, R, gp, hazards, hazRows };   // ตะขอสำหรับทดสอบอัตโนมัติเท่านั้น
     const cv = renderer.domElement;
     const pd = e => { if (S.phase !== "race") return; S.drag = { x:e.clientX, d:P.d, id:e.pointerId }; try { cv.setPointerCapture(e.pointerId); } catch (_) {} };
     const pm = e => { if (!S.drag || e.pointerId !== S.drag.id) return; const r = cv.getBoundingClientRect(); S.drag.target = clamp(S.drag.d + (e.clientX - S.drag.x) / r.width * 18, -HALF + 1.1, HALF - 1.1); };
@@ -532,14 +640,14 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
     const ro = new ResizeObserver(() => { renderer.setSize(W(), H()); camera.aspect = W() / H(); camera.updateProjectionMatrix(); composer?.setSize(W(), H()); }); ro.observe(el);
 
     // ── ฟิสิกส์รถ ──
-    const desiredRank = () => (S.correct >= 8 ? 1 : S.correct >= 6 ? 2 : S.correct >= 4 ? 3 : 4);
+    const desiredRank = () => { const r = S.correct / GATES - S.hits * .02; return r >= R.thr[0] ? 1 : r >= R.thr[1] ? 2 : r >= R.thr[2] ? 3 : 4; };
     const driveCar = (c, dt, isP) => {
       let vt;
       if (S.phase !== "race" && S.phase !== "finish") vt = 0;
       else if (c.finished) vt = 0;
       else if (isP) vt = c.boost > 0 ? BOOST_V : BASE_V;
       else {
-        vt = c.boost > 0 ? c.pace + 14 : c.pace;
+        vt = c.boost > 0 ? c.pace + (BOOST_V - BASE_V) : c.pace;
         const gap = c.s - P.s;
         if (!P.finished && P.s < GATE_S[GATES - 1] + 4) { if (gap > 40) vt *= .86; else if (gap > 22) vt *= .95; if (gap < -40) vt *= 1.18; else if (gap < -22) vt *= 1.06; }
         else if (!P.finished) {   // ทางตรงสุดท้าย: จัดอันดับตามจำนวนข้อที่ถูก
@@ -554,9 +662,47 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
       if (c.boost > 0) c.boost -= dt;
       const acc = vt > c.v ? (c.boost > 0 ? 22 : 9) : (c.spin > 0 ? 26 : (c.finished ? 9 : 12));
       c.v += clamp(vt - c.v, -acc * dt, acc * dt);
-      c.s += c.v * dt;
+      c.prevS = c.s; c.s += c.v * dt;
+      if (S.phase === "race" || S.phase === "finish") checkHaz(c);
       if (c.s >= T.len - 15) { c.s = T.len - 15; c.v = 0; }
       if (!c.finished && c.s >= FINISH_S && (S.phase === "race" || S.phase === "finish")) { c.finished = true; finishOrder.push(c); }
+    };
+
+    // ── ชนสิ่งกีดขวาง ──
+    const hitHaz = (c, it) => {
+      const isP = c === P; const wp = it.g.position.clone(); wp.y = .7;
+      if (it.kind === "oil") {
+        if (c.spin <= 0) c.spin = SPIN_T * (isP ? .85 : .7); c.boost = 0;
+        for (let i = 0; i < 14; i++) fxNorm.emit(wp.x + (Math.random() - .5) * 2, .2, wp.z + (Math.random() - .5) * 2, (Math.random() - .5) * 3, 1.5 + Math.random() * 2, (Math.random() - .5) * 3, .7, .35, .4, COL.smoke, .5, 4, 1);
+      } else {
+        it.gone = true; it.fly = 1; it.age = 0; const strong = it.kind === "barrel";
+        c.v *= strong ? .42 : .6; c.boost = 0;
+        const fwd = Math.max(6, c.v * .9);
+        it.parts.forEach(pt => { pt.userData.vel = new THREE.Vector3((pt.position.x + (c.d - it.d)) * (2 + Math.random() * 2) + (Math.random() - .5) * 2, 4 + Math.random() * (strong ? 3 : 5), fwd * (.6 + Math.random() * .5)); pt.userData.av = new THREE.Vector3((Math.random() - .5) * 12, (Math.random() - .5) * 6, (Math.random() - .5) * 12); });
+        burst(wp, strong ? [COL.spark, COL.spark2, COL.red] : [COL.spark, new THREE.Color("#f97316"), new THREE.Color("#ffffff")], strong ? 50 : 30, 7, .35, 10);
+      }
+      if (isP) {
+        S.hits++; S.shake = Math.max(S.shake, it.kind === "barrel" ? .9 : it.kind === "oil" ? .55 : .4); if (it.kind === "barrel") S.flash = Math.max(S.flash, .45);
+        try { sfx.tap(); } catch (_) {}
+        fxShow(it.kind, 1300);
+      }
+    };
+    const checkHaz = c => {
+      if (c.prevS == null || c.s <= c.prevS) return;
+      for (const it of hazards) { if (it.gone) continue; if (c.prevS < it.s && c.s >= it.s && Math.abs(c.d - it.d) < it.hw + .95) hitHaz(c, it); }
+    };
+
+    // ── โพเดียมตอนจบ: ยกรถ 3 อันดับแรกขึ้นแท่น ──
+    const startPodium = st => {
+      S.phase = "podium"; S.camMode = "win"; P.s = R.WIN_S; P.d = 0;
+      st.order.forEach((slot, pos) => {
+        const c = cars[slot]; c.boost = 0; c.spin = 0; c.v = 0; c.lat = 0; const m = c.model; if (!m || !win.g) return; const sp = win.spots[pos];
+        const lp = win.g.localToWorld(new THREE.Vector3(sp.x, sp.y, pos === 3 ? -1.2 : 0));
+        m.g.position.copy(lp); m.g.rotation.set(0, win.g.rotation.y + (sp.x === 0 ? 0 : -Math.sign(sp.x) * .35), 0); m.inner.rotation.z = 0; m.inner.position.y = 0;
+        m.flames?.forEach(f => { f.material.opacity = 0; });
+      });
+      try { sfx.win(); } catch (_) {}
+      setHud(h => ({ ...h, phase:"podium", done:null, target:null, fx:null, standings:st })); setAdv(15);
     };
 
     // ── ลูปหลัก ──
@@ -592,7 +738,13 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
 
     const tick = now => {
       if (!alive) return; raf = requestAnimationFrame(tick);
-      const dt = Math.min(DT_MAX, (now - last) / 1000); last = now; S.t += dt; S.frames = (S.frames || 0) + 1; const t = S.t;
+      const dt0 = Math.min(DT_MAX, (now - last) / 1000); last = now;
+      if (S.paused) { if (composer) composer.render(); else renderer.render(scene, camera); return; }   // พัก: หยุดทุกอย่าง แค่วาดภาพ
+      const dt = dt0; S.t += dt; S.frames = (S.frames || 0) + 1; const t = S.t;
+      // สนามถัดไป: โหลดเสร็จแล้วเริ่มนับถอยหลังเอง
+      if (S.phase === "loading" && loadN >= loadTot && gates.length && t > .4) startRace();
+      // นาฬิกา Grand Prix (นับเฉพาะตอนแข่ง)
+      if (S.phase === "countdown" || S.phase === "race") { gp.elapsed += dt; const sec = Math.floor(gp.elapsed); if (sec !== S.lastSec && timerRef.current) { S.lastSec = sec; timerRef.current.textContent = fmtT(sec); } }
 
       // ── นับถอยหลัง ──
       if (S.phase === "countdown") {
@@ -612,6 +764,7 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
         if (P.spin > 0) latT *= .2;
         P.lat += clamp(latT - P.lat, -40 * dt, 40 * dt);
         P.d += P.lat * dt;
+        if (R.drift && !P.finished) P.d += clamp(T.curv[Math.floor(P.s)] * P.v * P.v * R.drift, -3, 3) * dt;   // โค้งแคบ: รถไถลออกนอกโค้งเล็กน้อย
         const lim = HALF - 1.0;
         if (Math.abs(P.d) > lim) { const sd = Math.sign(P.d); P.d = sd * lim; if (Math.abs(P.lat) > 3 && P.v > 8) { // เสียดสีขอบทาง → ประกายไฟ
             const m = P.model; if (m) { const pnt = new THREE.Vector3(sd * m.hw, .3, 0).applyMatrix4(m.g.matrixWorld); for (let i = 0; i < 3; i++) fxAdd.emit(pnt.x, pnt.y, pnt.z, (Math.random() - .5) * 5, 2 + Math.random() * 3, (Math.random() - .5) * 5, .35, .22, 0, Math.random() < .5 ? COL.spark : COL.spark2, 1, 12, .5); }
@@ -628,12 +781,20 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
         // หลบรถคันหน้า
         let target = a.laneT; const nearGate = gi >= 0 && GATE_S[gi] - a.s < 45;
         if (!nearGate) for (const o of cars) { if (o === a) continue; const ds = o.s - a.s; if (ds > 2 && ds < 16 && Math.abs(o.d - target) < 2.4 && a.v > o.v - 1) { target = o.d + (o.d > 0 ? -3 : 3); break; } }
+        // หลบสิ่งกีดขวาง (บางครั้งพลาดชนเหมือนกัน)
+        const row = hazRows.find(r => r.s - a.s > 0 && r.s - a.s < 44);
+        if (row) {
+          if (a.row !== row) { a.row = row; a.clumsy = Math.random() < .13; }
+          if (!a.clumsy && row.items.some(it => !it.gone && Math.abs(it.d - target) < it.hw + 1.3)) {
+            let bd = 1e9; LANES.forEach((ld, li) => { if (row.lanes.includes(li)) return; const dd = Math.abs(ld - a.d); if (dd < bd) { bd = dd; target = ld; } });
+          }
+        }
         const latT = clamp((target - a.d) * 2.2, -8, 8) * (a.spin > 0 ? .2 : 1);
         a.lat += clamp(latT - a.lat, -26 * dt, 26 * dt); a.d = clamp(a.d + a.lat * dt, -HALF + 1, HALF - 1);
       });
       cars.forEach(c => driveCar(c, dt, c === P));
       // ชนกัน (ดันข้าง)
-      for (let i = 0; i < cars.length; i++) for (let j = i + 1; j < cars.length; j++) {
+      if (S.phase !== "podium") for (let i = 0; i < cars.length; i++) for (let j = i + 1; j < cars.length; j++) {
         const a = cars[i], b2 = cars[j]; const ds = b2.s - a.s, dd = b2.d - a.d;
         if (Math.abs(ds) < 3.4 && Math.abs(dd) < 2.0) {
           const push = (2.0 - Math.abs(dd)) / 2 * (dd >= 0 ? 1 : -1); a.d = clamp(a.d - push, -HALF + 1, HALF - 1); b2.d = clamp(b2.d + push, -HALF + 1, HALF - 1);
@@ -642,13 +803,20 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
             for (let k = 0; k < 18; k++) fxAdd.emit(mid.x, mid.y, mid.z, (Math.random() - .5) * 7, 2 + Math.random() * 4, (Math.random() - .5) * 7, .45, .25, 0, k % 2 ? COL.spark : COL.spark2, 1, 12, .4); try { sfx.tap(); } catch (_) {} }
         }
       }
-      cars.forEach(c => placeCar(c, dt, t));
+      if (S.phase !== "podium") cars.forEach(c => placeCar(c, dt, t));
+      // สิ่งกีดขวางที่โดนชนกระเด็น
+      for (const it of hazards) {
+        if (!it.fly) continue; it.age += dt;
+        it.parts.forEach(pt => { const v = pt.userData.vel, av = pt.userData.av; if (!v) return; v.y -= 18 * dt; pt.position.addScaledVector(v, dt); pt.rotation.x += av.x * dt; pt.rotation.y += av.y * dt; pt.rotation.z += av.z * dt;
+          if (pt.position.y < 0) { pt.position.y = 0; v.y *= -.35; v.x *= .6; v.z *= .6; av.multiplyScalar(.6); } });
+        if (it.age > 2.6) { it.fly = 0; it.g.visible = false; }
+      }
       AIs.forEach(a => { if (!a.tag || !a.model) return; a.tag.visible = S.phase !== "select"; const dc = camera.position.distanceTo(a.model.g.position); a.tag.material.opacity = clamp((dc - 9) / 6, 0, 1); });
 
       // ── ประกาศคำ / ประตู ──
       if (S.phase === "race") {
         const nx = S.announced + 1;
-        if (nx < GATES && gates[nx] && P.s >= GATE_S[nx] - 165) {
+        if (nx < GATES && gates[nx] && P.s >= GATE_S[nx] - R.announce) {
           S.announced = nx; const gt = gates[nx]; gt.g.visible = true; gt.born = t;
           try { ui.say(gt.target); } catch (_) {}
           setHud(h => ({ ...h, target:gt.target, gate:nx + 1 }));
@@ -681,8 +849,22 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
         try { sfx.win(); } catch (_) {}
         for (let k = 0; k < 8; k++) setTimeout(() => { if (!alive) return; const p = new THREE.Vector3(); T.at(P.s + 6, 0, p); p.y = 6 + Math.random() * 2; p.x += (Math.random() - .5) * 10; p.z += (Math.random() - .5) * 6; for (let i = 0; i < 70; i++) { const a = Math.random() * 6.283; fxNorm.emit(p.x, p.y, p.z, Math.cos(a) * (2 + Math.random() * 7), 3 + Math.random() * 7, Math.sin(a) * (2 + Math.random() * 7), 2.2 + Math.random() * 1.2, .32, 0, CONF[i % CONF.length], 1, 5, 1.1); } }, k * 260);
         S.camMode = "orbit"; S.orbitA = 0;
-        setHud(h => ({ ...h, phase:"finish", target:null, done:{ rank, correct:S.correct } }));
-        setTimeout(() => { if (alive) track.finish(S.correct, GATES, { label:`อันดับ ${rank} · ถูก ${S.correct}/${GATES}` }); }, 3400);
+        // คะแนนสนามนี้: ลำดับเข้าเส้นชัย (คันที่ยังไม่ถึง เรียงตามระยะ) → 10/6/4/2
+        const order = finishOrder.slice(); cars.filter(c => !order.includes(c)).sort((a, b2) => b2.s - a.s).forEach(c => order.push(c));
+        const slots = order.map(c => cars.indexOf(c));
+        const before = gp.points.slice(); slots.forEach((sl, pos) => { gp.points[sl] += GP_POINTS[pos]; });
+        gp.results.push(slots); gp.correct += S.correct; gp.total += GATES; S.raceAdded = true;
+        setHud(h => ({ ...h, phase:"finish", target:null, fx:null, done:{ rank, correct:S.correct } }));
+        setTimeout(() => {
+          if (!alive) return;
+          const st = { final:isLast, race:R.idx, slots, before, points:gp.points.slice(), order:gpOrder(), gpRank:gpRank() };
+          if (isLast) startPodium(st);
+          else { S.phase = "standings"; setHud(h => ({ ...h, phase:"standings", done:null, standings:st })); setAdv(15); }
+        }, 3200);
+      }
+      if (S.phase === "podium") {   // โพเดียม: confetti เป็นระยะ
+        S.podT = (S.podT || 0) + dt;
+        if (S.podT > .7) { S.podT = 0; const p = win.g.localToWorld(new THREE.Vector3((Math.random() - .5) * 10, 7 + Math.random() * 2, 1)); for (let i = 0; i < 50; i++) { const a = Math.random() * 6.283; fxNorm.emit(p.x, p.y, p.z, Math.cos(a) * (2 + Math.random() * 5), 2 + Math.random() * 5, Math.sin(a) * (2 + Math.random() * 5), 2.4 + Math.random(), .3, 0, CONF[i % CONF.length], 1, 4, 1.1); } }
       }
 
       // ── แท่น ──
@@ -708,6 +890,10 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
       if (S.camMode === "podium") { // มองรถจากด้านหน้าเฉียง
         const pp = podium.position, mb = P.model?.box, ext = mb ? Math.max(mb.max.z - mb.min.z, (mb.max.y - mb.min.y) * 2) : 3.6, dist = 3.6 + ext * 1.35;
         cp = pp.clone().addScaledVector(fwd, dist).addScaledVector(right, dist * .14); cp.y = 1.2 + dist * .17; cl = pp.clone(); cl.y = -.9; cl.addScaledVector(right, .4);
+      } else if (S.camMode === "win") {   // หน้าโพเดียม มองย้อนกลับ
+        const wp = win.g.position, wy = win.g.rotation.y, wf = new THREE.Vector3(Math.sin(wy), 0, Math.cos(wy));
+        const asp = camera.aspect, dist = clamp(15 / Math.max(.5, asp), 14, 26);
+        cp = wp.clone().addScaledVector(wf, dist); cp.y = 3.6; cl = wp.clone(); cl.y = 2.4;
       } else if (S.camMode === "orbit") {
         S.orbitA = (S.orbitA || 0) + dt * .45; const a = S.orbitA + 0.4; cp = pPos.clone().addScaledVector(fwd, Math.cos(a) * 8).addScaledVector(right, Math.sin(a) * 8); cp.y = 3.0; cl = pPos.clone(); cl.y = 1.1;
       } else {
@@ -726,7 +912,7 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
       // เงาตามผู้เล่น
       sun.position.copy(pPos).addScaledVector(sunDir, 80); sun.target.position.copy(pPos).addScaledVector(fwd, 14);
       // ซ่อนของไกล
-      if (t - lastCull > .25) { lastCull = t; const s0 = S.camMode === "podium" ? START_S : P.s; for (const p of props) p.o.visible = p.s > s0 - 60 && p.s < s0 + 330; }
+      if (t - lastCull > .25) { lastCull = t; const s0 = S.camMode === "podium" ? START_S : P.s; for (const p of props) p.o.visible = p.s > s0 - 60 && p.s < s0 + 330; for (const h of hazards) if (!h.gone || h.fly) h.g.visible = h.s > s0 - 40 && h.s < s0 + 330; }
       S.flash = Math.max(0, S.flash - dt * 2); el.style.setProperty("--flash", S.flash.toFixed(2)); el.style.setProperty("--boost", (P.boost > 0 ? Math.min(1, P.boost) : 0).toFixed(2));
       if (composer) composer.render(); else renderer.render(scene, camera);
     };
@@ -743,9 +929,9 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
       templates.forEach(p => p.then(tpl => tpl && tpl.traverse(o => { o.geometry?.dispose?.(); const m = o.material; (Array.isArray(m) ? m : m ? [m] : []).forEach(x => { x.map?.dispose?.(); x.dispose?.(); }); })));
       texCache.forEach(v => v.tex?.dispose?.());
       owned.forEach(x => x?.dispose?.());
-      env?.dispose?.(); kit?.dispose?.(); composer?.dispose?.(); renderer.dispose(); renderer.domElement.remove();
+      env?.dispose?.(); kit?.dispose?.(); composer?.dispose?.(); renderer.dispose(); try { renderer.forceContextLoss(); } catch (_) {} renderer.domElement.remove();
     };
-  }, []); // eslint-disable-line
+  }, [raceNo]); // eslint-disable-line
 
   const btn = { minHeight:64, borderRadius:32, border:"none", background:tk.card, color:tk.ink, fontSize:30, fontWeight:900, cursor:"pointer", boxShadow:tk.shadow, fontFamily:"inherit", touchAction:"none", userSelect:"none", WebkitUserSelect:"none" };
   const holdProps = side => ({
@@ -753,49 +939,77 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
     onPointerUp: () => api.current.btn?.(side, false), onPointerCancel: () => api.current.btn?.(side, false), onLostPointerCapture: () => api.current.btn?.(side, false),
     onContextMenu: e => e.preventDefault(),
   });
-  const racing = hud.phase !== "select";
+  const ph = hud.phase;
+  const racing = ph !== "select";
+  const driving = ph === "loading" || ph === "countdown" || ph === "race";
+  const table = ph === "standings" || ph === "podium";
+  const canPause = racing && ph !== "podium" && !gpRef.current.finished;
   const shadowTxt = "0 2px 8px rgba(0,0,0,.65)";
+  const gp = gpRef.current;
+  const nameOf = i => (i === 0 ? "ฉัน" : (racers[i]?.word || "CPU"));
+  const nextR = GP_RACES[raceNo + 1];
+  const st = hud.standings;
+  const setPause = on => { setPaused(on); api.current.pause?.(on); try { sfx.tap(); } catch (_) {} };
+  const small = { ...btn, minHeight:48, fontSize:18, borderRadius:24, touchAction:"manipulation" };
   return (
     <div style={{ position:"relative", display:"flex", flexDirection:"column", gap:8 }}>
-      {racing && (hud.target
+      {racing && !table && (hud.target
         ? <Prompt w={hud.target} onClick={() => ui.say(hud.target)} />
-        : <div style={{ minHeight:96, margin:"2px auto 12px", width:"100%", maxWidth:480, borderRadius:28, background:tk.card, color:tk.ink, boxShadow:tk.shadow, display:"flex", alignItems:"center", justifyContent:"center", gap:10, fontWeight:800, fontSize:17, padding:"0 14px", textAlign:"center" }}>
-            🏁 ฟังคำ แล้วขับผ่านประตูรูปที่ถูก!</div>)}
-      <div style={{ position:"relative", height:racing ? "min(56vh, 560px)" : "min(68vh, 640px)", minHeight:300, borderRadius:28, overflow:"hidden", background:"#0b1220" }}>
+        : <div style={{ minHeight:96, margin:"2px auto 12px", width:"100%", maxWidth:480, borderRadius:28, background:tk.card, color:tk.ink, boxShadow:tk.shadow, display:"flex", alignItems:"center", justifyContent:"center", gap:10, fontWeight:800, fontSize:17, padding:"0 14px", textAlign:"center", boxSizing:"border-box" }}>
+            {ph === "finish" ? "🏁 เข้าเส้นชัย!" : <>🏁 สนาม {raceNo + 1}/{GP_RACES.length} · {R0.icon} {R0.th}<br />ฟังคำ แล้วขับผ่านประตูรูปที่ถูก!</>}</div>)}
+      <div style={{ position:"relative", height:racing && !table ? "min(56vh, 560px)" : table ? "min(50vh, 500px)" : "min(68vh, 640px)", minHeight:table ? 260 : 300, borderRadius:28, overflow:"hidden", background:"#0b1220" }}>
         <div ref={host} data-racer3d style={{ position:"absolute", inset:0 }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 58%, rgba(0,0,0,.25))" }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 40%, rgba(239,68,68,.75))", opacity:"var(--flash, 0)" }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 45%, rgba(255,140,30,.55))", opacity:"var(--boost, 0)" }} />
 
-        {racing && <>
-          <div style={{ position:"absolute", left:10, top:8, right:10, display:"flex", justifyContent:"space-between", alignItems:"flex-start", pointerEvents:"none", color:"#fff", textShadow:shadowTxt, fontWeight:900 }}>
-            <div style={{ fontSize:16, lineHeight:1.3 }}>🚧 {Math.min(hud.gate, GATES)}/{GATES}<br />⭐ {hud.correct}</div>
+        {racing && !table && <>
+          <div style={{ position:"absolute", left:8, top:8, right:10, display:"flex", justifyContent:"space-between", alignItems:"flex-start", pointerEvents:"none", color:"#fff", textShadow:shadowTxt, fontWeight:900 }}>
+            <div style={{ display:"flex", gap:8, alignItems:"flex-start" }}>
+              {canPause && <button aria-label="พัก" onClick={() => setPause(true)} className="m3-press"
+                style={{ pointerEvents:"auto", width:46, height:46, borderRadius:23, border:"none", background:tk.card, color:tk.ink, boxShadow:tk.shadow, fontSize:20, fontWeight:900, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", padding:0, flex:"none" }}>⏸</button>}
+              <div style={{ fontSize:15, lineHeight:1.3 }}>
+                <div>🏁 {raceNo + 1}/{GP_RACES.length} · 🚧 {Math.min(hud.gate, hud.gates)}/{hud.gates}</div>
+                <div>⭐ {gp.correct + (hud.done ? 0 : hud.correct)} · ⏱ <span ref={timerRef}>{fmtT(gp.elapsed)}</span></div>
+              </div>
+            </div>
             <div style={{ textAlign:"right", lineHeight:1 }}>
               <div style={{ fontSize:34 }}>{ORD[hud.rank]}</div>
               <div style={{ fontSize:13, marginTop:2 }}>อันดับ {hud.rank}/4</div>
             </div>
           </div>
-          <div style={{ position:"absolute", left:"22%", right:"24%", top:16, height:8, borderRadius:4, background:"rgba(255,255,255,.45)", pointerEvents:"none" }}>
-            <div style={{ position:"absolute", right:-6, top:-9, fontSize:16 }}>🏁</div>
+          <div style={{ position:"absolute", left:16, right:30, bottom:14, height:8, borderRadius:4, background:"rgba(255,255,255,.5)", pointerEvents:"none", boxShadow:"0 1px 4px rgba(0,0,0,.3)" }}>
+            <div style={{ position:"absolute", right:-22, top:-10, fontSize:18 }}>🏁</div>
             <div ref={barRef} style={{ position:"absolute", inset:0 }}>
-              {racers.map((r, i) => <span key={i} style={{ position:"absolute", left:"0%", top:r.me ? -13 : -9, transform:"translateX(-50%)", fontSize:r.me ? 22 : 15, filter:r.me ? "drop-shadow(0 0 4px #fff)" : "none", zIndex:r.me ? 2 : 1 }}>{r.emoji}</span>)}
+              {racers.map((r, i) => <span key={i} style={{ position:"absolute", left:"0%", top:r.me ? -14 : -10, transform:"translateX(-50%)", fontSize:r.me ? 22 : 15, filter:r.me ? "drop-shadow(0 0 4px #fff)" : "none", zIndex:r.me ? 2 : 1 }}>{r.emoji}</span>)}
             </div>
           </div>
         </>}
-        {hud.fx && <div style={{ position:"absolute", left:0, right:0, top:"30%", textAlign:"center", pointerEvents:"none", fontWeight:900, fontSize:38, color:hud.fx === "turbo" ? "#fde047" : "#fecaca", textShadow:"0 3px 0 rgba(0,0,0,.35), 0 0 18px rgba(0,0,0,.5)", animation:"none" }}>
-          {hud.fx === "turbo" ? "🔥 TURBO!" : "💫 อุ๊ย!"}</div>}
-        {hud.phase === "countdown" && hud.count > 0 && <div key={hud.count} style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", pointerEvents:"none", fontSize:120, fontWeight:900, color:"#fff", textShadow:"0 6px 0 rgba(0,0,0,.3), 0 0 30px rgba(0,0,0,.5)" }}>{hud.count}</div>}
+        {hud.fx && <div style={{ position:"absolute", left:0, right:0, top:"30%", textAlign:"center", pointerEvents:"none", fontWeight:900, fontSize:36, color:hud.fx === "turbo" ? "#fde047" : "#fecaca", textShadow:"0 3px 0 rgba(0,0,0,.35), 0 0 18px rgba(0,0,0,.5)" }}>
+          {{ turbo:"🔥 TURBO!", spin:"💫 อุ๊ย!", oil:"🛢️ ลื่น!", cone:"🚧 โดนกรวย!", barrel:"💥 โดนถัง!" }[hud.fx]}</div>}
+        {ph === "loading" && <div style={{ position:"absolute", inset:0, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:6, pointerEvents:"none", color:"#fff", textShadow:shadowTxt, fontWeight:900, background:"rgba(11,18,32,.45)" }}>
+          <div style={{ fontSize:64, lineHeight:1 }}>{R0.icon}</div>
+          <div style={{ fontSize:26 }}>สนาม {raceNo + 1}/{GP_RACES.length}</div>
+          <div style={{ fontSize:20 }}>{R0.th}</div>
+          <div style={{ fontSize:14, opacity:.9 }}>{hud.loadP < 1 ? `กำลังโหลด… ${Math.round(hud.loadP * 100)}%` : "พร้อม!"}</div>
+        </div>}
+        {ph === "countdown" && hud.count > 0 && <div key={hud.count} style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", pointerEvents:"none", fontSize:120, fontWeight:900, color:"#fff", textShadow:"0 6px 0 rgba(0,0,0,.3), 0 0 30px rgba(0,0,0,.5)" }}>{hud.count}</div>}
         {hud.go && <div style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", pointerEvents:"none", fontSize:96, fontWeight:900, color:"#4ade80", textShadow:"0 6px 0 rgba(0,0,0,.3), 0 0 30px rgba(0,0,0,.5)" }}>GO!</div>}
         {hud.done && <div style={{ position:"absolute", left:0, right:0, top:"13%", textAlign:"center", pointerEvents:"none", color:"#fff", textShadow:shadowTxt, fontWeight:900 }}>
           <div style={{ fontSize:56, lineHeight:1 }}>{hud.done.rank === 1 ? "🏆" : hud.done.rank === 2 ? "🥈" : hud.done.rank === 3 ? "🥉" : "🏁"}</div>
           <div style={{ fontSize:36 }}>อันดับ {hud.done.rank}!</div>
-          <div style={{ fontSize:18 }}>ถูก {hud.done.correct}/{GATES}</div>
+          <div style={{ fontSize:18 }}>ถูก {hud.done.correct}/{hud.gates} · +{GP_POINTS[hud.done.rank - 1]} คะแนน</div>
+        </div>}
+        {table && st && <div style={{ position:"absolute", top:10, left:0, right:0, textAlign:"center", pointerEvents:"none", color:"#fff", textShadow:shadowTxt, fontWeight:900 }}>
+          {st.final
+            ? <><div style={{ fontSize:26 }}>🏆 Grand Prix อันดับ {st.gpRank}!</div><div style={{ fontSize:15 }}>⭐ ถูก {gp.correct}/{gp.total} · ⏱ {fmtT(gp.elapsed)}</div></>
+            : <><div style={{ fontSize:24 }}>🏁 จบสนาม {st.race + 1}/{GP_RACES.length}</div><div style={{ fontSize:15 }}>ตารางคะแนน Grand Prix</div></>}
         </div>}
 
         {!racing && <>
           <div style={{ position:"absolute", top:12, left:0, right:0, textAlign:"center", pointerEvents:"none" }}>
-            <div style={{ fontWeight:900, fontSize:26, color:"#fff", textShadow:shadowTxt }}>Word Racer 3D</div>
-            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:shadowTxt }}>ฟังคำ → ขับผ่านประตูรูปที่ถูก = เทอร์โบ!</div>
+            <div style={{ fontWeight:900, fontSize:26, color:"#fff", textShadow:shadowTxt }}>Word Racer GP</div>
+            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:shadowTxt }}>แข่ง 3 สนาม {GP_RACES.map(r => r.icon).join(" ")} · ฟังคำ → ประตูรูปที่ถูก = เทอร์โบ!</div>
           </div>
           <div style={{ position:"absolute", left:0, right:0, bottom:0, padding:"28px 10px 12px", display:"flex", flexDirection:"column", alignItems:"center", gap:8, background:"linear-gradient(180deg, transparent, rgba(0,0,0,.6))" }}>
             <button onClick={() => { sayVeh(vDef); try { sfx.tap(); } catch (_) {} }} className="m3-press" aria-label={`ฟังคำ ${vDef.word}`}
@@ -815,9 +1029,31 @@ export default function Racer3D({ words, speak, track, catId, sfx, Prompt, ui })
         </>}
         {hud.msg && <div style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", color:"#fff", fontWeight:900, fontSize:18, textAlign:"center", padding:20 }}>{hud.msg}</div>}
       </div>
-      {racing && !hud.done && <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
+      {driving && <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
         <button aria-label="เลี้ยวซ้าย" className="m3-press" style={btn} {...holdProps(-1)}>◀</button>
         <button aria-label="เลี้ยวขวา" className="m3-press" style={btn} {...holdProps(1)}>▶</button>
+      </div>}
+      {table && st && <div style={{ background:tk.card, color:tk.ink, borderRadius:24, boxShadow:tk.shadow, padding:"10px 12px 12px", display:"flex", flexDirection:"column", gap:6 }}>
+        {st.order.map((slot, i) => { const me = slot === 0, gain = st.points[slot] - st.before[slot];
+          return <div key={slot} style={{ display:"grid", gridTemplateColumns:"34px 30px 1fr auto 52px", alignItems:"center", gap:6, minHeight:34, padding:"0 8px", borderRadius:14, background:me ? tk.primary : "transparent", color:me ? tk.onPrimary : tk.ink, fontWeight:800 }}>
+            <span style={{ fontSize:20 }}>{["🥇", "🥈", "🥉", "4"][i]}</span>
+            <span style={{ fontSize:22 }}>{racers[slot]?.emoji || "🚗"}</span>
+            <span style={{ fontSize:14, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{nameOf(slot)}</span>
+            <span style={{ fontSize:13, opacity:.85 }}>+{gain}</span>
+            <span style={{ fontSize:20, fontWeight:900, textAlign:"right" }}>{st.points[slot]}</span>
+          </div>; })}
+        <button onClick={() => { try { sfx.tap(); } catch (_) {} api.current.next?.(); }} className="m3-press"
+          style={{ ...small, minHeight:54, marginTop:4, background:tk.primary, color:tk.onPrimary, fontSize:19 }}>
+          {st.final ? `✓ เสร็จ` : `▶ สนามต่อไป ${nextR ? nextR.icon + " " + nextR.th : ""}`}{adv > 0 && !paused ? ` (${adv})` : ""}</button>
+        {!st.final && <button onClick={() => setPause(true)} className="m3-press" style={{ ...small, minHeight:44, fontSize:15, boxShadow:"none", background:"transparent" }}>⏸ พัก / จบ</button>}
+      </div>}
+      {paused && <div style={{ position:"absolute", inset:0, zIndex:20, display:"flex", alignItems:"center", justifyContent:"center", background:"rgba(11,18,32,.55)", borderRadius:28, padding:16 }}>
+        <div style={{ background:tk.card, color:tk.ink, borderRadius:28, boxShadow:tk.shadow, padding:"20px 18px", width:"100%", maxWidth:320, display:"flex", flexDirection:"column", gap:12, textAlign:"center" }}>
+          <div style={{ fontSize:30, fontWeight:900 }}>⏸ พัก</div>
+          <div style={{ fontSize:15, fontWeight:700, opacity:.8 }}>สนาม {raceNo + 1}/{GP_RACES.length} · ⭐ {gp.correct + (hud.done || table ? 0 : hud.correct)} · ⏱ {fmtT(gp.elapsed)}</div>
+          <button onClick={() => setPause(false)} className="m3-press" style={{ ...small, minHeight:60, fontSize:22, background:tk.primary, color:tk.onPrimary }}>▶ เล่นต่อ</button>
+          <button onClick={() => { setPaused(false); api.current.endNow?.(); }} className="m3-press" style={{ ...small, fontSize:17 }}>⏹ จบเกม (ผู้ปกครอง)</button>
+        </div>
       </div>}
     </div>
   );

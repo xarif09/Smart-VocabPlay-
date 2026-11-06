@@ -14,7 +14,15 @@ import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { setupEnvironment } from "./runner/environment.js";
 
 const BASE = (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.BASE_URL) || "/";
-const ROUNDS = 10;
+// ทัวร์นาเมนต์ 3 นัด × 10 ลูก (≈ 5–6 นาที): รอบแบ่งกลุ่ม → รองชนะเลิศ → ชิงชนะเลิศ
+// คู่แข่งยิงสลับกับเรา (จำลอง · ตามคะแนนให้สูสี) · ผู้รักษาประตูขยับไวขึ้น/พุ่งถูกทางบ่อยขึ้นทุกนัด · นัดชิงรูปสลับที่ก่อนยิง
+// ไม่มีตกรอบ: แพ้ก็ได้ไปต่อ · จบด้วยถ้วย (ชนะนัดชิง = ทอง · ไม่ชนะ = เงิน)
+const MATCHES = [
+  { name:"รอบแบ่งกลุ่ม", opp:{ name:"TIGERS", emoji:"🐯", kit:{ shirt:"#f97316", trim:"#111827", legs:"#1f2937" } }, shots:10, p:.42, sway:.45, speed:1.5, near:.15, swap:false },
+  { name:"รอบรองชนะเลิศ", opp:{ name:"SHARKS", emoji:"🦈", kit:{ shirt:"#0ea5e9", trim:"#ffffff", legs:"#0c4a6e" } }, shots:10, p:.5, sway:1.1, speed:2.1, near:.45, swap:false },
+  { name:"รอบชิงชนะเลิศ", opp:{ name:"LIONS", emoji:"🦁", kit:{ shirt:"#facc15", trim:"#111827", legs:"#1f2937" } }, shots:10, p:.55, sway:1.7, speed:2.7, near:.7, swap:true },
+];
+const ROUNDS = MATCHES.reduce((a, m) => a + m.shots, 0);
 const GZ = -9;                    // เส้นประตู (จุดโทษอยู่ที่ z = 0 · ย่อสนามลงเล็กน้อยให้เด็กเห็นรูปชัด)
 const GW = 7.32, GH = 2.44;       // ขนาดประตูจริง
 const CARD_Z = GZ + 2.1, CARD_Y = 1.42, CARD_X = [-2.78, 0, 2.78];
@@ -148,7 +156,7 @@ function makeProcPlayer(kit) {
 export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt, ui }) {
   const host = useRef(null);
   const api = useRef({});
-  const [hud, setHud] = useState({ phase:"intro", round:0, goals:0, results:[], target:null, banner:null, ready:false, msg:null });
+  const [hud, setHud] = useState({ phase:"intro", round:0, goals:0, match:0, mShot:0, res:[], opp:[], target:null, banner:null, inter:null, trophy:null, opBubble:null, sec:0, paused:false, ready:false, msg:null });
 
   useEffect(() => {
     const el = host.current; if (!el) return;
@@ -344,14 +352,23 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
       if (A.cur && A.cur !== a) { a.crossFadeFrom(A.cur, fade, false); } a.play(); A.cur = a; return a;
     };
     const ballLoader = new GLTFLoader();
+    let kitImg = null; const kitTexs = new Set();
+    // ชุดผู้รักษาประตู = สีทีมคู่แข่งของนัดนั้น
+    const dressKeeper = kit => {
+      if (!kitImg || !keeper.model) return; const tex = { head:kitTexture(kitImg, kit, "head"), body:kitTexture(kitImg, kit, "body"), legs:kitTexture(kitImg, kit, "legs") };
+      keeper.model.traverse(o => { if (o.isMesh && o.material?.map) { const old = o.material.map; o.material.map = /Head/.test(o.name) ? tex.head : /Leg/.test(o.name) ? tex.legs : tex.body; o.material.needsUpdate = true; if (kitTexs.has(old)) { kitTexs.delete(old); old.dispose(); } } });
+      Object.values(tex).forEach(t => kitTexs.add(t));
+    };
     const P_SCALE = .84;  // mannequin สูง 2.2 → ~1.85 m
     const assetsP = Promise.all([
       ballLoader.loadAsync(`${BASE}models/sports/player.glb`).then(gltf => {
         if (!alive) return;
         let img = null; gltf.scene.traverse(o => { if (o.isMesh && o.material.map && !img) img = o.material.map.image; });
+        kitImg = img;
         for (const A of [keeper, kicker]) {
           const m = cloneSkinned(gltf.scene); m.scale.setScalar(P_SCALE);
           const tex = img ? { head:kitTexture(img, A.kit, "head"), body:kitTexture(img, A.kit, "body"), legs:kitTexture(img, A.kit, "legs") } : null;
+          if (tex && A === keeper) Object.values(tex).forEach(t => kitTexs.add(t));
           m.traverse(o => { if (o.isMesh) { o.castShadow = true; o.frustumCulled = false; o.material = o.material.clone(); o.material.roughness = .5;
             if (tex) o.material.map = /Head/.test(o.name) ? tex.head : /Leg/.test(o.name) ? tex.legs : tex.body; } });
           A.root.add(m); A.model = m; A.mixer = new THREE.AnimationMixer(m);
@@ -380,8 +397,14 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
       composer.addPass(new UnrealBloomPass(new THREE.Vector2(W(), H()), .32, .35, 1.0)); composer.addPass(new OutputPass()); } catch (e) { composer = null; }
 
     // ── สถานะเกม ──
-    const S = { phase:"intro", round:0, goals:0, results:[], t:0, gt:0, slow:1, row:null, shot:null, events:[], camMode:"intro", camT:0, shake:0, cheer:0 };
-    const after = (dt, fn) => S.events.push({ at:S.gt + dt, fn });
+    const S = { phase:"intro", round:0, goals:0, t:0, gt:0, pt:0, slow:1, row:null, shot:null, events:[], later:[], camMode:"intro", camT:0, shake:0, cheer:0,
+      match:0, mShot:0, res:[], opp:[], shots:0, paused:false, playT:0, sec:-1, swapping:false, champ:false };
+    const FAST = (typeof window !== "undefined" && +window.__VP_FAST) || 1;   // ชุดทดสอบเร่งจังหวะได้
+    const after = (dt, fn) => S.events.push({ at:S.gt + dt, fn });                // เวลาในฉาก (ช้าลงตอนสโลว์)
+    const later = (ms, fn) => S.later.push({ at:S.pt + ms / 1000 / FAST, fn });  // เวลาจริงของเกม (หยุดเมื่อพัก)
+    const M = () => MATCHES[Math.min(S.match, MATCHES.length - 1)];
+    const sum = a => a.reduce((x, y) => x + y, 0);
+    const hudScore = (x = {}) => setHud(h => ({ ...h, round:S.round, goals:S.goals, match:S.match, mShot:S.mShot, res:S.res.slice(), opp:S.opp.slice(), ...x }));
     const KICK0 = new THREE.Vector3(-2.3, 0, 1.3), KICK1 = new THREE.Vector3(-.42, 0, .42);
     const resetActors = () => {
       keeper.root.position.set(0, 0, GZ + .45); keeper.root.rotation.set(0, 0, 0); keeper.dive = null;
@@ -409,31 +432,67 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
       const target = pre || pickTarget();
       const others = pool.filter(w => w.id !== target.id && w.word !== target.word).sort(() => Math.random() - .5).slice(0, 2);
       const set = [target, ...others].sort(() => Math.random() - .5);
-      S.round += 1; const myRound = S.round;
-      S.events.length = 0; resetActors(); S.camMode = "aim"; S.phase = "load";
-      setHud(h => ({ ...h, phase:"aim", round:S.round, target, banner:null }));
+      S.round += 1; S.mShot += 1; const myRound = S.round;
+      S.events.length = 0; resetActors(); S.camMode = "aim"; S.phase = "load"; S.swapping = false;
+      hudScore({ phase:"aim", target, banner:null, opBubble:null });
       if (!pre) ui.say(target);
       const texs = await Promise.all(set.map(texFor));
       if (!alive || myRound !== S.round) return;
       clearRow();
       const cards = set.map((w, i) => { const c = makeCard(texs[i].tex, texs[i].aspect); c.g.position.set(CARD_X[i], CARD_Y, CARD_Z); c.g.scale.setScalar(.01); scene.add(c.g);
         const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map:glow, color:HALO[i], transparent:true, opacity:.5, depthWrite:false, blending:THREE.AdditiveBlending })); halo.scale.set(3.8, 3.1, 1); halo.position.z = -.15; c.g.add(halo);
-        return { ...c, halo, w, i, home:new THREE.Vector3(CARD_X[i], CARD_Y, CARD_Z), tilt:CARD_X[i] ? -Math.sign(CARD_X[i]) * .06 : 0, born:S.t + i * .08, state:"in", k:0 }; });
+        return { ...c, halo, w, i, slot:i, home:new THREE.Vector3(CARD_X[i], CARD_Y, CARD_Z), tilt:CARD_X[i] ? -Math.sign(CARD_X[i]) * .06 : 0, born:S.t + i * .08, state:"in", k:0 }; });
       S.row = { cards, target }; S.phase = "aim";
-      el.dataset.answer = String(set.indexOf(target));   // ใช้ในชุดทดสอบอัตโนมัติ
+      el.dataset.answer = String(set.indexOf(target));   // ใช้ในชุดทดสอบอัตโนมัติ (ช่องซ้าย/กลาง/ขวา)
+      // นัดชิง: รูป 2 ใบสลับที่กันก่อนยิง (ดูให้ดี!)
+      if (M().swap) { S.swapping = true; later(900, () => { if (S.row !== cards.__row) return; const [a, b] = [0, 1, 2].sort(() => Math.random() - .5);
+        const A = cards[a], B = cards[b]; A.sw = { from:A.home.clone(), to:B.home.clone(), k:0, arc:1 }; B.sw = { from:B.home.clone(), to:A.home.clone(), k:0, arc:-1 };
+        [A.slot, B.slot] = [B.slot, A.slot]; el.dataset.answer = String(cards.find(c => c.w.id === target.id).slot); sfx.tap?.(); }); cards.__row = S.row; }
     };
-    const finish = () => { S.phase = "over"; setHud(h => ({ ...h, phase:"over" })); setTimeout(() => { if (alive) track.finish(S.goals, ROUNDS, { label:`ยิงเข้า ${S.goals}/${ROUNDS}` }); }, 900); };
+    const finish = early => { if (S.phase === "over") return; S.phase = "over";
+      const total = early ? Math.max(1, S.shots) : ROUNDS;
+      setHud(h => ({ ...h, phase:"over", inter:null, paused:false, banner:null }));
+      const label = early ? `ยิงเข้า ${S.goals}/${total}` : `${S.champ ? "🏆 แชมป์!" : "🥈 รองแชมป์!"} ยิงเข้า ${S.goals}/${total}`;
+      setTimeout(() => { if (alive) track.finish(S.goals, total, { label }); }, early ? 50 : 900); };
+    // คู่แข่งยิงสลับกับเรา (ผลจำลอง · ปรับให้สูสี ไม่ทิ้งห่าง)
+    const oppShot = () => {
+      const diff = sum(S.res) - sum(S.opp); let p = M().p; if (diff >= 2) p += .2; if (diff <= -1) p -= .3; p = clamp(p, .1, .9);
+      const g = Math.random() < p ? 1 : 0; S.opp.push(g);
+      hudScore({ opBubble:{ g, id:Math.random() } });
+    };
+    // จบนัด → สรุปผล → นัดต่อไป (หรือถ้วยรางวัล)
+    const matchEnd = () => {
+      S.phase = "inter"; clearRow(); S.camMode = "intro";
+      const our = sum(S.res), op = sum(S.opp), last = S.match >= MATCHES.length - 1;
+      const res = our > op ? "win" : our === op ? "draw" : "lose";
+      if (res === "win") { confetti(); cheerAmt.v = 1; sfx.win?.(); } else sfx.coin?.();
+      if (last) {
+        S.champ = res !== "lose"; showTrophy(S.champ);   // เสมอนัดชิง = แชมป์ร่วม (เด็กไม่ผิดหวัง)
+        hudScore({ phase:"inter", target:null, inter:null, trophy:{ gold:S.champ, our, op, id:Math.random() } });
+        later(4200, () => finish(false)); return;
+      }
+      const N = MATCHES[S.match + 1];
+      hudScore({ phase:"inter", target:null, inter:{ title:`จบ${M().name}`, our, op, opp:M().opp, res, next:N } });
+      later(9000, () => nextMatch(false));
+    };
+    const nextMatch = fromClick => {
+      if (S.phase !== "inter" || S.match >= MATCHES.length - 1) return;
+      S.match += 1; S.mShot = 0; S.res = []; S.opp = []; cheerAmt.v = 0; dressKeeper(M().opp.kit);
+      hudScore({ inter:null });
+      if (fromClick) { const t = pickTarget(); ui.say(t); startRound(t); } else startRound();   // กดปุ่ม → พูดคำแรกในคลิก (iOS)
+    };
     const banner = (kind, text) => { setHud(h => ({ ...h, banner:{ kind, text, id:Math.random() } })); };
 
     // ยิง!
+    const chooseSlot = k => { const c = S.row?.cards.find(c => c.slot === k); if (c) choose(c.i); };
     const choose = i => {
-      if (S.phase !== "aim" || !S.row) return;
+      if (S.phase !== "aim" || !S.row || S.paused || S.swapping) return;
       const r = S.row; const card = r.cards[i]; if (!card) return;
       S.phase = "shot"; sfx.tap();
       const ok = card.w.id === r.target.id;
-      const tx = CARD_X[i] * .92, ty = .95 + Math.random() * .7;
+      const tx = card.home.x * .92, ty = .95 + Math.random() * .7;
       let kind = "goal";
-      if (!ok) kind = i === 1 ? "catch" : ((S.round % 2) ? "save" : "post");
+      if (!ok) kind = Math.abs(card.home.x) < .5 ? "catch" : ((S.round % 2) ? "save" : "post");
       const aimPt = kind === "post" ? new THREE.Vector3(Math.sign(tx) * (GW / 2 - .02), 1.25, GZ) : kind === "catch" ? new THREE.Vector3(0, 1.15, GZ + .75) : new THREE.Vector3(tx, ty, GZ - 1.3);
       const curveSide = tx === 0 ? (Math.random() < .5 ? -1 : 1) : -Math.sign(tx);
       S.shot = { ok, kind, i, card, aimPt, p0:new THREE.Vector3(0, BALL_R, 0), ctrl:new THREE.Vector3(curveSide * 1.6 + tx * .3, 1.4 + ty * .3, (GZ) * .5), t:0, dur:kind === "catch" ? .85 : 1.0, launched:false, resolved:false };
@@ -452,13 +511,15 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
       // ผู้รักษาประตูพุ่ง
       const tx = sh.aimPt.x;
       let dir, reach;
-      if (sh.kind === "goal") { dir = tx === 0 ? (Math.random() < .5 ? -1 : 1) : -Math.sign(tx); reach = 2.3; }
+      const near = sh.kind === "goal" && Math.abs(tx) > .5 && Math.random() < M().near;   // ผู้รักษาประตูเก่งขึ้น: พุ่งถูกทางแต่เอื้อมไม่ถึง
+      if (near) { dir = Math.sign(tx); reach = Math.abs(tx) + .55; }
+      else if (sh.kind === "goal") { dir = tx === 0 ? (Math.random() < .5 ? -1 : 1) : -Math.sign(tx); reach = 2.3; }
       else if (sh.kind === "save") { dir = Math.sign(tx); reach = Math.abs(tx); }
       else if (sh.kind === "post") { dir = Math.sign(tx); reach = 2.6; }
       else dir = 0;
       after(.12, () => {
         if (dir === 0) { play(keeper, "Melee_Block", { once:true, fade:.08, speed:1.3 }); return; }
-        keeper.dive = { t:0, dur:.55, dir, x0:keeper.root.position.x, x1:dir * Math.max(.6, reach - 1.25) };
+        keeper.dive = { t:0, dur:near ? .5 : .55, dir, x0:keeper.root.position.x, x1:dir * Math.max(.6, reach - 1.25) };
         play(keeper, "Jump_Full_Short", { once:true, fade:.08, speed:1.6 });
       });
     };
@@ -467,17 +528,17 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
       S.camMode = "hold"; S.hold = { x:sh.ok ? clamp(ball.position.x, -3, 3) : 0 }; ring.visible = false;
       const r = S.row; const target = r.target;
       if (sh.ok) {
-        S.goals += 1; S.results.push(1);
+        S.goals += 1; S.res.push(1);
         ripple.x = ball.position.x; ripple.y = ball.position.y; ripple.t = 0; ripple.a = .55;
         S.ballV = new THREE.Vector3(0, -.5, -1.2); S.inNet = true;
         burst(ball.position.clone(), ["#fde047", "#f472b6", "#22d3ee", "#a3e635", "#ffffff"], 160, 7);
         confetti(); cheerAmt.v = 1; S.shake = .5;
         ui.correct(target); sfx.win?.();
-        banner("goal", "GOAL! ⚽");
+        banner("goal", keeper.dive && Math.sign(keeper.dive.dir) === Math.sign(ball.position.x) ? "GOAL! เฉียดมือ! ⚽" : "GOAL! ⚽");
         play(kicker, "Cheering", { fade:.2 });
         if (keeper.dive) {} else play(keeper, "Hit_A", { once:true });
       } else {
-        S.results.push(0);
+        S.res.push(0);
         if (sh.kind === "catch") { S.held = true; S.ballV = null; banner("save", "เซฟได้! 🧤"); after(.7, () => play(keeper, "Cheering", { fade:.25 })); }
         else if (sh.kind === "save") { S.ballV = new THREE.Vector3(Math.sign(ball.position.x) * 3.5, 4.5, 7); banner("save", "เซฟได้! 🧤"); burst(ball.position.clone(), ["#ffffff", "#e5e7eb"], 40, 4); }
         else { S.ballV = new THREE.Vector3(-Math.sign(ball.position.x) * 2.5, 1.5, 8.5); banner("post", "โดนเสา! 💥"); burst(ball.position.clone(), ["#ffffff", "#fde68a"], 50, 5); S.shake = .7; }
@@ -488,21 +549,39 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
         // โชว์รูปที่ถูกลอยกลางประตู
         r.cards.forEach(c => { if (c.w.id === target.id) { c.state = "reveal"; c.born = S.t + .35; c.k = 0; c.g.visible = true; c.g.rotation.z = 0; c.home.set(0, 2.2, GZ - .3); c.tilt = 0; c.g.position.copy(c.home);
           c.frame.material.emissive.set("#22c55e"); c.frame.material.emissiveIntensity = 1.3; } });
-        setTimeout(() => { if (alive && S.row === r) ui.say(target); }, 1100);
+        later(1100, () => { if (S.row === r) ui.say(target); });
       }
-      setHud(h => ({ ...h, goals:S.goals, results:S.results.slice() }));
-      setTimeout(() => {
-        if (!alive) return;
+      S.shots += 1;
+      hudScore();
+      later(sh.ok ? 1250 : 1500, oppShot);
+      later(sh.ok ? 2600 : 3200, () => {
         cheerAmt.v = 0;
-        if (S.round >= ROUNDS) { finish(); return; }
+        if (S.mShot >= M().shots) { matchEnd(); return; }
         startRound();
-      }, sh.ok ? 2300 : 3000);
+      });
+    };
+    // ถ้วยรางวัล 3 มิติ (ทอง = แชมป์ · เงิน = รองแชมป์)
+    let trophy = null;
+    const showTrophy = gold => {
+      const g = new THREE.Group(); const mat = new THREE.MeshPhysicalMaterial({ color:gold ? "#f5c542" : "#d7dde5", metalness:1, roughness:.22, clearcoat:.6, emissive:gold ? "#5a3d00" : "#30363d", emissiveIntensity:.35 });
+      const prof = [[0, 0], [.42, 0], [.42, .12], [.16, .2], [.1, .42], [.09, .62], [.2, .7], [.4, .86], [.46, 1.22], [.44, 1.24], [.38, .9], [0, .8]].map(([x, y]) => new THREE.Vector2(x, y));
+      const cup = new THREE.Mesh(new THREE.LatheGeometry(prof, 40), mat); cup.castShadow = true; g.add(cup);
+      for (const sx of [-1, 1]) { const h = new THREE.Mesh(new THREE.TorusGeometry(.17, .035, 10, 24, Math.PI * 1.25), mat); h.position.set(sx * .47, 1.0, 0); h.rotation.z = sx > 0 ? -Math.PI * .62 : Math.PI * 1.62; g.add(h); }
+      const base = new THREE.Mesh(new THREE.BoxGeometry(.7, .22, .7), new THREE.MeshStandardMaterial({ color:"#3b2a1a", roughness:.5 })); base.position.y = -.11; g.add(base);
+      const star = new THREE.Mesh(new THREE.OctahedronGeometry(.13, 0), mat); star.position.y = 1.5; g.add(star);
+      g.position.set(0, -1.5, GZ + 2.4); g.scale.setScalar(1.15); scene.add(g); trophy = { g, t:0 };
+      kicker.root.visible = false;
+      S.camMode = "trophy"; burst(new THREE.Vector3(0, 1.6, GZ + 2.4), ["#fde047", "#ffffff", "#f472b6"], 160, 6);
     };
 
     api.current = {
-      start: () => { if (S.phase !== "intro") return; const t0 = pickTarget(); ui.say(t0); startRound(t0); },   // พูดคำแรกตรงใน onClick (iOS)
-      choose,
+      start: () => { if (S.phase !== "intro") return; dressKeeper(M().opp.kit); const t0 = pickTarget(); ui.say(t0); startRound(t0);   // พูดคำแรกตรงใน onClick (iOS)
+        hudScore({ banner:{ kind:"match", text:`${M().name} · พบ ${M().opp.emoji} ${M().opp.name}`, id:Math.random() } }); },
+      choose, next: () => nextMatch(true),
+      pause: p => { if (S.phase === "intro" || S.phase === "over") return; S.paused = p; setHud(h => ({ ...h, paused:p })); },
+      end: () => finish(true),
     };
+    if (typeof window !== "undefined" && window.__FR_DEBUG) window.__PK = { S, chooseSlot, answer:() => S.row ? S.row.cards.find(c => c.w.id === S.row.target.id)?.slot : -1 };
 
     // ── อินพุต: แตะรูป / ปัดไปทางรูป / แตะซ้าย-กลาง-ขวา ──
     const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
@@ -512,15 +591,15 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
       if (!down || S.phase !== "aim" || !S.row) { down = null; return; }
       const dx = e.clientX - down.x, dy = e.clientY - down.y; const rect = renderer.domElement.getBoundingClientRect(); down = null;
       if (Math.hypot(dx, dy) > 34) { // ปัด
-        const a = Math.atan2(dx, -dy); choose(a < -.33 ? 0 : a > .33 ? 2 : 1); return; }
+        const a = Math.atan2(dx, -dy); chooseSlot(a < -.33 ? 0 : a > .33 ? 2 : 1); return; }
       ndc.set(((e.clientX - rect.left) / rect.width) * 2 - 1, -((e.clientY - rect.top) / rect.height) * 2 + 1);
       ray.setFromCamera(ndc, camera);
       const hits = ray.intersectObjects(S.row.cards.flatMap(c => [c.frame, c.pic]), false);
       if (hits.length) { const c = S.row.cards.find(c => c.frame === hits[0].object || c.pic === hits[0].object); if (c) { choose(c.i); return; } }
-      const fx = (e.clientX - rect.left) / rect.width; choose(fx < .36 ? 0 : fx > .64 ? 2 : 1);
+      const fx = (e.clientX - rect.left) / rect.width; chooseSlot(fx < .36 ? 0 : fx > .64 ? 2 : 1);
     };
     renderer.domElement.addEventListener("pointerdown", pdn); renderer.domElement.addEventListener("pointerup", pup);
-    const key = e => { if (e.key === "ArrowLeft" || e.key === "1") choose(0); if (e.key === "ArrowUp" || e.key === "2") choose(1); if (e.key === "ArrowRight" || e.key === "3") choose(2); };
+    const key = e => { if (e.key === "ArrowLeft" || e.key === "1") chooseSlot(0); if (e.key === "ArrowUp" || e.key === "2") chooseSlot(1); if (e.key === "ArrowRight" || e.key === "3") chooseSlot(2); };
     window.addEventListener("keydown", key);
     const ro = new ResizeObserver(() => { renderer.setSize(W(), H()); camera.aspect = W() / H(); camera.updateProjectionMatrix(); composer?.setSize(W(), H()); }); ro.observe(el);
 
@@ -538,7 +617,11 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
     let raf = 0, last = performance.now();
     const tick = now => {
       if (!alive) return; raf = requestAnimationFrame(tick);
-      const rdt = Math.min(.05, (now - last) / 1000); last = now; S.t += rdt;
+      const rdt0 = Math.min(FAST > 1 ? .2 : .05, (now - last) / 1000); last = now;
+      const rdt = S.paused ? 0 : rdt0; S.t += rdt;               // พัก = ฉากหยุดนิ่ง
+      S.pt += rdt;
+      if (!S.paused && S.phase !== "intro" && S.phase !== "over") { S.playT += rdt; const sec = Math.floor(S.playT); if (sec !== S.sec) { S.sec = sec; setHud(h => ({ ...h, sec })); } }
+      for (let i = 0; i < S.later.length; i++) if (S.later[i].at <= S.pt) { const ev = S.later.splice(i, 1)[0]; i--; ev.fn(); }
       // สโลว์โมชันช่วงลูกลอย
       const sh = S.shot;
       let wantSlow = 1;
@@ -551,6 +634,8 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
       const r = S.row;
       if (r) r.cards.forEach((c, i) => {
         const g = c.g;
+        if (c.sw) { c.sw.k = Math.min(1, c.sw.k + rdt / .8); const e = ease(c.sw.k); c.home.lerpVectors(c.sw.from, c.sw.to, e); c.home.z += Math.sin(c.sw.k * Math.PI) * 1.1 * c.sw.arc; c.home.y += Math.sin(c.sw.k * Math.PI) * .25;
+          if (c.sw.k >= 1) { c.home.copy(c.sw.to); c.tilt = c.home.x ? -Math.sign(c.home.x) * .06 : 0; c.sw = null; if (!r.cards.some(o => o.sw)) S.swapping = false; } }
         if (c.state === "in" || c.state === "chosen" || c.state === "reveal") {
           const k = clamp((S.t - c.born) / .45, 0, 1); const s = k < 1 ? easeOut(k) * (1 + Math.sin(k * Math.PI) * .15) : 1;
           const pulse = c.state === "reveal" ? .8 + Math.sin(S.t * 8) * .04 : c.state === "chosen" ? 1.08 + Math.sin(S.t * 14) * .03 : 1;
@@ -572,7 +657,7 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
         keeper.root.position.y = Math.sin(Math.min(1, p * 1.15) * Math.PI) * .55 + (p >= 1 ? 0 : 0);
         keeper.root.rotation.z = -d.dir * 1.25 * e;
         keeper.root.rotation.x = -.12 * e; }
-      else if (S.phase === "aim") keeper.root.position.x = Math.sin(S.t * 1.6) * .35; // ขยับซ้ายขวารอ
+      else if (S.phase === "aim") keeper.root.position.x = Math.sin(S.t * M().speed) * M().sway; // ขยับซ้ายขวารอ (นัดหลังไวขึ้น กว้างขึ้น)
 
       // ลูกบอล
       prevBall.copy(ball.position);
@@ -621,7 +706,10 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
       bTex.offset.x = (bTex.offset.x + rdt * .02) % 1;
 
       // กล้อง
-      if (S.camMode === "intro") { const a = S.t * .12; camPos.set(Math.sin(a) * 9, 2.6 + Math.sin(S.t * .3) * .3, GZ + 4 + Math.cos(a) * 9); lookTarget.set(0, 1.1, GZ); camera.position.lerp(camPos, Math.min(1, rdt * 2)); camLook.lerp(lookTarget, Math.min(1, rdt * 3)); }
+      if (trophy) { trophy.t += rdt; const k = Math.min(1, trophy.t / 1.2); trophy.g.position.y = -1.5 + easeOut(k) * 2.6 + Math.sin(S.t * 2) * .05; trophy.g.rotation.y += rdt * 1.2;
+        if (Math.floor(trophy.t * 2) !== Math.floor((trophy.t - rdt) * 2) && trophy.t < 4) burst(new THREE.Vector3((Math.random() - .5) * 3, 2.2, GZ + 2.4), ["#fde047", "#ffffff", "#f472b6", "#22d3ee"], 50, 5); }
+      if (S.camMode === "trophy") { camPos.set(0, 2.15, GZ + 2.4 + clamp(1.8 / (Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect), 3.6, 5.5)); lookTarget.set(0, 2.15, GZ + 2.4); camera.position.lerp(camPos, Math.min(1, rdt * 2)); camLook.lerp(lookTarget, Math.min(1, rdt * 3)); }
+      else if (S.camMode === "intro") { const a = S.t * .12; camPos.set(Math.sin(a) * 9, 2.6 + Math.sin(S.t * .3) * .3, GZ + 4 + Math.cos(a) * 9); lookTarget.set(0, 1.1, GZ); camera.position.lerp(camPos, Math.min(1, rdt * 2)); camLook.lerp(lookTarget, Math.min(1, rdt * 3)); }
       else if (S.camMode === "aim") { aimPose(); camera.position.lerp(camPos, Math.min(1, rdt * 2.6)); camLook.lerp(lookTarget, Math.min(1, rdt * 3)); }
       else if (S.camMode === "hold") { const hx = S.hold.x; const dh = clamp(4.4 / (Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect), 8, 15);
         camPos.set(hx * .2 + .4, 2.3, Math.min(GZ + dh, -.9));   // หน้าคนยิงเสมอ (ไม่บังภาพ) lookTarget.set(hx * .3, 1.25, GZ - .4);
@@ -652,38 +740,72 @@ export default function PenaltyKick3D({ words, speak, track, catId, sfx, Prompt,
   }, []); // eslint-disable-line
 
   const tk = ui.tokens;
-  const { phase, round, goals, results, target, banner, ready, msg } = hud;
+  const { phase, round, goals, target, banner, ready, msg, match, mShot, res, opp, inter, trophy, opBubble, sec, paused } = hud;
   const playing = phase === "aim" || phase === "shot";
+  const MT = MATCHES[Math.min(match, MATCHES.length - 1)];
   const bannerStyle = banner && (banner.kind === "goal"
     ? { background:tk.primary, color:tk.onPrimary }
     : { background:tk.card, color:tk.ink });
+  const mmss = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  const sum = a => a.reduce((x, y) => x + y, 0);
+  const big = { minWidth:200, minHeight:60, borderRadius:30, border:"none", fontSize:22, fontWeight:900, cursor:"pointer", boxShadow:tk.shadow, fontFamily:"inherit" };
+  const Dots = ({ arr }) => <span style={{ display:"flex", gap:2 }}>{Array.from({ length:MT.shots }, (_, i) => <span key={i} style={{ width:11, height:11, borderRadius:6, flex:"none", boxSizing:"border-box", fontSize:8, lineHeight:"11px", textAlign:"center",
+    border:arr[i] == null ? `2px solid ${tk.ink}` : "none", opacity:arr[i] == null ? .25 : 1, background:arr[i] == null ? "transparent" : arr[i] ? tk.primary : tk.ink }}>{arr[i] === 0 ? <span style={{ color:tk.card }}>✕</span> : ""}</span>)}</span>;
   return (
     <div style={{ position:"relative", display:"flex", flexDirection:"column", gap:6 }}>
       <style>{`@keyframes pkPop{0%{transform:scale(.2) rotate(-8deg);opacity:0}25%{transform:scale(1.18) rotate(3deg);opacity:1}40%{transform:scale(1) rotate(0)}85%{transform:scale(1);opacity:1}100%{transform:scale(.9);opacity:0}}
-        @keyframes pkHint{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}`}</style>
-      {target && phase !== "intro" && <Prompt w={target} onClick={() => ui.say(target)} />}
-      <div style={{ position:"relative", height:playing || phase === "over" ? "min(60vh, 560px)" : "min(68vh, 620px)", minHeight:300, borderRadius:28, overflow:"hidden", background:"#0b1d0f" }}>
+        @keyframes pkHint{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+        @keyframes pkIn{0%{transform:scale(.4)}60%{transform:scale(1.05)}100%{transform:scale(1)}}`}</style>
+      {target && playing && <Prompt w={target} onClick={() => ui.say(target)} />}
+      <div style={{ position:"relative", height:phase !== "intro" ? "min(60vh, 560px)" : "min(68vh, 620px)", minHeight:300, borderRadius:28, overflow:"hidden", background:"#0b1d0f" }}>
         <div ref={host} data-penalty3d style={{ position:"absolute", inset:0 }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 60%, rgba(0,0,0,.25))" }} />
-        {/* สกอร์บอร์ด */}
-        {phase !== "intro" && <div style={{ position:"absolute", left:8, right:8, top:8, display:"flex", flexDirection:"column", alignItems:"center", gap:4, pointerEvents:"none" }}>
-          <div style={{ display:"flex", alignItems:"center", gap:10, padding:"4px 14px", borderRadius:18, background:tk.card, color:tk.ink, boxShadow:tk.shadow, fontWeight:900, fontSize:16 }}>
-            <span>ลูกที่ {Math.min(round, ROUNDS)}/{ROUNDS}</span><span style={{ opacity:.35 }}>|</span><span>⚽ เข้า {goals}</span>
+        {/* สกอร์บอร์ด: นัด · ลูก · เวลา · เรา vs คู่แข่ง */}
+        {phase !== "intro" && phase !== "over" && !trophy && !inter && <div data-hud style={{ position:"absolute", left:8, top:8, right:64, maxWidth:300, padding:"6px 10px 7px", borderRadius:18, background:tk.card, color:tk.ink, boxShadow:tk.shadow, pointerEvents:"none", boxSizing:"border-box" }}>
+          <div style={{ display:"flex", justifyContent:"space-between", gap:6, fontWeight:900, fontSize:12 }}><span style={{ whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>⚽ {MT.name} · ลูก {Math.min(mShot, MT.shots)}/{MT.shots}</span><span style={{ whiteSpace:"nowrap" }}>⏱ {mmss(sec || 0)}</span></div>
+          <div style={{ display:"grid", gridTemplateColumns:"auto 1fr auto", alignItems:"center", columnGap:5, rowGap:2, marginTop:4, fontWeight:900, fontSize:12 }}>
+            <span style={{ whiteSpace:"nowrap" }}>⭐ เรา</span><Dots arr={res} /><span style={{ fontSize:18, minWidth:18, textAlign:"right" }}>{sum(res)}</span>
+            <span style={{ whiteSpace:"nowrap" }}>{MT.opp.emoji} {MT.opp.name}</span><Dots arr={opp} /><span style={{ fontSize:18, minWidth:18, textAlign:"right" }}>{sum(opp)}</span>
           </div>
-          <div style={{ display:"flex", gap:3, padding:"3px 8px", borderRadius:14, background:tk.card, boxShadow:tk.shadow }}>
-            {Array.from({ length:ROUNDS }, (_, i) => <span key={i} style={{ width:18, height:18, fontSize:13, lineHeight:"18px", textAlign:"center", borderRadius:9, border:results[i] == null ? `2px solid ${tk.ink}` : "none", opacity:results[i] == null ? .22 : 1, boxSizing:"border-box" }}>{results[i] == null ? "" : results[i] ? "⚽" : "❌"}</span>)}
+          <div style={{ position:"relative", height:5, borderRadius:3, marginTop:5, overflow:"hidden", background:tk.ink }}>
+            <div style={{ position:"absolute", inset:0, background:tk.card, opacity:.75 }} />
+            <div style={{ position:"absolute", left:0, top:0, bottom:0, width:`${Math.min(1, (round - (playing ? 1 : 0)) / ROUNDS) * 100}%`, background:tk.primary }} />
           </div>
         </div>}
+        {phase !== "intro" && phase !== "over" && !trophy && <button aria-label="พัก" className="m3-press" onClick={() => api.current.pause?.(true)} style={{ position:"absolute", right:8, top:8, width:48, height:48, borderRadius:24, border:"none", background:tk.card, color:tk.ink, fontSize:22, fontWeight:900, boxShadow:tk.shadow, cursor:"pointer", fontFamily:"inherit" }}>⏸</button>}
+        {opBubble && playing && <div key={opBubble.id} style={{ position:"absolute", right:8, top:64, padding:"4px 10px", borderRadius:14, background:tk.card, color:tk.ink, fontWeight:900, fontSize:13, boxShadow:tk.shadow, pointerEvents:"none", animation:"pkPop 1.8s ease-out forwards" }}>{MT.opp.emoji} {opBubble.g ? "ยิงเข้า" : "พลาด!"}</div>}
         {phase === "aim" && <div style={{ position:"absolute", left:0, right:0, bottom:12, textAlign:"center", pointerEvents:"none", animation:"pkHint 1.2s ease-in-out infinite" }}>
           <span style={{ display:"inline-block", padding:"6px 14px", borderRadius:16, background:tk.card, color:tk.ink, fontWeight:800, fontSize:15, boxShadow:tk.shadow }}>👆 แตะรูปที่ถูก แล้วยิงเลย!</span>
         </div>}
-        {banner && <div key={banner.id} style={{ position:"absolute", left:0, right:0, top:"34%", display:"flex", justifyContent:"center", pointerEvents:"none" }}>
-          <div style={{ ...bannerStyle, padding:"10px 26px", borderRadius:26, fontWeight:900, fontSize:banner.kind === "goal" ? 44 : 32, boxShadow:tk.shadow, animation:"pkPop 1.9s ease-out forwards", whiteSpace:"nowrap" }}>{banner.text}</div>
+        {banner && <div key={banner.id} style={{ position:"absolute", left:0, right:0, top:banner.kind === "match" ? "66%" : "34%", display:"flex", justifyContent:"center", pointerEvents:"none", padding:"0 10px" }}>
+          <div style={{ ...bannerStyle, padding:"10px 22px", borderRadius:26, fontWeight:900, fontSize:banner.kind === "goal" ? (banner.text.length > 10 ? 32 : 44) : banner.kind === "match" ? 20 : 32, boxShadow:tk.shadow, animation:"pkPop 1.9s ease-out forwards", whiteSpace:banner.kind === "match" ? "normal" : "nowrap", textAlign:"center" }}>{banner.text}</div>
+        </div>}
+        {inter && <div style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", padding:14, background:"rgba(0,0,0,.35)" }}>
+          <div style={{ width:"min(100%, 330px)", padding:"16px 14px", borderRadius:28, background:tk.card, color:tk.ink, boxShadow:tk.shadow, textAlign:"center", animation:"pkIn .5s ease-out", boxSizing:"border-box" }}>
+            <div style={{ fontWeight:800, fontSize:15 }}>{inter.title}</div>
+            <div style={{ fontWeight:900, fontSize:30, margin:"4px 0" }}>⭐ {inter.our} – {inter.op} {inter.opp.emoji}</div>
+            <div style={{ fontWeight:900, fontSize:20 }}>{inter.res === "win" ? "ชนะ! 🎉" : inter.res === "draw" ? "เสมอ! ได้ไปต่อ 🤝" : "เกือบแล้ว! ได้ไปต่อ 💪"}</div>
+            <div style={{ fontWeight:800, fontSize:15, marginTop:10 }}>ต่อไป: {inter.next.name}<br />พบ {inter.next.opp.emoji} {inter.next.opp.name}</div>
+            <button className="m3-press" onClick={() => api.current.next?.()} style={{ ...big, marginTop:12, background:tk.primary, color:tk.onPrimary }}>▶ ไปต่อ!</button>
+          </div>
+        </div>}
+        {trophy && <div key={trophy.id} style={{ position:"absolute", left:0, right:0, top:12, display:"flex", justifyContent:"center", pointerEvents:"none", padding:"0 12px" }}>
+          <div style={{ padding:"10px 18px", borderRadius:26, background:trophy.gold ? tk.primary : tk.card, color:trophy.gold ? tk.onPrimary : tk.ink, boxShadow:tk.shadow, textAlign:"center", animation:"pkIn .6s ease-out" }}>
+            <div style={{ fontWeight:900, fontSize:28 }}>{trophy.gold ? "🏆 แชมป์!" : "🥈 รองแชมป์!"}</div>
+            <div style={{ fontWeight:800, fontSize:15 }}>นัดชิง ⭐ {trophy.our} – {trophy.op} {MATCHES[MATCHES.length - 1].opp.emoji} · ยิงเข้ารวม {goals} ลูก</div>
+          </div>
+        </div>}
+        {paused && phase !== "over" && phase !== "intro" && <div style={{ position:"absolute", inset:0, background:"rgba(0,0,0,.55)", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:14, padding:16 }}>
+          <div style={{ color:"#fff", fontWeight:900, fontSize:26 }}>⏸ พักก่อน</div>
+          <div style={{ color:"#fff", fontWeight:700, fontSize:14 }}>⚽ ยิงเข้า {goals} · ⏱ {mmss(sec || 0)}</div>
+          <button className="m3-press" onClick={() => api.current.pause?.(false)} style={{ ...big, background:tk.primary, color:tk.onPrimary }}>▶ เล่นต่อ</button>
+          <button className="m3-press" onClick={() => api.current.end?.()} style={{ ...big, minHeight:52, fontSize:18, background:tk.card, color:tk.ink }}>🏁 จบเกม</button>
         </div>}
         {phase === "intro" && <>
           <div style={{ position:"absolute", top:16, left:12, right:12, textAlign:"center", pointerEvents:"none" }}>
             <div style={{ fontWeight:900, fontSize:28, color:"#fff", textShadow:"0 3px 12px rgba(0,0,0,.6)" }}>⚽ Penalty Kick</div>
-            <div style={{ fontWeight:700, fontSize:14, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.75)" }}>ฟังคำ แล้วยิงประตูไปที่รูปที่ถูก · {ROUNDS} ลูก</div>
+            <div style={{ fontWeight:700, fontSize:14, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.75)" }}>ฟังคำ แล้วยิงประตูไปที่รูปที่ถูก</div>
+            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.75)", marginTop:2 }}>🏆 ทัวร์นาเมนต์ {MATCHES.length} นัด · ชิงถ้วยแชมป์!</div>
           </div>
           <div style={{ position:"absolute", left:0, right:0, bottom:0, padding:"40px 12px 18px", display:"flex", flexDirection:"column", alignItems:"center", gap:8, background:"linear-gradient(180deg, transparent, rgba(0,0,0,.5))" }}>
             <button onClick={() => { ui.unlock?.(); api.current.start?.(); }} className="m3-press" disabled={!ready && !msg}

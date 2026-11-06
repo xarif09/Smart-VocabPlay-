@@ -140,27 +140,30 @@ export function createCollectibles({ THREE, BASE = "/", words = [], texFor, glow
     let tex = null, aspect = 1;
     try { const r = await texFor(w); tex = r.tex; aspect = r.aspect || 1; } catch { /* ignore */ }
     const obj = new T.Group(); const card = new T.Group(); obj.add(card);
-    let mat;
-    if (tex) { const t = tex.clone(); t.needsUpdate = true; owned.tex.add(t);          // cover-fit the photo into the circle
+    let mat; const res = [];
+    if (tex) { const t = tex.clone(); t.needsUpdate = true; owned.tex.add(t); res.push(["tex", t]);          // cover-fit the photo into the circle
       if (aspect > 1) { t.repeat.set(1 / aspect, 1); t.offset.set((1 - 1 / aspect) / 2, 0); } else { t.repeat.set(1, aspect); t.offset.set(0, (1 - aspect) / 2); }
       mat = new T.MeshBasicMaterial({ map:t, toneMapped:false }); } else mat = new T.MeshBasicMaterial({ color:"#fde68a" });
-    owned.mat.add(mat);
+    owned.mat.add(mat); res.push(["mat", mat]);
     const back = new T.Mesh(backGeo, backMat); back.position.z = -.02; card.add(back);
     const disc = new T.Mesh(discGeo, mat); card.add(disc);
     const rim = new T.Mesh(rimGeo, rimMat); rim.castShadow = true; card.add(rim);
     const shine = new T.Mesh(discGeo, glossMat); shine.position.z = .012; card.add(shine);
     if (glow) { const hm = new T.SpriteMaterial({ map:glow, color:HALO[cardN++ % HALO.length], transparent:true, opacity:.42, depthWrite:false, blending:T.AdditiveBlending, fog:false });
-      owned.mat.add(hm); const halo = new T.Sprite(hm); halo.scale.set(1.9, 1.9, 1); halo.position.z = -.08; card.add(halo); }
+      owned.mat.add(hm); res.push(["mat", hm]); const halo = new T.Sprite(hm); halo.scale.set(1.9, 1.9, 1); halo.position.z = -.08; card.add(halo); }
     card.scale.setScalar(1.2);
     const ph = Math.random() * 6;
-    return { obj, word:w, kind:"card", update(dt, t) { card.rotation.y = Math.sin(t * 1.6 + ph) * .5; card.rotation.z = Math.sin(t * 1.1 + ph) * .08; } };
+    return { obj, word:w, kind:"card", res, update(dt, t) { card.rotation.y = Math.sin(t * 1.6 + ph) * .5; card.rotation.z = Math.sin(t * 1.1 + ph) * .08; } };
   }
 
   async function spawn(w) { return (modelUrlFor(w) && proto.has(modelUrlFor(w)) && spawnModel(w)) || spawnCard(w); }
+
+  // free one spawned pick-up's own texture/materials (cards clone the photo texture per instance)
+  function release(it) { (it?.res || []).forEach(([k, x]) => { owned[k].delete(x); try { x.dispose(); } catch { /* ignore */ } }); if (it?.mixer) { it.mixer.stopAllAction(); it.mixer.uncacheRoot(it.mixer.getRoot()); } if (it) it.res = []; }
 
   function dispose() {
     owned.geo.forEach(g => g.dispose()); owned.mat.forEach(m => m.dispose()); owned.tex.forEach(t => t.dispose());
     proto.clear();
   }
-  return { prepare, pick, spawn, dispose, get modelCount() { return ready.length; } };
+  return { prepare, pick, spawn, release, dispose, get modelCount() { return ready.length; } };
 }

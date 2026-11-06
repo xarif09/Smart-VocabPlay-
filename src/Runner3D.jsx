@@ -14,12 +14,18 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { setupEnvironment } from "./runner/environment.js";
 import { loadPropKit, faceRoadRotation } from "./runner/props.js";
 import { createCollectibles, PICK_Y } from "./runner/collectibles.js";
+import { createHazards } from "./runner/obstacles.js";
 
 const BASE = (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.BASE_URL) || "/";
 const L = 120;                         // ความยาวช่วงพื้นที่วนซ้ำ (เนินเขา/หญ้าต่อกันพอดี)
 const LANES = [-2.4, 0, 2.4];
 const ROW_Z = -58;
-const ROUNDS = 10;
+const SESSION = 300;                   // เล่นได้ 5 นาทีต่อรอบ
+const PTS = { gate:10, item:1, hazard:-5, wrong:-3 };
+// ใช้ทดสอบเท่านั้น: window.__R3D_DEBUG = { time: 40 } → ย่อเวลาเล่น
+const sessionLen = () => { try { const d = typeof window !== "undefined" && window.__R3D_DEBUG; if (d && d.time > 0) return d.time; } catch (_) { /* ignore */ } return SESSION; };
+let MAX_DT = .05; try { if (typeof window !== "undefined" && window.__R3D_DEBUG?.maxDt) MAX_DT = window.__R3D_DEBUG.maxDt; } catch (_) { /* ignore */ }   // ทดสอบบนเครื่องช้า
+const fmtTime = s => { s = Math.max(0, Math.ceil(s)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; };
 
 const THEMES = {
   jungle: { name:"ป่าใหญ่",       sky:["#1e6fd9", "#6fb6ff", "#e3f3ff"], elev:38, azim:200, turb:2.5, ray:3, fog:"#e3f3ff", hills:1.1, low:"#3d7a2a", high:"#79b955", grass:["#2f6b1f","#8fd14f"], road:"#9a5b2c", line:"#ffe39a", props:["tree","tree","bush","rock","flower"] },
@@ -257,7 +263,8 @@ function makeCard(tex, aspect) {
 export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }) {
   const host = useRef(null);
   const api = useRef({});
-  const [hud, setHud] = useState({ round:0, score:0, hearts:3, basket:[], target:null, on:false, msg:null, loading:false });
+  const [LEN] = useState(sessionLen);
+  const [hud, setHud] = useState({ started:false, score:0, correct:0, total:0, combo:0, left:LEN, basket:[], target:null, on:false, paused:false, banner:null, msg:null, loading:false });
   const [pops, setPops] = useState([]);       // คำที่ลอยขึ้นตอนเก็บของ (HTML label ~1 วิ)
   const charList = useRef(null); if (!charList.current) charList.current = charsFor(catId, words);
   const [charId, setCharId] = useState(() => loadChar(charList.current));
@@ -409,7 +416,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     const shadowBlob = new THREE.Mesh(new THREE.CircleGeometry(.8, 32), new THREE.MeshBasicMaterial({ color:"#000", transparent:true, opacity:.2, depthWrite:false }));
     shadowBlob.rotation.x = -Math.PI / 2; shadowBlob.position.y = .04; player.add(shadowBlob);
     const rig = new THREE.Group(); player.add(rig); if (car) { rig.position.set(0, .55, .1); rig.scale.setScalar(.62); }
-    const S = { lane:1, x:0, speed:11, scroll:0, row:null, round:0, score:0, hearts:3, basket:[], shake:0, flash:0, t:0, jump:0, over:false, started:false, turn:0 };
+    const S = { lane:1, x:0, speed:10, scroll:0, score:0, correct:0, total:0, combo:0, basket:[], shake:0, flash:0, t:0, jump:0, jumpRate:2, over:false, started:false, paused:false, ending:false, endT:0, turn:0, elapsed:0, lastSec:-1, stumble:0, inv:0, cur:null };
     let C = null, mixer = null, actions = {}, cur = null, charToken = 0;
     const gltfCache = {};
     const playAct = (name, once) => { const a = actions[name]; if (!a) return;
@@ -450,8 +457,15 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     const sline = new THREE.LineSegments(slg, new THREE.LineBasicMaterial({ color:"#ffffff", transparent:true, opacity:0, fog:false })); sline.frustumCulled = false; scene.add(sline);
     const slSeed = Array.from({ length:SL }, () => ({ x:(Math.random() - .5) * 16, y:Math.random() * 6 + .3, z:-Math.random() * 40 }));
 
-    // ของสะสม = คำศัพท์ในหมวด (โมเดล 3D จริง / การ์ดรูปลอยได้) แทนเหรียญทอง
-    const items = [];
+    // ของสะสม = คำศัพท์ในหมวด (โมเดล 3D จริง / การ์ดรูปลอยได้) · สิ่งกีดขวาง = runner/obstacles.js
+    const items = [];       // { obj, c, lane, air, word, update }
+    const hazards = [];     // { obj, c, lane, tall, flat, hit, fly }
+    const flyers = [];      // ของในตะกร้าที่หลุดกระเด็นตอนชน
+    const gates = [];       // ประตูคำศัพท์ตามลำดับ (วางแผนล่วงหน้า · สร้าง 3D เมื่อเข้าระยะ)
+    const plan = [];        // รายการที่รอเข้าระยะ { c, type, ... } (c = ตำแหน่งบนเส้นทาง · z ในโลก = S.scroll - c)
+    const hz = createHazards({ THREE, BASE, theme:themeKey(catId), glow });
+    hz.prepare().catch(() => {});
+    const archGeo = new THREE.TorusGeometry(4.7, .1, 10, 64, Math.PI), archMat = new THREE.MeshStandardMaterial({ color:"#ffffff", emissive:"#f0abfc", emissiveIntensity:2.4 });
 
     // bloom
     let composer = null;
@@ -470,72 +484,163 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     });
     const col = createCollectibles({ THREE, BASE, words:pool.filter((w, i, a) => a.findIndex(x => x.id === w.id) === i), texFor, glow });
     col.prepare().catch(() => {});
-    const spawnItems = async (target) => {
-      const list = col.pick(5, target.id); const scroll0 = S.scroll;
-      const lanes = list.map(() => Math.floor(Math.random() * 3));
-      await Promise.all(list.map(async (w, k) => { let it; try { it = await col.spawn(w); } catch { return; } if (!it || S.over || !alive) return;
-        it.obj.position.set(LANES[lanes[k]], PICK_Y, ROW_Z + 12 + k * 8.5 + (S.scroll - scroll0));
-        if (it.obj.position.z > -6) return;   // โหลดช้าจนเลยมาแล้ว
-        it.ph = Math.random() * 6; scene.add(it.obj); items.push(it); }));
+    const diff = () => Math.min(1, S.elapsed / LEN);                       // 0 → 1 ตลอดเวลาเล่น
+    const baseSpeed = () => 10 + 8.5 * Math.pow(diff(), .85);              // เร็วขึ้นทีละนิด 10 → 18.5
+    const proj = (pos) => { const v = pos.clone(); v.project(camera); return { x:(v.x + 1) / 2 * 100, y:(1 - v.y) / 2 * 100 }; };
+    const pop = (pos, text, kind = "word") => {
+      const id = Math.random().toString(36).slice(2); const p = proj(pos);
+      setPops(q => [...q.slice(-4), { id, text, kind, x:Math.min(88, Math.max(12, p.x)), y:Math.min(80, Math.max(14, p.y)) }]);
+      setTimeout(() => { if (alive) setPops(q => q.filter(r => r.id !== id)); }, 1100);
     };
-    const popWord = (it) => {
-      const v = it.obj.getWorldPosition(new THREE.Vector3()); v.y += .6; v.project(camera);
-      const id = Math.random().toString(36).slice(2);
-      setPops(p => [...p.slice(-3), { id, text:it.word.word, x:(v.x + 1) / 2 * 100, y:(1 - v.y) / 2 * 100 }]);
-      setTimeout(() => { if (alive) setPops(p => p.filter(q => q.id !== id)); }, 1100);
-    };
+    const syncHud = (extra = {}) => setHud(h => ({ ...h, score:S.score, correct:S.correct, total:S.total, combo:S.combo, basket:S.basket.slice(), ...extra }));
+    let bannerT = 0;
+    const banner = (text, ms = 2000) => { clearTimeout(bannerT); setHud(h => ({ ...h, banner:text })); if (ms) bannerT = setTimeout(() => { if (alive) setHud(h => ({ ...h, banner:null })); }, ms); };
     const used = new Set();
-    const pickTarget = () => { const cand = pool.filter(w => !used.has(w.id)); const arr = cand.length ? cand : pool; const w = arr[Math.floor(Math.random() * arr.length)]; used.add(w.id); return w; };
-    const spawnRow = async pre => {
+    const pickTarget = () => { const cand = pool.filter(w => !used.has(w.id)); if (!cand.length) used.clear(); const arr = cand.length ? cand : pool; const w = arr[Math.floor(Math.random() * arr.length)]; used.add(w.id); return w; };
+
+    // ── วางแผนเส้นทาง: ช่วงละ 1 ประตู · สิ่งกีดขวางอยู่ระหว่างประตู (ไม่ทับประตู ไม่ปิดครบ 3 เลน) · ทุก 5 ประตูมีช่วงพักหายใจ ──
+    let cursor = 0, segN = 0;
+    const planSegment = pre => {
+      const d = diff(); segN += 1;
+      const first = segN === 1, breather = segN > 1 && (segN - 1) % 5 === 0;
+      const len = first ? 72 : 92 - 26 * d + (breather ? 55 : 0);
+      const start = cursor, gateC = cursor + len; cursor = gateC;
       const target = pre || pickTarget();
       const others = pool.filter(w => w.id !== target.id).sort(() => Math.random() - .5).slice(0, 2);
       const set = [target, ...others].sort(() => Math.random() - .5);
-      const texs = await Promise.all(set.map(texFor));
-      if (S.over) return;
-      const g = new THREE.Group(); g.position.z = ROW_Z; scene.add(g);
-      const cards = set.map((w, i) => { const c = makeCard(texs[i].tex, texs[i].aspect); c.g.position.set(LANES[i], 2.5, 0); g.add(c.g);
+      const row = { c:gateC, target, set, texP:Promise.all(set.map(texFor)), g:null, cards:[], hit:false, active:false, breather, n:segN };
+      gates.push(row); plan.push({ c:gateC, type:"gate", row });
+      // สิ่งกีดขวาง
+      const occ = [];
+      const a = start + (first ? 30 : 15), b = gateC - 18;
+      const want = breather ? 0 : first ? 1 : Math.round(1 + 2.6 * d + Math.random() * .9);
+      const n = Math.max(0, Math.min(want, 1 + Math.floor((b - a) / 13)));
+      for (let k = 0; k < n; k++) {
+        const c = n === 1 ? a + Math.random() * (b - a) : a + (b - a) * k / (n - 1) + (Math.random() - .5) * 3;
+        const two = !first && d > .4 && Math.random() < .2 + .4 * d;
+        const lanes = [0, 1, 2].sort(() => Math.random() - .5).slice(0, two ? 2 : 1);      // ไม่ปิดครบ 3 เลนเด็ดขาด
+        lanes.forEach(l => { const tall = !first && Math.random() < .28 + .2 * d; const kind = hz.pick(Math.random(), { tall }); occ.push({ c, lane:l, tall });
+          plan.push({ c, type:"haz", lane:l, kind }); });
+      }
+      // ของสะสม (หลบเลนที่มีสิ่งกีดขวาง · บางชิ้นลอยเหนือของเตี้ยให้กระโดดเก็บ)
+      const nItems = breather ? 9 : first ? 5 : 4;
+      const words5 = col.pick(nItems + 2, target.id); let wi = 0;
+      for (let k = 0; k < nItems; k++) {
+        const c = start + 10 + (gateC - 22 - start) * (k + .5) / nItems;
+        let lane = breather ? [1, 0, 1, 2, 1, 0, 1, 2, 1][k % 9] : Math.floor(Math.random() * 3);
+        for (let tries = 0; tries < 3 && occ.some(o => o.lane === lane && Math.abs(o.c - c) < 5); tries++) lane = (lane + 1) % 3;
+        if (occ.some(o => o.lane === lane && Math.abs(o.c - c) < 5)) continue;
+        if (words5[wi]) plan.push({ c, type:"item", lane, w:words5[wi++] });
+      }
+      occ.filter(o => !o.tall && Math.random() < .45).forEach(o => { if (words5[wi]) plan.push({ c:o.c, type:"item", lane:o.lane, air:true, w:words5[wi++] }); });
+    };
+    const buildGate = async row => {
+      const texs = await row.texP; if (S.over || !alive) return;
+      const g = new THREE.Group(); g.position.z = S.scroll - row.c; scene.add(g);
+      row.cards = row.set.map((w, i) => { const c = makeCard(texs[i].tex, texs[i].aspect); c.g.position.set(LANES[i], 2.5, 0); c.g.scale.setScalar(.001); g.add(c.g);
         const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map:glow, color:["#22d3ee","#f0abfc","#fde047"][i], transparent:true, opacity:.55, depthWrite:false, blending:THREE.AdditiveBlending, fog:false })); halo.scale.set(3.6, 3, 1); halo.position.z = -.2; c.g.add(halo);
         return { ...c, halo, w, lane:i }; });
-      const arch = new THREE.Mesh(new THREE.TorusGeometry(4.7, .1, 10, 64, Math.PI), new THREE.MeshStandardMaterial({ color:"#ffffff", emissive:"#f0abfc", emissiveIntensity:2.4 })); arch.position.set(0, .1, -.5); g.add(arch);
-      S.row = { g, cards, target, hit:false }; S.round += 1;
-      spawnItems(target);
-      setHud(h => ({ ...h, round:S.round, target }));
-      if (!pre) ui.say(target);
+      const arch = new THREE.Mesh(archGeo, archMat); arch.position.set(0, .1, -.5); g.add(arch);
+      row.g = g;
     };
-    const finish = () => { S.over = true; setHud(h => ({ ...h, on:false })); if (C?.def?.idle) playAct(C.def.idle); setTimeout(() => track.finish(S.score, ROUNDS, { label:`เก็บรูปถูก ${S.score}/${ROUNDS} · 🧺 เก็บของได้ ${S.basket.length} ชิ้น` }), 1000); };
-    const resolveRow = () => {
-      const r = S.row; if (!r || r.hit) return; r.hit = true;
-      const card = r.cards.find(c => c.lane === S.lane);
-      const ok = card && card.w.id === r.target.id;
-      const wp = new THREE.Vector3(); (card ? card.g : r.g).getWorldPosition(wp);
-      if (ok) { S.score += 1; S.jump = 1; burst(wp, ["#fde047","#f472b6","#22d3ee","#a3e635","#ffffff"], 220, 13); burst(player.position.clone().setY(1), ["#fde047","#ffffff"], 60, 6, 1.4);
-        card.g.userData.fly = 1; S.speed = Math.min(25, S.speed + 1.3); ui.correct(r.target); if (C?.def?.happy) playAct(C.def.happy, true); }
-      else { S.hearts -= 1; S.shake = 1; S.flash = 1; if (card) { burst(wp, ["#ef4444","#fca5a5","#ffffff"], 90, 8); card.g.userData.fall = 1; } ui.wrong(r.target); if (C?.def?.sad) playAct(C.def.sad, true); }
-      r.cards.forEach(c => { if (c.w.id === r.target.id && c !== card) { c.frame.material.emissive.set("#22c55e"); c.frame.material.emissiveIntensity = 1.2; } });
-      setHud(h => ({ ...h, score:S.score, hearts:S.hearts }));
-      setTimeout(() => { scene.remove(r.g); if (S.row === r) S.row = null; if (S.hearts <= 0 || S.round >= ROUNDS) finish(); else spawnRow(); }, 900);
+    const dropGroup = g => { scene.remove(g); g.traverse(o => { if (o.geometry && o.geometry !== archGeo) o.geometry.dispose(); const m = o.material; (Array.isArray(m) ? m : m ? [m] : []).forEach(x => { if (x !== archMat) x.dispose(); }); }); };
+    const spawnEntry = async e => {
+      if (e.type === "gate") { buildGate(e.row); return; }
+      if (e.type === "haz") { const h = hz.spawn(e.kind); Object.assign(h, { c:e.c, lane:e.lane, hit:false }); h.obj.position.set(LANES[e.lane], 0, S.scroll - e.c); scene.add(h.obj); hazards.push(h); return; }
+      if (e.type === "item") { let it; try { it = await col.spawn(e.w); } catch { return; } if (!it || S.over || !alive) return;
+        if (e.c - S.scroll < 8) return;   // โหลดช้าจนเลยมาแล้ว
+        Object.assign(it, { c:e.c, lane:e.lane, air:!!e.air, ph:Math.random() * 6 }); it.obj.position.set(LANES[e.lane], e.air ? 2.4 : PICK_Y, S.scroll - e.c); scene.add(it.obj); items.push(it); }
     };
-    const move = d => { if (!S.started || S.over) return; const n = Math.max(0, Math.min(2, S.lane + d)); if (n !== S.lane) { S.lane = n; sfx.tap(); } };
+    const HORIZON = 108;
+    const spawnDue = () => {
+      while (cursor - S.scroll < HORIZON + 40) planSegment();
+      for (let i = plan.length - 1; i >= 0; i--) { const e = plan[i]; if (e.c - S.scroll > (e.type === "gate" ? HORIZON : HORIZON - 8)) continue; plan.splice(i, 1); spawnEntry(e); }
+    };
+    // ประตูถัดไปกลายเป็นโจทย์ปัจจุบัน: แสดงคำ + พูดคำ + การ์ดรูปเด้งขึ้น
+    const activate = (row, silent) => {
+      row.active = true; S.cur = row;
+      setHud(h => ({ ...h, target:row.target }));
+      if (row.breather) banner("😊 พักหายใจ · เก็บของกัน!", 2400);
+      if (!silent) setTimeout(() => { if (alive && !S.over && S.cur === row) ui.say(row.target); }, 650);
+    };
+    const finish = () => { if (S.over) return; S.over = true; S.paused = false; clearTimeout(bannerT);
+      setHud(h => ({ ...h, on:false, paused:false }));
+      if (C?.def?.idle) playAct(C.def.idle);
+      track.finish(S.correct, S.total, { label:`ถูก ${S.correct}/${S.total} ประตู · 🧺 ${S.basket.length} ชิ้น · คะแนน ${S.score}` }); };
+    const timeUp = () => { if (S.ending || S.over) return; S.ending = true; S.endT = S.t; sfx.win(); banner("⏰ หมดเวลา!", 0); setHud(h => ({ ...h, left:0 }));
+      setTimeout(() => { if (alive) finish(); }, 2300); };
+    const mult = () => S.combo >= 6 ? 3 : S.combo >= 3 ? 2 : 1;
+    const stumble = (k = 1) => { S.stumble = Math.max(S.stumble, k); S.inv = 1.1; S.shake = 1; S.flash = 1; if (C?.def?.sad) playAct(C.def.sad, true); };
+    const resolveRow = row => {
+      row.hit = true; S.cur = null;
+      if (!row.g) return;   // ยังโหลดรูปไม่เสร็จ (เกิดยากมาก) → ข้าม ไม่นับ
+      S.total += 1;
+      const card = row.cards.find(c => c.lane === S.lane);
+      const ok = card && card.w.id === row.target.id;
+      const wp = new THREE.Vector3(); (card ? card.g : row.g).getWorldPosition(wp);
+      if (ok) { S.correct += 1; S.combo += 1; const m = mult(); const pts = PTS.gate * m; S.score += pts;
+        S.jump = 1; S.jumpRate = 2; burst(wp, ["#fde047","#f472b6","#22d3ee","#a3e635","#ffffff"], 220, 13); burst(player.position.clone().setY(1), ["#fde047","#ffffff"], 60, 6, 1.4);
+        card.g.userData.fly = 1; ui.correct(row.target); if (C?.def?.happy) playAct(C.def.happy, true);
+        pop(wp, m > 1 ? `+${pts} 🔥x${m}` : `+${pts}`, "plus"); }
+      else { S.combo = 0; S.score = Math.max(0, S.score + PTS.wrong); stumble(.6);
+        if (card) { burst(wp, ["#ef4444","#fca5a5","#ffffff"], 90, 8); card.g.userData.fall = 1; } ui.wrong(row.target); pop(wp, `−${-PTS.wrong}`, "minus"); }
+      row.cards.forEach(c => { if (c.w.id === row.target.id && c !== card) { c.frame.material.emissive.set("#22c55e"); c.frame.material.emissiveIntensity = 1.2; } });
+      syncHud();
+    };
+    const hitHazard = h => {
+      h.hit = true; stumble(1); sfx.bad();
+      S.score = Math.max(0, S.score + PTS.hazard);
+      const wp = h.obj.position.clone().setY(1.2);
+      burst(wp, h.flat ? (h.kind === "mud" ? ["#78350f","#a16207"] : h.kind === "slime" ? ["#a3e635","#d9f99d"] : ["#7dd3fc","#e0f2fe"]) : ["#ef4444","#fca5a5","#ffffff"], 90, 8);
+      if (!h.flat) h.fly = { vx:(h.obj.position.x >= S.x ? 1 : -1) * (2.5 + Math.random() * 2), vy:5.5, spin:(Math.random() - .5) * 10 };
+      pop(wp, `💥 −${-PTS.hazard}`, "minus");
+      const w = S.basket.pop();                                   // ของชิ้นล่าสุดในตะกร้ากระเด็นหลุด
+      if (w) { col.spawn(w).then(it => { if (!it || !alive) return; it.obj.position.set(S.x, 1.5, .4); scene.add(it.obj);
+        flyers.push({ it, life:1.3, v:new THREE.Vector3((Math.random() < .5 ? -1 : 1) * (2 + Math.random() * 1.5), 7, 2.5) }); }).catch(() => {});
+        setTimeout(() => { if (alive) pop(player.position.clone().setY(2.4), `🧺 −${w.word}`, "minus"); }, 180); }
+      syncHud();
+    };
+    const move = d => { if (!S.started || S.over || S.paused) return; const n = Math.max(0, Math.min(2, S.lane + d)); if (n !== S.lane) { S.lane = n; sfx.tap(); } };
+    const jump = () => { if (!S.started || S.over || S.paused || S.ending) return; if (S.jump > .2) return;
+      S.jump = 1; S.jumpRate = 1.55; sfx.tap(); const j = C?.def?.happy; if (j && /jump/i.test(j)) playAct(j, true); };
+    const setPaused = p => { if (!S.started || S.over || S.ending) return; S.paused = p; setHud(h => ({ ...h, paused:p })); };
     api.current = {
-      start: () => { if (S.started) return; S.started = true; setHud(h => ({ ...h, on:true })); if (C?.def?.run) playAct(C.def.run); const t0 = pickTarget(); ui.say(t0); spawnRow(t0); },   // พูดคำแรกตรงใน onClick (iOS)
-      left: () => move(-1), right: () => move(1),
-      lane: i => { if (!S.started || S.over) return; if (i !== S.lane) { S.lane = i; sfx.tap(); } },
+      start: () => { if (S.started) return; S.started = true; setHud(h => ({ ...h, on:true, started:true, left:LEN })); if (C?.def?.run) playAct(C.def.run);
+        const t0 = pickTarget(); ui.say(t0); planSegment(t0); activate(gates[0], true); spawnDue(); },   // พูดคำแรกตรงใน onClick (iOS)
+      left: () => move(-1), right: () => move(1), jump,
+      lane: i => { if (!S.started || S.over || S.paused) return; if (i !== S.lane) { S.lane = i; sfx.tap(); } },
+      pause: () => setPaused(true), resume: () => setPaused(false), end: () => { if (S.started && !S.over) finish(); },
       setChar: id => { saveChar(id); setChar(id); },
-      peek: () => ({ S, items:items.length, models:col.modelCount, char:C?.def?.id }),   // ใช้ทดสอบ
+      peek: () => ({ S, items:items.length, hazards:hazards.length, gates:gates.length, models:col.modelCount, char:C?.def?.id }),   // ใช้ทดสอบ
     };
-    let sx = null; const dn = e => { sx = e.clientX; };
-    const up = e => { if (sx == null) return; const dx = e.clientX - sx; if (Math.abs(dx) > 24) move(dx > 0 ? 1 : -1); else { const r = renderer.domElement.getBoundingClientRect(); const fx = (e.clientX - r.left) / r.width; move(fx < .36 ? -1 : fx > .64 ? 1 : 0); } sx = null; };
+    try { if (typeof window !== "undefined" && window.__R3D_DEBUG) window.__R3D = { S, gates, hazards, items, plan, api:api.current }; } catch { /* ignore */ }
+    let sx = null, sy = null; const dn = e => { sx = e.clientX; sy = e.clientY; };
+    const up = e => { if (sx == null) return; const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (dy < -28 && Math.abs(dy) > Math.abs(dx)) jump();
+      else if (Math.abs(dx) > 24) move(dx > 0 ? 1 : -1);
+      else { const r = renderer.domElement.getBoundingClientRect(); const fx = (e.clientX - r.left) / r.width; if (fx < .36) move(-1); else if (fx > .64) move(1); else jump(); }
+      sx = sy = null; };
     renderer.domElement.addEventListener("pointerdown", dn); renderer.domElement.addEventListener("pointerup", up);
-    const key = e => { if (e.key === "ArrowLeft") move(-1); if (e.key === "ArrowRight") move(1); }; window.addEventListener("keydown", key);
+    const key = e => { if (e.key === "ArrowLeft" || e.key === "a") move(-1); if (e.key === "ArrowRight" || e.key === "d") move(1);
+      if (e.key === "ArrowUp" || e.key === " " || e.key === "w") { if (S.started && !S.over) e.preventDefault?.(); jump(); } };
+    window.addEventListener("keydown", key);
     const ro = new ResizeObserver(() => { renderer.setSize(W(), H()); camera.aspect = W() / H(); camera.updateProjectionMatrix(); composer?.setSize(W(), H()); }); ro.observe(el);
 
     // ── ลูปหลัก ──
     let raf = 0, last = performance.now();
     const tick = now => {
       if (!alive) return; raf = requestAnimationFrame(tick);
-      const dt = Math.min(.05, (now - last) / 1000); last = now; S.t += dt;
-      const running = S.started && !S.over;
+      const dt = Math.max(0, Math.min(MAX_DT, (now - last) / 1000)); last = now; S.t += dt;
+      const active = S.started && !S.over;                 // อยู่ในเกม (รวมตอนพัก/ตอนหมดเวลา)
+      const running = active && !S.paused;
+      if (running && !S.ending) { S.elapsed += dt; const left = LEN - S.elapsed; const sec = Math.ceil(Math.max(0, left));
+        if (sec !== S.lastSec) { S.lastSec = sec; setHud(h => ({ ...h, left })); }
+        if (left <= 0) timeUp(); }
+      if (running) { S.stumble = Math.max(0, S.stumble - dt * .9); S.inv = Math.max(0, S.inv - dt); }
+      const endK = S.ending ? Math.max(0, 1 - (S.t - S.endT) / 1.3) : 1;
+      S.speed = baseSpeed() * (1 - .62 * S.stumble) * endK;
       const v = running ? S.speed : 0; const dz = v * dt; S.scroll += dz;
+      if (running && !S.ending) spawnDue();
       const sMod = S.scroll % L;
       tiles.forEach(m => { m.position.z = sMod - m.userData.i * L; });
       roadScroll(dz);
@@ -547,13 +652,15 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       // ผู้เล่น: ก่อนเริ่มหันหน้าหากล้อง · ระหว่างวิ่งหันหลังให้กล้อง
       S.x += (LANES[S.lane] - S.x) * Math.min(1, dt * 11);
       player.position.x = S.x; player.rotation.z = (S.x - LANES[S.lane]) * .18;
-      const want = running ? Math.PI : Math.sin(S.t * .6) * .45;
+      const want = active ? Math.PI : Math.sin(S.t * .6) * .45;
       S.turn += (want - S.turn) * Math.min(1, dt * 4); rig.rotation.y = S.turn;
-      S.jump = Math.max(0, S.jump - dt * 2);
-      const hop = S.jump > 0 ? Math.sin((1 - S.jump) * Math.PI) * 1.7 : 0;
+      if (!S.paused) S.jump = Math.max(0, S.jump - dt * (S.jumpRate || 2));
+      const hop = S.jump > 0 ? Math.sin((1 - Math.min(1, S.jump)) * Math.PI) * 1.7 : 0;
       if (car) { car.g.position.y = hop + Math.sin(S.t * 30) * .015 * (running ? 1 : 0); car.wheels.forEach(w => { w.rotation.x -= dz * 3.2; }); rig.position.y = .55 + hop; }
       else rig.position.y = hop + (C?.def?.fly ? C.def.fly + Math.sin(S.t * 3) * .12 : 0);
-      if (mixer) mixer.update(dt * (running ? (.9 + S.speed / 22) * (C?.def?.runRate || 1) : 1));
+      rig.rotation.x = -Math.sin(Math.min(1, S.stumble) * Math.PI) * .45;                       // สะดุดล้มไปข้างหน้า
+      rig.visible = !(S.inv > 0 && S.inv < 1 && Math.floor(S.t * 14) % 2 === 0);                // กะพริบช่วงกันชนซ้ำ
+      if (mixer) mixer.update(dt * (running ? (.9 + S.speed / 22) * (C?.def?.runRate || 1) : active ? 0 : 1));
       if (C?.proc) { const w = running ? 13 + S.speed * .3 : 2.5, a = running ? .9 : .08, ph = S.t * w;
         C.legs[0].rotation.x = Math.sin(ph) * a; C.legs[1].rotation.x = -Math.sin(ph) * a;
         C.arms[0].rotation.x = -Math.sin(ph) * a * .9; C.arms[1].rotation.x = Math.sin(ph) * a * .9;
@@ -562,22 +669,38 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       shadowBlob.scale.setScalar(1 - hop * .25); shadowBlob.material.opacity = .22 - hop * .08;
       if (running && !car && Math.random() < .35) burst(new THREE.Vector3(S.x + (Math.random() - .5) * .4, .1, .3), th.snow ? ["#ffffff"] : th.sprinkles ? ["#fbcfe8","#ffffff"] : ["#d6c4a8","#bfae92"], 1, 1.2, .5);
 
-      // แถวป้าย
-      const r = S.row;
-      if (r) { r.g.position.z += dz;
-        r.cards.forEach((c, i) => { if (!c.g.userData.fly && !c.g.userData.fall) { c.g.position.y = 2.5 + Math.sin(S.t * 2.6 + i) * .12; c.g.rotation.y = Math.sin(S.t * 1.7 + i) * .06; }
-          c.halo.material.opacity = .4 + Math.sin(S.t * 5 + i) * .15;
-          if (c.g.userData.fly) { c.g.position.y += dt * 10; c.g.rotation.y += dt * 14; c.g.scale.multiplyScalar(1 - dt * 1.3); }
-          if (c.g.userData.fall) { c.g.rotation.x -= dt * 5; c.g.position.y -= dt * 5; } });
-        if (!r.hit && r.g.position.z > -.6) resolveRow(); }
-      // เหรียญ
-      for (let i = items.length - 1; i >= 0; i--) { const it = items[i], o = it.obj; o.position.z += dz;
-        if (it.popT != null) { it.popT += dt; const k = it.popT / .28; o.scale.setScalar(1 + k * .9); o.position.y += dt * 3; if (k >= 1) { scene.remove(o); items.splice(i, 1); } continue; }
-        it.update(dt, S.t); o.position.y = PICK_Y + Math.sin(S.t * 3 + it.ph) * .12;
-        if (running && Math.abs(o.position.z) < .9 && Math.abs(o.position.x - S.x) < 1 && hop < 1.2) {
-          it.popT = 0; burst(o.position, ["#fde047","#f472b6","#22d3ee","#ffffff"], 45, 6, 1.1); sfx.coin(); popWord(it);
-          S.basket.push(it.word); setHud(h => ({ ...h, basket:S.basket.slice() })); }
-        else if (o.position.z > 9) { scene.remove(o); items.splice(i, 1); } }
+      // ประตูคำศัพท์ (การ์ดรูปเด้งขึ้นเมื่อเป็นโจทย์ปัจจุบัน)
+      for (let gi = gates.length - 1; gi >= 0; gi--) { const r = gates[gi];
+        if (r.g) { r.g.position.z = S.scroll - r.c;
+          r.cards.forEach((c, i) => { const ud = c.g.userData;
+            if (!ud.fly && !ud.fall) { c.g.position.y = 2.5 + Math.sin(S.t * 2.6 + i) * .12; c.g.rotation.y = Math.sin(S.t * 1.7 + i) * .06;
+              const s = c.g.scale.x + ((r.active || r.hit ? 1 : .001) - c.g.scale.x) * Math.min(1, dt * 7); c.g.scale.setScalar(s); }
+            c.halo.material.opacity = .4 + Math.sin(S.t * 5 + i) * .15;
+            if (ud.fly) { c.g.position.y += dt * 10; c.g.rotation.y += dt * 14; c.g.scale.multiplyScalar(1 - dt * 1.3); }
+            if (ud.fall) { c.g.rotation.x -= dt * 5; c.g.position.y -= dt * 5; } }); }
+        if (!r.hit && running && r.c - S.scroll < .6) resolveRow(r);
+        if (r.hit && S.scroll - r.c > 14) { if (r.g) dropGroup(r.g); gates.splice(gi, 1); } }
+      if (active && !S.ending) { const nx = gates.find(r => !r.hit); if (nx && !nx.active) activate(nx); }
+      // สิ่งกีดขวาง: ของเตี้ยกระโดดข้ามได้ · ของสูงต้องเปลี่ยนเลน
+      for (let i = hazards.length - 1; i >= 0; i--) { const h = hazards[i], o = h.obj;
+        const pz = o.position.z; o.position.z = S.scroll - h.c; h.update(dt, S.t);
+        if (h.fly) { h.fly.vy -= 16 * dt; o.position.x += h.fly.vx * dt; o.position.y = Math.max(-3, o.position.y + h.fly.vy * dt); o.rotation.z += h.fly.spin * dt; o.rotation.x += dt * 4; }
+        if (!h.hit && !h.cleared && running && !S.ending && pz < .75 && o.position.z > -.75 && Math.abs(LANES[h.lane] - S.x) < 1.05) {
+          if (!h.tall && hop > (h.flat ? .28 : .55)) { h.cleared = true; burst(o.position.clone().setY(1), ["#fde047","#ffffff"], 24, 4, 1.2); }
+          else if (S.inv <= 0) hitHazard(h); }
+        if (o.position.z > 10) { scene.remove(o); hz.release(h); hazards.splice(i, 1); } }
+      // ของสะสม
+      for (let i = items.length - 1; i >= 0; i--) { const it = items[i], o = it.obj; const pz = o.position.z; o.position.z = S.scroll - it.c;
+        if (it.popT != null) { it.popT += dt; const k = it.popT / .28; o.scale.setScalar(1 + k * .9); o.position.y += dt * 3; if (k >= 1) { scene.remove(o); col.release(it); items.splice(i, 1); } continue; }
+        it.update(dt, S.t); o.position.y = (it.air ? 2.4 : PICK_Y) + Math.sin(S.t * 3 + it.ph) * .12;
+        if (running && pz < .9 && o.position.z > -.9 && Math.abs(o.position.x - S.x) < 1 && (it.air ? hop > .7 : hop < 1.2)) {
+          it.popT = 0; burst(o.position, ["#fde047","#f472b6","#22d3ee","#ffffff"], 45, 6, 1.1); sfx.coin(); pop(o.position.clone().setY(o.position.y + .6), it.word.word);
+          S.basket.push(it.word); S.score += PTS.item; syncHud(); }
+        else if (o.position.z > 9) { scene.remove(o); col.release(it); items.splice(i, 1); } }
+      // ของที่หลุดจากตะกร้า
+      for (let i = flyers.length - 1; i >= 0; i--) { const f = flyers[i], o = f.it.obj; f.life -= dt; f.v.y -= 14 * dt; o.position.addScaledVector(f.v, dt); o.rotation.z += dt * 6; f.it.update?.(dt, S.t);
+        if (f.life < .35) o.scale.multiplyScalar(Math.max(0, 1 - dt * 5));
+        if (f.life <= 0) { scene.remove(o); col.release(f.it); flyers.splice(i, 1); } }
       // อนุภาค
       for (let i = 0; i < PN; i++) { if (pLife[i] <= 0) continue; pLife[i] -= dt; const q = pVel[i]; q.y -= 13 * dt; pPos[i * 3] += q.x * dt; pPos[i * 3 + 1] = Math.max(.05, pPos[i * 3 + 1] + q.y * dt); pPos[i * 3 + 2] += q.z * dt + dz; if (pLife[i] <= 0) pPos[i * 3 + 1] = -999; }
       pg.attributes.position.needsUpdate = true;
@@ -585,54 +708,81 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       slSeed.forEach((s, i) => { s.z += dz * 2.4; if (s.z > 7) s.z = -40; slPos.set([s.x, s.y, s.z, s.x, s.y, s.z - 1.2 - sp * 3.5], i * 6); }); slg.attributes.position.needsUpdate = true;
       if (snow) { const a = snow.geometry.attributes.position.array; for (let i = 0; i < a.length; i += 3) { a[i + 1] -= dt * 1.8; a[i] += Math.sin(S.t + i) * dt * .3; a[i + 2] += dz * .7; if (a[i + 1] < 0) a[i + 1] = 18; if (a[i + 2] > 9) a[i + 2] = -62; } snow.geometry.attributes.position.needsUpdate = true; }
       // กล้อง
-      S.shake = Math.max(0, S.shake - dt * 2.5); const sh = S.shake * .4;
-      const camZ = running ? 7.5 : 4.4, camY = running ? 4.3 : 2.1;
+      if (!S.paused) S.shake = Math.max(0, S.shake - dt * 2.5); const sh = S.paused ? 0 : S.shake * .4;
+      const camZ = active ? 7.5 : 4.4, camY = active ? 4.3 : 2.1;
       camera.position.x += (S.x * .55 - camera.position.x) * Math.min(1, dt * 5) + (Math.random() - .5) * sh;
       camera.position.y += (camY + hop * .25 - camera.position.y) * Math.min(1, dt * 4) + (Math.random() - .5) * sh;
       camera.position.z += (camZ - camera.position.z) * Math.min(1, dt * 3);
       camera.fov = 60 + sp * 12; camera.updateProjectionMatrix();
-      camera.lookAt(S.x * .7, running ? 1.7 : 1.45, running ? -12 : -2);
+      camera.lookAt(S.x * .7, active ? 1.7 : 1.45, active ? -12 : -2);
       sun.position.copy(sunDir).multiplyScalar(40).add(new THREE.Vector3(S.x, 0, -6)); sun.target.position.set(S.x, 0, -6);
-      S.flash = Math.max(0, S.flash - dt * 2); el.style.setProperty("--flash", S.flash.toFixed(2));
+      if (!S.paused) S.flash = Math.max(0, S.flash - dt * 2); (el.parentElement || el).style.setProperty("--flash", S.flash.toFixed(2));
       if (composer) composer.render(); else renderer.render(scene, camera);
     };
     raf = requestAnimationFrame(tick);
-    return () => { alive = false; S.over = true; cancelAnimationFrame(raf); ro.disconnect(); window.removeEventListener("keydown", key);
+    return () => { alive = false; S.over = true; cancelAnimationFrame(raf); ro.disconnect(); window.removeEventListener("keydown", key); clearTimeout(bannerT);
+      try { if (window.__R3D?.S === S) delete window.__R3D; } catch (_) { /* ignore */ }
       renderer.domElement.removeEventListener("pointerdown", dn); renderer.domElement.removeEventListener("pointerup", up);
       scene.traverse(o => { o.geometry?.dispose?.(); const m = o.material; (Array.isArray(m) ? m : m ? [m] : []).forEach(x => { x.map?.dispose?.(); x.dispose?.(); }); });
-      env?.dispose?.(); kit?.dispose?.(); col.dispose(); pmrem.dispose(); composer?.dispose?.(); renderer.dispose(); renderer.domElement.remove(); };
+      env?.dispose?.(); kit?.dispose?.(); col.dispose(); hz.dispose(); archGeo.dispose(); archMat.dispose(); pmrem.dispose(); composer?.dispose?.(); renderer.dispose(); renderer.domElement.remove(); };
   }, []); // eslint-disable-line
 
   const tk = ui.tokens;
-  const btn = { minWidth:72, minHeight:64, borderRadius:32, border:"none", background:tk.card, color:tk.ink, fontSize:30, fontWeight:900, cursor:"pointer", boxShadow:tk.shadow };
+  const btn = { minWidth:72, minHeight:64, borderRadius:32, border:"none", background:tk.card, color:tk.ink, fontSize:30, fontWeight:900, cursor:"pointer", boxShadow:tk.shadow, fontFamily:"inherit" };
   const meaningOf = c => (words.find(w => (w.word || "").toUpperCase() === c.word) || {}).meaning || c.name;
   const pickChar = c => { setCharId(c.id); api.current.setChar?.(c.id); if (c.word) ui.say({ word:c.word, meaning:meaningOf(c) }); else sfx.tap(); };
   const icon = w => { const u = ui.imageUrl(w); return u ? <img src={u} alt="" style={{ width:"100%", height:"100%", objectFit:"cover" }} /> : <span style={{ fontSize:18, lineHeight:1 }}>{w.emoji || "⭐"}</span>; };
   const shadowTxt = "0 2px 6px rgba(0,0,0,.6)";
+  const pill = { display:"inline-flex", alignItems:"center", gap:6, padding:"4px 12px", borderRadius:999, background:"rgba(0,0,0,.42)", color:"#fff", fontWeight:900, textShadow:shadowTxt, whiteSpace:"nowrap" };
+  const combo = hud.combo >= 6 ? 3 : hud.combo >= 3 ? 2 : 1;
+  const lowTime = hud.left <= 30;
+  const playing = hud.started;   // หลังกดเริ่ม (รวมหลังจบ จนกว่า App จะเปิดหน้าผล)
   return (
     <div style={{ position:"relative", display:"flex", flexDirection:"column", gap:8 }}>
       <style>{`@keyframes r3dPop{0%{transform:translate(-50%,-30%) scale(.6);opacity:0}15%{transform:translate(-50%,-60%) scale(1.15);opacity:1}70%{opacity:1}100%{transform:translate(-50%,-260%) scale(1);opacity:0}}
-        @keyframes r3dBump{0%{transform:scale(1)}40%{transform:scale(1.25)}100%{transform:scale(1)}}`}</style>
+        @keyframes r3dBump{0%{transform:scale(1)}40%{transform:scale(1.25)}100%{transform:scale(1)}}
+        @keyframes r3dBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+        @keyframes r3dBanner{0%{transform:translate(-50%,-50%) scale(.4);opacity:0}20%{transform:translate(-50%,-50%) scale(1.12);opacity:1}30%{transform:translate(-50%,-50%) scale(1)}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}`}</style>
       {hud.target && hud.on && <Prompt w={hud.target} onClick={() => ui.say(hud.target)} />}
-      <div style={{ position:"relative", height:hud.on || hud.round ? "min(58vh, 560px)" : "min(66vh, 620px)", borderRadius:28, overflow:"hidden", background:"#000" }}>
+      <div style={{ position:"relative", height:playing ? "min(58vh, 560px)" : "min(66vh, 620px)", borderRadius:28, overflow:"hidden", background:"#000" }}>
         <div ref={host} data-runner3d style={{ position:"absolute", inset:0 }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 55%, rgba(0,0,0,.28))" }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 40%, rgba(239,68,68,.75))", opacity:"var(--flash, 0)" }} />
-        {hud.on && <div style={{ position:"absolute", left:10, top:10, right:10, display:"flex", justifyContent:"space-between", pointerEvents:"none", fontWeight:900, fontSize:16, color:"#fff", textShadow:shadowTxt }}>
-          <span>🏃 {Math.min(hud.round, ROUNDS)}/{ROUNDS} · ⭐ {hud.score}</span><span>{"❤️".repeat(Math.max(0, hud.hearts))}</span>
+        {hud.on && <div data-r3d-hud style={{ position:"absolute", left:8, top:8, right:8, display:"grid", gridTemplateColumns:"1fr auto 1fr", alignItems:"start", gap:6, pointerEvents:"none" }}>
+          <div style={{ display:"flex", flexDirection:"column", alignItems:"flex-start", gap:4 }}>
+            <span data-r3d-score style={{ ...pill, fontSize:20 }}>⭐ {hud.score}</span>
+            <span style={{ ...pill, fontSize:13, padding:"2px 10px" }}>✅ {hud.correct}/{hud.total}{combo > 1 && <span key={hud.combo} style={{ marginLeft:4, animation:"r3dBump .35s ease-out" }}>🔥x{combo}</span>}</span>
+          </div>
+          <span data-r3d-timer aria-label="เวลาที่เหลือ" style={{ ...pill, fontSize:28, padding:"4px 16px", fontVariantNumeric:"tabular-nums", animation:lowTime && hud.left > 0 ? "r3dBeat 1s ease-in-out infinite" : "none",
+            background:lowTime ? "rgba(185,28,28,.72)" : pill.background }}>⏱ {fmtTime(hud.left)}</span>
+          <div style={{ display:"flex", justifyContent:"flex-end" }}>
+            <button data-r3d-pause aria-label="พัก / จบเกม" onClick={() => api.current.pause?.()} className="m3-press"
+              style={{ pointerEvents:"auto", width:48, height:48, borderRadius:24, border:"2px solid rgba(255,255,255,.7)", background:"rgba(0,0,0,.42)", color:"#fff", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:5, padding:0 }}>
+              <span style={{ width:5, height:17, borderRadius:2, background:"#fff" }} /><span style={{ width:5, height:17, borderRadius:2, background:"#fff" }} /></button>
+          </div>
         </div>}
         {pops.map(p => <div key={p.id} style={{ position:"absolute", left:`${p.x}%`, top:`${p.y}%`, pointerEvents:"none", animation:"r3dPop 1.05s ease-out forwards",
-          padding:"4px 12px", borderRadius:999, background:tk.card, color:tk.ink, fontWeight:900, fontSize:20, letterSpacing:.5, boxShadow:"0 4px 14px rgba(0,0,0,.35)", whiteSpace:"nowrap" }}>{p.text}</div>)}
-        {(hud.on || hud.round > 0) && <div key={hud.basket.length} style={{ position:"absolute", left:10, bottom:10, display:"flex", alignItems:"center", gap:4, padding:"4px 8px 4px 6px", borderRadius:999,
+          padding:"4px 12px", borderRadius:999, background:p.kind === "plus" ? tk.primary : tk.card, color:p.kind === "plus" ? tk.onPrimary : tk.ink, fontWeight:900, fontSize:p.kind === "word" ? 20 : 24, letterSpacing:.5,
+          boxShadow:"0 4px 14px rgba(0,0,0,.35)", whiteSpace:"nowrap", border:p.kind === "minus" ? "3px solid rgba(239,68,68,.9)" : "none" }}>{p.text}</div>)}
+        {hud.banner && <div key={hud.banner} data-r3d-banner style={{ position:"absolute", left:"50%", top:"46%", pointerEvents:"none", animation:"r3dBanner .6s ease-out forwards", padding:"10px 22px", borderRadius:28,
+          background:tk.card, color:tk.ink, boxShadow:"0 8px 28px rgba(0,0,0,.4)", fontWeight:900, fontSize:hud.banner.length > 14 ? 22 : 36, whiteSpace:"nowrap", textAlign:"center" }}>{hud.banner}</div>}
+        {playing && <div key={hud.basket.length} style={{ position:"absolute", left:10, bottom:10, display:"flex", alignItems:"center", gap:4, padding:"4px 8px 4px 6px", borderRadius:999,
           background:"rgba(0,0,0,.38)", pointerEvents:"none", animation:hud.basket.length ? "r3dBump .35s ease-out" : "none" }}>
           <span style={{ fontSize:24, lineHeight:1 }}>🧺</span>
           <span style={{ fontWeight:900, fontSize:18, color:"#fff", textShadow:shadowTxt, minWidth:16 }}>{hud.basket.length}</span>
           {hud.basket.slice(-4).map((w, i) => <span key={i} style={{ width:28, height:28, borderRadius:14, overflow:"hidden", background:"#fff", display:"flex", alignItems:"center", justifyContent:"center", border:"2px solid #fff" }}>{icon(w)}</span>)}
         </div>}
-        {!hud.on && !hud.round && <>
-          <div style={{ position:"absolute", top:14, left:0, right:0, textAlign:"center", pointerEvents:"none" }}>
+        {hud.paused && <div data-r3d-paused style={{ position:"absolute", inset:0, background:"rgba(0,0,0,.55)", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:14, padding:16 }}>
+          <div style={{ fontWeight:900, fontSize:28, color:"#fff", textShadow:shadowTxt }}>พักก่อน</div>
+          <div style={{ fontWeight:800, fontSize:15, color:"#fff", textShadow:shadowTxt }}>⏱ เหลือ {fmtTime(hud.left)} · ⭐ {hud.score}</div>
+          <button onClick={() => api.current.resume?.()} className="m3-press" style={{ ...btn, minWidth:220, fontSize:22, background:tk.primary, color:tk.onPrimary }}>▶ เล่นต่อ</button>
+          <button onClick={() => api.current.end?.()} className="m3-press" style={{ ...btn, minWidth:220, fontSize:20 }}>🏁 จบเกม</button>
+        </div>}
+        {!playing && <>
+          <div style={{ position:"absolute", top:14, left:0, right:0, textAlign:"center", pointerEvents:"none", padding:"0 10px" }}>
             <div style={{ fontWeight:900, fontSize:26, color:"#fff", textShadow:"0 3px 12px rgba(0,0,0,.55)" }}>Word Runner 3D</div>
-            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.7)" }}>{th.name} · ฟังคำ แล้ววิ่งชนป้ายรูปที่ถูก · 🧺 เก็บของระหว่างทาง</div>
+            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.7)" }}>{th.name} · ฟังคำ แล้ววิ่งชนรูปที่ถูก · ⏱ {Math.max(1, Math.round(LEN / 60))} นาที</div>
+            <div style={{ fontWeight:700, fontSize:13, color:"#fff", textShadow:"0 2px 6px rgba(0,0,0,.7)" }}>⬆ กระโดดข้ามของเตี้ย · ◀▶ หลบของสูง · 🧺 เก็บของ</div>
           </div>
           <div style={{ position:"absolute", left:0, right:0, bottom:0, padding:"30px 10px 12px", display:"flex", flexDirection:"column", alignItems:"center", gap:8, background:"linear-gradient(180deg, transparent, rgba(0,0,0,.55))" }}>
             <div style={{ fontWeight:800, fontSize:13, color:"#fff" }}>เลือกตัวละคร (แตะเพื่อฟังชื่อ) {hud.loading && "· กำลังโหลด…"}</div>
@@ -648,9 +798,9 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
         </>}
         {hud.msg && <div style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", color:"#fff", fontWeight:900 }}>{hud.msg}</div>}
       </div>
-      {(hud.on || hud.round > 0) && <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8 }}>
+      {playing && <div style={{ display:"grid", gridTemplateColumns:"1fr 1.3fr 1fr", gap:8 }}>
         <button aria-label="ซ้าย" onClick={() => api.current.left?.()} className="m3-press" style={btn}>◀</button>
-        <button aria-label="กลาง" onClick={() => api.current.lane?.(1)} className="m3-press" style={btn}>●</button>
+        <button aria-label="กระโดด" data-r3d-jump onClick={() => api.current.jump?.()} className="m3-press" style={{ ...btn, background:tk.primary, color:tk.onPrimary, fontSize:22 }}>⬆ กระโดด</button>
         <button aria-label="ขวา" onClick={() => api.current.right?.()} className="m3-press" style={btn}>▶</button>
       </div>}
     </div>

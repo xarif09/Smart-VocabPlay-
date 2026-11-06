@@ -20,6 +20,8 @@ const add = (text, voice, lang) => { const t = norm(text); if (!t) return; const
 const app = readFileSync(join(ROOT, "src/App.jsx"), "utf8");
 const audioMan = existsSync(join(ROOT, "src/audioManifest.json")) ? JSON.parse(readFileSync(join(ROOT, "src/audioManifest.json"), "utf8")) : {};
 const words = [...app.matchAll(/W\("(\w+)","([^"]+)","([^"]*)"/g)].map(m => ({ cat: m[1], word: m[2], meaning: m[3] }));
+const { EXTRA_WORDS } = await import("../src/vocabExtra.js");
+for (const r of EXTRA_WORDS) words.push({ cat: r[0], word: r[1], meaning: r[2] });   // v3.20 คำเพิ่ม
 for (const w of words) {
   const lx = LEXICON[`${w.cat}|${w.word}`];
   if (lx?.sen) add(lx.sen, V.en, "en");

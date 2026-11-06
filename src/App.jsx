@@ -18,6 +18,7 @@ import { CatIcon, GameIcon, hasGameIcon } from "./Icons.jsx";
 import audioManifest from "./audioManifest.json";
 import ttsManifest from "./ttsManifest.json";
 import WORD_IMG from "./wordImages.json";
+import { EXTRA_WORDS } from "./vocabExtra.js";
 import { conceptFor, CONCEPT_WORDS } from "./Concept.jsx";
 import qrcode from "qrcode-generator";
 import { encodeSet, decodeSet, setLink, readIncomingSet } from "./share.js";
@@ -1426,6 +1427,8 @@ const INITIAL_WORDS = [
   W("countries","BRAZIL","บราซิล","🇧🇷"),
   W("countries","WORLD","โลก","🌍"),
   W("countries","FLAG","ธงชาติ","🚩"),
+  // v3.20: คำเพิ่ม 738 คำ (src/vocabExtra.js) — ต่อท้ายเสมอ id จึงไม่ชนของเดิม
+  ...EXTRA_WORDS.map(r => W(...r)),
 ];
 
 // เติมคำอ่าน + ประโยคตัวอย่างจาก lexicon.js
@@ -1463,6 +1466,15 @@ function loadSavedWords() {
     const have = new Set(merged.map(w => w.cat));
     let nextId = Math.max(0, ...merged.map(w => w.id)) + 1;
     INITIAL_WORDS.forEach(w => { if (!have.has(w.cat)) merged.push({ ...w, id: nextId++ }); });
+    // v3.20: คำเพิ่มชุดใหญ่ → เติมให้ผู้ใช้เดิมครั้งเดียว (ข้ามคำที่มีอยู่แล้ว)
+    let added = false; try { added = window.localStorage.getItem("smart-vocabplay:extra-v320") === "1"; } catch (_) {}
+    if (!added) {
+      const key = w => `${w.cat}|${String(w.word).toUpperCase()}`;
+      const exist = new Set(merged.map(key));
+      const extraKeys = new Set(EXTRA_WORDS.map(r => `${r[0]}|${r[1]}`));
+      INITIAL_WORDS.forEach(w => { if (extraKeys.has(key(w)) && !exist.has(key(w))) merged.push({ ...w, id: nextId++ }); });
+      try { window.localStorage.setItem("smart-vocabplay:extra-v320", "1"); } catch (_) {}
+    }
     return merged;
   } catch (_) {
     return INITIAL_WORDS;

@@ -5930,7 +5930,7 @@
   },
   "places|SCHOOL": {
    "title": "File:Walt Whitman High School Bethesda MD MCPS 20210320 120822 1 16x9.jpg",
-   "final": 1.134,
+   "final": 1.17,
    "p": 0.9925,
    "photo": 0.3944,
    "fit": 1.0,
@@ -5945,7 +5945,7 @@
   },
   "places|HOSPITAL": {
    "title": "File:Hospital-de-Bellvitge.jpg",
-   "final": 1.034,
+   "final": 1.045,
    "p": 0.9934,
    "photo": 0.3659,
    "fit": 1.0,
@@ -5955,12 +5955,12 @@
     "not photo-like 0.37"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "places|MARKET": {
    "title": "File:Chang Thong Thai restaurant, Market Square, Salisbury - geograph.org.uk - 2356787.jpg",
-   "final": 1.062,
+   "final": 1.223,
    "p": 1.0,
    "photo": 0.616,
    "fit": 1.0,
@@ -5968,12 +5968,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:Thai market",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "places|TEMPLE": {
    "title": "File:พระอุโบสถและศาลาราย2.jpg",
-   "final": 1.09,
+   "final": 1.279,
    "p": 0.9758,
    "photo": 0.8857,
    "fit": 1.0,
@@ -5985,21 +5985,11 @@
    "forced": false
   },
   "places|PARK": {
-   "title": "File:Halleyparknovember b (cropped).jpg",
-   "final": 1.1,
-   "p": 0.9997,
-   "photo": 0.9986,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "places|ZOO": {
    "title": "File:Columbus Zoo - 51284624854.jpg",
-   "final": 1.065,
+   "final": 1.265,
    "p": 0.9426,
    "photo": 0.9636,
    "fit": 1.0,
@@ -6012,7 +6002,7 @@
   },
   "places|BEACH": {
    "title": "File:Beach at Fort Lauderdale.jpg",
-   "final": 1.1,
+   "final": 1.3,
    "p": 0.9998,
    "photo": 0.9995,
    "fit": 1.0,
@@ -6024,40 +6014,40 @@
    "forced": false
   },
   "places|FARM": {
-   "title": "File:Nieuwkerke. Westhof Farm Cem.en 2024.jpg",
-   "final": 0.86,
-   "p": 0.7113,
-   "photo": 0.9525,
+   "title": "File:Agama aculeata in Farm Hingurakgoda (Sri Lanka).jpg",
+   "final": 0.79,
+   "p": 0.0,
+   "photo": 0.9601,
    "fit": 1.0,
    "how": "scene",
-   "notes": [
-    "upscaled x1.6"
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
    ],
-   "flags": [],
    "origin": "search:farm",
    "n_cands": 5,
    "forced": false
   },
   "places|RESTAURANT": {
-   "title": "File:Barbieri - ViaSophia25668.jpg",
-   "final": 0.981,
-   "p": 0.9998,
-   "photo": 0.0373,
+   "title": "File:Münster, Aasee, Restaurants -- 2019 -- 3464-8.jpg",
+   "final": 0.785,
+   "p": 0.0,
+   "photo": 0.9929,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "not photo-like 0.04"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 7,
+   "origin": "search:restaurant",
+   "n_cands": 8,
    "forced": false
   },
   "places|BANK": {
    "title": "File:London.bankofengland.arp.jpg",
-   "final": 1.091,
+   "final": 1.286,
    "p": 0.9998,
-   "photo": 0.9507,
+   "photo": 0.9496,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
@@ -6068,7 +6058,7 @@
   },
   "places|AIRPORT": {
    "title": "File:Aerial wiew of Los Angeles International Airport, Juy 2022 (2).jpg",
-   "final": 1.075,
+   "final": 1.264,
    "p": 0.9997,
    "photo": 0.8912,
    "fit": 1.0,
@@ -6081,7 +6071,7 @@
   },
   "places|LIBRARY": {
    "title": "File:Clementinum baroque library 2.jpg",
-   "final": 1.057,
+   "final": 1.214,
    "p": 0.9991,
    "photo": 0.5743,
    "fit": 1.0,
@@ -6094,7 +6084,7 @@
   },
   "places|SUPERMARKET": {
    "title": "File:Supermarket in recife, pernambuco, Brazil.jpg",
-   "final": 1.095,
+   "final": 1.302,
    "p": 0.8488,
    "photo": 0.9908,
    "fit": 1.0,
@@ -6102,22 +6092,20 @@
    "notes": [],
    "flags": [],
    "origin": "search:supermarket",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "places|PLAYGROUND": {
-   "title": "File:Children's Playground 05.jpg",
-   "final": 1.098,
-   "p": 0.9998,
-   "photo": 0.0697,
+   "title": "File:Children's playground in the sanatorium park in Shklo.jpg",
+   "final": 1.283,
+   "p": 0.9542,
+   "photo": 0.8947,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "not photo-like 0.07"
-   ],
+   "flags": [],
    "origin": "search:playground children",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "colors|GOLD": {
@@ -8161,24 +8149,21 @@
    "forced": false
   },
   "places|CINEMA": {
-   "title": "File:Ptuj, city cinema.jpg",
-   "final": 0.751,
-   "p": 0.4833,
-   "photo": 0.4629,
+   "title": "File:Regal IMAX cinema Barkley Village, Bellingham, WA.jpg",
+   "final": 1.35,
+   "p": 0.9809,
+   "photo": 0.8276,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.48",
-    "not photo-like 0.46"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:cinema",
+   "n_cands": 6,
    "forced": false
   },
   "places|POST OFFICE": {
    "title": "File:EdithburghPostOffice.JPG",
-   "final": 1.098,
+   "final": 1.297,
    "p": 0.9988,
    "photo": 0.9875,
    "fit": 1.0,
@@ -8191,7 +8176,7 @@
   },
   "places|POLICE STATION": {
    "title": "File:NYPD Bx 42nd Precinct IMG 3248 HLG.jpg",
-   "final": 1.111,
+   "final": 1.293,
    "p": 0.9743,
    "photo": 0.8023,
    "fit": 1.0,
@@ -8204,7 +8189,7 @@
   },
   "places|FIRE STATION": {
    "title": "File:FDNY eng264 328 Ladder 134 20190214 135053~2.jpg",
-   "final": 1.176,
+   "final": 1.371,
    "p": 0.9998,
    "photo": 0.9487,
    "fit": 1.0,
@@ -8230,7 +8215,7 @@
   },
   "places|GAS STATION": {
    "title": "File:Mattoon Service Station (pre-fabricated), angle view, National & Washington Boulevards, Culver City, California LOC 37555778230.jpg",
-   "final": 1.097,
+   "final": 1.296,
    "p": 0.9982,
    "photo": 0.984,
    "fit": 1.0,
@@ -8242,38 +8227,34 @@
    "forced": false
   },
   "places|BUS STOP": {
-   "title": "File:People waiting at bus stop.jpg",
-   "final": 1.026,
+   "title": "File:Arubus, Bus Stop Dakota, Oranjestad Aruba.jpg",
+   "final": 1.28,
    "p": 1.0,
-   "photo": 0.2579,
+   "photo": 0.7996,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "not photo-like 0.26"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:bus stop",
+   "n_cands": 8,
    "forced": false
   },
   "places|TRAIN STATION": {
-   "title": "File:Seoul Station West Side.jpg",
-   "final": 0.585,
-   "p": 0.0633,
-   "photo": 0.6479,
+   "title": "File:Jeseník train station 2025.01.jpg",
+   "final": 1.316,
+   "p": 1.0,
+   "photo": 0.9808,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.06"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:train station",
+   "n_cands": 6,
    "forced": false
   },
   "places|SWIMMING POOL": {
    "title": "File:Backyardpool.jpg",
-   "final": 1.108,
+   "final": 1.308,
    "p": 1.0,
    "photo": 0.999,
    "fit": 1.0,
@@ -8285,23 +8266,21 @@
    "forced": false
   },
   "places|SHOPPING MALL": {
-   "title": "File:2018 Mall of America 01.jpg",
-   "final": 1.088,
-   "p": 0.9481,
-   "photo": 0.3325,
+   "title": "File:Umbrellas at Caudan Waterfront Mall.JPG",
+   "final": 1.164,
+   "p": 0.6298,
+   "photo": 0.8844,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "not photo-like 0.33"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:shopping mall",
+   "n_cands": 8,
    "forced": false
   },
   "places|CAFE": {
    "title": "File:Café de Flore.jpg",
-   "final": 1.067,
+   "final": 1.24,
    "p": 0.9859,
    "photo": 0.7228,
    "fit": 1.0,
@@ -8313,18 +8292,18 @@
    "forced": false
   },
   "places|BAKERY": {
-   "title": "File:Belgium 2013 (11620905224).jpg",
-   "final": 0.997,
-   "p": 0.9916,
-   "photo": 0.0021,
+   "title": "File:Long's Bakery - May 2024 - Sarah Stierch.jpg",
+   "final": 0.873,
+   "p": 0.9995,
+   "photo": 0.1892,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "not photo-like 0.00"
+    "not photo-like 0.19"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:bakery",
+   "n_cands": 7,
    "forced": false
   },
   "animals|WOLF": {
@@ -12079,23 +12058,21 @@
    "forced": false
   },
   "places|HOME": {
-   "title": "File:Katsura Imperial Villa in Spring.jpg",
-   "final": 0.464,
-   "p": 0.0002,
-   "photo": 0.998,
+   "title": "File:Old house typical of the island of Margarita.jpg",
+   "final": 0.967,
+   "p": 0.5258,
+   "photo": 0.6324,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:house",
+   "n_cands": 7,
    "forced": false
   },
   "places|VILLAGE": {
    "title": "File:Bourton-on-the-Water 2010 PD 09.JPG",
-   "final": 0.978,
+   "final": 1.189,
    "p": 0.7802,
    "photo": 0.9996,
    "fit": 1.0,
@@ -12107,23 +12084,23 @@
    "forced": false
   },
   "places|CITY": {
-   "title": "File:4Y1A1159 Bangkok (33536795515).jpg",
-   "final": 0.572,
-   "p": 0.0981,
-   "photo": 0.9854,
+   "title": "File:Chateau Frontenac illuminated at night in Quebec City.jpg",
+   "final": 1.04,
+   "p": 0.4155,
+   "photo": 0.957,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.10"
+    "low word prob 0.42"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:city",
+   "n_cands": 7,
    "forced": false
   },
   "places|STREET": {
    "title": "File:Typical Street In The Royal Borough Of Kensington And Chelsea In London.jpg",
-   "final": 1.097,
+   "final": 1.297,
    "p": 0.9959,
    "photo": 0.994,
    "fit": 1.0,
@@ -12149,7 +12126,7 @@
   },
   "places|GARDEN": {
    "title": "File:Flower garden, Botanic Gardens, Churchtown 2.JPG",
-   "final": 1.122,
+   "final": 1.32,
    "p": 0.9962,
    "photo": 0.9683,
    "fit": 1.0,
@@ -12161,52 +12138,49 @@
    "forced": false
   },
   "places|HOTEL": {
-   "title": "File:Livorno - Hotel Palazzo - 2025-09-29 20-09-38 001.jpg",
-   "final": 0.563,
-   "p": 0.0469,
-   "photo": 0.464,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.05",
-    "not photo-like 0.46"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "places|MUSEUM": {
-   "title": "File:Museo Chileno de Arte Precolombino - 2020 - 10.jpg",
-   "final": 1.119,
-   "p": 1.0,
-   "photo": 0.3203,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.32"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "places|AQUARIUM": {
-   "title": "File:Male whale shark at Georgia Aquarium.jpg",
-   "final": 1.089,
-   "p": 0.9999,
-   "photo": 0.511,
+   "title": "File:Reflection of the Flamingo Hotel in front of the Bellagio.jpg",
+   "final": 1.239,
+   "p": 0.8582,
+   "photo": 0.7684,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
+   "origin": "search:hotel",
+   "n_cands": 5,
+   "forced": false
+  },
+  "places|MUSEUM": {
+   "title": "File:Museo Chileno de Arte Precolombino - 2020 - 10.jpg",
+   "final": 1.285,
+   "p": 1.0,
+   "photo": 0.4921,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.49"
+   ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
+   "forced": false
+  },
+  "places|AQUARIUM": {
+   "title": "File:Georgia Aquarium - Giant Grouper.jpg",
+   "final": 1.352,
+   "p": 0.9987,
+   "photo": 0.7667,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:aquarium",
+   "n_cands": 8,
    "forced": false
   },
   "places|AMUSEMENT PARK": {
    "title": "File:포시즌스 산리오댄스타임 2025.jpg",
-   "final": 1.039,
+   "final": 1.185,
    "p": 0.9946,
    "photo": 0.4482,
    "fit": 1.0,
@@ -12216,12 +12190,12 @@
     "not photo-like 0.45"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 5,
    "forced": false
   },
   "places|STADIUM": {
    "title": "File:Narendra Modi Stadium view from the gallery.jpg",
-   "final": 1.116,
+   "final": 1.313,
    "p": 1.0,
    "photo": 0.9698,
    "fit": 1.0,
@@ -12234,7 +12208,7 @@
   },
   "places|CHURCH": {
    "title": "File:Husby-Sjuhundra kyrka.jpg",
-   "final": 1.097,
+   "final": 1.293,
    "p": 0.9998,
    "photo": 0.96,
    "fit": 1.0,
@@ -12247,7 +12221,7 @@
   },
   "places|MOSQUE": {
    "title": "File:Masjid e Nabawi Interior 2.jpg",
-   "final": 1.082,
+   "final": 1.263,
    "p": 0.9995,
    "photo": 0.8184,
    "fit": 1.0,
@@ -12259,23 +12233,25 @@
    "forced": false
   },
   "places|PALACE": {
-   "title": "File:0005574 - Wat Phra Kaew 006.jpg",
-   "final": 0.502,
-   "p": 0.0058,
-   "photo": 0.9912,
+   "title": "File:Bangkok GrandPalace from River.jpg",
+   "final": 0.995,
+   "p": 0.4886,
+   "photo": 0.8937,
    "fit": 1.0,
    "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.01"
+   "notes": [
+    "upscaled x1.5"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [
+    "low word prob 0.49"
+   ],
+   "origin": "search:Grand Palace Bangkok",
+   "n_cands": 8,
    "forced": false
   },
   "places|CASTLE": {
    "title": "File:Panorámica Otoño Alcázar de Segovia.jpg",
-   "final": 1.099,
+   "final": 1.3,
    "p": 0.9925,
    "photo": 0.9995,
    "fit": 1.0,
@@ -12288,9 +12264,9 @@
   },
   "places|TOWER": {
    "title": "File:Tokyo Sky Tree 2012.JPG",
-   "final": 1.122,
+   "final": 1.32,
    "p": 0.9751,
-   "photo": 0.9633,
+   "photo": 0.9628,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
@@ -12301,7 +12277,7 @@
   },
   "places|OFFICE": {
    "title": "File:West side of Manhattan from Hudson Commons (95103p).jpg",
-   "final": 0.442,
+   "final": 0.682,
    "p": 0.0,
    "photo": 0.9057,
    "fit": 1.0,
@@ -12311,13 +12287,13 @@
     "low word prob 0.00"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "places|FACTORY": {
    "title": "File:Wolfsburg VW-Werk.jpg",
-   "final": 1.088,
-   "p": 1.0,
+   "final": 1.275,
+   "p": 0.9999,
    "photo": 0.8749,
    "fit": 1.0,
    "how": "scene",
@@ -12329,8 +12305,8 @@
   },
   "places|HARBOR": {
    "title": "File:Jebel Ali Port 2 Imresolt.jpg",
-   "final": 0.989,
-   "p": 0.9206,
+   "final": 1.187,
+   "p": 0.9205,
    "photo": 0.9409,
    "fit": 1.0,
    "how": "scene",
@@ -12341,23 +12317,23 @@
    "forced": false
   },
   "places|ISLAND": {
-   "title": "File:KohPhiPhi.JPG",
-   "final": 0.719,
-   "p": 0.365,
-   "photo": 0.9426,
+   "title": "File:Havelock Island, Sandy lagoon, Andaman Islands.jpg",
+   "final": 1.07,
+   "p": 0.3874,
+   "photo": 0.9972,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.36"
+    "low word prob 0.39"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:tropical island",
+   "n_cands": 8,
    "forced": false
   },
   "places|JUNGLE": {
    "title": "File:ព្រៃកម្ពុជា.jpg",
-   "final": 1.099,
+   "final": 1.298,
    "p": 0.9996,
    "photo": 0.9889,
    "fit": 1.0,
@@ -12370,7 +12346,7 @@
   },
   "places|FLOATING MARKET": {
    "title": "File:Jukung Pasar Terapung.jpg",
-   "final": 1.132,
+   "final": 1.323,
    "p": 1.0,
    "photo": 0.9147,
    "fit": 1.0,
@@ -12382,24 +12358,24 @@
    "forced": false
   },
   "places|NIGHT MARKET": {
-   "title": "File:Myeongdong night market seoul 4.jpg",
-   "final": 1.012,
-   "p": 0.998,
-   "photo": 0.1304,
+   "title": "File:Black Crab Night Market, Krabi SF0003.jpg",
+   "final": 0.89,
+   "p": 0.9814,
+   "photo": 0.2091,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "not photo-like 0.13"
+    "not photo-like 0.21"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:night market Thailand",
+   "n_cands": 8,
    "forced": false
   },
   "places|CONVENIENCE STORE": {
    "title": "File:Convenience store interior.jpg",
-   "final": 0.93,
-   "p": 0.7197,
+   "final": 1.127,
+   "p": 0.7196,
    "photo": 0.8263,
    "fit": 1.0,
    "how": "scene",
@@ -28072,7 +28048,7 @@
     "fit 0.56"
    ],
    "origin": "search:QI",
-   "n_cands": 9,
+   "n_cands": 6,
    "forced": false
   },
   "places|APARTMENT": {
@@ -28111,7 +28087,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "places|PARKING LOT": {
@@ -28126,7 +28102,7 @@
     "low word prob 0.42"
    ],
    "origin": "search:QI",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "places|TOY STORE": {
@@ -28237,7 +28213,7 @@
     "low word prob 0.06"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "places|CAMPSITE": {
@@ -29864,27 +29840,22 @@
   "opposites|YOUNG",
   "places|AMUSEMENT PARK",
   "places|BAKERY",
-  "places|BUS STOP",
-  "places|CINEMA",
   "places|CIRCUS",
   "places|CITY",
   "places|CLINIC",
+  "places|FARM",
   "places|FOOD COURT",
-  "places|HOME",
   "places|HOSPITAL",
-  "places|HOTEL",
   "places|HOUSE",
   "places|ISLAND",
   "places|MUSEUM",
   "places|NIGHT MARKET",
   "places|OFFICE",
   "places|PALACE",
+  "places|PARK",
   "places|PARKING LOT",
-  "places|PLAYGROUND",
   "places|RESTAURANT",
   "places|SCHOOL",
-  "places|SHOPPING MALL",
-  "places|TRAIN STATION",
   "places|UNIVERSITY",
   "places|WATER PARK",
   "school|ABACUS",
@@ -30303,7 +30274,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1894,
-  "flagged": 1098
+  "with_photo": 1893,
+  "flagged": 1093
  }
 }

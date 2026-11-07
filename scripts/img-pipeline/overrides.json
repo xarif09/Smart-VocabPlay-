@@ -1015,5 +1015,292 @@
    "alphabet blocks",
    "ABC letters toy"
   ]
+ },
+ "body|GUMS": {
+  "file": "File:Lao woman chewing paan.jpg"
+ },
+ "body|CHIN": {
+  "file": "File:Queenie Chong Chin Yee (DSCF0718).jpg"
+ },
+ "body|HEAD": {
+  "queries": [
+   "boy head portrait",
+   "child portrait face"
+  ]
+ },
+ "body|THIGH": {
+  "queries": [
+   "athlete legs thigh",
+   "cyclist legs"
+  ]
+ },
+ "body|FIST": {
+  "queries": [
+   "clenched fist hand",
+   "fist bump"
+  ]
+ },
+ "body|PALM": {
+  "queries": [
+   "open palm hand",
+   "palm of the hand"
+  ]
+ },
+ "body|CHEST": {
+  "queries": [
+   "doctor stethoscope child chest",
+   "stethoscope on chest"
+  ]
+ },
+ "body|STOMACH": {
+  "queries": [
+   "child belly",
+   "pregnant belly"
+  ]
+ },
+ "body|NECK": {
+  "queries": [
+   "giraffe neck",
+   "woman neck scarf"
+  ]
+ },
+ "body|LIPS": {
+  "queries": [
+   "smiling lips",
+   "red lips"
+  ]
+ },
+ "body|SKIN": {
+  "queries": [
+   "skin of hand close-up",
+   "human skin texture"
+  ]
+ },
+ "body|SHOULDER": {
+  "queries": [
+   "shoulder",
+   "child on father's shoulders"
+  ]
+ },
+ "body|KNEE": {
+  "queries": [
+   "knee",
+   "child knee bandage"
+  ]
+ },
+ "body|TEETH": {
+  "queries": [
+   "smiling teeth child",
+   "toothy smile"
+  ]
+ },
+ "body|MUSTACHE": {
+  "queries": [
+   "man with moustache portrait",
+   "mustache"
+  ]
+ },
+ "body|HIP": {
+  "queries": [
+   "hands on hips",
+   "hip"
+  ]
+ },
+ "body|THROAT": {
+  "queries": [
+   "doctor checking throat",
+   "sore throat"
+  ]
+ },
+ "body|LUNGS": {
+  "queries": [
+   "lungs anatomical model",
+   "lung model"
+  ]
+ },
+ "body|RIBS": {
+  "queries": [
+   "rib cage skeleton model",
+   "ribs skeleton"
+  ]
+ },
+ "body|JAW": {
+  "queries": [
+   "jaw bone model",
+   "jaw"
+  ]
+ },
+ "body|CHEEK": {
+  "queries": [
+   "child cheek",
+   "rosy cheeks child"
+  ]
+ },
+ "body|TOE": {
+  "queries": [
+   "toes feet",
+   "bare toes"
+  ]
+ },
+ "body|WRIST": {
+  "queries": [
+   "wristwatch on wrist",
+   "wrist"
+  ]
+ },
+ "body|BODY": {
+  "queries": [
+   "child standing full body",
+   "human body"
+  ]
+ },
+ "body|LEG": {
+  "queries": [
+   "legs walking",
+   "child legs running"
+  ]
+ },
+ "body|ARM": {
+  "queries": [
+   "arm",
+   "child arm raised"
+  ]
+ },
+ "body|FINGER": {
+  "queries": [
+   "pointing finger",
+   "index finger"
+  ]
+ },
+ "body|FOREHEAD": {
+  "queries": [
+   "forehead",
+   "child forehead"
+  ]
+ },
+ "body|EYEBROW": {
+  "queries": [
+   "eyebrow",
+   "eyebrows close-up"
+  ]
+ },
+ "body|TOOTHACHE": {
+  "queries": [
+   "toothache",
+   "person with toothache"
+  ]
+ },
+ "body|HEADACHE": {
+  "queries": [
+   "headache",
+   "person with headache"
+  ]
+ },
+ "clothes|BLOUSE": {
+  "file": "File:Slightly business casual Informal wear - pose 1.jpg",
+  "exclude": [
+   "File:Wolford bodysuit blouses in faux wrap and high-waisted styles - Variant 1.jpg",
+   "File:Wolford bodysuit blouses in faux wrap and high-waisted styles - Variant 2.jpg",
+   "File:Wolford Cosmopolitan bodysuit and tights - without blouse insert - version 1 - modelled by Anastasia Voloshina.jpg",
+   "File:Wolford Cosmopolitan bodysuit and tights - without blouse insert - version 2 - modelled by Anastasia Voloshina.jpg",
+   "File:Calvin Klein underwear and Kunert Raffinesse Net tights in the colour powder and a blouse - light-footed pose.jpg",
+   "File:Dirndl backside with often to find decorative seams.jpg",
+   "File:Wolford Cosmopolitan bodysuit and tights - modelled by Anastasia Voloshina.jpg",
+   "File:Slightly business casual Informal wear - pose 2 with fishnet tights.jpg",
+   "File:Slightly business casual Informal wear - possible look underneath - pose 2.jpg"
+  ]
+ },
+ "clothes|HIGH HEELS": {
+  "file": "File:High-heeled shoes on display in Huangpu, Shanghai (20180211145140).jpg"
+ },
+ "clothes|MASK": {
+  "file": "File:Surgical face mask.jpg"
+ },
+ "clothes|JACKET": {
+  "file": "File:Jacket2-1.jpg"
+ },
+ "clothes|UNDERWEAR": {
+  "file": "File:Boxers.jpg",
+  "exclude": [
+   "File:Bodysuit worn with sheer tights (pantyhose) and Shirt worn with opaque tights - variant with street clothing.jpg",
+   "File:Tier 3 protective clothing MOD 45153081.jpg",
+   "File:Tier Two of the Pelvic Protection Clothing MOD 45153076.jpg",
+   "File:Tier Two of the Pelvic Protection Clothing MOD 45153077.jpg",
+   "File:Tier Two of the Pelvic Protection Clothing MOD 45153078.jpg",
+   "File:Tier3 of the Pelveic Protective Clothing System MOD 45153029.jpg",
+   "File:Tier Two of the Pelvic Protection Clothing MOD 45153077 2.jpg",
+   "File:Canadian forest industries 1911 (1911) (20501270756).jpg"
+  ]
+ },
+ "clothes|SHORTS": {
+  "queries": [
+   "child shorts clothing",
+   "khaki shorts"
+  ],
+  "exclude": [
+   "File:Red short shorts.jpg",
+   "File:HK SKD TKO Tseung Kwan O PopCorn Shopping Mall void sports demo visitors in sport clothing shorts n tee-shirts October 2025 N13P 01.jpg",
+   "File:HK SKD TKO Tseung Kwan O PopCorn Shopping Mall void sports demo visitors in sport clothing shorts n tee-shirts October 2025 N13P 02.jpg",
+   "File:Boxers.jpg",
+   "File:Fetish clothing - blue PVC shorts and top 2.jpg",
+   "File:Fetish clothing - blue PVC shorts and top 3.jpg",
+   "File:Fetish clothing - blue PVC shorts and top 4.jpg",
+   "File:Fetish clothing - blue PVC shorts and top 1.jpg"
+  ]
+ },
+ "clothes|SWIMSUIT": {
+  "queries": [
+   "child swimsuit swimming pool",
+   "kids swimming costume"
+  ],
+  "exclude": [
+   "File:Swimsuit open boobs.jpg",
+   "File:An Iranian poses in her swimsuit at a beach in the 1960s.jpg",
+   "File:Wanda Hendrix pin-up in Leopard swimsuit 1954.jpg",
+   "File:Apasra Hongsakula, in swimsuit on pool ladder.jpg",
+   "File:Kindai Mahjong Swimsuit Festival (September 30, 2026)IMG 0611.jpg",
+   "File:Missy Robinson - Swimsuit.jpg",
+   "File:Kindai Mahjong Swimsuit Festival (September 22, 2024)IMG 5246.jpg",
+   "File:Oriental girl swimsuit.jpg"
+  ]
+ },
+ "clothes|BIKINI": {
+  "queries": [
+   "two-piece swimsuit on hanger",
+   "bikini swimwear product"
+  ],
+  "exclude": [
+   "File:Young women of Naples in swimsuit, Italy 1948.jpg",
+   "File:Young women of Naples in swimsuit, Italy 1948 (cropped).jpg",
+   "File:Young women of Naples in swimsuit, Italy 1948 (2) - Bathing boxes.jpg",
+   "File:Young women of Naples in swimsuit, Italy 1948 (2) - Bathing boxes (cropped).jpg",
+   "File:Rossana Podestà 1956.jpg",
+   "File:Young Neapolitan women swimsuit competition - Naples, Italy 1950s.jpg",
+   "File:Rossana Podestà 1956c.jpg"
+  ]
+ },
+ "clothes|HEADBAND": {
+  "queries": [
+   "headband hair accessory",
+   "girl headband"
+  ],
+  "exclude": [
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 10.JPG",
+   "File:The Pima Indians - pg 152b.png",
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 11.JPG",
+   "File:The Pima Indians - pg 152a.png",
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 3.JPG",
+   "File:Lawung Dayak.jpg",
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 5.JPG",
+   "File:Umqhele.jpg",
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 1.JPG",
+   "File:Lady in Traditional Attire with Beaded Headband.jpg"
+  ]
+ },
+ "clothes|JEANS": {
+  "queries": [
+   "blue jeans folded",
+   "denim jeans"
+  ]
  }
 }

@@ -3115,7 +3115,19 @@
    "forced": false
   },
   "jobs|FIREFIGHTER": {
-   "status": "no candidates"
+   "title": "File:Pompiers ste-anne-de-beaupré 2012.jpg",
+   "final": 1.135,
+   "p": 0.9999,
+   "photo": 0.7369,
+   "fit": 0.773,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|ARTIST": {
    "title": "File:Bad Rappenau - Evangelische Stadtkirche - Altarfenster 01.jpg",
@@ -3193,7 +3205,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:soldier uniform",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|WAITER": {
@@ -7083,7 +7095,17 @@
    "forced": false
   },
   "jobs|MECHANIC": {
-   "status": "no candidates"
+   "title": "File:2008-04-17 1989 Saab 900 Turbo getting new tyres.jpg",
+   "final": 1.294,
+   "p": 0.9916,
+   "photo": 0.9916,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|HAIRDRESSER": {
    "title": "File:Barber cutting hair with comb. Back view of young man in barber shop.jpg",
@@ -7161,7 +7183,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|MONK": {
@@ -11202,7 +11224,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "jobs|JOURNALIST": {
@@ -11300,7 +11322,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|ELECTRICIAN": {
@@ -11343,7 +11365,7 @@
     "not photo-like 0.11"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "jobs|CLEANER": {
@@ -11477,7 +11499,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|QUEEN": {
@@ -16256,7 +16278,7 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "music|RHYTHM": {
@@ -16294,7 +16316,22 @@
    "forced": false
   },
   "music|QUIET": {
-   "status": "no candidates"
+   "title": "File:SanDiegoCityCollegeLearningResource - bookshelf.jpg",
+   "final": 0.214,
+   "p": 0.0001,
+   "photo": 0.2325,
+   "fit": 0.786,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.23"
+   ],
+   "origin": "current",
+   "n_cands": 1,
+   "forced": false
   },
   "music|DANCE FLOOR": {
    "title": "File:The Bar Complex Dance Floor.jpg",
@@ -29724,7 +29761,6 @@
   "jobs|DOCTOR",
   "jobs|DRIVER",
   "jobs|ENGINEER",
-  "jobs|FIREFIGHTER",
   "jobs|FLORIST",
   "jobs|FOOTBALL PLAYER",
   "jobs|GARDENER",
@@ -29734,7 +29770,6 @@
   "jobs|LAWYER",
   "jobs|LIBRARIAN",
   "jobs|MAGICIAN",
-  "jobs|MECHANIC",
   "jobs|MUSICIAN",
   "jobs|NURSE",
   "jobs|PAINTER",
@@ -30346,7 +30381,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1898,
-  "flagged": 1093
+  "with_photo": 1901,
+  "flagged": 1091
  }
 }

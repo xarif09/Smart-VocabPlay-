@@ -5977,6 +5977,13 @@
   "license": "CC BY-SA 3.0",
   "score": 1.143
  },
+ "jobs|FIREFIGHTER": {
+  "file": "w/jobs__firefighter.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pompiers_ste-anne-de-beaupr%C3%A9_2012.jpg",
+  "author": "Letartean",
+  "license": "CC BY 3.0",
+  "score": 1.135
+ },
  "jobs|FISHERMAN": {
   "file": "w/jobs__fisherman.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Leg_Rowing_Fisherman_Inle_Lake_Myanmar.jpg",
@@ -6081,6 +6088,13 @@
   "author": "John Charlton",
   "license": "CC BY-SA 4.0",
   "score": 1.018
+ },
+ "jobs|MECHANIC": {
+  "file": "w/jobs__mechanic.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2008-04-17_1989_Saab_900_Turbo_getting_new_tyres.jpg",
+  "author": "Ildar Sagdejev ( Specious )",
+  "license": "CC BY-SA 4.0",
+  "score": 1.294
  },
  "jobs|MONK": {
   "file": "w/jobs__monk.jpg",
@@ -6606,6 +6620,13 @@
   "author": "Mihai131",
   "license": "CC0",
   "score": 1.235
+ },
+ "music|QUIET": {
+  "file": "w/music__quiet.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:SanDiegoCityCollegeLearningResource_-_bookshelf.jpg",
+  "author": "Joe Crawford from Moorpark, California, USA",
+  "license": "CC BY 2.0",
+  "score": 0.214
  },
  "music|RADIO": {
   "file": "w/music__radio.jpg",

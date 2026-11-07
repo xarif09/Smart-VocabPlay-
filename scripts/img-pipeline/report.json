@@ -1,21 +1,19 @@
 {
  "words": {
   "animals|DOG": {
-   "title": "File:Liver yellow dog in the water looking at viewer at golden hour in Don Det Laos.jpg",
-   "final": 1.086,
-   "p": 0.9297,
-   "photo": 0.9934,
-   "fit": 0.46,
+   "title": "File:Human–canine friendship - girl hugging her dog tightly at golden hour in Laos.jpg",
+   "final": 0.851,
+   "p": 0.168,
+   "photo": 0.9986,
+   "fit": 1.0,
    "how": "yolo:dog",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.77)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.46"
+    "low word prob 0.17"
    ],
    "origin": "search:dog",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "colors|RED": {
    "title": "File:Red Apple.jpg",
@@ -95,19 +93,21 @@
    "forced": false
   },
   "animals|COW": {
-   "title": "File:Anjarle Bridge and Cows-fix.jpg",
-   "final": 1.156,
-   "p": 0.9597,
-   "photo": 0.9838,
-   "fit": 0.802,
+   "title": "File:Cow female black white.jpg",
+   "final": 1.034,
+   "p": 1.0,
+   "photo": 0.9732,
+   "fit": 0.461,
    "how": "yolo:cow",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.77)"
    ],
-   "flags": [],
+   "flags": [
+    "fit 0.46"
+   ],
    "origin": "search:cow animal",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "animals|PIG": {
    "title": "File:Cochon domestique (Sus scrofa domesticus) (2).jpg",
@@ -249,16 +249,20 @@
    "forced": false
   },
   "animals|TIGER": {
-   "title": "File:Bengal tiger in Sanjay Dubri Tiger Reserve December 2024 by Tisha Mukherjee 05.jpg",
-   "final": 1.263,
-   "p": 0.9973,
-   "photo": 0.9475,
-   "fit": 1.0,
+   "title": "File:Bengal tiger (Panthera tigris tigris) female 3 crop.jpg",
+   "final": 1.026,
+   "p": 0.9999,
+   "photo": 0.8492,
+   "fit": 0.391,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:tiger animal",
-   "n_cands": 7,
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.65)"
+   ],
+   "flags": [
+    "fit 0.39"
+   ],
+   "origin": "current",
+   "n_cands": 8,
    "forced": false
   },
   "animals|PANDA": {
@@ -399,19 +403,21 @@
    "forced": false
   },
   "animals|MOUSE": {
-   "title": "File:Mus musculus 131536695.jpg",
-   "final": 1.079,
-   "p": 0.7784,
-   "photo": 0.7531,
-   "fit": 0.75,
+   "title": "File:Домовая мышь (Mus musculus), Москва.jpg",
+   "final": 0.843,
+   "p": 0.348,
+   "photo": 0.8909,
+   "fit": 0.779,
    "how": "saliency",
    "notes": [
-    "tiny subject"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [],
+   "flags": [
+    "low word prob 0.35"
+   ],
    "origin": "search:house mouse",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|PENGUIN": {
    "title": "File:Magellanic penguin, Valdes Peninsula, e.jpg",
@@ -423,7 +429,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:penguin animal",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "animals|FOX": {
@@ -492,17 +498,21 @@
    "forced": false
   },
   "fruits|GRAPE": {
-   "title": "File:Grapes, Dry Creek Valley-7705.jpg",
-   "final": 1.399,
-   "p": 1.0,
-   "photo": 0.9986,
-   "fit": 1.0,
+   "title": "File:Pinot Grigio-20201027-RM-114053.jpg",
+   "final": 1.219,
+   "p": 0.9974,
+   "photo": 0.9996,
+   "fit": 0.64,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
    "origin": "search:grapes fruit",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "fruits|MANGO": {
    "title": "File:An unripe mango in jaffna.JPG",
@@ -603,19 +613,22 @@
    "forced": false
   },
   "fruits|MELON": {
-   "title": "File:Picture of a melon plant.jpg",
-   "final": 1.079,
-   "p": 0.4946,
-   "photo": 0.9976,
-   "fit": 1.0,
+   "title": "File:A hami melon for sale at a Publix market in Knoxville, Tennessee.jpg",
+   "final": 0.612,
+   "p": 0.0123,
+   "photo": 0.9707,
+   "fit": 0.427,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.71)"
+   ],
    "flags": [
-    "low word prob 0.49"
+    "low word prob 0.01",
+    "fit 0.43"
    ],
    "origin": "search:melon fruit",
-   "n_cands": 7,
-   "forced": false
+   "n_cands": 8,
+   "forced": true
   },
   "fruits|GUAVA": {
    "title": "File:Goiaba vermelha.jpg",
@@ -2176,51 +2189,59 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "animals|DOLPHIN": {
-   "title": "File:Tursiops truncatus 01.jpg",
-   "final": 1.32,
-   "p": 1.0,
-   "photo": 0.8921,
+   "title": "File:Eilat Dolphin Reef (1).jpg",
+   "final": 1.329,
+   "p": 0.9994,
+   "photo": 0.6978,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "animals|BEE": {
-   "title": "File:The Lone Pollinator.jpg",
-   "final": 1.354,
-   "p": 0.9995,
-   "photo": 0.9096,
+   "title": "File:Bee on Lavender Blossom 2.jpg",
+   "final": 1.38,
+   "p": 0.9993,
+   "photo": 0.998,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "fruits|LEMON": {
-   "status": "no candidates"
-  },
-  "fruits|WATERMELON": {
-   "title": "File:Taiwan 2009 Tainan City Organic Farm Watermelon FRD 7962.jpg",
-   "final": 1.113,
-   "p": 0.4274,
-   "photo": 0.9976,
+   "title": "File:Zitrone -- 2025 -- 7288.jpg",
+   "final": 1.397,
+   "p": 0.9948,
+   "photo": 0.998,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [
-    "low word prob 0.43"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|WATERMELON": {
+   "title": "File:Watermelon Bahar1.jpg",
+   "final": 1.34,
+   "p": 0.9367,
+   "photo": 0.9841,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:watermelon fruit",
+   "n_cands": 10,
    "forced": false
   },
   "fruits|COCONUT": {
@@ -2233,7 +2254,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "fruits|PEAR": {
@@ -2246,20 +2267,20 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "fruits|AVOCADO": {
-   "title": "File:Persea americana fruit 2.JPG",
-   "final": 1.307,
-   "p": 0.9921,
-   "photo": 0.9999,
+   "title": "File:Avocado-in-bowl.jpg",
+   "final": 1.377,
+   "p": 1.0,
+   "photo": 0.9993,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:avocado fruit",
+   "n_cands": 10,
    "forced": false
   },
   "fruits|LYCHEE": {
@@ -2272,7 +2293,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "fruits|JACKFRUIT": {
@@ -2285,7 +2306,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "food|CARROT": {
@@ -4410,17 +4431,21 @@
    "forced": false
   },
   "animals|GIRAFFE": {
-   "title": "File:015a Angolan giraffe silhouette at sunrise in the Kalahari Desert of Namibia Photo by Giles Laurent.jpg",
-   "final": 1.318,
-   "p": 0.9993,
-   "photo": 0.9923,
-   "fit": 1.0,
+   "title": "File:Giraffe Ithala KZN South Africa Luca Galuzzi 2004.JPG",
+   "final": 1.172,
+   "p": 1.0,
+   "photo": 0.9992,
+   "fit": 0.549,
    "how": "yolo:giraffe",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.91)"
+   ],
+   "flags": [
+    "fit 0.55"
+   ],
    "origin": "search:giraffe animal",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "animals|ZEBRA": {
    "title": "File:Equus quagga (Namutoni, 2012).jpg",
@@ -4481,22 +4506,21 @@
    "forced": false
   },
   "animals|CROCODILE": {
-   "title": "File:Nile crocodile head.jpg",
-   "final": 0.985,
+   "title": "File:Mugger crocodile (Crocodylus palustris) Gal Oya.jpg",
+   "final": 0.944,
    "p": 1.0,
-   "photo": 0.9763,
-   "fit": 0.195,
+   "photo": 0.9871,
+   "fit": 0.291,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.54)"
+    "subject cannot fit 3:4 (box cov 0.49)"
    ],
    "flags": [
-    "fit 0.20"
+    "fit 0.29"
    ],
-   "origin": "current",
+   "origin": "search:crocodile",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|KANGAROO": {
    "title": "File:Kangaroo1.jpg",
@@ -4531,17 +4555,21 @@
    "forced": false
   },
   "animals|SPIDER": {
-   "title": "File:Hippasa holmerae (Lawn wolf spider) in its funnel web (2).jpg",
-   "final": 1.298,
-   "p": 0.9997,
-   "photo": 0.9835,
-   "fit": 1.0,
+   "title": "File:Araneus diadematus (Clerck, 1757).JPG",
+   "final": 1.064,
+   "p": 1.0,
+   "photo": 0.833,
+   "fit": 0.399,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:spider animal",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.67)"
+   ],
+   "flags": [
+    "fit 0.40"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "food|FRIED RICE": {
    "title": "File:HK YTM Jordan Road n Canton Road 青葉海鮮酒家 Holly Seafood Restaurant diner food 濕炒飯 Fried rice June 2025 R12S 04.jpg",
@@ -6185,7 +6213,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "fruits|PLUM": {
@@ -6215,7 +6243,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "school|BLACKBOARD": {
@@ -8333,22 +8361,21 @@
    "forced": false
   },
   "animals|CHEETAH": {
-   "title": "File:037 Cheetah close-up in the Serengeti National Park Photo by Giles Laurent.jpg",
-   "final": 1.029,
-   "p": 0.9985,
-   "photo": 0.8483,
-   "fit": 0.321,
+   "title": "File:Male cheetah facing left in South Africa.jpg",
+   "final": 1.146,
+   "p": 0.9775,
+   "photo": 0.944,
+   "fit": 0.538,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.89)"
+    "subject cannot fit 3:4 (box cov 0.90)"
    ],
    "flags": [
-    "fit 0.32"
+    "fit 0.54"
    ],
-   "origin": "search:cheetah animal",
-   "n_cands": 7,
-   "forced": false
+   "origin": "current",
+   "n_cands": 8,
+   "forced": true
   },
   "animals|BUFFALO": {
    "title": "File:Bubalus bubalis (water buffalo) calf, looking at the viewer, the feet in a pond, in Laos.jpg",
@@ -8451,7 +8478,7 @@
     "fit 0.60"
    ],
    "origin": "search:sloth animal",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "animals|RACCOON": {
@@ -8481,17 +8508,21 @@
    "forced": false
   },
   "animals|SEAL": {
-   "title": "File:Atlantic Harbor Seal outside of the New England Aquarium.jpg",
-   "final": 1.284,
-   "p": 0.9944,
-   "photo": 0.9345,
-   "fit": 1.0,
+   "title": "File:Common seal (Phoca vitulina) 2.jpg",
+   "final": 1.069,
+   "p": 0.9981,
+   "photo": 0.9993,
+   "fit": 0.516,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:harbor seal",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.86)"
+   ],
+   "flags": [
+    "fit 0.52"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|WALRUS": {
    "title": "File:Walrus in the Russian Arctic National Park, Novaya Zemlya 2015-2.jpg",
@@ -8524,30 +8555,38 @@
    "forced": false
   },
   "animals|REINDEER": {
-   "title": "File:Rufford Abbey Country Park – animal grave with reindeer - geograph.org.uk - 6336114.jpg",
-   "final": 1.214,
-   "p": 0.9729,
-   "photo": 0.9681,
-   "fit": 1.0,
+   "title": "File:Reinbukken på frisk grønt beite. - panoramio.jpg",
+   "final": 1.098,
+   "p": 0.9923,
+   "photo": 0.9778,
+   "fit": 0.497,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:reindeer animal",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.83)"
+   ],
+   "flags": [
+    "fit 0.50"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|MOOSE": {
-   "title": "File:Antique Cars Moose Animal Attraction.jpg",
-   "final": 1.197,
-   "p": 0.9231,
-   "photo": 0.8068,
-   "fit": 1.0,
-   "how": "yolo:horse",
-   "notes": [],
-   "flags": [],
-   "origin": "search:moose animal",
+   "title": "File:Alaska moose.jpg",
+   "final": 1.092,
+   "p": 0.9983,
+   "photo": 0.9957,
+   "fit": 0.388,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.65)"
+   ],
+   "flags": [
+    "fit 0.39"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|BISON": {
    "title": "File:Image-American bison rests at hot spring in yellowstone national park 1.jpg",
@@ -8578,51 +8617,51 @@
    "forced": false
   },
   "animals|PARROT": {
-   "title": "File:Rainbow lorikeet (Trichoglossus moluccanus moluccanus) Sydney.jpg",
-   "final": 1.363,
-   "p": 0.9759,
-   "photo": 0.9887,
+   "title": "File:Red-lored parrot (Amazona autumnalis salvini) feeding.jpg",
+   "final": 1.385,
+   "p": 0.9987,
+   "photo": 0.9931,
    "fit": 1.0,
    "how": "yolo:bird",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "animals|PEACOCK": {
-   "title": "File:Peacock Plumage.jpg",
-   "final": 1.199,
-   "p": 1.0,
-   "photo": 0.9928,
-   "fit": 0.6,
+   "title": "File:Peacock at Heaton Park Animal Centre - geograph.org.uk - 4787456.jpg",
+   "final": 1.078,
+   "p": 0.9995,
+   "photo": 0.9913,
+   "fit": 0.36,
    "how": "yolo:bird",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "fit 0.60"
+    "fit 0.36"
    ],
-   "origin": "current",
+   "origin": "search:peacock animal",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "animals|FLAMINGO": {
-   "title": "File:Chilean flamingo at the Hoenderdaell animal park in Anna Paulowna 6.jpg",
-   "final": 1.167,
-   "p": 0.9989,
-   "photo": 0.9346,
-   "fit": 0.562,
+   "title": "File:Chilean flamingo at the Hoenderdaell animal park in Anna Paulowna 1.jpg",
+   "final": 1.147,
+   "p": 0.9897,
+   "photo": 0.8783,
+   "fit": 0.554,
    "how": "yolo:bird",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.94)"
+    "subject cannot fit 3:4 (box cov 0.92)"
    ],
    "flags": [
-    "fit 0.56"
+    "fit 0.55"
    ],
    "origin": "search:flamingo animal",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "animals|EAGLE": {
    "title": "File:White tailed eagle raftsund square crop.jpg",
@@ -8640,17 +8679,21 @@
    "forced": false
   },
   "animals|SWAN": {
-   "title": "File:Mute swan cygnet pontoon in Prospect Park (80364).jpg",
-   "final": 1.202,
-   "p": 0.8551,
-   "photo": 0.9985,
-   "fit": 1.0,
+   "title": "File:CygneVaires.jpg",
+   "final": 1.113,
+   "p": 0.996,
+   "photo": 0.9932,
+   "fit": 0.449,
    "how": "yolo:bird",
-   "notes": [],
-   "flags": [],
-   "origin": "search:swan animal",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.75)"
+   ],
+   "flags": [
+    "fit 0.45"
+   ],
+   "origin": "current",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "animals|GOOSE": {
    "title": "File:Domestic Goose.jpg",
@@ -8681,17 +8724,19 @@
    "forced": false
   },
   "animals|ROOSTER": {
-   "title": "File:Rooster tethered in a backyard raising area with small rooster houses, Malabrigo, Batangas, Philippines (2025).jpg",
-   "final": 1.32,
-   "p": 0.8715,
-   "photo": 0.9791,
+   "title": "File:Male and female chicken sitting together.jpg",
+   "final": 0.982,
+   "p": 0.2012,
+   "photo": 0.9957,
    "fit": 1.0,
-   "how": "saliency",
+   "how": "yolo:bird",
    "notes": [],
-   "flags": [],
-   "origin": "search:rooster",
+   "flags": [
+    "low word prob 0.20"
+   ],
+   "origin": "current",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "animals|PIGEON": {
    "title": "File:New Zealand pigeon (Hemiphaga novaeseelandiae) Waitakere.jpg",
@@ -8871,32 +8916,34 @@
    "forced": false
   },
   "animals|SEAHORSE": {
-   "title": "File:Hippocampus hippocampus (on Ascophyllum nodosum).jpg",
-   "final": 1.306,
-   "p": 0.9998,
-   "photo": 0.9923,
+   "title": "File:Caballito de mar pigmeo (Hippocampus bargibanti), Anilao, Filipinas, 2023-08-25, DD 27.jpg",
+   "final": 1.367,
+   "p": 0.963,
+   "photo": 0.993,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 6,
    "forced": false
   },
   "animals|SHRIMP": {
-   "title": "File:Camarón (Ancylocaris brevicarpalis), Zanzíbar, Tanzania, 2024-05-30, DD 32.jpg",
-   "final": 1.213,
-   "p": 0.9993,
-   "photo": 0.9989,
-   "fit": 0.75,
+   "title": "File:A heap of shrimp shells on a plate in Tuntorp 1.jpg",
+   "final": 1.061,
+   "p": 0.9998,
+   "photo": 0.9923,
+   "fit": 0.332,
    "how": "saliency",
    "notes": [
-    "tiny subject"
+    "subject cannot fit 3:4 (box cov 0.55)"
    ],
-   "flags": [],
+   "flags": [
+    "fit 0.33"
+   ],
    "origin": "search:shrimp",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|LOBSTER": {
    "title": "File:KreeftbijDenOsse.jpg",
@@ -8942,16 +8989,16 @@
    "forced": false
   },
   "animals|EEL": {
-   "title": "File:New Zealand longfin eel (Anguilla dieffenbachii) Piha.jpg",
-   "final": 1.287,
-   "p": 0.9894,
-   "photo": 0.9335,
+   "title": "File:Morena del Mediterráneo (Muraena helena), Regga, Gozo, Malta, 2021-08-23, DD 14.jpg",
+   "final": 1.31,
+   "p": 0.9748,
+   "photo": 0.997,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "animals|LADYBUG": {
@@ -8968,30 +9015,36 @@
    "forced": false
   },
   "animals|DRAGONFLY": {
-   "title": "File:Common darter dragonflies (Sympetrum striolatum) mating blue abdomen and red pterostigma.JPG",
-   "final": 1.361,
-   "p": 0.9999,
-   "photo": 0.9802,
-   "fit": 1.0,
+   "title": "File:Red grasshawk (Neurothemis fluctuans) male Phuket 2.jpg",
+   "final": 1.291,
+   "p": 0.9998,
+   "photo": 0.9964,
+   "fit": 0.784,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [],
-   "origin": "search:dragonfly animal",
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|GRASSHOPPER": {
-   "title": "File:Neorthacris simulans-Kadavoor-2016-09-13-002.jpg",
-   "final": 1.399,
-   "p": 0.9993,
-   "photo": 0.9978,
-   "fit": 1.0,
+   "title": "File:American Bird Grasshopper.jpg",
+   "final": 1.042,
+   "p": 0.9999,
+   "photo": 0.9906,
+   "fit": 0.328,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:grasshopper animal",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.55)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|MOSQUITO": {
    "title": "File:Mosquito larva2.jpg",
@@ -9060,7 +9113,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:snail",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "animals|CATERPILLAR": {
@@ -9077,17 +9130,19 @@
    "forced": false
   },
   "animals|SCORPION": {
-   "title": "File:Scorpion MET 1981.459.1.jpeg",
-   "final": 1.296,
-   "p": 0.9973,
-   "photo": 0.9706,
-   "fit": 1.0,
+   "title": "File:Androctonus bicolor.jpg",
+   "final": 1.184,
+   "p": 1.0,
+   "photo": 0.9907,
+   "fit": 0.772,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [],
    "origin": "search:scorpion animal",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "animals|PUPPY": {
    "title": "File:Golde33443.jpg",
@@ -9108,21 +9163,22 @@
    "forced": false
   },
   "animals|KITTEN": {
-   "title": "File:Oriental shorthair kitten.jpg",
-   "final": 0.922,
-   "p": 0.868,
-   "photo": 0.9876,
-   "fit": 0.337,
+   "title": "File:Juvenile Ragdoll.jpg",
+   "final": 0.871,
+   "p": 0.9976,
+   "photo": 0.506,
+   "fit": 0.342,
    "how": "yolo:cat",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.56)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.95)"
    ],
    "flags": [
     "fit 0.34"
    ],
-   "origin": "search:kitten",
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "food|STEAK": {
    "title": "File:SZ 深圳 Shenzhen 南山區 Nanshan 沙河西路 Shahe West Road shop 49.9 Beef BBQ Restaurant food pork n beef steak October 2025 R12S 06.jpg",
@@ -14698,22 +14754,21 @@
    "forced": false
   },
   "fruits|SUGARCANE": {
-   "title": "File:Mixed Indigenous Food Crops.jpg",
-   "final": 0.933,
-   "p": 0.931,
-   "photo": 0.7488,
-   "fit": 0.418,
-   "how": "none",
+   "title": "File:Red Sugarcane.jpg",
+   "final": 0.812,
+   "p": 1.0,
+   "photo": 0.2161,
+   "fit": 0.813,
+   "how": "saliency",
    "notes": [
-    "no subject found",
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.42"
+    "not photo-like 0.22"
    ],
    "origin": "search:sugarcane stalks",
    "n_cands": 10,
-   "forced": false
+   "forced": true
   },
   "fruits|RAISIN": {
    "title": "File:2023 Rodzynki (2).jpg",
@@ -14729,7 +14784,7 @@
     "fit 0.54"
    ],
    "origin": "search:QI",
-   "n_cands": 9,
+   "n_cands": 10,
    "forced": false
   },
   "weather|TORNADO": {
@@ -23769,21 +23824,23 @@
    "forced": false
   },
   "fruits|TANGERINE": {
-   "title": "File:Tangerine halves.jpg",
-   "final": 1.008,
-   "p": 0.9775,
-   "photo": 0.8957,
-   "fit": 0.281,
+   "title": "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2666.jpg",
+   "final": 0.62,
+   "p": 0.3245,
+   "photo": 0.9833,
+   "fit": 0.123,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.47)"
+    "touches 4 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.50)"
    ],
    "flags": [
-    "fit 0.28"
+    "low word prob 0.32",
+    "fit 0.12"
    ],
    "origin": "search:QI",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "fruits|GRAPEFRUIT": {
    "title": "File:Citrus paradisi (Grapefruit, pink) white bg.jpg",
@@ -23991,19 +24048,23 @@
    "forced": false
   },
   "fruits|BREADFRUIT": {
-   "title": "File:Parts of Breadfruit.png",
-   "final": 1.296,
-   "p": 0.9998,
-   "photo": 0.9933,
-   "fit": 0.8,
+   "title": "File:Breadfruit at fruit store in Brisbane, 2021.jpg",
+   "final": 0.5,
+   "p": 0.0737,
+   "photo": 0.984,
+   "fit": 0.296,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.62)"
    ],
-   "flags": [],
+   "flags": [
+    "low word prob 0.07",
+    "fit 0.30"
+   ],
    "origin": "search:breadfruit fruit",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "fruits|MARIAN PLUM": {
    "title": "File:Marian plum fruits.jpg",
@@ -24024,10 +24085,10 @@
    "forced": false
   },
   "fruits|PRUNE": {
-   "title": "File:Plums - The Fruit Bowl, Brighton 2023-08-23.jpg",
-   "final": 0.781,
-   "p": 0.0,
-   "photo": 0.9981,
+   "title": "File:Prune de 200.jpg",
+   "final": 0.756,
+   "p": 0.0009,
+   "photo": 0.9985,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -24036,22 +24097,25 @@
    ],
    "origin": "search:prune fruit",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "fruits|DRIED MANGO": {
-   "title": "File:Cincinnati CBP Agriculture Finds Two Tons of Prohibited Fruit (39779487655).jpg",
-   "final": 0.707,
-   "p": 0.0,
-   "photo": 0.8695,
-   "fit": 1.0,
+   "title": "File:Dried mango pineapple and melon.jpg",
+   "final": 0.572,
+   "p": 0.0033,
+   "photo": 0.9547,
+   "fit": 0.387,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.65)"
+   ],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.00",
+    "fit 0.39"
    ],
    "origin": "search:dried mango fruit",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "fruits|FRUIT SALAD": {
    "title": "File:Ehrenbach, fruit salad with wild blackberries.jpg",
@@ -29041,6 +29105,7 @@
   "animals|BUTTERFLY",
   "animals|CAT",
   "animals|CHEETAH",
+  "animals|COW",
   "animals|CRAB",
   "animals|CROCODILE",
   "animals|DOG",
@@ -29048,17 +29113,28 @@
   "animals|DUCK",
   "animals|FLAMINGO",
   "animals|GECKO",
+  "animals|GIRAFFE",
+  "animals|GRASSHOPPER",
   "animals|KITTEN",
   "animals|LIZARD",
   "animals|LOBSTER",
+  "animals|MOOSE",
   "animals|MOSQUITO",
+  "animals|MOUSE",
   "animals|PEACOCK",
   "animals|PUPPY",
+  "animals|REINDEER",
+  "animals|ROOSTER",
+  "animals|SEAL",
   "animals|SHARK",
   "animals|SHEEP",
+  "animals|SHRIMP",
   "animals|SLOTH",
   "animals|SNAKE",
   "animals|SPARROW",
+  "animals|SPIDER",
+  "animals|SWAN",
+  "animals|TIGER",
   "animals|TORTOISE",
   "animals|WALRUS",
   "body|ANKLE",
@@ -29354,9 +29430,10 @@
   "food|TOAST",
   "food|YOGURT",
   "fruits|APPLE",
+  "fruits|BREADFRUIT",
   "fruits|DRIED MANGO",
+  "fruits|GRAPE",
   "fruits|GRAPEFRUIT",
-  "fruits|LEMON",
   "fruits|LONGKONG",
   "fruits|MARIAN PLUM",
   "fruits|MELON",
@@ -29372,7 +29449,6 @@
   "fruits|STRAWBERRY",
   "fruits|SUGARCANE",
   "fruits|TANGERINE",
-  "fruits|WATERMELON",
   "home|AIR CONDITIONER",
   "home|BATH",
   "home|BED",
@@ -30036,7 +30112,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1890,
-  "flagged": 1071
+  "with_photo": 1891,
+  "flagged": 1083
  }
 }

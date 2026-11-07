@@ -722,10 +722,10 @@
  },
  "animals|BEE": {
   "file": "w/animals__bee.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:The_Lone_Pollinator.jpg",
-  "author": "Tanner Smida",
-  "license": "CC BY 4.0",
-  "score": 1.354
+  "src": "https://commons.wikimedia.org/wiki/File:Bee_on_Lavender_Blossom_2.jpg",
+  "author": "Martin Falbisoner",
+  "license": "CC BY-SA 4.0",
+  "score": 1.38
  },
  "animals|BIRD": {
   "file": "w/animals__bird.jpg",
@@ -785,10 +785,10 @@
  },
  "animals|CHEETAH": {
   "file": "w/animals__cheetah.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:037_Cheetah_close-up_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
-  "author": "Giles Laurent",
+  "src": "https://commons.wikimedia.org/wiki/File:Male_cheetah_facing_left_in_South_Africa.jpg",
+  "author": "AfricanConservation",
   "license": "CC BY-SA 4.0",
-  "score": 1.029
+  "score": 1.146
  },
  "animals|CHICKEN": {
   "file": "w/animals__chicken.jpg",
@@ -813,10 +813,10 @@
  },
  "animals|COW": {
   "file": "w/animals__cow.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Anjarle_Bridge_and_Cows-fix.jpg",
-  "author": "Photographer: Dey.sandip Additional Credit: User Atention for water spot removal.",
-  "license": "CC BY-SA 3.0",
-  "score": 1.156
+  "src": "https://commons.wikimedia.org/wiki/File:Cow_female_black_white.jpg",
+  "author": "Keith Weller/USDA",
+  "license": "Public domain",
+  "score": 1.034
  },
  "animals|CRAB": {
   "file": "w/animals__crab.jpg",
@@ -827,10 +827,10 @@
  },
  "animals|CROCODILE": {
   "file": "w/animals__crocodile.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Nile_crocodile_head.jpg",
-  "author": "Leigh Bedford",
-  "license": "CC BY 2.0",
-  "score": 0.985
+  "src": "https://commons.wikimedia.org/wiki/File:Mugger_crocodile_(Crocodylus_palustris)_Gal_Oya.jpg",
+  "author": "Charles J. Sharp",
+  "license": "CC BY-SA 4.0",
+  "score": 0.944
  },
  "animals|CROW": {
   "file": "w/animals__crow.jpg",
@@ -855,17 +855,17 @@
  },
  "animals|DOG": {
   "file": "w/animals__dog.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Liver_yellow_dog_in_the_water_looking_at_viewer_at_golden_hour_in_Don_Det_Laos.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Human%E2%80%93canine_friendship_-_girl_hugging_her_dog_tightly_at_golden_hour_in_Laos.jpg",
   "author": "Basile Morin",
   "license": "CC BY-SA 4.0",
-  "score": 1.086
+  "score": 0.851
  },
  "animals|DOLPHIN": {
   "file": "w/animals__dolphin.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Tursiops_truncatus_01.jpg",
-  "author": "NASA",
-  "license": "Public domain",
-  "score": 1.32
+  "src": "https://commons.wikimedia.org/wiki/File:Eilat_Dolphin_Reef_(1).jpg",
+  "author": "טל שמע",
+  "license": "CC BY-SA 4.0",
+  "score": 1.329
  },
  "animals|DONKEY": {
   "file": "w/animals__donkey.jpg",
@@ -876,10 +876,10 @@
  },
  "animals|DRAGONFLY": {
   "file": "w/animals__dragonfly.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Common_darter_dragonflies_(Sympetrum_striolatum)_mating_blue_abdomen_and_red_pterostigma.JPG",
+  "src": "https://commons.wikimedia.org/wiki/File:Red_grasshawk_(Neurothemis_fluctuans)_male_Phuket_2.jpg",
   "author": "Charles J. Sharp",
   "license": "CC BY-SA 4.0",
-  "score": 1.361
+  "score": 1.291
  },
  "animals|DUCK": {
   "file": "w/animals__duck.jpg",
@@ -897,10 +897,10 @@
  },
  "animals|EEL": {
   "file": "w/animals__eel.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:New_Zealand_longfin_eel_(Anguilla_dieffenbachii)_Piha.jpg",
-  "author": "Charles J. Sharp",
+  "src": "https://commons.wikimedia.org/wiki/File:Morena_del_Mediterr%C3%A1neo_(Muraena_helena),_Regga,_Gozo,_Malta,_2021-08-23,_DD_14.jpg",
+  "author": "Diego Delso",
   "license": "CC BY-SA 4.0",
-  "score": 1.287
+  "score": 1.31
  },
  "animals|ELEPHANT": {
   "file": "w/animals__elephant.jpg",
@@ -918,10 +918,10 @@
  },
  "animals|FLAMINGO": {
   "file": "w/animals__flamingo.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Chilean_flamingo_at_the_Hoenderdaell_animal_park_in_Anna_Paulowna_6.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chilean_flamingo_at_the_Hoenderdaell_animal_park_in_Anna_Paulowna_1.jpg",
   "author": "René Cortin",
   "license": "CC BY-SA 4.0",
-  "score": 1.167
+  "score": 1.147
  },
  "animals|FLY": {
   "file": "w/animals__fly.jpg",
@@ -953,10 +953,10 @@
  },
  "animals|GIRAFFE": {
   "file": "w/animals__giraffe.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:015a_Angolan_giraffe_silhouette_at_sunrise_in_the_Kalahari_Desert_of_Namibia_Photo_by_Giles_Laurent.jpg",
-  "author": "Giles Laurent",
-  "license": "CC BY-SA 4.0",
-  "score": 1.318
+  "src": "https://commons.wikimedia.org/wiki/File:Giraffe_Ithala_KZN_South_Africa_Luca_Galuzzi_2004.JPG",
+  "author": "Luca Galuzzi ( Lucag )",
+  "license": "CC BY-SA 2.5",
+  "score": 1.172
  },
  "animals|GOAT": {
   "file": "w/animals__goat.jpg",
@@ -981,10 +981,10 @@
  },
  "animals|GRASSHOPPER": {
   "file": "w/animals__grasshopper.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Neorthacris_simulans-Kadavoor-2016-09-13-002.jpg",
-  "author": "Jeevan Jose, Kerala, India",
-  "license": "CC BY-SA 4.0",
-  "score": 1.399
+  "src": "https://commons.wikimedia.org/wiki/File:American_Bird_Grasshopper.jpg",
+  "author": "http://www.birdphotos.com",
+  "license": "CC BY 3.0",
+  "score": 1.042
  },
  "animals|HEDGEHOG": {
   "file": "w/animals__hedgehog.jpg",
@@ -1030,10 +1030,10 @@
  },
  "animals|KITTEN": {
   "file": "w/animals__kitten.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Oriental_shorthair_kitten.jpg",
-  "author": "Felinlove",
+  "src": "https://commons.wikimedia.org/wiki/File:Juvenile_Ragdoll.jpg",
+  "author": "Leijurv",
   "license": "CC BY-SA 4.0",
-  "score": 0.922
+  "score": 0.871
  },
  "animals|KOALA": {
   "file": "w/animals__koala.jpg",
@@ -1093,10 +1093,10 @@
  },
  "animals|MOOSE": {
   "file": "w/animals__moose.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Antique_Cars_Moose_Animal_Attraction.jpg",
-  "author": "EgorovaSvetlana",
+  "src": "https://commons.wikimedia.org/wiki/File:Alaska_moose.jpg",
+  "author": "Paxson Woelber",
   "license": "CC BY-SA 4.0",
-  "score": 1.197
+  "score": 1.092
  },
  "animals|MOSQUITO": {
   "file": "w/animals__mosquito.jpg",
@@ -1107,10 +1107,10 @@
  },
  "animals|MOUSE": {
   "file": "w/animals__mouse.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Mus_musculus_131536695.jpg",
-  "author": "kcthetc1",
-  "license": "CC0",
-  "score": 1.079
+  "src": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%BE%D0%BC%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D1%8B%D1%88%D1%8C_(Mus_musculus),_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg",
+  "author": "Dion Art",
+  "license": "CC BY-SA 4.0",
+  "score": 0.843
  },
  "animals|OCTOPUS": {
   "file": "w/animals__octopus.jpg",
@@ -1149,17 +1149,17 @@
  },
  "animals|PARROT": {
   "file": "w/animals__parrot.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Rainbow_lorikeet_(Trichoglossus_moluccanus_moluccanus)_Sydney.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Red-lored_parrot_(Amazona_autumnalis_salvini)_feeding.jpg",
   "author": "Charles J. Sharp",
   "license": "CC BY-SA 4.0",
-  "score": 1.363
+  "score": 1.385
  },
  "animals|PEACOCK": {
   "file": "w/animals__peacock.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Peacock_Plumage.jpg",
-  "author": "Jatin Sindhu",
-  "license": "CC BY-SA 4.0",
-  "score": 1.199
+  "src": "https://commons.wikimedia.org/wiki/File:Peacock_at_Heaton_Park_Animal_Centre_-_geograph.org.uk_-_4787456.jpg",
+  "author": "David Dixon",
+  "license": "CC BY-SA 2.0",
+  "score": 1.078
  },
  "animals|PENGUIN": {
   "file": "w/animals__penguin.jpg",
@@ -1212,10 +1212,10 @@
  },
  "animals|REINDEER": {
   "file": "w/animals__reindeer.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Rufford_Abbey_Country_Park_%E2%80%93_animal_grave_with_reindeer_-_geograph.org.uk_-_6336114.jpg",
-  "author": "Alan Murray-Rust",
-  "license": "CC BY-SA 2.0",
-  "score": 1.214
+  "src": "https://commons.wikimedia.org/wiki/File:Reinbukken_p%C3%A5_frisk_gr%C3%B8nt_beite._-_panoramio.jpg",
+  "author": "Are G Nilsen",
+  "license": "CC BY-SA 3.0",
+  "score": 1.098
  },
  "animals|RHINO": {
   "file": "w/animals__rhino.jpg",
@@ -1226,31 +1226,31 @@
  },
  "animals|ROOSTER": {
   "file": "w/animals__rooster.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Rooster_tethered_in_a_backyard_raising_area_with_small_rooster_houses,_Malabrigo,_Batangas,_Philippines_(2025).jpg",
-  "author": "Fiszi37",
-  "license": "CC0",
-  "score": 1.32
+  "src": "https://commons.wikimedia.org/wiki/File:Male_and_female_chicken_sitting_together.jpg",
+  "author": "Andrei Niemimäki from Turku, Finland",
+  "license": "CC BY-SA 2.0",
+  "score": 0.982
  },
  "animals|SCORPION": {
   "file": "w/animals__scorpion.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Scorpion_MET_1981.459.1.jpeg",
-  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
-  "license": "CC0",
-  "score": 1.296
+  "src": "https://commons.wikimedia.org/wiki/File:Androctonus_bicolor.jpg",
+  "author": "Guy Haimovitch",
+  "license": "CC BY-SA 3.0",
+  "score": 1.184
  },
  "animals|SEAHORSE": {
   "file": "w/animals__seahorse.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Hippocampus_hippocampus_(on_Ascophyllum_nodosum).jpg",
-  "author": "Hans Hillewaert",
+  "src": "https://commons.wikimedia.org/wiki/File:Caballito_de_mar_pigmeo_(Hippocampus_bargibanti),_Anilao,_Filipinas,_2023-08-25,_DD_27.jpg",
+  "author": "Diego Delso",
   "license": "CC BY-SA 4.0",
-  "score": 1.306
+  "score": 1.367
  },
  "animals|SEAL": {
   "file": "w/animals__seal.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Atlantic_Harbor_Seal_outside_of_the_New_England_Aquarium.jpg",
-  "author": "Lizzzz43",
-  "license": "CC0",
-  "score": 1.284
+  "src": "https://commons.wikimedia.org/wiki/File:Common_seal_(Phoca_vitulina)_2.jpg",
+  "author": "Charles J. Sharp",
+  "license": "CC BY-SA 4.0",
+  "score": 1.069
  },
  "animals|SHARK": {
   "file": "w/animals__shark.jpg",
@@ -1268,10 +1268,10 @@
  },
  "animals|SHRIMP": {
   "file": "w/animals__shrimp.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Camar%C3%B3n_(Ancylocaris_brevicarpalis),_Zanz%C3%ADbar,_Tanzania,_2024-05-30,_DD_32.jpg",
-  "author": "Diego Delso",
+  "src": "https://commons.wikimedia.org/wiki/File:A_heap_of_shrimp_shells_on_a_plate_in_Tuntorp_1.jpg",
+  "author": "W.carter",
   "license": "CC BY-SA 4.0",
-  "score": 1.213
+  "score": 1.061
  },
  "animals|SLOTH": {
   "file": "w/animals__sloth.jpg",
@@ -1303,10 +1303,10 @@
  },
  "animals|SPIDER": {
   "file": "w/animals__spider.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Hippasa_holmerae_(Lawn_wolf_spider)_in_its_funnel_web_(2).jpg",
-  "author": "Basile Morin",
-  "license": "CC BY-SA 4.0",
-  "score": 1.298
+  "src": "https://commons.wikimedia.org/wiki/File:Araneus_diadematus_(Clerck,_1757).JPG",
+  "author": "Michael Gäbler",
+  "license": "CC BY-SA 3.0",
+  "score": 1.064
  },
  "animals|SQUID": {
   "file": "w/animals__squid.jpg",
@@ -1331,17 +1331,17 @@
  },
  "animals|SWAN": {
   "file": "w/animals__swan.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Mute_swan_cygnet_pontoon_in_Prospect_Park_(80364).jpg",
-  "author": "Rhododendrites",
-  "license": "CC BY-SA 4.0",
-  "score": 1.202
+  "src": "https://commons.wikimedia.org/wiki/File:CygneVaires.jpg",
+  "author": "Sanchezn",
+  "license": "CC BY-SA 3.0",
+  "score": 1.113
  },
  "animals|TIGER": {
   "file": "w/animals__tiger.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_in_Sanjay_Dubri_Tiger_Reserve_December_2024_by_Tisha_Mukherjee_05.jpg",
-  "author": "Tisha Mukherjee",
+  "src": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_(Panthera_tigris_tigris)_female_3_crop.jpg",
+  "author": "Charles J. Sharp",
   "license": "CC BY-SA 4.0",
-  "score": 1.263
+  "score": 1.026
  },
  "animals|TORTOISE": {
   "file": "w/animals__tortoise.jpg",
@@ -4817,10 +4817,10 @@
  },
  "fruits|AVOCADO": {
   "file": "w/fruits__avocado.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Persea_americana_fruit_2.JPG",
-  "author": "B.navez",
-  "license": "CC BY-SA 3.0",
-  "score": 1.307
+  "src": "https://commons.wikimedia.org/wiki/File:Avocado-in-bowl.jpg",
+  "author": "Kjokkenutstyr",
+  "license": "CC BY 4.0",
+  "score": 1.377
  },
  "fruits|BANANA": {
   "file": "w/fruits__banana.jpg",
@@ -4845,10 +4845,10 @@
  },
  "fruits|BREADFRUIT": {
   "file": "w/fruits__breadfruit.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Parts_of_Breadfruit.png",
-  "author": "Paul-pladera",
-  "license": "CC0",
-  "score": 1.296
+  "src": "https://commons.wikimedia.org/wiki/File:Breadfruit_at_fruit_store_in_Brisbane,_2021.jpg",
+  "author": "Chris Olszewski",
+  "license": "CC BY-SA 4.0",
+  "score": 0.5
  },
  "fruits|CANTALOUPE": {
   "file": "w/fruits__cantaloupe.jpg",
@@ -4908,10 +4908,10 @@
  },
  "fruits|DRIED MANGO": {
   "file": "w/fruits__dried-mango.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Cincinnati_CBP_Agriculture_Finds_Two_Tons_of_Prohibited_Fruit_(39779487655).jpg",
-  "author": "CBP Photography",
-  "license": "Public domain",
-  "score": 0.707
+  "src": "https://commons.wikimedia.org/wiki/File:Dried_mango_pineapple_and_melon.jpg",
+  "author": "Weetjesman",
+  "license": "CC BY-SA 4.0",
+  "score": 0.572
  },
  "fruits|DURIAN": {
   "file": "w/fruits__durian.jpg",
@@ -4950,10 +4950,10 @@
  },
  "fruits|GRAPE": {
   "file": "w/fruits__grape.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Grapes,_Dry_Creek_Valley-7705.jpg",
-  "author": "Frank Schulenburg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pinot_Grigio-20201027-RM-114053.jpg",
+  "author": "Ermell",
   "license": "CC BY-SA 4.0",
-  "score": 1.399
+  "score": 1.219
  },
  "fruits|GRAPEFRUIT": {
   "file": "w/fruits__grapefruit.jpg",
@@ -5004,6 +5004,13 @@
   "license": "CC BY-SA 3.0",
   "score": 1.279
  },
+ "fruits|LEMON": {
+  "file": "w/fruits__lemon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Zitrone_--_2025_--_7288.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.397
+ },
  "fruits|LONGAN": {
   "file": "w/fruits__longan.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Dimocarpus_longan_fruits.jpg",
@@ -5048,10 +5055,10 @@
  },
  "fruits|MELON": {
   "file": "w/fruits__melon.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Picture_of_a_melon_plant.jpg",
-  "author": "Nubelbariloe",
+  "src": "https://commons.wikimedia.org/wiki/File:A_hami_melon_for_sale_at_a_Publix_market_in_Knoxville,_Tennessee.jpg",
+  "author": "Harrison Keely",
   "license": "CC BY 4.0",
-  "score": 1.079
+  "score": 0.612
  },
  "fruits|MULBERRY": {
   "file": "w/fruits__mulberry.jpg",
@@ -5153,10 +5160,10 @@
  },
  "fruits|PRUNE": {
   "file": "w/fruits__prune.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Plums_-_The_Fruit_Bowl,_Brighton_2023-08-23.jpg",
-  "author": "Andy Li",
-  "license": "CC0",
-  "score": 0.781
+  "src": "https://commons.wikimedia.org/wiki/File:Prune_de_200.jpg",
+  "author": "Le Zeno",
+  "license": "CC BY-SA 4.0",
+  "score": 0.756
  },
  "fruits|RAISIN": {
   "file": "w/fruits__raisin.jpg",
@@ -5244,10 +5251,10 @@
  },
  "fruits|SUGARCANE": {
   "file": "w/fruits__sugarcane.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Mixed_Indigenous_Food_Crops.jpg",
-  "author": "Paul The Writer",
-  "license": "CC0",
-  "score": 0.933
+  "src": "https://commons.wikimedia.org/wiki/File:Red_Sugarcane.jpg",
+  "author": "Nabunje Leticia",
+  "license": "CC BY-SA 4.0",
+  "score": 0.812
  },
  "fruits|TAMARIND": {
   "file": "w/fruits__tamarind.jpg",
@@ -5258,10 +5265,10 @@
  },
  "fruits|TANGERINE": {
   "file": "w/fruits__tangerine.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Tangerine_halves.jpg",
-  "author": "多多123",
-  "license": "CC BY 4.0",
-  "score": 1.008
+  "src": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Domplatz,_Wochenmarkt_--_2019_--_2666.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.62
  },
  "fruits|WALNUT": {
   "file": "w/fruits__walnut.jpg",
@@ -5272,10 +5279,10 @@
  },
  "fruits|WATERMELON": {
   "file": "w/fruits__watermelon.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg",
-  "author": "Fred Hsu ( Wikipedia:User:Fred Hsu on en.wikipedia )",
-  "license": "CC BY-SA 3.0",
-  "score": 1.113
+  "src": "https://commons.wikimedia.org/wiki/File:Watermelon_Bahar1.jpg",
+  "author": "Shams948",
+  "license": "CC BY-SA 4.0",
+  "score": 1.34
  },
  "home|AIR CONDITIONER": {
   "file": "w/home__air-conditioner.jpg",

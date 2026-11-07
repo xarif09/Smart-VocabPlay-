@@ -10345,6 +10345,27 @@
   "license": "CC BY-SA 3.0",
   "score": 1.177
  },
+ "vegetables|ARUGULA": {
+  "file": "w/vegetables__arugula.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:20211105-FPAC-PJK-5734_TONED.jpg",
+  "author": "USDAgov",
+  "license": "Public domain",
+  "score": 0.703
+ },
+ "vegetables|ASPARAGUS": {
+  "file": "w/vegetables__asparagus.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Green_Asparagus_New_York_11_May_2006.jpg",
+  "author": "RyanFreisling",
+  "license": "Public domain",
+  "score": 1.328
+ },
+ "vegetables|BABY CORN": {
+  "file": "w/vegetables__baby-corn.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Baby_corn_1.jpg",
+  "author": "Quinn Dombrowski",
+  "license": "CC BY-SA 2.0",
+  "score": 1.177
+ },
  "vegetables|BAMBOO SHOOT": {
   "file": "w/vegetables__bamboo-shoot.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bamboo_sprout2.JPG",
@@ -10358,6 +10379,20 @@
   "author": "",
   "license": "CC BY-SA 3.0",
   "score": 0.549
+ },
+ "vegetables|BEAN SPROUTS": {
+  "file": "w/vegetables__bean-sprouts.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:JP_%E6%97%A5%E6%9C%AC_Japan_%E6%B2%96%E7%B9%A9_OKINAWA_%E9%82%A3%E9%9C%B8_Naha_%E6%8B%89%E9%BA%B5%E5%BA%97_noodle_restaurant_%E9%A4%90%E5%89%8D%E5%B0%8F%E9%A3%9F_Vegetable-based_food_Mung_bean_sprouts_%E8%8A%BD%E8%8F%9C_Bean_sprouts_January_2025_R12S_01.jpg",
+  "author": "Naha Mama Pavilionz",
+  "license": "CC0",
+  "score": 1.28
+ },
+ "vegetables|BEANS": {
+  "file": "w/vegetables__beans.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Green_gram.jpg",
+  "author": "AntanO",
+  "license": "CC BY-SA 4.0",
+  "score": 0.72
  },
  "vegetables|BEETROOT": {
   "file": "w/vegetables__beetroot.jpg",
@@ -10373,6 +10408,41 @@
   "license": "CC BY-SA 3.0",
   "score": 1.002
  },
+ "vegetables|BITTER GOURD": {
+  "file": "w/vegetables__bitter-gourd.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ripe_bitter_melon_(Momordica_charantia).jpg",
+  "author": "Balaram Mahalder",
+  "license": "CC BY-SA 3.0",
+  "score": 1.213
+ },
+ "vegetables|BOK CHOY": {
+  "file": "w/vegetables__bok-choy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bok_choy_(51230144153).jpg",
+  "author": "Peter Burka",
+  "license": "CC BY-SA 2.0",
+  "score": 1.137
+ },
+ "vegetables|BRUSSELS SPROUTS": {
+  "file": "w/vegetables__brussels-sprouts.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Brussels_sprouts_on_the_stalk.jpg",
+  "author": "Jeffery Martin",
+  "license": "CC0",
+  "score": 1.334
+ },
+ "vegetables|CABBAGE": {
+  "file": "w/vegetables__cabbage.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Brassica_oleracea_2011_G1.jpg",
+  "author": "George Chernilevsky",
+  "license": "Public domain",
+  "score": 1.283
+ },
+ "vegetables|CASSAVA": {
+  "file": "w/vegetables__cassava.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_Farmer_Harvesting_Cassava_Root.jpg",
+  "author": "OnyekeEjike",
+  "license": "CC BY-SA 4.0",
+  "score": 1.168
+ },
  "vegetables|CAULIFLOWER": {
   "file": "w/vegetables__cauliflower.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Chou-fleur_02.jpg",
@@ -10386,6 +10456,48 @@
   "author": "Lombroso",
   "license": "Public domain",
   "score": 0.876
+ },
+ "vegetables|CHAYOTE": {
+  "file": "w/vegetables__chayote.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chayote_-_01.jpg",
+  "author": "Jeangagnon",
+  "license": "CC BY-SA 4.0",
+  "score": 1.29
+ },
+ "vegetables|CHICKPEA": {
+  "file": "w/vegetables__chickpea.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Algerian_Couscous_with_Vegetables.jpg",
+  "author": "HaJunkiyada",
+  "license": "CC BY-SA 4.0",
+  "score": 1.366
+ },
+ "vegetables|CHINESE CABBAGE": {
+  "file": "w/vegetables__chinese-cabbage.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chinese_cabbages.jpg",
+  "author": "Fumikas Sagisavas",
+  "license": "CC0",
+  "score": 0.909
+ },
+ "vegetables|CHIVES": {
+  "file": "w/vegetables__chives.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chinese_chives_(1).jpg",
+  "author": "Fumikas Sagisavas",
+  "license": "CC0",
+  "score": 1.249
+ },
+ "vegetables|CINNAMON": {
+  "file": "w/vegetables__cinnamon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Produce_from_Kisak%27s_Cinnamon_Hill.jpg",
+  "author": "Paul F. Kisak",
+  "license": "CC BY-SA 4.0",
+  "score": 0.559
+ },
+ "vegetables|CORIANDER": {
+  "file": "w/vegetables__coriander.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bunches_of_coriander_leaves.jpg",
+  "author": "Kpsudeep",
+  "license": "CC BY-SA 4.0",
+  "score": 0.895
  },
  "vegetables|CORN COB": {
   "file": "w/vegetables__corn-cob.jpg",
@@ -10401,12 +10513,33 @@
   "license": "Public domain",
   "score": 1.148
  },
+ "vegetables|DILL": {
+  "file": "w/vegetables__dill.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Big_Dill_pickle-shaped_chalk,_unknown_designer,_produced_by_Fred,_circa_2023,_11.4_x_3.5_x_3.5_cm,_sold_at_Urban_Outfitters_in_the_Aventura_Mall_in_Florida,_US.jpg",
+  "author": "Neoclassicism Enthusiast",
+  "license": "CC0",
+  "score": 1.213
+ },
+ "vegetables|EDAMAME": {
+  "file": "w/vegetables__edamame.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Asparagus_Stir_Fry_(49765791966).jpg",
+  "author": "spurekar",
+  "license": "CC BY 2.0",
+  "score": 1.236
+ },
  "vegetables|EGGPLANT": {
   "file": "w/vegetables__eggplant.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Solanum_melongena_24_08_2012_(1).JPG",
   "author": "Joydeep",
   "license": "CC BY-SA 3.0",
   "score": 1.101
+ },
+ "vegetables|ENOKI": {
+  "file": "w/vegetables__enoki.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hot_pot_19.03.16.jpg",
+  "author": "Bapak Alex",
+  "license": "CC BY 4.0",
+  "score": 1.051
  },
  "vegetables|GALANGAL": {
   "file": "w/vegetables__galangal.jpg",
@@ -10415,12 +10548,61 @@
   "license": "CC BY-SA 3.0",
   "score": 0.458
  },
+ "vegetables|GINGER": {
+  "file": "w/vegetables__ginger.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Fresh_Ginger_Root.jpg",
+  "author": "HaJunkiyada",
+  "license": "CC BY-SA 4.0",
+  "score": 1.211
+ },
+ "vegetables|IVY GOURD": {
+  "file": "w/vegetables__ivy-gourd.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ivy_gourd_(Coccinia_grandis)_flower_and_fruit,_Jharkhand,_India.jpg",
+  "author": "ᱤᱧ ᱢᱟᱛᱟᱞ",
+  "license": "CC BY-SA 3.0",
+  "score": 1.293
+ },
+ "vegetables|JICAMA": {
+  "file": "w/vegetables__jicama.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Jicama_in_a_bin.jpg",
+  "author": "Jeffery Martin",
+  "license": "CC0",
+  "score": 0.873
+ },
+ "vegetables|KALE": {
+  "file": "w/vegetables__kale.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lacinato_Kale.jpg",
+  "author": "SeanTwice",
+  "license": "CC0",
+  "score": 1.232
+ },
+ "vegetables|KOHLRABI": {
+  "file": "w/vegetables__kohlrabi.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chou-rave_11.jpg",
+  "author": "Coyau",
+  "license": "CC BY-SA 3.0",
+  "score": 1.274
+ },
+ "vegetables|LEEK": {
+  "file": "w/vegetables__leek.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Porre_Leek.jpg",
+  "author": "MortenCopenhagen at Danish Wikipedia",
+  "license": "Public domain",
+  "score": 0.888
+ },
  "vegetables|LEMONGRASS": {
   "file": "w/vegetables__lemongrass.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:YosriNov04Pokok_Serai.JPG",
   "author": "",
   "license": "CC BY 2.0",
   "score": 1.013
+ },
+ "vegetables|LENTIL": {
+  "file": "w/vegetables__lentil.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Red_lentil_soup_with_vegetables_and_dumpling.jpg",
+  "author": "HaJunkiyada",
+  "license": "CC BY-SA 4.0",
+  "score": 1.216
  },
  "vegetables|LETTUCE": {
   "file": "w/vegetables__lettuce.jpg",
@@ -10436,6 +10618,20 @@
   "license": "CC BY-SA 3.0",
   "score": 1.098
  },
+ "vegetables|LUFFA": {
+  "file": "w/vegetables__luffa.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Luffa_aegyptiaca_compose.jpg",
+  "author": "Uploaded by User:Tomas nevado (right photo), Jerry Crimson Mann (upper left photo), Rik Schuiling / TropCrop - Tropical Crops Services (bottom left photo), montage by User:RoRo .",
+  "license": "CC BY-SA 3.0",
+  "score": 1.306
+ },
+ "vegetables|MINT": {
+  "file": "w/vegetables__mint.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_mint_garden.jpg",
+  "author": "Catherine Amia",
+  "license": "CC BY-SA 4.0",
+  "score": 1.149
+ },
  "vegetables|MORNING GLORY": {
   "file": "w/vegetables__morning-glory.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:N_Ipoa_D1600.JPG",
@@ -10450,12 +10646,47 @@
   "license": "CC BY-SA 3.0",
   "score": 0.832
  },
+ "vegetables|OLIVE": {
+  "file": "w/vegetables__olive.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ground_beef,_Chinese_vegetables,_and_celery,_on_rotini,_with_garlic_olive_oil_and_black_pepper_-_Massachusetts.jpg",
+  "author": "Daderot",
+  "license": "CC0",
+  "score": 0.547
+ },
+ "vegetables|PANDAN": {
+  "file": "w/vegetables__pandan.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pandan_(screwpine)_leaves.JPG",
+  "author": "",
+  "license": "CC BY 1.0",
+  "score": 1.236
+ },
+ "vegetables|PARSLEY": {
+  "file": "w/vegetables__parsley.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Messer_mit_Kr%C3%A4utern_und_Schneidebrett-20090708-RM-193038.jpg",
+  "author": "Ermell",
+  "license": "CC BY-SA 4.0",
+  "score": 1.219
+ },
+ "vegetables|PARSNIP": {
+  "file": "w/vegetables__parsnip.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Parsnip_with_honey_and_mustard.JPG",
+  "author": "Takeaway",
+  "license": "CC BY-SA 3.0",
+  "score": 0.82
+ },
  "vegetables|PEAS": {
   "file": "w/vegetables__peas.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Doperwt_rijserwt_peulen_Pisum_sativum.jpg",
   "author": "Rasbak",
   "license": "CC BY-SA 3.0",
   "score": 0.575
+ },
+ "vegetables|PICKLE": {
+  "file": "w/vegetables__pickle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mixed_Pickle.jpg",
+  "author": "Gaurav Dhwaj Khadka",
+  "license": "CC BY-SA 4.0",
+  "score": 1.033
  },
  "vegetables|PUMPKIN": {
   "file": "w/vegetables__pumpkin.jpg",
@@ -10471,12 +10702,33 @@
   "license": "CC BY-SA 4.0",
   "score": 0.531
  },
+ "vegetables|ROSEMARY": {
+  "file": "w/vegetables__rosemary.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Rosemary_in_the_2017_War_Garden_(36436174106).jpg",
+  "author": "USCapitol from Washington, D.C., United States of America",
+  "license": "Public domain",
+  "score": 1.174
+ },
  "vegetables|SEAWEED SALAD": {
   "file": "w/vegetables__seaweed-salad.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_952_Undaria_pinnatifida_Japanese_kelp.jpg",
   "author": "division, CSIRO",
   "license": "CC BY 3.0",
   "score": 0.218
+ },
+ "vegetables|SESAME": {
+  "file": "w/vegetables__sesame.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Breakfast_bagel_sandwich_in_Tel_Aviv.jpg",
+  "author": "HaJunkiyada",
+  "license": "CC BY-SA 4.0",
+  "score": 1.085
+ },
+ "vegetables|SHALLOT": {
+  "file": "w/vegetables__shallot.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:These_are_onions.jpg",
+  "author": "Rhodadara",
+  "license": "CC BY-SA 4.0",
+  "score": 1.11
  },
  "vegetables|SHIITAKE": {
   "file": "w/vegetables__shiitake.jpg",
@@ -10499,6 +10751,13 @@
   "license": "Public domain",
   "score": 0.236
  },
+ "vegetables|SQUASH": {
+  "file": "w/vegetables__squash.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cucurbita_moschata_Butternut_2012_G2.jpg",
+  "author": "George Chernilevsky",
+  "license": "Public domain",
+  "score": 0.937
+ },
  "vegetables|STRAW MUSHROOM": {
   "file": "w/vegetables__straw-mushroom.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:StrawMushroom.jpg",
@@ -10520,6 +10779,13 @@
   "license": "CC BY-SA 2.5",
   "score": 0.468
  },
+ "vegetables|TURMERIC": {
+  "file": "w/vegetables__turmeric.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:TURMERIC_LUYANG_DILAW_AS_FOOD_SPICE_AND_TEA_QUENCHER.jpg",
+  "author": "Elmer Centeno Guevarra",
+  "license": "CC BY-SA 4.0",
+  "score": 1.119
+ },
  "vegetables|TURNIP": {
   "file": "w/vegetables__turnip.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Turnip_2622027.jpg",
@@ -10527,12 +10793,54 @@
   "license": "CC BY 2.0",
   "score": 0.928
  },
+ "vegetables|VEGETABLES": {
+  "file": "w/vegetables__vegetables.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD,_%D1%80%D1%8B%D0%BD%D0%BE%D0%BA_%D0%A7%D0%BE%D1%80%D1%81%D1%83,_%D0%BE%D0%B2%D0%BE%D1%89%D0%BD%D1%8B%D0%B5_%D1%80%D1%8F%D0%B4%D1%8B_(3).jpg",
+  "author": "ElenaLitera",
+  "license": "CC BY-SA 4.0",
+  "score": 0.858
+ },
+ "vegetables|WASABI": {
+  "file": "w/vegetables__wasabi.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Compare_Hikimi_Wasabi_Color_And_Taste.jpg",
+  "author": "MIURA, Yuji",
+  "license": "CC BY-SA 4.0",
+  "score": 0.971
+ },
+ "vegetables|WATER CHESTNUT": {
+  "file": "w/vegetables__water-chestnut.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Water_chestnut.jpg",
+  "author": "Teacher1943",
+  "license": "CC BY-SA 4.0",
+  "score": 1.024
+ },
+ "vegetables|WATERCRESS": {
+  "file": "w/vegetables__watercress.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Watercress_(1).JPG",
+  "author": "Masparasol",
+  "license": "CC BY 3.0",
+  "score": 0.865
+ },
+ "vegetables|WINGED BEAN": {
+  "file": "w/vegetables__winged-bean.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_flower_of_the_winged_bean.jpg",
+  "author": "Bim24",
+  "license": "CC0",
+  "score": 0.974
+ },
  "vegetables|WINTER MELON": {
   "file": "w/vegetables__winter-melon.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Benincasa_hispida_compose.jpg",
   "author": "Akshay.paramatmuni1987 (left photo), মৌচুমী (bottom right photo), Zhangzhugang (upper right photo), montage by User:RoRo",
   "license": "CC BY-SA 3.0",
   "score": 0.639
+ },
+ "vegetables|YAM": {
+  "file": "w/vegetables__yam.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Yam_porridge_with_vegetable_soup.jpg",
+  "author": "Bukky658",
+  "license": "CC BY-SA 4.0",
+  "score": 1.033
  },
  "vegetables|ZUCCHINI": {
   "file": "w/vegetables__zucchini.jpg",

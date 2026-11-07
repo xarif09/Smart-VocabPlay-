@@ -15059,7 +15059,19 @@
    "forced": false
   },
   "vegetables|CABBAGE": {
-   "status": "no candidates"
+   "title": "File:Brassica oleracea 2011 G1.jpg",
+   "final": 1.283,
+   "p": 0.9911,
+   "photo": 0.996,
+   "fit": 0.83,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 10,
+   "forced": false
   },
   "vegetables|LETTUCE": {
    "title": "File:Iceberg lettuce in SB.jpg",
@@ -15098,7 +15110,19 @@
    "forced": false
   },
   "vegetables|KALE": {
-   "status": "no candidates"
+   "title": "File:Lacinato Kale.jpg",
+   "final": 1.232,
+   "p": 1.0,
+   "photo": 0.9931,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:kale vegetable",
+   "n_cands": 10,
+   "forced": false
   },
   "vegetables|MORNING GLORY": {
    "title": "File:N Ipoa D1600.JPG",
@@ -15213,10 +15237,34 @@
    "forced": false
   },
   "vegetables|BEANS": {
-   "status": "no candidates"
+   "title": "File:Green gram.jpg",
+   "final": 0.72,
+   "p": 0.7637,
+   "photo": 0.9642,
+   "fit": 0.392,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.65)"
+   ],
+   "flags": [
+    "fit 0.39"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "vegetables|BEAN SPROUTS": {
-   "status": "no candidates"
+   "title": "File:JP 日本 Japan 沖繩 OKINAWA 那霸 Naha 拉麵店 noodle restaurant 餐前小食 Vegetable-based food Mung bean sprouts 芽菜 Bean sprouts January 2025 R12S 01.jpg",
+   "final": 1.28,
+   "p": 0.986,
+   "photo": 0.9368,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:bean sprouts",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|CAULIFLOWER": {
    "title": "File:Chou-fleur 02.jpg",
@@ -15309,10 +15357,32 @@
    "forced": false
   },
   "vegetables|CASSAVA": {
-   "status": "no candidates"
+   "title": "File:A Farmer Harvesting Cassava Root.jpg",
+   "final": 1.168,
+   "p": 0.9565,
+   "photo": 0.4451,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.45"
+   ],
+   "origin": "search:cassava root",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|GINGER": {
-   "status": "no candidates"
+   "title": "File:Liat Portal for Foodie Disorder - Fresh Ginger Root.jpg",
+   "final": 1.211,
+   "p": 0.8228,
+   "photo": 0.9942,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:ginger root",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|GALANGAL": {
    "title": "File:Gardenology.org-IMG 7562 qsbg11mar.jpg",
@@ -15368,7 +15438,22 @@
    "forced": false
   },
   "vegetables|CORIANDER": {
-   "status": "no candidates"
+   "title": "File:Bunches of coriander leaves.jpg",
+   "final": 0.895,
+   "p": 0.9962,
+   "photo": 0.9989,
+   "fit": 0.192,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.50)"
+   ],
+   "flags": [
+    "fit 0.19"
+   ],
+   "origin": "search:coriander leaves",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|SPRING ONION": {
    "title": "File:CSA-Red-Spring-Onions.jpg",
@@ -15406,7 +15491,17 @@
    "forced": false
   },
   "vegetables|BITTER GOURD": {
-   "status": "no candidates"
+   "title": "File:Ripe bitter melon (Momordica charantia).jpg",
+   "final": 1.213,
+   "p": 0.6777,
+   "photo": 0.9797,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|WINTER MELON": {
    "title": "File:Benincasa hispida compose.jpg",
@@ -15427,10 +15522,35 @@
    "forced": false
   },
   "vegetables|BABY CORN": {
-   "status": "no candidates"
+   "title": "File:Baby corn 1.jpg",
+   "final": 1.177,
+   "p": 0.977,
+   "photo": 0.8971,
+   "fit": 0.622,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.62"
+   ],
+   "origin": "search:baby corn",
+   "n_cands": 6,
+   "forced": false
   },
   "vegetables|ASPARAGUS": {
-   "status": "no candidates"
+   "title": "File:Green Asparagus New York 11 May 2006.jpg",
+   "final": 1.328,
+   "p": 0.9997,
+   "photo": 0.9895,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:asparagus vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|BAMBOO SHOOT": {
    "title": "File:Bamboo sprout2.JPG",
@@ -15577,7 +15697,19 @@
    "forced": false
   },
   "vegetables|VEGETABLES": {
-   "status": "no candidates"
+   "title": "File:Узбекистан, рынок Чорсу, овощные ряды (3).jpg",
+   "final": 0.858,
+   "p": 0.001,
+   "photo": 0.9209,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "technology|SMARTPHONE": {
    "status": "no candidates"
@@ -22957,103 +23089,531 @@
    "forced": false
   },
   "vegetables|CHINESE CABBAGE": {
-   "status": "no candidates"
+   "title": "File:Chinese cabbages.jpg",
+   "final": 0.909,
+   "p": 0.9538,
+   "photo": 0.8533,
+   "fit": 0.277,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.72)"
+   ],
+   "flags": [
+    "fit 0.28"
+   ],
+   "origin": "search:chinese cabbage vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|BOK CHOY": {
-   "status": "no candidates"
+   "title": "File:Bok choy (51230144153).jpg",
+   "final": 1.137,
+   "p": 0.9796,
+   "photo": 0.9655,
+   "fit": 0.512,
+   "how": "saliency",
+   "notes": [
+    "touches 3 edge(s)"
+   ],
+   "flags": [
+    "fit 0.51"
+   ],
+   "origin": "search:bok choy vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|LEEK": {
-   "status": "no candidates"
+   "title": "File:Porre Leek.jpg",
+   "final": 0.888,
+   "p": 0.9869,
+   "photo": 0.938,
+   "fit": 0.21,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.35)",
+    "upscaled x1.5"
+   ],
+   "flags": [
+    "fit 0.21"
+   ],
+   "origin": "search:leek vegetable",
+   "n_cands": 5,
+   "forced": false
   },
   "vegetables|SHALLOT": {
-   "status": "no candidates"
+   "title": "File:These are onions.jpg",
+   "final": 1.11,
+   "p": 0.9959,
+   "photo": 0.9391,
+   "fit": 0.52,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.52"
+   ],
+   "origin": "search:shallot vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|CHIVES": {
-   "status": "no candidates"
+   "title": "File:Chinese chives (1).jpg",
+   "final": 1.249,
+   "p": 0.9726,
+   "photo": 0.9376,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:chives vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|PARSLEY": {
-   "status": "no candidates"
+   "title": "File:Messer mit Kräutern und Schneidebrett-20090708-RM-193038.jpg",
+   "final": 1.219,
+   "p": 0.8928,
+   "photo": 0.9648,
+   "fit": 0.776,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|MINT": {
-   "status": "no candidates"
+   "title": "File:A mint garden.jpg",
+   "final": 1.149,
+   "p": 0.9955,
+   "photo": 0.9844,
+   "fit": 0.7,
+   "how": "none",
+   "notes": [
+    "no subject found"
+   ],
+   "flags": [
+    "fit 0.70"
+   ],
+   "origin": "search:mint vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|DILL": {
-   "status": "no candidates"
+   "title": "File:Big Dill pickle-shaped chalk, unknown designer, produced by Fred, circa 2023, 11.4 x 3.5 x 3.5 cm, sold at Urban Outfitters in the Aventura Mall in Florida, US.jpg",
+   "final": 1.213,
+   "p": 0.8998,
+   "photo": 0.7671,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:dill vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|TURMERIC": {
-   "status": "no candidates"
+   "title": "File:TURMERIC LUYANG DILAW AS FOOD SPICE AND TEA QUENCHER.jpg",
+   "final": 1.119,
+   "p": 0.9987,
+   "photo": 0.9945,
+   "fit": 0.64,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:turmeric vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|PANDAN": {
-   "status": "no candidates"
+   "title": "File:Pandan (screwpine) leaves.JPG",
+   "final": 1.236,
+   "p": 0.9625,
+   "photo": 0.9377,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:pandan leaves",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|YAM": {
-   "status": "no candidates"
+   "title": "File:Yam porridge with vegetable soup.jpg",
+   "final": 1.033,
+   "p": 0.9715,
+   "photo": 0.998,
+   "fit": 0.42,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.87)"
+   ],
+   "flags": [
+    "fit 0.42"
+   ],
+   "origin": "search:yam vegetable",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|WATER CHESTNUT": {
-   "status": "no candidates"
+   "title": "File:Water chestnut.jpg",
+   "final": 1.024,
+   "p": 0.987,
+   "photo": 0.9971,
+   "fit": 0.454,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.76)"
+   ],
+   "flags": [
+    "fit 0.45"
+   ],
+   "origin": "search:water chestnut vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|WATERCRESS": {
-   "status": "no candidates"
+   "title": "File:Watercress (1).JPG",
+   "final": 0.865,
+   "p": 0.8964,
+   "photo": 0.9906,
+   "fit": 0.236,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.24"
+   ],
+   "origin": "search:watercress vegetable",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|BRUSSELS SPROUTS": {
-   "status": "no candidates"
+   "title": "File:Brussels sprouts on the stalk.jpg",
+   "final": 1.334,
+   "p": 0.9998,
+   "photo": 0.8872,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:brussels sprouts vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|SQUASH": {
-   "status": "no candidates"
+   "title": "File:Cucurbita moschata Butternut 2012 G2.jpg",
+   "final": 0.937,
+   "p": 0.7193,
+   "photo": 0.9968,
+   "fit": 0.365,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.61)"
+   ],
+   "flags": [
+    "fit 0.37"
+   ],
+   "origin": "search:QI",
+   "n_cands": 10,
+   "forced": false
   },
   "vegetables|LUFFA": {
-   "status": "no candidates"
+   "title": "File:Luffa aegyptiaca compose.jpg",
+   "final": 1.306,
+   "p": 0.9959,
+   "photo": 0.9885,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:luffa vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|CHAYOTE": {
-   "status": "no candidates"
+   "title": "File:Chayote - 01.jpg",
+   "final": 1.29,
+   "p": 0.9976,
+   "photo": 0.9538,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:chayote vegetable",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|JICAMA": {
-   "status": "no candidates"
+   "title": "File:Jicama in a bin.jpg",
+   "final": 0.873,
+   "p": 0.926,
+   "photo": 0.9806,
+   "fit": 0.228,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.59)"
+   ],
+   "flags": [
+    "fit 0.23"
+   ],
+   "origin": "search:jicama vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|PARSNIP": {
-   "status": "no candidates"
+   "title": "File:Parsnip with honey and mustard.JPG",
+   "final": 0.82,
+   "p": 0.043,
+   "photo": 0.9958,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.04"
+   ],
+   "origin": "search:parsnip vegetable",
+   "n_cands": 6,
+   "forced": false
   },
   "vegetables|ENOKI": {
-   "status": "no candidates"
+   "title": "File:Hot pot 19.03.16.jpg",
+   "final": 1.051,
+   "p": 0.9633,
+   "photo": 0.8263,
+   "fit": 0.512,
+   "how": "saliency",
+   "notes": [
+    "touches 3 edge(s)"
+   ],
+   "flags": [
+    "fit 0.51"
+   ],
+   "origin": "search:enoki vegetable",
+   "n_cands": 4,
+   "forced": false
   },
   "vegetables|WASABI": {
-   "status": "no candidates"
+   "title": "File:Compare Hikimi Wasabi Color And Taste.jpg",
+   "final": 0.971,
+   "p": 0.9971,
+   "photo": 0.9955,
+   "fit": 0.32,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.67)"
+   ],
+   "flags": [
+    "fit 0.32"
+   ],
+   "origin": "search:wasabi vegetable",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|EDAMAME": {
-   "status": "no candidates"
+   "title": "File:Asparagus Stir Fry (49765791966).jpg",
+   "final": 1.236,
+   "p": 0.8968,
+   "photo": 0.9316,
+   "fit": 0.838,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:edamame vegetable",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|CHICKPEA": {
-   "status": "no candidates"
+   "title": "File:Liat Portal for Foodie Disorder - Algerian Couscous with Vegetables.jpg",
+   "final": 1.366,
+   "p": 0.9538,
+   "photo": 0.9844,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:chickpea vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|LENTIL": {
-   "status": "no candidates"
+   "title": "File:Liat Portal for Foodie Disorder - Red lentil soup with vegetables and dumpling.jpg",
+   "final": 1.216,
+   "p": 0.8811,
+   "photo": 0.9927,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:lentil vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|OLIVE": {
-   "status": "no candidates"
+   "title": "File:Ground beef, Chinese vegetables, and celery, on rotini, with garlic olive oil and black pepper - Massachusetts.jpg",
+   "final": 0.547,
+   "p": 0.0001,
+   "photo": 0.9467,
+   "fit": 0.523,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.87)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.52"
+   ],
+   "origin": "search:olive vegetable",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|PICKLE": {
-   "status": "no candidates"
+   "title": "File:Mixed Pickle.jpg",
+   "final": 1.033,
+   "p": 0.9926,
+   "photo": 0.6328,
+   "fit": 0.64,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:pickle vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|SESAME": {
-   "status": "no candidates"
+   "title": "File:Liat Portal for Foodie Disorder - Breakfast bagel sandwich in Tel Aviv.jpg",
+   "final": 1.085,
+   "p": 0.997,
+   "photo": 0.89,
+   "fit": 0.64,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:sesame vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|CINNAMON": {
-   "status": "no candidates"
+   "title": "File:Produce from Kisak's Cinnamon Hill.jpg",
+   "final": 0.559,
+   "p": 0.0002,
+   "photo": 0.9765,
+   "fit": 0.489,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.82)",
+    "upscaled x1.5"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.49"
+   ],
+   "origin": "search:cinnamon vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|ROSEMARY": {
-   "status": "no candidates"
+   "title": "File:Rosemary in the 2017 War Garden (36436174106).jpg",
+   "final": 1.174,
+   "p": 0.9994,
+   "photo": 0.9964,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:rosemary vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|IVY GOURD": {
-   "status": "no candidates"
+   "title": "File:Ivy gourd (Coccinia grandis) flower and fruit, Jharkhand, India.jpg",
+   "final": 1.293,
+   "p": 0.9892,
+   "photo": 0.9896,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:Coccinia grandis fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|WINGED BEAN": {
-   "status": "no candidates"
+   "title": "File:The flower of the winged bean.jpg",
+   "final": 0.974,
+   "p": 0.3766,
+   "photo": 0.9781,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.38"
+   ],
+   "origin": "search:winged bean",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|KOHLRABI": {
-   "status": "no candidates"
+   "title": "File:Chou-rave 11.jpg",
+   "final": 1.274,
+   "p": 0.9906,
+   "photo": 0.9999,
+   "fit": 0.777,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vegetables|ARUGULA": {
-   "status": "no candidates"
+   "title": "File:20211105-FPAC-PJK-5734 TONED.jpg",
+   "final": 0.703,
+   "p": 0.0001,
+   "photo": 0.9928,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:arugula vegetable",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|BULLDOZER": {
    "title": "File:Norderney, Strandaufspülung -- 2025 -- 9647.jpg",
@@ -27373,53 +27933,34 @@
   "toys|WATER GUN",
   "toys|YO-YO",
   "vegetables|ARUGULA",
-  "vegetables|ASPARAGUS",
   "vegetables|BABY CORN",
   "vegetables|BAMBOO SHOOT",
   "vegetables|BASIL",
-  "vegetables|BEAN SPROUTS",
   "vegetables|BEANS",
   "vegetables|BELL PEPPER",
-  "vegetables|BITTER GOURD",
   "vegetables|BOK CHOY",
-  "vegetables|BRUSSELS SPROUTS",
-  "vegetables|CABBAGE",
   "vegetables|CASSAVA",
   "vegetables|CAULIFLOWER",
   "vegetables|CELERY",
-  "vegetables|CHAYOTE",
-  "vegetables|CHICKPEA",
   "vegetables|CHINESE CABBAGE",
-  "vegetables|CHIVES",
   "vegetables|CINNAMON",
   "vegetables|CORIANDER",
   "vegetables|CORN COB",
-  "vegetables|DILL",
-  "vegetables|EDAMAME",
   "vegetables|ENOKI",
   "vegetables|GALANGAL",
-  "vegetables|GINGER",
-  "vegetables|IVY GOURD",
   "vegetables|JICAMA",
-  "vegetables|KALE",
-  "vegetables|KOHLRABI",
   "vegetables|LEEK",
   "vegetables|LEMONGRASS",
-  "vegetables|LENTIL",
   "vegetables|LETTUCE",
-  "vegetables|LUFFA",
   "vegetables|MINT",
   "vegetables|MORNING GLORY",
   "vegetables|OKRA",
   "vegetables|OLIVE",
-  "vegetables|PANDAN",
-  "vegetables|PARSLEY",
   "vegetables|PARSNIP",
   "vegetables|PEAS",
   "vegetables|PICKLE",
   "vegetables|PUMPKIN",
   "vegetables|RADISH",
-  "vegetables|ROSEMARY",
   "vegetables|SEAWEED SALAD",
   "vegetables|SESAME",
   "vegetables|SHALLOT",
@@ -27531,7 +28072,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1648,
-  "flagged": 1222
+  "with_photo": 1692,
+  "flagged": 1203
  }
 }

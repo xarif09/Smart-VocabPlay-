@@ -13245,10 +13245,36 @@
    "forced": false
   },
   "vehicles|AIRPLANE": {
-   "status": "no candidates"
+   "title": "File:NASA, Air Force, and Industry Team Up to Improve Flying Safety (EC01-0325-1).jpg",
+   "final": 0.822,
+   "p": 0.72,
+   "photo": 0.8041,
+   "fit": 0.467,
+   "how": "yolo:airplane",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.78)"
+   ],
+   "flags": [
+    "fit 0.47"
+   ],
+   "origin": "search:airplane vehicle",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|JET": {
-   "status": "no candidates"
+   "title": "File:2003 Thunderbirds Mountain Home airshow crash ejection.jpg",
+   "final": 0.978,
+   "p": 0.8951,
+   "photo": 0.3889,
+   "fit": 1.0,
+   "how": "yolo:airplane",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.39"
+   ],
+   "origin": "search:jet aircraft",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|SUBWAY": {
    "title": "File:Seoul-metro-2009-20180916-103548.jpg",
@@ -13323,7 +13349,21 @@
    "forced": false
   },
   "vehicles|CANOE": {
-   "status": "no candidates"
+   "title": "File:Canoe docked at Marsh Boardwalk, Point Pelee National Park, Leamington, Ontario, 2026-10-24.jpg",
+   "final": 1.095,
+   "p": 0.9949,
+   "photo": 0.9634,
+   "fit": 0.524,
+   "how": "yolo:boat",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.87)"
+   ],
+   "flags": [
+    "fit 0.52"
+   ],
+   "origin": "search:canoe vehicle",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|LONGTAIL BOAT": {
    "title": "File:Poda island beach.jpg",
@@ -21730,109 +21770,536 @@
    "status": "no candidates"
   },
   "vehicles|BULLDOZER": {
-   "status": "no candidates"
+   "title": "File:Norderney, Strandaufspülung -- 2025 -- 9647.jpg",
+   "final": 1.171,
+   "p": 0.8122,
+   "photo": 0.8852,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|EXCAVATOR": {
-   "status": "no candidates"
+   "title": "File:Bobcat E85 compact excavator, Leamington Harbour, Leamington, Ontario, 2025-08-02.jpg",
+   "final": 1.026,
+   "p": 0.9979,
+   "photo": 0.7714,
+   "fit": 0.545,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.91)"
+   ],
+   "flags": [
+    "fit 0.54"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|DUMP TRUCK": {
-   "status": "no candidates"
+   "title": "File:Жанатурмыс, строительная техника на Бирлик.jpg",
+   "final": 0.778,
+   "p": 0.8521,
+   "photo": 0.8972,
+   "fit": 0.155,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.43)"
+   ],
+   "flags": [
+    "fit 0.15"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|CEMENT MIXER": {
-   "status": "no candidates"
+   "title": "File:AfriSam cement mixer truck.jpg",
+   "final": 1.064,
+   "p": 0.774,
+   "photo": 0.973,
+   "fit": 0.765,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:cement mixer vehicle",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|FORKLIFT": {
-   "status": "no candidates"
+   "title": "File:Forklift, 12. Internationales Maritimes-Fahrzeugtreffen, Ribnitz-Damgarten (P1060541).jpg",
+   "final": 1.133,
+   "p": 0.9902,
+   "photo": 0.589,
+   "fit": 0.768,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|SONGTHAEW": {
-   "status": "no candidates"
+   "title": "File:Krabi - Songthaew - 0001.jpg",
+   "final": 0.923,
+   "p": 0.9913,
+   "photo": 0.8361,
+   "fit": 0.241,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.67)"
+   ],
+   "flags": [
+    "fit 0.24"
+   ],
+   "origin": "search:songthaew Thailand",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|MOTORCYCLE TAXI": {
-   "status": "no candidates"
+   "title": "File:Deutscher Weihnachtsmarkt 2024, Goethe-Institut Bangkok Thailand 12.jpg",
+   "final": 0.676,
+   "p": 0.9636,
+   "photo": 0.0092,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.01"
+   ],
+   "origin": "search:motorcycle taxi Bangkok",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|RICKSHAW": {
-   "status": "no candidates"
+   "title": "File:Auto rickshaw, Kolkata.jpg",
+   "final": 1.076,
+   "p": 0.9623,
+   "photo": 0.7303,
+   "fit": 0.532,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|CABLE CAR": {
-   "status": "no candidates"
+   "title": "File:Bad Harzburg - Burgberg-Seilbahn 02.jpg",
+   "final": 1.297,
+   "p": 0.9973,
+   "photo": 0.9842,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "vehicles|MONORAIL": {
-   "status": "no candidates"
+   "title": "File:Seattle (WA, USA), Monorail station \"Westlake Center\" -- 2022 -- 1483.jpg",
+   "final": 1.226,
+   "p": 0.9999,
+   "photo": 0.6246,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|BULLET TRAIN": {
-   "status": "no candidates"
+   "title": "File:Caltrain Baby Bullet 2.JPG",
+   "final": 1.067,
+   "p": 0.5933,
+   "photo": 0.9874,
+   "fit": 0.82,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:bullet train vehicle",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|STEAM TRAIN": {
-   "status": "no candidates"
+   "title": "File:Borkum, Bahnhof, Dampflok -- 2020 -- 3089.jpg",
+   "final": 1.305,
+   "p": 0.993,
+   "photo": 0.9694,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|CARGO SHIP": {
-   "status": "no candidates"
+   "title": "File:Errimel Bizerte.jpg",
+   "final": 0.806,
+   "p": 0.7048,
+   "photo": 0.9244,
+   "fit": 0.36,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.60)"
+   ],
+   "flags": [
+    "fit 0.36"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|CRUISE SHIP": {
-   "status": "no candidates"
+   "title": "File:Seattle (WA, USA), Pier 66, Norwegian Bliss -- 2022 -- 1794.jpg",
+   "final": 1.184,
+   "p": 0.9998,
+   "photo": 0.4178,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.42"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "vehicles|YACHT": {
-   "status": "no candidates"
+   "title": "File:Cape Town (ZA), Waterfront, Clock Tower -- 2024 -- 3036.jpg",
+   "final": 0.743,
+   "p": 0.0973,
+   "photo": 0.5567,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.10"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|RAFT": {
-   "status": "no candidates"
+   "title": "File:Dragoon Stryker uploads to move across Neman River (4487288).jpg",
+   "final": 0.752,
+   "p": 0.6906,
+   "photo": 0.6764,
+   "fit": 0.46,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.77)"
+   ],
+   "flags": [
+    "fit 0.46"
+   ],
+   "origin": "search:raft vehicle",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|ROWBOAT": {
-   "status": "no candidates"
+   "title": "File:Bauernhaus Bolthausen 4 in Wuppertal.jpg",
+   "final": 1.279,
+   "p": 0.9588,
+   "photo": 0.9923,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|JET SKI": {
-   "status": "no candidates"
+   "title": "File:Dubai JetSki and the pleasure of young people Drone Image.jpg",
+   "final": 1.186,
+   "p": 0.9268,
+   "photo": 0.784,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:jet ski vehicle",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|PARACHUTE": {
-   "status": "no candidates"
+   "title": "File:Lake Constance, Germany, Joint Water Airborne Operation Training (7457775).jpg",
+   "final": 0.753,
+   "p": 0.0476,
+   "photo": 0.8059,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.05"
+   ],
+   "origin": "search:parachute vehicle",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|SLED": {
-   "status": "no candidates"
+   "title": "File:Bristol MMB «H1 Clifton.jpg",
+   "final": 1.28,
+   "p": 1.0,
+   "photo": 0.8975,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|GO-KART": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Merfeld, BMW Mini -- 2019 -- 6991-3.jpg",
+   "final": 0.671,
+   "p": 0.0013,
+   "photo": 0.7923,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "vehicles|MINIBUS": {
-   "status": "no candidates"
+   "title": "File:DSC05880 Volkswagen T6 and Škoda Kodiaq, Bundesheer and Austrian Military Police, Front Right, 2023-10.jpg",
+   "final": 0.825,
+   "p": 0.9696,
+   "photo": 0.5402,
+   "fit": 0.324,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.54)"
+   ],
+   "flags": [
+    "fit 0.32"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|DOUBLE-DECKER BUS": {
-   "status": "no candidates"
+   "title": "File:4 ImagIn Ayats Bravo Juillet 2021.jpg",
+   "final": 1.086,
+   "p": 0.8914,
+   "photo": 0.7077,
+   "fit": 0.784,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "vehicles|TOW TRUCK": {
-   "status": "no candidates"
+   "title": "File:New York City (New York, USA), Manhattan -- 2012 -- 6703.jpg",
+   "final": 0.636,
+   "p": 0.5662,
+   "photo": 0.9949,
+   "fit": 0.246,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.68)"
+   ],
+   "flags": [
+    "fit 0.25"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|ICE CREAM TRUCK": {
-   "status": "no candidates"
+   "title": "File:Ice Cream van, Wildish Rd, Faversham - geograph.org.uk - 5090128.jpg",
+   "final": 0.973,
+   "p": 0.9998,
+   "photo": 0.6702,
+   "fit": 0.326,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.54)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:ice cream truck vehicle",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|HORSE CART": {
-   "status": "no candidates"
+   "title": "File:Carreta II.jpg",
+   "final": 1.178,
+   "p": 0.9845,
+   "photo": 0.4293,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.43"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "vehicles|UNICYCLE": {
-   "status": "no candidates"
+   "title": "File:Медео, моноколесо на плотине.jpg",
+   "final": 0.932,
+   "p": 0.5221,
+   "photo": 0.4995,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.50"
+   ],
+   "origin": "search:unicycle vehicle",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|ELECTRIC CAR": {
-   "status": "no candidates"
+   "title": "File:Paris, Ladestation -- 2014 -- 1663.jpg",
+   "final": 1.271,
+   "p": 0.9998,
+   "photo": 0.8538,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 10,
+   "forced": false
   },
   "vehicles|PADDLE BOAT": {
-   "status": "no candidates"
+   "title": "File:Heringsdorf, Usedom, Tretboote am Strand -- 2010 -- 2619.jpg",
+   "final": 0.797,
+   "p": 0.8864,
+   "photo": 0.448,
+   "fit": 0.327,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.55)"
+   ],
+   "flags": [
+    "fit 0.33",
+    "not photo-like 0.45"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|TIRE": {
-   "status": "no candidates"
+   "title": "File:Car tires as fenders.jpg",
+   "final": 0.944,
+   "p": 0.6747,
+   "photo": 0.6278,
+   "fit": 0.792,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|STEERING WHEEL": {
-   "status": "no candidates"
+   "title": "File:Dülmen, -Oldtimertreffen-, Austin-Healey Sprite -- 2004 -- 1.jpg",
+   "final": 1.286,
+   "p": 0.9924,
+   "photo": 0.9396,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "vehicles|PASSENGER": {
-   "status": "no candidates"
+   "title": "File:Harlingen. Spiraalveren oude treinwagon 12-07-2021. (actm.).jpg",
+   "final": 0.47,
+   "p": 0.0,
+   "photo": 0.7726,
+   "fit": 0.528,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.53"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|LICENSE PLATE": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Merfeld, Volvo PV 544 B18 -- 2021 -- 0075-9.jpg",
+   "final": 0.668,
+   "p": 0.0001,
+   "photo": 0.9754,
+   "fit": 0.846,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "vehicles|CROSSWALK": {
-   "status": "no candidates"
+   "title": "File:Western white-bearded wildebeest (Connochaetes taurinus mearnsi) Mara River crossing 2a Zebras.jpg",
+   "final": 1.229,
+   "p": 0.9721,
+   "photo": 0.9528,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "vehicles|TRAFFIC JAM": {
-   "status": "no candidates"
+   "title": "File:TrafficInBangkok.jpg",
+   "final": 1.294,
+   "p": 0.9978,
+   "photo": 0.9714,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:traffic jam Bangkok",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|BLOUSE": {
    "title": "File:Wolford bodysuit blouses in faux wrap and high-waisted styles - Variant 2.jpg",
@@ -25321,35 +25788,25 @@
   "vehicles|AMBULANCE",
   "vehicles|BIKE",
   "vehicles|BOAT",
-  "vehicles|BULLDOZER",
-  "vehicles|BULLET TRAIN",
   "vehicles|BUS",
-  "vehicles|CABLE CAR",
   "vehicles|CANOE",
   "vehicles|CAR",
   "vehicles|CARGO SHIP",
-  "vehicles|CEMENT MIXER",
-  "vehicles|CROSSWALK",
   "vehicles|CRUISE SHIP",
-  "vehicles|DOUBLE-DECKER BUS",
   "vehicles|DUMP TRUCK",
-  "vehicles|ELECTRIC CAR",
   "vehicles|ENGINE",
   "vehicles|EXCAVATOR",
   "vehicles|FIRETRUCK",
-  "vehicles|FORKLIFT",
   "vehicles|GO-KART",
   "vehicles|HELMET",
   "vehicles|HORSE CART",
   "vehicles|ICE CREAM TRUCK",
   "vehicles|JEEP",
   "vehicles|JET",
-  "vehicles|JET SKI",
   "vehicles|LICENSE PLATE",
   "vehicles|LONGTAIL BOAT",
   "vehicles|LORRY",
   "vehicles|MINIBUS",
-  "vehicles|MONORAIL",
   "vehicles|MOTORCYCLE",
   "vehicles|MOTORCYCLE TAXI",
   "vehicles|PADDLE BOAT",
@@ -25361,21 +25818,15 @@
   "vehicles|RACE CAR",
   "vehicles|RAFT",
   "vehicles|RICKSHAW",
-  "vehicles|ROWBOAT",
   "vehicles|SEAT BELT",
-  "vehicles|SLED",
   "vehicles|SONGTHAEW",
   "vehicles|SPACESHIP",
   "vehicles|SPEEDBOAT",
-  "vehicles|STEAM TRAIN",
-  "vehicles|STEERING WHEEL",
   "vehicles|STROLLER",
   "vehicles|SUBMARINE",
   "vehicles|SUBWAY",
-  "vehicles|TIRE",
   "vehicles|TOW TRUCK",
   "vehicles|TRACTOR",
-  "vehicles|TRAFFIC JAM",
   "vehicles|TRAIN",
   "vehicles|TUK-TUK",
   "vehicles|UNICYCLE",
@@ -25436,7 +25887,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1474,
-  "flagged": 1286
+  "with_photo": 1512,
+  "flagged": 1270
  }
 }

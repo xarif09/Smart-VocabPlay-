@@ -9820,6 +9820,13 @@
   "license": "Public domain",
   "score": 0.582
  },
+ "vehicles|AIRPLANE": {
+  "file": "w/vehicles__airplane.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:NASA,_Air_Force,_and_Industry_Team_Up_to_Improve_Flying_Safety_(EC01-0325-1).jpg",
+  "author": "NASA Armstrong Flight Research Center / Tony Landis",
+  "license": "Public domain",
+  "score": 0.822
+ },
  "vehicles|AMBULANCE": {
   "file": "w/vehicles__ambulance.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:British_Red_Cross_(BRC)_Rapid_Response_Vehicle_(RRV)_Ambulance_1.jpg",
@@ -9841,12 +9848,40 @@
   "license": "CC BY 4.0",
   "score": 0.66
  },
+ "vehicles|BULLDOZER": {
+  "file": "w/vehicles__bulldozer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Norderney,_Strandaufsp%C3%BClung_--_2025_--_9647.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.171
+ },
+ "vehicles|BULLET TRAIN": {
+  "file": "w/vehicles__bullet-train.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Caltrain_Baby_Bullet_2.JPG",
+  "author": "snty - tact ( Talk )",
+  "license": "CC BY-SA 3.0",
+  "score": 1.067
+ },
  "vehicles|BUS": {
   "file": "w/vehicles__bus.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:APSRTC_Bus_07122014.jpg",
   "author": "Nikhilb239",
   "license": "CC BY 3.0",
   "score": 0.912
+ },
+ "vehicles|CABLE CAR": {
+  "file": "w/vehicles__cable-car.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bad_Harzburg_-_Burgberg-Seilbahn_02.jpg",
+  "author": "Llez",
+  "license": "CC BY-SA 3.0",
+  "score": 1.297
+ },
+ "vehicles|CANOE": {
+  "file": "w/vehicles__canoe.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Canoe_docked_at_Marsh_Boardwalk,_Point_Pelee_National_Park,_Leamington,_Ontario,_2026-10-24.jpg",
+  "author": "Chris Woodrich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.095
  },
  "vehicles|CAR": {
   "file": "w/vehicles__car.jpg",
@@ -9855,6 +9890,20 @@
   "license": "Public domain",
   "score": 0.67
  },
+ "vehicles|CARGO SHIP": {
+  "file": "w/vehicles__cargo-ship.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Errimel_Bizerte.jpg",
+  "author": "Smailtn",
+  "license": "CC0",
+  "score": 0.806
+ },
+ "vehicles|CEMENT MIXER": {
+  "file": "w/vehicles__cement-mixer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:AfriSam_cement_mixer_truck.jpg",
+  "author": "Axxter99",
+  "license": "CC BY-SA 4.0",
+  "score": 1.064
+ },
  "vehicles|CRANE": {
   "file": "w/vehicles__crane.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:College_10_construction_crane_-_geograph.org.uk_-_6655885.jpg",
@@ -9862,12 +9911,54 @@
   "license": "CC BY-SA 2.0",
   "score": 1.101
  },
+ "vehicles|CROSSWALK": {
+  "file": "w/vehicles__crosswalk.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Western_white-bearded_wildebeest_(Connochaetes_taurinus_mearnsi)_Mara_River_crossing_2a_Zebras.jpg",
+  "author": "Charles J. Sharp",
+  "license": "CC BY-SA 4.0",
+  "score": 1.229
+ },
+ "vehicles|CRUISE SHIP": {
+  "file": "w/vehicles__cruise-ship.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Seattle_(WA,_USA),_Pier_66,_Norwegian_Bliss_--_2022_--_1794.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.184
+ },
+ "vehicles|DOUBLE-DECKER BUS": {
+  "file": "w/vehicles__double-decker-bus.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:4_ImagIn_Ayats_Bravo_Juillet_2021.jpg",
+  "author": "Mr. Ibou",
+  "license": "CC BY 4.0",
+  "score": 1.086
+ },
+ "vehicles|DUMP TRUCK": {
+  "file": "w/vehicles__dump-truck.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%D0%96%D0%B0%D0%BD%D0%B0%D1%82%D1%83%D1%80%D0%BC%D1%8B%D1%81,_%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0_%D0%BD%D0%B0_%D0%91%D0%B8%D1%80%D0%BB%D0%B8%D0%BA.jpg",
+  "author": "Nikolai Bulykin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.778
+ },
+ "vehicles|ELECTRIC CAR": {
+  "file": "w/vehicles__electric-car.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Paris,_Ladestation_--_2014_--_1663.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.271
+ },
  "vehicles|ENGINE": {
   "file": "w/vehicles__engine.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Chevrolet_small-block_engine_-_Automobile_Driving_Museum_-_El_Segundo,_CA_-_DSC01736.jpg",
   "author": "Daderot",
   "license": "CC0",
   "score": 0.948
+ },
+ "vehicles|EXCAVATOR": {
+  "file": "w/vehicles__excavator.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bobcat_E85_compact_excavator,_Leamington_Harbour,_Leamington,_Ontario,_2025-08-02.jpg",
+  "author": "Chris Woodrich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.026
  },
  "vehicles|FERRY": {
   "file": "w/vehicles__ferry.jpg",
@@ -9883,12 +9974,26 @@
   "license": "CC BY-SA 2.0",
   "score": 0.924
  },
+ "vehicles|FORKLIFT": {
+  "file": "w/vehicles__forklift.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Forklift,_12._Internationales_Maritimes-Fahrzeugtreffen,_Ribnitz-Damgarten_(P1060541).jpg",
+  "author": "Matti Blume",
+  "license": "CC BY-SA 4.0",
+  "score": 1.133
+ },
  "vehicles|GARBAGE TRUCK": {
   "file": "w/vehicles__garbage-truck.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:LA-City-Sanitation-trash-truck-1.jpg",
   "author": "Bdonjc",
   "license": "CC BY-SA 4.0",
   "score": 1.091
+ },
+ "vehicles|GO-KART": {
+  "file": "w/vehicles__go-kart.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Merfeld,_BMW_Mini_--_2019_--_6991-3.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.671
  },
  "vehicles|HELICOPTER": {
   "file": "w/vehicles__helicopter.jpg",
@@ -9904,6 +10009,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.874
  },
+ "vehicles|HORSE CART": {
+  "file": "w/vehicles__horse-cart.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Carreta_II.jpg",
+  "author": "Rjcastillo",
+  "license": "CC BY-SA 3.0",
+  "score": 1.178
+ },
  "vehicles|HOT AIR BALLOON": {
   "file": "w/vehicles__hot-air-balloon.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Cappadocia_Balloon_Inflating_Wikimedia_Commons.JPG",
@@ -9911,12 +10023,40 @@
   "license": "CC BY-SA 3.0",
   "score": 1.174
  },
+ "vehicles|ICE CREAM TRUCK": {
+  "file": "w/vehicles__ice-cream-truck.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ice_Cream_van,_Wildish_Rd,_Faversham_-_geograph.org.uk_-_5090128.jpg",
+  "author": "Matt Harrop",
+  "license": "CC BY-SA 2.0",
+  "score": 0.973
+ },
  "vehicles|JEEP": {
   "file": "w/vehicles__jeep.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Kelly_Jeep_Chrysler_Dealership.jpg",
   "author": "KellyAuto",
   "license": "CC BY-SA 4.0",
   "score": 0.894
+ },
+ "vehicles|JET": {
+  "file": "w/vehicles__jet.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2003_Thunderbirds_Mountain_Home_airshow_crash_ejection.jpg",
+  "author": "U.S. Air Force photo by Staff Sgt. Bennie J. Davis III",
+  "license": "Public domain",
+  "score": 0.978
+ },
+ "vehicles|JET SKI": {
+  "file": "w/vehicles__jet-ski.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dubai_JetSki_and_the_pleasure_of_young_people_Drone_Image.jpg",
+  "author": "Buurakosee",
+  "license": "CC BY-SA 4.0",
+  "score": 1.186
+ },
+ "vehicles|LICENSE PLATE": {
+  "file": "w/vehicles__license-plate.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Merfeld,_Volvo_PV_544_B18_--_2021_--_0075-9.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.668
  },
  "vehicles|LONGTAIL BOAT": {
   "file": "w/vehicles__longtail-boat.jpg",
@@ -9932,12 +10072,54 @@
   "license": "CC0",
   "score": 0.341
  },
+ "vehicles|MINIBUS": {
+  "file": "w/vehicles__minibus.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:DSC05880_Volkswagen_T6_and_%C5%A0koda_Kodiaq,_Bundesheer_and_Austrian_Military_Police,_Front_Right,_2023-10.jpg",
+  "author": "Aciarium",
+  "license": "CC BY 4.0",
+  "score": 0.825
+ },
+ "vehicles|MONORAIL": {
+  "file": "w/vehicles__monorail.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Seattle_(WA,_USA),_Monorail_station_%22Westlake_Center%22_--_2022_--_1483.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.226
+ },
  "vehicles|MOTORCYCLE": {
   "file": "w/vehicles__motorcycle.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Victory_motorcycle_Main_Street_downtown_Montpelier_VT_July_2016.jpg",
   "author": "Artaxerxes",
   "license": "CC BY-SA 3.0",
   "score": 0.927
+ },
+ "vehicles|MOTORCYCLE TAXI": {
+  "file": "w/vehicles__motorcycle-taxi.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Deutscher_Weihnachtsmarkt_2024,_Goethe-Institut_Bangkok_Thailand_12.jpg",
+  "author": "Chainwit.",
+  "license": "CC BY 4.0",
+  "score": 0.676
+ },
+ "vehicles|PADDLE BOAT": {
+  "file": "w/vehicles__paddle-boat.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Heringsdorf,_Usedom,_Tretboote_am_Strand_--_2010_--_2619.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.797
+ },
+ "vehicles|PARACHUTE": {
+  "file": "w/vehicles__parachute.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lake_Constance,_Germany,_Joint_Water_Airborne_Operation_Training_(7457775).jpg",
+  "author": "Sgt. Isabelle Dickey",
+  "license": "Public domain",
+  "score": 0.753
+ },
+ "vehicles|PASSENGER": {
+  "file": "w/vehicles__passenger.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Harlingen._Spiraalveren_oude_treinwagon_12-07-2021._(actm.).jpg",
+  "author": "Agnes Monkelbaan",
+  "license": "CC BY-SA 4.0",
+  "score": 0.47
  },
  "vehicles|PICKUP TRUCK": {
   "file": "w/vehicles__pickup-truck.jpg",
@@ -9967,12 +10149,33 @@
   "license": "CC BY-SA 3.0",
   "score": 0.81
  },
+ "vehicles|RAFT": {
+  "file": "w/vehicles__raft.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dragoon_Stryker_uploads_to_move_across_Neman_River_(4487288).jpg",
+  "author": "U.S. Army 2CR by 2nd Lt. Clay Harmon",
+  "license": "Public domain",
+  "score": 0.752
+ },
+ "vehicles|RICKSHAW": {
+  "file": "w/vehicles__rickshaw.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Auto_rickshaw,_Kolkata.jpg",
+  "author": "Bernard Gagnon",
+  "license": "CC BY-SA 3.0",
+  "score": 1.076
+ },
  "vehicles|ROCKET": {
   "file": "w/vehicles__rocket.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:STS-125_Atlantis_Liftoff_02.jpg",
   "author": "Scott Andrews, Canon",
   "license": "Public domain",
   "score": 1.088
+ },
+ "vehicles|ROWBOAT": {
+  "file": "w/vehicles__rowboat.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bauernhaus_Bolthausen_4_in_Wuppertal.jpg",
+  "author": "Norbert Sdunzik",
+  "license": "CC BY-SA 3.0",
+  "score": 1.279
  },
  "vehicles|SAILBOAT": {
   "file": "w/vehicles__sailboat.jpg",
@@ -10009,6 +10212,20 @@
   "license": "CC BY-SA 3.0",
   "score": 1.107
  },
+ "vehicles|SLED": {
+  "file": "w/vehicles__sled.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bristol_MMB_%C2%ABH1_Clifton.jpg",
+  "author": "mattbuck ( category )",
+  "license": "CC BY-SA 3.0",
+  "score": 1.28
+ },
+ "vehicles|SONGTHAEW": {
+  "file": "w/vehicles__songthaew.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Krabi_-_Songthaew_-_0001.jpg",
+  "author": "Stefan Fussan",
+  "license": "CC BY-SA 3.0",
+  "score": 0.923
+ },
  "vehicles|SPACESHIP": {
   "file": "w/vehicles__spaceship.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:ISS_March_2009.jpg",
@@ -10022,6 +10239,20 @@
   "author": "Walton LaVonda, U.S. Fish and Wildlife Service",
   "license": "Public domain",
   "score": 0.846
+ },
+ "vehicles|STEAM TRAIN": {
+  "file": "w/vehicles__steam-train.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Borkum,_Bahnhof,_Dampflok_--_2020_--_3089.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.305
+ },
+ "vehicles|STEERING WHEEL": {
+  "file": "w/vehicles__steering-wheel.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_-Oldtimertreffen-,_Austin-Healey_Sprite_--_2004_--_1.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.286
  },
  "vehicles|STROLLER": {
   "file": "w/vehicles__stroller.jpg",
@@ -10051,12 +10282,33 @@
   "license": "CC BY-SA 4.0",
   "score": 1.096
  },
+ "vehicles|TIRE": {
+  "file": "w/vehicles__tire.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Car_tires_as_fenders.jpg",
+  "author": "W.carter",
+  "license": "CC BY-SA 4.0",
+  "score": 0.944
+ },
+ "vehicles|TOW TRUCK": {
+  "file": "w/vehicles__tow-truck.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:New_York_City_(New_York,_USA),_Manhattan_--_2012_--_6703.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.636
+ },
  "vehicles|TRACTOR": {
   "file": "w/vehicles__tractor.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Boy_plowing_with_a_tractor_at_sunset_in_Don_Det,_Laos.jpg",
   "author": "Basile Morin",
   "license": "CC BY-SA 4.0",
   "score": 0.984
+ },
+ "vehicles|TRAFFIC JAM": {
+  "file": "w/vehicles__traffic-jam.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:TrafficInBangkok.jpg",
+  "author": "ThomasSD at de.wikipedia",
+  "license": "Public domain",
+  "score": 1.294
  },
  "vehicles|TRAFFIC LIGHT": {
   "file": "w/vehicles__traffic-light.jpg",
@@ -10093,6 +10345,13 @@
   "license": "CC BY-SA 3.0",
   "score": 0.874
  },
+ "vehicles|UNICYCLE": {
+  "file": "w/vehicles__unicycle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B5%D0%B4%D0%B5%D0%BE,_%D0%BC%D0%BE%D0%BD%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D1%81%D0%BE_%D0%BD%D0%B0_%D0%BF%D0%BB%D0%BE%D1%82%D0%B8%D0%BD%D0%B5.jpg",
+  "author": "Nikolai Bulykin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.932
+ },
  "vehicles|VAN": {
   "file": "w/vehicles__van.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Old_Renault_van_on_Kew_Green_-_geograph.org.uk_-_5344850.jpg",
@@ -10113,6 +10372,13 @@
   "author": "File:Man in wheelchair with AFO braces and crutches.jpg : Pagemaker787 derivative work: Georgfotoart",
   "license": "CC BY-SA 4.0",
   "score": 0.78
+ },
+ "vehicles|YACHT": {
+  "file": "w/vehicles__yacht.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cape_Town_(ZA),_Waterfront,_Clock_Tower_--_2024_--_3036.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.743
  },
  "weather|AUTUMN": {
   "file": "w/weather__autumn.jpg",

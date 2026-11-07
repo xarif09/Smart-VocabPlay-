@@ -705,7 +705,7 @@
   },
   "food|RICE": {
    "title": "File:HK SYP 西環 Sai Ying Pun 明星海鮮酒家 Star Seafood Restaurant 晚餐 diner food 靚仔 白飯一碗 white cooked rice July 2023 Px3.jpg",
-   "final": 1.241,
+   "final": 1.291,
    "p": 0.983,
    "photo": 0.9987,
    "fit": 1.0,
@@ -718,7 +718,7 @@
   },
   "food|BREAD": {
    "title": "File:Breads of Russia.jpg",
-   "final": 0.952,
+   "final": 0.998,
    "p": 0.9753,
    "photo": 0.9485,
    "fit": 0.316,
@@ -734,21 +734,25 @@
    "forced": false
   },
   "food|EGG": {
-   "title": "File:Eggs in basket 2020 G1.jpg",
-   "final": 1.252,
-   "p": 0.9979,
-   "photo": 0.9888,
-   "fit": 1.0,
+   "title": "File:Egg cartons with chicken eggs 02.jpg",
+   "final": 1.145,
+   "p": 0.9939,
+   "photo": 0.9971,
+   "fit": 0.504,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.84)"
+   ],
+   "flags": [
+    "fit 0.50"
+   ],
    "origin": "search:chicken eggs",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|MILK": {
    "title": "File:Glass of Milk (33657535532).jpg",
-   "final": 1.149,
+   "final": 1.179,
    "p": 0.9802,
    "photo": 0.7831,
    "fit": 0.826,
@@ -763,7 +767,7 @@
   },
   "food|PIZZA": {
    "title": "File:Pizza food.jpg",
-   "final": 1.169,
+   "final": 1.206,
    "p": 0.9998,
    "photo": 0.8655,
    "fit": 0.8,
@@ -778,7 +782,7 @@
   },
   "food|CAKE": {
    "title": "File:Chocolate cake and Victoria sponge.jpg",
-   "final": 1.213,
+   "final": 1.227,
    "p": 0.9963,
    "photo": 0.6363,
    "fit": 1.0,
@@ -786,12 +790,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:cake food",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "food|CORN": {
    "title": "File:Boiled corn on a white plate.jpg",
-   "final": 1.339,
+   "final": 1.388,
    "p": 1.0,
    "photo": 0.9867,
    "fit": 1.0,
@@ -804,7 +808,7 @@
   },
   "food|NOODLES": {
    "title": "File:Noodles 7.jpg",
-   "final": 1.134,
+   "final": 1.179,
    "p": 0.9798,
    "photo": 0.9382,
    "fit": 0.8,
@@ -818,38 +822,43 @@
    "forced": false
   },
   "food|SOUP": {
-   "title": "File:Mushroom Soup 4.jpg",
-   "final": 1.16,
-   "p": 0.9755,
-   "photo": 0.2328,
-   "fit": 1.0,
+   "title": "File:Asparagus soup (spargelsuppe).jpg",
+   "final": 1.05,
+   "p": 0.9663,
+   "photo": 0.9922,
+   "fit": 0.367,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.61)"
+   ],
    "flags": [
-    "not photo-like 0.23"
+    "fit 0.37"
    ],
    "origin": "search:soup food",
    "n_cands": 8,
    "forced": false
   },
   "food|SALAD": {
-   "title": "File:Fruit Salad with Grilled Halloumi Cheese.jpg",
-   "final": 1.092,
-   "p": 0.9712,
-   "photo": 0.6692,
-   "fit": 0.8,
+   "title": "File:Vegetable Salad Cuisine.jpg",
+   "final": 1.122,
+   "p": 0.9995,
+   "photo": 0.9919,
+   "fit": 0.515,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [],
+   "flags": [
+    "fit 0.52"
+   ],
    "origin": "search:salad food",
    "n_cands": 8,
    "forced": false
   },
   "food|SANDWICH": {
    "title": "File:The Mediterranean sandwich - Dyke Road Park Cafe 2025-05-09.jpg",
-   "final": 1.239,
+   "final": 1.279,
    "p": 0.9943,
    "photo": 0.9035,
    "fit": 1.0,
@@ -862,7 +871,7 @@
   },
   "food|HAMBURGER": {
    "title": "File:Burger King double cheeseburger.jpg",
-   "final": 1.128,
+   "final": 1.17,
    "p": 0.9982,
    "photo": 0.9128,
    "fit": 0.776,
@@ -877,7 +886,7 @@
   },
   "food|SUSHI": {
    "title": "File:Vegan sushi plate.jpg",
-   "final": 0.901,
+   "final": 0.949,
    "p": 0.9766,
    "photo": 0.9673,
    "fit": 0.332,
@@ -894,7 +903,7 @@
   },
   "food|ICECREAM": {
    "title": "File:Ice cream cone - superman flavor.jpg",
-   "final": 1.251,
+   "final": 1.264,
    "p": 0.9999,
    "photo": 0.6336,
    "fit": 1.0,
@@ -906,23 +915,23 @@
    "forced": false
   },
   "food|COOKIE": {
-   "title": "File:Biscoff Stuffed Cookie - Max'd Out Cookies 2025-11-13.jpg",
-   "final": 1.162,
-   "p": 0.9962,
-   "photo": 0.1107,
-   "fit": 1.0,
+   "title": "File:Kekse -- 2021 -- 9362.jpg",
+   "final": 1.187,
+   "p": 0.9999,
+   "photo": 0.9882,
+   "fit": 0.775,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.11"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
+   "flags": [],
    "origin": "search:cookie food",
    "n_cands": 8,
    "forced": false
   },
   "food|DONUT": {
    "title": "File:Doughnut 2.jpg",
-   "final": 1.245,
+   "final": 1.289,
    "p": 0.9984,
    "photo": 0.9461,
    "fit": 1.0,
@@ -935,7 +944,7 @@
   },
   "food|CHOCOLATE": {
    "title": "File:Rocky Mountain chocolates.jpg",
-   "final": 1.068,
+   "final": 1.117,
    "p": 0.9999,
    "photo": 0.9894,
    "fit": 0.478,
@@ -947,12 +956,12 @@
     "fit 0.48"
    ],
    "origin": "search:chocolate food",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|CHEESE": {
    "title": "File:Moscow, Perekryostok, cheese 07.jpg",
-   "final": 1.217,
+   "final": 1.263,
    "p": 0.938,
    "photo": 0.9299,
    "fit": 1.0,
@@ -965,7 +974,7 @@
   },
   "food|CANDY": {
    "title": "File:Sweets displayed inside a candy shop, Verona - 2026-09-12.jpg",
-   "final": 1.178,
+   "final": 1.172,
    "p": 0.9779,
    "photo": 0.4256,
    "fit": 1.0,
@@ -975,37 +984,39 @@
     "not photo-like 0.43"
    ],
    "origin": "search:candy sweets",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|HOTDOG": {
-   "title": "File:Hot dog gourmet.jpg",
-   "final": 1.102,
-   "p": 0.9086,
-   "photo": 0.0153,
-   "fit": 1.0,
+   "title": "File:My hot dog at Hot Doug's.jpg",
+   "final": 0.956,
+   "p": 0.845,
+   "photo": 0.7958,
+   "fit": 0.52,
    "how": "yolo:hot_dog",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.87)"
+   ],
    "flags": [
-    "not photo-like 0.02"
+    "fit 0.52"
    ],
    "origin": "search:hot dog",
    "n_cands": 8,
    "forced": false
   },
   "food|TACO": {
-   "title": "File:Shrimp tacos at Los Gallitos - April 2023 - Sarah Stierch.jpg",
-   "final": 1.018,
-   "p": 0.996,
-   "photo": 0.3895,
-   "fit": 0.528,
+   "title": "File:Shrimp tacos at Casa Del Sol - 2021-08-24 - Sarah Stierch.jpg",
+   "final": 0.937,
+   "p": 1.0,
+   "photo": 0.6726,
+   "fit": 0.216,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.88)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.56)"
    ],
    "flags": [
-    "fit 0.53",
-    "not photo-like 0.39"
+    "fit 0.22"
    ],
    "origin": "search:taco food",
    "n_cands": 8,
@@ -1013,7 +1024,7 @@
   },
   "food|PASTA": {
    "title": "File:Pasta 4.jpg",
-   "final": 1.143,
+   "final": 1.19,
    "p": 0.9948,
    "photo": 0.9636,
    "fit": 0.8,
@@ -1028,7 +1039,7 @@
   },
   "food|MUSHROOM": {
    "title": "File:Edible fungi in basket 2025 G2.jpg",
-   "final": 1.127,
+   "final": 1.176,
    "p": 0.9998,
    "photo": 0.9929,
    "fit": 0.76,
@@ -1043,7 +1054,7 @@
   },
   "food|TOMATO": {
    "title": "File:Organic home-grown tomatoes - unripe to ripe.jpg",
-   "final": 1.35,
+   "final": 1.399,
    "p": 0.9999,
    "photo": 0.9965,
    "fit": 1.0,
@@ -1051,12 +1062,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:tomato food",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|POTATO": {
    "title": "File:Irish Potato Kenya.jpg",
-   "final": 1.256,
+   "final": 1.305,
    "p": 0.9998,
    "photo": 0.9982,
    "fit": 1.0,
@@ -1069,9 +1080,9 @@
   },
   "food|BROCCOLI": {
    "title": "File:Liat Portal for Foodie Disorder - Broccoli from San Francisco farmers market.jpg",
-   "final": 1.299,
+   "final": 1.315,
    "p": 1.0,
-   "photo": 0.6581,
+   "photo": 0.658,
    "fit": 1.0,
    "how": "yolo:broccoli",
    "notes": [],
@@ -1081,42 +1092,40 @@
    "forced": false
   },
   "food|HONEY": {
-   "title": "File:Honey, illustration from The Encyclopedia of Food by Artemas Ward.jpg",
-   "final": 1.082,
-   "p": 1.0,
-   "photo": 0.3412,
-   "fit": 0.844,
+   "title": "File:Stalls on the footpath up to Bachkovo Monastery 05.jpg",
+   "final": 1.001,
+   "p": 0.3805,
+   "photo": 0.9509,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
+   "notes": [],
    "flags": [
-    "not photo-like 0.34"
+    "low word prob 0.38"
    ],
    "origin": "search:honey food",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|COFFEE": {
-   "title": "File:A small cup of coffee.JPG",
-   "final": 0.981,
-   "p": 0.9991,
-   "photo": 0.9298,
-   "fit": 0.438,
+   "title": "File:Coffee cup and saucer.jpg",
+   "final": 0.986,
+   "p": 0.9924,
+   "photo": 0.7722,
+   "fit": 0.457,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.73)"
+    "subject cannot fit 3:4 (box cov 0.76)"
    ],
    "flags": [
-    "fit 0.44"
+    "fit 0.46"
    ],
    "origin": "search:cup of coffee",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|TEA": {
    "title": "File:A cup of black tea with biscuits.jpg",
-   "final": 1.202,
+   "final": 1.245,
    "p": 0.9525,
    "photo": 0.9119,
    "fit": 1.0,
@@ -1129,7 +1138,7 @@
   },
   "food|WATER": {
    "title": "File:Female doctor in uniform holding a glass of water closeup.jpg",
-   "final": 1.347,
+   "final": 1.394,
    "p": 0.9996,
    "photo": 0.9737,
    "fit": 1.0,
@@ -1142,7 +1151,7 @@
   },
   "food|CURRY": {
    "title": "File:Curry Pastes (5311654507).jpg",
-   "final": 1.324,
+   "final": 1.362,
    "p": 0.9991,
    "photo": 0.8803,
    "fit": 1.0,
@@ -1154,34 +1163,35 @@
    "forced": false
   },
   "food|PANCAKE": {
-   "title": "File:Foodiesfeed.com pouring-honey-on-pancakes-with-walnuts.jpg",
-   "final": 1.069,
+   "title": "File:Pancake stack 2.jpg",
+   "final": 0.93,
    "p": 1.0,
-   "photo": 0.1823,
-   "fit": 0.8,
+   "photo": 0.7857,
+   "fit": 0.332,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.69)"
    ],
    "flags": [
-    "not photo-like 0.18"
+    "fit 0.33"
    ],
-   "origin": "current",
+   "origin": "search:pancake food",
    "n_cands": 8,
    "forced": false
   },
   "food|RAMEN": {
-   "title": "File:Ramen dan Teh Manis Dingin.jpg",
-   "final": 1.076,
-   "p": 0.999,
-   "photo": 0.267,
-   "fit": 0.8,
+   "title": "File:Ramen in Osaka.jpg",
+   "final": 1.048,
+   "p": 0.9992,
+   "photo": 0.9628,
+   "fit": 0.512,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 3 edge(s)"
    ],
    "flags": [
-    "not photo-like 0.27"
+    "fit 0.51"
    ],
    "origin": "search:ramen food",
    "n_cands": 8,
@@ -2283,7 +2293,7 @@
   },
   "food|CARROT": {
    "title": "File:Vegetable-Carrot-Bundle-wStalks.jpg",
-   "final": 1.218,
+   "final": 1.262,
    "p": 0.98,
    "photo": 0.9294,
    "fit": 1.0,
@@ -2295,7 +2305,17 @@
    "forced": false
   },
   "food|JUICE": {
-   "status": "no candidates"
+   "title": "File:Cocktail of passion fruit juice and watermelon juice in a glass.jpg",
+   "final": 1.328,
+   "p": 0.9353,
+   "photo": 0.8374,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:fruit juice glass",
+   "n_cands": 7,
+   "forced": false
   },
   "body|EYE": {
    "title": "File:Human eye with blood vessels.jpg",
@@ -4585,7 +4605,7 @@
   },
   "food|FRIED RICE": {
    "title": "File:HK YTM Jordan Road n Canton Road 青葉海鮮酒家 Holly Seafood Restaurant diner food 濕炒飯 Fried rice June 2025 R12S 04.jpg",
-   "final": 1.131,
+   "final": 1.169,
    "p": 0.9852,
    "photo": 0.8661,
    "fit": 0.8,
@@ -4600,7 +4620,7 @@
   },
   "food|PAD THAI": {
    "title": "File:Phat Thai kung Chang Khien street stall.jpg",
-   "final": 1.173,
+   "final": 1.174,
    "p": 0.9979,
    "photo": 0.5109,
    "fit": 0.775,
@@ -4615,7 +4635,7 @@
   },
   "food|SOM TAM": {
    "title": "File:SomTam Larb StickyRice.JPG",
-   "final": 1.261,
+   "final": 1.293,
    "p": 0.9925,
    "photo": 0.8236,
    "fit": 1.0,
@@ -4628,7 +4648,7 @@
   },
   "food|FRENCH FRIES": {
    "title": "File:HK McDonalds Restaurant product 麥當勞食品 food 炸薯條 French fries 味粉 July 2024 R12S 04.jpg",
-   "final": 1.09,
+   "final": 1.107,
    "p": 0.9974,
    "photo": 0.6655,
    "fit": 0.75,
@@ -4642,25 +4662,25 @@
    "forced": false
   },
   "food|FRIED CHICKEN": {
-   "title": "File:Fried Chicken restaurant3.jpg",
-   "final": 0.917,
-   "p": 0.9977,
-   "photo": 0.5156,
-   "fit": 0.45,
+   "title": "File:Fried-Chicken-Set.jpg",
+   "final": 0.956,
+   "p": 1.0,
+   "photo": 0.9465,
+   "fit": 0.331,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.75)"
+    "subject cannot fit 3:4 (box cov 0.55)"
    ],
    "flags": [
-    "fit 0.45"
+    "fit 0.33"
    ],
-   "origin": "search:fried chicken food",
+   "origin": "current",
    "n_cands": 8,
    "forced": false
   },
   "food|YOGURT": {
    "title": "File:Joghurt.jpg",
-   "final": 0.915,
+   "final": 0.937,
    "p": 0.9494,
    "photo": 0.6892,
    "fit": 0.447,
@@ -4676,27 +4696,26 @@
    "forced": false
   },
   "food|BUTTER": {
-   "title": "File:Švédský koláč naruby 904 (cropped).JPG",
-   "final": 0.796,
-   "p": 0.9087,
-   "photo": 0.3298,
-   "fit": 0.303,
-   "how": "saliency",
+   "title": "File:Packing butter for shipment, Amsterdam, Holland, photo from The Encyclopedia of Food by Artemas Ward.jpg",
+   "final": 0.785,
+   "p": 0.8792,
+   "photo": 0.8559,
+   "fit": 0.238,
+   "how": "none",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.63)"
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.57)"
    ],
    "flags": [
-    "fit 0.30",
-    "not photo-like 0.33"
+    "fit 0.24"
    ],
-   "origin": "current",
-   "n_cands": 8,
+   "origin": "search:butter food",
+   "n_cands": 7,
    "forced": false
   },
   "food|SUGAR": {
    "title": "File:Sugar tongs, sugar bowl, sugar cubes.jpg",
-   "final": 1.113,
+   "final": 1.126,
    "p": 0.9951,
    "photo": 0.6255,
    "fit": 0.806,
@@ -4711,7 +4730,7 @@
   },
   "food|SALT": {
    "title": "File:Antigua (Fuerteventura, Spain), Museo de las Salinas del Carmen, Kristallisierungsbecken -- 2025 -- 7231.jpg",
-   "final": 1.152,
+   "final": 1.211,
    "p": 0.7792,
    "photo": 0.981,
    "fit": 1.0,
@@ -4724,7 +4743,7 @@
   },
   "food|FISH SAUCE": {
    "title": "File:Lao fish sauce.jpg",
-   "final": 0.808,
+   "final": 0.882,
    "p": 0.5243,
    "photo": 0.9992,
    "fit": 0.64,
@@ -9195,7 +9214,7 @@
   },
   "food|STEAK": {
    "title": "File:SZ 深圳 Shenzhen 南山區 Nanshan 沙河西路 Shahe West Road shop 49.9 Beef BBQ Restaurant food pork n beef steak October 2025 R12S 06.jpg",
-   "final": 0.945,
+   "final": 0.995,
    "p": 0.9749,
    "photo": 0.986,
    "fit": 0.279,
@@ -9208,30 +9227,30 @@
     "fit 0.28"
    ],
    "origin": "search:steak food",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|CHICKEN RICE": {
-   "title": "File:Tiong Bahru Hainanese Boneless Chicken Rice in Eastwood City (2026-01-16).jpg",
-   "final": 0.924,
-   "p": 0.9901,
-   "photo": 0.0228,
-   "fit": 0.559,
+   "title": "File:Hainanese Chicken Rice.jpg",
+   "final": 0.907,
+   "p": 1.0,
+   "photo": 0.8954,
+   "fit": 0.257,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.93)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.53)"
    ],
    "flags": [
-    "fit 0.56",
-    "not photo-like 0.02"
+    "fit 0.26"
    ],
-   "origin": "search:Hainanese chicken rice",
+   "origin": "current",
    "n_cands": 8,
    "forced": false
   },
   "food|TOM YUM": {
    "title": "File:Tom Yum with Clear Soup.jpg",
-   "final": 1.239,
+   "final": 1.283,
    "p": 0.9886,
    "photo": 0.9384,
    "fit": 1.0,
@@ -9244,7 +9263,7 @@
   },
   "food|MANGO STICKY RICE": {
    "title": "File:Purple Mango Sticky rice.jpg",
-   "final": 1.341,
+   "final": 1.387,
    "p": 1.0,
    "photo": 0.9596,
    "fit": 1.0,
@@ -9256,10 +9275,10 @@
    "forced": false
   },
   "food|SPRING ROLL": {
-   "title": "File:Spring rolls 001.jpg",
-   "final": 1.225,
-   "p": 0.9905,
-   "photo": 0.7134,
+   "title": "File:Thai spring rolls 2.jpg",
+   "final": 1.249,
+   "p": 0.998,
+   "photo": 0.749,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -9270,7 +9289,7 @@
   },
   "food|DUMPLING": {
    "title": "File:JP 日本 Japan 沖繩 OKINAWA Naha Route 221 AEON Mall Okinawa Prefecture Food Court restaurant 炸餃子 dumpling January 2025 R12S 07.jpg",
-   "final": 1.236,
+   "final": 1.276,
    "p": 0.9924,
    "photo": 0.8993,
    "fit": 1.0,
@@ -9283,7 +9302,7 @@
   },
   "food|PORRIDGE": {
    "title": "File:Chinese rice congee.jpg",
-   "final": 0.886,
+   "final": 0.931,
    "p": 0.9945,
    "photo": 0.9496,
    "fit": 0.288,
@@ -9301,7 +9320,7 @@
   },
   "food|OMELET": {
    "title": "File:FoodOmelete.jpg",
-   "final": 1.331,
+   "final": 1.364,
    "p": 0.9994,
    "photo": 0.8271,
    "fit": 1.0,
@@ -9314,7 +9333,7 @@
   },
   "food|BOILED EGG": {
    "title": "File:Soft-boiled-egg.jpg",
-   "final": 1.287,
+   "final": 1.333,
    "p": 0.9994,
    "photo": 0.9533,
    "fit": 1.0,
@@ -9327,7 +9346,7 @@
   },
   "food|TOAST": {
    "title": "File:Toast-3.jpg",
-   "final": 1.072,
+   "final": 1.123,
    "p": 0.9659,
    "photo": 0.992,
    "fit": 0.552,
@@ -9344,7 +9363,7 @@
   },
   "food|CEREAL": {
    "title": "File:Fiber One in a bowl with milk and a spoon 2.jpg",
-   "final": 1.059,
+   "final": 0.837,
    "p": 0.9919,
    "photo": 0.2673,
    "fit": 0.774,
@@ -9361,7 +9380,7 @@
   },
   "food|JAM": {
    "title": "File:Jam jar, Kazakhstan.jpg",
-   "final": 1.254,
+   "final": 1.304,
    "p": 0.9996,
    "photo": 0.9996,
    "fit": 1.0,
@@ -9374,7 +9393,7 @@
   },
   "food|PEANUT": {
    "title": "File:Raw peanuts k.jpg",
-   "final": 1.095,
+   "final": 1.145,
    "p": 0.946,
    "photo": 0.9803,
    "fit": 0.8,
@@ -9389,7 +9408,7 @@
   },
   "food|POPCORN": {
    "title": "File:Popcorn machine.jpg",
-   "final": 1.093,
+   "final": 1.095,
    "p": 0.8663,
    "photo": 0.4527,
    "fit": 1.0,
@@ -9404,7 +9423,7 @@
   },
   "food|CHIPS": {
    "title": "File:Potato-Chips.jpg",
-   "final": 1.259,
+   "final": 1.309,
    "p": 0.9999,
    "photo": 0.9961,
    "fit": 1.0,
@@ -9416,15 +9435,17 @@
    "forced": false
   },
   "food|PUDDING": {
-   "title": "File:Francatelli's Modern Cook - Iced Pudding, a la Chesterfield.jpg",
-   "final": 1.143,
-   "p": 0.9977,
-   "photo": 0.051,
-   "fit": 1.0,
+   "title": "File:202604 Sweet Food and packaging Close-up of Uni-President Pudding (Caramel-free style).jpg",
+   "final": 1.11,
+   "p": 0.9896,
+   "photo": 0.8797,
+   "fit": 0.478,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.80)"
+   ],
    "flags": [
-    "not photo-like 0.05"
+    "fit 0.48"
    ],
    "origin": "search:pudding food",
    "n_cands": 8,
@@ -9432,7 +9453,7 @@
   },
   "food|CUPCAKE": {
    "title": "File:Candy Cupcake! (4637068659).jpg",
-   "final": 1.221,
+   "final": 1.22,
    "p": 0.9991,
    "photo": 0.4874,
    "fit": 1.0,
@@ -9447,7 +9468,7 @@
   },
   "food|PIE": {
    "title": "File:Pecan Pie on blue plate.jpg",
-   "final": 0.984,
+   "final": 1.028,
    "p": 1.0,
    "photo": 0.9359,
    "fit": 0.374,
@@ -9465,7 +9486,7 @@
   },
   "food|WAFFLE": {
    "title": "File:Arizona Waffle House.jpg",
-   "final": 1.235,
+   "final": 1.27,
    "p": 0.9998,
    "photo": 0.8476,
    "fit": 1.0,
@@ -9478,7 +9499,7 @@
   },
   "food|BUBBLE TEA": {
    "title": "File:Moge Tea.jpg",
-   "final": 1.235,
+   "final": 1.269,
    "p": 0.9994,
    "photo": 0.8479,
    "fit": 1.0,
@@ -9491,7 +9512,7 @@
   },
   "food|LEMONADE": {
    "title": "File:Lemonade - 27682817724.jpg",
-   "final": 1.177,
+   "final": 1.19,
    "p": 0.9973,
    "photo": 0.6191,
    "fit": 0.806,
@@ -9505,23 +9526,23 @@
    "forced": false
   },
   "food|SODA": {
-   "title": "File:Brio chinotto soda can.png",
-   "final": 1.16,
-   "p": 0.996,
-   "photo": 0.034,
-   "fit": 1.0,
+   "title": "File:1965 - Country Club Cola - A-Treat Soda Can - Allentown PA.jpg",
+   "final": 1.114,
+   "p": 0.9849,
+   "photo": 0.5969,
+   "fit": 0.807,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.03"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
+   "flags": [],
    "origin": "search:soda can",
    "n_cands": 8,
    "forced": false
   },
   "food|SMOOTHIE": {
    "title": "File:Fruit smoothie (8475314736).png",
-   "final": 1.147,
+   "final": 1.197,
    "p": 0.9995,
    "photo": 0.9976,
    "fit": 0.596,
@@ -9538,7 +9559,7 @@
   },
   "food|COCOA": {
    "title": "File:Hot cocoa in a mug with a hand sprinkling chili pepper flakes onto the whipped cream (15852162626).jpg",
-   "final": 0.957,
+   "final": 0.999,
    "p": 0.9996,
    "photo": 0.928,
    "fit": 0.421,
@@ -9555,7 +9576,7 @@
   },
   "food|SOY MILK": {
    "title": "File:Soy milk (2).jpg",
-   "final": 1.154,
+   "final": 1.201,
    "p": 0.9997,
    "photo": 0.9765,
    "fit": 0.807,
@@ -9570,7 +9591,7 @@
   },
   "food|SAUSAGE": {
    "title": "File:Sausage making-H-5-edited2.jpg",
-   "final": 1.033,
+   "final": 1.082,
    "p": 0.9948,
    "photo": 0.9864,
    "fit": 0.512,
@@ -9587,7 +9608,7 @@
   },
   "food|BACON": {
    "title": "File:Jamones y bacalao en el Mercado Municipal de Sao Paulo.jpg",
-   "final": 0.656,
+   "final": 0.747,
    "p": 0.0347,
    "photo": 0.9301,
    "fit": 1.0,
@@ -9602,7 +9623,7 @@
   },
   "food|HAM": {
    "title": "File:Ham (4).jpg",
-   "final": 1.032,
+   "final": 1.08,
    "p": 1.0,
    "photo": 0.9768,
    "fit": 0.448,
@@ -9614,12 +9635,12 @@
     "fit 0.45"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|MEATBALL": {
    "title": "File:Chicken and carrot meatball, spicy, on mashed potato - Massachusetts.jpg",
-   "final": 1.16,
+   "final": 1.209,
    "p": 0.8587,
    "photo": 0.9185,
    "fit": 1.0,
@@ -9631,40 +9652,44 @@
    "forced": false
   },
   "food|GRILLED PORK": {
-   "title": "File:DFC 6146 Grilled pork skewers sizzling to perfection at a street food stall in Klet Kaeo Sattahip - smoky savory bites straight off the grill.jpg",
-   "final": 0.821,
-   "p": 1.0,
-   "photo": 0.0445,
-   "fit": 0.154,
+   "title": "File:DFC 6118 Grilled marinated beef skewers sizzling with caramelized edges - a popular street food snack from Sattahip Chon Buri.jpg",
+   "final": 0.842,
+   "p": 0.9857,
+   "photo": 0.8213,
+   "fit": 0.123,
    "how": "saliency",
    "notes": [
-    "touches 3 edge(s)",
+    "touches 4 edge(s)",
     "subject cannot fit 3:4 (box cov 0.50)"
    ],
    "flags": [
-    "fit 0.15",
-    "not photo-like 0.04"
+    "fit 0.12"
    ],
    "origin": "search:moo ping grilled pork skewers",
    "n_cands": 2,
    "forced": false
   },
   "food|FISH BALL": {
-   "title": "File:Fat choy fish balls.jpg",
-   "final": 1.158,
-   "p": 0.8418,
-   "photo": 0.9973,
-   "fit": 1.0,
+   "title": "File:Processed seafood clipped.jpg",
+   "final": 1.089,
+   "p": 0.9979,
+   "photo": 0.8521,
+   "fit": 0.611,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:fish balls",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.61"
+   ],
+   "origin": "current",
    "n_cands": 8,
    "forced": false
   },
   "food|TOFU": {
    "title": "File:JP 日本 Japan 京都 Kyoto 下京区 寺町通 四条 Teramachi-dori Shimogyo-ku Kyoto-shi n shop 豬一料理 pork noodle restaurant food 豆腐 tofu June 2026 N13P 02.jpg",
-   "final": 1.114,
+   "final": 1.172,
    "p": 0.7575,
    "photo": 0.9544,
    "fit": 1.0,
@@ -9677,7 +9702,7 @@
   },
   "food|SEAWEED": {
    "title": "File:Nori.jpg",
-   "final": 0.994,
+   "final": 1.041,
    "p": 1.0,
    "photo": 0.9728,
    "fit": 0.379,
@@ -9694,7 +9719,7 @@
   },
   "food|SALAD DRESSING": {
    "title": "File:Salad of mixed greens with dressing of olive oil, vinegar, and Dijon mustard, before tossing - Massachusetts.jpg",
-   "final": 0.658,
+   "final": 0.745,
    "p": 0.0102,
    "photo": 0.8783,
    "fit": 0.775,
@@ -9711,7 +9736,7 @@
   },
   "food|KETCHUP": {
    "title": "File:Good on anything - Bottles of hot sauce and ketchup on table at restaurant in New Orleans.jpg",
-   "final": 1.212,
+   "final": 1.261,
    "p": 0.9718,
    "photo": 0.9754,
    "fit": 0.78,
@@ -9726,7 +9751,7 @@
   },
   "food|SOY SAUCE": {
    "title": "File:Lee Kum Kee soy sauce.jpg",
-   "final": 1.19,
+   "final": 1.212,
    "p": 0.9404,
    "photo": 0.698,
    "fit": 1.0,
@@ -9739,8 +9764,8 @@
   },
   "food|CHILI": {
    "title": "File:Capsicum annuum var. Fiesta - MHNT.jpg",
-   "final": 1.339,
-   "p": 0.9995,
+   "final": 1.389,
+   "p": 0.9994,
    "photo": 0.999,
    "fit": 1.0,
    "how": "saliency",
@@ -9752,7 +9777,7 @@
   },
   "food|GARLIC": {
    "title": "File:Garlic bulbs and cloves.jpg",
-   "final": 1.016,
+   "final": 1.065,
    "p": 0.9998,
    "photo": 0.9926,
    "fit": 0.347,
@@ -9769,7 +9794,7 @@
   },
   "food|ONION": {
    "title": "File:Mixed onions.jpg",
-   "final": 1.114,
+   "final": 1.164,
    "p": 1.0,
    "photo": 0.9988,
    "fit": 0.528,
@@ -9781,12 +9806,12 @@
     "fit 0.53"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|PEPPER": {
    "title": "File:Black pepper of Yercaud.jpg",
-   "final": 1.0,
+   "final": 1.042,
    "p": 1.0,
    "photo": 0.9163,
    "fit": 0.517,
@@ -9803,7 +9828,7 @@
   },
   "food|FLOUR": {
    "title": "File:HK food 麵粉 Wheat flour powder 加入雞蛋 with egg October 2025 N13P 01.jpg",
-   "final": 1.172,
+   "final": 1.227,
    "p": 0.7994,
    "photo": 0.9461,
    "fit": 1.0,
@@ -9816,7 +9841,7 @@
   },
   "food|OIL": {
    "title": "File:Bottle 1 liter Sunflower refined oil.jpg",
-   "final": 1.284,
+   "final": 1.332,
    "p": 1.0,
    "photo": 0.9705,
    "fit": 1.0,
@@ -9829,7 +9854,7 @@
   },
   "food|BREAKFAST": {
    "title": "File:Breakfast at the Black Bear Diner.jpg",
-   "final": 0.881,
+   "final": 0.943,
    "p": 0.7519,
    "photo": 0.9961,
    "fit": 0.424,
@@ -9846,7 +9871,7 @@
   },
   "food|LUNCH": {
    "title": "File:School lunch tray MyPlate 20210810-FNS-UNC-0015.jpg",
-   "final": 1.01,
+   "final": 1.058,
    "p": 0.9802,
    "photo": 0.9753,
    "fit": 0.488,
@@ -9863,7 +9888,7 @@
   },
   "food|DINNER": {
    "title": "File:Guests enjoy dinner at the Ranch-to-Table Celebration recently held in Sioux Falls, S D (55308910230).jpg",
-   "final": 0.864,
+   "final": 0.913,
    "p": 0.9972,
    "photo": 0.9907,
    "fit": 0.268,
@@ -29716,9 +29741,10 @@
   "food|CHOCOLATE",
   "food|COCOA",
   "food|COFFEE",
-  "food|COOKIE",
   "food|CUPCAKE",
   "food|DINNER",
+  "food|EGG",
+  "food|FISH BALL",
   "food|FISH SAUCE",
   "food|FRIED CHICKEN",
   "food|GARLIC",
@@ -29726,7 +29752,6 @@
   "food|HAM",
   "food|HONEY",
   "food|HOTDOG",
-  "food|JUICE",
   "food|LUNCH",
   "food|ONION",
   "food|PANCAKE",
@@ -29736,11 +29761,11 @@
   "food|PORRIDGE",
   "food|PUDDING",
   "food|RAMEN",
+  "food|SALAD",
   "food|SALAD DRESSING",
   "food|SAUSAGE",
   "food|SEAWEED",
   "food|SMOOTHIE",
-  "food|SODA",
   "food|SOUP",
   "food|STEAK",
   "food|SUSHI",
@@ -30487,7 +30512,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1895,
+  "with_photo": 1896,
   "flagged": 1130
  }
 }

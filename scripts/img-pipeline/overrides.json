@@ -766,5 +766,47 @@
    "number 1000",
    "1000 sign"
   ]
+ },
+ "food|JUICE": {
+  "queries": [
+   "glass of orange juice",
+   "fruit juice glass"
+  ]
+ },
+ "clothes|CAP": {
+  "queries": [
+   "baseball cap",
+   "cap hat"
+  ]
+ },
+ "countries|NETHERLANDS": {
+  "queries": [
+   "Kinderdijk windmills",
+   "Dutch windmill"
+  ]
+ },
+ "technology|EMOJI": {
+  "queries": [
+   "emoji cushions",
+   "smiley face balloon"
+  ]
+ },
+ "weather|COOL SEASON": {
+  "queries": [
+   "misty mountain morning Thailand",
+   "Doi Inthanon fog"
+  ]
+ },
+ "toys|SANDCASTLE": {
+  "queries": [
+   "sandcastle beach",
+   "sand castle"
+  ]
+ },
+ "toys|GLOW STICK": {
+  "queries": [
+   "glow sticks",
+   "glowsticks"
+  ]
  }
 }

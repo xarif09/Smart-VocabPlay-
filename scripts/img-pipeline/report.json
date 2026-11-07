@@ -2,7 +2,7 @@
  "words": {
   "animals|DOG": {
    "title": "File:Liver yellow dog in the water looking at viewer at golden hour in Don Det Laos.jpg",
-   "final": 1.033,
+   "final": 1.086,
    "p": 0.9297,
    "photo": 0.9934,
    "fit": 0.46,
@@ -53,7 +53,7 @@
   },
   "animals|CAT": {
    "title": "File:Tabby cats of Ōizumi Ryokuchi Park, January 2019 - 8816.jpg",
-   "final": 1.038,
+   "final": 1.094,
    "p": 0.877,
    "photo": 0.9993,
    "fit": 0.576,
@@ -70,7 +70,7 @@
   },
   "animals|FISH": {
    "title": "File:Carassius auratus black telescope.jpg",
-   "final": 1.266,
+   "final": 1.314,
    "p": 0.9999,
    "photo": 0.9762,
    "fit": 1.0,
@@ -83,7 +83,7 @@
   },
   "animals|BIRD": {
    "title": "File:Ploceus velatus beak open.jpg",
-   "final": 1.265,
+   "final": 1.275,
    "p": 0.9271,
    "photo": 0.5695,
    "fit": 1.0,
@@ -96,8 +96,8 @@
   },
   "animals|COW": {
    "title": "File:Anjarle Bridge and Cows-fix.jpg",
-   "final": 1.106,
-   "p": 0.9598,
+   "final": 1.156,
+   "p": 0.9597,
    "photo": 0.9838,
    "fit": 0.802,
    "how": "yolo:cow",
@@ -106,12 +106,12 @@
    ],
    "flags": [],
    "origin": "search:cow animal",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "animals|PIG": {
    "title": "File:Cochon domestique (Sus scrofa domesticus) (2).jpg",
-   "final": 1.127,
+   "final": 1.16,
    "p": 1.0,
    "photo": 0.8335,
    "fit": 0.784,
@@ -126,7 +126,7 @@
   },
   "animals|FROG": {
    "title": "File:Red-eyed Leaf Frog (49661076226).jpg",
-   "final": 1.227,
+   "final": 1.274,
    "p": 0.9985,
    "photo": 0.9696,
    "fit": 0.761,
@@ -141,7 +141,7 @@
   },
   "animals|DUCK": {
    "title": "File:Anas platyrhynchos male female.jpg",
-   "final": 1.119,
+   "final": 1.17,
    "p": 0.999,
    "photo": 0.9999,
    "fit": 0.594,
@@ -158,9 +158,9 @@
   },
   "animals|LION": {
    "title": "File:Lion (Panthera leo) male 6y.jpg",
-   "final": 1.329,
+   "final": 1.358,
    "p": 1.0,
-   "photo": 0.7911,
+   "photo": 0.7906,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -170,79 +170,87 @@
    "forced": false
   },
   "animals|BEAR": {
-   "title": "File:2010-kodiak-bear-1.jpg",
-   "final": 1.097,
+   "title": "File:Kamchatka Brown Bear near Dvuhyurtochnoe on 2015-07-23.jpg",
+   "final": 1.146,
    "p": 1.0,
-   "photo": 0.9856,
-   "fit": 0.5,
+   "photo": 0.9948,
+   "fit": 0.495,
    "how": "yolo:bear",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.83)"
+    "subject cannot fit 3:4 (box cov 0.82)"
    ],
    "flags": [
-    "fit 0.50"
+    "fit 0.49"
    ],
-   "origin": "current",
+   "origin": "search:bear animal",
    "n_cands": 8,
    "forced": false
   },
   "animals|HORSE": {
-   "title": "File:Horses grazing at Trunkol meadow, Jammu and Kashmir, India (crop).jpg",
-   "final": 1.237,
-   "p": 0.9846,
-   "photo": 0.9964,
-   "fit": 1.0,
+   "title": "File:Biandintz eta zaldiak - modified2.jpg",
+   "final": 1.283,
+   "p": 0.9994,
+   "photo": 0.9881,
+   "fit": 0.776,
    "how": "yolo:horse",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [],
    "origin": "search:horse animal",
    "n_cands": 8,
    "forced": false
   },
   "animals|SHEEP": {
-   "title": "File:Ascain - Oveja -BT- 02.jpg",
-   "final": 1.248,
-   "p": 0.9999,
-   "photo": 0.9851,
-   "fit": 1.0,
+   "title": "File:Swaledale Sheep, Lake District, England - June 2009.jpg",
+   "final": 1.091,
+   "p": 0.9981,
+   "photo": 0.9697,
+   "fit": 0.499,
    "how": "yolo:sheep",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.83)"
+   ],
+   "flags": [
+    "fit 0.50"
+   ],
    "origin": "search:sheep animal",
    "n_cands": 8,
    "forced": false
   },
   "animals|MONKEY": {
-   "title": "File:Macaque India 3.jpg",
-   "final": 1.224,
-   "p": 0.9954,
-   "photo": 0.7488,
-   "fit": 1.0,
+   "title": "File:Jigokudani hotspring in Nagano Japan 001.jpg",
+   "final": 1.154,
+   "p": 0.9656,
+   "photo": 0.9721,
+   "fit": 0.772,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [],
    "origin": "search:monkey",
    "n_cands": 8,
    "forced": false
   },
   "animals|ELEPHANT": {
-   "title": "File:Elephas maximus (Bandipur).jpg",
-   "final": 1.161,
-   "p": 0.9999,
-   "photo": 0.8658,
-   "fit": 0.834,
+   "title": "File:Indian elephant in Kaziranga National Park March 2025 by Tisha Mukherjee 06.jpg",
+   "final": 1.187,
+   "p": 0.9977,
+   "photo": 0.9323,
+   "fit": 0.829,
    "how": "yolo:elephant",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "current",
-   "n_cands": 8,
+   "origin": "search:elephant animal",
+   "n_cands": 7,
    "forced": false
   },
   "animals|TIGER": {
    "title": "File:Bengal tiger in Sanjay Dubri Tiger Reserve December 2024 by Tisha Mukherjee 05.jpg",
-   "final": 1.218,
+   "final": 1.263,
    "p": 0.9973,
    "photo": 0.9475,
    "fit": 1.0,
@@ -250,14 +258,14 @@
    "notes": [],
    "flags": [],
    "origin": "search:tiger animal",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "animals|PANDA": {
    "title": "File:Ailuropoda melanoleuca (Panda géant) - 445.jpg",
-   "final": 1.225,
+   "final": 1.241,
    "p": 0.9992,
-   "photo": 0.6641,
+   "photo": 0.664,
    "fit": 1.0,
    "how": "yolo:bear",
    "notes": [],
@@ -267,17 +275,17 @@
    "forced": false
   },
   "animals|SHARK": {
-   "title": "File:Tiburón azul (Prionace glauca), canal Fayal-Pico, islas Azores, Portugal, 2020-07-27, DD 29.jpg",
-   "final": 1.134,
-   "p": 0.9978,
-   "photo": 0.1058,
-   "fit": 0.787,
+   "title": "File:Tiburón azul (Prionace glauca), canal Fayal-Pico, islas Azores, Portugal, 2020-07-27, DD 31.jpg",
+   "final": 1.057,
+   "p": 0.9997,
+   "photo": 0.952,
+   "fit": 0.352,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.59)"
    ],
    "flags": [
-    "not photo-like 0.11"
+    "fit 0.35"
    ],
    "origin": "search:shark animal",
    "n_cands": 8,
@@ -285,7 +293,7 @@
   },
   "animals|WHALE": {
    "title": "File:001 Humpback whale breaching in Ballena Marine National Park Photo by Giles Laurent.jpg",
-   "final": 1.148,
+   "final": 1.195,
    "p": 0.9999,
    "photo": 0.9697,
    "fit": 0.793,
@@ -300,9 +308,9 @@
   },
   "animals|OCTOPUS": {
    "title": "File:Pulpo común (Octopus vulgaris), Parque natural de la Arrábida, Portugal, 2020-07-21, DD 33.jpg",
-   "final": 1.265,
+   "final": 1.304,
    "p": 0.9785,
-   "photo": 0.8833,
+   "photo": 0.8825,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -312,23 +320,25 @@
    "forced": false
   },
   "animals|CRAB": {
-   "title": "File:Callinectes sapidus, Louisiana.jpg",
-   "final": 1.157,
-   "p": 0.8585,
-   "photo": 0.9412,
-   "fit": 0.781,
+   "title": "File:Cancer pagurus.jpg",
+   "final": 1.089,
+   "p": 1.0,
+   "photo": 0.9882,
+   "fit": 0.384,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.64)"
    ],
-   "flags": [],
-   "origin": "search:crab animal",
+   "flags": [
+    "fit 0.38"
+   ],
+   "origin": "current",
    "n_cands": 8,
    "forced": false
   },
   "animals|OWL": {
    "title": "File:004 Great horned owl under a Pink Ipê tree in Encontro das Águas State Park Photo by Giles Laurent.jpg",
-   "final": 1.344,
+   "final": 1.393,
    "p": 0.9999,
    "photo": 0.9876,
    "fit": 1.0,
@@ -341,7 +351,7 @@
   },
   "animals|SNAKE": {
    "title": "File:Cobra-papagaio - Bothrops bilineatus - Ilhéus - Bahia.jpg",
-   "final": 0.978,
+   "final": 1.022,
    "p": 0.999,
    "photo": 0.9348,
    "fit": 0.345,
@@ -358,7 +368,7 @@
   },
   "animals|TURTLE": {
    "title": "File:Sea Turtle in Apo Island.jpg",
-   "final": 1.19,
+   "final": 1.241,
    "p": 0.9738,
    "photo": 0.9944,
    "fit": 0.763,
@@ -368,12 +378,12 @@
    ],
    "flags": [],
    "origin": "search:sea turtle",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "animals|BUTTERFLY": {
    "title": "File:Butterfly Luc Viatour.JPG",
-   "final": 1.119,
+   "final": 1.169,
    "p": 1.0,
    "photo": 0.9951,
    "fit": 0.547,
@@ -390,7 +400,7 @@
   },
   "animals|MOUSE": {
    "title": "File:Mus musculus 131536695.jpg",
-   "final": 1.042,
+   "final": 1.079,
    "p": 0.7784,
    "photo": 0.7531,
    "fit": 0.75,
@@ -405,9 +415,9 @@
   },
   "animals|PENGUIN": {
    "title": "File:Magellanic penguin, Valdes Peninsula, e.jpg",
-   "final": 1.258,
+   "final": 1.304,
    "p": 1.0,
-   "photo": 0.9683,
+   "photo": 0.9682,
    "fit": 1.0,
    "how": "yolo:bird",
    "notes": [],
@@ -418,7 +428,7 @@
   },
   "animals|FOX": {
    "title": "File:Rød ræv (Vulpes vulpes).jpg",
-   "final": 1.232,
+   "final": 1.279,
    "p": 1.0,
    "photo": 0.9781,
    "fit": 0.785,
@@ -2159,7 +2169,7 @@
   },
   "animals|RABBIT": {
    "title": "File:Oryctolagus cuniculus Rcdo.jpg",
-   "final": 1.201,
+   "final": 1.254,
    "p": 0.8697,
    "photo": 0.9699,
    "fit": 1.0,
@@ -2172,7 +2182,7 @@
   },
   "animals|DOLPHIN": {
    "title": "File:Tursiops truncatus 01.jpg",
-   "final": 1.28,
+   "final": 1.32,
    "p": 1.0,
    "photo": 0.8921,
    "fit": 1.0,
@@ -2185,7 +2195,7 @@
   },
   "animals|BEE": {
    "title": "File:The Lone Pollinator.jpg",
-   "final": 1.313,
+   "final": 1.354,
    "p": 0.9995,
    "photo": 0.9096,
    "fit": 1.0,
@@ -4459,20 +4469,20 @@
   },
   "animals|GIRAFFE": {
    "title": "File:015a Angolan giraffe silhouette at sunrise in the Kalahari Desert of Namibia Photo by Giles Laurent.jpg",
-   "final": 1.268,
+   "final": 1.318,
    "p": 0.9993,
-   "photo": 0.9924,
+   "photo": 0.9923,
    "fit": 1.0,
    "how": "yolo:giraffe",
    "notes": [],
    "flags": [],
    "origin": "search:giraffe animal",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "animals|ZEBRA": {
    "title": "File:Equus quagga (Namutoni, 2012).jpg",
-   "final": 1.266,
+   "final": 1.316,
    "p": 0.9998,
    "photo": 0.9982,
    "fit": 0.834,
@@ -4487,7 +4497,7 @@
   },
   "animals|CHICKEN": {
    "title": "File:Hen with chicks, Raisen district, MP, India.jpg",
-   "final": 1.147,
+   "final": 1.197,
    "p": 0.9532,
    "photo": 0.978,
    "fit": 0.844,
@@ -4502,7 +4512,7 @@
   },
   "animals|GOAT": {
    "title": "File:Capra aegagrus hircus in isla Margarita.jpg",
-   "final": 1.292,
+   "final": 1.315,
    "p": 0.9509,
    "photo": 0.7039,
    "fit": 1.0,
@@ -4515,7 +4525,7 @@
   },
   "animals|DEER": {
    "title": "File:Red Deer Cervus Elaphus in Richmond Park 2024 02.jpg",
-   "final": 1.187,
+   "final": 1.24,
    "p": 0.915,
    "photo": 0.9908,
    "fit": 0.769,
@@ -4530,9 +4540,9 @@
   },
   "animals|CROCODILE": {
    "title": "File:Nile crocodile head.jpg",
-   "final": 0.937,
+   "final": 0.985,
    "p": 1.0,
-   "photo": 0.9765,
+   "photo": 0.9763,
    "fit": 0.195,
    "how": "saliency",
    "notes": [
@@ -4548,9 +4558,9 @@
   },
   "animals|KANGAROO": {
    "title": "File:Kangaroo1.jpg",
-   "final": 1.195,
+   "final": 1.216,
    "p": 0.9993,
-   "photo": 0.708,
+   "photo": 0.7076,
    "fit": 0.815,
    "how": "saliency",
    "notes": [
@@ -4563,7 +4573,7 @@
   },
   "animals|ANT": {
    "title": "File:Red Ant - March 2025.jpg",
-   "final": 1.07,
+   "final": 1.11,
    "p": 1.0,
    "photo": 0.8948,
    "fit": 0.481,
@@ -4580,7 +4590,7 @@
   },
   "animals|SPIDER": {
    "title": "File:Hippasa holmerae (Lawn wolf spider) in its funnel web (2).jpg",
-   "final": 1.25,
+   "final": 1.298,
    "p": 0.9997,
    "photo": 0.9835,
    "fit": 1.0,
@@ -8329,7 +8339,7 @@
   },
   "animals|WOLF": {
    "title": "File:Eurasian wolf 2.jpg",
-   "final": 1.129,
+   "final": 1.179,
    "p": 0.9906,
    "photo": 0.996,
    "fit": 0.761,
@@ -8339,12 +8349,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "animals|CAMEL": {
    "title": "File:Camel in Gobi Desert 01.jpg",
-   "final": 1.247,
+   "final": 1.294,
    "p": 0.9988,
    "photo": 0.9741,
    "fit": 1.0,
@@ -8357,7 +8367,7 @@
   },
   "animals|HIPPO": {
    "title": "File:Hippopotamus (Hippopotamus amphibius) juvenile Kruger.jpg",
-   "final": 1.273,
+   "final": 1.317,
    "p": 0.999,
    "photo": 0.9454,
    "fit": 1.0,
@@ -8370,7 +8380,7 @@
   },
   "animals|RHINO": {
    "title": "File:Indian rhinoceros (Rhinoceros unicornis) 1.jpg",
-   "final": 1.248,
+   "final": 1.297,
    "p": 0.9994,
    "photo": 0.9839,
    "fit": 1.0,
@@ -8383,9 +8393,9 @@
   },
   "animals|GORILLA": {
    "title": "File:064 Mountain gorilla climbing a tree at Bwindi Impenetrable Forest National Park (crop) Photo by Giles Laurent.jpg",
-   "final": 1.117,
+   "final": 1.163,
    "p": 0.7907,
-   "photo": 0.8584,
+   "photo": 0.8581,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -8395,38 +8405,41 @@
    "forced": false
   },
   "animals|LEOPARD": {
-   "title": "File:Leopard (Panthera pardus pardus) young female Kruger 2.jpg",
-   "final": 1.255,
-   "p": 0.997,
-   "photo": 0.9794,
-   "fit": 1.0,
+   "title": "File:Leopard (Panthera pardus pardus) Kruger.jpg",
+   "final": 1.25,
+   "p": 0.9839,
+   "photo": 0.946,
+   "fit": 0.76,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [],
    "origin": "search:leopard animal",
    "n_cands": 8,
    "forced": false
   },
   "animals|CHEETAH": {
-   "title": "File:Male cheetah facing left in South Africa.jpg",
-   "final": 1.101,
-   "p": 0.9775,
-   "photo": 0.944,
-   "fit": 0.538,
+   "title": "File:037 Cheetah close-up in the Serengeti National Park Photo by Giles Laurent.jpg",
+   "final": 1.029,
+   "p": 0.9985,
+   "photo": 0.8483,
+   "fit": 0.321,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.90)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
    ],
    "flags": [
-    "fit 0.54"
+    "fit 0.32"
    ],
-   "origin": "current",
-   "n_cands": 8,
+   "origin": "search:cheetah animal",
+   "n_cands": 7,
    "forced": false
   },
   "animals|BUFFALO": {
    "title": "File:Bubalus bubalis (water buffalo) calf, looking at the viewer, the feet in a pond, in Laos.jpg",
-   "final": 1.135,
+   "final": 1.181,
    "p": 0.9954,
    "photo": 0.9627,
    "fit": 0.777,
@@ -8441,7 +8454,7 @@
   },
   "animals|DONKEY": {
    "title": "File:Donkey in Clovelly, North Devon, England.jpg",
-   "final": 0.917,
+   "final": 0.949,
    "p": 0.916,
    "photo": 0.779,
    "fit": 0.379,
@@ -8459,7 +8472,7 @@
   },
   "animals|SQUIRREL": {
    "title": "File:113 Cape ground squirrel standing from a hole in the Kalahari Desert of Namibia Photo by Giles Laurent.jpg",
-   "final": 1.271,
+   "final": 1.316,
    "p": 0.9813,
    "photo": 0.942,
    "fit": 1.0,
@@ -8472,7 +8485,7 @@
   },
   "animals|BAT": {
    "title": "File:Big Brown Bat (21925795404).jpg",
-   "final": 1.321,
+   "final": 1.363,
    "p": 0.9996,
    "photo": 0.9214,
    "fit": 1.0,
@@ -8485,9 +8498,9 @@
   },
   "animals|HEDGEHOG": {
    "title": "File:Cute Hedgehog.jpg",
-   "final": 1.198,
+   "final": 1.239,
    "p": 1.0,
-   "photo": 0.9111,
+   "photo": 0.9108,
    "fit": 0.791,
    "how": "saliency",
    "notes": [
@@ -8500,7 +8513,7 @@
   },
   "animals|KOALA": {
    "title": "File:Cape Otway (AU), Lighthouse Road, Koala -- 2019 -- 1254.jpg",
-   "final": 1.249,
+   "final": 1.299,
    "p": 0.9998,
    "photo": 0.9939,
    "fit": 1.0,
@@ -8513,9 +8526,9 @@
   },
   "animals|SLOTH": {
    "title": "File:Brown-throated three-toed sloth female.JPG",
-   "final": 1.046,
+   "final": 1.089,
    "p": 0.9879,
-   "photo": 0.927,
+   "photo": 0.9269,
    "fit": 0.6,
    "how": "saliency",
    "notes": [
@@ -8525,12 +8538,12 @@
     "fit 0.60"
    ],
    "origin": "search:sloth animal",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "animals|RACCOON": {
    "title": "File:Raccoon On The Tree Waschbär (142297073).jpeg",
-   "final": 1.318,
+   "final": 1.366,
    "p": 0.9981,
    "photo": 0.9828,
    "fit": 1.0,
@@ -8543,7 +8556,7 @@
   },
   "animals|OTTER": {
    "title": "File:European otter 02.jpg",
-   "final": 1.23,
+   "final": 1.245,
    "p": 1.0,
    "photo": 0.6487,
    "fit": 1.0,
@@ -8556,9 +8569,9 @@
   },
   "animals|SEAL": {
    "title": "File:Atlantic Harbor Seal outside of the New England Aquarium.jpg",
-   "final": 1.241,
+   "final": 1.284,
    "p": 0.9944,
-   "photo": 0.9362,
+   "photo": 0.9345,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -8569,9 +8582,9 @@
   },
   "animals|WALRUS": {
    "title": "File:Walrus in the Russian Arctic National Park, Novaya Zemlya 2015-2.jpg",
-   "final": 0.968,
+   "final": 1.007,
    "p": 1.0,
-   "photo": 0.8878,
+   "photo": 0.8877,
    "fit": 0.45,
    "how": "saliency",
    "notes": [
@@ -8586,7 +8599,7 @@
   },
   "animals|POLAR BEAR": {
    "title": "File:Polar bear (Ursus) maritimus female with its cub, Svalbard (2).jpg",
-   "final": 1.25,
+   "final": 1.299,
    "p": 0.9992,
    "photo": 0.9987,
    "fit": 1.0,
@@ -8599,9 +8612,9 @@
   },
   "animals|REINDEER": {
    "title": "File:Rufford Abbey Country Park – animal grave with reindeer - geograph.org.uk - 6336114.jpg",
-   "final": 1.166,
-   "p": 0.9736,
-   "photo": 0.9689,
+   "final": 1.214,
+   "p": 0.9729,
+   "photo": 0.9681,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -8611,10 +8624,10 @@
    "forced": false
   },
   "animals|MOOSE": {
-   "title": "File:Antique cars Moose animal attraction.jpg",
-   "final": 1.31,
-   "p": 0.9739,
-   "photo": 0.9446,
+   "title": "File:Antique Cars Moose Animal Attraction.jpg",
+   "final": 1.197,
+   "p": 0.9231,
+   "photo": 0.8068,
    "fit": 1.0,
    "how": "yolo:horse",
    "notes": [],
@@ -8625,7 +8638,7 @@
   },
   "animals|BISON": {
    "title": "File:Image-American bison rests at hot spring in yellowstone national park 1.jpg",
-   "final": 1.153,
+   "final": 1.202,
    "p": 0.9993,
    "photo": 0.9952,
    "fit": 0.8,
@@ -8640,9 +8653,9 @@
   },
   "animals|LLAMA": {
    "title": "File:Festival de la llama Bolivia.jpg",
-   "final": 1.196,
-   "p": 0.9971,
-   "photo": 0.647,
+   "final": 1.21,
+   "p": 0.9969,
+   "photo": 0.6469,
    "fit": 1.0,
    "how": "yolo:sheep",
    "notes": [],
@@ -8653,7 +8666,7 @@
   },
   "animals|PARROT": {
    "title": "File:Rainbow lorikeet (Trichoglossus moluccanus moluccanus) Sydney.jpg",
-   "final": 1.313,
+   "final": 1.363,
    "p": 0.9759,
    "photo": 0.9887,
    "fit": 1.0,
@@ -8666,7 +8679,7 @@
   },
   "animals|PEACOCK": {
    "title": "File:Peacock Plumage.jpg",
-   "final": 1.149,
+   "final": 1.199,
    "p": 1.0,
    "photo": 0.9928,
    "fit": 0.6,
@@ -8683,7 +8696,7 @@
   },
   "animals|FLAMINGO": {
    "title": "File:Chilean flamingo at the Hoenderdaell animal park in Anna Paulowna 6.jpg",
-   "final": 1.124,
+   "final": 1.167,
    "p": 0.9989,
    "photo": 0.9346,
    "fit": 0.562,
@@ -8700,9 +8713,9 @@
   },
   "animals|EAGLE": {
    "title": "File:White tailed eagle raftsund square crop.jpg",
-   "final": 1.233,
+   "final": 1.268,
    "p": 0.9999,
-   "photo": 0.8519,
+   "photo": 0.8518,
    "fit": 0.805,
    "how": "yolo:bird",
    "notes": [
@@ -8715,7 +8728,7 @@
   },
   "animals|SWAN": {
    "title": "File:Mute swan cygnet pontoon in Prospect Park (80364).jpg",
-   "final": 1.145,
+   "final": 1.202,
    "p": 0.8551,
    "photo": 0.9985,
    "fit": 1.0,
@@ -8728,7 +8741,7 @@
   },
   "animals|GOOSE": {
    "title": "File:Domestic Goose.jpg",
-   "final": 1.309,
+   "final": 1.362,
    "p": 0.9328,
    "photo": 0.9994,
    "fit": 1.0,
@@ -8736,12 +8749,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:goose animal",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "animals|TURKEY": {
    "title": "File:Male wild turkey (Meleagris gallopavo) strutting.jpg",
-   "final": 1.238,
+   "final": 1.281,
    "p": 0.9999,
    "photo": 0.9322,
    "fit": 0.792,
@@ -8756,8 +8769,8 @@
   },
   "animals|ROOSTER": {
    "title": "File:Rooster tethered in a backyard raising area with small rooster houses, Malabrigo, Batangas, Philippines (2025).jpg",
-   "final": 1.266,
-   "p": 0.8716,
+   "final": 1.32,
+   "p": 0.8715,
    "photo": 0.9791,
    "fit": 1.0,
    "how": "saliency",
@@ -8769,7 +8782,7 @@
   },
   "animals|PIGEON": {
    "title": "File:New Zealand pigeon (Hemiphaga novaeseelandiae) Waitakere.jpg",
-   "final": 1.323,
+   "final": 1.375,
    "p": 0.9538,
    "photo": 0.9958,
    "fit": 1.0,
@@ -8782,9 +8795,9 @@
   },
   "animals|SPARROW": {
    "title": "File:House sparrow male in Prospect Park (53532).jpg",
-   "final": 1.121,
+   "final": 1.171,
    "p": 1.0,
-   "photo": 0.9954,
+   "photo": 0.995,
    "fit": 0.544,
    "how": "yolo:bird",
    "notes": [
@@ -8799,7 +8812,7 @@
   },
   "animals|CROW": {
    "title": "File:Large-billed Crow (Wild Crow) Hiledole Height Tarkeshwor Municipility Kathmandu Nepal Rajesh Dhungana (15).jpg",
-   "final": 1.279,
+   "final": 1.329,
    "p": 0.9997,
    "photo": 0.999,
    "fit": 1.0,
@@ -8812,7 +8825,7 @@
   },
   "animals|HUMMINGBIRD": {
    "title": "File:Snowy-bellied hummingbird (Amazilia edward niveoventer) 1.jpg",
-   "final": 1.257,
+   "final": 1.306,
    "p": 0.9972,
    "photo": 0.9814,
    "fit": 0.823,
@@ -8827,9 +8840,9 @@
   },
   "animals|OSTRICH": {
    "title": "File:104 Juvenile South African ostrich in the Kalahari Desert of Namibia Photo by Giles Laurent.jpg",
-   "final": 1.297,
+   "final": 1.341,
    "p": 0.995,
-   "photo": 0.9351,
+   "photo": 0.935,
    "fit": 1.0,
    "how": "yolo:bird",
    "notes": [],
@@ -8840,7 +8853,7 @@
   },
   "animals|LIZARD": {
    "title": "File:Monitor lizard swallows Uromastyx in Kuwait.jpg",
-   "final": 0.898,
+   "final": 0.949,
    "p": 0.9689,
    "photo": 0.9947,
    "fit": 0.307,
@@ -8856,17 +8869,18 @@
    "forced": false
   },
   "animals|GECKO": {
-   "title": "File:Hemidactylus frenatus mating, ventral view.jpg",
-   "final": 1.172,
-   "p": 0.9864,
-   "photo": 0.2935,
-   "fit": 0.806,
+   "title": "File:Combat-de-phelsumes-sur-un-bananier.JPG",
+   "final": 1.128,
+   "p": 0.9742,
+   "photo": 0.9983,
+   "fit": 0.483,
    "how": "saliency",
    "notes": [
+    "touches 1 edge(s)",
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "not photo-like 0.29"
+    "fit 0.48"
    ],
    "origin": "search:gecko animal",
    "n_cands": 8,
@@ -8874,7 +8888,7 @@
   },
   "animals|CHAMELEON": {
    "title": "File:Blue-legged chameleon (Calumma crypticum) male Ranomafana.jpg",
-   "final": 1.145,
+   "final": 1.193,
    "p": 0.9986,
    "photo": 0.9851,
    "fit": 0.791,
@@ -8889,7 +8903,7 @@
   },
   "animals|TORTOISE": {
    "title": "File:Radiated tortoise (Astrochelys radiata) Tsimanampetsotsa.jpg",
-   "final": 1.002,
+   "final": 1.058,
    "p": 0.8671,
    "photo": 0.9897,
    "fit": 0.547,
@@ -8906,9 +8920,9 @@
   },
   "animals|DINOSAUR": {
    "title": "File:Indroda Dinosaur Park.jpg",
-   "final": 1.239,
+   "final": 1.287,
    "p": 0.9827,
-   "photo": 0.974,
+   "photo": 0.9741,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -8919,7 +8933,7 @@
   },
   "animals|JELLYFISH": {
    "title": "File:Lion's mane jellyfish in Gullmarn fjord at Sämstad 3.jpg",
-   "final": 1.341,
+   "final": 1.389,
    "p": 0.9999,
    "photo": 0.9791,
    "fit": 1.0,
@@ -8932,7 +8946,7 @@
   },
   "animals|STARFISH": {
    "title": "File:Estrella espinosa común (Marthasterias glacialis), Madeira, Portugal, 2019-05-31, DD 57.jpg",
-   "final": 1.243,
+   "final": 1.284,
    "p": 1.0,
    "photo": 0.9139,
    "fit": 1.0,
@@ -8945,7 +8959,7 @@
   },
   "animals|SEAHORSE": {
    "title": "File:Hippocampus hippocampus (on Ascophyllum nodosum).jpg",
-   "final": 1.257,
+   "final": 1.306,
    "p": 0.9998,
    "photo": 0.9923,
    "fit": 1.0,
@@ -8958,7 +8972,7 @@
   },
   "animals|SHRIMP": {
    "title": "File:Camarón (Ancylocaris brevicarpalis), Zanzíbar, Tanzania, 2024-05-30, DD 32.jpg",
-   "final": 1.163,
+   "final": 1.213,
    "p": 0.9993,
    "photo": 0.9989,
    "fit": 0.75,
@@ -8973,7 +8987,7 @@
   },
   "animals|LOBSTER": {
    "title": "File:KreeftbijDenOsse.jpg",
-   "final": 1.09,
+   "final": 1.131,
    "p": 0.9813,
    "photo": 0.9049,
    "fit": 0.553,
@@ -8990,7 +9004,7 @@
   },
   "animals|SQUID": {
    "title": "File:Bigfin reef squid (Sepioteuthis lessoniana) (32199935062) R0.jpg",
-   "final": 1.278,
+   "final": 1.333,
    "p": 0.8714,
    "photo": 0.9869,
    "fit": 1.0,
@@ -9003,7 +9017,7 @@
   },
   "animals|CLOWNFISH": {
    "title": "File:Pez payaso común (Amphiprion ocellaris) en una anémona magnífica (Heteractis magnifica), Anilao, Filipinas, 2023-08-22, DD 08.jpg",
-   "final": 1.346,
+   "final": 1.395,
    "p": 0.9999,
    "photo": 0.9817,
    "fit": 1.0,
@@ -9016,7 +9030,7 @@
   },
   "animals|EEL": {
    "title": "File:New Zealand longfin eel (Anguilla dieffenbachii) Piha.jpg",
-   "final": 1.243,
+   "final": 1.287,
    "p": 0.9894,
    "photo": 0.9335,
    "fit": 1.0,
@@ -9029,7 +9043,7 @@
   },
   "animals|LADYBUG": {
    "title": "File:Ladybird beetle on a hand.jpg",
-   "final": 1.252,
+   "final": 1.302,
    "p": 1.0,
    "photo": 0.997,
    "fit": 1.0,
@@ -9042,7 +9056,7 @@
   },
   "animals|DRAGONFLY": {
    "title": "File:Common darter dragonflies (Sympetrum striolatum) mating blue abdomen and red pterostigma.JPG",
-   "final": 1.313,
+   "final": 1.361,
    "p": 0.9999,
    "photo": 0.9802,
    "fit": 1.0,
@@ -9055,7 +9069,7 @@
   },
   "animals|GRASSHOPPER": {
    "title": "File:Neorthacris simulans-Kadavoor-2016-09-13-002.jpg",
-   "final": 1.349,
+   "final": 1.399,
    "p": 0.9993,
    "photo": 0.9978,
    "fit": 1.0,
@@ -9067,19 +9081,18 @@
    "forced": false
   },
   "animals|MOSQUITO": {
-   "title": "File:Mosquito from \"How a Mosquito operates\".jpg",
-   "final": 0.725,
-   "p": 0.9359,
-   "photo": 0.0003,
-   "fit": 0.226,
-   "how": "none",
+   "title": "File:Mosquito larva2.jpg",
+   "final": 0.642,
+   "p": 0.0002,
+   "photo": 0.9851,
+   "fit": 0.524,
+   "how": "saliency",
    "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.54)"
+    "subject cannot fit 3:4 (box cov 0.87)"
    ],
    "flags": [
-    "fit 0.23",
-    "not photo-like 0.00"
+    "low word prob 0.00",
+    "fit 0.52"
    ],
    "origin": "search:mosquito",
    "n_cands": 7,
@@ -9087,7 +9100,7 @@
   },
   "animals|FLY": {
    "title": "File:Housefly on a plant.jpg",
-   "final": 1.333,
+   "final": 1.382,
    "p": 0.9999,
    "photo": 0.9975,
    "fit": 1.0,
@@ -9100,8 +9113,8 @@
   },
   "animals|COCKROACH": {
    "title": "File:Cockroach climbing a wall.jpg",
-   "final": 1.249,
-   "p": 0.9998,
+   "final": 1.298,
+   "p": 0.9997,
    "photo": 0.9906,
    "fit": 1.0,
    "how": "saliency",
@@ -9113,7 +9126,7 @@
   },
   "animals|WORM": {
    "title": "File:A pink earthworm on ground.jpg",
-   "final": 1.243,
+   "final": 1.287,
    "p": 0.9997,
    "photo": 0.9341,
    "fit": 1.0,
@@ -9126,7 +9139,7 @@
   },
   "animals|SNAIL": {
    "title": "File:Snail-wiki-120-Zachi-Evenor.jpg",
-   "final": 1.248,
+   "final": 1.298,
    "p": 0.997,
    "photo": 0.9924,
    "fit": 1.0,
@@ -9139,7 +9152,7 @@
   },
   "animals|CATERPILLAR": {
    "title": "File:Sphinx moth caterpillar (Xylophanes crotonis).jpg",
-   "final": 1.328,
+   "final": 1.375,
    "p": 0.9953,
    "photo": 0.9697,
    "fit": 1.0,
@@ -9152,9 +9165,9 @@
   },
   "animals|SCORPION": {
    "title": "File:Scorpion MET 1981.459.1.jpeg",
-   "final": 1.252,
+   "final": 1.296,
    "p": 0.9973,
-   "photo": 0.9979,
+   "photo": 0.9706,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -9165,7 +9178,7 @@
   },
   "animals|PUPPY": {
    "title": "File:Golde33443.jpg",
-   "final": 0.993,
+   "final": 1.042,
    "p": 0.9972,
    "photo": 0.9944,
    "fit": 0.487,
@@ -9182,20 +9195,19 @@
    "forced": false
   },
   "animals|KITTEN": {
-   "title": "File:Juvenile Ragdoll.jpg",
-   "final": 0.87,
-   "p": 0.9976,
-   "photo": 0.506,
-   "fit": 0.342,
+   "title": "File:Oriental shorthair kitten.jpg",
+   "final": 0.922,
+   "p": 0.868,
+   "photo": 0.9876,
+   "fit": 0.337,
    "how": "yolo:cat",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.95)"
+    "subject cannot fit 3:4 (box cov 0.56)"
    ],
    "flags": [
     "fit 0.34"
    ],
-   "origin": "current",
+   "origin": "search:kitten",
    "n_cands": 8,
    "forced": false
   },
@@ -29455,6 +29467,7 @@
   "animals|BUTTERFLY",
   "animals|CAT",
   "animals|CHEETAH",
+  "animals|CRAB",
   "animals|CROCODILE",
   "animals|DOG",
   "animals|DONKEY",
@@ -29468,6 +29481,7 @@
   "animals|PEACOCK",
   "animals|PUPPY",
   "animals|SHARK",
+  "animals|SHEEP",
   "animals|SLOTH",
   "animals|SNAKE",
   "animals|SPARROW",
@@ -30515,6 +30529,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1896,
-  "flagged": 1132
+  "flagged": 1134
  }
 }

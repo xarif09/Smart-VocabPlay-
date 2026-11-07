@@ -201,6 +201,12 @@ def main(words, top):
         k = w["key"]; sp = spec_for(w)
         ov = overrides.get(k) or {}
         if isinstance(ov, str): ov = {"file": ov}
+        if ov.get("skip"):  # reviewed: no good real photo -> leave the word to the app's designed fallback
+            if k in out:
+                f = os.path.join(ROOT, "public", "img", out[k]["file"])
+                if os.path.exists(f): os.remove(f)
+                out.pop(k)
+            report["words"][k] = {"status": "skipped after review (no clear photo)"}; continue
         cf = os.path.join(CACHE, "cands", h(k) + ".json")
         cands = {}
         for c in load_json(cf, []):

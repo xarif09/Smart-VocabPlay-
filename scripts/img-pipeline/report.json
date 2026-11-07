@@ -1325,19 +1325,7 @@
    "forced": false
   },
   "colors|BLACK": {
-   "title": "File:Black hole - Messier 87 crop max res.jpg",
-   "final": 0.977,
-   "p": 0.4251,
-   "photo": 0.9469,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.43"
-   ],
-   "origin": "search:black objects",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|WHITE": {
    "title": "File:African Cape Daisy (Osteospermum barberiae).jpg",
@@ -2398,17 +2386,7 @@
    "forced": false
   },
   "numbers|ONE": {
-   "title": "File:Apple II at Musée Bolo.jpg",
-   "final": 1.065,
-   "p": 0.6243,
-   "photo": 0.9992,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:one apple",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|TWO": {
    "title": "File:Person placing two apples on a red surface indoors.jpg",
@@ -2496,23 +2474,7 @@
    "forced": false
   },
   "numbers|EIGHT": {
-   "title": "File:Number ‘8’ in Nigerian Sign Language.jpg",
-   "final": 0.639,
-   "p": 0.0001,
-   "photo": 0.9936,
-   "fit": 0.676,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.68"
-   ],
-   "origin": "search:number 8 sign",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|NINE": {
    "title": "File:Square made from a group of tennis balls (4273177377).jpg",
@@ -2530,22 +2492,7 @@
    "forced": false
   },
   "numbers|TEN": {
-   "title": "File:20240428 Armed Forces Sports Bowling Championship - bowling form.jpg",
-   "final": 0.585,
-   "p": 0.0088,
-   "photo": 0.4475,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.01",
-    "not photo-like 0.45"
-   ],
-   "origin": "search:ten fingers",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|ELEVEN": {
    "title": "File:Międzyrzec-Podlaski-180927-house-number-Rymarska-11.jpg",
@@ -2638,19 +2585,7 @@
    "forced": false
   },
   "numbers|HUNDRED": {
-   "title": "File:Lascar Rama VIII Bridge (4509749672).jpg",
-   "final": 0.69,
-   "p": 0.0002,
-   "photo": 0.9484,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:100 baht banknote",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|THOUSAND": {
    "title": "File:Exmoor , Wimbleball Lake - 1000 Sign ^ Lookout Point - geograph.org.uk - 1956301.jpg",
@@ -5596,35 +5531,10 @@
    "forced": false
   },
   "feelings|SAD": {
-   "title": "File:Sad-face.png",
-   "final": 0.445,
-   "p": 0.7521,
-   "photo": 0.0009,
-   "fit": 0.778,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)",
-    "upscaled x1.6"
-   ],
-   "flags": [
-    "not photo-like 0.00"
-   ],
-   "origin": "search:sad face",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|ANGRY": {
-   "title": "File:1J6A8483-Black faced warbler.jpg",
-   "final": 1.21,
-   "p": 0.788,
-   "photo": 0.7165,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:angry face",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|SCARED": {
    "title": "File:Scared Child at Nighttime.jpg",
@@ -5687,36 +5597,10 @@
    "forced": false
   },
   "feelings|SICK": {
-   "title": "File:A sick child in bed has his castor oil medicine poured for h Wellcome V0015144.jpg",
-   "final": 0.676,
-   "p": 0.9911,
-   "photo": 0.0212,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.02"
-   ],
-   "origin": "search:sick child in bed",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|SURPRISED": {
-   "title": "File:I wanna grow up.jpg",
-   "final": 0.506,
-   "p": 0.0,
-   "photo": 0.5289,
-   "fit": 0.8,
-   "how": "yolo:person",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:astonished child",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|EXCITED": {
    "title": "File:Nigerian child excited by the waves.jpg",
@@ -6859,21 +6743,7 @@
    "forced": false
   },
   "numbers|FOURTEEN": {
-   "title": "File:James Webb Space Telescope Mirrors Will Piece Together Cosmic Puzzles (30108124923).jpg",
-   "final": 0.54,
-   "p": 0.0016,
-   "photo": 0.696,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:number 14 sign",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|FIFTEEN": {
    "title": "File:2026-09-17 Old house number sign at 15 Kojori Street, Tbilisi.jpg",
@@ -6906,22 +6776,7 @@
    "forced": false
   },
   "numbers|SEVENTY": {
-   "title": "File:Texas speed limit 70 65.JPG",
-   "final": 0.792,
-   "p": 0.7821,
-   "photo": 0.9474,
-   "fit": 0.257,
-   "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.67)"
-   ],
-   "flags": [
-    "fit 0.26"
-   ],
-   "origin": "search:speed limit 70 sign",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "vehicles|SPACESHIP": {
    "title": "File:Space Shuttle Columbia launching.jpg",
@@ -7937,51 +7792,13 @@
    "forced": false
   },
   "feelings|BORED": {
-   "title": "File:Jumping Frog detail, with Chair-O-Planes.jpg",
-   "final": 0.627,
-   "p": 0.0,
-   "photo": 0.6206,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:bored child",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|SHY": {
-   "title": "File:Lyon Portrait of a shy smiling girl at full length 20110417.jpg",
-   "final": 0.929,
-   "p": 0.3028,
-   "photo": 0.9839,
-   "fit": 0.8,
-   "how": "yolo:person",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.30"
-   ],
-   "origin": "search:shy girl smiling",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|PROUD": {
-   "title": "File:The American florist - a weekly journal for the trade (1901) (17516303774).jpg",
-   "final": 0.694,
-   "p": 0.0,
-   "photo": 0.969,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:proud child medal",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|NERVOUS": {
    "title": "File:Nervous.jpg",
@@ -8023,19 +7840,7 @@
    "forced": false
   },
   "feelings|CALM": {
-   "title": "File:Person in traditional-inspired attire by forest water.jpg",
-   "final": 0.816,
-   "p": 0.0222,
-   "photo": 0.999,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.02"
-   ],
-   "origin": "search:calm relaxed person",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|LONELY": {
    "title": "File:Child depressed alone poverty.jpg",
@@ -14267,22 +14072,7 @@
    "forced": false
   },
   "feelings|LOVE": {
-   "title": "File:Family love wiki008.jpg",
-   "final": 1.15,
-   "p": 0.9998,
-   "photo": 0.9786,
-   "fit": 0.537,
-   "how": "yolo:person",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "fit 0.54"
-   ],
-   "origin": "search:love family hug",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|WORRIED": {
    "title": "File:The most beautiful woman, mother.jpg",
@@ -14370,118 +14160,25 @@
    "forced": false
   },
   "feelings|THANKFUL": {
-   "title": "File:“Thank you for your service” (7743324).jpg",
-   "final": 0.909,
-   "p": 0.8488,
-   "photo": 0.916,
-   "fit": 0.543,
-   "how": "yolo:person",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "fit 0.54"
-   ],
-   "origin": "search:thank you child",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|SORRY": {
-   "title": "File:The little lame lord, or The child of Cloverlea (1898) (14753045265).jpg",
-   "final": 0.707,
-   "p": 0.0,
-   "photo": 1.0,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:sad sorry child",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|HURT": {
-   "title": "File:Pediatrics. (1900) (14578801360).jpg",
-   "final": 0.988,
-   "p": 0.8767,
-   "photo": 0.9939,
-   "fit": 0.534,
-   "how": "yolo:person",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "fit 0.53"
-   ],
-   "origin": "search:child with bandage on knee",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|FULL": {
-   "title": "File:A sleepy cat after his full meal at my home.jpg",
-   "final": 0.573,
-   "p": 0.0,
-   "photo": 0.8003,
-   "fit": 0.82,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:full after meal",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|COLD": {
-   "title": "File:The Waldorf family; or, Grandfather's lagends (1848) (14752560515).jpg",
-   "final": 0.329,
-   "p": 0.3598,
-   "photo": 0.0001,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.36",
-    "not photo-like 0.00"
-   ],
-   "origin": "search:child shivering cold",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|HOT": {
-   "title": "File:Waders in Lake Como on hot day.jpg",
-   "final": 0.752,
-   "p": 0.0364,
-   "photo": 0.6505,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.04"
-   ],
-   "origin": "search:hot day child water",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|BEIGE": {
-   "title": "File:Münster, Speicherstadt, Uhrturm -- 2020 -- 7888.jpg",
-   "final": 0.842,
-   "p": 0.6321,
-   "photo": 0.6172,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [],
-   "origin": "search:beige color",
-   "n_cands": 10,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|TURQUOISE": {
    "title": "File:Kuang Si Falls with submerged tree in turquoise water near Luang Prabang Laos.jpg",
@@ -14514,22 +14211,7 @@
    "forced": false
   },
   "colors|NAVY": {
-   "title": "File:Promotion Ceremony for Rear Admiral Tuan Nguyen (8565063).jpg",
-   "final": 0.888,
-   "p": 0.9574,
-   "photo": 0.8724,
-   "fit": 0.421,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.88)"
-   ],
-   "flags": [
-    "fit 0.42"
-   ],
-   "origin": "search:navy blue fabric",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|RAINBOW COLORS": {
    "title": "File:Colouring pencils.jpg",
@@ -14590,22 +14272,7 @@
    "forced": false
   },
   "numbers|SIXTEEN": {
-   "title": "File:Yellowstone National Park (WY, USA), Old Faithful Geyser -- 2022 -- 2599.jpg",
-   "final": 0.478,
-   "p": 0.0042,
-   "photo": 0.9801,
-   "fit": 0.411,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.68)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.41"
-   ],
-   "origin": "search:number 16 sign",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|SEVENTEEN": {
    "title": "File:Sign number 17 on Jerusalem neighborhood.jpg",
@@ -14623,83 +14290,19 @@
    "forced": false
   },
   "numbers|EIGHTEEN": {
-   "title": "File:Rostock Power Station, SW view.jpg",
-   "final": 0.634,
-   "p": 0.0001,
-   "photo": 0.9572,
-   "fit": 0.765,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:house number 18",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|NINETEEN": {
-   "title": "File:St Mary's Church in Battersea.jpg",
-   "final": 0.705,
-   "p": 0.0004,
-   "photo": 0.9591,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:house number 19",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|EIGHTY": {
-   "title": "File:Speed Limit 20 sign on Commercial Drive, Southbridge, Massachusetts.jpg",
-   "final": 0.602,
-   "p": 0.0001,
-   "photo": 0.9777,
-   "fit": 0.75,
-   "how": "saliency",
-   "notes": [
-    "tiny subject"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:speed limit 80 sign",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|NINETY": {
-   "title": "File:Combined speed camera and speed limit sign, Northway, Bishopston - geograph.org.uk - 6010968.jpg",
-   "final": 0.803,
-   "p": 0.0837,
-   "photo": 0.9881,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.08"
-   ],
-   "origin": "search:speed limit 90 sign",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|FIRST": {
-   "title": "File:Adam Peaty. Gold Medal winner - geograph.org.uk - 5066328.jpg",
-   "final": 0.717,
-   "p": 0.0013,
-   "photo": 0.999,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:gold medal winner",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|SECOND": {
    "title": "File:24H Le Mans 2025 LMGT3 2nd place podium.jpg",
@@ -16950,21 +16553,7 @@
    "forced": false
   },
   "opposites|DIFFICULT": {
-   "title": "File:“The Rock” PT Competition (4673211).jpg",
-   "final": 0.568,
-   "p": 0.0,
-   "photo": 0.8968,
-   "fit": 0.773,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:rock climbing difficult",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "opposites|RICH": {
    "title": "File:Trésor de Césarée.JPG",
@@ -17127,109 +16716,25 @@
    "forced": false
   },
   "time|MONDAY": {
-   "title": "File:Letter ‘V’ in Nigerian Sign Language.jpg",
-   "final": 0.795,
-   "p": 0.0,
-   "photo": 0.9726,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:Monday sign",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|TUESDAY": {
-   "title": "File:South Santa Rosa VA Clinic - April 2025 - Sarah Stierch 01.jpg",
-   "final": 0.734,
-   "p": 0.0001,
-   "photo": 0.8288,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:Tuesday sign",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|WEDNESDAY": {
-   "title": "File:Zack Greinke on July 29, 2009.jpg",
-   "final": 0.761,
-   "p": 0.0005,
-   "photo": 0.8076,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:Wednesday",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|THURSDAY": {
-   "title": "File:RR Xing Sign.jpg",
-   "final": 0.7,
-   "p": 0.0,
-   "photo": 0.9996,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:Thursday sign",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|FRIDAY": {
-   "title": "File:Footpath No.28a sign at Friday Street - geograph.org.uk - 2287052.jpg",
-   "final": 0.66,
-   "p": 0.0012,
-   "photo": 0.7965,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:Friday sign",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|SATURDAY": {
-   "title": "File:Manual scrollable wooden wall calendar.jpg",
-   "final": 0.929,
-   "p": 0.3194,
-   "photo": 0.8695,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.32"
-   ],
-   "origin": "search:Saturday calendar",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|SUNDAY": {
-   "title": "File:Sunday Market sign, Bridgend - geograph.org.uk - 5417337.jpg",
-   "final": 0.673,
-   "p": 0.0007,
-   "photo": 0.8268,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:Sunday sign",
-   "n_cands": 4,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|JANUARY": {
    "title": "File:Fireworks on New Year's Eve in a small Swabian village (1), brightened.jpg",
@@ -17247,19 +16752,7 @@
    "forced": false
   },
   "time|FEBRUARY": {
-   "title": "File:Equation for a heart.jpg",
-   "final": 0.744,
-   "p": 0.9402,
-   "photo": 0.1026,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.10"
-   ],
-   "origin": "search:Valentine heart",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|MARCH": {
    "title": "File:Krokussen (Crocus), Locatie, Tuinreservaat Jonkervallei.jpg",
@@ -17275,34 +16768,10 @@
    "forced": false
   },
   "time|APRIL": {
-   "title": "File:Saturday 12 April 2025 Songkran on Si Lom Road Bangkok - img 08.jpg",
-   "final": 0.715,
-   "p": 0.0,
-   "photo": 0.9163,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:Songkran water festival",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|MAY": {
-   "title": "File:Paris - The Eiffel Tower in spring - 2307.jpg",
-   "final": 0.806,
-   "p": 0.0139,
-   "photo": 0.9642,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.01"
-   ],
-   "origin": "search:spring flowers May",
-   "n_cands": 5,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|JUNE": {
    "title": "File:Children Using Nature’s Umbrella During the Rainy Season.jpg",
@@ -17320,49 +16789,13 @@
    "forced": false
   },
   "time|JULY": {
-   "title": "File:Field Hamois Belgium Luc Viatour.jpg",
-   "final": 0.795,
-   "p": 0.0012,
-   "photo": 0.9693,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:summer",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|AUGUST": {
-   "title": "File:Antelope Canyon Mittags.jpg",
-   "final": 0.786,
-   "p": 0.0,
-   "photo": 0.9481,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:summer",
-   "n_cands": 4,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|SEPTEMBER": {
-   "title": "File:Sky Soldiers Take Their Children To Their First Day of School (7981914).jpg",
-   "final": 0.699,
-   "p": 0.0001,
-   "photo": 0.9915,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:first day of school children",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|OCTOBER": {
    "title": "File:Pumpkins for Halloween^ - geograph.org.uk - 3128509.jpg",
@@ -17380,19 +16813,7 @@
    "forced": false
   },
   "time|NOVEMBER": {
-   "title": "File:Loi krathong rafts.jpg",
-   "final": 0.769,
-   "p": 0.0001,
-   "photo": 0.9857,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:Loy Krathong",
-   "n_cands": 10,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|DECEMBER": {
    "title": "File:A bright Christmas tree in a Christmas village.jpg",
@@ -17410,50 +16831,13 @@
    "forced": false
   },
   "time|TODAY": {
-   "title": "File:Table for Badnjak celebration (2026 Christmas Eve, Serbian Christmas celebrations).jpg",
-   "final": 0.672,
-   "p": 0.0,
-   "photo": 0.8595,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:today calendar",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|TOMORROW": {
-   "title": "File:Independence Day & Independence Day Observation, Hillegersberg, Rotterdam (2021).jpg",
-   "final": 0.457,
-   "p": 0.0009,
-   "photo": 0.2463,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.25"
-   ],
-   "origin": "search:calendar next day",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|YESTERDAY": {
-   "title": "File:1922-1927 journal - DPLA - 69e947751bb6bdae75c36e99a014c61a (page 39).jpg",
-   "final": 0.627,
-   "p": 0.0042,
-   "photo": 0.5485,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:calendar torn page",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|MORNING": {
    "title": "File:Dülmen, Umland -- 2014 -- 7056.jpg",
@@ -17469,19 +16853,7 @@
    "forced": false
   },
   "time|AFTERNOON": {
-   "title": "File:Reflexos do Planalto.jpg",
-   "final": 0.798,
-   "p": 0.0008,
-   "photo": 0.9767,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:afternoon",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|EVENING": {
    "title": "File:Schwaigern - Massenbach - Baumgruppe am Wilhelmstaler Bach bei Sonnenuntergang (1).jpg",
@@ -17510,35 +16882,10 @@
    "forced": false
   },
   "time|WEEK": {
-   "title": "File:Weekly Calendar MET DP229742.jpg",
-   "final": 0.467,
-   "p": 0.0007,
-   "photo": 0.9137,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00",
-    "check safety 0.60"
-   ],
-   "origin": "search:weekly calendar",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|MONTH": {
-   "title": "File:Second laps after the Simchat Torah holiday at the Western Wall.jpg",
-   "final": 0.674,
-   "p": 0.0,
-   "photo": 0.8655,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:wall calendar month",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|YEAR": {
    "title": "File:Bratislava New Year Fireworks.jpg",
@@ -18758,22 +18105,7 @@
    "forced": false
   },
   "colors|LIGHT GRAY": {
-   "title": "File:A girl wearing light gray socks; February 2016 (02).jpg",
-   "final": 0.735,
-   "p": 0.5405,
-   "photo": 0.8161,
-   "fit": 0.443,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.92)"
-   ],
-   "flags": [
-    "fit 0.44"
-   ],
-   "origin": "search:light gray color",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|DARK GRAY": {
    "title": "File:Habagat 2026-09-04 grey dark clouds Tropical Storm Kujira Luis Maymay 02.jpg",
@@ -18829,19 +18161,7 @@
    "forced": false
   },
   "colors|MAROON": {
-   "title": "File:Long Flowing Maroon Dress.jpg",
-   "final": 0.774,
-   "p": 0.8541,
-   "photo": 0.1981,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.20"
-   ],
-   "origin": "search:maroon fabric",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|CREAM": {
    "title": "File:Ice cream in cup with sprinkles and spoon.jpg",
@@ -18929,19 +18249,7 @@
    "forced": false
   },
   "colors|CYAN": {
-   "title": "File:Rho Ophiuchi.jpg",
-   "final": 0.725,
-   "p": 0.0,
-   "photo": 0.9937,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:cyan color",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|TEAL": {
    "title": "File:Savannakhet - doorway and wall on Latsakhanai Road - Aug 2024.jpg",
@@ -18959,19 +18267,7 @@
    "forced": false
   },
   "colors|AQUA": {
-   "title": "File:Water in Lake Gairdner (MODIS 2022-07-29).jpg",
-   "final": 0.737,
-   "p": 0.0099,
-   "photo": 0.9827,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.01"
-   ],
-   "origin": "search:aqua color water",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|CRIMSON": {
    "title": "File:Crimson Rose Pachliopta hector mating by Raju Kasambe DSCN5858 01.jpg",
@@ -19019,22 +18315,7 @@
    "forced": false
   },
   "colors|COPPER": {
-   "title": "File:Copper Kettle Restaurant - geograph.org.uk - 7176232.jpg",
-   "final": 0.782,
-   "p": 0.7386,
-   "photo": 0.9496,
-   "fit": 0.4,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.83)"
-   ],
-   "flags": [
-    "fit 0.40"
-   ],
-   "origin": "search:copper kettle",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|KHAKI": {
    "title": "File:70137e3 Curatorial Collection Image - Necktie, U S Air Force regulation issue tie; Khaki color Possibly belonged to Jacqueline Cochran (Jackie Cochran) (53896709657).jpg",
@@ -19065,19 +18346,7 @@
    "forced": false
   },
   "colors|INDIGO": {
-   "title": "File:Touchdown Indigo A320 VT-ISY Chennai Aug22 A7C 02308.jpg",
-   "final": 0.944,
-   "p": 0.631,
-   "photo": 0.4844,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.48"
-   ],
-   "origin": "search:indigo",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|AMBER": {
    "title": "File:Bearded man's head. Ring in amber. 2nd century AD.jpg",
@@ -19108,19 +18377,7 @@
    "forced": false
   },
   "colors|CHARCOAL": {
-   "title": "File:Starting the charcoal.jpg",
-   "final": 0.928,
-   "p": 0.7082,
-   "photo": 0.5359,
-   "fit": 0.812,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [],
-   "origin": "search:charcoal briquettes",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|BURGUNDY": {
    "title": "File:Pommard glass p1150456.jpg",
@@ -19138,19 +18395,7 @@
    "forced": false
   },
   "colors|ROYAL BLUE": {
-   "title": "File:Île d'Orléans 009.jpg",
-   "final": 0.747,
-   "p": 0.0,
-   "photo": 0.9973,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:royal blue",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|BABY BLUE": {
    "title": "File:Teddy Bear - 3.jpg",
@@ -19215,36 +18460,10 @@
    "forced": false
   },
   "colors|DARK PURPLE": {
-   "title": "File:Los Angeles (California, USA), South Olive Street -- 2012 -- 4847.jpg",
-   "final": 0.71,
-   "p": 0.1506,
-   "photo": 0.6343,
-   "fit": 0.767,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.15"
-   ],
-   "origin": "search:dark purple flowers",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|LIGHT PURPLE": {
-   "title": "File:Glaskugel -- 2022 -- 9846.jpg",
-   "final": 0.853,
-   "p": 0.0565,
-   "photo": 0.8167,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.06"
-   ],
-   "origin": "search:light purple color",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "colors|SALMON PINK": {
    "title": "File:Orquideas 8242.jpg",
@@ -22039,21 +21258,7 @@
    "forced": false
   },
   "feelings|GLAD": {
-   "title": "File:A glimpse of India - being a collection of extracts from the letters Dr. Clara A. Swain, first medical missionary to India of the Woman's Foreign Missionary Society of the Methodist Episcopal Church (14766201682).jpg",
-   "final": 0.553,
-   "p": 0.0,
-   "photo": 0.8905,
-   "fit": 0.75,
-   "how": "yolo:person",
-   "notes": [
-    "tiny subject"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:glad smiling woman",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|JOYFUL": {
    "title": "File:A happy child in uniform.jpg",
@@ -22071,75 +21276,16 @@
    "forced": false
   },
   "feelings|CHEERFUL": {
-   "title": "File:Mabel Trunnelle Stars of the Photoplay.jpg",
-   "final": 0.737,
-   "p": 0.138,
-   "photo": 0.9985,
-   "fit": 0.845,
-   "how": "yolo:person",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.14"
-   ],
-   "origin": "search:cheerful girl",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|UPSET": {
-   "title": "File:Cebus capucinus-upset.jpg",
-   "final": 0.47,
-   "p": 0.0,
-   "photo": 0.7373,
-   "fit": 0.593,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.99)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.59"
-   ],
-   "origin": "search:upset face",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|FRUSTRATED": {
-   "title": "File:Big Elephant.jpg",
-   "final": 0.391,
-   "p": 0.0,
-   "photo": 0.794,
-   "fit": 0.294,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.61)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.29"
-   ],
-   "origin": "search:frustrated face",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|JEALOUS": {
-   "title": "File:Miss Stevie said \" I got pretty whiskers , too & I want my flickr friends to see them , NOW \" (5167557021).jpg",
-   "final": 0.698,
-   "p": 0.0002,
-   "photo": 0.9115,
-   "fit": 0.811,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:jealous girl",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|EMBARRASSED": {
    "title": "File:Blushing girl 0001.jpg",
@@ -22181,70 +21327,16 @@
    "forced": false
   },
   "feelings|RELAXED": {
-   "title": "File:Relaxing in a hammock with the view of Lake Victoria.jpg",
-   "final": 1.152,
-   "p": 0.8894,
-   "photo": 0.6539,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [],
-   "origin": "search:relaxing in hammock",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|FRIENDLY": {
-   "title": "File:The Journal of nervous and mental disease (1874) (14763209161).jpg",
-   "final": 0.614,
-   "p": 0.0003,
-   "photo": 0.999,
-   "fit": 0.828,
-   "how": "yolo:person",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:friendly smile handshake",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|KIND": {
-   "title": "File:Starved girl.jpg",
-   "final": 0.485,
-   "p": 0.0127,
-   "photo": 0.9998,
-   "fit": 0.433,
-   "how": "yolo:person",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.90)"
-   ],
-   "flags": [
-    "low word prob 0.01",
-    "fit 0.43"
-   ],
-   "origin": "search:kind child",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|ANNOYED": {
-   "title": "File:Anne Seymour Damer. A woman of art and fashion, 1748-1828 (1908) (14783105543).jpg",
-   "final": 0.598,
-   "p": 0.0,
-   "photo": 0.9239,
-   "fit": 0.826,
-   "how": "yolo:person",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:annoyed woman",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|AFRAID": {
    "title": "File:An afraid child with his mother.jpg",
@@ -22285,98 +21377,22 @@
    "forced": false
   },
   "feelings|PEACEFUL": {
-   "title": "File:Mayumok.jpg",
-   "final": 0.601,
-   "p": 0.0,
-   "photo": 0.5042,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:peaceful child",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|CONFIDENT": {
-   "title": "File:MovieStillGishOConnorLoos.png",
-   "final": 0.7,
-   "p": 0.0,
-   "photo": 0.9999,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:confident face",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|DISGUSTED": {
-   "title": "File:Shannon Marie Morgan searches for her house in Beverly Hills, Florida.jpg",
-   "final": 0.683,
-   "p": 0.0001,
-   "photo": 0.9161,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:disgusted child",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|SHOCKED": {
-   "title": "File:Shocked Dead.jpg",
-   "final": 0.77,
-   "p": 0.0,
-   "photo": 0.8568,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:shocked face",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|AMAZED": {
-   "title": "File:Guarda babbo! La Torre!.jpg",
-   "final": 0.606,
-   "p": 0.0,
-   "photo": 0.9445,
-   "fit": 0.834,
-   "how": "yolo:person",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:amazed child",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|DELIGHTED": {
-   "title": "File:International Delight Pumpkin Spice Creamer.jpg",
-   "final": 0.577,
-   "p": 0.0035,
-   "photo": 0.8666,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:delighted child",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|PLAYFUL": {
    "title": "File:Kittens playing together.jpg",
@@ -22397,22 +21413,7 @@
    "forced": false
   },
   "feelings|LAZY": {
-   "title": "File:Lazy Dog..jpg",
-   "final": 0.774,
-   "p": 0.8866,
-   "photo": 0.735,
-   "fit": 0.329,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.68)"
-   ],
-   "flags": [
-    "fit 0.33"
-   ],
-   "origin": "search:lazy dog lying",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|ENERGETIC": {
    "title": "File:Hometrampoline.jpg",
@@ -22430,37 +21431,10 @@
    "forced": false
   },
   "feelings|DIZZY": {
-   "title": "File:Gonzalo Guerrero, 77720 Playa del Carmen, Q.R., Mexico - panoramio (2).jpg",
-   "final": 0.98,
-   "p": 0.8531,
-   "photo": 0.6673,
-   "fit": 0.75,
-   "how": "yolo:person",
-   "notes": [
-    "tiny subject"
-   ],
-   "flags": [],
-   "origin": "search:dizzy face",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|ITCHY": {
-   "title": "File:Varicela Aranzales.jpg",
-   "final": 0.697,
-   "p": 0.5762,
-   "photo": 0.9989,
-   "fit": 0.271,
-   "how": "yolo:person",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.88)"
-   ],
-   "flags": [
-    "fit 0.27"
-   ],
-   "origin": "search:itchy child",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|COMFORTABLE": {
    "title": "File:Siamese cat, modern-style.jpg",
@@ -22482,64 +21456,16 @@
    "forced": false
   },
   "feelings|HELPFUL": {
-   "title": "File:Dülmen, Overbergschule, Verkehrsschild -- 2013 -- 0659.jpg",
-   "final": 0.646,
-   "p": 0.0001,
-   "photo": 0.6801,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:helpful child",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|NAUGHTY": {
-   "title": "File:A mischievous child.jpg",
-   "final": 0.767,
-   "p": 0.0,
-   "photo": 0.9799,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:mischievous child",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|STRESSED": {
-   "title": "File:The University of Virginia; memories of her student-life and professors (1908) (14764720825).jpg",
-   "final": 0.696,
-   "p": 0.0,
-   "photo": 0.9783,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:stressed student books",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|TERRIFIED": {
-   "title": "File:Malanca ( The Child ).jpg",
-   "final": 0.692,
-   "p": 0.0,
-   "photo": 0.8573,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:terrified child",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "feelings|FUNNY": {
    "title": "File:Audrey Hepburn-Funny Face-Louvre.jpg",
@@ -22612,71 +21538,16 @@
    "forced": false
   },
   "numbers|FOURTH": {
-   "title": "File:July 4th fireworks, Washington, D.C. (LOC).jpg",
-   "final": 0.913,
-   "p": 0.4367,
-   "photo": 0.9927,
-   "fit": 0.784,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.44"
-   ],
-   "origin": "search:4th place",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|FIFTH": {
-   "title": "File:Egeskov Slot spejling Edit 2.jpg",
-   "final": 0.479,
-   "p": 0.0,
-   "photo": 0.9641,
-   "fit": 0.556,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.93)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.56"
-   ],
-   "origin": "search:number 5 sign",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|SIXTH": {
-   "title": "File:Holy SURP Hovhannes Church.jpg",
-   "final": 0.701,
-   "p": 0.0009,
-   "photo": 0.9957,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:6th place",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|SEVENTH": {
-   "title": "File:A1077 Barton Market Place, 7th December 2010 - geograph.org.uk - 2189695.jpg",
-   "final": 0.728,
-   "p": 0.1749,
-   "photo": 0.9953,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.17"
-   ],
-   "origin": "search:7th place",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|EIGHTH": {
    "title": "File:2026-09-17 8 Gizo Nishnianidze Street house number sign, Tbilisi.jpg",
@@ -22726,122 +21597,25 @@
    "forced": false
   },
   "numbers|ELEVENTH": {
-   "title": "File:Sign 11 Pinsker Street in Jerusalem.jpg",
-   "final": 0.738,
-   "p": 0.9656,
-   "photo": 0.1625,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "not photo-like 0.16"
-   ],
-   "origin": "search:number 11 sign",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|TWELFTH": {
-   "title": "File:Number 12 sign - geograph.org.uk - 5546231.jpg",
-   "final": 1.209,
-   "p": 0.919,
-   "photo": 0.7488,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:number 12 sign",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|LAST": {
-   "title": "File:Last in line - geograph.org.uk - 2580035.jpg",
-   "final": 0.587,
-   "p": 0.0001,
-   "photo": 0.9962,
-   "fit": 0.775,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:last in line",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|TWENTY-ONE": {
-   "title": "File:Nikiszowiec, courtyard with chimneys, 2024-08-09.jpg",
-   "final": 0.415,
-   "p": 0.0002,
-   "photo": 0.6726,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00",
-    "check safety 0.63"
-   ],
-   "origin": "search:house number 21",
-   "n_cands": 9,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|TWENTY-FIVE": {
-   "title": "File:Mount Stuart House 2018-08-25.jpg",
-   "final": 0.495,
-   "p": 0.0004,
-   "photo": 0.529,
-   "fit": 0.763,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:house number 25",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|TWO HUNDRED": {
-   "title": "File:Shadow of a house 200 West Main New Holland.JPG",
-   "final": 0.549,
-   "p": 0.0,
-   "photo": 0.9451,
-   "fit": 0.598,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.60"
-   ],
-   "origin": "search:house number 200",
-   "n_cands": 5,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|FIVE HUNDRED": {
-   "title": "File:Timber for the construction of the Mechanics Pavilion at the Chicago World's Columbian Exposition, Seattle, Washington, ca 1893 (LAROCHE 166).jpeg",
-   "final": 0.451,
-   "p": 0.0002,
-   "photo": 0.999,
-   "fit": 0.513,
-   "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)",
-    "upscaled x1.6"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.51"
-   ],
-   "origin": "search:number 500 sign",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|TEN THOUSAND": {
    "title": "File:HUN-32-Provisional-10000 Korona (1920).jpg",
@@ -22861,17 +21635,7 @@
    "forced": false
   },
   "numbers|BILLION": {
-   "title": "File:Antennae galaxies xl.jpg",
-   "final": 1.244,
-   "p": 0.9925,
-   "photo": 0.6398,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:stars galaxy billion",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|QUARTER": {
    "title": "File:Brass Funghi (quarter) - Yeastie Boys Pizza Club 2024-05-17.jpg",
@@ -22892,37 +21656,10 @@
    "forced": false
   },
   "numbers|DOUBLE": {
-   "title": "File:Pink double cherry blossoms in Torp 7.jpg",
-   "final": 0.962,
-   "p": 0.8091,
-   "photo": 0.998,
-   "fit": 0.451,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.94)"
-   ],
-   "flags": [
-    "fit 0.45"
-   ],
-   "origin": "search:double cherries",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|PAIR": {
-   "title": "File:Pair of Shoes MET sf26-9-11a, b.jpg",
-   "final": 1.166,
-   "p": 0.9749,
-   "photo": 0.9788,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [],
-   "origin": "search:pair of shoes",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|DOZEN": {
    "title": "File:2020-05-05 19 26 30 A carton of a dozen Large Grade A Chicken Eggs from Egg-land's Best in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
@@ -22942,71 +21679,16 @@
    "forced": false
   },
   "numbers|PLUS": {
-   "title": "File:Addition to a tourist attractions sign, Cardiff Road, Newport - geograph.org.uk - 5061457.jpg",
-   "final": 0.749,
-   "p": 0.0294,
-   "photo": 0.9539,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [
-    "upscaled x1.5"
-   ],
-   "flags": [
-    "low word prob 0.03"
-   ],
-   "origin": "search:addition sign",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|MINUS": {
-   "title": "File:Renal artery angiography in a patient with fibromuscular dysplasia (1).jpg",
-   "final": 0.338,
-   "p": 0.0009,
-   "photo": 0.9569,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "upscaled x1.5"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:subtraction sign",
-   "n_cands": 3,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|EQUALS": {
-   "title": "File:Abigail Scott Duniway signing Oregon equal suffrage amendment.png",
-   "final": 0.7,
-   "p": 0.001,
-   "photo": 0.9992,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:equals sign",
-   "n_cands": 5,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|TIMES": {
-   "title": "File:Multiplication tablet Ashmolean.jpg",
-   "final": 0.642,
-   "p": 0.0,
-   "photo": 0.9967,
-   "fit": 0.817,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:multiplication sign",
-   "n_cands": 8,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "numbers|NUMBER": {
    "title": "File:House numbers - geograph.org.uk - 6979619.jpg",
@@ -23693,34 +22375,10 @@
    "forced": false
   },
   "time|NOON": {
-   "title": "File:Midday sun - geograph.org.uk - 6713329.jpg",
-   "final": 0.742,
-   "p": 0.0781,
-   "photo": 0.5624,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.08"
-   ],
-   "origin": "search:midday sun",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|MIDNIGHT": {
-   "title": "File:Glacier Bay Entrance Night Sky with Aurora and Moon (53943226099).jpg",
-   "final": 0.732,
-   "p": 0.0209,
-   "photo": 0.9964,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.02"
-   ],
-   "origin": "search:night sky stars moon",
-   "n_cands": 6,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|DAY": {
    "title": "File:Daytime fox - geograph.org.uk - 7509197.jpg",
@@ -23736,19 +22394,7 @@
    "forced": false
   },
   "time|CALENDAR": {
-   "title": "File:Collectie het Utrechts Archief; Nederlandse Spoorwegen; 165659.jpg",
-   "final": 0.433,
-   "p": 0.0,
-   "photo": 0.9131,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:desk calendar",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|HOURGLASS": {
    "title": "File:Wooden hourglass edit.jpg",
@@ -23814,34 +22460,10 @@
    "forced": false
   },
   "time|DAYTIME": {
-   "title": "File:Letterwinged Kite Sunny Roost Diamantina 2019.jpg",
-   "final": 0.816,
-   "p": 0.1845,
-   "photo": 0.996,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.18"
-   ],
-   "origin": "search:sunny daytime park",
-   "n_cands": 7,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|NEW YEAR": {
-   "title": "File:View from McQueens Pass towards Lyttelton Harbour, New Zealand.jpg",
-   "final": 0.7,
-   "p": 0.0,
-   "photo": 0.9978,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:new year",
-   "n_cands": 4,
-   "forced": false
+   "status": "skipped after review (no clear photo)"
   },
   "time|SONGKRAN": {
    "title": "File:Songkran in Wat Kungthapao 02.jpg",
@@ -29503,7 +28125,9 @@
   "clothes|WATCH",
   "colors|AQUA",
   "colors|BABY PINK",
+  "colors|BEIGE",
   "colors|BLACK",
+  "colors|CHARCOAL",
   "colors|COPPER",
   "colors|CREAM",
   "colors|CRIMSON",
@@ -29592,6 +28216,7 @@
   "family|WIFE",
   "feelings|AFRAID",
   "feelings|AMAZED",
+  "feelings|ANGRY",
   "feelings|ANNOYED",
   "feelings|BORED",
   "feelings|BRAVE",
@@ -29604,6 +28229,7 @@
   "feelings|DELIGHTED",
   "feelings|DISAPPOINTED",
   "feelings|DISGUSTED",
+  "feelings|DIZZY",
   "feelings|EMBARRASSED",
   "feelings|ENERGETIC",
   "feelings|EXCITED",
@@ -29632,6 +28258,7 @@
   "feelings|PEACEFUL",
   "feelings|PLAYFUL",
   "feelings|PROUD",
+  "feelings|RELAXED",
   "feelings|SAD",
   "feelings|SCARED",
   "feelings|SERIOUS",
@@ -29858,6 +28485,7 @@
   "nature|SUNFLOWER",
   "nature|TWIG",
   "nature|WOOD",
+  "numbers|BILLION",
   "numbers|DOUBLE",
   "numbers|DOZEN",
   "numbers|EIGHT",
@@ -29883,6 +28511,8 @@
   "numbers|NINETY",
   "numbers|NINTH",
   "numbers|NUMBER",
+  "numbers|ONE",
+  "numbers|PAIR",
   "numbers|PLUS",
   "numbers|QUARTER",
   "numbers|SECOND",
@@ -29901,6 +28531,7 @@
   "numbers|THOUSAND",
   "numbers|THREE",
   "numbers|TIMES",
+  "numbers|TWELFTH",
   "numbers|TWENTY",
   "numbers|TWENTY-FIVE",
   "numbers|TWENTY-ONE",
@@ -30372,7 +29003,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1902,
-  "flagged": 1080
+  "with_photo": 1796,
+  "flagged": 1089
  }
 }

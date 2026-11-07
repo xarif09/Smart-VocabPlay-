@@ -51,7 +51,8 @@
   "queries": [
    "black cat",
    "black balloons"
-  ]
+  ],
+  "skip": true
  },
  "colors|WHITE": {
   "queries": [
@@ -93,7 +94,8 @@
   "queries": [
    "beige sand dunes",
    "beige fabric"
-  ]
+  ],
+  "skip": true
  },
  "colors|TURQUOISE": {
   "queries": [
@@ -111,7 +113,8 @@
   "queries": [
    "navy blue uniform",
    "navy blue fabric"
-  ]
+  ],
+  "skip": true
  },
  "colors|DARK BLUE": {
   "queries": [
@@ -159,7 +162,8 @@
   "queries": [
    "light grey pebbles",
    "grey kitten"
-  ]
+  ],
+  "skip": true
  },
  "colors|DARK GRAY": {
   "queries": [
@@ -183,7 +187,8 @@
   "queries": [
    "maroon fabric",
    "maroon car"
-  ]
+  ],
+  "skip": true
  },
  "colors|CREAM": {
   "queries": [
@@ -219,7 +224,8 @@
   "queries": [
    "cyan water",
    "cyan colored"
-  ]
+  ],
+  "skip": true
  },
  "colors|TEAL": {
   "queries": [
@@ -231,7 +237,8 @@
   "queries": [
    "swimming pool water",
    "aqua colored"
-  ]
+  ],
+  "skip": true
  },
  "colors|CRIMSON": {
   "queries": [
@@ -255,13 +262,15 @@
   "queries": [
    "copper pots",
    "copper kettle"
-  ]
+  ],
+  "skip": true
  },
  "colors|INDIGO": {
   "queries": [
    "indigo dyed fabric",
    "indigo"
-  ]
+  ],
+  "skip": true
  },
  "colors|AMBER": {
   "queries": [
@@ -279,7 +288,8 @@
   "queries": [
    "charcoal briquettes",
    "charcoal grey"
-  ]
+  ],
+  "skip": true
  },
  "colors|BURGUNDY": {
   "queries": [
@@ -291,7 +301,8 @@
   "queries": [
    "royal blue fabric",
    "royal blue"
-  ]
+  ],
+  "skip": true
  },
  "colors|BABY BLUE": {
   "queries": [
@@ -315,13 +326,15 @@
   "queries": [
    "eggplant",
    "dark purple flowers"
-  ]
+  ],
+  "skip": true
  },
  "colors|LIGHT PURPLE": {
   "queries": [
    "lilac flowers",
    "light purple flowers"
-  ]
+  ],
+  "skip": true
  },
  "colors|SALMON PINK": {
   "queries": [
@@ -633,7 +646,8 @@
   "queries": [
    "single red apple",
    "one apple"
-  ]
+  ],
+  "skip": true
  },
  "numbers|TWO": {
   "queries": [
@@ -675,7 +689,8 @@
   "queries": [
    "eight eggs",
    "house number 8"
-  ]
+  ],
+  "skip": true
  },
  "numbers|NINE": {
   "queries": [
@@ -687,7 +702,8 @@
   "queries": [
    "ten fingers",
    "house number 10"
-  ]
+  ],
+  "skip": true
  },
  "numbers|THIRTY": {
   "queries": [
@@ -705,19 +721,22 @@
   "queries": [
    "house number 70",
    "speed limit 70 sign"
-  ]
+  ],
+  "skip": true
  },
  "numbers|EIGHTY": {
   "queries": [
    "house number 80",
    "speed limit 80 sign"
-  ]
+  ],
+  "skip": true
  },
  "numbers|NINETY": {
   "queries": [
    "house number 90",
    "speed limit 90 sign"
-  ]
+  ],
+  "skip": true
  },
  "numbers|THIRTEEN": {
   "queries": [
@@ -729,13 +748,15 @@
   "queries": [
    "house number 14",
    "number 14"
-  ]
+  ],
+  "skip": true
  },
  "numbers|SIXTEEN": {
   "queries": [
    "house number 16",
    "number 16"
-  ]
+  ],
+  "skip": true
  },
  "numbers|SEVENTEEN": {
   "queries": [
@@ -747,13 +768,15 @@
   "queries": [
    "house number 18",
    "number 18"
-  ]
+  ],
+  "skip": true
  },
  "numbers|NINETEEN": {
   "queries": [
    "house number 19",
    "number 19"
-  ]
+  ],
+  "skip": true
  },
  "numbers|MILLION": {
   "queries": [
@@ -1508,7 +1531,8 @@
   "queries": [
    "sad child crying",
    "sad boy"
-  ]
+  ],
+  "skip": true
  },
  "feelings|SCARED": {
   "queries": [
@@ -1532,7 +1556,8 @@
   "queries": [
    "surprised child face open mouth",
    "astonished child"
-  ]
+  ],
+  "skip": true
  },
  "feelings|EXCITED": {
   "queries": [
@@ -1544,13 +1569,15 @@
   "queries": [
    "bored child",
    "bored student desk"
-  ]
+  ],
+  "skip": true
  },
  "feelings|SHY": {
   "queries": [
    "shy child hiding",
    "shy girl smiling"
-  ]
+  ],
+  "skip": true
  },
  "feelings|NERVOUS": {
   "queries": [
@@ -1568,7 +1595,8 @@
   "queries": [
    "child meditating",
    "calm girl relaxing"
-  ]
+  ],
+  "skip": true
  },
  "feelings|LONELY": {
   "queries": [
@@ -1616,43 +1644,50 @@
   "queries": [
    "child giving thank you card",
    "grateful hug"
-  ]
+  ],
+  "skip": true
  },
  "feelings|SORRY": {
   "queries": [
    "child apologizing hug",
    "sad sorry child"
-  ]
+  ],
+  "skip": true
  },
  "feelings|HURT": {
   "queries": [
    "child with bandage on knee",
    "plaster on child's knee"
-  ]
+  ],
+  "skip": true
  },
  "feelings|FULL": {
   "queries": [
    "child full after eating",
    "empty plate after meal child"
-  ]
+  ],
+  "skip": true
  },
  "feelings|COLD": {
   "queries": [
    "child shivering snow",
    "child in winter hat scarf"
-  ]
+  ],
+  "skip": true
  },
  "feelings|HOT": {
   "queries": [
    "child sweating sun",
    "hot day child water"
-  ]
+  ],
+  "skip": true
  },
  "feelings|GLAD": {
   "queries": [
    "glad smiling woman",
    "happy smiling man"
-  ]
+  ],
+  "skip": true
  },
  "feelings|JOYFUL": {
   "queries": [
@@ -1664,25 +1699,29 @@
   "queries": [
    "cheerful child smiling",
    "cheerful girl"
-  ]
+  ],
+  "skip": true
  },
  "feelings|UPSET": {
   "queries": [
    "upset child crying",
    "upset boy"
-  ]
+  ],
+  "skip": true
  },
  "feelings|FRUSTRATED": {
   "queries": [
    "frustrated student homework",
    "frustrated man"
-  ]
+  ],
+  "skip": true
  },
  "feelings|JEALOUS": {
   "queries": [
    "jealous child sibling",
    "jealous girl"
-  ]
+  ],
+  "skip": true
  },
  "feelings|EMBARRASSED": {
   "queries": [
@@ -1700,25 +1739,29 @@
   "queries": [
    "relaxed person hammock",
    "relaxing in hammock"
-  ]
+  ],
+  "skip": true
  },
  "feelings|FRIENDLY": {
   "queries": [
    "friendly children waving",
    "friendly smile handshake"
-  ]
+  ],
+  "skip": true
  },
  "feelings|KIND": {
   "queries": [
    "child helping elderly",
    "kind child sharing"
-  ]
+  ],
+  "skip": true
  },
  "feelings|ANNOYED": {
   "queries": [
    "annoyed child",
    "annoyed woman"
-  ]
+  ],
+  "skip": true
  },
  "feelings|AFRAID": {
   "queries": [
@@ -1736,37 +1779,43 @@
   "queries": [
    "peaceful sleeping baby",
    "peaceful lake meditation"
-  ]
+  ],
+  "skip": true
  },
  "feelings|CONFIDENT": {
   "queries": [
    "confident girl smiling",
    "confident student"
-  ]
+  ],
+  "skip": true
  },
  "feelings|DISGUSTED": {
   "queries": [
    "disgusted face child",
    "child refusing food"
-  ]
+  ],
+  "skip": true
  },
  "feelings|SHOCKED": {
   "queries": [
    "shocked face",
    "shocked child"
-  ]
+  ],
+  "skip": true
  },
  "feelings|AMAZED": {
   "queries": [
    "amazed child",
    "children amazed watching"
-  ]
+  ],
+  "skip": true
  },
  "feelings|DELIGHTED": {
   "queries": [
    "delighted child gift",
    "delighted girl present"
-  ]
+  ],
+  "skip": true
  },
  "feelings|PLAYFUL": {
   "queries": [
@@ -1778,7 +1827,8 @@
   "queries": [
    "lazy cat sleeping",
    "lazy dog lying"
-  ]
+  ],
+  "skip": true
  },
  "feelings|ENERGETIC": {
   "queries": [
@@ -1790,13 +1840,15 @@
   "queries": [
    "dizzy spinning child",
    "dizzy"
-  ]
+  ],
+  "skip": true
  },
  "feelings|ITCHY": {
   "queries": [
    "child scratching",
    "mosquito bite scratching"
-  ]
+  ],
+  "skip": true
  },
  "feelings|COMFORTABLE": {
   "queries": [
@@ -1808,25 +1860,29 @@
   "queries": [
    "child helping wash dishes",
    "kids helping clean"
-  ]
+  ],
+  "skip": true
  },
  "feelings|NAUGHTY": {
   "queries": [
    "naughty child mess",
    "mischievous child"
-  ]
+  ],
+  "skip": true
  },
  "feelings|STRESSED": {
   "queries": [
    "stressed student books",
    "stressed man"
-  ]
+  ],
+  "skip": true
  },
  "feelings|TERRIFIED": {
   "queries": [
    "terrified face",
    "terrified child"
-  ]
+  ],
+  "skip": true
  },
  "feelings|FUNNY": {
   "queries": [
@@ -1856,19 +1912,22 @@
   "queries": [
    "angry child",
    "angry boy shouting"
-  ]
+  ],
+  "skip": true
  },
  "feelings|PROUD": {
   "queries": [
    "proud child medal",
    "proud girl trophy"
-  ]
+  ],
+  "skip": true
  },
  "feelings|LOVE": {
   "queries": [
    "mother hugging child",
    "family hug"
-  ]
+  ],
+  "skip": true
  },
  "feelings|THIRSTY": {
   "queries": [
@@ -1880,13 +1939,15 @@
   "queries": [
    "sick child in bed thermometer",
    "ill child"
-  ]
+  ],
+  "skip": true
  },
  "opposites|DIFFICULT": {
   "queries": [
    "difficult jigsaw puzzle",
    "child hard puzzle"
-  ]
+  ],
+  "skip": true
  },
  "opposites|EASY": {
   "queries": [
@@ -1994,7 +2055,8 @@
   "queries": [
    "May calendar page",
    "spring flowers May"
-  ]
+  ],
+  "skip": true
  },
  "time|JUNE": {
   "queries": [
@@ -2006,13 +2068,15 @@
   "queries": [
    "August calendar page",
    "summer beach"
-  ]
+  ],
+  "skip": true
  },
  "time|SEPTEMBER": {
   "queries": [
    "September calendar",
    "first day of school children"
-  ]
+  ],
+  "skip": true
  },
  "time|VALENTINE'S DAY": {
   "queries": [
@@ -2024,19 +2088,22 @@
   "queries": [
    "wall calendar",
    "desk calendar"
-  ]
+  ],
+  "skip": true
  },
  "time|NOON": {
   "queries": [
    "clock showing noon 12",
    "midday sun"
-  ]
+  ],
+  "skip": true
  },
  "time|MIDNIGHT": {
   "queries": [
    "clock midnight 12",
    "night sky stars moon"
-  ]
+  ],
+  "skip": true
  },
  "time|BEDTIME": {
   "queries": [
@@ -2066,66 +2133,161 @@
   "queries": [
    "Monday calendar",
    "Monday sign"
-  ]
+  ],
+  "skip": true
  },
  "time|TUESDAY": {
   "queries": [
    "Tuesday calendar",
    "Tuesday sign"
-  ]
+  ],
+  "skip": true
  },
  "time|WEDNESDAY": {
   "queries": [
    "Wednesday calendar",
    "Wednesday"
-  ]
+  ],
+  "skip": true
  },
  "time|THURSDAY": {
   "queries": [
    "Thursday calendar",
    "Thursday sign"
-  ]
+  ],
+  "skip": true
  },
  "time|FRIDAY": {
   "queries": [
    "Friday calendar",
    "Friday sign"
-  ]
+  ],
+  "skip": true
  },
  "time|SUNDAY": {
   "queries": [
    "Sunday calendar",
    "Sunday sign"
-  ]
+  ],
+  "skip": true
  },
  "time|APRIL": {
   "queries": [
    "Songkran water festival",
    "April calendar"
-  ]
+  ],
+  "skip": true
  },
  "time|WEEK": {
   "queries": [
    "weekly planner",
    "week calendar"
-  ]
+  ],
+  "skip": true
  },
  "time|MONTH": {
   "queries": [
    "monthly calendar page",
    "wall calendar month"
-  ]
+  ],
+  "skip": true
  },
  "time|TODAY": {
   "queries": [
    "calendar date circled",
    "today calendar"
-  ]
+  ],
+  "skip": true
  },
  "time|YESTERDAY": {
   "queries": [
    "calendar page torn",
    "yesterday"
-  ]
+  ],
+  "skip": true
+ },
+ "time|SATURDAY": {
+  "skip": true
+ },
+ "time|FEBRUARY": {
+  "skip": true
+ },
+ "time|JULY": {
+  "skip": true
+ },
+ "time|NOVEMBER": {
+  "skip": true
+ },
+ "time|TOMORROW": {
+  "skip": true
+ },
+ "time|AFTERNOON": {
+  "skip": true
+ },
+ "time|DAYTIME": {
+  "skip": true
+ },
+ "time|NEW YEAR": {
+  "skip": true
+ },
+ "numbers|HUNDRED": {
+  "skip": true
+ },
+ "numbers|FIRST": {
+  "skip": true
+ },
+ "numbers|FOURTH": {
+  "skip": true
+ },
+ "numbers|FIFTH": {
+  "skip": true
+ },
+ "numbers|SIXTH": {
+  "skip": true
+ },
+ "numbers|SEVENTH": {
+  "skip": true
+ },
+ "numbers|ELEVENTH": {
+  "skip": true
+ },
+ "numbers|TWELFTH": {
+  "skip": true
+ },
+ "numbers|LAST": {
+  "skip": true
+ },
+ "numbers|TWENTY-ONE": {
+  "skip": true
+ },
+ "numbers|TWENTY-FIVE": {
+  "skip": true
+ },
+ "numbers|TWO HUNDRED": {
+  "skip": true
+ },
+ "numbers|FIVE HUNDRED": {
+  "skip": true
+ },
+ "numbers|BILLION": {
+  "skip": true
+ },
+ "numbers|DOUBLE": {
+  "skip": true
+ },
+ "numbers|PAIR": {
+  "skip": true
+ },
+ "numbers|PLUS": {
+  "skip": true
+ },
+ "numbers|MINUS": {
+  "skip": true
+ },
+ "numbers|EQUALS": {
+  "skip": true
+ },
+ "numbers|TIMES": {
+  "skip": true
  }
 }

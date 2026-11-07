@@ -2946,23 +2946,26 @@
    "forced": false
   },
   "jobs|DOCTOR": {
-   "title": "File:Doctor X (1932) poster.jpg",
-   "final": 0.956,
-   "p": 0.9924,
-   "photo": 0.1608,
-   "fit": 1.0,
+   "title": "File:Female doctor.jpg",
+   "final": 0.786,
+   "p": 0.9954,
+   "photo": 0.7894,
+   "fit": 0.465,
    "how": "yolo:person",
-   "notes": [],
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.97)"
+   ],
    "flags": [
-    "not photo-like 0.16"
+    "fit 0.46"
    ],
    "origin": "search:doctor",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|NURSE": {
    "title": "File:Thai nurse in Na Wa Public Hospital.jpg",
-   "final": 0.817,
+   "final": 0.877,
    "p": 0.9998,
    "photo": 0.6989,
    "fit": 0.269,
@@ -2979,26 +2982,21 @@
    "forced": false
   },
   "jobs|TEACHER": {
-   "title": "File:Niños estudiantes chilenos.jpg",
-   "final": 0.916,
-   "p": 1.0,
-   "photo": 0.7221,
-   "fit": 0.676,
+   "title": "File:Grell by Janke - Black and white.jpg",
+   "final": 0.716,
+   "p": 0.6261,
+   "photo": 0.5274,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "fit 0.68"
-   ],
-   "origin": "current",
-   "n_cands": 6,
+   "notes": [],
+   "flags": [],
+   "origin": "search:teacher at work",
+   "n_cands": 5,
    "forced": false
   },
   "jobs|FARMER": {
    "title": "File:Farmer in Tamil Nadu 1993.JPG",
-   "final": 1.016,
+   "final": 1.19,
    "p": 0.9034,
    "photo": 0.6886,
    "fit": 1.0,
@@ -3011,8 +3009,8 @@
   },
   "jobs|COOK": {
    "title": "File:Scrambled eggs.png",
-   "final": 1.055,
-   "p": 0.9998,
+   "final": 1.191,
+   "p": 0.9777,
    "photo": 0.771,
    "fit": 0.8,
    "how": "yolo:person",
@@ -3021,14 +3019,14 @@
    ],
    "flags": [],
    "origin": "search:cook cooking",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "jobs|PILOT": {
    "title": "File:Lt Mike Hunter 1.jpg",
-   "final": 1.022,
+   "final": 1.173,
    "p": 0.9998,
-   "photo": 0.8137,
+   "photo": 0.8136,
    "fit": 0.8,
    "how": "yolo:person",
    "notes": [
@@ -3036,12 +3034,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|POLICE": {
    "title": "File:Very friendly MPS officers in London.jpg",
-   "final": 0.925,
+   "final": 1.017,
    "p": 0.9998,
    "photo": 0.4244,
    "fit": 0.663,
@@ -3059,41 +3057,31 @@
    "forced": false
   },
   "jobs|FIREFIGHTER": {
-   "title": "File:FiremenFightBurningBarn.jpg",
-   "final": 1.071,
-   "p": 1.0,
-   "photo": 0.6697,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "jobs|ARTIST": {
-   "title": "File:Honjo Shigenaga parriying an exploding shell.jpg",
-   "final": 0.335,
-   "p": 0.023,
-   "photo": 0.3291,
-   "fit": 0.8,
+   "title": "File:Bad Rappenau - Evangelische Stadtkirche - Altarfenster 01.jpg",
+   "final": 0.532,
+   "p": 0.0005,
+   "photo": 0.9871,
+   "fit": 0.484,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "subject cannot fit 3:4 (box cov 0.81)"
    ],
    "flags": [
-    "low word prob 0.02",
-    "not photo-like 0.33"
+    "low word prob 0.00",
+    "fit 0.48"
    ],
    "origin": "search:artist",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|ENGINEER": {
    "title": "File:Kitty Joyner - Electrical Engineer - GPN-2000-001933.jpg",
-   "final": 0.911,
+   "final": 0.774,
    "p": 0.9535,
-   "photo": 0.6456,
+   "photo": 0.6453,
    "fit": 0.64,
    "how": "yolo:person",
    "notes": [
@@ -3103,31 +3091,30 @@
     "fit 0.64"
    ],
    "origin": "search:engineer",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|SINGER": {
-   "title": "File:14-01-11 Yvi Quainoo Cologne 11.jpg",
-   "final": 0.833,
-   "p": 0.9999,
-   "photo": 0.1266,
-   "fit": 0.515,
+   "title": "File:Ah cricket 20122 (7364759010).jpg",
+   "final": 0.814,
+   "p": 0.9947,
+   "photo": 0.9936,
+   "fit": 0.148,
    "how": "yolo:person",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.48)"
    ],
    "flags": [
-    "fit 0.51",
-    "not photo-like 0.13"
+    "fit 0.15"
    ],
-   "origin": "search:singer at work",
+   "origin": "current",
    "n_cands": 6,
    "forced": false
   },
   "jobs|ACTOR": {
    "title": "File:Actor Kenneth Gibson in 1923.jpg",
-   "final": 1.064,
+   "final": 1.264,
    "p": 0.9887,
    "photo": 1.0,
    "fit": 1.0,
@@ -3135,13 +3122,13 @@
    "notes": [],
    "flags": [],
    "origin": "search:actor",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|SOLDIER": {
    "title": "File:Unidentified soldier in Confederate uniform with saxhorn.jpg",
-   "final": 1.06,
-   "p": 0.8102,
+   "final": 1.261,
+   "p": 0.8101,
    "photo": 0.9232,
    "fit": 1.0,
    "how": "yolo:person",
@@ -3152,23 +3139,26 @@
    "forced": false
   },
   "jobs|WAITER": {
-   "title": "File:The Grand Duchess and the Waiter advertisement in 1925.jpg",
-   "final": 0.95,
-   "p": 0.9683,
-   "photo": 0.0004,
-   "fit": 1.0,
+   "title": "File:Manuel's waiter costume from Fawlty Towers 01.jpg",
+   "final": 0.546,
+   "p": 0.2393,
+   "photo": 0.6724,
+   "fit": 0.487,
    "how": "yolo:person",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.81)"
+   ],
    "flags": [
-    "not photo-like 0.00"
+    "low word prob 0.24",
+    "fit 0.49"
    ],
    "origin": "search:waiter at work",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "jobs|SCIENTIST": {
    "title": "File:Barbara McClintock (1902-1992) shown in her laboratory in 1947.jpg",
-   "final": 1.018,
+   "final": 1.182,
    "p": 0.9985,
    "photo": 0.9897,
    "fit": 0.77,
@@ -3178,27 +3168,29 @@
    ],
    "flags": [],
    "origin": "search:scientist laboratory",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|DRIVER": {
-   "title": "File:East London driver instruction bus.jpg",
-   "final": 0.948,
-   "p": 0.996,
-   "photo": 0.8814,
-   "fit": 0.75,
+   "title": "File:Bus driver, Trešnjevka, 1931.jpg",
+   "final": 0.934,
+   "p": 0.3952,
+   "photo": 0.9562,
+   "fit": 1.0,
    "how": "yolo:person",
    "notes": [
-    "tiny subject"
+    "upscaled x1.9"
    ],
-   "flags": [],
+   "flags": [
+    "low word prob 0.40"
+   ],
    "origin": "search:bus driver",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "jobs|BUILDER": {
    "title": "File:Construction worker - geograph.org.uk - 1882862.jpg",
-   "final": 1.122,
+   "final": 1.307,
    "p": 0.9725,
    "photo": 0.8351,
    "fit": 1.0,
@@ -3206,12 +3198,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:construction worker",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "jobs|DENTIST": {
    "title": "File:Dentist adjusting braces to patient.jpg",
-   "final": 0.979,
+   "final": 1.08,
    "p": 1.0,
    "photo": 0.742,
    "fit": 0.512,
@@ -3223,12 +3215,12 @@
     "fit 0.51"
    ],
    "origin": "search:dentist patient",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|BAKER": {
    "title": "File:USS John C. Stennis baker.jpg",
-   "final": 0.798,
+   "final": 0.6,
    "p": 0.9981,
    "photo": 0.2329,
    "fit": 0.36,
@@ -3242,14 +3234,14 @@
     "not photo-like 0.23"
    ],
    "origin": "current",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|CHEF": {
    "title": "File:William Orpen Le Chef de l'Hôtel Chatham, Paris.jpg",
-   "final": 0.882,
+   "final": 0.569,
    "p": 0.8979,
-   "photo": 0.0093,
+   "photo": 0.0092,
    "fit": 0.822,
    "how": "yolo:person",
    "notes": [
@@ -6906,7 +6898,7 @@
   },
   "jobs|VET": {
    "title": "File:Close-up of a veterinarian examining a maltese dog.jpg",
-   "final": 0.942,
+   "final": 1.055,
    "p": 0.9999,
    "photo": 0.6673,
    "fit": 0.64,
@@ -6918,12 +6910,12 @@
     "fit 0.64"
    ],
    "origin": "search:veterinarian with dog",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|MAIL CARRIER": {
    "title": "File:Postman George Searle delivering mail, Greymouth, 1986. CC310.jpg",
-   "final": 0.831,
+   "final": 1.018,
    "p": 0.6265,
    "photo": 0.6764,
    "fit": 1.0,
@@ -6931,12 +6923,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:postman delivering mail",
-   "n_cands": 4,
+   "n_cands": 5,
    "forced": false
   },
   "jobs|FISHERMAN": {
    "title": "File:Leg Rowing Fisherman Inle Lake Myanmar.jpg",
-   "final": 1.156,
+   "final": 1.352,
    "p": 0.9999,
    "photo": 0.9584,
    "fit": 1.0,
@@ -6944,25 +6936,15 @@
    "notes": [],
    "flags": [],
    "origin": "search:fisherman at work",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|MECHANIC": {
-   "title": "File:2008-04-17 1989 Saab 900 Turbo getting new tyres.jpg",
-   "final": 1.099,
-   "p": 0.9991,
-   "photo": 0.9916,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "jobs|HAIRDRESSER": {
    "title": "File:Barber cutting hair with comb. Back view of young man in barber shop.jpg",
-   "final": 0.879,
+   "final": 0.948,
    "p": 1.0,
    "photo": 0.4224,
    "fit": 0.512,
@@ -6975,14 +6957,14 @@
     "not photo-like 0.42"
    ],
    "origin": "search:barber cutting hair",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|DANCER": {
    "title": "File:Fire dance Indonesia.jpg",
-   "final": 1.141,
+   "final": 1.322,
    "p": 0.9732,
-   "photo": 0.8196,
+   "photo": 0.811,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
@@ -6992,38 +6974,43 @@
    "forced": false
   },
   "jobs|FOOTBALL PLAYER": {
-   "title": "File:Brendan Egan soccer player Summer.png",
-   "final": 1.0,
-   "p": 0.9899,
-   "photo": 0.0363,
-   "fit": 1.0,
+   "title": "File:Brendan Egan Soccer Player Summer2025.jpg",
+   "final": 0.974,
+   "p": 0.999,
+   "photo": 0.581,
+   "fit": 0.422,
    "how": "yolo:person",
-   "notes": [],
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
    "flags": [
-    "not photo-like 0.04"
+    "fit 0.42"
    ],
    "origin": "search:soccer player",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "jobs|SHOPKEEPER": {
-   "title": "File:Owner of general store slicing baloney, Jarreau, Louisiana October 1938 crop.jpg",
-   "final": 1.001,
-   "p": 0.9797,
-   "photo": 0.7539,
-   "fit": 0.819,
+   "title": "File:Easter-leather-fetish-berlin shopping kuckuck motzstr-18 2023-04-08.png",
+   "final": 0.969,
+   "p": 0.9153,
+   "photo": 0.4168,
+   "fit": 0.75,
    "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "tiny subject"
    ],
-   "flags": [],
+   "flags": [
+    "not photo-like 0.42"
+   ],
    "origin": "search:shop owner in store",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|ASTRONAUT": {
    "title": "File:Bruce McCandless II during EVA in 1984.jpg",
-   "final": 1.09,
+   "final": 1.28,
    "p": 1.0,
    "photo": 0.8969,
    "fit": 1.0,
@@ -7036,9 +7023,9 @@
   },
   "jobs|MONK": {
    "title": "File:Graduate in Buddhist theology monk.jpg",
-   "final": 1.077,
+   "final": 1.267,
    "p": 0.9994,
-   "photo": 0.9353,
+   "photo": 0.9352,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [
@@ -7046,7 +7033,7 @@
    ],
    "flags": [],
    "origin": "search:Buddhist monk Thailand",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|SHORTS": {
@@ -10952,29 +10939,25 @@
    "forced": false
   },
   "jobs|LAWYER": {
-   "title": "File:Helena Normanton.jpg",
-   "final": 0.334,
-   "p": 0.0418,
-   "photo": 0.9866,
-   "fit": 0.328,
+   "title": "File:Supreme Court First odia Lawyer.jpg",
+   "final": 0.644,
+   "p": 0.0028,
+   "photo": 0.6039,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.68)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.04",
-    "fit 0.33"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:lawyer court",
+   "n_cands": 8,
    "forced": false
   },
   "jobs|ACCOUNTANT": {
    "title": "File:Casio calculator JS-20WK in 201901 002.jpg",
-   "final": 0.687,
-   "p": 0.7087,
-   "photo": 0.8502,
+   "final": 0.565,
+   "p": 0.7072,
+   "photo": 0.8492,
    "fit": 0.528,
    "how": "saliency",
    "notes": [
@@ -10984,7 +10967,7 @@
     "fit 0.53"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|PROGRAMMER": {
@@ -11024,7 +11007,7 @@
   },
   "jobs|PHOTOGRAPHER": {
    "title": "File:Photograph of a Photographer.jpg",
-   "final": 1.128,
+   "final": 1.328,
    "p": 0.9996,
    "photo": 0.9989,
    "fit": 1.0,
@@ -11037,9 +11020,9 @@
   },
   "jobs|JOURNALIST": {
    "title": "File:Phoenix Heinz Abel 1.jpg",
-   "final": 0.723,
+   "final": 0.578,
    "p": 0.9832,
-   "photo": 0.3284,
+   "photo": 0.3283,
    "fit": 0.168,
    "how": "yolo:person",
    "notes": [
@@ -11052,7 +11035,7 @@
     "not photo-like 0.33"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|WRITER": {
@@ -11073,59 +11056,56 @@
    "forced": false
   },
   "jobs|MUSICIAN": {
-   "title": "File:Joan Baez and Bob Dylan.jpg",
-   "final": 0.32,
-   "p": 0.2242,
-   "photo": 0.9968,
-   "fit": 0.161,
-   "how": "yolo:person",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.52)"
-   ],
-   "flags": [
-    "low word prob 0.22",
-    "fit 0.16"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "jobs|PAINTER": {
-   "title": "File:House painters in Capri (cropped).jpg",
-   "final": 0.964,
-   "p": 0.9907,
-   "photo": 0.0001,
-   "fit": 0.832,
-   "how": "yolo:person",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "not photo-like 0.00"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "jobs|ARCHITECT": {
-   "title": "File:Architect.png",
-   "final": 0.962,
-   "p": 0.9313,
-   "photo": 0.0,
+   "title": "File:The Musician 1914-07 cover.jpg",
+   "final": 0.636,
+   "p": 0.9938,
+   "photo": 0.0002,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
     "not photo-like 0.00"
    ],
+   "origin": "search:musician at work",
+   "n_cands": 7,
+   "forced": false
+  },
+  "jobs|PAINTER": {
+   "title": "File:House painters in Capri (cropped).jpg",
+   "final": 0.779,
+   "p": 0.9907,
+   "photo": 0.147,
+   "fit": 0.832,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.15"
+   ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
+   "forced": false
+  },
+  "jobs|ARCHITECT": {
+   "title": "File:Münster, Liudgerhaus und Diözesanbibliothek -- 2014 -- 0303.jpg",
+   "final": 0.515,
+   "p": 0.111,
+   "photo": 0.8444,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.11",
+    "check safety 0.61"
+   ],
+   "origin": "search:architect plans",
+   "n_cands": 6,
    "forced": false
   },
   "jobs|PLUMBER": {
    "title": "File:Plumber at work.jpg",
-   "final": 0.991,
+   "final": 1.166,
    "p": 0.8596,
    "photo": 0.6822,
    "fit": 1.0,
@@ -11166,57 +11146,55 @@
   },
   "jobs|GARDENER": {
    "title": "File:Cementerio, Tulcán, Ecuador, 2015-07-21, DD 60.JPG",
-   "final": 1.026,
+   "final": 0.797,
    "p": 0.9949,
-   "photo": 0.3167,
+   "photo": 0.1082,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "not photo-like 0.32"
+    "not photo-like 0.11"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|CLEANER": {
-   "title": "File:Atlanta parking garage settled particulates.jpg",
-   "final": 0.649,
-   "p": 0.3667,
-   "photo": 0.4068,
-   "fit": 1.0,
+   "title": "File:Nightly Cleaning Services in Frederick Maryland.jpg",
+   "final": 1.062,
+   "p": 0.9995,
+   "photo": 0.5027,
+   "fit": 0.75,
    "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.37",
-    "not photo-like 0.41"
+   "notes": [
+    "tiny subject"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:janitor cleaning",
+   "n_cands": 8,
    "forced": false
   },
   "jobs|SECURITY GUARD": {
-   "title": "File:UN security COP26.jpg",
-   "final": 0.892,
-   "p": 0.9953,
-   "photo": 0.0064,
-   "fit": 0.665,
+   "title": "File:Guard at the Prague castle, Prague - 7620 (cropped).jpg",
+   "final": 1.02,
+   "p": 0.8843,
+   "photo": 0.9627,
+   "fit": 0.416,
    "how": "yolo:person",
    "notes": [
     "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.87)"
    ],
    "flags": [
-    "fit 0.66",
-    "not photo-like 0.01"
+    "fit 0.42"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:security guard",
+   "n_cands": 7,
    "forced": false
   },
   "jobs|CASHIER": {
    "title": "File:Cashier at her register.jpg",
-   "final": 0.992,
+   "final": 1.131,
    "p": 0.987,
    "photo": 0.6897,
    "fit": 0.8,
@@ -11226,12 +11204,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|STREET VENDOR": {
    "title": "File:StreetfoodNY.jpg",
-   "final": 1.034,
+   "final": 0.983,
    "p": 1.0,
    "photo": 0.2929,
    "fit": 1.0,
@@ -11241,7 +11219,7 @@
     "not photo-like 0.29"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|TAXI DRIVER": {
@@ -11258,21 +11236,16 @@
    "forced": false
   },
   "jobs|FLIGHT ATTENDANT": {
-   "title": "File:Austrian Crew - 8961564592.jpg",
-   "final": 0.884,
-   "p": 0.9994,
-   "photo": 0.9331,
-   "fit": 0.443,
+   "title": "File:Safety, Comfort, Reliability- The Critical Role of Air Force Flight Attendants (9410816).jpg",
+   "final": 1.063,
+   "p": 0.6339,
+   "photo": 0.79,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.92)"
-   ],
-   "flags": [
-    "fit 0.44"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:flight attendant",
+   "n_cands": 8,
    "forced": false
   },
   "jobs|CAPTAIN": {
@@ -11294,7 +11267,7 @@
   },
   "jobs|FARMER'S HELPER": {
    "title": "File:Woman at work, Gujarat.jpg",
-   "final": 0.992,
+   "final": 1.143,
    "p": 0.8598,
    "photo": 0.7597,
    "fit": 0.789,
@@ -11304,12 +11277,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|KING": {
    "title": "File:Saint Edward's Crown.jpg",
-   "final": 1.104,
+   "final": 1.312,
    "p": 0.8265,
    "photo": 0.9977,
    "fit": 1.0,
@@ -11322,7 +11295,7 @@
   },
   "jobs|QUEEN": {
    "title": "File:Évrard e frédéric bapst, diadema della duchessa d'anguoleme, smeraldi, diamanti, oro e argento, parigi 1819-20.jpg",
-   "final": 0.804,
+   "final": 0.891,
    "p": 0.9768,
    "photo": 0.9829,
    "fit": 0.254,
@@ -11334,7 +11307,7 @@
     "fit 0.25"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "jobs|PRINCE": {
@@ -11366,20 +11339,18 @@
    "forced": false
   },
   "jobs|SUPERHERO": {
-   "title": "File:Front cover, \"Wow Comics\" no. 38 (art by Jack Binder).jpg",
-   "final": 0.862,
-   "p": 0.995,
-   "photo": 0.0098,
-   "fit": 0.824,
+   "title": "File:Babies in superhero costumes playing by a chair (16373224843).jpg",
+   "final": 1.155,
+   "p": 0.9993,
+   "photo": 0.9795,
+   "fit": 0.831,
    "how": "yolo:person",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "not photo-like 0.01"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:superhero costume",
+   "n_cands": 7,
    "forced": false
   },
   "jobs|PIRATE": {
@@ -11401,22 +11372,20 @@
    "forced": false
   },
   "jobs|CLOWN": {
-   "title": "File:Clown costume.jpg",
-   "final": 0.926,
-   "p": 1.0,
-   "photo": 0.0876,
-   "fit": 0.478,
+   "title": "File:Photo Portrait of a circus clown during the makeup process. 1950 - Touring Club Italiano 04 2383.jpg",
+   "final": 0.98,
+   "p": 0.7745,
+   "photo": 0.8629,
+   "fit": 0.64,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "fit 0.48",
-    "not photo-like 0.09"
+    "fit 0.64"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:circus clown",
+   "n_cands": 7,
    "forced": false
   },
   "jobs|MAGICIAN": {
@@ -29484,14 +29453,14 @@
   "jobs|CAPTAIN",
   "jobs|CARPENTER",
   "jobs|CHEF",
-  "jobs|CLEANER",
   "jobs|CLOWN",
   "jobs|DELIVERY RIDER",
   "jobs|DENTIST",
   "jobs|DESIGNER",
   "jobs|DOCTOR",
+  "jobs|DRIVER",
   "jobs|ENGINEER",
-  "jobs|FLIGHT ATTENDANT",
+  "jobs|FIREFIGHTER",
   "jobs|FLORIST",
   "jobs|FOOTBALL PLAYER",
   "jobs|GARDENER",
@@ -29501,6 +29470,7 @@
   "jobs|LAWYER",
   "jobs|LIBRARIAN",
   "jobs|MAGICIAN",
+  "jobs|MECHANIC",
   "jobs|MUSICIAN",
   "jobs|NURSE",
   "jobs|PAINTER",
@@ -29515,11 +29485,10 @@
   "jobs|RECEPTIONIST",
   "jobs|SAILOR",
   "jobs|SECURITY GUARD",
+  "jobs|SHOPKEEPER",
   "jobs|SINGER",
   "jobs|STREET VENDOR",
-  "jobs|SUPERHERO",
   "jobs|TAILOR",
-  "jobs|TEACHER",
   "jobs|TOUR GUIDE",
   "jobs|VET",
   "jobs|WAITER",
@@ -30113,7 +30082,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1892,
+  "with_photo": 1890,
   "flagged": 1074
  }
 }

@@ -1658,48 +1658,52 @@
   },
   "body|EAR": {
    "title": "File:Closeup of a human ear.jpg",
-   "final": 1.165,
+   "final": 1.362,
    "p": 0.9991,
-   "photo": 0.968,
+   "photo": 0.9679,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
    "origin": "search:human ear",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "body|NOSE": {
-   "title": "File:Nose nina.jpg",
-   "final": 1.077,
-   "p": 0.9803,
-   "photo": 0.9991,
-   "fit": 1.0,
-   "how": "saliency",
+   "title": "File:Nose Example.jpg",
+   "final": 1.138,
+   "p": 0.8515,
+   "photo": 0.9922,
+   "fit": 0.7,
+   "how": "none",
    "notes": [
-    "upscaled x1.7"
+    "no subject found"
    ],
-   "flags": [],
+   "flags": [
+    "fit 0.70"
+   ],
    "origin": "search:human nose",
    "n_cands": 8,
    "forced": false
   },
   "body|HAND": {
    "title": "File:India - Varanasi green peas - 2714.jpg",
-   "final": 0.921,
-   "p": 0.6136,
+   "final": 1.023,
+   "p": 0.384,
    "photo": 0.9766,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [],
+   "flags": [
+    "low word prob 0.38"
+   ],
    "origin": "search:human hand",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "body|FOOT": {
    "title": "File:Foot Fetish.jpg",
-   "final": 1.124,
+   "final": 1.324,
    "p": 0.9881,
    "photo": 0.9949,
    "fit": 1.0,
@@ -1707,12 +1711,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:human foot",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "body|MOUTH": {
    "title": "File:Detailed view of the inside of the human mouth.jpg",
-   "final": 0.74,
+   "final": 0.913,
    "p": 0.4304,
    "photo": 0.9808,
    "fit": 0.64,
@@ -1729,25 +1733,23 @@
    "forced": false
   },
   "body|HAIR": {
-   "title": "File:Wadowice, Poland (Unsplash).jpg",
-   "final": 0.976,
-   "p": 0.9912,
-   "photo": 0.9973,
-   "fit": 0.589,
+   "title": "File:Young woman with long red hair from behind.jpg",
+   "final": 1.139,
+   "p": 0.938,
+   "photo": 0.9466,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.98)"
+    "touches 1 edge(s)"
    ],
-   "flags": [
-    "fit 0.59"
-   ],
+   "flags": [],
    "origin": "search:long hair",
    "n_cands": 8,
    "forced": false
   },
   "body|TOOTH": {
    "title": "File:Lower wisdom tooth.jpg",
-   "final": 1.099,
+   "final": 1.297,
    "p": 0.9988,
    "photo": 0.9886,
    "fit": 1.0,
@@ -1755,13 +1757,13 @@
    "notes": [],
    "flags": [],
    "origin": "search:human tooth",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "body|FINGER": {
    "title": "File:Friction d'une allumette.jpg",
-   "final": 0.367,
-   "p": 0.0064,
+   "final": 0.516,
+   "p": 0.0061,
    "photo": 0.9474,
    "fit": 0.367,
    "how": "saliency",
@@ -1774,23 +1776,19 @@
     "fit 0.37"
    ],
    "origin": "search:finger",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "body|LEG": {
-   "title": "File:Leg compartments.jpg",
-   "final": 0.643,
-   "p": 0.3627,
-   "photo": 0.0015,
-   "fit": 0.8,
+   "title": "File:Side view of leg (51503747404).jpg",
+   "final": 0.826,
+   "p": 0.058,
+   "photo": 0.984,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "upscaled x1.5"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.36",
-    "not photo-like 0.00"
+    "low word prob 0.06"
    ],
    "origin": "search:human leg",
    "n_cands": 8,
@@ -1798,7 +1796,7 @@
   },
   "body|ARM": {
    "title": "File:Female Elbow and Hand on Arm.png",
-   "final": 0.951,
+   "final": 1.102,
    "p": 0.8802,
    "photo": 0.9839,
    "fit": 0.64,
@@ -1815,7 +1813,7 @@
   },
   "body|TONGUE": {
    "title": "File:زبان tongue.jpg",
-   "final": 1.023,
+   "final": 1.156,
    "p": 0.9802,
    "photo": 0.9968,
    "fit": 0.547,
@@ -1832,9 +1830,9 @@
   },
   "body|BRAIN": {
    "title": "File:The Human Brain Model 01.jpg",
-   "final": 1.107,
+   "final": 1.307,
    "p": 0.9999,
-   "photo": 0.9994,
+   "photo": 0.999,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -1845,9 +1843,9 @@
   },
   "body|HEART": {
    "title": "File:Human heart model.jpg",
-   "final": 1.161,
+   "final": 1.342,
    "p": 0.9996,
-   "photo": 0.8129,
+   "photo": 0.8124,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -1858,7 +1856,7 @@
   },
   "body|BONE": {
    "title": "File:Left femur of extinct elephant, Alaska, Ice Age Wellcome L0057714.jpg",
-   "final": 0.872,
+   "final": 0.969,
    "p": 0.9988,
    "photo": 0.9911,
    "fit": 0.317,
@@ -1874,51 +1872,47 @@
    "forced": false
   },
   "body|SKIN": {
-   "title": "File:Skin.png",
-   "final": 1.087,
-   "p": 0.9891,
-   "photo": 0.0097,
-   "fit": 1.0,
+   "title": "File:SOX10 immunohistochemistry of normal skin (original).jpg",
+   "final": 1.009,
+   "p": 0.7975,
+   "photo": 0.9967,
+   "fit": 0.64,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "touches 2 edge(s)"
+   ],
    "flags": [
-    "not photo-like 0.01"
+    "fit 0.64"
    ],
    "origin": "search:human skin",
    "n_cands": 8,
    "forced": false
   },
   "body|BACK": {
-   "title": "File:Posterior view of human female and male backs (cropped).jpg",
-   "final": 0.881,
-   "p": 0.9538,
-   "photo": 0.9506,
-   "fit": 0.512,
+   "title": "File:Person's back Glasgow station (Unsplash Nw3LE012unw).jpg",
+   "final": 1.02,
+   "p": 0.7842,
+   "photo": 0.9808,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "touches 3 edge(s)"
+    "touches 1 edge(s)"
    ],
-   "flags": [
-    "fit 0.51"
-   ],
-   "origin": "current",
+   "flags": [],
+   "origin": "search:person's back",
    "n_cands": 8,
    "forced": false
   },
   "body|NECK": {
-   "title": "File:Structure of Adam's apple.png",
-   "final": 0.817,
-   "p": 0.983,
-   "photo": 0.0027,
-   "fit": 0.513,
+   "title": "File:Neck Decoration 19th-20th century, National Museum New Delhi.jpg",
+   "final": 0.785,
+   "p": 0.0082,
+   "photo": 0.9985,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.85)",
-    "upscaled x1.6"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.51",
-    "not photo-like 0.00"
+    "low word prob 0.01"
    ],
    "origin": "search:neck",
    "n_cands": 8,
@@ -1926,7 +1920,7 @@
   },
   "body|SHOULDER": {
    "title": "File:Shoulder impingement syndrome, X-ray.jpg",
-   "final": 1.027,
+   "final": 0.945,
    "p": 0.999,
    "photo": 0.9828,
    "fit": 0.8,
@@ -1942,8 +1936,8 @@
   },
   "body|STOMACH": {
    "title": "File:Chestnut-bellied Sandgrouse in Bhigwan August 2025 by Tisha Mukherjee 02.jpg",
-   "final": 0.444,
-   "p": 0.0008,
+   "final": 0.686,
+   "p": 0.0001,
    "photo": 0.9285,
    "fit": 1.0,
    "how": "saliency",
@@ -2324,7 +2318,7 @@
   },
   "body|EYE": {
    "title": "File:Human eye with blood vessels.jpg",
-   "final": 1.18,
+   "final": 1.382,
    "p": 0.9639,
    "photo": 0.9979,
    "fit": 1.0,
@@ -6434,7 +6428,7 @@
   },
   "body|KNEE": {
    "title": "File:Knee prosthesis zones by Knee Society 2015, AP view.jpg",
-   "final": 0.989,
+   "final": 0.675,
    "p": 0.9652,
    "photo": 0.0104,
    "fit": 0.84,
@@ -6446,12 +6440,12 @@
     "not photo-like 0.01"
    ],
    "origin": "search:knee",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "body|ELBOW": {
    "title": "File:Bursitis Elbow WCArrow.jpg",
-   "final": 0.846,
+   "final": 0.932,
    "p": 0.9793,
    "photo": 0.9922,
    "fit": 0.238,
@@ -6464,13 +6458,13 @@
     "fit 0.24"
    ],
    "origin": "search:elbow",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "body|CHIN": {
    "title": "File:Black-chinned Yuhina in Kurseong April 2024 by Tisha Mukherjee 02.jpg",
-   "final": 0.529,
-   "p": 0.1191,
+   "final": 0.678,
+   "p": 0.0183,
    "photo": 0.8836,
    "fit": 0.782,
    "how": "saliency",
@@ -6478,67 +6472,65 @@
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.12"
+    "low word prob 0.02"
    ],
    "origin": "search:chin",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "body|CHEEK": {
-   "title": "File:Coastal East Lothian , Cheek to cheek - geograph.org.uk - 8162411.jpg",
-   "final": 0.552,
-   "p": 0.6912,
-   "photo": 0.7592,
-   "fit": 0.275,
+   "title": "File:Cheek to Cheek dress.jpg",
+   "final": 0.592,
+   "p": 0.0055,
+   "photo": 0.9465,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.57)"
+    "touches 1 edge(s)"
    ],
    "flags": [
-    "fit 0.28"
+    "low word prob 0.01"
    ],
    "origin": "search:cheek",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "body|LIPS": {
    "title": "File:Rouged Lips (1923) - 1.jpg",
-   "final": 0.659,
-   "p": 0.3854,
-   "photo": 0.78,
+   "final": 0.668,
+   "p": 0.3801,
+   "photo": 0.3775,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.39"
+    "low word prob 0.38",
+    "not photo-like 0.38"
    ],
    "origin": "search:lips",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "body|EYEBROW": {
-   "title": "File:Eyebrow pencil drawing.jpg",
-   "final": 0.772,
-   "p": 0.9945,
-   "photo": 0.0045,
-   "fit": 0.353,
-   "how": "none",
+   "title": "File:Eyebrow piercing.jpg",
+   "final": 0.706,
+   "p": 0.0195,
+   "photo": 0.9802,
+   "fit": 0.8,
+   "how": "saliency",
    "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.84)"
+    "touches 1 edge(s)"
    ],
    "flags": [
-    "fit 0.35",
-    "not photo-like 0.00"
+    "low word prob 0.02"
    ],
    "origin": "search:eyebrow",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "body|TOE": {
    "title": "File:Toes frost bite 2024 medical toe 01.jpg",
-   "final": 0.96,
+   "final": 1.136,
    "p": 0.8739,
    "photo": 0.9967,
    "fit": 0.8,
@@ -6553,7 +6545,7 @@
   },
   "body|THUMB": {
    "title": "File:Liam Thumb.jpg",
-   "final": 1.038,
+   "final": 1.203,
    "p": 0.9636,
    "photo": 0.935,
    "fit": 0.8,
@@ -6563,12 +6555,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "body|NAIL": {
    "title": "File:Eucalyptus propinqua bark and fingernails 7th Brigade Park Chermside L1040628.jpg",
-   "final": 0.636,
+   "final": 0.883,
    "p": 0.0113,
    "photo": 0.973,
    "fit": 1.0,
@@ -6582,21 +6574,20 @@
    "forced": false
   },
   "body|WRIST": {
-   "title": "File:Sprained wrist.jpg",
-   "final": 0.735,
-   "p": 0.8213,
-   "photo": 0.7976,
-   "fit": 0.35,
+   "title": "File:Wearing protective wrist support.jpg",
+   "final": 0.855,
+   "p": 0.6269,
+   "photo": 0.9395,
+   "fit": 0.507,
    "how": "saliency",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.91)"
+    "subject cannot fit 3:4 (box cov 0.85)"
    ],
    "flags": [
-    "fit 0.35"
+    "fit 0.51"
    ],
    "origin": "search:wrist",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "weather|CLOUDY": {
@@ -12770,21 +12761,16 @@
    "forced": false
   },
   "body|FACE": {
-   "title": "File:Human faces.jpg",
-   "final": 0.285,
-   "p": 0.0,
-   "photo": 0.9563,
-   "fit": 0.261,
+   "title": "File:Sixties Child is Full of Face.png",
+   "final": 1.226,
+   "p": 0.9905,
+   "photo": 0.9029,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.44)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.26"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:child face",
+   "n_cands": 6,
    "forced": false
   },
   "body|HEAD": {
@@ -12822,26 +12808,23 @@
    "forced": false
   },
   "body|TEETH": {
-   "title": "File:06-10-06smile.jpg",
-   "final": 0.42,
-   "p": 0.0779,
-   "photo": 0.9967,
-   "fit": 0.293,
+   "title": "File:Water reflection of a smiling woman planting rice.jpg",
+   "final": 0.74,
+   "p": 0.0001,
+   "photo": 0.861,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.49)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.08",
-    "fit 0.29"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:teeth smile",
+   "n_cands": 8,
    "forced": false
   },
   "body|BEARD": {
    "title": "File:Photography-wallpaper-facial-hair-man-beard-chin-moustache-human-elder-portrait-1453095.jpg",
-   "final": 0.955,
+   "final": 0.92,
    "p": 0.9996,
    "photo": 0.3753,
    "fit": 0.64,
@@ -12854,7 +12837,7 @@
     "not photo-like 0.38"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "body|MUSTACHE": {
@@ -12876,7 +12859,7 @@
   },
   "body|ANKLE": {
    "title": "File:Ankle.jpg",
-   "final": 0.846,
+   "final": 0.939,
    "p": 0.8545,
    "photo": 0.9549,
    "fit": 0.265,
@@ -12889,7 +12872,7 @@
     "fit 0.26"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 5,
    "forced": false
   },
   "body|HIP": {
@@ -12928,7 +12911,7 @@
   },
   "body|BLOOD": {
    "title": "File:Venous and arterial blood.jpg",
-   "final": 0.545,
+   "final": 0.775,
    "p": 0.0733,
    "photo": 0.8326,
    "fit": 1.0,
@@ -12938,7 +12921,7 @@
     "low word prob 0.07"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "nature|SEA": {
@@ -24787,7 +24770,7 @@
     "fit 0.43"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "body|JAW": {
@@ -29398,7 +29381,6 @@
   "body|ANKLE",
   "body|ARM",
   "body|ARMPIT",
-  "body|BACK",
   "body|BANDAGE",
   "body|BEARD",
   "body|BLOOD",
@@ -29413,14 +29395,13 @@
   "body|ELBOW",
   "body|EYEBROW",
   "body|EYELASH",
-  "body|FACE",
   "body|FINGER",
   "body|FINGERPRINT",
   "body|FIST",
   "body|FOOTPRINT",
   "body|FOREHEAD",
   "body|FRECKLES",
-  "body|HAIR",
+  "body|HAND",
   "body|HEADACHE",
   "body|HEEL",
   "body|HIP",
@@ -29436,6 +29417,7 @@
   "body|MUSTACHE",
   "body|NAIL",
   "body|NECK",
+  "body|NOSE",
   "body|NOSTRIL",
   "body|RIBS",
   "body|SCAR",
@@ -30418,6 +30400,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1896,
-  "flagged": 1115
+  "flagged": 1114
  }
 }

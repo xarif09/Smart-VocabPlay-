@@ -4123,25 +4123,26 @@
    "forced": false
   },
   "sports|FOOTBALL": {
-   "title": "File:Daniel Souček U21 Czech Republic vs Greece 10-10-2019.jpg",
-   "final": 1.008,
-   "p": 0.9802,
-   "photo": 0.1922,
-   "fit": 0.8,
+   "title": "File:Football in Bloomington, Indiana, 1995.jpg",
+   "final": 0.939,
+   "p": 0.9192,
+   "photo": 0.9687,
+   "fit": 0.274,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.57)"
    ],
    "flags": [
-    "not photo-like 0.19"
+    "fit 0.27"
    ],
-   "origin": "search:football sport",
-   "n_cands": 7,
+   "origin": "current",
+   "n_cands": 8,
    "forced": false
   },
   "sports|BASKETBALL": {
    "title": "File:Elbayane 25 Decembre 1978 basketball est vs ezzahar sport.jpg",
-   "final": 1.059,
+   "final": 1.013,
    "p": 0.9263,
    "photo": 0.9984,
    "fit": 1.0,
@@ -4149,12 +4150,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:basketball sport",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|TENNIS": {
    "title": "File:2013 Australian Open - Guillaume Rufin.jpg",
-   "final": 1.17,
+   "final": 1.365,
    "p": 0.9984,
    "photo": 0.9458,
    "fit": 1.0,
@@ -4167,7 +4168,7 @@
   },
   "sports|SWIMMING": {
    "title": "File:Swimming pool inside the sport complex.jpg",
-   "final": 1.07,
+   "final": 1.271,
    "p": 0.9549,
    "photo": 0.9863,
    "fit": 1.0,
@@ -4175,12 +4176,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:swimming sport",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|RUNNING": {
    "title": "File:Running through the woods 03.jpg",
-   "final": 0.995,
+   "final": 1.194,
    "p": 0.8299,
    "photo": 0.908,
    "fit": 1.0,
@@ -4193,7 +4194,7 @@
   },
   "sports|CYCLING": {
    "title": "File:Chico Wildflower Century (2025)-104A9764.jpg",
-   "final": 1.138,
+   "final": 1.326,
    "p": 0.9999,
    "photo": 0.8811,
    "fit": 1.0,
@@ -4201,14 +4202,14 @@
    "notes": [],
    "flags": [],
    "origin": "search:cycling sport",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "sports|BOXING": {
    "title": "File:Muay Thai Fight Us Vs Burma (80668065).jpeg",
-   "final": 0.64,
+   "final": 0.626,
    "p": 0.3549,
-   "photo": 0.3702,
+   "photo": 0.3701,
    "fit": 0.599,
    "how": "yolo:person",
    "notes": [
@@ -4220,12 +4221,12 @@
     "not photo-like 0.37"
    ],
    "origin": "current",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "sports|GOLF": {
    "title": "File:Golfer swing.jpg",
-   "final": 1.047,
+   "final": 0.946,
    "p": 0.9999,
    "photo": 0.2334,
    "fit": 1.0,
@@ -4235,29 +4236,29 @@
     "not photo-like 0.23"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|VOLLEYBALL": {
-   "title": "File:Femme et sport du volley ball.jpg",
-   "final": 0.948,
-   "p": 0.8692,
-   "photo": 0.0862,
-   "fit": 0.8,
+   "title": "File:Brasil vence a França no vôlei masculino 1037987-15.08.2016 ffz-6369.jpg",
+   "final": 0.977,
+   "p": 0.9993,
+   "photo": 0.8895,
+   "fit": 0.294,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)"
+    "subject cannot fit 3:4 (box cov 0.49)"
    ],
    "flags": [
-    "not photo-like 0.09"
+    "fit 0.29"
    ],
-   "origin": "search:volleyball sport",
-   "n_cands": 7,
+   "origin": "current",
+   "n_cands": 8,
    "forced": false
   },
   "sports|BASEBALL": {
    "title": "File:Tommy Milone gives up a home run to Mike Trout on May 21, 2017.jpg",
-   "final": 0.889,
+   "final": 0.572,
    "p": 1.0,
    "photo": 0.0428,
    "fit": 0.64,
@@ -4270,12 +4271,12 @@
     "not photo-like 0.04"
    ],
    "origin": "current",
-   "n_cands": 4,
+   "n_cands": 5,
    "forced": false
   },
   "sports|BADMINTON": {
    "title": "File:Olympics 2012 Mixed Doubles Final.jpg",
-   "final": 0.917,
+   "final": 1.021,
    "p": 0.9997,
    "photo": 0.9852,
    "fit": 0.374,
@@ -4287,14 +4288,14 @@
     "fit 0.37"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|SKATEBOARD": {
    "title": "File:BackSmithGrind.jpg",
-   "final": 0.973,
+   "final": 1.127,
    "p": 0.9874,
-   "photo": 0.969,
+   "photo": 0.9689,
    "fit": 0.75,
    "how": "yolo:skateboard",
    "notes": [
@@ -4303,12 +4304,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 3,
+   "n_cands": 4,
    "forced": false
   },
   "sports|SKIING": {
    "title": "File:20190227 FIS NWSC Seefeld Men CC 15km Janosch Brugger 850 5030.jpg",
-   "final": 1.148,
+   "final": 1.312,
    "p": 0.9948,
    "photo": 0.6387,
    "fit": 1.0,
@@ -4316,12 +4317,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:skiing sport",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|SURFING": {
    "title": "File:Mavericks Surf Contest 2010b.jpg",
-   "final": 1.059,
+   "final": 1.211,
    "p": 0.9999,
    "photo": 0.893,
    "fit": 0.75,
@@ -4331,12 +4332,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|YOGA": {
    "title": "File:Yoga4Love Freedom Gratitude.jpg",
-   "final": 0.831,
+   "final": 0.914,
    "p": 0.9999,
    "photo": 0.9707,
    "fit": 0.238,
@@ -4349,12 +4350,12 @@
     "fit 0.24"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|TABLE TENNIS": {
    "title": "File:Table tennis championships.jpg",
-   "final": 1.025,
+   "final": 1.191,
    "p": 0.9975,
    "photo": 0.9589,
    "fit": 0.8,
@@ -4368,67 +4369,64 @@
    "forced": false
   },
   "sports|DANCING": {
-   "title": "File:Two dancers.jpg",
+   "title": "File:Dance sport performed by young kids.jpg",
    "final": 0.986,
-   "p": 0.9993,
-   "photo": 0.9996,
-   "fit": 0.47,
+   "p": 0.983,
+   "photo": 0.9102,
+   "fit": 0.424,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.98)"
+    "subject cannot fit 3:4 (box cov 0.71)"
    ],
    "flags": [
-    "fit 0.47"
+    "fit 0.42"
    ],
-   "origin": "current",
+   "origin": "search:dancing sport",
    "n_cands": 6,
    "forced": false
   },
   "sports|TROPHY": {
-   "title": "File:Grey Cup Trophy on Base 4.png",
-   "final": 0.859,
-   "p": 0.9999,
-   "photo": 0.2312,
-   "fit": 0.531,
+   "title": "File:2025 Leagues Cup Final - Trophy celebration.jpg",
+   "final": 0.503,
+   "p": 0.0304,
+   "photo": 0.3273,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.89)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.53",
-    "not photo-like 0.23"
+    "low word prob 0.03",
+    "not photo-like 0.33"
    ],
    "origin": "search:trophy cup",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "sports|MEDAL": {
    "title": "File:Ulysses S. Grant Congressional Gold Medal - Reverse.jpg",
-   "final": 1.048,
+   "final": 1.2,
    "p": 0.9999,
-   "photo": 0.5423,
+   "photo": 0.5354,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
    "origin": "search:gold medal",
-   "n_cands": 5,
+   "n_cands": 4,
    "forced": false
   },
   "sports|JUMP": {
-   "title": "File:Long jump 2025.jpg",
-   "final": 1.106,
-   "p": 0.9993,
-   "photo": 0.0904,
+   "title": "File:2013 IPC Athletics World Championships - 26072013 - Maximiliano Rodriguez Magi of Spain during the Men's Long jump - T12.jpg",
+   "final": 1.204,
+   "p": 0.9305,
+   "photo": 0.4973,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "not photo-like 0.09"
+    "not photo-like 0.50"
    ],
-   "origin": "search:long jump",
-   "n_cands": 7,
+   "origin": "current",
+   "n_cands": 8,
    "forced": false
   },
   "animals|GIRAFFE": {
@@ -7327,7 +7325,7 @@
   },
   "sports|KARATE": {
    "title": "File:Ténues de sport Karaté KYOSHINDO 33.jpg",
-   "final": 0.942,
+   "final": 1.063,
    "p": 0.9917,
    "photo": 0.7651,
    "fit": 0.628,
@@ -7340,32 +7338,27 @@
     "fit 0.63"
    ],
    "origin": "search:karate sport",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|TAEKWONDO": {
-   "title": "File:Milad Kharchegani at the 2016 Summer Olympics.jpg",
-   "final": 0.776,
-   "p": 0.9998,
-   "photo": 0.1109,
-   "fit": 0.325,
+   "title": "File:Taekwondo and Kallaripayattu sport.jpg",
+   "final": 0.78,
+   "p": 0.0175,
+   "photo": 0.8658,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.85)",
-    "upscaled x1.5"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.32",
-    "not photo-like 0.11"
+    "low word prob 0.02"
    ],
-   "origin": "current",
+   "origin": "search:taekwondo sport",
    "n_cands": 7,
    "forced": false
   },
   "sports|ICE SKATING": {
    "title": "File:XtremeIceSkating SquatJump.jpg",
-   "final": 1.136,
+   "final": 1.334,
    "p": 0.9855,
    "photo": 0.9759,
    "fit": 1.0,
@@ -7373,29 +7366,29 @@
    "notes": [],
    "flags": [],
    "origin": "search:ice skating sport",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "sports|FISHING": {
-   "title": "File:Fishing Vessel Norwalk CT 4.jpg",
-   "final": 0.694,
-   "p": 0.6901,
-   "photo": 0.0427,
+   "title": "File:Red fishing huts in Rågårdsdal.jpg",
+   "final": 0.679,
+   "p": 0.0293,
+   "photo": 0.8813,
    "fit": 0.75,
-   "how": "yolo:person",
+   "how": "saliency",
    "notes": [
     "tiny subject"
    ],
    "flags": [
-    "not photo-like 0.04"
+    "low word prob 0.03"
    ],
    "origin": "search:fishing",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "sports|HIKING": {
    "title": "File:Hiking to the Ice Lakes. San Juan National Forest, Colorado.jpg",
-   "final": 1.013,
+   "final": 1.175,
    "p": 1.0,
    "photo": 0.9915,
    "fit": 0.75,
@@ -7405,12 +7398,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|BOWLING": {
    "title": "File:Bong Coo.jpg",
-   "final": 0.976,
+   "final": 0.957,
    "p": 0.9898,
    "photo": 0.3573,
    "fit": 0.843,
@@ -7422,12 +7415,12 @@
     "not photo-like 0.36"
    ],
    "origin": "search:bowling sport",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "sports|CHESS": {
    "title": "File:ChessSet.jpg",
-   "final": 0.914,
+   "final": 1.034,
    "p": 0.9999,
    "photo": 0.9981,
    "fit": 0.467,
@@ -7439,12 +7432,12 @@
     "fit 0.47"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|HORSE RIDING": {
    "title": "File:Horse-riding-07765-nevit.jpg",
-   "final": 1.152,
+   "final": 1.348,
    "p": 1.0,
    "photo": 0.953,
    "fit": 1.0,
@@ -7452,12 +7445,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:horse riding sport",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|RUGBY": {
    "title": "File:2014 Women's Six Nations Championship - France Italy (51).jpg",
-   "final": 0.813,
+   "final": 0.885,
    "p": 0.9999,
    "photo": 0.9083,
    "fit": 0.206,
@@ -7470,12 +7463,12 @@
     "fit 0.21"
    ],
    "origin": "current",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "sports|JUMP ROPE": {
    "title": "File:US Marine Corps (USMC) Sergeant (SGT) Quon Tran from Des Moines, Iowa helps an orphaned Thai child with her new toy jump rope, at the El Shaddai Orphanage in Thailand, during a visi - DPLA - f57a52f0d5151d2d42ae8d0ee8a7f1dd.jpeg",
-   "final": 1.011,
+   "final": 1.171,
    "p": 0.9985,
    "photo": 0.8858,
    "fit": 0.81,
@@ -7485,7 +7478,7 @@
    ],
    "flags": [],
    "origin": "search:jump rope child",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "family|PARENTS": {
@@ -13598,39 +13591,35 @@
    "forced": false
   },
   "sports|RUNNING SHOES": {
-   "title": "File:Air Jordan 1 Banned.jpg",
-   "final": 0.655,
-   "p": 0.7088,
-   "photo": 0.9986,
-   "fit": 0.393,
+   "title": "File:Brooks Ghost 14 GTX.jpg",
+   "final": 1.238,
+   "p": 0.9806,
+   "photo": 0.987,
+   "fit": 0.823,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.65)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.39"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:running shoes",
+   "n_cands": 7,
    "forced": false
   },
   "sports|GOAL": {
-   "title": "File:Peter Bondra scoring.jpg",
-   "final": 0.283,
-   "p": 0.0009,
-   "photo": 0.7187,
-   "fit": 0.224,
+   "title": "File:Football goal on a misty morning - geograph.org.uk - 7275275.jpg",
+   "final": 1.023,
+   "p": 0.9952,
+   "photo": 0.9751,
+   "fit": 0.459,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.47)"
+    "subject cannot fit 3:4 (box cov 0.77)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.22"
+    "fit 0.46"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:football goal",
+   "n_cands": 6,
    "forced": false
   },
   "sports|RACKET": {
@@ -13651,7 +13640,7 @@
   },
   "sports|BAT": {
    "title": "File:Fourbats.jpg",
-   "final": 0.944,
+   "final": 1.071,
    "p": 1.0,
    "photo": 0.89,
    "fit": 0.585,
@@ -13663,7 +13652,7 @@
     "fit 0.58"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "sports|NET": {
@@ -13685,101 +13674,92 @@
    "forced": false
   },
   "sports|WHISTLE": {
-   "title": "File:Pea Whistle.jpg",
-   "final": 0.935,
-   "p": 1.0,
-   "photo": 0.539,
-   "fit": 0.582,
+   "title": "File:Rattle, Whistle, and Bells MET DP242568.jpg",
+   "final": 1.06,
+   "p": 0.9544,
+   "photo": 0.8482,
+   "fit": 0.665,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.97)"
-   ],
-   "flags": [
-    "fit 0.58"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "sports|TEAM": {
-   "title": "File:IIHF Ice Hockey Women 20170405 08.jpg",
-   "final": 0.236,
-   "p": 0.0,
-   "photo": 0.5324,
-   "fit": 0.24,
-   "how": "yolo:person",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.50)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.24"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "sports|COACH": {
-   "title": "File:Torre and coaches.jpg",
-   "final": 0.372,
-   "p": 0.4117,
-   "photo": 0.3089,
-   "fit": 0.184,
-   "how": "yolo:person",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.48)"
-   ],
-   "flags": [
-    "low word prob 0.41",
-    "fit 0.18",
-    "not photo-like 0.31"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "sports|RACE": {
-   "title": "File:Usain Bolt 2012 Olympics 1.jpg",
-   "final": 0.216,
-   "p": 0.0011,
-   "photo": 0.4684,
-   "fit": 0.676,
-   "how": "yolo:person",
    "notes": [
     "touches 1 edge(s)",
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.68",
-    "not photo-like 0.47"
+    "fit 0.67"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:whistle",
+   "n_cands": 7,
+   "forced": false
+  },
+  "sports|TEAM": {
+   "title": "File:Flower Team Culture Association, Tree Group photo.png",
+   "final": 0.846,
+   "p": 0.9994,
+   "photo": 1.0,
+   "fit": 0.15,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.49)"
+   ],
+   "flags": [
+    "fit 0.15"
+   ],
+   "origin": "search:sports team photo",
+   "n_cands": 7,
+   "forced": false
+  },
+  "sports|COACH": {
+   "title": "File:Gill, line coach, 1944 North Carolina Tar Heels football team.png",
+   "final": 0.901,
+   "p": 0.9998,
+   "photo": 0.841,
+   "fit": 0.291,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.95)"
+   ],
+   "flags": [
+    "fit 0.29"
+   ],
+   "origin": "search:coach with team",
+   "n_cands": 7,
+   "forced": false
+  },
+  "sports|RACE": {
+   "title": "File:10 k running race, Cranny - 2 - geograph.org.uk - 7501681.jpg",
+   "final": 0.963,
+   "p": 0.7873,
+   "photo": 0.9574,
+   "fit": 0.556,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.93)"
+   ],
+   "flags": [
+    "fit 0.56"
+   ],
+   "origin": "search:running race",
+   "n_cands": 7,
    "forced": false
   },
   "sports|MARATHON": {
-   "title": "File:BSK CSOB MARATON046 (33791445325).jpg",
-   "final": 0.87,
-   "p": 0.8924,
-   "photo": 0.9944,
-   "fit": 0.514,
+   "title": "File:Marathon runners on Parliament Street - geograph.org.uk - 7312496.jpg",
+   "final": 1.076,
+   "p": 0.5621,
+   "photo": 0.9731,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.86)"
-   ],
-   "flags": [
-    "fit 0.51"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:marathon runners",
+   "n_cands": 8,
    "forced": false
   },
   "sports|EXERCISE": {
    "title": "File:Cycling in Amsterdam (893).jpg",
-   "final": 0.351,
+   "final": 0.515,
    "p": 0.0,
    "photo": 0.4058,
    "fit": 0.828,
@@ -13792,26 +13772,22 @@
     "not photo-like 0.41"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "sports|STRETCH": {
-   "title": "File:Siberian Tiger by Malene Th.jpg",
-   "final": 0.417,
-   "p": 0.1466,
-   "photo": 0.9636,
-   "fit": 0.345,
-   "how": "saliency",
+   "title": "File:Back view of a woman performing a stretching exercise for the spine.jpg",
+   "final": 1.157,
+   "p": 0.9979,
+   "photo": 0.7886,
+   "fit": 0.8,
+   "how": "yolo:person",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.90)"
+    "touches 1 edge(s)"
    ],
-   "flags": [
-    "low word prob 0.15",
-    "fit 0.34"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:stretching exercise",
+   "n_cands": 7,
    "forced": false
   },
   "sports|PUSH-UP": {
@@ -13833,25 +13809,23 @@
    "forced": false
   },
   "sports|DIVING": {
-   "title": "File:Underwater photograph of a recreational scuba diver in Playa del Carmen 2006.jpg",
-   "final": 0.925,
-   "p": 0.9988,
-   "photo": 0.7416,
-   "fit": 0.484,
+   "title": "File:Sport diver, present day.jpg",
+   "final": 1.123,
+   "p": 0.9999,
+   "photo": 0.7932,
+   "fit": 0.806,
    "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.81)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.48"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:diving sport",
+   "n_cands": 6,
    "forced": false
   },
   "sports|KAYAKING": {
    "title": "File:Woman kayaking on a turquoise lake (51125937521).jpg",
-   "final": 1.172,
+   "final": 1.355,
    "p": 0.999,
    "photo": 0.8258,
    "fit": 1.0,
@@ -26864,7 +26838,7 @@
     "fit 0.44"
    ],
    "origin": "search:QI",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|PLAYER": {
@@ -26881,7 +26855,7 @@
     "low word prob 0.01"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "sports|SCOREBOARD": {
@@ -29929,7 +29903,6 @@
   "sports|CHESS",
   "sports|COACH",
   "sports|DANCING",
-  "sports|DIVING",
   "sports|DODGEBALL",
   "sports|DUMBBELL",
   "sports|EXERCISE",
@@ -29944,7 +29917,6 @@
   "sports|HURDLES",
   "sports|JUMP",
   "sports|KARATE",
-  "sports|MARATHON",
   "sports|MUAY THAI",
   "sports|NET",
   "sports|OLYMPICS",
@@ -29955,12 +29927,10 @@
   "sports|REFEREE",
   "sports|ROWING",
   "sports|RUGBY",
-  "sports|RUNNING SHOES",
   "sports|SHUTTLECOCK",
   "sports|SIT-UP",
   "sports|SNORKELING",
   "sports|SPORTS DAY",
-  "sports|STRETCH",
   "sports|TAEKWONDO",
   "sports|TAKRAW",
   "sports|TEAM",
@@ -30229,6 +30199,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1893,
-  "flagged": 1087
+  "flagged": 1083
  }
 }

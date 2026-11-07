@@ -16,20 +16,21 @@
    "forced": true
   },
   "colors|RED": {
-   "title": "File:Red Apple.jpg",
-   "final": 1.022,
-   "p": 0.8042,
-   "photo": 0.9998,
-   "fit": 0.53,
+   "title": "File:Australian Red delicious apples at the store.jpg",
+   "final": 0.849,
+   "p": 0.7185,
+   "photo": 0.9793,
+   "fit": 0.342,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.88)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.71)"
    ],
    "flags": [
-    "fit 0.53"
+    "fit 0.34"
    ],
    "origin": "search:red apples",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "numbers|THREE": {
@@ -1223,28 +1224,28 @@
   },
   "colors|BLUE": {
    "title": "File:Innenhafen Duisburg Blaue Stunde 2014.jpg",
-   "final": 1.113,
-   "p": 0.5916,
+   "final": 1.112,
+   "p": 0.5891,
    "photo": 0.9811,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
    "origin": "search:blue color",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "colors|GREEN": {
    "title": "File:2018-07-16 Green apples on tree.jpg",
    "final": 1.084,
-   "p": 0.7201,
+   "p": 0.7199,
    "photo": 0.988,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
    "origin": "search:green apples",
-   "n_cands": 8,
+   "n_cands": 10,
    "forced": false
   },
   "colors|YELLOW": {
@@ -1279,48 +1280,54 @@
    "forced": false
   },
   "colors|ORANGE": {
-   "title": "File:Bloem van een Papaver (klaproos). 14-05-2021 (actm.) 01.jpg",
-   "final": 1.376,
-   "p": 0.9967,
-   "photo": 0.9996,
-   "fit": 1.0,
+   "title": "File:Balloons Going to Cross the Street.jpg",
+   "final": 1.125,
+   "p": 0.8489,
+   "photo": 0.992,
+   "fit": 0.804,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [],
-   "origin": "search:orange color",
-   "n_cands": 8,
+   "origin": "search:orange balloons",
+   "n_cands": 10,
    "forced": false
   },
   "colors|PINK": {
-   "title": "File:Flowers in snow 2022 G4.jpg",
-   "final": 1.288,
-   "p": 0.9417,
-   "photo": 0.9911,
-   "fit": 1.0,
+   "title": "File:Un groupe de flamants roses à Guellala - Djerba.jpg",
+   "final": 1.012,
+   "p": 0.934,
+   "photo": 0.9267,
+   "fit": 0.367,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:pink flowers",
-   "n_cands": 8,
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.61)"
+   ],
+   "flags": [
+    "fit 0.37"
+   ],
+   "origin": "search:pink flamingo",
+   "n_cands": 6,
    "forced": false
   },
   "colors|BROWN": {
-   "title": "File:Brown rock chat (Oenanthe fusca).jpg",
-   "final": 1.209,
-   "p": 0.9687,
-   "photo": 0.7781,
+   "title": "File:Brown young leaves.jpg",
+   "final": 1.116,
+   "p": 0.7516,
+   "photo": 0.9969,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "search:brown color",
+   "origin": "search:brown leaves",
    "n_cands": 8,
    "forced": false
   },
   "colors|BLACK": {
    "title": "File:Black hole - Messier 87 crop max res.jpg",
    "final": 0.977,
-   "p": 0.4252,
+   "p": 0.4251,
    "photo": 0.9469,
    "fit": 1.0,
    "how": "saliency",
@@ -1329,40 +1336,41 @@
     "low word prob 0.43"
    ],
    "origin": "search:black objects",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "colors|WHITE": {
-   "title": "File:Yarrow (Achillea millefolium).jpg",
-   "final": 1.234,
-   "p": 0.9988,
-   "photo": 0.9898,
-   "fit": 0.824,
+   "title": "File:African Cape Daisy (Osteospermum barberiae).jpg",
+   "final": 1.121,
+   "p": 0.9994,
+   "photo": 0.9998,
+   "fit": 0.566,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "fit 0.57"
+   ],
+   "origin": "search:white color",
+   "n_cands": 9,
+   "forced": false
+  },
+  "colors|GRAY": {
+   "title": "File:Large Grey Babbler in Saswad August 2025 by Tisha Mukherjee 02.jpg",
+   "final": 0.738,
+   "p": 0.3317,
+   "photo": 0.8815,
+   "fit": 0.773,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [],
-   "origin": "search:white color",
-   "n_cands": 8,
-   "forced": false
-  },
-  "colors|GRAY": {
-   "title": "File:Rollright Stones, the King Stone, on a grey December day - geograph.org.uk - 2214388.jpg",
-   "final": 0.799,
-   "p": 0.8739,
-   "photo": 0.8752,
-   "fit": 0.209,
-   "how": "none",
-   "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.50)"
-   ],
    "flags": [
-    "fit 0.21"
+    "low word prob 0.33"
    ],
    "origin": "search:grey stones",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "school|PEN": {
@@ -5726,52 +5734,55 @@
    "forced": false
   },
   "shapes|CIRCLE": {
-   "title": "File:Colouring pencils.jpg",
-   "final": 1.006,
-   "p": 0.497,
-   "photo": 0.4371,
-   "fit": 1.0,
+   "title": "File:Wall clock in morning time.jpg",
+   "final": 0.765,
+   "p": 0.9059,
+   "photo": 0.5179,
+   "fit": 0.291,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.50",
-    "not photo-like 0.44"
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.76)"
    ],
-   "origin": "search:round circle object",
-   "n_cands": 8,
+   "flags": [
+    "fit 0.29"
+   ],
+   "origin": "search:round wall clock",
+   "n_cands": 7,
    "forced": false
   },
   "shapes|SQUARE": {
-   "title": "File:Square Tile MET DP100744.jpg",
-   "final": 1.034,
-   "p": 0.9875,
-   "photo": 0.9929,
-   "fit": 0.512,
+   "title": "File:Square Tile MET DP100746.jpg",
+   "final": 1.014,
+   "p": 0.9867,
+   "photo": 0.9729,
+   "fit": 0.491,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.85)"
+    "subject cannot fit 3:4 (box cov 0.82)"
    ],
    "flags": [
-    "fit 0.51"
+    "fit 0.49"
    ],
    "origin": "search:square tile",
    "n_cands": 7,
    "forced": false
   },
   "shapes|TRIANGLE": {
-   "title": "File:Sign to The Triangle on Dickerage Road - geograph.org.uk - 3748725.jpg",
-   "final": 0.948,
-   "p": 0.996,
-   "photo": 0.7562,
-   "fit": 0.398,
+   "title": "File:Dornbirn-Warning triangle \"Accident\"-19ASD.jpg",
+   "final": 0.791,
+   "p": 0.4722,
+   "photo": 0.9402,
+   "fit": 0.582,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.66)"
+    "subject cannot fit 3:4 (box cov 0.97)"
    ],
    "flags": [
-    "fit 0.40"
+    "low word prob 0.47",
+    "fit 0.58"
    ],
-   "origin": "search:triangle road sign",
+   "origin": "search:triangle warning road sign",
    "n_cands": 6,
    "forced": false
   },
@@ -5790,7 +5801,7 @@
     "not photo-like 0.46"
    ],
    "origin": "search:star shaped object",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "shapes|HEART": {
@@ -5809,50 +5820,47 @@
    "forced": false
   },
   "shapes|RECTANGLE": {
-   "title": "File:Dülmen, St.-Viktor-Kirche, Eingangsportal -- 2021 -- 4504-10.jpg",
-   "final": 0.732,
-   "p": 0.0,
-   "photo": 0.671,
+   "title": "File:Heiligengrabe, Kloster Stift zum Heiligengrabe, Abtei, Dachgeschoss -- 2017 -- 9904-10 (bw).jpg",
+   "final": 0.469,
+   "p": 0.0102,
+   "photo": 0.9768,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.01"
    ],
    "origin": "search:rectangular object",
-   "n_cands": 8,
+   "n_cands": 5,
    "forced": false
   },
   "shapes|OVAL": {
-   "title": "File:Fulper Pottery Shape No. 501 with backstamp.jpg",
-   "final": 0.856,
-   "p": 0.9556,
-   "photo": 0.4959,
-   "fit": 0.45,
+   "title": "File:Rugby Ball in snow.jpg",
+   "final": 0.839,
+   "p": 0.5391,
+   "photo": 0.5472,
+   "fit": 0.765,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.75)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.45",
-    "not photo-like 0.50"
-   ],
-   "origin": "search:oval shape",
-   "n_cands": 8,
+   "flags": [],
+   "origin": "search:rugby ball",
+   "n_cands": 9,
    "forced": false
   },
   "shapes|DIAMOND": {
-   "title": "File:Opacum Land Trust and blue trail marker, Claire Birtz Wildlife Sanctuary.jpg",
-   "final": 0.815,
-   "p": 0.1072,
-   "photo": 0.988,
+   "title": "File:Dirty sign for Redmond Ridge Drive NE.jpg",
+   "final": 0.934,
+   "p": 0.1781,
+   "photo": 0.9648,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.11"
+    "low word prob 0.18"
    ],
-   "origin": "search:rhombus shape",
+   "origin": "search:diamond shaped road sign",
    "n_cands": 6,
    "forced": false
   },
@@ -6245,41 +6253,41 @@
    "forced": false
   },
   "colors|SILVER": {
-   "title": "File:Münster, LWL-Museum für Kunst und Kultur, Lichtkunstwerk \"Silberne Frequenz\" -- 2022 -- 4266.jpg",
-   "final": 0.913,
-   "p": 0.8991,
-   "photo": 0.5582,
-   "fit": 0.406,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.68)"
-   ],
-   "flags": [
-    "fit 0.41"
-   ],
-   "origin": "search:silver color",
-   "n_cands": 5,
-   "forced": false
-  },
-  "colors|LIGHT BLUE": {
-   "title": "File:Glaskugel -- 2022 -- 9846.jpg",
-   "final": 0.79,
-   "p": 0.0003,
-   "photo": 0.8167,
+   "title": "File:Silver spoons (Good Housekeeping, April 1907).png",
+   "final": 1.225,
+   "p": 0.9756,
+   "photo": 0.8316,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:light blue color",
+   "flags": [],
+   "origin": "search:silver spoons",
    "n_cands": 8,
+   "forced": false
+  },
+  "colors|LIGHT BLUE": {
+   "title": "File:Cesenatico - Chiesa di San Giacomo Apostolo - Vista notturna - 2024-09-21 20-07-45 001.JPG",
+   "final": 0.451,
+   "p": 0.0003,
+   "photo": 0.9954,
+   "fit": 0.421,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.42"
+   ],
+   "origin": "search:light blue sky",
+   "n_cands": 7,
    "forced": false
   },
   "colors|DARK GREEN": {
    "title": "File:Dark-green leaves.jpg",
-   "final": 0.838,
-   "p": 0.9781,
+   "final": 0.837,
+   "p": 0.9779,
    "photo": 0.9437,
    "fit": 0.21,
    "how": "none",
@@ -6291,7 +6299,7 @@
     "fit 0.21"
    ],
    "origin": "search:dark green leaves",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "fruits|DRAGON FRUIT": {
@@ -8061,68 +8069,65 @@
    "forced": false
   },
   "shapes|PENTAGON": {
-   "title": "File:Vlissingen (NL), Koopmanshaven, Leuchtturm -- 2022 -- 4730.jpg",
-   "final": 0.791,
-   "p": 0.0005,
-   "photo": 0.9496,
+   "title": "File:Ljubljana Castle, Pentagonal Tower.jpg",
+   "final": 0.705,
+   "p": 0.0132,
+   "photo": 0.8836,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.01"
    ],
-   "origin": "search:pentagon shape",
-   "n_cands": 7,
+   "origin": "search:pentagonal object",
+   "n_cands": 6,
    "forced": false
   },
   "shapes|HEXAGON": {
-   "title": "File:Quilt, Hexagon or Honeycomb pattern MET RT575.jpg",
-   "final": 0.753,
-   "p": 0.1221,
-   "photo": 0.5342,
-   "fit": 0.819,
+   "title": "File:Hexagonal Tile Ensemble with Sphinx MET h1 1976.245.jpg",
+   "final": 0.929,
+   "p": 0.8259,
+   "photo": 0.9599,
+   "fit": 0.449,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.75)"
    ],
    "flags": [
-    "low word prob 0.12"
+    "fit 0.45"
    ],
-   "origin": "search:honeycomb hexagon",
-   "n_cands": 7,
+   "origin": "search:hexagonal tiles",
+   "n_cands": 8,
    "forced": false
   },
   "shapes|CUBE": {
-   "title": "File:Merge Cube.jpg",
-   "final": 0.749,
-   "p": 0.9912,
-   "photo": 0.0653,
+   "title": "File:Rubik's cube image.jpg",
+   "final": 1.279,
+   "p": 0.9779,
+   "photo": 0.9521,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:Rubik's cube",
+   "n_cands": 6,
+   "forced": false
+  },
+  "shapes|CRESCENT": {
+   "title": "File:2 on a moon.png",
+   "final": 1.168,
+   "p": 1.0,
+   "photo": 0.4737,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "not photo-like 0.07"
+    "not photo-like 0.47"
    ],
-   "origin": "search:wooden cube",
-   "n_cands": 4,
-   "forced": false
-  },
-  "shapes|CRESCENT": {
-   "title": "File:Astronaut Bob Hines took this picture of the waning crescent moon on May 8, 2022 (waning-crescent-moon).jpg",
-   "final": 0.892,
-   "p": 0.9949,
-   "photo": 0.9898,
-   "fit": 0.21,
-   "how": "none",
-   "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.50)"
-   ],
-   "flags": [
-    "fit 0.21"
-   ],
-   "origin": "search:crescent moon",
-   "n_cands": 7,
+   "origin": "search:crescent moon sky",
+   "n_cands": 8,
    "forced": false
   },
   "toys|TOY CAR": {
@@ -14464,55 +14469,54 @@
    "forced": false
   },
   "colors|BEIGE": {
-   "title": "File:Münster, Speicherstadt, Uhrenturm -- 2020 -- 7541.jpg",
-   "final": 0.901,
-   "p": 0.7711,
-   "photo": 0.6216,
-   "fit": 0.638,
+   "title": "File:Münster, Speicherstadt, Uhrturm -- 2020 -- 7888.jpg",
+   "final": 0.842,
+   "p": 0.6321,
+   "photo": 0.6172,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 1 edge(s)"
    ],
-   "flags": [
-    "fit 0.64"
-   ],
+   "flags": [],
    "origin": "search:beige color",
    "n_cands": 10,
    "forced": false
   },
   "colors|TURQUOISE": {
    "title": "File:Kuang Si Falls with submerged tree in turquoise water near Luang Prabang Laos.jpg",
-   "final": 1.121,
-   "p": 0.6256,
+   "final": 0.81,
+   "p": 0.0039,
    "photo": 0.9998,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
    "origin": "search:turquoise water",
-   "n_cands": 9,
+   "n_cands": 6,
    "forced": false
   },
   "colors|VIOLET": {
-   "title": "File:Glaskugel -- 2022 -- 9846.jpg",
-   "final": 0.827,
-   "p": 0.0184,
-   "photo": 0.8167,
+   "title": "File:African Violet Blooms.jpg",
+   "final": 1.342,
+   "p": 0.9094,
+   "photo": 0.9835,
    "fit": 1.0,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.02"
+   "notes": [
+    "upscaled x1.5"
    ],
-   "origin": "search:violet color",
-   "n_cands": 10,
+   "flags": [],
+   "origin": "search:African violet",
+   "n_cands": 9,
    "forced": false
   },
   "colors|NAVY": {
    "title": "File:Promotion Ceremony for Rear Admiral Tuan Nguyen (8565063).jpg",
-   "final": 0.908,
-   "p": 0.9971,
+   "final": 0.888,
+   "p": 0.9574,
    "photo": 0.8724,
    "fit": 0.421,
    "how": "saliency",
@@ -14524,7 +14528,7 @@
     "fit 0.42"
    ],
    "origin": "search:navy blue fabric",
-   "n_cands": 9,
+   "n_cands": 7,
    "forced": false
   },
   "colors|RAINBOW COLORS": {
@@ -14539,13 +14543,13 @@
     "not photo-like 0.44"
    ],
    "origin": "search:colored pencils rainbow",
-   "n_cands": 10,
+   "n_cands": 8,
    "forced": false
   },
   "shapes|OVAL EGG": {
    "title": "File:Eggs in basket 2020 G1.jpg",
-   "final": 1.269,
-   "p": 0.9959,
+   "final": 1.267,
+   "p": 0.9936,
    "photo": 0.9888,
    "fit": 1.0,
    "how": "saliency",
@@ -14556,18 +14560,20 @@
    "forced": false
   },
   "shapes|LINE": {
-   "title": "File:Straight Line - geograph.org.uk - 2173561.jpg",
-   "final": 1.159,
-   "p": 0.987,
-   "photo": 0.9831,
-   "fit": 0.8,
-   "how": "saliency",
+   "title": "File:A straight tree-lined stretch of the Old Town Road - geograph.org.uk - 6296444.jpg",
+   "final": 1.025,
+   "p": 0.8786,
+   "photo": 0.8775,
+   "fit": 0.7,
+   "how": "none",
    "notes": [
-    "touches 1 edge(s)"
+    "no subject found"
    ],
-   "flags": [],
-   "origin": "search:straight line",
-   "n_cands": 8,
+   "flags": [
+    "fit 0.70"
+   ],
+   "origin": "search:straight road line",
+   "n_cands": 7,
    "forced": false
   },
   "shapes|ARROW": {
@@ -17904,7 +17910,7 @@
   "shapes|OCTAGON": {
    "title": "File:Stop sign us.jpg",
    "final": 0.883,
-   "p": 0.5822,
+   "p": 0.5819,
    "photo": 0.9514,
    "fit": 0.487,
    "how": "saliency",
@@ -17919,51 +17925,49 @@
    "forced": false
   },
   "shapes|HEPTAGON": {
-   "title": "File:Gea heptagon, Heptagonal Orbweaver.jpg",
-   "final": 0.745,
-   "p": 0.0183,
-   "photo": 0.9676,
-   "fit": 1.0,
+   "title": "File:50 Pence for the 2012 economy.jpg",
+   "final": 0.472,
+   "p": 0.0006,
+   "photo": 0.9182,
+   "fit": 0.483,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.02"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.80)"
    ],
-   "origin": "search:heptagonal",
-   "n_cands": 6,
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.48"
+   ],
+   "origin": "search:50 pence coin",
+   "n_cands": 7,
    "forced": false
   },
   "shapes|DECAGON": {
-   "title": "File:Decagonal Dome of St Gereon's Basilica, Cologne.jpg",
-   "final": 0.81,
-   "p": 0.0005,
-   "photo": 0.948,
+   "title": "File:Hubble- Decagon Around Saturn's South Pole (APOD 2026-09-08).jpg",
+   "final": 1.101,
+   "p": 0.7519,
+   "photo": 0.7503,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:decagonal",
+   "flags": [],
+   "origin": "search:decagon",
    "n_cands": 8,
    "forced": false
   },
   "shapes|SPHERE": {
-   "title": "File:Shanghai Science and Technology Museum glass sphere 20260418.jpg",
-   "final": 0.978,
-   "p": 0.9846,
-   "photo": 0.7554,
-   "fit": 0.36,
+   "title": "File:Glaskugel -- 2022 -- 9850.jpg",
+   "final": 0.906,
+   "p": 0.0851,
+   "photo": 0.8597,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.75)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.36"
+    "low word prob 0.09"
    ],
-   "origin": "search:glass sphere",
-   "n_cands": 8,
+   "origin": "search:glass sphere ball",
+   "n_cands": 7,
    "forced": false
   },
   "shapes|CONE": {
@@ -17980,33 +17984,29 @@
    "forced": false
   },
   "shapes|CYLINDER": {
-   "title": "File:Duisburg, Landschaftspark Duisburg-Nord -- 2020 -- 7824-6.jpg",
-   "final": 0.984,
-   "p": 0.4976,
-   "photo": 0.8888,
-   "fit": 0.8,
+   "title": "File:Террамицин аэрозоль спрей для животных 150 мл 2017.jpg",
+   "final": 1.123,
+   "p": 0.8385,
+   "photo": 0.6893,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.50"
-   ],
+   "notes": [],
+   "flags": [],
    "origin": "search:cylinder shape",
-   "n_cands": 9,
+   "n_cands": 7,
    "forced": false
   },
   "shapes|PYRAMID": {
    "title": "File:Giza, Pyramids, Pictures, F. Bonfils, photo 13 of 27 - Archivio fotografico Museo Egizio, Turin INV27 002.jpg",
-   "final": 1.3,
-   "p": 0.9997,
+   "final": 1.299,
+   "p": 0.9988,
    "photo": 0.9998,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
    "origin": "search:Pyramids of Giza",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "shapes|PRISM": {
@@ -18030,7 +18030,7 @@
   "shapes|CUBOID": {
    "title": "File:Damaged Cardboard Box Labelled Fragile.jpg",
    "final": 0.804,
-   "p": 0.0142,
+   "p": 0.0139,
    "photo": 0.98,
    "fit": 1.0,
    "how": "saliency",
@@ -18039,7 +18039,7 @@
     "low word prob 0.01"
    ],
    "origin": "search:cardboard box",
-   "n_cands": 8,
+   "n_cands": 5,
    "forced": false
   },
   "shapes|HEMISPHERE": {
@@ -18056,40 +18056,39 @@
     "fit 0.50"
    ],
    "origin": "search:dome hemisphere",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "shapes|SEMICIRCLE": {
-   "title": "File:Half-Circle Plaque MET LC-35 3 258 EGDP027784.jpg",
-   "final": 0.532,
-   "p": 0.0285,
-   "photo": 0.9983,
-   "fit": 0.505,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.84)"
-   ],
-   "flags": [
-    "low word prob 0.03",
-    "fit 0.51"
-   ],
-   "origin": "search:half circle",
-   "n_cands": 4,
-   "forced": false
-  },
-  "shapes|QUARTER CIRCLE": {
-   "title": "File:Rampart Street, French Quarter - Best pizza on the block sign - December 2025.jpg",
-   "final": 0.697,
-   "p": 0.0,
-   "photo": 0.9859,
+   "title": "File:Earth, Moon and Lunar Module, AS11-44-6643.jpg",
+   "final": 0.684,
+   "p": 0.0003,
+   "photo": 0.8918,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:quarter of a pizza",
-   "n_cands": 7,
+   "origin": "search:half moon window",
+   "n_cands": 5,
+   "forced": false
+  },
+  "shapes|QUARTER CIRCLE": {
+   "title": "File:Buffalo-Style Pizza Slice.jpg",
+   "final": 0.528,
+   "p": 0.0,
+   "photo": 0.8245,
+   "fit": 0.812,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:pizza slice",
+   "n_cands": 5,
    "forced": false
   },
   "shapes|PARALLELOGRAM": {
@@ -18103,42 +18102,49 @@
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:parallelogram shape",
-   "n_cands": 4,
+   "origin": "search:parallelogram",
+   "n_cands": 5,
    "forced": false
   },
   "shapes|TRAPEZOID": {
-   "title": "File:Orion Bar Collage (NIRCam and MIRI Images) (2023-129).jpg",
-   "final": 0.761,
-   "p": 0.0329,
-   "photo": 0.5818,
-   "fit": 1.0,
+   "title": "File:Tombstone MET DP368504.jpg",
+   "final": 0.477,
+   "p": 0.0057,
+   "photo": 0.8405,
+   "fit": 0.575,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.03"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.96)"
    ],
-   "origin": "search:trapezium shape",
+   "flags": [
+    "low word prob 0.01",
+    "fit 0.57"
+   ],
+   "origin": "search:trapezoid shape",
    "n_cands": 5,
    "forced": false
   },
   "shapes|RHOMBUS": {
-   "title": "File:Opacum Land Trust and blue trail marker, Claire Birtz Wildlife Sanctuary.jpg",
-   "final": 1.158,
-   "p": 0.7676,
-   "photo": 0.988,
-   "fit": 1.0,
+   "title": "File:306 Hlavná cesta (Cesta s prednosťou).jpg",
+   "final": 0.811,
+   "p": 0.647,
+   "photo": 0.2912,
+   "fit": 0.843,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.29"
+   ],
    "origin": "search:rhombus shape",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "shapes|ZIGZAG": {
    "title": "File:Trifolium medium - Niitvälja.jpg",
    "final": 0.805,
-   "p": 0.0006,
+   "p": 0.0,
    "photo": 0.9677,
    "fit": 1.0,
    "how": "saliency",
@@ -18153,7 +18159,7 @@
   "shapes|SPIRAL": {
    "title": "File:NautilusCutawayLogarithmicSpiral.jpg",
    "final": 1.025,
-   "p": 0.9978,
+   "p": 0.9977,
    "photo": 0.9696,
    "fit": 0.381,
    "how": "saliency",
@@ -18168,85 +18174,87 @@
    "forced": false
   },
   "shapes|CROSS": {
-   "title": "File:Dülmen, Heilig-Kreuz-Kirche, The Cast Whale Project -- 2022 -- 0509-13.jpg",
-   "final": 0.688,
-   "p": 0.0,
-   "photo": 0.8675,
+   "title": "File:Street View with Swiss Flag in Zurich.jpg",
+   "final": 0.852,
+   "p": 0.3611,
+   "photo": 0.5418,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.36"
    ],
-   "origin": "search:cross shape",
+   "origin": "search:Swiss flag",
    "n_cands": 8,
    "forced": false
   },
   "shapes|CURVE": {
-   "title": "File:New Marina Curve Road - geograph.org.uk - 6426435.jpg",
-   "final": 0.795,
-   "p": 0.6055,
-   "photo": 0.8669,
-   "fit": 0.508,
+   "title": "File:CP GE AC4400CW 8608 Morant's Curve.jpg",
+   "final": 0.908,
+   "p": 0.4489,
+   "photo": 0.9955,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.85)"
+    "touches 1 edge(s)"
    ],
    "flags": [
-    "fit 0.51"
+    "low word prob 0.45"
    ],
-   "origin": "search:curve road",
+   "origin": "search:curve",
    "n_cands": 7,
    "forced": false
   },
   "shapes|DOT": {
-   "title": "File:Dülmen, Haus Osthoff -- 2012 -- 8846.jpg",
-   "final": 0.799,
-   "p": 0.0,
-   "photo": 0.9952,
+   "title": "File:Ladybug aphids.JPG",
+   "final": 0.818,
+   "p": 0.0001,
+   "photo": 0.9764,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:red dot",
-   "n_cands": 6,
+   "origin": "search:ladybug",
+   "n_cands": 5,
    "forced": false
   },
   "shapes|WAVY LINE": {
-   "title": "File:Decorated ware jar with vertical bands of wavy lines MET 10.130.1173 007.jpg",
-   "final": 0.695,
-   "p": 0.0,
-   "photo": 0.9713,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "title": "File:Waves in sand.jpg",
+   "final": 0.971,
+   "p": 0.6746,
+   "photo": 0.9981,
+   "fit": 0.7,
+   "how": "none",
+   "notes": [
+    "no subject found"
    ],
-   "origin": "search:wavy lines",
-   "n_cands": 8,
+   "flags": [
+    "fit 0.70"
+   ],
+   "origin": "search:wavy sand ripples",
+   "n_cands": 9,
    "forced": false
   },
   "shapes|DOTTED LINE": {
-   "title": "File:Finishing off with the dotted line, Shanog Road - geograph.org.uk - 6158614.jpg",
-   "final": 0.219,
-   "p": 0.0111,
-   "photo": 0.4924,
-   "fit": 0.211,
-   "how": "none",
+   "title": "File:Fitchburg, Secretary Davey, Rindge Road Bridge, September 26, 2012 (8026670652).jpg",
+   "final": 0.271,
+   "p": 0.0119,
+   "photo": 0.4431,
+   "fit": 0.353,
+   "how": "saliency",
    "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.50)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.74)"
    ],
    "flags": [
     "low word prob 0.01",
-    "fit 0.21",
-    "not photo-like 0.49"
+    "fit 0.35",
+    "not photo-like 0.44"
    ],
-   "origin": "search:dotted line",
-   "n_cands": 6,
+   "origin": "search:dotted line road marking",
+   "n_cands": 3,
    "forced": false
   },
   "shapes|DIAGONAL LINE": {
@@ -18282,7 +18290,7 @@
     "not photo-like 0.31"
    ],
    "origin": "search:check mark",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "shapes|TEARDROP": {
@@ -18299,17 +18307,17 @@
    "forced": false
   },
   "shapes|STRIPES": {
-   "title": "File:Striped pajamas with purple triangle (crop).jpg",
-   "final": 1.129,
-   "p": 0.9138,
-   "photo": 0.9658,
-   "fit": 0.839,
+   "title": "File:Girl in a Striped T-shirt 2006.jpg",
+   "final": 1.019,
+   "p": 0.7612,
+   "photo": 0.7212,
+   "fit": 0.807,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "search:striped fabric",
+   "origin": "search:striped shirt",
    "n_cands": 7,
    "forced": false
   },
@@ -18332,78 +18340,71 @@
    "forced": false
   },
   "shapes|CHECKERED": {
-   "title": "File:World is Mine checker pattern.png",
-   "final": 1.19,
-   "p": 0.9988,
-   "photo": 0.4068,
-   "fit": 1.0,
+   "title": "File:Apple cake with vanilla ice cream 2.jpg",
+   "final": 0.733,
+   "p": 0.6338,
+   "photo": 0.872,
+   "fit": 0.391,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.41"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.65)"
    ],
-   "origin": "search:checkered pattern",
+   "flags": [
+    "fit 0.39"
+   ],
+   "origin": "search:checkered tablecloth",
    "n_cands": 9,
    "forced": false
   },
   "shapes|GRID": {
-   "title": "File:Grid-Fachada.png",
-   "final": 0.777,
-   "p": 0.9994,
-   "photo": 0.4206,
-   "fit": 0.237,
+   "title": "File:Unusual diamond pattern cattle grid at Kinnelhead - geograph.org.uk - 7266612.jpg",
+   "final": 0.736,
+   "p": 0.034,
+   "photo": 0.8874,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.49)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.24",
-    "not photo-like 0.42"
+    "low word prob 0.03"
    ],
-   "origin": "search:grid",
+   "origin": "search:grid pattern",
    "n_cands": 4,
    "forced": false
   },
   "shapes|ANGLE": {
-   "title": "File:CN Tower, Toronto, Canada (Unsplash DJ kOgH5u0o).jpg",
-   "final": 0.625,
-   "p": 0.0011,
-   "photo": 0.9521,
-   "fit": 0.8,
+   "title": "File:Mandelbrot Set Image 107.png",
+   "final": 0.813,
+   "p": 0.0,
+   "photo": 0.9684,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
+   "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:angle",
-   "n_cands": 8,
+   "origin": "search:set square",
+   "n_cands": 9,
    "forced": false
   },
   "shapes|CORNER": {
-   "title": "File:Wm. M. Bell's Pilot - Corner of a starch room, showing trays ready for impressions.jpg",
-   "final": 0.676,
-   "p": 0.6665,
-   "photo": 0.9936,
-   "fit": 0.658,
+   "title": "File:In English Homes Vol 1 Cassiobury Park Hertfordshire a corner of the large dining room 31295001575223 0416.jpg",
+   "final": 0.752,
+   "p": 0.8367,
+   "photo": 0.6907,
+   "fit": 0.816,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.66"
-   ],
+   "flags": [],
    "origin": "search:corner of a room",
    "n_cands": 9,
    "forced": false
   },
   "shapes|SQUIGGLE": {
    "title": "File:Emerald ash borer path (52485411368).jpg",
-   "final": 1.179,
-   "p": 0.9073,
+   "final": 1.178,
+   "p": 0.9069,
    "photo": 0.7711,
    "fit": 1.0,
    "how": "saliency",
@@ -18430,8 +18431,8 @@
   },
   "shapes|TUBE": {
    "title": "File:Lagis koreni (with and without tube).jpg",
-   "final": 0.92,
-   "p": 0.9329,
+   "final": 0.791,
+   "p": 0.6762,
    "photo": 0.9974,
    "fit": 0.427,
    "how": "saliency",
@@ -18461,21 +18462,18 @@
    "forced": false
   },
   "shapes|OUTLINE": {
-   "title": "File:Monkey Silhouette at Sunrise.jpg",
-   "final": 0.366,
-   "p": 0.0701,
-   "photo": 0.3433,
-   "fit": 0.8,
+   "title": "File:015a Angolan giraffe silhouette at sunrise in the Kalahari Desert of Namibia Photo by Giles Laurent.jpg",
+   "final": 0.735,
+   "p": 0.0103,
+   "photo": 0.9923,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.07",
-    "not photo-like 0.34"
+    "low word prob 0.01"
    ],
-   "origin": "search:silhouette outline",
-   "n_cands": 3,
+   "origin": "search:silhouette",
+   "n_cands": 5,
    "forced": false
   },
   "shapes|ARCH": {
@@ -18490,7 +18488,7 @@
    ],
    "flags": [],
    "origin": "search:arch",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "shapes|WEDGE": {
@@ -18509,22 +18507,22 @@
     "fit 0.54"
    ],
    "origin": "search:wedge",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "shapes|EDGE": {
-   "title": "File:Infinity Edge Pool, Mauritius.JPG",
-   "final": 0.766,
-   "p": 0.003,
-   "photo": 0.9966,
+   "title": "File:Danger Cliff Edge Stay Away Sign - White Stone Cliff Edge - geograph.org.uk - 7676591.jpg",
+   "final": 0.879,
+   "p": 0.8761,
+   "photo": 0.3007,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "not photo-like 0.30"
    ],
-   "origin": "search:edge",
-   "n_cands": 8,
+   "origin": "search:cliff edge",
+   "n_cands": 7,
    "forced": false
   },
   "shapes|MAZE": {
@@ -18541,19 +18539,18 @@
    "forced": false
   },
   "shapes|KNOT": {
-   "title": "File:Juvenile red knot (Finistere, France).jpg",
-   "final": 0.755,
-   "p": 0.1035,
-   "photo": 0.4625,
+   "title": "File:Hippocampus hippocampus (on Ascophyllum nodosum).jpg",
+   "final": 0.706,
+   "p": 0.0,
+   "photo": 0.9923,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.10",
-    "not photo-like 0.46"
+    "low word prob 0.00"
    ],
    "origin": "search:knot",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "shapes|HONEYCOMB": {
@@ -18608,234 +18605,241 @@
    "forced": false
   },
   "shapes|SHAPE": {
-   "title": "File:Dülmen, St.-Viktor-Kirche, Eingangsportal -- 2021 -- 4504-10.jpg",
-   "final": 0.732,
-   "p": 0.0,
-   "photo": 0.671,
+   "title": "File:Child engaging in colorful wooden block sorting activity.jpg",
+   "final": 0.74,
+   "p": 0.0535,
+   "photo": 0.8218,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.05"
    ],
-   "origin": "search:shapes",
-   "n_cands": 6,
+   "origin": "search:shape sorter toy",
+   "n_cands": 7,
    "forced": false
   },
   "shapes|FRAME": {
-   "title": "File:Empty frame on Sundays Hill - geograph.org.uk - 8248406.jpg",
-   "final": 0.928,
-   "p": 0.4127,
-   "photo": 0.7575,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.41"
-   ],
-   "origin": "search:empty frame",
-   "n_cands": 7,
-   "forced": false
-  },
-  "shapes|SYMMETRY": {
-   "title": "File:Glaskugel -- 2022 -- 9846.jpg",
-   "final": 0.808,
-   "p": 0.0002,
-   "photo": 0.8167,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:symmetrical",
-   "n_cands": 7,
-   "forced": false
-  },
-  "colors|DARK BLUE": {
-   "title": "File:Dülmen, St.-Viktor-Kirche, Eingangsportal -- 2021 -- 4504-10.jpg",
-   "final": 0.732,
-   "p": 0.0004,
-   "photo": 0.671,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:dark blue color",
-   "n_cands": 9,
-   "forced": false
-  },
-  "colors|LIGHT GREEN": {
-   "title": "File:Glaskugel -- 2022 -- 9846.jpg",
-   "final": 0.833,
-   "p": 0.0258,
-   "photo": 0.8167,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.03"
-   ],
-   "origin": "search:light green color",
-   "n_cands": 9,
-   "forced": false
-  },
-  "colors|DARK RED": {
-   "title": "File:Dark red Haws - geograph.org.uk - 6967367.jpg",
-   "final": 0.74,
-   "p": 0.0304,
-   "photo": 0.9802,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.03"
-   ],
-   "origin": "search:dark red objects",
-   "n_cands": 8,
-   "forced": false
-  },
-  "colors|LIGHT PINK": {
-   "title": "File:Pink light on the River Thames - geograph.org.uk - 2737438.jpg",
-   "final": 0.754,
-   "p": 0.0194,
-   "photo": 0.9116,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.02"
-   ],
-   "origin": "search:light pink objects",
-   "n_cands": 6,
-   "forced": false
-  },
-  "colors|HOT PINK": {
-   "title": "File:Nadine . Hot Pink.jpg",
-   "final": 0.802,
-   "p": 0.2448,
-   "photo": 0.6322,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.24"
-   ],
-   "origin": "search:hot pink color",
-   "n_cands": 7,
-   "forced": false
-  },
-  "colors|DARK BROWN": {
-   "title": "File:Dark Brown Panel Door.jpg",
-   "final": 0.801,
-   "p": 0.2122,
-   "photo": 0.7875,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.21"
-   ],
-   "origin": "search:dark brown objects",
-   "n_cands": 7,
-   "forced": false
-  },
-  "colors|LIGHT BROWN": {
-   "title": "File:Dülmen, St.-Viktor-Kirche, Eingangsportal -- 2021 -- 4504-10.jpg",
-   "final": 0.732,
-   "p": 0.0001,
-   "photo": 0.671,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:light brown color",
-   "n_cands": 8,
-   "forced": false
-  },
-  "colors|LIGHT GRAY": {
-   "title": "File:A girl wearing light gray socks; February 2016 (07).jpg",
-   "final": 1.067,
-   "p": 0.7777,
-   "photo": 0.9663,
-   "fit": 0.806,
+   "title": "File:Jacques-louis david, marte disarmato da venere, 1824, picture frame.png",
+   "final": 1.239,
+   "p": 0.9964,
+   "photo": 0.8437,
+   "fit": 0.79,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "search:light gray color",
+   "origin": "search:empty picture frame",
    "n_cands": 7,
    "forced": false
   },
-  "colors|DARK GRAY": {
-   "title": "File:Dark Gray Slow Feeder Dog Bowl with Labyrinth Pattern.jpg",
-   "final": 0.602,
-   "p": 0.3218,
-   "photo": 0.9031,
-   "fit": 0.5,
+  "shapes|SYMMETRY": {
+   "title": "File:Elegance Of Peacock Pansy Butterfly.jpg",
+   "final": 0.856,
+   "p": 0.0262,
+   "photo": 0.9937,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.83)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.32",
-    "fit 0.50"
+    "low word prob 0.03"
    ],
-   "origin": "search:dark gray color",
-   "n_cands": 8,
+   "origin": "search:symmetrical butterfly",
+   "n_cands": 7,
    "forced": false
   },
-  "colors|SKY BLUE": {
-   "title": "File:Coesfeld, Lette, Windmühle -- 2015 -- 5768.jpg",
-   "final": 0.79,
-   "p": 0.0154,
-   "photo": 0.9576,
+  "colors|DARK BLUE": {
+   "title": "File:Norderney, Promenade -- 2025 -- 9281.jpg",
+   "final": 0.624,
+   "p": 0.0023,
+   "photo": 0.9508,
+   "fit": 0.808,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:dark blue sea",
+   "n_cands": 9,
+   "forced": false
+  },
+  "colors|LIGHT GREEN": {
+   "title": "File:Lime fruit, Eastville Park - geograph.org.uk - 3647952.jpg",
+   "final": 0.712,
+   "p": 0.0238,
+   "photo": 0.993,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.02"
    ],
-   "origin": "search:sky blue color",
+   "origin": "search:lime fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|DARK RED": {
+   "title": "File:Троянда сорту Pink Intuition із сірою м'ясною мухою на пелюсці.jpg",
+   "final": 0.864,
+   "p": 0.0434,
+   "photo": 0.9098,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.04"
+   ],
+   "origin": "search:dark red roses",
+   "n_cands": 8,
+   "forced": false
+  },
+  "colors|LIGHT PINK": {
+   "title": "File:Light pink roses, Steckenroth.jpg",
+   "final": 1.034,
+   "p": 0.6123,
+   "photo": 0.9158,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:light pink roses",
+   "n_cands": 8,
+   "forced": false
+  },
+  "colors|HOT PINK": {
+   "title": "File:Dave & Buster's Santa Rosa - January 2026 - Sarah Stierch 12.jpg",
+   "final": 0.824,
+   "p": 0.0601,
+   "photo": 0.7423,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.06"
+   ],
+   "origin": "search:pink dragon fruit",
    "n_cands": 9,
    "forced": false
   },
-  "colors|LIME GREEN": {
-   "title": "File:Lime Green Bus in Mortimer - geograph.org.uk - 4946065.jpg",
-   "final": 0.924,
-   "p": 0.3791,
-   "photo": 0.9605,
-   "fit": 1.0,
+  "colors|DARK BROWN": {
+   "title": "File:Chocolate pistoles.jpg",
+   "final": 0.809,
+   "p": 0.8376,
+   "photo": 0.9792,
+   "fit": 0.245,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.38"
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.64)"
    ],
-   "origin": "search:lime green objects",
+   "flags": [
+    "fit 0.25"
+   ],
+   "origin": "search:dark chocolate",
    "n_cands": 6,
    "forced": false
   },
-  "colors|MAROON": {
-   "title": "File:A Maroon leaved plant amid green undergrowth Owalla Dam Osun.jpg",
-   "final": 0.856,
-   "p": 0.1278,
-   "photo": 0.9012,
+  "colors|LIGHT BROWN": {
+   "title": "File:A light brown and white pitbull.jpg",
+   "final": 0.76,
+   "p": 0.0001,
+   "photo": 0.8486,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.13"
+    "low word prob 0.00"
    ],
-   "origin": "search:maroon color",
+   "origin": "search:light brown puppy",
+   "n_cands": 9,
+   "forced": false
+  },
+  "colors|LIGHT GRAY": {
+   "title": "File:A girl wearing light gray socks; February 2016 (02).jpg",
+   "final": 0.735,
+   "p": 0.5405,
+   "photo": 0.8161,
+   "fit": 0.443,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.92)"
+   ],
+   "flags": [
+    "fit 0.44"
+   ],
+   "origin": "search:light gray color",
+   "n_cands": 8,
+   "forced": false
+  },
+  "colors|DARK GRAY": {
+   "title": "File:Habagat 2026-09-04 grey dark clouds Tropical Storm Kujira Luis Maymay 02.jpg",
+   "final": 0.603,
+   "p": 0.0003,
+   "photo": 0.8873,
+   "fit": 0.839,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:dark grey storm clouds",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|SKY BLUE": {
+   "title": "File:Clear blue sky (4-12-2026).jpg",
+   "final": 0.995,
+   "p": 0.9732,
+   "photo": 0.9805,
+   "fit": 0.418,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.42"
+   ],
+   "origin": "search:clear blue sky",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|LIME GREEN": {
+   "title": "File:Zitrusfrüchte -- 2025 -- 7292.jpg",
+   "final": 0.749,
+   "p": 0.3115,
+   "photo": 0.9936,
+   "fit": 0.446,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.74)"
+   ],
+   "flags": [
+    "low word prob 0.31",
+    "fit 0.45"
+   ],
+   "origin": "search:lime green color",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|MAROON": {
+   "title": "File:Long Flowing Maroon Dress.jpg",
+   "final": 0.774,
+   "p": 0.8541,
+   "photo": 0.1981,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.20"
+   ],
+   "origin": "search:maroon fabric",
    "n_cands": 8,
    "forced": false
   },
@@ -18858,32 +18862,36 @@
    "forced": false
   },
   "colors|IVORY": {
-   "title": "File:Woman's Two-piece Dress (Wedding) LACMA 62.34.1a-b.jpg",
-   "final": 1.09,
-   "p": 0.8872,
-   "photo": 0.9606,
-   "fit": 0.829,
+   "title": "File:Boho flower crown, ivory rose headband, woodland wedding head piece - frou frou2.jpg",
+   "final": 1.018,
+   "p": 0.9884,
+   "photo": 0.9634,
+   "fit": 0.579,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.96)"
    ],
-   "flags": [],
-   "origin": "search:ivory color",
+   "flags": [
+    "fit 0.58"
+   ],
+   "origin": "search:ivory white roses",
    "n_cands": 6,
    "forced": false
   },
   "colors|TAN": {
-   "title": "File:Infinity Edge Pool, Mauritius.JPG",
-   "final": 0.766,
-   "p": 0.0271,
-   "photo": 0.9966,
+   "title": "File:Miniature-american-shepherd-puppy.jpg",
+   "final": 0.784,
+   "p": 0.0009,
+   "photo": 0.9702,
    "fit": 1.0,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.03"
+   "notes": [
+    "upscaled x1.5"
    ],
-   "origin": "search:tan objects",
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:tan puppy",
    "n_cands": 7,
    "forced": false
   },
@@ -18899,21 +18907,24 @@
     "low word prob 0.38"
    ],
    "origin": "search:lavender flowers",
-   "n_cands": 6,
+   "n_cands": 8,
    "forced": false
   },
   "colors|MAGENTA": {
-   "title": "File:Agapanthus -- 2021 -- 3928.jpg",
-   "final": 0.798,
-   "p": 0.0,
-   "photo": 0.9578,
-   "fit": 1.0,
+   "title": "File:Bee grazing on magenta flower.jpg",
+   "final": 0.848,
+   "p": 0.3073,
+   "photo": 0.9239,
+   "fit": 0.64,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "touches 2 edge(s)"
    ],
-   "origin": "search:magenta color",
+   "flags": [
+    "low word prob 0.31",
+    "fit 0.64"
+   ],
+   "origin": "search:magenta flowers",
    "n_cands": 8,
    "forced": false
   },
@@ -18929,7 +18940,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:cyan color",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "colors|TEAL": {
@@ -18943,8 +18954,8 @@
    "flags": [
     "low word prob 0.06"
    ],
-   "origin": "search:teal color",
-   "n_cands": 7,
+   "origin": "search:teal door",
+   "n_cands": 8,
    "forced": false
   },
   "colors|AQUA": {
@@ -18963,69 +18974,66 @@
    "forced": false
   },
   "colors|CRIMSON": {
-   "title": "File:Crataegus 'Crimson Cloud' - Arlington, MA.jpg",
-   "final": 0.824,
-   "p": 0.0151,
-   "photo": 0.9714,
-   "fit": 1.0,
+   "title": "File:Crimson Rose Pachliopta hector mating by Raju Kasambe DSCN5858 01.jpg",
+   "final": 0.91,
+   "p": 0.3239,
+   "photo": 0.9983,
+   "fit": 0.788,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.02"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "origin": "search:crimson objects",
-   "n_cands": 7,
+   "flags": [
+    "low word prob 0.32"
+   ],
+   "origin": "search:crimson roses",
+   "n_cands": 9,
    "forced": false
   },
   "colors|SCARLET": {
-   "title": "File:A scarlet lily beetle.jpg",
-   "final": 0.893,
-   "p": 0.1691,
-   "photo": 0.9804,
+   "title": "File:Scarlet ibis at the Cotswold Wildlife Park - geograph.org.uk - 5413820.jpg",
+   "final": 0.882,
+   "p": 0.0829,
+   "photo": 0.9028,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.17"
+    "low word prob 0.08"
    ],
-   "origin": "search:scarlet color",
-   "n_cands": 7,
+   "origin": "search:scarlet ibis",
+   "n_cands": 8,
    "forced": false
   },
   "colors|BRONZE": {
-   "title": "File:Nihat Mammadli with the bronze medal of 2021 CIS Games.jpg",
-   "final": 0.655,
-   "p": 0.4522,
-   "photo": 0.8171,
-   "fit": 0.383,
+   "title": "File:Shang Bronze Bell 01.jpg",
+   "final": 1.252,
+   "p": 0.9884,
+   "photo": 0.9626,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.80)"
-   ],
-   "flags": [
-    "low word prob 0.45",
-    "fit 0.38"
-   ],
-   "origin": "search:bronze medal",
-   "n_cands": 5,
+   "notes": [],
+   "flags": [],
+   "origin": "search:bronze bell",
+   "n_cands": 6,
    "forced": false
   },
   "colors|COPPER": {
-   "title": "File:Magnified image of copper(II) acetate monohydrate crystals.png",
-   "final": 0.739,
-   "p": 0.0,
-   "photo": 0.9997,
-   "fit": 1.0,
+   "title": "File:Copper Kettle Restaurant - geograph.org.uk - 7176232.jpg",
+   "final": 0.782,
+   "p": 0.7386,
+   "photo": 0.9496,
+   "fit": 0.4,
    "how": "saliency",
    "notes": [
-    "upscaled x2.4"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.83)"
    ],
    "flags": [
-    "low word prob 0.00"
+    "fit 0.40"
    ],
-   "origin": "search:copper pipes",
-   "n_cands": 6,
+   "origin": "search:copper kettle",
+   "n_cands": 8,
    "forced": false
   },
   "colors|KHAKI": {
@@ -19057,18 +19065,18 @@
    "forced": false
   },
   "colors|INDIGO": {
-   "title": "File:Flammenfärbung Indium (In).jpg",
-   "final": 0.874,
-   "p": 0.169,
-   "photo": 0.9994,
+   "title": "File:Touchdown Indigo A320 VT-ISY Chennai Aug22 A7C 02308.jpg",
+   "final": 0.944,
+   "p": 0.631,
+   "photo": 0.4844,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.17"
+    "not photo-like 0.48"
    ],
-   "origin": "search:indigo color",
-   "n_cands": 8,
+   "origin": "search:indigo",
+   "n_cands": 9,
    "forced": false
   },
   "colors|AMBER": {
@@ -19096,13 +19104,13 @@
    ],
    "flags": [],
    "origin": "search:mustard yellow color",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "colors|CHARCOAL": {
    "title": "File:Starting the charcoal.jpg",
-   "final": 0.93,
-   "p": 0.7108,
+   "final": 0.928,
+   "p": 0.7082,
    "photo": 0.5359,
    "fit": 0.812,
    "how": "saliency",
@@ -19110,57 +19118,53 @@
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "search:charcoal",
-   "n_cands": 8,
+   "origin": "search:charcoal briquettes",
+   "n_cands": 9,
    "forced": false
   },
   "colors|BURGUNDY": {
-   "title": "File:Mercedes-Benz, ADAC Deutschland Klassik 2025, Heidelberg (20250726-P1048782).jpg",
-   "final": 0.955,
-   "p": 0.9414,
-   "photo": 0.8336,
-   "fit": 0.527,
+   "title": "File:Pommard glass p1150456.jpg",
+   "final": 1.078,
+   "p": 0.7907,
+   "photo": 0.9965,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.88)"
+    "touches 1 edge(s)"
    ],
-   "flags": [
-    "fit 0.53"
-   ],
-   "origin": "search:burgundy color",
+   "flags": [],
+   "origin": "search:burgundy wine glass",
    "n_cands": 6,
    "forced": false
   },
   "colors|ROYAL BLUE": {
-   "title": "File:Royal Blue to Kathmandu - geograph.org.uk - 3714540.jpg",
-   "final": 0.783,
-   "p": 0.1713,
-   "photo": 0.9743,
+   "title": "File:Île d'Orléans 009.jpg",
+   "final": 0.747,
+   "p": 0.0,
+   "photo": 0.9973,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.17"
+    "low word prob 0.00"
    ],
-   "origin": "search:royal blue objects",
-   "n_cands": 8,
+   "origin": "search:royal blue",
+   "n_cands": 7,
    "forced": false
   },
   "colors|BABY BLUE": {
-   "title": "File:Baby in bucket swing against blue sky with face not shown.jpg",
-   "final": 0.738,
-   "p": 0.3046,
-   "photo": 0.6327,
-   "fit": 0.786,
+   "title": "File:Teddy Bear - 3.jpg",
+   "final": 1.145,
+   "p": 0.9544,
+   "photo": 0.8221,
+   "fit": 0.793,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "low word prob 0.30"
-   ],
-   "origin": "search:baby blue objects",
-   "n_cands": 4,
+   "flags": [],
+   "origin": "search:baby blue blanket",
+   "n_cands": 6,
    "forced": false
   },
   "colors|BABY PINK": {
@@ -19180,8 +19184,8 @@
   },
   "colors|NEON GREEN": {
    "title": "File:Neon Juices and Green Walls.jpg",
-   "final": 1.221,
-   "p": 0.9641,
+   "final": 1.211,
+   "p": 0.9453,
    "photo": 0.8743,
    "fit": 0.823,
    "how": "saliency",
@@ -19189,14 +19193,14 @@
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "search:neon green objects",
+   "origin": "search:neon green",
    "n_cands": 8,
    "forced": false
   },
   "colors|PASTEL COLORS": {
    "title": "File:PASTEL COLORS IN PORTOFINO.צבעי פסטל בפורטופינו.jpg",
    "final": 0.603,
-   "p": 0.0023,
+   "p": 0.0016,
    "photo": 0.894,
    "fit": 0.8,
    "how": "saliency",
@@ -19207,22 +19211,24 @@
     "low word prob 0.00"
    ],
    "origin": "search:pastel colors",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "colors|DARK PURPLE": {
-   "title": "File:Blossoming bougainvillea flowers (“Cherei” in Classical Meitei language) of purple red (or dark mauve) color hanging out of the lush leafy branches of thorny ornamental bushy vines in Kakching Garden, Uyok Ching, Kangleipak.jpg",
-   "final": 0.847,
-   "p": 0.0008,
-   "photo": 0.9855,
-   "fit": 1.0,
+   "title": "File:Los Angeles (California, USA), South Olive Street -- 2012 -- 4847.jpg",
+   "final": 0.71,
+   "p": 0.1506,
+   "photo": 0.6343,
+   "fit": 0.767,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "origin": "search:dark purple objects",
-   "n_cands": 8,
+   "flags": [
+    "low word prob 0.15"
+   ],
+   "origin": "search:dark purple flowers",
+   "n_cands": 7,
    "forced": false
   },
   "colors|LIGHT PURPLE": {
@@ -19241,15 +19247,17 @@
    "forced": false
   },
   "colors|SALMON PINK": {
-   "title": "File:Sobredosis de Astaxantina.jpg",
-   "final": 0.858,
-   "p": 0.0187,
-   "photo": 0.903,
-   "fit": 1.0,
+   "title": "File:Orquideas 8242.jpg",
+   "final": 0.734,
+   "p": 0.0004,
+   "photo": 0.9768,
+   "fit": 0.849,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [
-    "low word prob 0.02"
+    "low word prob 0.00"
    ],
    "origin": "search:salmon pink color",
    "n_cands": 7,
@@ -19283,8 +19291,8 @@
   },
   "colors|SEA GREEN": {
    "title": "File:Hawaii turtle 2.JPG",
-   "final": 0.931,
-   "p": 0.6333,
+   "final": 0.921,
+   "p": 0.6138,
    "photo": 0.9992,
    "fit": 0.588,
    "how": "saliency",
@@ -29503,12 +29511,8 @@
   "clothes|WALLET",
   "clothes|WATCH",
   "colors|AQUA",
-  "colors|BABY BLUE",
   "colors|BABY PINK",
-  "colors|BEIGE",
   "colors|BLACK",
-  "colors|BRONZE",
-  "colors|BURGUNDY",
   "colors|COPPER",
   "colors|CREAM",
   "colors|CRIMSON",
@@ -29523,17 +29527,19 @@
   "colors|GRAY",
   "colors|HOT PINK",
   "colors|INDIGO",
+  "colors|IVORY",
   "colors|LAVENDER",
   "colors|LIGHT BLUE",
   "colors|LIGHT BROWN",
+  "colors|LIGHT GRAY",
   "colors|LIGHT GREEN",
-  "colors|LIGHT PINK",
   "colors|LIGHT PURPLE",
   "colors|LIME GREEN",
   "colors|MAGENTA",
   "colors|MAROON",
   "colors|NAVY",
   "colors|PASTEL COLORS",
+  "colors|PINK",
   "colors|PURPLE",
   "colors|RAINBOW COLORS",
   "colors|RED",
@@ -29541,11 +29547,11 @@
   "colors|SALMON PINK",
   "colors|SCARLET",
   "colors|SEA GREEN",
-  "colors|SILVER",
   "colors|SKY BLUE",
   "colors|TAN",
   "colors|TEAL",
-  "colors|VIOLET",
+  "colors|TURQUOISE",
+  "colors|WHITE",
   "family|AUNT",
   "family|BABY",
   "family|BEST FRIEND",
@@ -30036,30 +30042,25 @@
   "shapes|CHECKERED",
   "shapes|CHECKMARK",
   "shapes|CIRCLE",
-  "shapes|CORNER",
   "shapes|CRESCENT",
   "shapes|CROSS",
-  "shapes|CUBE",
   "shapes|CUBOID",
   "shapes|CURVE",
-  "shapes|CYLINDER",
-  "shapes|DECAGON",
   "shapes|DIAGONAL LINE",
   "shapes|DIAMOND",
   "shapes|DOT",
   "shapes|DOTTED LINE",
   "shapes|EDGE",
-  "shapes|FRAME",
   "shapes|GRID",
   "shapes|HEMISPHERE",
   "shapes|HEPTAGON",
   "shapes|HEXAGON",
   "shapes|KNOT",
+  "shapes|LINE",
   "shapes|LOOP",
   "shapes|MOSAIC",
   "shapes|OCTAGON",
   "shapes|OUTLINE",
-  "shapes|OVAL",
   "shapes|PARALLELOGRAM",
   "shapes|PATTERN",
   "shapes|PENTAGON",
@@ -30067,6 +30068,7 @@
   "shapes|PRISM",
   "shapes|QUARTER CIRCLE",
   "shapes|RECTANGLE",
+  "shapes|RHOMBUS",
   "shapes|SEMICIRCLE",
   "shapes|SHAPE",
   "shapes|SPHERE",
@@ -30383,6 +30385,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1902,
-  "flagged": 1089
+  "flagged": 1083
  }
 }

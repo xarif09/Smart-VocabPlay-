@@ -1381,19 +1381,23 @@
    "forced": false
   },
   "school|BOOK": {
-   "title": "File:13-11-02-olb-by-RalfR-03.jpg",
-   "final": 0.896,
-   "p": 0.319,
-   "photo": 0.9821,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
+   "title": "File:Latin dictionary.jpg",
+   "final": 0.5,
+   "p": 0.0092,
+   "photo": 0.3054,
+   "fit": 0.507,
+   "how": "yolo:book",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.85)"
+   ],
    "flags": [
-    "low word prob 0.32"
+    "low word prob 0.01",
+    "fit 0.51",
+    "not photo-like 0.31"
    ],
    "origin": "search:book",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "school|BAG": {
    "title": "File:Trungyi High School stop board and KLCIVS backpack 20251120.jpg",
@@ -1478,23 +1482,21 @@
    "forced": false
   },
   "school|COMPUTER": {
-   "title": "File:HP Pavilion Computer laptop keyboard closeup.jpg",
-   "final": 0.426,
-   "p": 0.8556,
-   "photo": 0.2707,
-   "fit": 0.095,
+   "title": "File:Laptop collage.jpg",
+   "final": 0.733,
+   "p": 0.7814,
+   "photo": 0.9772,
+   "fit": 0.293,
    "how": "yolo:laptop",
    "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.31)",
-    "upscaled x1.5"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.61)"
    ],
    "flags": [
-    "fit 0.09",
-    "not photo-like 0.27"
+    "fit 0.29"
    ],
-   "origin": "search:laptop computer",
-   "n_cands": 7,
+   "origin": "current",
+   "n_cands": 8,
    "forced": false
   },
   "school|CALCULATOR": {
@@ -1563,34 +1565,37 @@
    "forced": false
   },
   "school|DESK": {
-   "title": "File:Asad Rustum's Desk I.png",
-   "final": 1.025,
-   "p": 0.9991,
-   "photo": 0.9941,
-   "fit": 1.0,
+   "title": "File:Bureau table MET DP108643.jpg",
+   "final": 0.767,
+   "p": 0.9899,
+   "photo": 0.3352,
+   "fit": 0.582,
    "how": "saliency",
    "notes": [
-    "upscaled x1.9"
+    "subject cannot fit 3:4 (box cov 0.97)"
    ],
-   "flags": [],
-   "origin": "search:desk",
-   "n_cands": 8,
-   "forced": false
+   "flags": [
+    "fit 0.58",
+    "not photo-like 0.34"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": true
   },
   "school|CHAIR": {
-   "title": "File:Schenna (IT), Vorlandweg 2 -- 2026 -- 4026.jpg",
-   "final": 1.166,
-   "p": 0.9315,
-   "photo": 0.9879,
-   "fit": 0.75,
+   "title": "File:Set of fourteen side chairs MET DP110780.jpg",
+   "final": 1.191,
+   "p": 1.0,
+   "photo": 0.4681,
+   "fit": 1.0,
    "how": "yolo:chair",
-   "notes": [
-    "tiny subject"
+   "notes": [],
+   "flags": [
+    "not photo-like 0.47"
    ],
-   "flags": [],
-   "origin": "search:chair",
-   "n_cands": 7,
-   "forced": false
+   "origin": "current",
+   "n_cands": 8,
+   "forced": true
   },
   "school|CLASSROOM": {
    "title": "File:Palamuse kihelkonnakooli klassiruum.jpg",
@@ -1602,7 +1607,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:classroom",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "school|TEACHER": {
@@ -1668,17 +1673,23 @@
    "forced": false
   },
   "school|PAINT": {
-   "title": "File:Microsoft Paint color palettes.png",
-   "final": 1.173,
-   "p": 0.7826,
-   "photo": 0.7664,
-   "fit": 1.0,
+   "title": "File:Multicolored tempera paints.jpg",
+   "final": 0.5,
+   "p": 0.9991,
+   "photo": 0.0004,
+   "fit": 0.172,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:paint palette",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.17",
+    "not photo-like 0.00"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "body|EAR": {
    "title": "File:Closeup of a human ear.jpg",
@@ -1781,57 +1792,59 @@
    "notes": [],
    "flags": [],
    "origin": "search:human tooth",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "body|FINGER": {
-   "title": "File:Friction d'une allumette.jpg",
-   "final": 0.516,
-   "p": 0.0061,
-   "photo": 0.9474,
-   "fit": 0.367,
+   "title": "File:Amanhecer no Hercules --.jpg",
+   "final": 0.673,
+   "p": 0.0,
+   "photo": 0.998,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.95)"
+    "touches 1 edge(s)"
    ],
    "flags": [
-    "low word prob 0.01",
-    "fit 0.37"
+    "low word prob 0.00"
    ],
-   "origin": "search:finger",
+   "origin": "search:index finger",
    "n_cands": 7,
    "forced": false
   },
   "body|LEG": {
-   "title": "File:Side view of leg (51503747404).jpg",
-   "final": 0.826,
-   "p": 0.058,
-   "photo": 0.984,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.06"
-   ],
-   "origin": "search:human leg",
-   "n_cands": 8,
-   "forced": false
-  },
-  "body|ARM": {
-   "title": "File:Female Elbow and Hand on Arm.png",
-   "final": 1.102,
-   "p": 0.8802,
-   "photo": 0.9839,
+   "title": "File:Leg (66962406).jpg",
+   "final": 0.628,
+   "p": 0.0154,
+   "photo": 0.9995,
    "fit": 0.64,
    "how": "saliency",
    "notes": [
     "touches 2 edge(s)"
    ],
    "flags": [
+    "low word prob 0.02",
     "fit 0.64"
    ],
-   "origin": "search:human arm",
+   "origin": "search:human leg",
+   "n_cands": 8,
+   "forced": false
+  },
+  "body|ARM": {
+   "title": "File:Extended arm.jpg",
+   "final": 0.679,
+   "p": 0.8878,
+   "photo": 0.9756,
+   "fit": 0.201,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.52)"
+   ],
+   "flags": [
+    "fit 0.20"
+   ],
+   "origin": "current",
    "n_cands": 8,
    "forced": false
   },
@@ -1928,17 +1941,17 @@
    "forced": false
   },
   "body|NECK": {
-   "title": "File:Neck Decoration 19th-20th century, National Museum New Delhi.jpg",
-   "final": 0.785,
-   "p": 0.0082,
-   "photo": 0.9985,
+   "title": "File:Giraffe Grazing in Murchison Falls National Park, Uganda 03.jpg",
+   "final": 0.761,
+   "p": 0.0,
+   "photo": 0.9269,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.01"
+    "low word prob 0.00"
    ],
-   "origin": "search:neck",
+   "origin": "search:giraffe neck",
    "n_cands": 8,
    "forced": false
   },
@@ -1955,22 +1968,26 @@
    ],
    "flags": [],
    "origin": "search:shoulder",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "body|STOMACH": {
-   "title": "File:Chestnut-bellied Sandgrouse in Bhigwan August 2025 by Tisha Mukherjee 02.jpg",
-   "final": 0.686,
-   "p": 0.0001,
-   "photo": 0.9285,
-   "fit": 1.0,
+   "title": "File:Body painting - Where to add a child?.jpg",
+   "final": 0.638,
+   "p": 0.3388,
+   "photo": 0.9936,
+   "fit": 0.328,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.68)"
    ],
-   "origin": "search:belly",
-   "n_cands": 8,
+   "flags": [
+    "low word prob 0.34",
+    "fit 0.33"
+   ],
+   "origin": "search:child belly",
+   "n_cands": 7,
    "forced": false
   },
   "weather|SUN": {
@@ -2356,7 +2373,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "weather|RAINBOW": {
@@ -6279,17 +6296,24 @@
    "forced": false
   },
   "school|MARKER": {
-   "title": "File:USGS Vertical Control Marker - 1940 NOGLS - 1903.jpg",
-   "final": 1.3,
-   "p": 0.9994,
-   "photo": 0.9997,
-   "fit": 1.0,
+   "title": "File:Felt Tip.jpg",
+   "final": 0.5,
+   "p": 0.0,
+   "photo": 0.0731,
+   "fit": 0.248,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:marker",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.64)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.25",
+    "not photo-like 0.07"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "school|GLUE": {
    "title": "File:Glue Stick.jpg",
@@ -6445,53 +6469,59 @@
    "forced": false
   },
   "body|CHIN": {
-   "title": "File:Black-chinned Yuhina in Kurseong April 2024 by Tisha Mukherjee 02.jpg",
-   "final": 0.678,
-   "p": 0.0183,
-   "photo": 0.8836,
-   "fit": 0.782,
+   "title": "File:Queenie Chong Chin Yee (DSCF0718).jpg",
+   "final": 0.5,
+   "p": 0.001,
+   "photo": 0.2057,
+   "fit": 0.459,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.96)"
    ],
    "flags": [
-    "low word prob 0.02"
+    "low word prob 0.00",
+    "fit 0.46",
+    "not photo-like 0.21"
    ],
    "origin": "search:chin",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "body|CHEEK": {
-   "title": "File:Cheek to Cheek dress.jpg",
-   "final": 0.592,
-   "p": 0.0055,
-   "photo": 0.9465,
-   "fit": 0.8,
+   "title": "File:Young man with rosy cheeks, ca. 1856-1900. (4731903981).jpg",
+   "final": 0.576,
+   "p": 0.0005,
+   "photo": 0.9999,
+   "fit": 0.676,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.01"
+    "low word prob 0.00",
+    "fit 0.68"
    ],
-   "origin": "search:cheek",
+   "origin": "search:rosy cheeks child",
    "n_cands": 8,
    "forced": false
   },
   "body|LIPS": {
-   "title": "File:Rouged Lips (1923) - 1.jpg",
-   "final": 0.668,
-   "p": 0.3801,
-   "photo": 0.3775,
-   "fit": 1.0,
+   "title": "File:Red lips - geograph.org.uk - 5544305.jpg",
+   "final": 0.963,
+   "p": 0.9034,
+   "photo": 0.6668,
+   "fit": 0.564,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.38",
-    "not photo-like 0.38"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.94)"
    ],
-   "origin": "search:lips",
-   "n_cands": 8,
+   "flags": [
+    "fit 0.56"
+   ],
+   "origin": "search:red lips",
+   "n_cands": 7,
    "forced": false
   },
   "body|EYEBROW": {
@@ -6508,22 +6538,25 @@
     "low word prob 0.02"
    ],
    "origin": "search:eyebrow",
-   "n_cands": 6,
+   "n_cands": 8,
    "forced": false
   },
   "body|TOE": {
-   "title": "File:Toes frost bite 2024 medical toe 01.jpg",
-   "final": 1.136,
-   "p": 0.8739,
-   "photo": 0.9967,
-   "fit": 0.8,
+   "title": "File:Feet with six toes on each.jpg",
+   "final": 1.049,
+   "p": 0.9261,
+   "photo": 0.862,
+   "fit": 0.447,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.93)"
    ],
-   "flags": [],
-   "origin": "search:toes",
-   "n_cands": 7,
+   "flags": [
+    "fit 0.45"
+   ],
+   "origin": "search:toes feet",
+   "n_cands": 9,
    "forced": false
   },
   "body|THUMB": {
@@ -6557,20 +6590,18 @@
    "forced": false
   },
   "body|WRIST": {
-   "title": "File:Wearing protective wrist support.jpg",
-   "final": 0.855,
-   "p": 0.6269,
-   "photo": 0.9395,
-   "fit": 0.507,
+   "title": "File:Delaneau Rondo 36 Translucent wristwatch.jpg",
+   "final": 1.141,
+   "p": 0.9849,
+   "photo": 0.9921,
+   "fit": 0.784,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.85)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.51"
-   ],
-   "origin": "search:wrist",
-   "n_cands": 7,
+   "flags": [],
+   "origin": "search:wristwatch on wrist",
+   "n_cands": 9,
    "forced": false
   },
   "weather|CLOUDY": {
@@ -12406,38 +12437,41 @@
    "forced": false
   },
   "school|CLASSMATE": {
-   "title": "File:Classmates (1924) - 5.jpg",
-   "final": 0.633,
-   "p": 0.0146,
-   "photo": 0.6744,
-   "fit": 1.0,
+   "title": "File:Head, Shoulders, Knees and Toes.jpg",
+   "final": 0.5,
+   "p": 0.0068,
+   "photo": 0.8884,
+   "fit": 0.243,
    "how": "yolo:person",
    "notes": [
-    "upscaled x1.6"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.63)"
    ],
    "flags": [
-    "low word prob 0.01"
+    "low word prob 0.01",
+    "fit 0.24"
    ],
-   "origin": "search:classmates",
+   "origin": "current",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "school|PRINCIPAL": {
-   "title": "File:Nicholas Wilson, Principal of the Old Union School, City of London, Ontario, Canada (1897), p56.jpg",
-   "final": 0.744,
-   "p": 0.9998,
-   "photo": 0.5673,
-   "fit": 0.566,
+   "title": "File:A high school principal shows off a newly-built classroom at Hayesville High School in North Carolina.jpg",
+   "final": 0.526,
+   "p": 0.4881,
+   "photo": 0.1833,
+   "fit": 0.8,
    "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.94)"
+    "touches 1 edge(s)"
    ],
    "flags": [
-    "fit 0.57"
+    "low word prob 0.49",
+    "not photo-like 0.18"
    ],
-   "origin": "search:school principal",
+   "origin": "current",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "school|LESSON": {
    "title": "File:2012-Anchorage-Play (9474714548).jpg",
@@ -12501,7 +12535,7 @@
     "fit 0.25"
    ],
    "origin": "search:English alphabet letters",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "school|MATH": {
@@ -12696,19 +12730,23 @@
    "forced": false
   },
   "school|STICKER": {
-   "title": "File:F A J Stickers.png",
-   "final": 0.707,
-   "p": 0.997,
-   "photo": 0.0552,
-   "fit": 1.0,
+   "title": "File:Sticker mule custom stickers.jpg",
+   "final": 0.69,
+   "p": 0.9999,
+   "photo": 0.3858,
+   "fit": 0.251,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.52)"
+   ],
    "flags": [
-    "not photo-like 0.06"
+    "fit 0.25",
+    "not photo-like 0.39"
    ],
    "origin": "search:stickers",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "school|CANTEEN": {
    "title": "File:Infosys.Electronic.City.Cafeteria.JPG",
@@ -12720,7 +12758,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "body|FACE": {
@@ -12752,37 +12790,38 @@
    "forced": false
   },
   "body|BODY": {
-   "title": "File:Epitafium całopostaciowe dziecka z rodziny Hochberg w ścianie kaplicy bocznej w kościele Świętego Mikołaja w Świebodzicach.jpg",
-   "final": 0.538,
-   "p": 0.0001,
-   "photo": 0.9933,
-   "fit": 0.679,
+   "title": "File:President Barack Obama with full cabinet 09-10-09.jpg",
+   "final": 0.77,
+   "p": 0.5731,
+   "photo": 0.9926,
+   "fit": 0.31,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.52)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.68"
+    "fit 0.31"
    ],
-   "origin": "search:child full body",
-   "n_cands": 6,
+   "origin": "search:human body",
+   "n_cands": 7,
    "forced": false
   },
   "body|TEETH": {
-   "title": "File:Water reflection of a smiling woman planting rice.jpg",
-   "final": 0.74,
+   "title": "File:Janamastmi Birthday of Shri Krishna.jpg",
+   "final": 0.588,
    "p": 0.0001,
-   "photo": 0.861,
-   "fit": 1.0,
+   "photo": 0.8654,
+   "fit": 0.64,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "touches 2 edge(s)"
    ],
-   "origin": "search:teeth smile",
-   "n_cands": 8,
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.64"
+   ],
+   "origin": "search:smiling teeth child",
+   "n_cands": 7,
    "forced": false
   },
   "body|BEARD": {
@@ -12804,20 +12843,18 @@
    "forced": false
   },
   "body|MUSTACHE": {
-   "title": "File:-Man with Mustache Wearing Oilskin Hat- MET DP700082.jpg",
-   "final": 0.999,
-   "p": 0.996,
-   "photo": 0.9457,
-   "fit": 0.423,
+   "title": "File:Portrait of Paul Trappen.jpg",
+   "final": 1.157,
+   "p": 0.9954,
+   "photo": 0.9933,
+   "fit": 0.799,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.70)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.42"
-   ],
-   "origin": "search:man with mustache",
-   "n_cands": 5,
+   "flags": [],
+   "origin": "search:man with moustache portrait",
+   "n_cands": 9,
    "forced": false
   },
   "body|ANKLE": {
@@ -12852,23 +12889,21 @@
     "low word prob 0.00"
    ],
    "origin": "search:hip",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "body|CHEST": {
-   "title": "File:Chest-on-Chest MET DP116693.jpg",
-   "final": 0.965,
-   "p": 0.9993,
-   "photo": 0.5696,
-   "fit": 0.581,
+   "title": "File:Close-up of a stethoscope chest piece in a womans hand with a blurry background.jpg",
+   "final": 0.711,
+   "p": 0.0,
+   "photo": 0.8708,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.97)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.58"
+    "low word prob 0.00"
    ],
-   "origin": "search:chest",
+   "origin": "search:stethoscope on chest",
    "n_cands": 8,
    "forced": false
   },
@@ -24326,36 +24361,36 @@
    "forced": false
   },
   "body|FOREHEAD": {
-   "title": "File:Human Forehead.JPG",
-   "final": 0.877,
-   "p": 0.9908,
-   "photo": 0.5882,
-   "fit": 0.328,
-   "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.85)"
-   ],
-   "flags": [
-    "fit 0.33"
-   ],
-   "origin": "search:human forehead",
-   "n_cands": 6,
-   "forced": false
-  },
-  "body|THROAT": {
-   "title": "File:Dülmen, Heilig-Kreuz-Kirche, The Cast Whale Project -- 2022 -- 0493.jpg",
-   "final": 0.693,
+   "title": "File:Mandaeans of Iraq 13b - Dipping the forehead.jpg",
+   "final": 0.45,
    "p": 0.0,
-   "photo": 0.9654,
+   "photo": 0.9984,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:QI",
-   "n_cands": 7,
+   "origin": "search:forehead",
+   "n_cands": 6,
+   "forced": false
+  },
+  "body|THROAT": {
+   "title": "File:Pharyngitis.jpg",
+   "final": 0.96,
+   "p": 0.9739,
+   "photo": 0.7996,
+   "fit": 0.236,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.24"
+   ],
+   "origin": "search:sore throat",
+   "n_cands": 5,
    "forced": false
   },
   "body|HEEL": {
@@ -24377,34 +24412,38 @@
    "forced": false
   },
   "body|PALM": {
-   "title": "File:Singapore (SG), Bayfront Ave -- 2019 -- 4669.jpg",
-   "final": 1.327,
-   "p": 0.9822,
-   "photo": 0.9967,
-   "fit": 1.0,
+   "title": "File:Roasted Torreya grandis fruit placed in the palm of your hand.jpg",
+   "final": 0.966,
+   "p": 0.7759,
+   "photo": 0.9998,
+   "fit": 0.64,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:QI",
-   "n_cands": 8,
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:palm of the hand",
+   "n_cands": 6,
    "forced": false
   },
   "body|FIST": {
-   "title": "File:27 Brigade Memorial 071215 09.jpg",
-   "final": 0.479,
-   "p": 0.1699,
-   "photo": 0.5303,
-   "fit": 0.481,
+   "title": "File:Fist Bump for Equality.png",
+   "final": 0.856,
+   "p": 0.9011,
+   "photo": 0.5964,
+   "fit": 0.36,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.80)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.75)"
    ],
    "flags": [
-    "low word prob 0.17",
-    "fit 0.48"
+    "fit 0.36"
    ],
-   "origin": "search:QI",
-   "n_cands": 8,
+   "origin": "search:fist bump",
+   "n_cands": 7,
    "forced": false
   },
   "body|SKULL": {
@@ -24453,11 +24492,11 @@
    "forced": false
   },
   "body|LUNGS": {
-   "title": "File:Ivory female anatomical figure, Europe Wellcome L0058669.jpg",
-   "final": 0.559,
-   "p": 0.0003,
-   "photo": 0.6971,
-   "fit": 0.792,
+   "title": "File:Baleine à bosse et son baleineau 2.jpg",
+   "final": 0.522,
+   "p": 0.0,
+   "photo": 0.6785,
+   "fit": 0.772,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
@@ -24465,25 +24504,23 @@
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:lungs anatomical model",
+   "origin": "search:lung model",
    "n_cands": 8,
    "forced": false
   },
   "body|RIBS": {
-   "title": "File:Edmontosaurus annectens (mummy, UCRC PV31).png",
-   "final": 0.559,
-   "p": 0.0489,
-   "photo": 0.5559,
-   "fit": 0.8,
+   "title": "File:True and False ribs.jpg",
+   "final": 0.88,
+   "p": 0.9951,
+   "photo": 0.6641,
+   "fit": 0.798,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "low word prob 0.05"
-   ],
-   "origin": "search:rib cage model",
-   "n_cands": 7,
+   "flags": [],
+   "origin": "search:ribs skeleton",
+   "n_cands": 6,
    "forced": false
   },
   "body|SPINE": {
@@ -24533,56 +24570,57 @@
    "forced": false
   },
   "body|THIGH": {
-   "title": "File:Untilting an Intentional camera tilt with posing of the model - example in fashion photography for filling the frame - ModelTanja.jpg",
-   "final": 0.553,
-   "p": 0.2403,
-   "photo": 0.8456,
-   "fit": 0.433,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.90)"
-   ],
-   "flags": [
-    "low word prob 0.24",
-    "fit 0.43"
-   ],
-   "origin": "search:QI",
-   "n_cands": 7,
-   "forced": false
-  },
-  "body|JAW": {
-   "title": "File:Penny Magazine 1837 476 Fig CLXI.jpg",
-   "final": 0.85,
-   "p": 0.9814,
-   "photo": 0.4167,
-   "fit": 0.352,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.59)"
-   ],
-   "flags": [
-    "fit 0.35",
-    "not photo-like 0.42"
-   ],
-   "origin": "search:human jaw",
-   "n_cands": 6,
-   "forced": false
-  },
-  "body|GUMS": {
-   "title": "File:Scorbutic gums.jpg",
-   "final": 0.94,
-   "p": 0.5147,
-   "photo": 0.9999,
-   "fit": 0.765,
+   "title": "File:The complete athletic trainer (1913) (14782870995).jpg",
+   "final": 0.658,
+   "p": 0.0609,
+   "photo": 0.999,
+   "fit": 0.822,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [],
-   "origin": "search:human gums",
+   "flags": [
+    "low word prob 0.06"
+   ],
+   "origin": "search:athlete legs thigh",
    "n_cands": 7,
    "forced": false
+  },
+  "body|JAW": {
+   "title": "File:Mandíbula y dientes de un oreodon (Merycoidodon culbertsoni), Dakota del Sur, Estados Unidos, 2021-01-15, DD 162-186 FS.jpg",
+   "final": 0.963,
+   "p": 0.8766,
+   "photo": 0.9176,
+   "fit": 0.324,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.54)"
+   ],
+   "flags": [
+    "fit 0.32"
+   ],
+   "origin": "search:jaw",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|GUMS": {
+   "title": "File:Lao woman chewing paan.jpg",
+   "final": 0.5,
+   "p": 0.0,
+   "photo": 0.8917,
+   "fit": 0.253,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.66)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.25"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": true
   },
   "body|FRECKLES": {
    "title": "File:Smiling model with freckles.jpg",
@@ -24828,33 +24866,39 @@
    "forced": false
   },
   "body|HEADACHE": {
-   "title": "File:Headache Stone - geograph.org.uk - 4894267.jpg",
-   "final": 0.528,
-   "p": 0.0,
-   "photo": 0.9868,
-   "fit": 1.0,
+   "title": "File:Headache-1557872 960 720.jpg",
+   "final": 0.898,
+   "p": 0.9966,
+   "photo": 0.9123,
+   "fit": 0.23,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.75)"
    ],
-   "origin": "search:headache",
-   "n_cands": 6,
+   "flags": [
+    "fit 0.23"
+   ],
+   "origin": "search:person with headache",
+   "n_cands": 8,
    "forced": false
   },
   "body|TOOTHACHE": {
-   "title": "File:Acmella ciliata by Kadavoor.jpg",
-   "final": 0.73,
+   "title": "File:Phoradendron quadrangulare (6).jpg",
+   "final": 0.388,
    "p": 0.0,
-   "photo": 0.6503,
-   "fit": 1.0,
+   "photo": 0.9796,
+   "fit": 0.384,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.64)"
    ],
-   "origin": "search:QI",
-   "n_cands": 6,
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.38"
+   ],
+   "origin": "search:person with toothache",
+   "n_cands": 8,
    "forced": false
   },
   "body|STOMACHACHE": {
@@ -27032,19 +27076,21 @@
    "forced": false
   },
   "school|HIGHLIGHTER": {
-   "title": "File:31.Ulica - Kijowski Teatr Uliczny Highlights - Korowód tańca - 20180705 1810 5979 DxO.jpg",
-   "final": 0.576,
-   "p": 0.0,
-   "photo": 0.3985,
-   "fit": 1.0,
+   "title": "File:Highlighting pens.jpg",
+   "final": 0.577,
+   "p": 0.9843,
+   "photo": 0.041,
+   "fit": 0.492,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.40"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.82)"
    ],
-   "origin": "search:QI",
-   "n_cands": 9,
+   "flags": [
+    "fit 0.49",
+    "not photo-like 0.04"
+   ],
+   "origin": "search:highlighter pens",
+   "n_cands": 4,
    "forced": false
   },
   "school|STAPLER": {
@@ -27079,21 +27125,19 @@
    "forced": false
   },
   "school|THUMBTACK": {
-   "title": "File:Disa seedling on a thumbtack.jpg",
-   "final": 0.964,
-   "p": 0.9073,
-   "photo": 0.9318,
-   "fit": 0.507,
+   "title": "File:Red thumbtack (2814122833).jpg",
+   "final": 0.895,
+   "p": 0.9951,
+   "photo": 0.1052,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.85)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.51"
+    "not photo-like 0.11"
    ],
    "origin": "search:thumbtack",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "school|FOLDER": {
    "title": "File:Folder-dynamic-gradient.png",
@@ -27110,7 +27154,7 @@
     "not photo-like 0.02"
    ],
    "origin": "search:folder",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "school|ENVELOPE": {
@@ -27165,21 +27209,23 @@
    "forced": false
   },
   "school|TEXTBOOK": {
-   "title": "File:Textbook on Medical care.jpg",
-   "final": 0.817,
-   "p": 0.9304,
-   "photo": 0.3146,
-   "fit": 0.824,
-   "how": "saliency",
+   "title": "File:A tower of used books - 8443.jpg",
+   "final": 0.5,
+   "p": 0.1525,
+   "photo": 0.9337,
+   "fit": 0.21,
+   "how": "none",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.50)"
    ],
    "flags": [
-    "not photo-like 0.31"
+    "low word prob 0.15",
+    "fit 0.21"
    ],
-   "origin": "search:textbook",
+   "origin": "search:QI",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "school|WORKBOOK": {
    "title": "File:Ohio School of the Air 1935 Radio Record Book (Pupil's workbook).jpg",
@@ -27242,7 +27288,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:QI",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "school|ALPHABET": {
@@ -27255,7 +27301,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:alphabet blocks",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "school|REPORT CARD": {
@@ -29196,6 +29242,7 @@
   "body|FOOTPRINT",
   "body|FOREHEAD",
   "body|FRECKLES",
+  "body|GUMS",
   "body|HAND",
   "body|HEADACHE",
   "body|HEEL",
@@ -29209,12 +29256,11 @@
   "body|MEDICINE",
   "body|MOUTH",
   "body|MUSCLE",
-  "body|MUSTACHE",
   "body|NAIL",
   "body|NECK",
   "body|NOSE",
   "body|NOSTRIL",
-  "body|RIBS",
+  "body|PALM",
   "body|SCAR",
   "body|SKELETON",
   "body|SKIN",
@@ -29225,11 +29271,11 @@
   "body|TEETH",
   "body|THIGH",
   "body|THROAT",
+  "body|TOE",
   "body|TONGUE",
   "body|TOOTHACHE",
   "body|VEIN",
   "body|WAIST",
-  "body|WRIST",
   "clothes|APRON",
   "clothes|BANDANA",
   "clothes|BELT",
@@ -29763,11 +29809,13 @@
   "school|BULLETIN BOARD",
   "school|CALCULATOR",
   "school|CERTIFICATE",
+  "school|CHAIR",
   "school|CHALK",
   "school|CLASSMATE",
   "school|COMPUTER",
   "school|CORRECTION TAPE",
   "school|CRAYON",
+  "school|DESK",
   "school|DICTIONARY",
   "school|EASEL",
   "school|ENGLISH",
@@ -29783,10 +29831,12 @@
   "school|LESSON",
   "school|LIBRARY CARD",
   "school|MAP",
+  "school|MARKER",
   "school|MATH",
   "school|MICROSCOPE",
   "school|NAME TAG",
   "school|NOTEBOOK",
+  "school|PAINT",
   "school|PAPER",
   "school|PEN",
   "school|PENCIL",
@@ -30152,6 +30202,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1891,
-  "flagged": 1086
+  "flagged": 1090
  }
 }

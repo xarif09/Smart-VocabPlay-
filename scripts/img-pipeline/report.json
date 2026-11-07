@@ -12512,13 +12512,53 @@
    "forced": false
   },
   "school|ENGLISH": {
-   "status": "no candidates"
+   "title": "File:English Phonotypic Letters (Cincinnati alphabet 1855).png",
+   "final": 0.612,
+   "p": 0.8951,
+   "photo": 0.967,
+   "fit": 0.249,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.59)"
+   ],
+   "flags": [
+    "fit 0.25"
+   ],
+   "origin": "search:English alphabet letters",
+   "n_cands": 7,
+   "forced": false
   },
   "school|MATH": {
-   "status": "no candidates"
+   "title": "File:Doska matematika.jpg",
+   "final": 0.315,
+   "p": 0.7067,
+   "photo": 0.0609,
+   "fit": 0.397,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.66)"
+   ],
+   "flags": [
+    "fit 0.40",
+    "not photo-like 0.06"
+   ],
+   "origin": "search:math blackboard",
+   "n_cands": 6,
+   "forced": false
   },
   "school|SCIENCE": {
-   "status": "no candidates"
+   "title": "File:Science is cool 4.jpg",
+   "final": 1.365,
+   "p": 1.0,
+   "photo": 0.8561,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:science experiment children",
+   "n_cands": 8,
+   "forced": false
   },
   "school|ART": {
    "title": "File:Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg",
@@ -12694,7 +12734,19 @@
    "forced": false
   },
   "school|STICKER": {
-   "status": "no candidates"
+   "title": "File:F A J Stickers.png",
+   "final": 0.707,
+   "p": 0.997,
+   "photo": 0.0552,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.06"
+   ],
+   "origin": "search:stickers",
+   "n_cands": 7,
+   "forced": false
   },
   "school|CANTEEN": {
    "title": "File:Infosys.Electronic.City.Cafeteria.JPG",
@@ -21756,94 +21808,479 @@
    "status": "no candidates"
   },
   "school|CHALK": {
-   "status": "no candidates"
+   "title": "File:2019 - Nationalpark Jasmund - 03.jpg",
+   "final": 0.706,
+   "p": 0.0001,
+   "photo": 0.9998,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "school|HIGHLIGHTER": {
-   "status": "no candidates"
+   "title": "File:31.Ulica - Kijowski Teatr Uliczny Highlights - Korowód tańca - 20180705 1810 5979 DxO.jpg",
+   "final": 0.576,
+   "p": 0.0,
+   "photo": 0.3985,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.40"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "school|STAPLER": {
-   "status": "no candidates"
+   "title": "File:2017 Zszywacz biurowy.jpg",
+   "final": 0.818,
+   "p": 0.9999,
+   "photo": 0.3572,
+   "fit": 0.369,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.61)"
+   ],
+   "flags": [
+    "fit 0.37",
+    "not photo-like 0.36"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "school|PAPER CLIP": {
-   "status": "no candidates"
+   "title": "File:Paper Clip Surface Tension 1 crop.jpg",
+   "final": 1.224,
+   "p": 0.8851,
+   "photo": 0.5582,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:paper clip",
+   "n_cands": 8,
+   "forced": false
   },
   "school|THUMBTACK": {
-   "status": "no candidates"
+   "title": "File:Disa seedling on a thumbtack.jpg",
+   "final": 0.964,
+   "p": 0.9073,
+   "photo": 0.9318,
+   "fit": 0.507,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.85)"
+   ],
+   "flags": [
+    "fit 0.51"
+   ],
+   "origin": "search:thumbtack",
+   "n_cands": 6,
+   "forced": false
   },
   "school|FOLDER": {
-   "status": "no candidates"
+   "title": "File:Folder-dynamic-gradient.png",
+   "final": 0.522,
+   "p": 1.0,
+   "photo": 0.0192,
+   "fit": 0.571,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.95)"
+   ],
+   "flags": [
+    "fit 0.57",
+    "not photo-like 0.02"
+   ],
+   "origin": "search:folder",
+   "n_cands": 8,
+   "forced": false
   },
   "school|ENVELOPE": {
-   "status": "no candidates"
+   "title": "File:Sprechender Brief -- 2015 -- 6006.jpg",
+   "final": 0.618,
+   "p": 1.0,
+   "photo": 0.0032,
+   "fit": 0.83,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "school|PROTRACTOR": {
-   "status": "no candidates"
+   "title": "File:Plastic Protractor Polarized 05375.jpg",
+   "final": 0.64,
+   "p": 0.1888,
+   "photo": 0.9509,
+   "fit": 0.319,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.83)"
+   ],
+   "flags": [
+    "low word prob 0.19",
+    "fit 0.32"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "school|COMPASS": {
-   "status": "no candidates"
+   "title": "File:Compass (drawing tool).jpg",
+   "final": 0.892,
+   "p": 0.9226,
+   "photo": 0.8571,
+   "fit": 0.785,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:drawing compass",
+   "n_cands": 7,
+   "forced": false
   },
   "school|TEXTBOOK": {
-   "status": "no candidates"
+   "title": "File:Textbook on Medical care.jpg",
+   "final": 0.817,
+   "p": 0.9304,
+   "photo": 0.3146,
+   "fit": 0.824,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.31"
+   ],
+   "origin": "search:textbook",
+   "n_cands": 8,
+   "forced": false
   },
   "school|WORKBOOK": {
-   "status": "no candidates"
+   "title": "File:Ohio School of the Air 1935 Radio Record Book (Pupil's workbook).jpg",
+   "final": 0.353,
+   "p": 0.8257,
+   "photo": 0.0081,
+   "fit": 0.538,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.54",
+    "not photo-like 0.01"
+   ],
+   "origin": "search:workbook",
+   "n_cands": 5,
+   "forced": false
   },
   "school|LOCKER": {
-   "status": "no candidates"
+   "title": "File:Locker room - lockers open.jpg",
+   "final": 1.288,
+   "p": 0.9999,
+   "photo": 0.9375,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "school|BULLETIN BOARD": {
-   "status": "no candidates"
+   "title": "File:The town hall's bulletin board in Neudietendorf.jpg",
+   "final": 0.894,
+   "p": 0.9333,
+   "photo": 0.6073,
+   "fit": 0.428,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.71)"
+   ],
+   "flags": [
+    "fit 0.43"
+   ],
+   "origin": "search:bulletin board",
+   "n_cands": 8,
+   "forced": false
   },
   "school|POSTER": {
-   "status": "no candidates"
+   "title": "File:Sonoma chipmunk at Samuel P. Taylor State Park.jpg",
+   "final": 0.699,
+   "p": 0.0,
+   "photo": 0.9958,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "school|ALPHABET": {
-   "status": "no candidates"
+   "title": "File:A pile of alphabet wooden blocks.jpg",
+   "final": 1.081,
+   "p": 0.5834,
+   "photo": 0.9457,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:alphabet blocks",
+   "n_cands": 6,
+   "forced": false
   },
   "school|REPORT CARD": {
-   "status": "no candidates"
+   "title": "File:Report Card from Minburn High School 1927-1928.jpg",
+   "final": 0.524,
+   "p": 0.9994,
+   "photo": 0.0823,
+   "fit": 0.492,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.82)"
+   ],
+   "flags": [
+    "fit 0.49",
+    "not photo-like 0.08"
+   ],
+   "origin": "search:report card",
+   "n_cands": 7,
+   "forced": false
   },
   "school|CERTIFICATE": {
-   "status": "no candidates"
+   "title": "File:Kamp-Lintfort, Haltepunkt Süd, 2020-05 CN-05.jpg",
+   "final": 0.905,
+   "p": 0.9702,
+   "photo": 0.9321,
+   "fit": 0.425,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "fit 0.43"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "school|MICROSCOPE": {
-   "status": "no candidates"
+   "title": "File:Sammallooma ellujäämiskapsel (Cristatella mucedo).jpg",
+   "final": 0.685,
+   "p": 0.1877,
+   "photo": 0.9666,
+   "fit": 0.471,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.79)"
+   ],
+   "flags": [
+    "low word prob 0.19",
+    "fit 0.47"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "school|TELESCOPE": {
-   "status": "no candidates"
+   "title": "File:David Dunlap Observatory telescope1.jpg",
+   "final": 1.317,
+   "p": 1.0,
+   "photo": 0.6928,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "school|MAGNIFYING GLASS": {
-   "status": "no candidates"
+   "title": "File:Magnifying glass with focus on paper.png",
+   "final": 1.337,
+   "p": 1.0,
+   "photo": 0.6912,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "school|ASSEMBLY": {
-   "status": "no candidates"
+   "title": "File:Iron Mountain High School Assembly, 1917.jpg",
+   "final": 1.291,
+   "p": 0.9997,
+   "photo": 0.9543,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:school assembly",
+   "n_cands": 8,
+   "forced": false
   },
   "school|EASEL": {
-   "status": "no candidates"
+   "title": "File:Easel MET SF25 199.jpg",
+   "final": 0.904,
+   "p": 0.9978,
+   "photo": 0.5443,
+   "fit": 0.434,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.72)"
+   ],
+   "flags": [
+    "fit 0.43"
+   ],
+   "origin": "search:easel",
+   "n_cands": 8,
+   "forced": false
   },
   "school|ABACUS": {
-   "status": "no candidates"
+   "title": "File:Lübeck, Wissenschaftspfad, Abakus -- 2017 -- 0373.jpg",
+   "final": 1.086,
+   "p": 1.0,
+   "photo": 0.8334,
+   "fit": 0.458,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.76)"
+   ],
+   "flags": [
+    "fit 0.46"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "school|FLASHCARD": {
-   "status": "no candidates"
+   "title": "File:Lyra (lyra-flashcard).jpg",
+   "final": 0.286,
+   "p": 0.0029,
+   "photo": 0.1878,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.19"
+   ],
+   "origin": "search:flashcard",
+   "n_cands": 5,
+   "forced": false
   },
   "school|WORKSHEET": {
-   "status": "no candidates"
+   "title": "File:Worksheet - External parts of the flower.jpg",
+   "final": 0.428,
+   "p": 0.937,
+   "photo": 0.0219,
+   "fit": 0.78,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.02"
+   ],
+   "origin": "search:worksheet",
+   "n_cands": 8,
+   "forced": false
   },
   "school|BOOKMARK": {
-   "status": "no candidates"
+   "title": "File:Bookmark-fav-dynamic-gradient.png",
+   "final": 0.862,
+   "p": 0.9962,
+   "photo": 0.1269,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.13"
+   ],
+   "origin": "search:bookmark",
+   "n_cands": 7,
+   "forced": false
   },
   "school|NAME TAG": {
-   "status": "no candidates"
+   "title": "File:Zug Langzeitbelichtung.jpg",
+   "final": 0.655,
+   "p": 0.0,
+   "photo": 0.7488,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "school|KINDERGARTEN": {
-   "status": "no candidates"
+   "title": "File:Louisville District successfully outfits over 200 DoDEA Pre-K classrooms around the world (8702179).jpg",
+   "final": 1.149,
+   "p": 0.8389,
+   "photo": 0.433,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.43"
+   ],
+   "origin": "search:kindergarten classroom",
+   "n_cands": 8,
+   "forced": false
   },
   "school|STICKY NOTE": {
-   "status": "no candidates"
+   "title": "File:Sticky Note on a white background.jpg",
+   "final": 1.331,
+   "p": 0.9693,
+   "photo": 0.8452,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:sticky note",
+   "n_cands": 8,
+   "forced": false
   },
   "school|CORRECTION TAPE": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Kirchspiel, ehem. Sondermunitionslager Visbeck, Zaun -- 2023 -- 6763.jpg",
+   "final": 0.679,
+   "p": 0.0,
+   "photo": 0.8948,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|VALLEY": {
    "status": "no candidates"
@@ -23541,9 +23978,7 @@
   "places|UNIVERSITY",
   "places|WATER PARK",
   "school|ABACUS",
-  "school|ALPHABET",
   "school|ART",
-  "school|ASSEMBLY",
   "school|BLACKBOARD",
   "school|BOOK",
   "school|BOOKMARK",
@@ -23552,7 +23987,6 @@
   "school|CHAIR",
   "school|CHALK",
   "school|CLASSMATE",
-  "school|COMPASS",
   "school|COMPUTER",
   "school|CORRECTION TAPE",
   "school|CRAYON",
@@ -23570,8 +24004,6 @@
   "school|KINDERGARTEN",
   "school|LESSON",
   "school|LIBRARY CARD",
-  "school|LOCKER",
-  "school|MAGNIFYING GLASS",
   "school|MAP",
   "school|MATH",
   "school|MICROSCOPE",
@@ -23579,7 +24011,6 @@
   "school|NOTEBOOK",
   "school|P.E.",
   "school|PAPER",
-  "school|PAPER CLIP",
   "school|PEN",
   "school|PENCIL",
   "school|POSTER",
@@ -23588,14 +24019,11 @@
   "school|PROTRACTOR",
   "school|REPORT CARD",
   "school|RULER",
-  "school|SCIENCE",
   "school|SCISSORS",
   "school|SHARPENER",
   "school|STAPLER",
   "school|STICKER",
-  "school|STICKY NOTE",
   "school|TAPE",
-  "school|TELESCOPE",
   "school|TEST",
   "school|TEXTBOOK",
   "school|THUMBTACK",
@@ -24069,7 +24497,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1361,
-  "flagged": 1329
+  "with_photo": 1396,
+  "flagged": 1320
  }
 }

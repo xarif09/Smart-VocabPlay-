@@ -7083,12 +7083,33 @@
   "license": "CC BY 2.0",
   "score": 1.065
  },
+ "school|ABACUS": {
+  "file": "w/school__abacus.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck,_Wissenschaftspfad,_Abakus_--_2017_--_0373.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.086
+ },
+ "school|ALPHABET": {
+  "file": "w/school__alphabet.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_pile_of_alphabet_wooden_blocks.jpg",
+  "author": "Bobjgalindo",
+  "license": "CC BY 4.0",
+  "score": 1.081
+ },
  "school|ART": {
   "file": "w/school__art.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
   "author": "Leonardo da Vinci",
   "license": "Public domain",
   "score": 0.168
+ },
+ "school|ASSEMBLY": {
+  "file": "w/school__assembly.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Iron_Mountain_High_School_Assembly,_1917.jpg",
+  "author": "Iron Mountain High School Senior Class",
+  "license": "Public domain",
+  "score": 1.291
  },
  "school|BAG": {
   "file": "w/school__bag.jpg",
@@ -7118,6 +7139,20 @@
   "license": "CC BY 3.0",
   "score": 0.664
  },
+ "school|BOOKMARK": {
+  "file": "w/school__bookmark.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bookmark-fav-dynamic-gradient.png",
+  "author": "Vijay Verma",
+  "license": "CC0",
+  "score": 0.862
+ },
+ "school|BULLETIN BOARD": {
+  "file": "w/school__bulletin-board.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_town_hall%27s_bulletin_board_in_Neudietendorf.jpg",
+  "author": "Robert von Oliva (naruciakk)",
+  "license": "CC0",
+  "score": 0.894
+ },
  "school|CALCULATOR": {
   "file": "w/school__calculator.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Citizen_SLD-100NR_calculator.jpg",
@@ -7132,12 +7167,26 @@
   "license": "CC BY-SA 3.0",
   "score": 1.095
  },
+ "school|CERTIFICATE": {
+  "file": "w/school__certificate.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kamp-Lintfort,_Haltepunkt_S%C3%BCd,_2020-05_CN-05.jpg",
+  "author": "Steffen Schmitz ( more photos )",
+  "license": "CC BY-SA 4.0",
+  "score": 0.905
+ },
  "school|CHAIR": {
   "file": "w/school__chair.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Set_of_fourteen_side_chairs_MET_DP110780.jpg",
   "author": "Thomas Chippendale",
   "license": "CC0",
   "score": 1.044
+ },
+ "school|CHALK": {
+  "file": "w/school__chalk.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2019_-_Nationalpark_Jasmund_-_03.jpg",
+  "author": "Moahim",
+  "license": "CC BY-SA 4.0",
+  "score": 0.706
  },
  "school|CLASSMATE": {
   "file": "w/school__classmate.jpg",
@@ -7153,12 +7202,26 @@
   "license": "CC BY 2.0",
   "score": 1.078
  },
+ "school|COMPASS": {
+  "file": "w/school__compass.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Compass_(drawing_tool).jpg",
+  "author": "Dmitry Makeev",
+  "license": "CC BY-SA 4.0",
+  "score": 0.892
+ },
  "school|COMPUTER": {
   "file": "w/school__computer.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Backlit_Laptop_Keyboard.jpg",
   "author": "Gre123gr",
   "license": "CC0",
   "score": 0.693
+ },
+ "school|CORRECTION TAPE": {
+  "file": "w/school__correction-tape.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Kirchspiel,_ehem._Sondermunitionslager_Visbeck,_Zaun_--_2023_--_6763.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.679
  },
  "school|CRAYON": {
   "file": "w/school__crayon.jpg",
@@ -7181,6 +7244,27 @@
   "license": "CC BY-SA 4.0",
   "score": 0.533
  },
+ "school|EASEL": {
+  "file": "w/school__easel.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Easel_MET_SF25_199.jpg",
+  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
+  "license": "CC0",
+  "score": 0.904
+ },
+ "school|ENGLISH": {
+  "file": "w/school__english.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:English_Phonotypic_Letters_(Cincinnati_alphabet_1855).png",
+  "author": "Karl432",
+  "license": "CC0",
+  "score": 0.612
+ },
+ "school|ENVELOPE": {
+  "file": "w/school__envelope.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sprechender_Brief_--_2015_--_6006.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.618
+ },
  "school|ERASER": {
   "file": "w/school__eraser.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Pink_Pearl_eraser.jpg",
@@ -7194,6 +7278,20 @@
   "author": "Letstown",
   "license": "CC0",
   "score": 1.13
+ },
+ "school|FLASHCARD": {
+  "file": "w/school__flashcard.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lyra_(lyra-flashcard).jpg",
+  "author": "NOIRLab",
+  "license": "CC BY 4.0",
+  "score": 0.286
+ },
+ "school|FOLDER": {
+  "file": "w/school__folder.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Folder-dynamic-gradient.png",
+  "author": "Vijay Verma",
+  "license": "CC0",
+  "score": 0.522
  },
  "school|GLOBE": {
   "file": "w/school__globe.jpg",
@@ -7209,6 +7307,20 @@
   "license": "CC0",
   "score": 0.984
  },
+ "school|GRADE": {
+  "file": "w/school__grade.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Testing_the_absorbtion_120216-A-ZF401-003.jpg",
+  "author": "Spc. Brandon Bednarek",
+  "license": "Public domain",
+  "score": 0.635
+ },
+ "school|HIGHLIGHTER": {
+  "file": "w/school__highlighter.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:31.Ulica_-_Kijowski_Teatr_Uliczny_Highlights_-_Korow%C3%B3d_ta%C5%84ca_-_20180705_1810_5979_DxO.jpg",
+  "author": "Jakub Hałun",
+  "license": "CC BY-SA 4.0",
+  "score": 0.576
+ },
  "school|HISTORY": {
   "file": "w/school__history.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Ayutthaya_World_Heritage_sign.jpg",
@@ -7222,6 +7334,13 @@
   "author": "Europäische Kommission - Audiovisueller Dienst, Jennifer Jacquemart, Yügen, CE - Service audiovisuel, EC - Audiovisual Service",
   "license": "CC BY 4.0",
   "score": 0.931
+ },
+ "school|KINDERGARTEN": {
+  "file": "w/school__kindergarten.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Louisville_District_successfully_outfits_over_200_DoDEA_Pre-K_classrooms_around_the_world_(8702179).jpg",
+  "author": "U.S. Army USACE-L by Abby Korfhage",
+  "license": "Public domain",
+  "score": 1.149
  },
  "school|LESSON": {
   "file": "w/school__lesson.jpg",
@@ -7237,12 +7356,26 @@
   "license": "CC BY 3.0",
   "score": 0.891
  },
+ "school|LOCKER": {
+  "file": "w/school__locker.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Locker_room_-_lockers_open.jpg",
+  "author": "W.carter",
+  "license": "Public domain",
+  "score": 1.288
+ },
  "school|LUNCH BOX": {
   "file": "w/school__lunch-box.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Rice_Lunch_Box_in_Taipei,_Taiwan.jpg",
   "author": "Battlesnake1",
   "license": "CC0",
   "score": 1.082
+ },
+ "school|MAGNIFYING GLASS": {
+  "file": "w/school__magnifying-glass.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Magnifying_glass_with_focus_on_paper.png",
+  "author": "Niabot",
+  "license": "CC BY-SA 3.0",
+  "score": 1.337
  },
  "school|MAP": {
   "file": "w/school__map.jpg",
@@ -7258,12 +7391,33 @@
   "license": "CC0",
   "score": 1.1
  },
+ "school|MATH": {
+  "file": "w/school__math.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Doska_matematika.jpg",
+  "author": "Duusankeldiyev nurbol 2005",
+  "license": "CC BY-SA 4.0",
+  "score": 0.315
+ },
+ "school|MICROSCOPE": {
+  "file": "w/school__microscope.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sammallooma_elluj%C3%A4%C3%A4miskapsel_(Cristatella_mucedo).jpg",
+  "author": "Janek Lass",
+  "license": "CC BY 4.0",
+  "score": 0.685
+ },
  "school|MUSIC": {
   "file": "w/school__music.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Historical_instruments.jpg",
   "author": "A.E.Booth95",
   "license": "CC BY-SA 4.0",
   "score": 0.87
+ },
+ "school|NAME TAG": {
+  "file": "w/school__name-tag.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Zug_Langzeitbelichtung.jpg",
+  "author": "Thomas Wolf ( Der Wolf im Wald )",
+  "license": "CC BY-SA 2.5",
+  "score": 0.655
  },
  "school|NOTEBOOK": {
   "file": "w/school__notebook.jpg",
@@ -7300,6 +7454,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.939
  },
+ "school|PAPER CLIP": {
+  "file": "w/school__paper-clip.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Paper_Clip_Surface_Tension_1_crop.jpg",
+  "author": "Paper_Clip_Surface_Tension_1_edit.jpg : JJ Harrison ( jjharrison89@facebook.com ) derivative work: Materialscientist ( talk )",
+  "license": "CC BY-SA 3.0",
+  "score": 1.224
+ },
  "school|PEN": {
   "file": "w/school__pen.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Pen_salem.jpg",
@@ -7321,6 +7482,13 @@
   "license": "CC BY 3.0",
   "score": 1.026
  },
+ "school|POSTER": {
+  "file": "w/school__poster.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sonoma_chipmunk_at_Samuel_P._Taylor_State_Park.jpg",
+  "author": "Frank Schulenburg",
+  "license": "CC BY-SA 4.0",
+  "score": 0.699
+ },
  "school|PRINCIPAL": {
   "file": "w/school__principal.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:A_high_school_principal_shows_off_a_newly-built_classroom_at_Hayesville_High_School_in_North_Carolina.jpg",
@@ -7334,6 +7502,20 @@
   "author": "http://muzyczny.pl",
   "license": "CC BY-SA 4.0",
   "score": 0.792
+ },
+ "school|PROTRACTOR": {
+  "file": "w/school__protractor.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Plastic_Protractor_Polarized_05375.jpg",
+  "author": "Nevit Dilmen",
+  "license": "CC BY-SA 3.0",
+  "score": 0.64
+ },
+ "school|REPORT CARD": {
+  "file": "w/school__report-card.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Report_Card_from_Minburn_High_School_1927-1928.jpg",
+  "author": "Unknown author Unknown author",
+  "license": "Public domain",
+  "score": 0.524
  },
  "school|RULER": {
   "file": "w/school__ruler.jpg",
@@ -7349,6 +7531,13 @@
   "license": "Public domain",
   "score": 1.018
  },
+ "school|SCIENCE": {
+  "file": "w/school__science.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Science_is_cool_4.jpg",
+  "author": "Evgrafov Lev",
+  "license": "CC BY 4.0",
+  "score": 1.365
+ },
  "school|SCISSORS": {
   "file": "w/school__scissors.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:A_pair_of_scissors.jpg",
@@ -7362,6 +7551,27 @@
   "author": "Alexander Klink",
   "license": "CC BY 3.0",
   "score": 0.999
+ },
+ "school|STAPLER": {
+  "file": "w/school__stapler.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2017_Zszywacz_biurowy.jpg",
+  "author": "Jacek Halicki",
+  "license": "CC BY-SA 4.0",
+  "score": 0.818
+ },
+ "school|STICKER": {
+  "file": "w/school__sticker.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:F_A_J_Stickers.png",
+  "author": "Pierreabdor",
+  "license": "CC0",
+  "score": 0.707
+ },
+ "school|STICKY NOTE": {
+  "file": "w/school__sticky-note.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sticky_Note_on_a_white_background.jpg",
+  "author": "Pixloom",
+  "license": "CC BY-SA 4.0",
+  "score": 1.331
  },
  "school|STUDENT": {
   "file": "w/school__student.jpg",
@@ -7384,6 +7594,13 @@
   "license": "CC BY 4.0",
   "score": 0.986
  },
+ "school|TELESCOPE": {
+  "file": "w/school__telescope.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:David_Dunlap_Observatory_telescope1.jpg",
+  "author": "The Cosmonaut",
+  "license": "CC BY-SA 2.5 ca",
+  "score": 1.317
+ },
  "school|TEST": {
   "file": "w/school__test.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Donboscocambodia0001.JPG",
@@ -7391,12 +7608,40 @@
   "license": "Public domain",
   "score": 1.017
  },
+ "school|TEXTBOOK": {
+  "file": "w/school__textbook.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Textbook_on_Medical_care.jpg",
+  "author": "Beendy234",
+  "license": "CC0",
+  "score": 0.817
+ },
+ "school|THUMBTACK": {
+  "file": "w/school__thumbtack.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Disa_seedling_on_a_thumbtack.jpg",
+  "author": "Frederick Depuydt",
+  "license": "CC BY-SA 4.0",
+  "score": 0.964
+ },
  "school|WHITEBOARD": {
   "file": "w/school__whiteboard.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:NCTR_Intern_Claire_Boyle_(15558843862).jpg",
   "author": "The U.S. Food and Drug Administration",
   "license": "Public domain",
   "score": 0.375
+ },
+ "school|WORKBOOK": {
+  "file": "w/school__workbook.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ohio_School_of_the_Air_1935_Radio_Record_Book_(Pupil%27s_workbook).jpg",
+  "author": "Unknown author Unknown author",
+  "license": "CC0",
+  "score": 0.353
+ },
+ "school|WORKSHEET": {
+  "file": "w/school__worksheet.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Worksheet_-_External_parts_of_the_flower.jpg",
+  "author": "Avion Thomas",
+  "license": "CC BY-SA 4.0",
+  "score": 0.428
  },
  "shapes|ANGLE": {
   "file": "w/shapes__angle.jpg",
@@ -9525,12 +9770,5 @@
   "author": "Andreas Tille",
   "license": "CC BY-SA 4.0",
   "score": 0.78
- },
- "school|GRADE": {
-  "file": "w/school__grade.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Testing_the_absorbtion_120216-A-ZF401-003.jpg",
-  "author": "Spc. Brandon Bednarek",
-  "license": "Public domain",
-  "score": 0.635
  }
 }

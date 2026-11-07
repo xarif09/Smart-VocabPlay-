@@ -163,6 +163,13 @@ def pre_score(s, strict, gray_ok=False):
     return 0.50 * s["p"] + 0.20 * s["photo"] + 0.10 * s["q"] + 0.10 * cos_norm(s["cos"]) - pen
 
 
+def dump_json(obj, path, **kw):
+    """atomic write (survives a container restart mid-write)"""
+    tmp = path + ".tmp"
+    json.dump(obj, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, **kw)
+    os.replace(tmp, path)
+
+
 def load_json(p, d):
     return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else d
 
@@ -285,11 +292,11 @@ def main(words, top):
                               "origin": c["origin"], "n_cands": len(sc), "forced": bool(forced)}
         if n % 20 == 0:
             print(f"  {n}/{len(words)} {k}: {c['title'][:50]} final={best['final']:.2f} p={s['p']:.2f} fit={best['fit']:.2f}", flush=True)
-            json.dump(boxes, open(BOXES, "w"))
+            dump_json(boxes, BOXES)
             if not DRY:  # checkpoint so a restart loses little
-                json.dump(out, open(JSON_OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-                json.dump(report, open(REPORT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    json.dump(boxes, open(BOXES, "w"))
+                dump_json(out, JSON_OUT, indent=1)
+                dump_json(report, REPORT, indent=1)
+    dump_json(boxes, BOXES)
     if DRY:
         old = load_json(os.path.join(CACHE, "precheck.json"), {}); old.update(pre)
         json.dump(old, open(os.path.join(CACHE, "precheck.json"), "w"), ensure_ascii=False, indent=0)
@@ -299,11 +306,11 @@ def main(words, top):
         print("precheck: current photo good enough for", len(keep), "of", len(old), "words"); return
     allkeys = {w["key"] for w in W.load_words()}
     out = {k: out[k] for k in sorted(out, key=lambda x: x) if k in allkeys}
-    json.dump(out, open(JSON_OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    dump_json(out, JSON_OUT, indent=1)
     low = {k: v for k, v in report["words"].items() if k in allkeys and (v.get("flags") or v.get("status"))}
     report["low_confidence"] = sorted(low)
     report["summary"] = {"words": len(allkeys), "with_photo": len(out), "flagged": len(low)}
-    json.dump(report, open(REPORT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    dump_json(report, REPORT, indent=1)
     print("done:", report["summary"], flush=True)
 
 

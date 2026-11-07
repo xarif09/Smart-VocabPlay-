@@ -803,7 +803,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:cake food",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "food|CORN": {
@@ -939,7 +939,7 @@
    ],
    "flags": [],
    "origin": "search:cookie food",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|DONUT": {
@@ -969,36 +969,44 @@
     "fit 0.48"
    ],
    "origin": "search:chocolate food",
-   "n_cands": 7,
-   "forced": false
-  },
-  "food|CHEESE": {
-   "title": "File:Moscow, Perekryostok, cheese 07.jpg",
-   "final": 1.263,
-   "p": 0.938,
-   "photo": 0.9299,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:cheese food",
    "n_cands": 8,
    "forced": false
   },
-  "food|CANDY": {
-   "title": "File:Sweets displayed inside a candy shop, Verona - 2026-09-12.jpg",
-   "final": 1.172,
-   "p": 0.9779,
-   "photo": 0.4256,
-   "fit": 1.0,
+  "food|CHEESE": {
+   "title": "File:Schmelzkäse-1.jpg",
+   "final": 0.814,
+   "p": 0.3627,
+   "photo": 0.9957,
+   "fit": 0.467,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.78)"
+   ],
    "flags": [
-    "not photo-like 0.43"
+    "low word prob 0.36",
+    "fit 0.47"
+   ],
+   "origin": "search:cheese food",
+   "n_cands": 8,
+   "forced": true
+  },
+  "food|CANDY": {
+   "title": "File:Pastel Peppermint Candy Buttons by Andie's Specialty Sweets IMG 3169.JPG",
+   "final": 0.883,
+   "p": 0.9872,
+   "photo": 0.707,
+   "fit": 0.24,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.62)"
+   ],
+   "flags": [
+    "fit 0.24"
    ],
    "origin": "search:candy sweets",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "food|HOTDOG": {
    "title": "File:My hot dog at Hot Doug's.jpg",
@@ -1105,19 +1113,22 @@
    "forced": false
   },
   "food|HONEY": {
-   "title": "File:Stalls on the footpath up to Bachkovo Monastery 05.jpg",
-   "final": 1.001,
-   "p": 0.3805,
-   "photo": 0.9509,
-   "fit": 1.0,
+   "title": "File:Runny hunny.jpg",
+   "final": 0.932,
+   "p": 1.0,
+   "photo": 0.9718,
+   "fit": 0.273,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.38"
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
    ],
-   "origin": "search:honey food",
-   "n_cands": 7,
-   "forced": false
+   "flags": [
+    "fit 0.27"
+   ],
+   "origin": "current",
+   "n_cands": 8,
+   "forced": true
   },
   "food|COFFEE": {
    "title": "File:Coffee cup and saucer.jpg",
@@ -2319,7 +2330,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "food|JUICE": {
@@ -4664,22 +4675,23 @@
    "forced": false
   },
   "food|BUTTER": {
-   "title": "File:Packing butter for shipment, Amsterdam, Holland, photo from The Encyclopedia of Food by Artemas Ward.jpg",
-   "final": 0.785,
-   "p": 0.8792,
-   "photo": 0.8559,
-   "fit": 0.238,
-   "how": "none",
+   "title": "File:Švédský koláč naruby 904 (cropped).JPG",
+   "final": 0.631,
+   "p": 0.9087,
+   "photo": 0.3298,
+   "fit": 0.303,
+   "how": "saliency",
    "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.57)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.63)"
    ],
    "flags": [
-    "fit 0.24"
+    "fit 0.30",
+    "not photo-like 0.33"
    ],
-   "origin": "search:butter food",
+   "origin": "current",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "food|SUGAR": {
    "title": "File:Sugar tongs, sugar bowl, sugar cubes.jpg",
@@ -4697,17 +4709,22 @@
    "forced": false
   },
   "food|SALT": {
-   "title": "File:Antigua (Fuerteventura, Spain), Museo de las Salinas del Carmen, Kristallisierungsbecken -- 2025 -- 7231.jpg",
-   "final": 1.211,
-   "p": 0.7792,
-   "photo": 0.981,
-   "fit": 1.0,
+   "title": "File:Salt-crystals.jpg",
+   "final": 0.9,
+   "p": 0.8919,
+   "photo": 0.9969,
+   "fit": 0.309,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.81)"
+   ],
+   "flags": [
+    "fit 0.31"
+   ],
    "origin": "search:salt crystals",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "food|FISH SAUCE": {
    "title": "File:Lao fish sauce.jpg",
@@ -9296,7 +9313,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "food|BOILED EGG": {
@@ -9309,7 +9326,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "food|TOAST": {
@@ -9330,21 +9347,22 @@
    "forced": false
   },
   "food|CEREAL": {
-   "title": "File:Fiber One in a bowl with milk and a spoon 2.jpg",
-   "final": 0.837,
-   "p": 0.9919,
-   "photo": 0.2673,
-   "fit": 0.774,
+   "title": "File:NCI Visuals Food Meal Breakfast.jpg",
+   "final": 0.5,
+   "p": 0.5456,
+   "photo": 0.0765,
+   "fit": 0.355,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.59)"
    ],
    "flags": [
-    "not photo-like 0.27"
+    "fit 0.35",
+    "not photo-like 0.08"
    ],
-   "origin": "search:breakfast cereal bowl",
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "food|JAM": {
    "title": "File:Jam jar, Kazakhstan.jpg",
@@ -9375,19 +9393,22 @@
    "forced": false
   },
   "food|POPCORN": {
-   "title": "File:Popcorn machine.jpg",
-   "final": 1.095,
-   "p": 0.8663,
-   "photo": 0.4527,
-   "fit": 1.0,
+   "title": "File:Bowl of Popcorn (Unsplash).jpg",
+   "final": 0.899,
+   "p": 0.9998,
+   "photo": 0.9657,
+   "fit": 0.208,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.54)"
+   ],
    "flags": [
-    "not photo-like 0.45"
+    "fit 0.21"
    ],
    "origin": "search:popcorn food",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "food|CHIPS": {
    "title": "File:Potato-Chips.jpg",
@@ -9399,7 +9420,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "food|PUDDING": {
@@ -9453,17 +9474,21 @@
    "forced": false
   },
   "food|WAFFLE": {
-   "title": "File:Arizona Waffle House.jpg",
-   "final": 1.27,
-   "p": 0.9998,
-   "photo": 0.8476,
-   "fit": 1.0,
+   "title": "File:Waffles with Strawberries.jpg",
+   "final": 1.0,
+   "p": 0.9999,
+   "photo": 0.9823,
+   "fit": 0.401,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:waffle food",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.67)"
+   ],
+   "flags": [
+    "fit 0.40"
+   ],
+   "origin": "current",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "food|BUBBLE TEA": {
    "title": "File:Moge Tea.jpg",
@@ -9558,35 +9583,34 @@
    "forced": false
   },
   "food|SAUSAGE": {
-   "title": "File:Sausage making-H-5-edited2.jpg",
-   "final": 1.082,
-   "p": 0.9948,
-   "photo": 0.9864,
-   "fit": 0.512,
+   "title": "File:JP 日本 Japan 沖繩 OKINAWA 那霸 Naha 安里 Asato Hewitt Resort Naha Okinawa Hotel 自助早餐 breakfast buffet food restaurant 腸仔 grilled sausage February 2026 N13P 06.jpg",
+   "final": 0.619,
+   "p": 0.0317,
+   "photo": 0.9236,
+   "fit": 0.64,
    "how": "saliency",
    "notes": [
-    "touches 3 edge(s)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "fit 0.51"
+    "low word prob 0.03",
+    "fit 0.64"
    ],
    "origin": "search:sausage food",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "food|BACON": {
-   "title": "File:Jamones y bacalao en el Mercado Municipal de Sao Paulo.jpg",
-   "final": 0.747,
-   "p": 0.0347,
-   "photo": 0.9301,
+   "title": "File:Mitch morgan edit1.jpg",
+   "final": 1.28,
+   "p": 0.9999,
+   "photo": 0.9007,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [
-    "low word prob 0.03"
-   ],
-   "origin": "search:bacon food",
-   "n_cands": 8,
+   "flags": [],
+   "origin": "search:bacon strips",
+   "n_cands": 7,
    "forced": false
   },
   "food|HAM": {
@@ -9703,19 +9727,21 @@
    "forced": false
   },
   "food|KETCHUP": {
-   "title": "File:Good on anything - Bottles of hot sauce and ketchup on table at restaurant in New Orleans.jpg",
-   "final": 1.261,
-   "p": 0.9718,
-   "photo": 0.9754,
-   "fit": 0.78,
+   "title": "File:Ketchup 20160918 181342 (cropped).jpg",
+   "final": 1.018,
+   "p": 0.9957,
+   "photo": 0.9846,
+   "fit": 0.447,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.74)"
    ],
-   "flags": [],
-   "origin": "search:ketchup bottle",
+   "flags": [
+    "fit 0.45"
+   ],
+   "origin": "current",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "food|SOY SAUCE": {
    "title": "File:Lee Kum Kee soy sauce.jpg",
@@ -14898,7 +14924,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:spinach vegetable",
-   "n_cands": 9,
+   "n_cands": 10,
    "forced": false
   },
   "vegetables|KALE": {
@@ -14941,7 +14967,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 10,
    "forced": false
   },
   "vegetables|PUMPKIN": {
@@ -15016,20 +15042,16 @@
    "forced": false
   },
   "vegetables|BEANS": {
-   "title": "File:Green gram.jpg",
-   "final": 0.72,
-   "p": 0.7637,
-   "photo": 0.9642,
-   "fit": 0.392,
+   "title": "File:Green-beans.jpg",
+   "final": 1.264,
+   "p": 0.8259,
+   "photo": 0.7857,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.65)"
-   ],
-   "flags": [
-    "fit 0.39"
-   ],
-   "origin": "search:QI",
-   "n_cands": 6,
+   "notes": [],
+   "flags": [],
+   "origin": "search:green beans",
+   "n_cands": 7,
    "forced": false
   },
   "vegetables|BEAN SPROUTS": {
@@ -15116,19 +15138,22 @@
    "forced": false
   },
   "vegetables|CASSAVA": {
-   "title": "File:A Farmer Harvesting Cassava Root.jpg",
-   "final": 1.168,
-   "p": 0.9565,
-   "photo": 0.4451,
-   "fit": 1.0,
+   "title": "File:PeeLawPeeNam Cassava root Yuca Manioc.jpg",
+   "final": 0.605,
+   "p": 0.0686,
+   "photo": 0.9349,
+   "fit": 0.567,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
    "flags": [
-    "not photo-like 0.45"
+    "low word prob 0.07",
+    "fit 0.57"
    ],
    "origin": "search:cassava root",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vegetables|GINGER": {
    "title": "File:Liat Portal for Foodie Disorder - Fresh Ginger Root.jpg",
@@ -15210,21 +15235,24 @@
    "forced": false
   },
   "vegetables|SPRING ONION": {
-   "title": "File:Blueten 003 2023 05 20.jpg",
-   "final": 0.788,
-   "p": 0.1206,
-   "photo": 0.905,
-   "fit": 0.766,
+   "title": "File:CSA-Red-Spring-Onions.jpg",
+   "final": 0.5,
+   "p": 0.0005,
+   "photo": 0.4005,
+   "fit": 0.252,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.52)"
    ],
    "flags": [
-    "low word prob 0.12"
+    "low word prob 0.00",
+    "fit 0.25",
+    "not photo-like 0.40"
    ],
-   "origin": "search:QI",
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vegetables|LIME": {
    "title": "File:Lime Blossom.jpg",
@@ -15325,21 +15353,27 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "vegetables|STRAW MUSHROOM": {
-   "title": "File:Jamur kincir angin oranye.jpg",
-   "final": 1.394,
-   "p": 0.9891,
-   "photo": 0.9967,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:straw mushroom",
+   "title": "File:StrawMushroom.jpg",
+   "final": 0.659,
+   "p": 0.3338,
+   "photo": 0.9987,
+   "fit": 0.403,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.96)"
+   ],
+   "flags": [
+    "low word prob 0.33",
+    "fit 0.40"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vegetables|BEETROOT": {
    "title": "File:Detroitdarkredbeets.png",
@@ -15351,7 +15385,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "vegetables|TURNIP": {
@@ -15407,7 +15441,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 4,
    "forced": false
   },
   "vegetables|SEAWEED SALAD": {
@@ -24942,22 +24976,23 @@
    "forced": false
   },
   "vegetables|LEEK": {
-   "title": "File:Porre Leek.jpg",
-   "final": 0.888,
-   "p": 0.9869,
-   "photo": 0.938,
-   "fit": 0.21,
+   "title": "File:Leek on a white background.png",
+   "final": 0.694,
+   "p": 0.2918,
+   "photo": 0.924,
+   "fit": 0.383,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.35)",
-    "upscaled x1.5"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.80)"
    ],
    "flags": [
-    "fit 0.21"
+    "low word prob 0.29",
+    "fit 0.38"
    ],
    "origin": "search:leek vegetable",
    "n_cands": 5,
-   "forced": false
+   "forced": true
   },
   "vegetables|SHALLOT": {
    "title": "File:These are onions.jpg",
@@ -25008,32 +25043,32 @@
    "forced": false
   },
   "vegetables|MINT": {
-   "title": "File:A mint garden.jpg",
-   "final": 1.149,
-   "p": 0.9955,
-   "photo": 0.9844,
-   "fit": 0.7,
-   "how": "none",
+   "title": "File:CSA-Chocolate-Mint.jpg",
+   "final": 0.973,
+   "p": 0.9968,
+   "photo": 0.9422,
+   "fit": 0.336,
+   "how": "saliency",
    "notes": [
-    "no subject found"
+    "subject cannot fit 3:4 (box cov 0.56)"
    ],
    "flags": [
-    "fit 0.70"
+    "fit 0.34"
    ],
    "origin": "search:mint vegetable",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vegetables|DILL": {
-   "title": "File:Big Dill pickle-shaped chalk, unknown designer, produced by Fred, circa 2023, 11.4 x 3.5 x 3.5 cm, sold at Urban Outfitters in the Aventura Mall in Florida, US.jpg",
-   "final": 1.213,
-   "p": 0.8998,
-   "photo": 0.7671,
+   "title": "File:Liat Portal for Foodie Disorder - Fresh Dill.jpg",
+   "final": 1.306,
+   "p": 0.9999,
+   "photo": 0.9597,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "search:dill vegetable",
+   "origin": "search:fresh dill",
    "n_cands": 8,
    "forced": false
   },
@@ -25153,17 +25188,22 @@
    "forced": false
   },
   "vegetables|LUFFA": {
-   "title": "File:Luffa aegyptiaca compose.jpg",
-   "final": 1.306,
-   "p": 0.9959,
-   "photo": 0.9885,
-   "fit": 1.0,
+   "title": "File:Luffa acutangula vegetable 019.jpg",
+   "final": 0.93,
+   "p": 0.8879,
+   "photo": 0.9621,
+   "fit": 0.28,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.58)"
+   ],
+   "flags": [
+    "fit 0.28"
+   ],
    "origin": "search:luffa vegetable",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vegetables|CHAYOTE": {
    "title": "File:Chayote - 01.jpg",
@@ -25212,20 +25252,16 @@
    "forced": false
   },
   "vegetables|ENOKI": {
-   "title": "File:Hot pot 19.03.16.jpg",
-   "final": 1.051,
-   "p": 0.9633,
-   "photo": 0.8263,
-   "fit": 0.512,
+   "title": "File:Salad enoki mushrooms.jpg",
+   "final": 1.227,
+   "p": 0.8859,
+   "photo": 0.6921,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 3 edge(s)"
-   ],
-   "flags": [
-    "fit 0.51"
-   ],
-   "origin": "search:enoki vegetable",
-   "n_cands": 4,
+   "notes": [],
+   "flags": [],
+   "origin": "search:enoki mushrooms",
+   "n_cands": 9,
    "forced": false
   },
   "vegetables|WASABI": {
@@ -25319,7 +25355,7 @@
     "fit 0.64"
    ],
    "origin": "search:pickle vegetable",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "vegetables|SESAME": {
@@ -29388,12 +29424,12 @@
   "feelings|TIRED",
   "feelings|UPSET",
   "feelings|WORRIED",
-  "food|BACON",
   "food|BREAD",
   "food|BREAKFAST",
   "food|BUTTER",
   "food|CANDY",
   "food|CEREAL",
+  "food|CHEESE",
   "food|CHICKEN RICE",
   "food|CHOCOLATE",
   "food|COCOA",
@@ -29409,6 +29445,7 @@
   "food|HAM",
   "food|HONEY",
   "food|HOTDOG",
+  "food|KETCHUP",
   "food|LUNCH",
   "food|ONION",
   "food|PANCAKE",
@@ -29420,6 +29457,7 @@
   "food|RAMEN",
   "food|SALAD",
   "food|SALAD DRESSING",
+  "food|SALT",
   "food|SAUSAGE",
   "food|SEAWEED",
   "food|SMOOTHIE",
@@ -29428,6 +29466,7 @@
   "food|SUSHI",
   "food|TACO",
   "food|TOAST",
+  "food|WAFFLE",
   "food|YOGURT",
   "fruits|APPLE",
   "fruits|BREADFRUIT",
@@ -29995,17 +30034,16 @@
   "vegetables|ARUGULA",
   "vegetables|BABY CORN",
   "vegetables|BAMBOO SHOOT",
-  "vegetables|BEANS",
   "vegetables|BOK CHOY",
   "vegetables|CASSAVA",
   "vegetables|CHINESE CABBAGE",
   "vegetables|CINNAMON",
   "vegetables|CORIANDER",
-  "vegetables|ENOKI",
   "vegetables|GALANGAL",
   "vegetables|JICAMA",
   "vegetables|LEEK",
   "vegetables|LEMONGRASS",
+  "vegetables|LUFFA",
   "vegetables|MINT",
   "vegetables|MORNING GLORY",
   "vegetables|OLIVE",
@@ -30017,6 +30055,7 @@
   "vegetables|SHALLOT",
   "vegetables|SPRING ONION",
   "vegetables|SQUASH",
+  "vegetables|STRAW MUSHROOM",
   "vegetables|TURMERIC",
   "vegetables|TURNIP",
   "vegetables|VEGETABLES",
@@ -30113,6 +30152,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1891,
-  "flagged": 1083
+  "flagged": 1086
  }
 }

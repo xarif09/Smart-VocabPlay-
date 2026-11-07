@@ -3367,7 +3367,7 @@
    ],
    "flags": [],
    "origin": "search:shoes",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|SOCKS": {
@@ -3393,7 +3393,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:hat clothing",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "clothes|GLASSES": {
@@ -3424,7 +3424,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 5,
    "forced": false
   },
   "clothes|GLOVES": {
@@ -3443,17 +3443,22 @@
    "forced": false
   },
   "clothes|JACKET": {
-   "title": "File:Clothing tag on Navy Issued Jacket, Cold Weather, Permeable built by the Vanderbilt Shirt Company.jpg",
-   "final": 1.049,
-   "p": 0.6368,
-   "photo": 0.7483,
-   "fit": 1.0,
+   "title": "File:Jacket2-1.jpg",
+   "final": 0.706,
+   "p": 0.2331,
+   "photo": 0.9216,
+   "fit": 0.64,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:jacket clothing",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.23",
+    "fit 0.64"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "clothes|SKIRT": {
    "title": "File:Skirt MET 26.265.48.jpg",
@@ -3564,18 +3569,18 @@
    "forced": false
   },
   "clothes|SWIMSUIT": {
-   "title": "File:Wanda Hendrix pin-up in Leopard swimsuit 1954.jpg",
-   "final": 1.071,
-   "p": 0.8313,
-   "photo": 0.9923,
-   "fit": 0.841,
+   "title": "File:A young child stands in shallow water, enjoying the coolness of the pool while wearing a colorful swimsuit. The sunlight reflects off the water, creating a joyful atmosphere.jpg",
+   "final": 1.269,
+   "p": 0.9981,
+   "photo": 0.9602,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 1 edge(s)"
    ],
    "flags": [],
-   "origin": "search:swimsuit",
-   "n_cands": 8,
+   "origin": "search:child swimsuit swimming pool",
+   "n_cands": 3,
    "forced": false
   },
   "clothes|UNIFORM": {
@@ -4956,27 +4961,26 @@
    "forced": false
   },
   "family|MOTHER": {
-   "title": "File:Female Toque macaque with baby - (Harmony of Life).jpg",
-   "final": 0.847,
-   "p": 0.9941,
-   "photo": 0.9329,
-   "fit": 0.3,
-   "how": "saliency",
+   "title": "File:Portrait of a woman holding a baby (I0024828).jpg",
+   "final": 0.883,
+   "p": 0.365,
+   "photo": 1.0,
+   "fit": 0.8,
+   "how": "yolo:person",
    "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.98)"
+    "touches 1 edge(s)"
    ],
    "flags": [
-    "fit 0.30"
+    "low word prob 0.36"
    ],
-   "origin": "search:mother and child",
+   "origin": "current",
    "n_cands": 8,
    "forced": false
   },
   "family|FATHER": {
    "title": "File:Father's love (cropped).jpg",
-   "final": 0.925,
-   "p": 0.9833,
+   "final": 0.802,
+   "p": 0.4957,
    "photo": 0.9979,
    "fit": 0.466,
    "how": "yolo:person",
@@ -4985,62 +4989,68 @@
     "subject cannot fit 3:4 (box cov 0.97)"
    ],
    "flags": [
+    "low word prob 0.50",
     "fit 0.47"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "family|SISTER": {
-   "title": "File:Two Sisters (On the Terrace).jpg",
-   "final": 0.84,
-   "p": 0.7856,
-   "photo": 0.0442,
+   "title": "File:Blue Mountains National Park (AU), Three Sisters -- 2019 -- 1987-9.jpg",
+   "final": 0.7,
+   "p": 0.0005,
+   "photo": 0.9979,
    "fit": 1.0,
-   "how": "yolo:person",
+   "how": "saliency",
    "notes": [],
    "flags": [
-    "not photo-like 0.04"
+    "low word prob 0.00"
    ],
-   "origin": "search:two sisters",
-   "n_cands": 6,
-   "forced": false
-  },
-  "family|BROTHER": {
-   "title": "File:Alfred Dehodencq--Two brothers in a study.webp",
-   "final": 0.417,
-   "p": 0.0839,
-   "photo": 0.0001,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.08",
-    "not photo-like 0.00"
-   ],
-   "origin": "search:two brothers",
+   "origin": "search:sisters",
    "n_cands": 7,
    "forced": false
   },
-  "family|GRANDMOTHER": {
-   "title": "File:Grandmother preparing food inside traditional kitchen (edited).jpg",
-   "final": 1.061,
-   "p": 0.9249,
-   "photo": 0.4812,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.48"
+  "family|BROTHER": {
+   "title": "File:Two brothers ship anchor cropped.jpg",
+   "final": 0.491,
+   "p": 0.0004,
+   "photo": 0.4537,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
    ],
-   "origin": "search:grandmother",
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.45"
+   ],
+   "origin": "search:two brothers",
+   "n_cands": 8,
+   "forced": false
+  },
+  "family|GRANDMOTHER": {
+   "title": "File:Nowruz 2017 in Bisaran, Kurdistan province.jpg",
+   "final": 0.824,
+   "p": 0.7183,
+   "photo": 0.9973,
+   "fit": 0.262,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.54)"
+   ],
+   "flags": [
+    "fit 0.26"
+   ],
+   "origin": "search:grandmother with grandchild",
    "n_cands": 7,
    "forced": false
   },
   "family|GRANDFATHER": {
    "title": "File:Japan, Kinderen foto 405.jpg",
-   "final": 0.363,
-   "p": 0.066,
+   "final": 0.498,
+   "p": 0.0375,
    "photo": 0.9723,
    "fit": 0.369,
    "how": "yolo:person",
@@ -5049,17 +5059,17 @@
     "subject cannot fit 3:4 (box cov 0.77)"
    ],
    "flags": [
-    "low word prob 0.07",
+    "low word prob 0.04",
     "fit 0.37"
    ],
    "origin": "search:grandfather with grandchild",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "family|BABY": {
    "title": "File:021 Wild Baby Alpine Ibex Creux du Van Photo by Giles Laurent.jpg",
-   "final": 0.454,
-   "p": 0.0037,
+   "final": 0.664,
+   "p": 0.0008,
    "photo": 0.9331,
    "fit": 0.791,
    "how": "saliency",
@@ -5070,13 +5080,13 @@
     "low word prob 0.00"
    ],
    "origin": "search:baby",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "family|FAMILY": {
    "title": "File:W.H. Shumard family, circa 1955.jpg",
-   "final": 0.783,
-   "p": 0.6714,
+   "final": 0.959,
+   "p": 0.7028,
    "photo": 1.0,
    "fit": 0.626,
    "how": "yolo:person",
@@ -5088,29 +5098,33 @@
     "fit 0.63"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "family|AUNT": {
-   "title": "File:L. Frank Baum - Aunt Jane's Nieces - Cover illustration by Emile A. Nelson - 1906.jpg",
-   "final": 0.458,
-   "p": 0.0178,
-   "photo": 0.3856,
-   "fit": 1.0,
+   "title": "File:Aunt & Niece (7936230820).jpg",
+   "final": 0.446,
+   "p": 0.0001,
+   "photo": 0.9349,
+   "fit": 0.371,
    "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.02",
-    "not photo-like 0.39"
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.77)",
+    "upscaled x1.5"
    ],
-   "origin": "search:aunt and niece",
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.37"
+   ],
+   "origin": "current",
    "n_cands": 5,
    "forced": false
   },
   "family|UNCLE": {
    "title": "File:President John F. Kennedy and his nephew, Robert F. Kennedy, Jr. (RFK, Jr.) and presented his uncle with a salamander, \"Shadrach\" in the White House Oval Office, Washington, D.C. on 11 March 1961 - (AR6420-C).jpg",
-   "final": 0.737,
-   "p": 0.8239,
+   "final": 0.519,
+   "p": 0.647,
    "photo": 0.9975,
    "fit": 0.415,
    "how": "yolo:person",
@@ -5122,13 +5136,13 @@
     "fit 0.42"
    ],
    "origin": "search:uncle and nephew",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "family|SON": {
    "title": "File:Father and son 27.jpg",
-   "final": 0.369,
-   "p": 0.0035,
+   "final": 0.505,
+   "p": 0.0019,
    "photo": 0.9909,
    "fit": 0.253,
    "how": "yolo:person",
@@ -5145,22 +5159,22 @@
    "forced": false
   },
   "family|DAUGHTER": {
-   "title": "File:Juppentracht 08a.JPG",
-   "final": 0.537,
-   "p": 0.4984,
-   "photo": 0.9496,
-   "fit": 0.211,
+   "title": "File:Mother and little daughter Vietnam.jpg",
+   "final": 0.489,
+   "p": 0.0048,
+   "photo": 0.9942,
+   "fit": 0.231,
    "how": "yolo:person",
    "notes": [
     "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.55)"
+    "subject cannot fit 3:4 (box cov 0.60)"
    ],
    "flags": [
-    "low word prob 0.50",
-    "fit 0.21"
+    "low word prob 0.00",
+    "fit 0.23"
    ],
    "origin": "search:mother and daughter",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "actions|RUN": {
@@ -7101,20 +7115,16 @@
    "forced": false
   },
   "clothes|SHORTS": {
-   "title": "File:Red short shorts.jpg",
-   "final": 0.897,
-   "p": 0.9689,
-   "photo": 0.3375,
-   "fit": 0.8,
+   "title": "File:Child on dock barefoot.jpg",
+   "final": 1.017,
+   "p": 0.615,
+   "photo": 0.9626,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "not photo-like 0.34"
-   ],
-   "origin": "search:shorts clothing",
-   "n_cands": 8,
+   "notes": [],
+   "flags": [],
+   "origin": "search:child shorts clothing",
+   "n_cands": 4,
    "forced": false
   },
   "clothes|SWEATER": {
@@ -7219,17 +7229,21 @@
    "forced": false
   },
   "clothes|MASK": {
-   "title": "File:Twisted Face Mask MET DP-12565-001.jpg",
-   "final": 1.228,
+   "title": "File:Surgical face mask.jpg",
+   "final": 1.004,
    "p": 1.0,
-   "photo": 0.6627,
-   "fit": 1.0,
+   "photo": 0.6822,
+   "fit": 0.487,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:face mask",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.81)"
+   ],
+   "flags": [
+    "fit 0.49"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "clothes|WATCH": {
    "title": "File:Fossil wristwatch with white background.jpg",
@@ -7538,7 +7552,7 @@
   },
   "family|PARENTS": {
    "title": "File:Parents and their baby.jpg",
-   "final": 0.887,
+   "final": 0.957,
    "p": 0.9987,
    "photo": 0.9694,
    "fit": 0.154,
@@ -7551,13 +7565,13 @@
     "fit 0.15"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "family|GRANDPARENTS": {
    "title": "File:Great-Great Grandparents Perez.jpg",
-   "final": 1.096,
-   "p": 0.988,
+   "final": 1.301,
+   "p": 0.9979,
    "photo": 0.9999,
    "fit": 1.0,
    "how": "yolo:person",
@@ -7569,8 +7583,8 @@
   },
   "family|COUSIN": {
    "title": "File:MariaBrayanNewOrleans1911.jpg",
-   "final": 0.656,
-   "p": 0.5293,
+   "final": 0.798,
+   "p": 0.5255,
    "photo": 0.9999,
    "fit": 0.471,
    "how": "yolo:person",
@@ -7581,30 +7595,28 @@
     "fit 0.47"
    ],
    "origin": "search:cousins children",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "family|TWINS": {
-   "title": "File:Twin lantana camara edit.jpg",
-   "final": 0.906,
-   "p": 0.9848,
-   "photo": 0.9642,
-   "fit": 0.412,
+   "title": "File:TwinTowers, Berlin-Treptow, 1705252211, ako.jpg",
+   "final": 0.787,
+   "p": 0.0,
+   "photo": 0.9398,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.69)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.41"
+    "low word prob 0.00"
    ],
    "origin": "search:twins",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "family|HUSBAND": {
    "title": "File:George & Marguerite Westinghouse as a young married couple.png",
-   "final": 0.908,
-   "p": 0.6532,
+   "final": 1.126,
+   "p": 0.6561,
    "photo": 0.9874,
    "fit": 1.0,
    "how": "yolo:person",
@@ -7616,8 +7628,8 @@
   },
   "family|WIFE": {
    "title": "File:Married couple by Atelier Lortet.jpg",
-   "final": 0.741,
-   "p": 0.3468,
+   "final": 0.974,
+   "p": 0.3474,
    "photo": 1.0,
    "fit": 1.0,
    "how": "yolo:person",
@@ -7631,23 +7643,23 @@
   },
   "family|FRIEND": {
    "title": "File:Biograph poster2.jpg",
-   "final": 0.969,
+   "final": 0.668,
    "p": 0.9976,
-   "photo": 0.0101,
+   "photo": 0.0,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "not photo-like 0.01"
+    "not photo-like 0.00"
    ],
    "origin": "search:friends",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "family|NEIGHBOR": {
    "title": "File:MadamuTonyobo.jpg",
    "final": 0.484,
-   "p": 0.0,
+   "p": 0.0001,
    "photo": 0.7332,
    "fit": 0.656,
    "how": "yolo:person",
@@ -13442,15 +13454,15 @@
    "forced": false
   },
   "clothes|JEANS": {
-   "title": "File:Jeans Centre, Winschoten (2020) 03.jpg",
-   "final": 1.28,
-   "p": 0.9959,
-   "photo": 0.7941,
+   "title": "File:2002 Junya Watanabe for Comme des Garçons jacket, blue denim jeans patchwork 03.jpg",
+   "final": 1.306,
+   "p": 0.9933,
+   "photo": 0.9612,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "search:jeans clothing",
+   "origin": "search:denim jeans",
    "n_cands": 6,
    "forced": false
   },
@@ -13503,36 +13515,26 @@
    "forced": false
   },
   "clothes|UNDERWEAR": {
-   "title": "File:Bodysuit worn with sheer tights (pantyhose) and Shirt worn with opaque tights - variant with street clothing.jpg",
-   "final": -0.009,
-   "p": 0.0,
-   "photo": 0.9987,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00",
-    "check safety 0.92"
-   ],
-   "origin": "search:underwear clothing product",
-   "n_cands": 2,
-   "forced": false
+   "status": "no candidates"
   },
   "clothes|BIKINI": {
-   "title": "File:Young women of Naples in swimsuit, Italy 1948 (2) - Bathing boxes.jpg",
-   "final": 0.614,
-   "p": 0.0018,
-   "photo": 0.9994,
-   "fit": 0.8,
+   "title": "File:CLOSEUP OF A BLACK BEAUTY GRACING A FLOAT DURING THE ANNUAL BUD BILLIKEN DAY PARADE ALONG DR. MARTIN L. KING JR.... - NARA - 556281.jpg",
+   "final": -0.136,
+   "p": 0.0023,
+   "photo": 0.6389,
+   "fit": 0.648,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.00",
+    "fit 0.65",
+    "check safety 0.91"
    ],
-   "origin": "search:bikini swimsuit product",
-   "n_cands": 6,
+   "origin": "search:bikini swimwear product",
+   "n_cands": 1,
    "forced": false
   },
   "clothes|SNEAKERS": {
@@ -13545,21 +13547,25 @@
    "notes": [],
    "flags": [],
    "origin": "search:sneakers clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|HIGH HEELS": {
-   "title": "File:Stripper shoes Pleaser high heeled shoes 2023.jpg",
-   "final": 1.189,
-   "p": 0.9209,
-   "photo": 0.6413,
-   "fit": 1.0,
+   "title": "File:High-heeled shoes on display in Huangpu, Shanghai (20180211145140).jpg",
+   "final": 0.902,
+   "p": 0.8461,
+   "photo": 0.5366,
+   "fit": 0.349,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:high heels shoes",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.58)"
+   ],
+   "flags": [
+    "fit 0.35"
+   ],
+   "origin": "current",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "clothes|RING": {
    "title": "File:Glass finger ring MET DP121097.jpg",
@@ -13588,7 +13594,7 @@
     "fit 0.44"
    ],
    "origin": "search:earrings",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "clothes|BRACELET": {
@@ -14612,8 +14618,8 @@
   },
   "family|ME": {
    "title": "File:Cavalry Soldiers Support Bavarian USO (4940794).jpg",
-   "final": 0.323,
-   "p": 0.0325,
+   "final": 0.358,
+   "p": 0.1033,
    "photo": 0.7969,
    "fit": 0.26,
    "how": "yolo:person",
@@ -14622,7 +14628,7 @@
     "subject cannot fit 3:4 (box cov 0.68)"
    ],
    "flags": [
-    "low word prob 0.03",
+    "low word prob 0.10",
     "fit 0.26"
    ],
    "origin": "search:selfie child",
@@ -14631,8 +14637,8 @@
   },
   "family|BOY": {
    "title": "File:Smiling little boy of Laos.jpg",
-   "final": 0.867,
-   "p": 0.7706,
+   "final": 0.996,
+   "p": 0.7715,
    "photo": 0.9904,
    "fit": 0.454,
    "how": "yolo:person",
@@ -14644,13 +14650,13 @@
     "fit 0.45"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "family|GIRL": {
    "title": "File:Young girl smiling in sunshine (2).jpg",
-   "final": 0.846,
-   "p": 0.7161,
+   "final": 1.1,
+   "p": 0.9056,
    "photo": 0.9887,
    "fit": 0.64,
    "how": "yolo:person",
@@ -14661,13 +14667,13 @@
     "fit 0.64"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "family|MAN": {
    "title": "File:Outdoors-man-portrait (cropped).jpg",
-   "final": 0.588,
-   "p": 0.4317,
+   "final": 0.955,
+   "p": 0.8915,
    "photo": 0.8648,
    "fit": 0.478,
    "how": "yolo:person",
@@ -14676,30 +14682,23 @@
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.43",
     "fit 0.48"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "family|WOMAN": {
-   "title": "File:Woman at Lover's Bridge Tanjung Sepat (cropped).jpg",
-   "final": 0.472,
-   "p": 0.1955,
-   "photo": 0.7536,
-   "fit": 0.528,
+   "title": "File:Woman beggar in Guanajuato, Mexico.jpg",
+   "final": 1.346,
+   "p": 0.9125,
+   "photo": 0.9566,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.20",
-    "fit 0.53"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:woman",
+   "n_cands": 10,
    "forced": false
   },
   "fruits|CANTALOUPE": {
@@ -20340,199 +20339,192 @@
    "forced": false
   },
   "family|MOM": {
-   "title": "File:MOM Cultural Center.jpg",
-   "final": 0.613,
-   "p": 0.0,
-   "photo": 0.769,
-   "fit": 0.8,
-   "how": "yolo:person",
+   "title": "File:Female Toque macaque with baby - (Harmony of Life).jpg",
+   "final": 0.687,
+   "p": 0.4978,
+   "photo": 0.9329,
+   "fit": 0.3,
+   "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.98)"
    ],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.50",
+    "fit 0.30"
    ],
-   "origin": "search:mom",
-   "n_cands": 4,
+   "origin": "search:mother and child",
+   "n_cands": 8,
    "forced": false
   },
   "family|DAD": {
-   "title": "File:Old Dad (1920) - 5.jpg",
-   "final": 0.85,
-   "p": 0.9622,
-   "photo": 0.4677,
-   "fit": 0.43,
+   "title": "File:Lion (Panthera leo) male and cub Etosha.jpg",
+   "final": 0.518,
+   "p": 0.0941,
+   "photo": 0.9648,
+   "fit": 0.508,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.90)"
+    "subject cannot fit 3:4 (box cov 0.85)"
    ],
    "flags": [
-    "fit 0.43",
-    "not photo-like 0.47"
+    "low word prob 0.09",
+    "fit 0.51"
    ],
-   "origin": "search:dad",
+   "origin": "search:father with son",
    "n_cands": 7,
    "forced": false
   },
   "family|GRANDMA": {
-   "title": "File:NPG 81.8 Grandma Moses Clara Sipprell (cropped).jpg",
-   "final": 0.873,
-   "p": 0.3593,
-   "photo": 0.9669,
-   "fit": 0.8,
+   "title": "File:Grandmother and Grandchild.jpg",
+   "final": 0.769,
+   "p": 0.4323,
+   "photo": 0.9085,
+   "fit": 0.511,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)"
+    "subject cannot fit 3:4 (box cov 0.85)"
    ],
    "flags": [
-    "low word prob 0.36"
+    "low word prob 0.43",
+    "fit 0.51"
    ],
-   "origin": "search:grandma",
-   "n_cands": 8,
+   "origin": "search:grandmother with grandchild",
+   "n_cands": 7,
    "forced": false
   },
   "family|GRANDPA": {
-   "title": "File:Grandpa in 1950.jpg",
-   "final": 0.597,
-   "p": 0.1072,
-   "photo": 0.9361,
-   "fit": 0.512,
+   "title": "File:Grandfather and grandchild in Goa.jpg",
+   "final": 0.394,
+   "p": 0.0021,
+   "photo": 0.8949,
+   "fit": 0.23,
    "how": "yolo:person",
    "notes": [
-    "touches 3 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.11",
-    "fit 0.51"
-   ],
-   "origin": "search:grandpa",
-   "n_cands": 8,
-   "forced": false
-  },
-  "family|NEPHEW": {
-   "title": "File:Smith ^ Nephew Healthcare, Hull - geograph.org.uk - 3717776.jpg",
-   "final": 0.59,
-   "p": 0.0001,
-   "photo": 0.9511,
-   "fit": 0.8,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:nephew",
-   "n_cands": 6,
-   "forced": false
-  },
-  "family|NIECE": {
-   "title": "File:My Japanese Niece.jpg",
-   "final": 0.205,
-   "p": 0.9351,
-   "photo": 0.0004,
-   "fit": 0.224,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.37)"
-   ],
-   "flags": [
-    "fit 0.22",
-    "not photo-like 0.00"
-   ],
-   "origin": "search:niece",
-   "n_cands": 3,
-   "forced": false
-  },
-  "family|GRANDSON": {
-   "title": "File:Grandson railway station.jpg",
-   "final": 0.234,
-   "p": 0.0,
-   "photo": 0.7272,
-   "fit": 0.178,
-   "how": "none",
-   "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.42)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.60)"
    ],
    "flags": [
     "low word prob 0.00",
-    "fit 0.18"
+    "fit 0.23"
    ],
-   "origin": "search:grandson",
-   "n_cands": 2,
+   "origin": "search:grandfather with grandchild",
+   "n_cands": 6,
    "forced": false
   },
-  "family|GRANDDAUGHTER": {
-   "title": "File:Mary Jane Richardson Jones and granddaughter.jpg",
-   "final": 0.664,
-   "p": 0.0006,
-   "photo": 0.9999,
-   "fit": 0.822,
+  "family|NEPHEW": {
+   "title": "File:Onkel og Nevø.jpg",
+   "final": 0.478,
+   "p": 0.0,
+   "photo": 0.9994,
+   "fit": 0.556,
    "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.93)"
    ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.56"
+   ],
+   "origin": "search:uncle with nephew",
+   "n_cands": 5,
+   "forced": false
+  },
+  "family|NIECE": {
+   "title": "File:Uncle and niece.jpg",
+   "final": 0.703,
+   "p": 0.0092,
+   "photo": 0.6793,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:uncle with niece",
+   "n_cands": 6,
+   "forced": false
+  },
+  "family|GRANDSON": {
+   "title": "File:Grandfather with grandson on lawn - garden fence 01.jpg",
+   "final": 0.812,
+   "p": 0.0001,
+   "photo": 0.9985,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:granddaughter",
+   "origin": "search:grandfather with grandson",
    "n_cands": 8,
    "forced": false
   },
-  "family|CHILD": {
-   "title": "File:Child with Smallpox Bangladesh.jpg",
-   "final": 0.867,
-   "p": 0.8634,
-   "photo": 0.9979,
-   "fit": 0.274,
-   "how": "yolo:person",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.89)"
-   ],
-   "flags": [
-    "fit 0.27"
-   ],
-   "origin": "search:child",
-   "n_cands": 9,
-   "forced": false
-  },
-  "family|TODDLER": {
-   "title": "File:Toddler tunnel - geograph.org.uk - 2468659.jpg",
-   "final": 0.694,
-   "p": 0.0001,
-   "photo": 0.965,
+  "family|GRANDDAUGHTER": {
+   "title": "File:Grandfather and granddaughter - geograph.org.uk - 4722136.jpg",
+   "final": 0.699,
+   "p": 0.0,
+   "photo": 0.9939,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:toddler",
-   "n_cands": 6,
+   "origin": "search:grandfather with granddaughter",
+   "n_cands": 7,
    "forced": false
   },
-  "family|TEENAGER": {
-   "title": "File:Couple of teenagers riding a jetski splashing on the Mekong in Laos.jpg",
-   "final": 0.75,
-   "p": 0.2271,
-   "photo": 0.6777,
+  "family|CHILD": {
+   "title": "File:Child Playing Near Chrysanthemums by Mathilde Weil.jpg",
+   "final": 1.172,
+   "p": 0.7662,
+   "photo": 0.9999,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:child playing",
+   "n_cands": 7,
+   "forced": false
+  },
+  "family|TODDLER": {
+   "title": "File:Safety1.jpg",
+   "final": 0.757,
+   "p": 0.0012,
+   "photo": 0.9589,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "low word prob 0.23"
+    "low word prob 0.00"
    ],
-   "origin": "search:teenager",
-   "n_cands": 6,
+   "origin": "search:toddler walking",
+   "n_cands": 8,
+   "forced": false
+  },
+  "family|TEENAGER": {
+   "title": "File:Head-and-shoulders portrait of Mohamed Latheef as a teenager at Royal College, Colombo (c. 1966), photographed by Ali Najeeb; digitally restored and colorized from the original B&W family photograph.png",
+   "final": 0.96,
+   "p": 0.9911,
+   "photo": 0.6127,
+   "fit": 0.288,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "fit 0.29"
+   ],
+   "origin": "search:teenager portrait",
+   "n_cands": 9,
    "forced": false
   },
   "family|ADULT": {
    "title": "File:Blackbuck in Tal Chhapar Sanctuary November 2025 by Tisha Mukherjee 06.jpg",
-   "final": 1.163,
-   "p": 0.9344,
+   "final": 0.958,
+   "p": 0.5205,
    "photo": 0.8583,
    "fit": 0.847,
    "how": "saliency",
@@ -20540,29 +20532,31 @@
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "search:adult",
+   "origin": "search:adults",
    "n_cands": 7,
    "forced": false
   },
   "family|BEST FRIEND": {
-   "title": "File:Your Best Friend (1922) - 5.jpg",
-   "final": 1.188,
-   "p": 0.9999,
-   "photo": 0.4396,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.44"
+   "title": "File:Elated male friends.jpg",
+   "final": 0.88,
+   "p": 0.6345,
+   "photo": 0.4787,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
    ],
-   "origin": "search:best friend",
-   "n_cands": 7,
+   "flags": [
+    "not photo-like 0.48"
+   ],
+   "origin": "search:two friends hugging",
+   "n_cands": 8,
    "forced": false
   },
   "family|PET": {
    "title": "File:Boy and his dog.jpg",
-   "final": 1.137,
-   "p": 0.9975,
+   "final": 1.138,
+   "p": 0.9997,
    "photo": 0.9959,
    "fit": 0.677,
    "how": "yolo:person",
@@ -20578,125 +20572,58 @@
    "forced": false
   },
   "family|GUEST": {
-   "title": "File:Aks The Reflection Taj Mahal.jpg",
-   "final": 0.721,
-   "p": 0.1265,
-   "photo": 0.898,
-   "fit": 0.762,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
+   "title": "File:CTIO Star Party (Tololo-Star-Party1-CC).jpg",
+   "final": 0.698,
+   "p": 0.0,
+   "photo": 0.9905,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
    "flags": [
-    "low word prob 0.13"
+    "low word prob 0.00"
    ],
-   "origin": "search:guest",
-   "n_cands": 6,
+   "origin": "search:guests at a party",
+   "n_cands": 7,
    "forced": false
   },
   "family|LADY": {
-   "title": "File:Lady with an Ermine - Leonardo da Vinci - Google Art Project.jpg",
-   "final": 0.785,
-   "p": 0.6331,
-   "photo": 0.6192,
-   "fit": 0.542,
-   "how": "yolo:person",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "fit 0.54"
-   ],
-   "origin": "search:lady",
-   "n_cands": 8,
-   "forced": false
-  },
-  "family|GENTLEMAN": {
-   "title": "File:Portrait of an elegant young gentleman by John White Restored.jpg",
-   "final": 1.291,
-   "p": 0.9803,
-   "photo": 0.9991,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [],
-   "origin": "search:gentleman",
-   "n_cands": 6,
-   "forced": false
-  },
-  "family|PEOPLE": {
-   "title": "File:Crowds of French patriots line the Champs Elysees-edit2.jpg",
-   "final": 1.1,
-   "p": 0.9762,
-   "photo": 0.9928,
-   "fit": 0.8,
-   "how": "yolo:person",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [],
-   "origin": "search:people crowd",
-   "n_cands": 8,
-   "forced": false
-  },
-  "family|PERSON": {
-   "title": "File:Giant Marbles in Joshua Tree National Park.jpg",
-   "final": 0.8,
-   "p": 0.0215,
-   "photo": 0.9613,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.02"
-   ],
-   "origin": "search:person",
-   "n_cands": 9,
-   "forced": false
-  },
-  "family|NANNY": {
-   "title": "File:Nanny Nilsson.jpg",
-   "final": 0.356,
-   "p": 0.0014,
-   "photo": 0.7937,
-   "fit": 0.272,
-   "how": "yolo:person",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.89)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.27"
-   ],
-   "origin": "search:nanny",
-   "n_cands": 4,
-   "forced": false
-  },
-  "family|GREAT-GRANDMOTHER": {
-   "title": "File:Great grandmother and mermaids, Ballina, NSW 20250101 111615.jpg",
-   "final": 0.456,
-   "p": 0.0001,
-   "photo": 0.9998,
+   "title": "File:Lynch Albert Portrait Of An Elegant Lady.jpg",
+   "final": 0.861,
+   "p": 0.8105,
+   "photo": 0.5684,
    "fit": 0.512,
    "how": "yolo:person",
    "notes": [
     "touches 3 edge(s)"
    ],
    "flags": [
-    "low word prob 0.00",
     "fit 0.51"
    ],
-   "origin": "search:great-grandmother",
+   "origin": "search:elegant lady portrait",
+   "n_cands": 8,
+   "forced": false
+  },
+  "family|GENTLEMAN": {
+   "title": "File:Portrait of a gentleman (by Arthur Devis).jpg",
+   "final": 0.396,
+   "p": 0.4847,
+   "photo": 0.0022,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.48",
+    "not photo-like 0.00"
+   ],
+   "origin": "search:gentleman in suit",
    "n_cands": 7,
    "forced": false
   },
-  "family|BRIDE": {
-   "title": "File:Hindu Bride, Ahmedabad, Gujarat.jpg",
-   "final": 1.097,
-   "p": 0.9929,
-   "photo": 0.9883,
+  "family|PEOPLE": {
+   "title": "File:Group of Piro people.jpg",
+   "final": 0.785,
+   "p": 0.9892,
+   "photo": 0.9993,
    "fit": 0.54,
    "how": "yolo:person",
    "notes": [
@@ -20706,33 +20633,97 @@
    "flags": [
     "fit 0.54"
    ],
-   "origin": "search:bride",
+   "origin": "search:group of people",
+   "n_cands": 9,
+   "forced": false
+  },
+  "family|PERSON": {
+   "title": "File:Fawn and white Welsh Corgi puppy standing on rear legs and sticking out the tongue.jpg",
+   "final": 0.782,
+   "p": 0.0005,
+   "photo": 0.9551,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:a person standing",
+   "n_cands": 10,
+   "forced": false
+  },
+  "family|NANNY": {
+   "title": "File:Babysitter under bamboo tree in Japan (1914 by Elstner Hilton).jpg",
+   "final": 0.735,
+   "p": 0.0001,
+   "photo": 0.9999,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:babysitter with children",
    "n_cands": 7,
    "forced": false
   },
-  "family|GROOM": {
-   "title": "File:Identifying the groom on kwanjula ceremony.jpg",
-   "final": 0.656,
-   "p": 0.2913,
-   "photo": 0.9751,
-   "fit": 0.463,
-   "how": "yolo:person",
+  "family|GREAT-GRANDMOTHER": {
+   "title": "File:Frederick J. Gottfredsen House 2013.jpg",
+   "final": 0.54,
+   "p": 0.0,
+   "photo": 0.935,
+   "fit": 0.579,
+   "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
     "subject cannot fit 3:4 (box cov 0.96)"
    ],
    "flags": [
-    "low word prob 0.29",
-    "fit 0.46"
+    "low word prob 0.00",
+    "fit 0.58"
    ],
-   "origin": "search:groom",
+   "origin": "search:great-grandmother with baby",
    "n_cands": 7,
+   "forced": false
+  },
+  "family|BRIDE": {
+   "title": "File:Bride offering her respects to God through a traditional gesture known as Namaskaram (01)-1.jpg",
+   "final": 0.961,
+   "p": 0.944,
+   "photo": 0.9225,
+   "fit": 0.289,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "fit 0.29"
+   ],
+   "origin": "search:bride",
+   "n_cands": 9,
+   "forced": false
+  },
+  "family|GROOM": {
+   "title": "File:The Lost Bridegroom 1916 John Barrymore and pooch.jpg",
+   "final": 0.607,
+   "p": 0.0,
+   "photo": 0.9938,
+   "fit": 0.816,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:bridegroom",
+   "n_cands": 8,
    "forced": false
   },
   "family|WEDDING": {
    "title": "File:Wedding couple at war memorial, vologda.JPG",
-   "final": 1.297,
-   "p": 0.9986,
+   "final": 1.298,
+   "p": 0.9996,
    "photo": 0.9883,
    "fit": 1.0,
    "how": "yolo:person",
@@ -20760,53 +20751,56 @@
    "forced": false
   },
   "family|SIBLINGS": {
-   "title": "File:Chichen Itza Siblings Arch.jpg",
-   "final": 0.602,
-   "p": 0.0035,
-   "photo": 0.9786,
-   "fit": 0.8,
+   "title": "File:KASHFI SHAH WITH HER SIBLINGS AS CHILDREN 1.jpg",
+   "final": 0.652,
+   "p": 0.0694,
+   "photo": 1.0,
+   "fit": 0.64,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.07",
+    "fit 0.64"
    ],
-   "origin": "search:siblings",
-   "n_cands": 7,
+   "origin": "search:siblings children",
+   "n_cands": 6,
    "forced": false
   },
   "family|FAMILY TREE": {
-   "title": "File:Family Tree of the Tahboub Al-Marwani clan.jpg",
-   "final": 0.712,
-   "p": 1.0,
-   "photo": 0.1404,
-   "fit": 0.8,
-   "how": "yolo:person",
+   "title": "File:1932 - Green Tree Family Dining - Dorney Park - Allentown PA.jpg",
+   "final": 0.549,
+   "p": 0.9999,
+   "photo": 0.0696,
+   "fit": 0.582,
+   "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "upscaled x2.0"
+    "subject cannot fit 3:4 (box cov 0.97)"
    ],
    "flags": [
-    "not photo-like 0.14"
+    "fit 0.58",
+    "not photo-like 0.07"
    ],
-   "origin": "search:family tree",
+   "origin": "search:family tree chart",
    "n_cands": 7,
    "forced": false
   },
   "family|VISITOR": {
-   "title": "File:Kitt Peak Visitor Center (Ordered KPNO Visitor Center-CC).jpg",
-   "final": 1.133,
-   "p": 0.8357,
-   "photo": 0.4505,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.45"
+   "title": "File:Visitors crowd round a stall in Pitstone Green Museum - geograph.org.uk - 5515584.jpg",
+   "final": 0.989,
+   "p": 0.9736,
+   "photo": 0.8363,
+   "fit": 0.496,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.83)"
    ],
-   "origin": "search:visitor",
-   "n_cands": 9,
+   "flags": [
+    "fit 0.50"
+   ],
+   "origin": "search:museum visitors",
+   "n_cands": 7,
    "forced": false
   },
   "technology|MONITOR": {
@@ -26046,23 +26040,22 @@
    "forced": false
   },
   "clothes|BLOUSE": {
-   "title": "File:Wolford bodysuit blouses in faux wrap and high-waisted styles - Variant 2.jpg",
-   "final": 0.722,
-   "p": 0.4797,
-   "photo": 0.9981,
-   "fit": 0.448,
+   "title": "File:Slightly business casual Informal wear - pose 1.jpg",
+   "final": 0.502,
+   "p": 0.0013,
+   "photo": 0.9705,
+   "fit": 0.474,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.93)"
+    "subject cannot fit 3:4 (box cov 0.79)"
    ],
    "flags": [
-    "low word prob 0.48",
-    "fit 0.45"
+    "low word prob 0.00",
+    "fit 0.47"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
-   "forced": false
+   "n_cands": 1,
+   "forced": true
   },
   "clothes|CARDIGAN": {
    "title": "File:UNIQLO clothing 2026-08-18 Philippines 03.jpg",
@@ -26178,23 +26171,21 @@
    "forced": false
   },
   "clothes|HEADBAND": {
-   "title": "File:13-08-09 Taubertal Jennifer Rostock Jennifer 5.JPG",
-   "final": 0.313,
-   "p": 0.0,
-   "photo": 0.4748,
-   "fit": 0.436,
+   "title": "File:Flapper headband, 1920s hair accessory, black velvet head piece - imogen.jpg",
+   "final": 1.055,
+   "p": 0.9961,
+   "photo": 0.8462,
+   "fit": 0.649,
    "how": "saliency",
    "notes": [
     "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.91)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.44",
-    "not photo-like 0.47"
+    "fit 0.65"
    ],
-   "origin": "search:QI",
-   "n_cands": 8,
+   "origin": "search:headband hair accessory",
+   "n_cands": 6,
    "forced": false
   },
   "clothes|HAIR CLIP": {
@@ -29295,8 +29286,11 @@
   "clothes|GOGGLES",
   "clothes|HAIR CLIP",
   "clothes|HEADBAND",
+  "clothes|HIGH HEELS",
+  "clothes|JACKET",
   "clothes|KNEE PADS",
   "clothes|LEGGINGS",
+  "clothes|MASK",
   "clothes|NIGHTGOWN",
   "clothes|PAJAMAS",
   "clothes|POCKET",
@@ -29304,7 +29298,6 @@
   "clothes|SANDALS",
   "clothes|SHIRT",
   "clothes|SHOELACES",
-  "clothes|SHORTS",
   "clothes|SKIRT",
   "clothes|SLEEVE",
   "clothes|SLIPPERS",
@@ -29370,7 +29363,6 @@
   "family|BOY",
   "family|BRIDE",
   "family|BROTHER",
-  "family|CHILD",
   "family|COUSIN",
   "family|DAD",
   "family|DAUGHTER",
@@ -29378,6 +29370,7 @@
   "family|FAMILY TREE",
   "family|FATHER",
   "family|FRIEND",
+  "family|GENTLEMAN",
   "family|GIRL",
   "family|GRANDDAUGHTER",
   "family|GRANDFATHER",
@@ -29399,6 +29392,7 @@
   "family|NEWBORN",
   "family|NIECE",
   "family|PARENTS",
+  "family|PEOPLE",
   "family|PERSON",
   "family|PET",
   "family|SIBLINGS",
@@ -29410,7 +29404,6 @@
   "family|UNCLE",
   "family|VISITOR",
   "family|WIFE",
-  "family|WOMAN",
   "feelings|AFRAID",
   "feelings|AMAZED",
   "feelings|ANNOYED",
@@ -30201,7 +30194,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1891,
-  "flagged": 1090
+  "with_photo": 1890,
+  "flagged": 1092
  }
 }

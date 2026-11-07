@@ -13060,7 +13060,22 @@
    "forced": false
   },
   "nature|ROOT": {
-   "status": "no candidates"
+   "title": "File:Wandeling over het Hulshorsterzand-Hulshorsterheide 07-03-2020. (d.j.b) 20.jpg",
+   "final": 0.743,
+   "p": 0.4069,
+   "photo": 0.8818,
+   "fit": 0.556,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.93)"
+   ],
+   "flags": [
+    "low word prob 0.41",
+    "fit 0.56"
+   ],
+   "origin": "search:tree roots",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|BUSH": {
    "title": "File:Cytisus scoparius2.jpg",
@@ -13080,7 +13095,17 @@
    "forced": false
   },
   "nature|PALM TREE": {
-   "status": "no candidates"
+   "title": "File:Palm tree boulevard (Unsplash).jpg",
+   "final": 1.285,
+   "p": 0.9919,
+   "photo": 0.9928,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:palm tree",
+   "n_cands": 6,
+   "forced": false
   },
   "nature|LOTUS": {
    "title": "File:Sacred lotus Nelumbo nucifera.jpg",
@@ -13115,7 +13140,21 @@
    "forced": false
   },
   "nature|SUNFLOWER": {
-   "status": "no candidates"
+   "title": "File:Sunflowers helianthus annuus.jpg",
+   "final": 1.184,
+   "p": 0.999,
+   "photo": 0.9992,
+   "fit": 0.574,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.96)"
+   ],
+   "flags": [
+    "fit 0.57"
+   ],
+   "origin": "search:sunflower",
+   "n_cands": 6,
+   "forced": false
   },
   "nature|ORCHID": {
    "title": "File:Plant Orchid Cymbidium aloifolium P1110661 05 - cropped.jpg",
@@ -13148,7 +13187,19 @@
    "forced": false
   },
   "nature|EARTH": {
-   "status": "no candidates"
+   "title": "File:STS-135 final flyaround of ISS 1.jpg",
+   "final": 0.994,
+   "p": 0.4947,
+   "photo": 0.8517,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.49"
+   ],
+   "origin": "search:Earth from space",
+   "n_cands": 4,
+   "forced": false
   },
   "nature|SPACE": {
    "title": "File:Webb's First Deep Field.jpg",
@@ -22868,94 +22919,431 @@
    "forced": false
   },
   "nature|VALLEY": {
-   "status": "no candidates"
+   "title": "File:Valley View Yosemite August 2013 002.jpg",
+   "final": 1.349,
+   "p": 0.9973,
+   "photo": 0.9988,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|CLIFF": {
-   "status": "no candidates"
+   "title": "File:Vertical granite cliff at sunset.jpg",
+   "final": 1.361,
+   "p": 0.9857,
+   "photo": 0.8494,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|GLACIER": {
-   "status": "no candidates"
+   "title": "File:Parque estatal Chugach, Alaska, Estados Unidos, 2017-08-22, DD 52.jpg",
+   "final": 1.306,
+   "p": 0.9997,
+   "photo": 0.936,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|ICEBERG": {
-   "status": "no candidates"
+   "title": "File:A look inside an iceberg (2), Liefdefjord, Svalbard.jpg",
+   "final": 1.064,
+   "p": 0.5561,
+   "photo": 0.9947,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|SWAMP": {
-   "status": "no candidates"
+   "title": "File:Болотные Кипарисы.jpg",
+   "final": 1.2,
+   "p": 0.6364,
+   "photo": 0.9987,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|MEADOW": {
-   "status": "no candidates"
+   "title": "File:Meadow in the Smoky Mountains (41923p).jpg",
+   "final": 1.393,
+   "p": 0.9942,
+   "photo": 0.9811,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|RICE PADDY": {
-   "status": "no candidates"
+   "title": "File:Rice paddy in Thailand.jpg",
+   "final": 1.31,
+   "p": 0.9999,
+   "photo": 0.9967,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:rice paddy Thailand",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|PEBBLE": {
-   "status": "no candidates"
+   "title": "File:Pebbles in Rethymno's beach.jpg",
+   "final": 1.172,
+   "p": 0.9445,
+   "photo": 0.9987,
+   "fit": 0.6,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "tiny subject"
+   ],
+   "flags": [
+    "fit 0.60"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|TWIG": {
-   "status": "no candidates"
+   "title": "File:Village weaver (Ploceus cucullatus cucullatus) female.jpg",
+   "final": 1.276,
+   "p": 0.879,
+   "photo": 0.9854,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "nature|THORN": {
-   "status": "no candidates"
+   "title": "File:Succulent leaf impaled on a thorn, Estufa Fria, Lisbon, Portugal julesvernex2.jpg",
+   "final": 1.383,
+   "p": 0.9728,
+   "photo": 0.9982,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|PETAL": {
-   "status": "no candidates"
+   "title": "File:Hibiscus with six petals. Odessa, Ukraine.jpg",
+   "final": 0.848,
+   "p": 0.0,
+   "photo": 0.9964,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|ACORN": {
-   "status": "no candidates"
+   "title": "File:Acorns on the granite bench, October 2015 - Stacking.jpg",
+   "final": 1.162,
+   "p": 0.9996,
+   "photo": 0.9998,
+   "fit": 0.526,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|PINE CONE": {
-   "status": "no candidates"
+   "title": "File:Pine cone July 2012-1.jpg",
+   "final": 1.332,
+   "p": 0.9999,
+   "photo": 0.9947,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|MANGROVE": {
-   "status": "no candidates"
+   "title": "File:Mangrove Islet.jpg",
+   "final": 1.364,
+   "p": 0.9999,
+   "photo": 0.9786,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|MOSS": {
-   "status": "no candidates"
+   "title": "File:Gilled Mushrooms Moss Stump Ooty Sep26 A7CR 13812-81 zsp.jpg",
+   "final": 1.105,
+   "p": 0.9013,
+   "photo": 0.9973,
+   "fit": 0.769,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|FERN": {
-   "status": "no candidates"
+   "title": "File:Lady ferns and wood sorrel.jpg",
+   "final": 1.299,
+   "p": 0.9995,
+   "photo": 0.9984,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|DAISY": {
-   "status": "no candidates"
+   "title": "File:Leucanthemum superbum silverspoons May 2026-1.jpg",
+   "final": 1.373,
+   "p": 0.9792,
+   "photo": 0.9979,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|TULIP": {
-   "status": "no candidates"
+   "title": "File:Tulip agenensis ZE.jpg",
+   "final": 1.313,
+   "p": 0.9985,
+   "photo": 0.999,
+   "fit": 0.828,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|JASMINE": {
-   "status": "no candidates"
+   "title": "File:Bloemen van de Boerenjasmijn (Philadelphus microphyllus). Locatie, Tuinreservaat Jonkervallei 01.jpg",
+   "final": 1.107,
+   "p": 0.9998,
+   "photo": 0.9764,
+   "fit": 0.525,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|MARIGOLD": {
-   "status": "no candidates"
+   "title": "File:French marigold garden 2026 G1.jpg",
+   "final": 1.399,
+   "p": 0.9989,
+   "photo": 0.9983,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|HIBISCUS": {
-   "status": "no candidates"
+   "title": "File:Chinese hibiscus (Hibiscus × rosa-sinensis) flower, Estufa Fria, Lisbon, Portugal julesvernex2.jpg",
+   "final": 1.376,
+   "p": 0.9826,
+   "photo": 0.9241,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|DANDELION": {
-   "status": "no candidates"
+   "title": "File:Feldwespe (März 2023) 1.jpg",
+   "final": 1.188,
+   "p": 0.9589,
+   "photo": 0.8771,
+   "fit": 0.789,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "nature|FRANGIPANI": {
-   "status": "no candidates"
+   "title": "File:Plumeria (Frangipani) flowers.jpg",
+   "final": 0.973,
+   "p": 0.8387,
+   "photo": 0.9853,
+   "fit": 0.403,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.84)"
+   ],
+   "flags": [
+    "fit 0.40"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|GALAXY": {
-   "status": "no candidates"
+   "title": "File:Andromeda Galaxy 2025.png",
+   "final": 1.294,
+   "p": 0.9999,
+   "photo": 0.9679,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "nature|LAVA": {
-   "status": "no candidates"
+   "title": "File:Reynisfjara, Suðurland, Islandia, 2014-08-17, DD 164.JPG",
+   "final": 0.765,
+   "p": 0.02,
+   "photo": 0.9994,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.02"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|NEST": {
-   "status": "no candidates"
+   "title": "File:Red-headed weaver (Anaplectes rubriceps leuconotus) male.jpg",
+   "final": 1.295,
+   "p": 0.9999,
+   "photo": 0.9672,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "nature|BEEHIVE": {
-   "status": "no candidates"
+   "title": "File:Grotta Mangiapane BW 2025-04-30 14-36-20.jpg",
+   "final": 1.29,
+   "p": 0.9999,
+   "photo": 0.9514,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "nature|SPIDER WEB": {
-   "status": "no candidates"
+   "title": "File:Wasp spider (Argiope bruennichi) female ventral Hrdovicka.jpg",
+   "final": 1.243,
+   "p": 0.9994,
+   "photo": 0.9226,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "nature|FEATHER": {
-   "status": "no candidates"
+   "title": "File:Peacock feather close-up.jpg",
+   "final": 1.398,
+   "p": 0.9996,
+   "photo": 0.9914,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "nature|WOOD": {
-   "status": "no candidates"
+   "title": "File:Kirschholzbrett -- 2021 -- 7656.jpg",
+   "final": 0.974,
+   "p": 0.9996,
+   "photo": 0.8447,
+   "fit": 0.21,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.50)"
+   ],
+   "flags": [
+    "fit 0.21"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "places|HOUSE": {
    "title": "File:Adam Thoroughgood House - South LR.jpg",
@@ -24349,39 +24737,21 @@
   "nature|ACORN",
   "nature|AIR",
   "nature|BAMBOO",
-  "nature|BEEHIVE",
   "nature|BRANCH",
   "nature|BUSH",
-  "nature|CLIFF",
   "nature|CORAL",
-  "nature|DAISY",
-  "nature|DANDELION",
   "nature|EARTH",
-  "nature|FEATHER",
-  "nature|FERN",
   "nature|FLOWER",
   "nature|FRANGIPANI",
-  "nature|GALAXY",
-  "nature|GLACIER",
-  "nature|HIBISCUS",
   "nature|HILL",
-  "nature|ICEBERG",
   "nature|ISLAND",
   "nature|JASMINE",
   "nature|LAVA",
   "nature|LEAF",
   "nature|LOTUS",
-  "nature|MANGROVE",
-  "nature|MARIGOLD",
-  "nature|MEADOW",
-  "nature|MOSS",
-  "nature|NEST",
-  "nature|PALM TREE",
   "nature|PEBBLE",
   "nature|PETAL",
-  "nature|PINE CONE",
   "nature|PLANET",
-  "nature|RICE PADDY",
   "nature|ROCK",
   "nature|ROOT",
   "nature|SAND",
@@ -24390,15 +24760,9 @@
   "nature|SHELL",
   "nature|SKY",
   "nature|SPACE",
-  "nature|SPIDER WEB",
   "nature|STONE",
   "nature|STREAM",
   "nature|SUNFLOWER",
-  "nature|SWAMP",
-  "nature|THORN",
-  "nature|TULIP",
-  "nature|TWIG",
-  "nature|VALLEY",
   "nature|WOOD",
   "numbers|BILLION",
   "numbers|DOUBLE",
@@ -25072,7 +25436,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1440,
-  "flagged": 1310
+  "with_photo": 1474,
+  "flagged": 1286
  }
 }

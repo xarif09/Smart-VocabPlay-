@@ -15074,39 +15074,29 @@
    "forced": false
   },
   "vegetables|LETTUCE": {
-   "title": "File:Iceberg lettuce in SB.jpg",
-   "final": 0.82,
-   "p": 0.9723,
-   "photo": 0.9959,
-   "fit": 0.236,
-   "how": "none",
-   "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.56)"
-   ],
-   "flags": [
-    "fit 0.24"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "title": "File:Romaine lettuce J2.jpg",
+   "final": 1.103,
+   "p": 0.6071,
+   "photo": 0.9875,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:lettuce vegetable",
+   "n_cands": 9,
    "forced": false
   },
   "vegetables|SPINACH": {
-   "title": "File:Spinacia oleracea Spinazie bloeiend.jpg",
-   "final": 0.452,
-   "p": 0.0276,
-   "photo": 0.9455,
-   "fit": 0.75,
+   "title": "File:Spinach thrives in sack in Nairobi, Kenya.jpg",
+   "final": 1.258,
+   "p": 0.9176,
+   "photo": 0.918,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "tiny subject",
-    "upscaled x1.9"
-   ],
-   "flags": [
-    "low word prob 0.03"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:spinach vegetable",
+   "n_cands": 9,
    "forced": false
   },
   "vegetables|KALE": {
@@ -15125,23 +15115,23 @@
    "forced": false
   },
   "vegetables|MORNING GLORY": {
-   "title": "File:N Ipoa D1600.JPG",
-   "final": 0.643,
-   "p": 0.0219,
-   "photo": 0.9832,
+   "title": "File:Ipomoea aquatica (2).JPG",
+   "final": 0.94,
+   "p": 0.2408,
+   "photo": 0.9971,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.02"
+    "low word prob 0.24"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:Ipomoea aquatica vegetable",
+   "n_cands": 9,
    "forced": false
   },
   "vegetables|CUCUMBER": {
    "title": "File:ARS cucumber.jpg",
-   "final": 1.148,
+   "final": 1.351,
    "p": 0.9359,
    "photo": 0.997,
    "fit": 1.0,
@@ -15153,87 +15143,74 @@
    "forced": false
   },
   "vegetables|PUMPKIN": {
-   "title": "File:FrenchMarketPumpkinsB.jpg",
-   "final": 0.885,
-   "p": 0.9989,
-   "photo": 0.998,
-   "fit": 0.224,
-   "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.58)"
-   ],
-   "flags": [
-    "fit 0.22"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "vegetables|EGGPLANT": {
-   "title": "File:Solanum melongena 24 08 2012 (1).JPG",
-   "final": 1.101,
-   "p": 0.9945,
-   "photo": 0.9999,
-   "fit": 0.777,
+   "title": "File:Cucurbita pepo 2015 G1.jpg",
+   "final": 1.257,
+   "p": 0.9854,
+   "photo": 0.9676,
+   "fit": 0.765,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 10,
    "forced": false
   },
-  "vegetables|BELL PEPPER": {
-   "title": "File:Green-Yellow-Red-Pepper-2009.jpg",
-   "final": 1.002,
-   "p": 0.9999,
-   "photo": 0.9987,
-   "fit": 0.434,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.72)"
-   ],
-   "flags": [
-    "fit 0.43"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "vegetables|CORN COB": {
-   "title": "File:CookedCornOnTheCob.JPG",
-   "final": 0.574,
-   "p": 0.4144,
-   "photo": 0.719,
-   "fit": 0.265,
-   "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.69)"
-   ],
-   "flags": [
-    "low word prob 0.41",
-    "fit 0.26"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "vegetables|PEAS": {
-   "title": "File:Doperwt rijserwt peulen Pisum sativum.jpg",
-   "final": 0.575,
-   "p": 0.0429,
-   "photo": 0.9985,
+  "vegetables|EGGPLANT": {
+   "title": "File:Italian Eggplants On Sale In Fruit and Vegetable Store.jpg",
+   "final": 1.316,
+   "p": 0.9944,
+   "photo": 0.9997,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [
-    "low word prob 0.04"
+   "flags": [],
+   "origin": "search:eggplant vegetable",
+   "n_cands": 9,
+   "forced": false
+  },
+  "vegetables|BELL PEPPER": {
+   "title": "File:Capsicum ..jpg",
+   "final": 1.384,
+   "p": 0.9697,
+   "photo": 0.998,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
+  },
+  "vegetables|CORN COB": {
+   "title": "File:Zea mays 005.JPG",
+   "final": 1.252,
+   "p": 0.9063,
+   "photo": 0.9983,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
+  },
+  "vegetables|PEAS": {
+   "title": "File:Pea pod.jpg",
+   "final": 1.069,
+   "p": 0.7284,
+   "photo": 0.9971,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:green peas pod",
+   "n_cands": 6,
    "forced": false
   },
   "vegetables|BEANS": {
@@ -15267,93 +15244,73 @@
    "forced": false
   },
   "vegetables|CAULIFLOWER": {
-   "title": "File:Chou-fleur 02.jpg",
-   "final": 1.017,
-   "p": 0.9965,
-   "photo": 0.9933,
-   "fit": 0.545,
+   "title": "File:Romanesco Brassica oleracea close Richard Bartz.jpg",
+   "final": 1.375,
+   "p": 0.9755,
+   "photo": 0.9435,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.91)"
-   ],
-   "flags": [
-    "fit 0.54"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
    "forced": false
   },
   "vegetables|CELERY": {
-   "title": "File:Celery 1.jpg",
-   "final": 0.876,
-   "p": 0.9986,
-   "photo": 0.8606,
-   "fit": 0.172,
+   "title": "File:Mini celery.jpg",
+   "final": 1.274,
+   "p": 0.8737,
+   "photo": 0.9374,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.56)"
-   ],
-   "flags": [
-    "fit 0.17"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:celery vegetable",
+   "n_cands": 5,
    "forced": false
   },
   "vegetables|RADISH": {
-   "title": "File:Different kinds of White Radish.png",
-   "final": 0.531,
-   "p": 0.2728,
-   "photo": 0.9922,
-   "fit": 0.529,
+   "title": "File:Radieschen - Stadtmarkt Augsburg Juni 2015 8613.jpg",
+   "final": 0.947,
+   "p": 0.9793,
+   "photo": 0.9994,
+   "fit": 0.116,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.88)"
+    "touches 4 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.47)"
    ],
    "flags": [
-    "low word prob 0.27",
-    "fit 0.53"
+    "fit 0.12"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "vegetables|SWEET POTATO": {
-   "title": "File:Ipomoea batatas 006.JPG",
-   "final": 0.862,
-   "p": 0.9373,
-   "photo": 0.9286,
-   "fit": 0.218,
+   "title": "File:Sweet potatoes (20240221).jpg",
+   "final": 1.236,
+   "p": 0.8223,
+   "photo": 0.9598,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.57)"
-   ],
-   "flags": [
-    "fit 0.22"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:sweet potato vegetable",
+   "n_cands": 8,
    "forced": false
   },
   "vegetables|TARO": {
-   "title": "File:Songe-Réunion.JPG",
-   "final": 0.468,
-   "p": 0.2031,
-   "photo": 0.9792,
-   "fit": 0.449,
+   "title": "File:Asian Taro Root.jpg",
+   "final": 1.244,
+   "p": 0.8926,
+   "photo": 0.99,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.94)"
-   ],
-   "flags": [
-    "low word prob 0.20",
-    "fit 0.45"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:taro root",
+   "n_cands": 7,
    "forced": false
   },
   "vegetables|CASSAVA": {
@@ -15385,27 +15342,28 @@
    "forced": false
   },
   "vegetables|GALANGAL": {
-   "title": "File:Gardenology.org-IMG 7562 qsbg11mar.jpg",
-   "final": 0.458,
-   "p": 0.0007,
-   "photo": 0.9965,
-   "fit": 0.8,
+   "title": "File:Galangal.jpg",
+   "final": 0.925,
+   "p": 0.9965,
+   "photo": 0.9742,
+   "fit": 0.266,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)"
+    "subject cannot fit 3:4 (box cov 0.44)",
+    "upscaled x1.5"
    ],
    "flags": [
-    "low word prob 0.00"
+    "fit 0.27"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:galangal root",
+   "n_cands": 7,
    "forced": false
   },
   "vegetables|LEMONGRASS": {
    "title": "File:YosriNov04Pokok Serai.JPG",
-   "final": 1.013,
+   "final": 1.166,
    "p": 0.9934,
-   "photo": 0.9812,
+   "photo": 0.9811,
    "fit": 0.7,
    "how": "none",
    "notes": [
@@ -15415,26 +15373,20 @@
     "fit 0.70"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "vegetables|BASIL": {
-   "title": "File:Thai basil.jpg",
-   "final": 0.549,
-   "p": 0.2509,
-   "photo": 0.9771,
-   "fit": 0.64,
+   "title": "File:Glowing basil leaf.jpg",
+   "final": 1.241,
+   "p": 0.8634,
+   "photo": 0.9932,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "upscaled x1.8"
-   ],
-   "flags": [
-    "low word prob 0.25",
-    "fit 0.64"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:basil leaves",
+   "n_cands": 8,
    "forced": false
   },
   "vegetables|CORIANDER": {
@@ -15456,29 +15408,26 @@
    "forced": false
   },
   "vegetables|SPRING ONION": {
-   "title": "File:CSA-Red-Spring-Onions.jpg",
-   "final": 0.236,
-   "p": 0.0005,
-   "photo": 0.4005,
-   "fit": 0.252,
+   "title": "File:Blueten 003 2023 05 20.jpg",
+   "final": 0.788,
+   "p": 0.1206,
+   "photo": 0.905,
+   "fit": 0.766,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.52)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.25",
-    "not photo-like 0.40"
+    "low word prob 0.12"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "vegetables|LIME": {
    "title": "File:Lime Blossom.jpg",
-   "final": 1.098,
-   "p": 0.9697,
+   "final": 1.27,
+   "p": 0.969,
    "photo": 0.9883,
    "fit": 0.813,
    "how": "saliency",
@@ -15487,7 +15436,7 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "vegetables|BITTER GOURD": {
@@ -15504,21 +15453,18 @@
    "forced": false
   },
   "vegetables|WINTER MELON": {
-   "title": "File:Benincasa hispida compose.jpg",
-   "final": 0.639,
-   "p": 0.2901,
-   "photo": 0.9914,
-   "fit": 0.64,
+   "title": "File:A winter melon, gourd , wax gourd , KyaukFaYonTee.jpg",
+   "final": 0.999,
+   "p": 0.3843,
+   "photo": 0.9985,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.29",
-    "fit 0.64"
+    "low word prob 0.38"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:winter melon",
+   "n_cands": 7,
    "forced": false
   },
   "vegetables|BABY CORN": {
@@ -15554,7 +15500,7 @@
   },
   "vegetables|BAMBOO SHOOT": {
    "title": "File:Bamboo sprout2.JPG",
-   "final": 0.55,
+   "final": 0.8,
    "p": 0.0006,
    "photo": 0.9993,
    "fit": 1.0,
@@ -15564,12 +15510,12 @@
     "low word prob 0.00"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "vegetables|SHIITAKE": {
    "title": "File:Shiitakegrowing.jpg",
-   "final": 1.08,
+   "final": 1.28,
    "p": 0.9646,
    "photo": 0.9893,
    "fit": 1.0,
@@ -15581,27 +15527,21 @@
    "forced": false
   },
   "vegetables|STRAW MUSHROOM": {
-   "title": "File:StrawMushroom.jpg",
-   "final": 0.516,
-   "p": 0.3338,
-   "photo": 0.9987,
-   "fit": 0.403,
-   "how": "none",
-   "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.96)"
-   ],
-   "flags": [
-    "low word prob 0.33",
-    "fit 0.40"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "title": "File:Jamur kincir angin oranye.jpg",
+   "final": 1.394,
+   "p": 0.9891,
+   "photo": 0.9967,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:straw mushroom",
+   "n_cands": 8,
    "forced": false
   },
   "vegetables|BEETROOT": {
    "title": "File:Detroitdarkredbeets.png",
-   "final": 1.164,
+   "final": 1.363,
    "p": 0.9995,
    "photo": 0.9951,
    "fit": 1.0,
@@ -15614,7 +15554,7 @@
   },
   "vegetables|TURNIP": {
    "title": "File:Turnip 2622027.jpg",
-   "final": 0.928,
+   "final": 1.033,
    "p": 0.9224,
    "photo": 0.9493,
    "fit": 0.378,
@@ -15626,47 +15566,38 @@
     "fit 0.38"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "vegetables|OKRA": {
-   "title": "File:Hong Kong Okra Aug 25 2012.JPG",
-   "final": 0.832,
-   "p": 0.9859,
-   "photo": 0.9912,
-   "fit": 0.236,
-   "how": "none",
-   "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.56)"
-   ],
-   "flags": [
-    "fit 0.24"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "title": "File:Okra (also called lady’s finger).jpg",
+   "final": 1.292,
+   "p": 0.991,
+   "photo": 0.981,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:okra vegetable",
+   "n_cands": 7,
    "forced": false
   },
   "vegetables|ZUCCHINI": {
-   "title": "File:CSA-Striped-Zucchini.jpg",
-   "final": 0.582,
-   "p": 0.539,
-   "photo": 0.9558,
-   "fit": 0.233,
+   "title": "File:Green zucchini.jpg",
+   "final": 1.221,
+   "p": 0.8406,
+   "photo": 0.9951,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.39)"
-   ],
-   "flags": [
-    "fit 0.23"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:zucchini vegetable",
+   "n_cands": 9,
    "forced": false
   },
   "vegetables|ARTICHOKE": {
    "title": "File:Artichoke J1.jpg",
-   "final": 1.177,
+   "final": 1.376,
    "p": 0.9987,
    "photo": 0.9932,
    "fit": 1.0,
@@ -15678,22 +15609,22 @@
    "forced": false
   },
   "vegetables|SEAWEED SALAD": {
-   "title": "File:CSIRO ScienceImage 952 Undaria pinnatifida Japanese kelp.jpg",
-   "final": 0.218,
-   "p": 0.0271,
-   "photo": 0.9966,
-   "fit": 0.122,
+   "title": "File:Sea under a coat---layer salad.jpg",
+   "final": 0.439,
+   "p": 0.0963,
+   "photo": 0.7157,
+   "fit": 0.172,
    "how": "saliency",
    "notes": [
-    "touches 4 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.50)"
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.56)"
    ],
    "flags": [
-    "low word prob 0.03",
-    "fit 0.12"
+    "low word prob 0.10",
+    "fit 0.17"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:seaweed salad vegetable",
+   "n_cands": 4,
    "forced": false
   },
   "vegetables|VEGETABLES": {
@@ -15708,7 +15639,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:QI",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "technology|SMARTPHONE": {
@@ -25327,7 +25258,7 @@
     "fit 0.52"
    ],
    "origin": "search:shallot vegetable",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "vegetables|CHIVES": {
@@ -30375,41 +30306,28 @@
   "vegetables|ARUGULA",
   "vegetables|BABY CORN",
   "vegetables|BAMBOO SHOOT",
-  "vegetables|BASIL",
   "vegetables|BEANS",
-  "vegetables|BELL PEPPER",
   "vegetables|BOK CHOY",
   "vegetables|CASSAVA",
-  "vegetables|CAULIFLOWER",
-  "vegetables|CELERY",
   "vegetables|CHINESE CABBAGE",
   "vegetables|CINNAMON",
   "vegetables|CORIANDER",
-  "vegetables|CORN COB",
   "vegetables|ENOKI",
   "vegetables|GALANGAL",
   "vegetables|JICAMA",
   "vegetables|LEEK",
   "vegetables|LEMONGRASS",
-  "vegetables|LETTUCE",
   "vegetables|MINT",
   "vegetables|MORNING GLORY",
-  "vegetables|OKRA",
   "vegetables|OLIVE",
   "vegetables|PARSNIP",
-  "vegetables|PEAS",
   "vegetables|PICKLE",
-  "vegetables|PUMPKIN",
   "vegetables|RADISH",
   "vegetables|SEAWEED SALAD",
   "vegetables|SESAME",
   "vegetables|SHALLOT",
-  "vegetables|SPINACH",
   "vegetables|SPRING ONION",
   "vegetables|SQUASH",
-  "vegetables|STRAW MUSHROOM",
-  "vegetables|SWEET POTATO",
-  "vegetables|TARO",
   "vegetables|TURMERIC",
   "vegetables|TURNIP",
   "vegetables|VEGETABLES",
@@ -30419,7 +30337,6 @@
   "vegetables|WINGED BEAN",
   "vegetables|WINTER MELON",
   "vegetables|YAM",
-  "vegetables|ZUCCHINI",
   "vehicles|AIRPLANE",
   "vehicles|AMBULANCE",
   "vehicles|BIKE",
@@ -30513,6 +30430,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1896,
-  "flagged": 1130
+  "flagged": 1116
  }
 }

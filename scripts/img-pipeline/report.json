@@ -15824,9 +15824,9 @@
   },
   "music|VIOLIN": {
    "title": "File:Violin VL100.png",
-   "final": 0.95,
+   "final": 1.088,
    "p": 0.96,
-   "photo": 0.8504,
+   "photo": 0.8503,
    "fit": 0.674,
    "how": "saliency",
    "notes": [
@@ -15837,12 +15837,12 @@
     "fit 0.67"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "music|TRUMPET": {
    "title": "File:Yamaha Trumpet YTR-8335LA crop.jpg",
-   "final": 0.786,
+   "final": 0.604,
    "p": 0.9403,
    "photo": 0.7528,
    "fit": 0.266,
@@ -15854,45 +15854,37 @@
     "fit 0.27"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "music|FLUTE": {
-   "title": "File:Flûte traversière.png",
-   "final": 0.698,
-   "p": 0.9986,
-   "photo": 0.0591,
-   "fit": 0.122,
-   "how": "none",
+   "title": "File:Divje Babe flute (Late Pleistocene flute).jpg",
+   "final": 0.715,
+   "p": 0.1376,
+   "photo": 0.9359,
+   "fit": 0.765,
+   "how": "saliency",
    "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.29)",
-    "upscaled x1.6"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.12",
-    "not photo-like 0.06"
+    "low word prob 0.14"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "music|SAXOPHONE": {
-   "title": "File:Yamaha Saxophone YAS-62.png",
-   "final": 0.9,
-   "p": 0.999,
-   "photo": 0.9899,
-   "fit": 0.228,
+   "title": "File:Subcontrabass saxophone at the Musical Instrument Museum, Brussels.jpg",
+   "final": 1.225,
+   "p": 0.986,
+   "photo": 0.6454,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.59)"
-   ],
-   "flags": [
-    "fit 0.23"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:saxophone musical instrument",
+   "n_cands": 7,
    "forced": false
   },
   "music|XYLOPHONE": {
@@ -15957,23 +15949,21 @@
    "forced": false
   },
   "music|ACCORDION": {
-   "title": "File:A converter free-bass piano-accordion and a Russian bayan.jpg",
-   "final": 1.042,
-   "p": 0.9967,
-   "photo": 0.9795,
-   "fit": 0.843,
+   "title": "File:Accordion MET DP105215.jpg",
+   "final": 1.322,
+   "p": 0.9988,
+   "photo": 0.9993,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
+   "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:accordion musical instrument",
+   "n_cands": 7,
    "forced": false
   },
   "music|MARACAS": {
    "title": "File:Maracas.jpg",
-   "final": 0.947,
+   "final": 1.079,
    "p": 0.9993,
    "photo": 0.9969,
    "fit": 0.551,
@@ -15985,12 +15975,12 @@
     "fit 0.55"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "music|RANAT": {
    "title": "File:Ranat ek.jpg",
-   "final": 0.445,
+   "final": 0.57,
    "p": 0.2762,
    "photo": 0.9893,
    "fit": 0.269,
@@ -16003,25 +15993,25 @@
     "fit 0.27"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "music|KHIM": {
-   "title": "File:Kim Thai Instrument.jpg",
-   "final": 0.831,
-   "p": 0.9959,
-   "photo": 0.8563,
-   "fit": 0.277,
+   "title": "File:Chiangmai-market3.jpg",
+   "final": 0.95,
+   "p": 0.9408,
+   "photo": 0.9918,
+   "fit": 0.363,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.58)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.95)"
    ],
    "flags": [
-    "fit 0.28"
+    "fit 0.36"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:khim Thai dulcimer",
+   "n_cands": 3,
    "forced": false
   },
   "music|SONG": {
@@ -16042,44 +16032,41 @@
    "forced": false
   },
   "music|SINGER": {
-   "title": "File:Ah cricket 20122 (7364759010).jpg",
-   "final": 0.207,
-   "p": 0.0,
-   "photo": 0.9936,
-   "fit": 0.148,
+   "title": "File:Edyta Geppert.jpg",
+   "final": 1.038,
+   "p": 0.9994,
+   "photo": 0.8498,
+   "fit": 0.539,
    "how": "yolo:person",
    "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.48)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.15"
+    "fit 0.54"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 6,
    "forced": false
   },
   "music|CONCERT": {
-   "title": "File:Dülmen, Dülmener Sommer, Open-Air-Konzert, \"Bounce\" -- 2018 -- 0051.jpg",
-   "final": 1.004,
-   "p": 0.9933,
-   "photo": 0.073,
+   "title": "File:Bella Concert Hall entrance, Mount Royal University, Calgary, Alberta, 2025-07-11.jpg",
+   "final": 1.024,
+   "p": 0.5643,
+   "photo": 0.8388,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "not photo-like 0.07"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "music|MICROPHONE": {
    "title": "File:Shure mikrofon 55S.jpg",
-   "final": 0.986,
+   "final": 1.108,
    "p": 0.9985,
-   "photo": 0.5143,
+   "photo": 0.5142,
    "fit": 0.8,
    "how": "saliency",
    "notes": [
@@ -16087,7 +16074,7 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "music|RHYTHM": {
@@ -16125,22 +16112,7 @@
    "forced": false
   },
   "music|QUIET": {
-   "title": "File:SanDiegoCityCollegeLearningResource - bookshelf.jpg",
-   "final": 0.298,
-   "p": 0.0001,
-   "photo": 0.2326,
-   "fit": 0.786,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.23"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "music|DANCE FLOOR": {
    "title": "File:The Bar Complex Dance Floor.jpg",
@@ -19314,7 +19286,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "music|BAGPIPES": {
@@ -19467,7 +19439,7 @@
     "not photo-like 0.46"
    ],
    "origin": "search:music notes sheet",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "music|BAND": {
@@ -19484,7 +19456,7 @@
     "fit 0.33"
    ],
    "origin": "search:QI",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "music|ORCHESTRA": {
@@ -29560,7 +29532,6 @@
   "music|CHING",
   "music|CHOIR",
   "music|CLARINET",
-  "music|CONCERT",
   "music|CONDUCTOR",
   "music|CYMBALS",
   "music|DOUBLE BASS",
@@ -29584,7 +29555,6 @@
   "music|RECORD PLAYER",
   "music|RECORDER",
   "music|RHYTHM",
-  "music|SAXOPHONE",
   "music|SHEET MUSIC",
   "music|SINGER",
   "music|SONG",
@@ -30143,7 +30113,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1893,
-  "flagged": 1076
+  "with_photo": 1892,
+  "flagged": 1074
  }
 }

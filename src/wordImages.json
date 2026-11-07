@@ -6322,10 +6322,10 @@
  },
  "music|ACCORDION": {
   "file": "w/music__accordion.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:A_converter_free-bass_piano-accordion_and_a_Russian_bayan.jpg",
-  "author": "Necz0r",
-  "license": "CC BY-SA 3.0",
-  "score": 1.042
+  "src": "https://commons.wikimedia.org/wiki/File:Accordion_MET_DP105215.jpg",
+  "author": "Creator:Alexandre Pere & Fils",
+  "license": "CC0",
+  "score": 1.322
  },
  "music|AUDIENCE": {
   "file": "w/music__audience.jpg",
@@ -6406,10 +6406,10 @@
  },
  "music|CONCERT": {
   "file": "w/music__concert.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_D%C3%BClmener_Sommer,_Open-Air-Konzert,_%22Bounce%22_--_2018_--_0051.jpg",
-  "author": "Dietmar Rabich",
+  "src": "https://commons.wikimedia.org/wiki/File:Bella_Concert_Hall_entrance,_Mount_Royal_University,_Calgary,_Alberta,_2025-07-11.jpg",
+  "author": "Chris Woodrich",
   "license": "CC BY-SA 4.0",
-  "score": 1.004
+  "score": 1.024
  },
  "music|CONDUCTOR": {
   "file": "w/music__conductor.jpg",
@@ -6455,10 +6455,10 @@
  },
  "music|FLUTE": {
   "file": "w/music__flute.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Fl%C3%BBte_traversi%C3%A8re.png",
-  "author": "Tubamirum",
+  "src": "https://commons.wikimedia.org/wiki/File:Divje_Babe_flute_(Late_Pleistocene_flute).jpg",
+  "author": "Petar Milošević",
   "license": "CC BY-SA 4.0",
-  "score": 0.698
+  "score": 0.715
  },
  "music|FRENCH HORN": {
   "file": "w/music__french-horn.jpg",
@@ -6525,10 +6525,10 @@
  },
  "music|KHIM": {
   "file": "w/music__khim.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Kim_Thai_Instrument.jpg",
-  "author": "",
-  "license": "CC BY-SA 3.0",
-  "score": 0.831
+  "src": "https://commons.wikimedia.org/wiki/File:Chiangmai-market3.jpg",
+  "author": "Steve Evans from Bangalore, India",
+  "license": "CC BY 2.0",
+  "score": 0.95
  },
  "music|KHONG WONG": {
   "file": "w/music__khong-wong.jpg",
@@ -6549,7 +6549,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Maracas.jpg",
   "author": "Axel Heymann",
   "license": "CC BY-SA 3.0",
-  "score": 0.947
+  "score": 1.079
  },
  "music|METRONOME": {
   "file": "w/music__metronome.jpg",
@@ -6563,7 +6563,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Shure_mikrofon_55S.jpg",
   "author": "Holger.Ellgaard",
   "license": "CC BY-SA 3.0",
-  "score": 0.986
+  "score": 1.108
  },
  "music|MUSIC BOX": {
   "file": "w/music__music-box.jpg",
@@ -6607,13 +6607,6 @@
   "license": "CC0",
   "score": 1.235
  },
- "music|QUIET": {
-  "file": "w/music__quiet.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:SanDiegoCityCollegeLearningResource_-_bookshelf.jpg",
-  "author": "Joe Crawford from Moorpark, California, USA",
-  "license": "CC BY 2.0",
-  "score": 0.298
- },
  "music|RADIO": {
   "file": "w/music__radio.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Theremin_At_The_Musical_Museum,_Brentford,_London_(clip).jpg",
@@ -6626,7 +6619,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Ranat_ek.jpg",
   "author": "Paul_012",
   "license": "CC BY-SA 3.0",
-  "score": 0.445
+  "score": 0.57
  },
  "music|RECORD PLAYER": {
   "file": "w/music__record-player.jpg",
@@ -6651,10 +6644,10 @@
  },
  "music|SAXOPHONE": {
   "file": "w/music__saxophone.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Yamaha_Saxophone_YAS-62.png",
-  "author": "File:Yamaha Saxophone YAS-62.tif : Yamaha Corporation; remove backround: Habitator terrae",
-  "license": "CC BY-SA 4.0",
-  "score": 0.9
+  "src": "https://commons.wikimedia.org/wiki/File:Subcontrabass_saxophone_at_the_Musical_Instrument_Museum,_Brussels.jpg",
+  "author": "Chad K",
+  "license": "CC BY 2.0",
+  "score": 1.225
  },
  "music|SHEET MUSIC": {
   "file": "w/music__sheet-music.jpg",
@@ -6665,10 +6658,10 @@
  },
  "music|SINGER": {
   "file": "w/music__singer.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Ah_cricket_20122_(7364759010).jpg",
-  "author": "Owen Lucas from Bath, UK",
-  "license": "Public domain",
-  "score": 0.207
+  "src": "https://commons.wikimedia.org/wiki/File:Edyta_Geppert.jpg",
+  "author": "Lestat (Jan Mehlich)",
+  "license": "CC BY-SA 3.0",
+  "score": 1.038
  },
  "music|SONG": {
   "file": "w/music__song.jpg",
@@ -6710,7 +6703,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Yamaha_Trumpet_YTR-8335LA_crop.jpg",
   "author": "Yamaha Corporation",
   "license": "CC BY-SA 4.0",
-  "score": 0.786
+  "score": 0.604
  },
  "music|TUBA": {
   "file": "w/music__tuba.jpg",
@@ -6731,7 +6724,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Violin_VL100.png",
   "author": "Just plain Bill",
   "license": "CC0",
-  "score": 0.95
+  "score": 1.088
  },
  "music|VIOLINIST": {
   "file": "w/music__violinist.jpg",

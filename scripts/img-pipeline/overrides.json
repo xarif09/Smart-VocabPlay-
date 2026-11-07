@@ -1497,5 +1497,635 @@
    "sit-ups exercise",
    "crunches exercise"
   ]
+ },
+ "feelings|HAPPY": {
+  "queries": [
+   "happy smiling child",
+   "laughing girl"
+  ]
+ },
+ "feelings|SAD": {
+  "queries": [
+   "sad child crying",
+   "sad boy"
+  ]
+ },
+ "feelings|SCARED": {
+  "queries": [
+   "frightened child",
+   "scared girl"
+  ]
+ },
+ "feelings|TIRED": {
+  "queries": [
+   "tired child yawning",
+   "exhausted child sleeping on desk"
+  ]
+ },
+ "feelings|HUNGRY": {
+  "queries": [
+   "child eating hungrily",
+   "hungry boy eating"
+  ]
+ },
+ "feelings|SURPRISED": {
+  "queries": [
+   "surprised child face open mouth",
+   "astonished child"
+  ]
+ },
+ "feelings|EXCITED": {
+  "queries": [
+   "excited children cheering",
+   "excited kids jumping"
+  ]
+ },
+ "feelings|BORED": {
+  "queries": [
+   "bored child",
+   "bored student desk"
+  ]
+ },
+ "feelings|SHY": {
+  "queries": [
+   "shy child hiding",
+   "shy girl smiling"
+  ]
+ },
+ "feelings|NERVOUS": {
+  "queries": [
+   "nervous child biting nails",
+   "nervous girl"
+  ]
+ },
+ "feelings|SLEEPY": {
+  "queries": [
+   "sleepy child yawning",
+   "yawning baby"
+  ]
+ },
+ "feelings|CALM": {
+  "queries": [
+   "child meditating",
+   "calm girl relaxing"
+  ]
+ },
+ "feelings|LONELY": {
+  "queries": [
+   "lonely child sitting alone",
+   "alone boy bench"
+  ]
+ },
+ "feelings|BRAVE": {
+  "queries": [
+   "child climbing wall brave",
+   "child superhero costume"
+  ]
+ },
+ "feelings|WORRIED": {
+  "queries": [
+   "worried child face",
+   "worried girl"
+  ]
+ },
+ "feelings|CONFUSED": {
+  "queries": [
+   "confused child scratching head",
+   "puzzled boy"
+  ]
+ },
+ "feelings|SILLY": {
+  "queries": [
+   "child making funny face",
+   "silly face kids"
+  ]
+ },
+ "feelings|GRUMPY": {
+  "queries": [
+   "grumpy child frowning",
+   "pouting child"
+  ]
+ },
+ "feelings|CURIOUS": {
+  "queries": [
+   "child with magnifying glass",
+   "curious child looking"
+  ]
+ },
+ "feelings|THANKFUL": {
+  "queries": [
+   "child giving thank you card",
+   "grateful hug"
+  ]
+ },
+ "feelings|SORRY": {
+  "queries": [
+   "child apologizing hug",
+   "sad sorry child"
+  ]
+ },
+ "feelings|HURT": {
+  "queries": [
+   "child with bandage on knee",
+   "plaster on child's knee"
+  ]
+ },
+ "feelings|FULL": {
+  "queries": [
+   "child full after eating",
+   "empty plate after meal child"
+  ]
+ },
+ "feelings|COLD": {
+  "queries": [
+   "child shivering snow",
+   "child in winter hat scarf"
+  ]
+ },
+ "feelings|HOT": {
+  "queries": [
+   "child sweating sun",
+   "hot day child water"
+  ]
+ },
+ "feelings|GLAD": {
+  "queries": [
+   "glad smiling woman",
+   "happy smiling man"
+  ]
+ },
+ "feelings|JOYFUL": {
+  "queries": [
+   "joyful children running",
+   "joyful girl jumping"
+  ]
+ },
+ "feelings|CHEERFUL": {
+  "queries": [
+   "cheerful child smiling",
+   "cheerful girl"
+  ]
+ },
+ "feelings|UPSET": {
+  "queries": [
+   "upset child crying",
+   "upset boy"
+  ]
+ },
+ "feelings|FRUSTRATED": {
+  "queries": [
+   "frustrated student homework",
+   "frustrated man"
+  ]
+ },
+ "feelings|JEALOUS": {
+  "queries": [
+   "jealous child sibling",
+   "jealous girl"
+  ]
+ },
+ "feelings|EMBARRASSED": {
+  "queries": [
+   "embarrassed child covering face",
+   "blushing girl"
+  ]
+ },
+ "feelings|DISAPPOINTED": {
+  "queries": [
+   "disappointed child",
+   "disappointed football fans"
+  ]
+ },
+ "feelings|RELAXED": {
+  "queries": [
+   "relaxed person hammock",
+   "relaxing in hammock"
+  ]
+ },
+ "feelings|FRIENDLY": {
+  "queries": [
+   "friendly children waving",
+   "friendly smile handshake"
+  ]
+ },
+ "feelings|KIND": {
+  "queries": [
+   "child helping elderly",
+   "kind child sharing"
+  ]
+ },
+ "feelings|ANNOYED": {
+  "queries": [
+   "annoyed child",
+   "annoyed woman"
+  ]
+ },
+ "feelings|AFRAID": {
+  "queries": [
+   "afraid child hiding",
+   "frightened boy"
+  ]
+ },
+ "feelings|HOPEFUL": {
+  "queries": [
+   "hopeful child looking up",
+   "child making a wish birthday"
+  ]
+ },
+ "feelings|PEACEFUL": {
+  "queries": [
+   "peaceful sleeping baby",
+   "peaceful lake meditation"
+  ]
+ },
+ "feelings|CONFIDENT": {
+  "queries": [
+   "confident girl smiling",
+   "confident student"
+  ]
+ },
+ "feelings|DISGUSTED": {
+  "queries": [
+   "disgusted face child",
+   "child refusing food"
+  ]
+ },
+ "feelings|SHOCKED": {
+  "queries": [
+   "shocked face",
+   "shocked child"
+  ]
+ },
+ "feelings|AMAZED": {
+  "queries": [
+   "amazed child",
+   "children amazed watching"
+  ]
+ },
+ "feelings|DELIGHTED": {
+  "queries": [
+   "delighted child gift",
+   "delighted girl present"
+  ]
+ },
+ "feelings|PLAYFUL": {
+  "queries": [
+   "playful kitten",
+   "playful children"
+  ]
+ },
+ "feelings|LAZY": {
+  "queries": [
+   "lazy cat sleeping",
+   "lazy dog lying"
+  ]
+ },
+ "feelings|ENERGETIC": {
+  "queries": [
+   "energetic children jumping",
+   "kids jumping trampoline"
+  ]
+ },
+ "feelings|DIZZY": {
+  "queries": [
+   "dizzy spinning child",
+   "dizzy"
+  ]
+ },
+ "feelings|ITCHY": {
+  "queries": [
+   "child scratching",
+   "mosquito bite scratching"
+  ]
+ },
+ "feelings|COMFORTABLE": {
+  "queries": [
+   "comfortable armchair reading",
+   "child cosy blanket sofa"
+  ]
+ },
+ "feelings|HELPFUL": {
+  "queries": [
+   "child helping wash dishes",
+   "kids helping clean"
+  ]
+ },
+ "feelings|NAUGHTY": {
+  "queries": [
+   "naughty child mess",
+   "mischievous child"
+  ]
+ },
+ "feelings|STRESSED": {
+  "queries": [
+   "stressed student books",
+   "stressed man"
+  ]
+ },
+ "feelings|TERRIFIED": {
+  "queries": [
+   "terrified face",
+   "terrified child"
+  ]
+ },
+ "feelings|FUNNY": {
+  "queries": [
+   "funny face child",
+   "clown funny"
+  ]
+ },
+ "feelings|SERIOUS": {
+  "queries": [
+   "serious child face",
+   "serious boy"
+  ]
+ },
+ "feelings|HEALTHY": {
+  "queries": [
+   "healthy child eating fruit",
+   "healthy kids playing"
+  ]
+ },
+ "feelings|MAD": {
+  "queries": [
+   "angry child shouting",
+   "mad boy"
+  ]
+ },
+ "feelings|ANGRY": {
+  "queries": [
+   "angry child",
+   "angry boy shouting"
+  ]
+ },
+ "feelings|PROUD": {
+  "queries": [
+   "proud child medal",
+   "proud girl trophy"
+  ]
+ },
+ "feelings|LOVE": {
+  "queries": [
+   "mother hugging child",
+   "family hug"
+  ]
+ },
+ "feelings|THIRSTY": {
+  "queries": [
+   "child drinking water",
+   "boy drinking water bottle"
+  ]
+ },
+ "feelings|SICK": {
+  "queries": [
+   "sick child in bed thermometer",
+   "ill child"
+  ]
+ },
+ "opposites|DIFFICULT": {
+  "queries": [
+   "difficult jigsaw puzzle",
+   "child hard puzzle"
+  ]
+ },
+ "opposites|EASY": {
+  "queries": [
+   "easy jigsaw puzzle toddler",
+   "simple wooden puzzle"
+  ]
+ },
+ "opposites|QUIET": {
+  "queries": [
+   "finger on lips quiet",
+   "library reading quietly"
+  ]
+ },
+ "opposites|LEFT": {
+  "queries": [
+   "turn left arrow sign",
+   "left arrow road sign"
+  ]
+ },
+ "opposites|SAME": {
+  "queries": [
+   "identical twins",
+   "identical eggs"
+  ]
+ },
+ "opposites|THIN": {
+  "queries": [
+   "thin pencil",
+   "thin book"
+  ]
+ },
+ "opposites|LOW": {
+  "queries": [
+   "low fence",
+   "low table"
+  ]
+ },
+ "opposites|WIDE": {
+  "queries": [
+   "wide river",
+   "wide road"
+  ]
+ },
+ "opposites|ON": {
+  "queries": [
+   "lamp switched on",
+   "light switch on"
+  ]
+ },
+ "opposites|SHORT": {
+  "queries": [
+   "short pencil",
+   "short tall"
+  ]
+ },
+ "opposites|LONG": {
+  "queries": [
+   "long train",
+   "long bridge"
+  ]
+ },
+ "opposites|OUT": {
+  "queries": [
+   "exit sign",
+   "dog outside door"
+  ]
+ },
+ "opposites|THICK": {
+  "queries": [
+   "thick book",
+   "thick rope"
+  ]
+ },
+ "opposites|WEAK": {
+  "queries": [
+   "wilted flower",
+   "weak"
+  ]
+ },
+ "opposites|NEAR": {
+  "queries": [
+   "close up face",
+   "near"
+  ]
+ },
+ "opposites|HIGH": {
+  "queries": [
+   "high mountain peak",
+   "skyscraper"
+  ]
+ },
+ "opposites|ABOVE": {
+  "queries": [
+   "airplane above clouds",
+   "bird flying above"
+  ]
+ },
+ "opposites|BELOW": {
+  "queries": [
+   "under the table cat",
+   "below"
+  ]
+ },
+ "time|MAY": {
+  "queries": [
+   "May calendar page",
+   "spring flowers May"
+  ]
+ },
+ "time|JUNE": {
+  "queries": [
+   "June calendar page",
+   "rainy season umbrella"
+  ]
+ },
+ "time|AUGUST": {
+  "queries": [
+   "August calendar page",
+   "summer beach"
+  ]
+ },
+ "time|SEPTEMBER": {
+  "queries": [
+   "September calendar",
+   "first day of school children"
+  ]
+ },
+ "time|VALENTINE'S DAY": {
+  "queries": [
+   "Valentine heart chocolates",
+   "red roses heart"
+  ]
+ },
+ "time|CALENDAR": {
+  "queries": [
+   "wall calendar",
+   "desk calendar"
+  ]
+ },
+ "time|NOON": {
+  "queries": [
+   "clock showing noon 12",
+   "midday sun"
+  ]
+ },
+ "time|MIDNIGHT": {
+  "queries": [
+   "clock midnight 12",
+   "night sky stars moon"
+  ]
+ },
+ "time|BEDTIME": {
+  "queries": [
+   "child bedtime story",
+   "child sleeping teddy"
+  ]
+ },
+ "time|SEASON": {
+  "queries": [
+   "four seasons tree",
+   "autumn leaves"
+  ]
+ },
+ "time|PARTY": {
+  "queries": [
+   "children birthday party",
+   "party balloons"
+  ]
+ },
+ "time|LATE": {
+  "queries": [
+   "running late clock",
+   "late for school"
+  ]
+ },
+ "time|MONDAY": {
+  "queries": [
+   "Monday calendar",
+   "Monday sign"
+  ]
+ },
+ "time|TUESDAY": {
+  "queries": [
+   "Tuesday calendar",
+   "Tuesday sign"
+  ]
+ },
+ "time|WEDNESDAY": {
+  "queries": [
+   "Wednesday calendar",
+   "Wednesday"
+  ]
+ },
+ "time|THURSDAY": {
+  "queries": [
+   "Thursday calendar",
+   "Thursday sign"
+  ]
+ },
+ "time|FRIDAY": {
+  "queries": [
+   "Friday calendar",
+   "Friday sign"
+  ]
+ },
+ "time|SUNDAY": {
+  "queries": [
+   "Sunday calendar",
+   "Sunday sign"
+  ]
+ },
+ "time|APRIL": {
+  "queries": [
+   "Songkran water festival",
+   "April calendar"
+  ]
+ },
+ "time|WEEK": {
+  "queries": [
+   "weekly planner",
+   "week calendar"
+  ]
+ },
+ "time|MONTH": {
+  "queries": [
+   "monthly calendar page",
+   "wall calendar month"
+  ]
+ },
+ "time|TODAY": {
+  "queries": [
+   "calendar date circled",
+   "today calendar"
+  ]
+ },
+ "time|YESTERDAY": {
+  "queries": [
+   "calendar page torn",
+   "yesterday"
+  ]
  }
 }

@@ -15440,13 +15440,13 @@
     "fit 0.49"
    ],
    "origin": "search:QI",
-   "n_cands": 10,
+   "n_cands": 9,
    "forced": false
   },
   "technology|TABLET": {
    "title": "File:12.9 iPad Pro 1st Gen And Galaxy Tab S8 Ultra Size Comparison.jpg",
-   "final": 1.076,
-   "p": 0.9923,
+   "final": 1.221,
+   "p": 0.9922,
    "photo": 0.8136,
    "fit": 0.759,
    "how": "saliency",
@@ -15455,25 +15455,24 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "technology|LAPTOP": {
-   "title": "File:Laptop collage.jpg",
-   "final": 0.784,
-   "p": 0.9629,
-   "photo": 0.9772,
-   "fit": 0.293,
+   "title": "File:Powerbook 100 pose.jpg",
+   "final": 1.029,
+   "p": 0.9978,
+   "photo": 0.9931,
+   "fit": 0.462,
    "how": "yolo:laptop",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.61)"
+    "subject cannot fit 3:4 (box cov 0.77)"
    ],
    "flags": [
-    "fit 0.29"
+    "fit 0.46"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "technology|KEYBOARD": {
@@ -15495,20 +15494,18 @@
    "forced": false
   },
   "technology|MOUSE": {
-   "title": "File:3-Tasten-Maus Microsoft.jpg",
-   "final": 0.858,
-   "p": 0.9988,
-   "photo": 0.5487,
-   "fit": 0.439,
-   "how": "yolo:mouse",
+   "title": "File:Pulsar Xlite v4, Oberseite -- 2025 -- 0058.jpg",
+   "final": 0.93,
+   "p": 0.9915,
+   "photo": 0.7541,
+   "fit": 0.831,
+   "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.73)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.44"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "technology|SCREEN": {
@@ -15525,12 +15522,12 @@
     "low word prob 0.18"
    ],
    "origin": "search:QI",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "technology|HEADPHONES": {
    "title": "File:Słuchawki referencyjne K-701 firmy AKG.jpg",
-   "final": 0.928,
+   "final": 0.803,
    "p": 0.9999,
    "photo": 0.8764,
    "fit": 0.586,
@@ -15542,60 +15539,57 @@
     "fit 0.59"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "technology|SPEAKER": {
-   "title": "File:Electrodynamic-loudspeaker.png",
-   "final": 0.852,
+   "title": "File:2016 Kolumny głośnikowe Altus 110.jpg",
+   "final": 0.942,
    "p": 1.0,
-   "photo": 0.0637,
-   "fit": 0.464,
+   "photo": 0.4694,
+   "fit": 0.495,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.77)"
+    "subject cannot fit 3:4 (box cov 0.83)"
    ],
    "flags": [
-    "fit 0.46",
-    "not photo-like 0.06"
+    "fit 0.50",
+    "not photo-like 0.47"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "technology|CAMERA": {
-   "title": "File:LEI0440 Leica IIIf chrom - Sn. 580566 1951-52-M39 Blitzsynchron front view-6531 hf-.jpg",
-   "final": 0.929,
-   "p": 0.9998,
-   "photo": 0.9988,
-   "fit": 0.425,
+   "title": "File:Küchenschelle mit Wassertropfen 2019-04-05 20-41-46 (C)-PSD.jpg",
+   "final": 0.799,
+   "p": 0.0,
+   "photo": 0.9968,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.71)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.42"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "technology|PRINTER": {
-   "title": "File:HP Laserjet 5 DN 1.jpg",
-   "final": 0.875,
-   "p": 0.9997,
-   "photo": 0.3163,
-   "fit": 0.553,
+   "title": "File:Four Samsung laser toner cartridges front view.jpg",
+   "final": 1.044,
+   "p": 0.8818,
+   "photo": 0.9829,
+   "fit": 0.575,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.92)"
+    "subject cannot fit 3:4 (box cov 0.96)"
    ],
    "flags": [
-    "fit 0.55",
-    "not photo-like 0.32"
+    "fit 0.57"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "technology|BATTERY": {
@@ -15616,20 +15610,16 @@
    "forced": false
   },
   "technology|CHARGER": {
-   "title": "File:Notebook-Computer-AC-Adapter.jpg",
-   "final": 0.788,
-   "p": 0.9731,
-   "photo": 0.9829,
-   "fit": 0.224,
+   "title": "File:USA phone charger at airport 05.jpg",
+   "final": 1.289,
+   "p": 0.9844,
+   "photo": 0.9846,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.37)"
-   ],
-   "flags": [
-    "fit 0.22"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:phone charger",
+   "n_cands": 9,
    "forced": false
   },
   "technology|CABLE": {
@@ -15661,23 +15651,18 @@
    "forced": false
   },
   "technology|INTERNET": {
-   "title": "File:D-Link DI-524.jpg",
-   "final": -0.338,
+   "title": "File:Dülmen, Privatrösterei Schröer, Kaffeebehälter -- 2018 -- 0529.jpg",
+   "final": 0.656,
    "p": 0.0,
-   "photo": 0.2193,
-   "fit": 0.376,
+   "photo": 0.7534,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.63)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.38",
-    "not photo-like 0.22",
-    "check safety 0.99"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "technology|EMAIL": {
@@ -15697,45 +15682,42 @@
    "forced": false
   },
   "technology|VIDEO": {
-   "title": "File:Sony Handycam DCR-SR35 20190810.jpg",
-   "final": 0.304,
-   "p": 0.0076,
-   "photo": 0.9961,
-   "fit": 0.353,
+   "title": "File:Cologne Germany Automatic-Wagon-Weightbridge-01.jpg",
+   "final": 0.685,
+   "p": 0.0007,
+   "photo": 0.9776,
+   "fit": 0.783,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.59)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.01",
-    "fit 0.35"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "technology|GAME": {
-   "title": "File:Nintendo-Switch-Pro-Controller-FL.jpg",
-   "final": 0.161,
-   "p": 0.0,
-   "photo": 0.0565,
-   "fit": 0.443,
+   "title": "File:Würfel, gemischt -- 2021 -- 5577.jpg",
+   "final": 1.021,
+   "p": 0.9748,
+   "photo": 0.9256,
+   "fit": 0.384,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.74)"
+    "subject cannot fit 3:4 (box cov 0.64)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.44",
-    "not photo-like 0.06"
+    "fit 0.38"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "technology|ROBOT VACUUM": {
    "title": "File:Reinigungsroboter tcm 100.JPG",
-   "final": 0.946,
+   "final": 1.065,
    "p": 1.0,
    "photo": 0.9727,
    "fit": 0.483,
@@ -15747,58 +15729,50 @@
     "fit 0.48"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "technology|REMOTE": {
-   "title": "File:Nuon-N2000-Remote-Control.jpg",
-   "final": 0.817,
-   "p": 1.0,
-   "photo": 0.0164,
-   "fit": 0.47,
-   "how": "yolo:remote",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.78)"
-   ],
+   "title": "File:Electric motor on the slewing bearing of a remote controlled yellow Liebherr tower crane.jpg",
+   "final": 0.754,
+   "p": 0.0,
+   "photo": 0.8702,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
    "flags": [
-    "fit 0.47",
-    "not photo-like 0.02"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "technology|CLOCK APP": {
-   "title": "File:2010-07-20 Black windup alarm clock face.jpg",
-   "final": 0.994,
-   "p": 1.0,
-   "photo": 0.6778,
-   "fit": 0.831,
+   "title": "File:Jantar clock.jpg",
+   "final": 1.238,
+   "p": 0.9994,
+   "photo": 0.9869,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:clock app",
+   "n_cands": 7,
+   "forced": false
+  },
+  "technology|PASSWORD": {
+   "title": "File:CryptoCard two factor.jpg",
+   "final": 1.146,
+   "p": 0.9955,
+   "photo": 0.6748,
+   "fit": 0.827,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "technology|PASSWORD": {
-   "title": "File:Padlock klódka ubt.JPG",
-   "final": 0.474,
-   "p": 0.3438,
-   "photo": 0.9808,
-   "fit": 0.431,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.72)"
-   ],
-   "flags": [
-    "low word prob 0.34",
-    "fit 0.43"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:password login screen",
+   "n_cands": 5,
    "forced": false
   },
   "technology|SCREENSHOT": {
@@ -15820,7 +15794,7 @@
   },
   "technology|DRONE": {
    "title": "File:MQ-9 Reaper UAV (cropped).jpg",
-   "final": 0.844,
+   "final": 0.938,
    "p": 0.9993,
    "photo": 0.8563,
    "fit": 0.389,
@@ -15832,24 +15806,20 @@
     "fit 0.39"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "technology|SATELLITE": {
-   "title": "File:Two 3U CubeSats.jpg",
-   "final": 0.927,
-   "p": 1.0,
-   "photo": 0.9932,
-   "fit": 0.54,
+   "title": "File:Caspian Sea from orbit.jpg",
+   "final": 1.2,
+   "p": 0.9785,
+   "photo": 0.9395,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.90)"
-   ],
-   "flags": [
-    "fit 0.54"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:satellite in orbit",
+   "n_cands": 7,
    "forced": false
   },
   "music|VIOLIN": {
@@ -21009,7 +20979,7 @@
     "low word prob 0.08"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "technology|WEBCAM": {
@@ -21119,7 +21089,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:QI",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "technology|ANTENNA": {
@@ -29926,7 +29896,6 @@
   "technology|BARCODE",
   "technology|BATTERY",
   "technology|CAMERA",
-  "technology|CHARGER",
   "technology|CIRCUIT BOARD",
   "technology|CODING",
   "technology|DRONE",
@@ -29943,8 +29912,6 @@
   "technology|LAPTOP",
   "technology|MEMORY CARD",
   "technology|MONITOR",
-  "technology|MOUSE",
-  "technology|PASSWORD",
   "technology|PLUG",
   "technology|POWER BANK",
   "technology|POWER OUTLET",
@@ -29953,7 +29920,6 @@
   "technology|ROBOT ARM",
   "technology|ROBOT VACUUM",
   "technology|ROUTER",
-  "technology|SATELLITE",
   "technology|SCANNER",
   "technology|SCREEN",
   "technology|SCREENSHOT",
@@ -30178,6 +30144,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1893,
-  "flagged": 1080
+  "flagged": 1076
  }
 }

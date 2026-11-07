@@ -10382,17 +10382,17 @@
  },
  "technology|CAMERA": {
   "file": "w/technology__camera.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:LEI0440_Leica_IIIf_chrom_-_Sn._580566_1951-52-M39_Blitzsynchron_front_view-6531_hf-.jpg",
-  "author": "Kameraprojekt Graz 2015",
+  "src": "https://commons.wikimedia.org/wiki/File:K%C3%BCchenschelle_mit_Wassertropfen_2019-04-05_20-41-46_(C)-PSD.jpg",
+  "author": "Ermell",
   "license": "CC BY-SA 4.0",
-  "score": 0.929
+  "score": 0.799
  },
  "technology|CHARGER": {
   "file": "w/technology__charger.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Notebook-Computer-AC-Adapter.jpg",
-  "author": "Evan-Amos",
-  "license": "Public domain",
-  "score": 0.788
+  "src": "https://commons.wikimedia.org/wiki/File:USA_phone_charger_at_airport_05.jpg",
+  "author": "Grandmaster Huon",
+  "license": "CC0",
+  "score": 1.289
  },
  "technology|CIRCUIT BOARD": {
   "file": "w/technology__circuit-board.jpg",
@@ -10403,10 +10403,10 @@
  },
  "technology|CLOCK APP": {
   "file": "w/technology__clock-app.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:2010-07-20_Black_windup_alarm_clock_face.jpg",
-  "author": "Sun Ladder",
-  "license": "CC BY-SA 3.0",
-  "score": 0.994
+  "src": "https://commons.wikimedia.org/wiki/File:Jantar_clock.jpg",
+  "author": "Александр Сигачёв",
+  "license": "CC0",
+  "score": 1.238
  },
  "technology|CODING": {
   "file": "w/technology__coding.jpg",
@@ -10420,7 +10420,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:MQ-9_Reaper_UAV_(cropped).jpg",
   "author": "Lt. Col. Leslie Pratt",
   "license": "Public domain",
-  "score": 0.844
+  "score": 0.938
  },
  "technology|E-READER": {
   "file": "w/technology__e-reader.jpg",
@@ -10466,10 +10466,10 @@
  },
  "technology|GAME": {
   "file": "w/technology__game.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Nintendo-Switch-Pro-Controller-FL.jpg",
-  "author": "Evan-Amos",
-  "license": "Public domain",
-  "score": 0.161
+  "src": "https://commons.wikimedia.org/wiki/File:W%C3%BCrfel,_gemischt_--_2021_--_5577.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.021
  },
  "technology|GAME CONSOLE": {
   "file": "w/technology__game-console.jpg",
@@ -10490,7 +10490,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:S%C5%82uchawki_referencyjne_K-701_firmy_AKG.jpg",
   "author": "http://muzyczny.pl",
   "license": "CC BY-SA 4.0",
-  "score": 0.928
+  "score": 0.803
  },
  "technology|ICON": {
   "file": "w/technology__icon.jpg",
@@ -10501,10 +10501,10 @@
  },
  "technology|INTERNET": {
   "file": "w/technology__internet.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:D-Link_DI-524.jpg",
-  "author": "Weihao Chiu @ Chinese Wikipedia",
-  "license": "CC BY-SA 3.0",
-  "score": -0.338
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Privatr%C3%B6sterei_Schr%C3%B6er,_Kaffeebeh%C3%A4lter_--_2018_--_0529.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.656
  },
  "technology|KEYBOARD": {
   "file": "w/technology__keyboard.jpg",
@@ -10515,10 +10515,10 @@
  },
  "technology|LAPTOP": {
   "file": "w/technology__laptop.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Laptop_collage.jpg",
-  "author": "Top left: Premeditated Top right: Tom Page Bottom left and right: Maurizio Pesce",
-  "license": "CC BY 2.0",
-  "score": 0.784
+  "src": "https://commons.wikimedia.org/wiki/File:Powerbook_100_pose.jpg",
+  "author": "Danamania",
+  "license": "CC0",
+  "score": 1.029
  },
  "technology|LIGHT BULB": {
   "file": "w/technology__light-bulb.jpg",
@@ -10543,10 +10543,10 @@
  },
  "technology|MOUSE": {
   "file": "w/technology__mouse.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:3-Tasten-Maus_Microsoft.jpg",
-  "author": "Darkone",
-  "license": "CC BY-SA 2.5",
-  "score": 0.858
+  "src": "https://commons.wikimedia.org/wiki/File:Pulsar_Xlite_v4,_Oberseite_--_2025_--_0058.jpg",
+  "author": "Anil Öztas",
+  "license": "CC BY 4.0",
+  "score": 0.93
  },
  "technology|MOUSE PAD": {
   "file": "w/technology__mouse-pad.jpg",
@@ -10557,10 +10557,10 @@
  },
  "technology|PASSWORD": {
   "file": "w/technology__password.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Padlock_kl%C3%B3dka_ubt.JPG",
-  "author": "Tomasz Sienicki [user: tsca , mail: tomasz.sienicki at gmail.com]",
-  "license": "CC BY-SA 3.0",
-  "score": 0.474
+  "src": "https://commons.wikimedia.org/wiki/File:CryptoCard_two_factor.jpg",
+  "author": "Brian Ronald",
+  "license": "CC BY-SA 4.0",
+  "score": 1.146
  },
  "technology|PLUG": {
   "file": "w/technology__plug.jpg",
@@ -10592,10 +10592,10 @@
  },
  "technology|PRINTER": {
   "file": "w/technology__printer.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:HP_Laserjet_5_DN_1.jpg",
-  "author": "Thiemo Schuff",
-  "license": "CC BY-SA 3.0 de",
-  "score": 0.875
+  "src": "https://commons.wikimedia.org/wiki/File:Four_Samsung_laser_toner_cartridges_front_view.jpg",
+  "author": "W.carter",
+  "license": "CC BY-SA 4.0",
+  "score": 1.044
  },
  "technology|QR CODE": {
   "file": "w/technology__qr-code.jpg",
@@ -10606,10 +10606,10 @@
  },
  "technology|REMOTE": {
   "file": "w/technology__remote.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Nuon-N2000-Remote-Control.jpg",
-  "author": "Evan-Amos",
-  "license": "Public domain",
-  "score": 0.817
+  "src": "https://commons.wikimedia.org/wiki/File:Electric_motor_on_the_slewing_bearing_of_a_remote_controlled_yellow_Liebherr_tower_crane.jpg",
+  "author": "Tobias ToMar Maier",
+  "license": "CC BY-SA 3.0",
+  "score": 0.754
  },
  "technology|ROBOT ARM": {
   "file": "w/technology__robot-arm.jpg",
@@ -10623,7 +10623,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Reinigungsroboter_tcm_100.JPG",
   "author": "Stephan M. Höhne. Original uploader was Stephanhoehne at German Wikipedia",
   "license": "CC BY-SA 2.0 de",
-  "score": 0.946
+  "score": 1.065
  },
  "technology|ROUTER": {
   "file": "w/technology__router.jpg",
@@ -10634,10 +10634,10 @@
  },
  "technology|SATELLITE": {
   "file": "w/technology__satellite.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Two_3U_CubeSats.jpg",
-  "author": "NASA",
+  "src": "https://commons.wikimedia.org/wiki/File:Caspian_Sea_from_orbit.jpg",
+  "author": "Jeff Schmaltz, MODIS Rapid Response Team, NASA/GSFC",
   "license": "Public domain",
-  "score": 0.927
+  "score": 1.2
  },
  "technology|SCANNER": {
   "file": "w/technology__scanner.jpg",
@@ -10704,17 +10704,17 @@
  },
  "technology|SPEAKER": {
   "file": "w/technology__speaker.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Electrodynamic-loudspeaker.png",
-  "author": "Svjo",
-  "license": "CC BY-SA 3.0",
-  "score": 0.852
+  "src": "https://commons.wikimedia.org/wiki/File:2016_Kolumny_g%C5%82o%C5%9Bnikowe_Altus_110.jpg",
+  "author": "Jacek Halicki",
+  "license": "CC BY-SA 4.0",
+  "score": 0.942
  },
  "technology|TABLET": {
   "file": "w/technology__tablet.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:12.9_iPad_Pro_1st_Gen_And_Galaxy_Tab_S8_Ultra_Size_Comparison.jpg",
   "author": "Dylan240",
   "license": "CC0",
-  "score": 1.076
+  "score": 1.221
  },
  "technology|TEXT MESSAGE": {
   "file": "w/technology__text-message.jpg",
@@ -10739,10 +10739,10 @@
  },
  "technology|VIDEO": {
   "file": "w/technology__video.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Sony_Handycam_DCR-SR35_20190810.jpg",
-  "author": "Sammlung der Medien und Wissenschaft",
-  "license": "CC BY 4.0",
-  "score": 0.304
+  "src": "https://commons.wikimedia.org/wiki/File:Cologne_Germany_Automatic-Wagon-Weightbridge-01.jpg",
+  "author": "CEphoto, Uwe Aranas",
+  "license": "CC BY-SA 3.0",
+  "score": 0.685
  },
  "technology|VIDEO CALL": {
   "file": "w/technology__video-call.jpg",

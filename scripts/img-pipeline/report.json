@@ -16092,7 +16092,7 @@
   },
   "opposites|BIG": {
    "title": "File:Elephas maximus (Bandipur).jpg",
-   "final": 1.09,
+   "final": 1.276,
    "p": 1.0,
    "photo": 0.8658,
    "fit": 1.0,
@@ -16160,39 +16160,29 @@
    "forced": false
   },
   "opposites|FAST": {
-   "title": "File:Male cheetah facing left in South Africa.jpg",
-   "final": 0.382,
-   "p": 0.0001,
-   "photo": 0.944,
-   "fit": 0.538,
+   "title": "File:Namibia Otjiwarongo Cheetah Conservation Fund Cheetah Jumping While Running.jpg",
+   "final": 1.289,
+   "p": 0.9844,
+   "photo": 0.8843,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.90)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.54"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:cheetah running",
+   "n_cands": 8,
    "forced": false
   },
   "opposites|SLOW": {
-   "title": "File:Bicho-preguiça 3.jpg",
-   "final": 0.258,
-   "p": 0.0,
-   "photo": 0.728,
-   "fit": 0.518,
+   "title": "File:Common snail.jpg",
+   "final": 1.303,
+   "p": 1.0,
+   "photo": 0.9978,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.86)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.52"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:snail",
+   "n_cands": 9,
    "forced": false
   },
   "opposites|HOT": {
@@ -16210,7 +16200,7 @@
   },
   "opposites|COLD": {
    "title": "File:CargoNet Di 12 Euro 4000 Lønsdal - Bolna.jpg",
-   "final": 0.439,
+   "final": 0.676,
    "p": 0.0014,
    "photo": 0.8671,
    "fit": 1.0,
@@ -16220,87 +16210,76 @@
     "low word prob 0.00"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 5,
    "forced": false
   },
   "opposites|NEW": {
-   "title": "File:Air Jordan 1 Banned.jpg",
-   "final": 0.405,
-   "p": 0.2518,
-   "photo": 0.9986,
-   "fit": 0.393,
+   "title": "File:J ^ J Shoe Repairs, New Mills - geograph.org.uk - 7689467.jpg",
+   "final": 0.701,
+   "p": 0.001,
+   "photo": 0.9382,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:new shoes box",
+   "n_cands": 4,
+   "forced": false
+  },
+  "opposites|OLD": {
+   "title": "File:Living room of a typical rural house in northeast Brazil.jpg",
+   "final": 0.968,
+   "p": 0.9591,
+   "photo": 0.8944,
+   "fit": 0.392,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 0.65)"
    ],
    "flags": [
-    "low word prob 0.25",
     "fit 0.39"
    ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "opposites|OLD": {
-   "title": "File:My Grandfather Photo from January 17.JPG",
-   "final": 0.818,
-   "p": 0.8234,
-   "photo": 0.1509,
-   "fit": 0.628,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "fit 0.63",
-    "not photo-like 0.15"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:old house",
+   "n_cands": 9,
    "forced": false
   },
   "opposites|YOUNG": {
-   "title": "File:The newborn baby in men.jpg",
-   "final": 0.441,
-   "p": 0.363,
-   "photo": 0.8588,
-   "fit": 0.324,
+   "title": "File:Young child surrounded by pigeons, Eminönü Square, Istanbul, 2008.jpg",
+   "final": 1.227,
+   "p": 0.9099,
+   "photo": 0.9515,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.54)"
-   ],
-   "flags": [
-    "low word prob 0.36",
-    "fit 0.32"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:young child",
+   "n_cands": 8,
    "forced": false
   },
   "opposites|HAPPY": {
-   "title": "File:Little kid smiling..jpg",
-   "final": 0.763,
-   "p": 0.7897,
-   "photo": 0.9971,
-   "fit": 0.271,
+   "title": "File:A happy child.jpg",
+   "final": 1.112,
+   "p": 0.9988,
+   "photo": 0.9628,
+   "fit": 0.64,
    "how": "yolo:person",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.70)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "fit 0.27"
+    "fit 0.64"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:happy child",
+   "n_cands": 6,
    "forced": false
   },
   "opposites|SAD": {
    "title": "File:Crying-girl.jpg",
-   "final": 0.761,
+   "final": 0.794,
    "p": 0.9861,
-   "photo": 0.5552,
+   "photo": 0.5551,
    "fit": 0.181,
    "how": "yolo:person",
    "notes": [
@@ -16311,12 +16290,12 @@
     "fit 0.18"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|CLEAN": {
    "title": "File:OCD handwash.jpg",
-   "final": 0.481,
+   "final": 0.73,
    "p": 0.001,
    "photo": 0.9895,
    "fit": 1.0,
@@ -16326,12 +16305,12 @@
     "low word prob 0.00"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "opposites|DIRTY": {
    "title": "File:2003-11-27 Northerner boots in mud.jpg",
-   "final": 1.073,
+   "final": 1.245,
    "p": 1.0,
    "photo": 0.7262,
    "fit": 1.0,
@@ -16343,40 +16322,36 @@
    "forced": false
   },
   "opposites|WET": {
-   "title": "File:Hard rain on a roof.jpg",
-   "final": 0.806,
-   "p": 0.9991,
-   "photo": 0.9309,
-   "fit": 0.204,
-   "how": "none",
-   "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.49)"
-   ],
+   "title": "File:Tongerense Heide, (Veluwe). 30-08-2021. (actm.) 06.jpg",
+   "final": 0.746,
+   "p": 0.0008,
+   "photo": 0.9427,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
    "flags": [
-    "fit 0.20"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:wet",
+   "n_cands": 7,
    "forced": false
   },
   "opposites|DRY": {
-   "title": "File:Rub al Khali 002.JPG",
-   "final": 0.163,
-   "p": 0.0053,
-   "photo": 0.9853,
-   "fit": 0.161,
-   "how": "saliency",
+   "title": "File:Dry cracked earth - geograph.org.uk - 5840069.jpg",
+   "final": 0.843,
+   "p": 0.794,
+   "photo": 0.8311,
+   "fit": 0.373,
+   "how": "none",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.42)"
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.89)"
    ],
    "flags": [
-    "low word prob 0.01",
-    "fit 0.16"
+    "fit 0.37"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:dry cracked earth",
+   "n_cands": 7,
    "forced": false
   },
   "opposites|FULL": {
@@ -16417,7 +16392,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:open box",
-   "n_cands": 10,
+   "n_cands": 9,
    "forced": false
   },
   "opposites|CLOSED": {
@@ -16475,7 +16450,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:cat in a box",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|OUT": {
@@ -16589,46 +16564,38 @@
    "forced": false
   },
   "opposites|HEAVY": {
-   "title": "File:TwoDumbbells.JPG",
-   "final": 0.403,
-   "p": 0.1177,
-   "photo": 0.9055,
-   "fit": 0.443,
+   "title": "File:Ribeira da Janela (Madeira, Portugal), Ilheus da Rib -- 2025 -- 1582.jpg",
+   "final": 0.86,
+   "p": 0.117,
+   "photo": 0.977,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.92)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.12",
-    "fit 0.44"
+    "low word prob 0.12"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:heavy rock",
+   "n_cands": 6,
    "forced": false
   },
   "opposites|LIGHT": {
-   "title": "File:InflatableBalloons.jpg",
-   "final": 0.246,
-   "p": 0.0,
-   "photo": 0.983,
-   "fit": 0.138,
+   "title": "File:Light as a Feather, artist Kevin O'Dwyer, Sculpture in the Parklands, photo Kevin O'Dwyer IMG 7361.jpg",
+   "final": 1.249,
+   "p": 0.9791,
+   "photo": 0.9839,
+   "fit": 0.776,
    "how": "saliency",
    "notes": [
-    "touches 4 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.56)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.14"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:light feather",
+   "n_cands": 7,
    "forced": false
   },
   "opposites|HARD": {
    "title": "File:Pebble Dash (15366562092).jpg",
-   "final": 0.932,
+   "final": 1.028,
    "p": 0.987,
    "photo": 0.9984,
    "fit": 0.306,
@@ -16641,27 +16608,24 @@
     "fit 0.31"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "opposites|SOFT": {
-   "title": "File:Pillows on a hotel bed.jpg",
-   "final": 0.154,
-   "p": 0.0006,
-   "photo": 0.175,
-   "fit": 0.386,
+   "title": "File:Colorful soft toys.jpg",
+   "final": 1.023,
+   "p": 0.9408,
+   "photo": 0.8446,
+   "fit": 0.64,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.81)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.39",
-    "not photo-like 0.17"
+    "fit 0.64"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:soft toy",
+   "n_cands": 7,
    "forced": false
   },
   "opposites|LOUD": {
@@ -16682,21 +16646,18 @@
    "forced": false
   },
   "opposites|QUIET": {
-   "title": "File:SanDiegoCityCollegeLearningResource - bookshelf.jpg",
-   "final": 0.298,
-   "p": 0.0001,
-   "photo": 0.2326,
-   "fit": 0.786,
+   "title": "File:Baraboo Public Library.jpg",
+   "final": 0.658,
+   "p": 0.0,
+   "photo": 0.791,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.23"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:quiet library",
+   "n_cands": 8,
    "forced": false
   },
   "opposites|EASY": {
@@ -16730,21 +16691,21 @@
    "forced": false
   },
   "opposites|RICH": {
-   "title": "File:Gold-crystals.jpg",
-   "final": 0.339,
-   "p": 0.1223,
-   "photo": 0.9405,
-   "fit": 0.358,
+   "title": "File:Trésor de Césarée.JPG",
+   "final": 1.007,
+   "p": 1.0,
+   "photo": 1.0,
+   "fit": 0.253,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.60)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.53)"
    ],
    "flags": [
-    "low word prob 0.12",
-    "fit 0.36"
+    "fit 0.25"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:gold coins treasure",
+   "n_cands": 9,
    "forced": false
   },
   "opposites|POOR": {
@@ -16762,7 +16723,7 @@
   },
   "opposites|STRONG": {
    "title": "File:TwoDumbbells.JPG",
-   "final": 0.798,
+   "final": 0.914,
    "p": 0.8126,
    "photo": 0.9055,
    "fit": 0.443,
@@ -16775,7 +16736,7 @@
     "fit 0.44"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|WEAK": {
@@ -16829,26 +16790,25 @@
    "forced": false
   },
   "opposites|SWEET": {
-   "title": "File:Candy in Damascus.jpg",
-   "final": 0.903,
-   "p": 1.0,
-   "photo": 0.9942,
-   "fit": 0.154,
+   "title": "File:Candy kitten sweet aug 21.jpg",
+   "final": 1.039,
+   "p": 0.9711,
+   "photo": 0.917,
+   "fit": 0.498,
    "how": "saliency",
    "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.50)"
+    "subject cannot fit 3:4 (box cov 0.83)"
    ],
    "flags": [
-    "fit 0.15"
+    "fit 0.50"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:candy sweets",
+   "n_cands": 8,
    "forced": false
   },
   "opposites|SOUR": {
    "title": "File:P1030323.JPG",
-   "final": 1.138,
+   "final": 1.336,
    "p": 0.9998,
    "photo": 0.9794,
    "fit": 1.0,
@@ -16860,22 +16820,18 @@
    "forced": false
   },
   "opposites|SAME": {
-   "title": "File:Mauch Twins.jpg",
-   "final": 0.196,
-   "p": 0.0001,
-   "photo": 1.0,
-   "fit": 0.273,
+   "title": "File:Not Quite Identical Twins - geograph.org.uk - 8070733.jpg",
+   "final": 0.695,
+   "p": 0.0028,
+   "photo": 0.9674,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.89)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.27"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:identical twins",
+   "n_cands": 9,
    "forced": false
   },
   "opposites|DIFFERENT": {
@@ -28673,7 +28629,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:children playing outside",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "opposites|HIGH": {
@@ -28748,7 +28704,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:top of mountain",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|BOTTOM": {
@@ -29633,13 +29589,11 @@
   "opposites|EMPTY",
   "opposites|EXPENSIVE",
   "opposites|FAR",
-  "opposites|FAST",
   "opposites|FRONT",
   "opposites|HAPPY",
   "opposites|HARD",
   "opposites|HEAVY",
   "opposites|HIGH",
-  "opposites|LIGHT",
   "opposites|LONG",
   "opposites|LOUD",
   "opposites|LOW",
@@ -29655,7 +29609,6 @@
   "opposites|SAFE",
   "opposites|SAME",
   "opposites|SHORT",
-  "opposites|SLOW",
   "opposites|SMOOTH",
   "opposites|SOFT",
   "opposites|STRAIGHT",
@@ -29667,7 +29620,6 @@
   "opposites|WEAK",
   "opposites|WET",
   "opposites|WIDE",
-  "opposites|YOUNG",
   "places|AMUSEMENT PARK",
   "places|BAKERY",
   "places|CIRCUS",
@@ -30085,6 +30037,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1890,
-  "flagged": 1075
+  "flagged": 1071
  }
 }

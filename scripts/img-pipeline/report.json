@@ -7993,7 +7993,21 @@
    "forced": false
   },
   "toys|TOY CAR": {
-   "status": "no candidates"
+   "title": "File:Old tin car toy photo 1.jpg",
+   "final": 0.991,
+   "p": 0.9723,
+   "photo": 0.7565,
+   "fit": 0.508,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.85)"
+   ],
+   "flags": [
+    "fit 0.51"
+   ],
+   "origin": "search:toy car",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|BUBBLES": {
    "title": "File:Reflection in a soap bubble edit.jpg",
@@ -8011,10 +8025,34 @@
    "forced": false
   },
   "toys|SLIDE": {
-   "status": "no candidates"
+   "title": "File:Big Slide, Kids Playground - geograph.org.uk - 5185307.jpg",
+   "final": 0.938,
+   "p": 0.6723,
+   "photo": 0.5083,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:playground slide",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|SWING": {
-   "status": "no candidates"
+   "title": "File:Wet swing at the West Park playground - geograph.org.uk - 2094718.jpg",
+   "final": 1.196,
+   "p": 0.9946,
+   "photo": 0.9948,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:playground swing",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|SEESAW": {
    "title": "File:Francisco de Goya - El Balancín (Philadelphia Museum of Art).jpg",
@@ -13474,7 +13512,21 @@
    "forced": false
   },
   "toys|LEGO": {
-   "status": "no candidates"
+   "title": "File:2 duplo lego bricks.jpg",
+   "final": 1.124,
+   "p": 0.9286,
+   "photo": 0.9876,
+   "fit": 0.525,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.87)"
+   ],
+   "flags": [
+    "fit 0.52"
+   ],
+   "origin": "search:Lego bricks",
+   "n_cands": 6,
+   "forced": false
   },
   "toys|TRAIN SET": {
    "title": "File:Distler-Zug, um 1950 (Foto Sp b).JPG",
@@ -13494,7 +13546,19 @@
    "forced": false
   },
   "toys|SPINNING TOP": {
-   "status": "no candidates"
+   "title": "File:Spinning top.jpg",
+   "final": 0.77,
+   "p": 0.0077,
+   "photo": 0.8461,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:spinning top toy",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|WATER GUN": {
    "title": "File:The girls fight with water cannons!.jpg",
@@ -13550,7 +13614,17 @@
    "forced": false
   },
   "toys|SCOOTER": {
-   "status": "no candidates"
+   "title": "File:Ex scooter, Frankfurt am Main (LRM 20210815 134347).jpg",
+   "final": 1.288,
+   "p": 0.9993,
+   "photo": 0.9383,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:kick scooter",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|ROLLER SKATES": {
    "title": "File:Roller-skate.jpg",
@@ -13609,7 +13683,17 @@
    "forced": false
   },
   "toys|PLAYDOUGH": {
-   "status": "no candidates"
+   "title": "File:Play-Doh.jpg",
+   "final": 1.251,
+   "p": 0.9897,
+   "photo": 0.7773,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:play-doh",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|MAGNET": {
    "title": "File:Colección de imanes de frigorífico (RPS 28-06-2015).png",
@@ -19678,133 +19762,649 @@
    "status": "no candidates"
   },
   "toys|ACTION FIGURE": {
-   "status": "no candidates"
+   "title": "File:Soldier action figures.jpg",
+   "final": 0.845,
+   "p": 1.0,
+   "photo": 0.2654,
+   "fit": 0.775,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.27"
+   ],
+   "origin": "search:action figure toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|STUFFED ANIMAL": {
-   "status": "no candidates"
+   "title": "File:Beagle with a penguin stuffed toy.jpg",
+   "final": 1.256,
+   "p": 0.9862,
+   "photo": 0.9225,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:stuffed animal toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|DOLLHOUSE": {
-   "status": "no candidates"
+   "title": "File:Antique German dollhouse (26444495322).jpg",
+   "final": 1.134,
+   "p": 0.9968,
+   "photo": 0.8024,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:dollhouse toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|RUBBER DUCK": {
-   "status": "no candidates"
+   "title": "File:Yellow rubber duck in Rishon Lezion, August 2024 04.jpg",
+   "final": 1.361,
+   "p": 1.0,
+   "photo": 0.9974,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:rubber duck toy",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|RATTLE": {
-   "status": "no candidates"
+   "title": "File:Baby tattle toy.jpg",
+   "final": 1.136,
+   "p": 0.9944,
+   "photo": 0.8192,
+   "fit": 0.569,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.95)"
+   ],
+   "flags": [
+    "fit 0.57"
+   ],
+   "origin": "search:rattle toy",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|RUBIK'S CUBE": {
-   "status": "no candidates"
+   "title": "File:Kubik-Rubik.jpg",
+   "final": 1.263,
+   "p": 0.9988,
+   "photo": 0.9955,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:rubik's cube toy",
+   "n_cands": 6,
+   "forced": false
   },
   "toys|PLAYING CARDS": {
-   "status": "no candidates"
+   "title": "File:Maureen Stapleton - Toys in the Attic (1960; front).jpg",
+   "final": 0.598,
+   "p": 0.0001,
+   "photo": 0.9998,
+   "fit": 0.795,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:playing cards toy",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|DOMINOES": {
-   "status": "no candidates"
+   "title": "File:Domino, xviii-xix secolo, in osso e mogano.jpg",
+   "final": 0.997,
+   "p": 0.9883,
+   "photo": 0.9991,
+   "fit": 0.405,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.68)"
+   ],
+   "flags": [
+    "fit 0.41"
+   ],
+   "origin": "search:dominoes toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|JACK-IN-THE-BOX": {
-   "status": "no candidates"
+   "title": "File:Wooden Jack-in-the-Box Toy Owned by Charles A. Lindbergh - DPLA - 88182d5b381ab17647f4850fcb65abfb (page 8).jpg",
+   "final": 0.649,
+   "p": 0.0,
+   "photo": 0.7436,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:jack-in-the-box toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|KALEIDOSCOPE": {
-   "status": "no candidates"
+   "title": "File:Kaleidoscopic-pattern-00.jpg",
+   "final": 0.847,
+   "p": 1.0,
+   "photo": 0.056,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.06"
+   ],
+   "origin": "search:kaleidoscope toy",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|HULA HOOP": {
-   "status": "no candidates"
+   "title": "File:60 Hula Hoops.jpg",
+   "final": 0.897,
+   "p": 0.9996,
+   "photo": 0.2288,
+   "fit": 0.763,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.23"
+   ],
+   "origin": "search:hula hoop toy",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|FRISBEE": {
-   "status": "no candidates"
+   "title": "File:Jack Russell Terrier Eddi with Frisbee.JPG",
+   "final": 1.222,
+   "p": 0.9292,
+   "photo": 0.9777,
+   "fit": 0.831,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:frisbee toy",
+   "n_cands": 4,
+   "forced": false
   },
   "toys|BEACH BALL": {
-   "status": "no candidates"
+   "title": "File:Fotothek df roe-neg 0006450 002 Kleiner Junge, mit einem Ball im Wasser spielend.jpg",
+   "final": 0.845,
+   "p": 0.8102,
+   "photo": 0.9997,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "upscaled x1.6"
+   ],
+   "flags": [],
+   "origin": "search:beach ball toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|PINWHEEL": {
-   "status": "no candidates"
+   "title": "File:1189Toy windmills in of the Philippines 03.jpg",
+   "final": 1.227,
+   "p": 0.9923,
+   "photo": 0.6013,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:pinwheel toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|ORIGAMI": {
-   "status": "no candidates"
+   "title": "File:Origami cranes at a train station in Tochigi prefecture, Japan.jpg",
+   "final": 1.265,
+   "p": 1.0,
+   "photo": 0.686,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:origami crane",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|PAPER PLANE": {
-   "status": "no candidates"
+   "title": "File:Paper Airplane.png",
+   "final": 0.45,
+   "p": 1.0,
+   "photo": 0.0028,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [
+    "upscaled x1.5"
+   ],
+   "flags": [
+    "not photo-like 0.00"
+   ],
+   "origin": "search:paper plane toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|SLIME": {
-   "status": "no candidates"
+   "title": "File:Slime 02471 Nevit.jpg",
+   "final": 1.298,
+   "p": 0.9999,
+   "photo": 0.996,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:slime toy",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|PLAY TENT": {
-   "status": "no candidates"
+   "title": "File:SAKIKO - KID'S Corner. (31217242923).jpg",
+   "final": 0.876,
+   "p": 0.9946,
+   "photo": 0.1907,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.19"
+   ],
+   "origin": "search:play tent toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|BALL PIT": {
-   "status": "no candidates"
+   "title": "File:Balls & Colors.JPG",
+   "final": 1.013,
+   "p": 0.999,
+   "photo": 0.977,
+   "fit": 0.236,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.24"
+   ],
+   "origin": "search:ball pit toy",
+   "n_cands": 6,
+   "forced": false
   },
   "toys|MONKEY BARS": {
-   "status": "no candidates"
+   "title": "File:US Navy 070116-N-8218W-089 U.S. Air Force 1st Lt. Lea Ann Fracasso assigned to Wright-Patterson Air Force Base in Ohio, helps an Iraqi girl cross the monkey bars on the play ground at the Civilian Military Operations Center (CM.jpg",
+   "final": 0.78,
+   "p": 1.0,
+   "photo": 0.3302,
+   "fit": 0.524,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.87)"
+   ],
+   "flags": [
+    "fit 0.52",
+    "not photo-like 0.33"
+   ],
+   "origin": "search:monkey bars toy",
+   "n_cands": 5,
+   "forced": false
   },
   "toys|MERRY-GO-ROUND": {
-   "status": "no candidates"
+   "title": "File:Home-Made Toys for Boys and Girls - Fig 135.jpg",
+   "final": 1.03,
+   "p": 0.9996,
+   "photo": 0.902,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:merry-go-round toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|SANDCASTLE": {
    "status": "no candidates"
   },
   "toys|SNOW GLOBE": {
-   "status": "no candidates"
+   "title": "File:KRYONIUM 1 Matthias A. K. Zimmermann Kulturverlag Kadmos.jpg",
+   "final": 0.49,
+   "p": 0.6563,
+   "photo": 0.0301,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.03"
+   ],
+   "origin": "search:snow globe toy",
+   "n_cands": 1,
+   "forced": false
   },
   "toys|TEA SET": {
-   "status": "no candidates"
+   "title": "File:Toy, tea set (AM 1959.137-7).jpg",
+   "final": 0.555,
+   "p": 0.9978,
+   "photo": 0.1952,
+   "fit": 0.412,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.69)"
+   ],
+   "flags": [
+    "fit 0.41",
+    "not photo-like 0.20"
+   ],
+   "origin": "search:tea set toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|DOCTOR KIT": {
-   "status": "no candidates"
+   "title": "File:Doctor's Kit - Toy (432834207).jpg",
+   "final": 0.353,
+   "p": 1.0,
+   "photo": 0.0187,
+   "fit": 0.269,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.27",
+    "not photo-like 0.02"
+   ],
+   "origin": "search:doctor kit toy",
+   "n_cands": 1,
+   "forced": false
   },
   "toys|TOY KITCHEN": {
-   "status": "no candidates"
+   "title": "File:Toy kitchen set.jpg",
+   "final": 1.148,
+   "p": 0.9904,
+   "photo": 0.8579,
+   "fit": 0.816,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)",
+    "upscaled x1.5"
+   ],
+   "flags": [],
+   "origin": "search:toy kitchen toy",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|PIGGY BANK": {
-   "status": "no candidates"
+   "title": "File:20250828 ceramic piggy banks.jpg",
+   "final": 0.465,
+   "p": 0.8701,
+   "photo": 0.0886,
+   "fit": 0.49,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.82)"
+   ],
+   "flags": [
+    "fit 0.49",
+    "not photo-like 0.09"
+   ],
+   "origin": "search:piggy bank toy",
+   "n_cands": 4,
+   "forced": false
   },
   "toys|COLORING BOOK": {
-   "status": "no candidates"
+   "title": "File:The mothercraft manual (1916) (14589603358).jpg",
+   "final": 0.625,
+   "p": 0.0002,
+   "photo": 0.5424,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:coloring book toy",
+   "n_cands": 5,
+   "forced": false
   },
   "toys|PICTURE BOOK": {
-   "status": "no candidates"
+   "title": "File:Toy Train Station at NN Park, Cooch Behar 03.jpg",
+   "final": 0.63,
+   "p": 0.0,
+   "photo": 0.646,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:picture book toy",
+   "n_cands": 6,
+   "forced": false
   },
   "toys|TRICYCLE": {
-   "status": "no candidates"
+   "title": "File:Portrait, kid, toy, tricycle, garden Fortepan 9111.jpg",
+   "final": 1.004,
+   "p": 0.9583,
+   "photo": 0.9994,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:tricycle toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|BOUNCY CASTLE": {
-   "status": "no candidates"
+   "title": "File:Fun, food and fireworks 140704-F-IM659-679.jpg",
+   "final": 0.543,
+   "p": 0.0005,
+   "photo": 0.6011,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:bouncy castle toy",
+   "n_cands": 1,
+   "forced": false
   },
   "toys|TOY BOX": {
-   "status": "no candidates"
+   "title": "File:A little girl with her plastic toy.jpg",
+   "final": 1.015,
+   "p": 0.6807,
+   "photo": 0.9659,
+   "fit": 0.588,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.98)"
+   ],
+   "flags": [
+    "fit 0.59"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "toys|CHECKERS": {
-   "status": "no candidates"
+   "title": "File:Набор шашек и доска, 1980-е годы, СССР.jpg",
+   "final": 1.349,
+   "p": 0.9852,
+   "photo": 0.9806,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:checkers toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|HOPSCOTCH": {
-   "status": "no candidates"
+   "title": "File:Marelle (DSC 3214).jpg",
+   "final": 1.313,
+   "p": 1.0,
+   "photo": 0.9871,
+   "fit": 0.838,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "toys|HIDE-AND-SEEK": {
-   "status": "no candidates"
+   "title": "File:Hide and seek. Find me if you can.jpg",
+   "final": 1.319,
+   "p": 0.9997,
+   "photo": 0.9924,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:children playing hide and seek",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|WIND-UP TOY": {
-   "status": "no candidates"
+   "title": "File:Antique tin toy wind-up clown and wind-up mouse (25196969284).jpg",
+   "final": 1.1,
+   "p": 0.8765,
+   "photo": 0.8019,
+   "fit": 0.832,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:wind-up toy toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|WAGON": {
-   "status": "no candidates"
+   "title": "File:July 4 Little Red Wagon on the Algiers Levee.jpg",
+   "final": 0.996,
+   "p": 0.9998,
+   "photo": 0.7343,
+   "fit": 0.497,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.83)"
+   ],
+   "flags": [
+    "fit 0.50"
+   ],
+   "origin": "search:wagon toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|CLAY": {
-   "status": "no candidates"
+   "title": "File:Old pottery.jpg",
+   "final": 1.072,
+   "p": 0.466,
+   "photo": 0.9861,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.47"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|GLOW STICK": {
    "status": "no candidates"
   },
   "toys|PLAYHOUSE": {
-   "status": "no candidates"
+   "title": "File:Plastic house.jpg",
+   "final": 1.218,
+   "p": 0.9996,
+   "photo": 0.9467,
+   "fit": 0.835,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|STACKING CUPS": {
-   "status": "no candidates"
+   "title": "File:Baby toys.jpg",
+   "final": 0.367,
+   "p": 0.0001,
+   "photo": 0.9817,
+   "fit": 0.287,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.60)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.29"
+   ],
+   "origin": "search:stacking cups toy",
+   "n_cands": 1,
+   "forced": false
   },
   "toys|SHAPE SORTER": {
-   "status": "no candidates"
+   "title": "File:Shape sorter.jpg",
+   "final": 1.353,
+   "p": 0.9115,
+   "photo": 0.9887,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:shape sorter toy",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|PAINT SET": {
-   "status": "no candidates"
+   "title": "File:Parro-Toy (NZ) Farmyard Set (AM 2013.52.1-3).jpg",
+   "final": 0.602,
+   "p": 0.0013,
+   "photo": 0.862,
+   "fit": 0.815,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:paint set toy",
+   "n_cands": 8,
+   "forced": false
   },
   "time|NOON": {
    "status": "no candidates"
@@ -22460,71 +23060,49 @@
   "toys|BALL",
   "toys|BALL PIT",
   "toys|BALLOON ANIMAL",
-  "toys|BEACH BALL",
   "toys|BLOCKS",
   "toys|BOARD GAME",
   "toys|BOUNCY CASTLE",
-  "toys|CHECKERS",
   "toys|CLAY",
   "toys|COLORING BOOK",
   "toys|CRAYONS",
   "toys|DICE",
   "toys|DOCTOR KIT",
   "toys|DOLL",
-  "toys|DOLLHOUSE",
   "toys|DOMINOES",
   "toys|DRUM",
-  "toys|FRISBEE",
   "toys|GLOW STICK",
-  "toys|HIDE-AND-SEEK",
-  "toys|HOPSCOTCH",
   "toys|HULA HOOP",
   "toys|JACK-IN-THE-BOX",
   "toys|KALEIDOSCOPE",
   "toys|LEGO",
   "toys|MAGNET",
   "toys|MARBLES",
-  "toys|MERRY-GO-ROUND",
   "toys|MONKEY BARS",
-  "toys|ORIGAMI",
   "toys|PAINT SET",
   "toys|PAPER PLANE",
   "toys|PICTURE BOOK",
   "toys|PIGGY BANK",
-  "toys|PINWHEEL",
   "toys|PLAY TENT",
-  "toys|PLAYDOUGH",
-  "toys|PLAYHOUSE",
   "toys|PLAYING CARDS",
   "toys|PUPPET",
   "toys|RATTLE",
   "toys|ROCKING HORSE",
   "toys|ROLLER SKATES",
-  "toys|RUBBER DUCK",
-  "toys|RUBIK'S CUBE",
   "toys|SANDBOX",
   "toys|SANDCASTLE",
-  "toys|SCOOTER",
   "toys|SEESAW",
-  "toys|SHAPE SORTER",
-  "toys|SLIDE",
-  "toys|SLIME",
   "toys|SNOW GLOBE",
   "toys|SPINNING TOP",
   "toys|STACKING CUPS",
   "toys|STICKER BOOK",
-  "toys|STUFFED ANIMAL",
-  "toys|SWING",
   "toys|TEA SET",
   "toys|TOY BOX",
   "toys|TOY CAR",
-  "toys|TOY KITCHEN",
   "toys|TRAIN SET",
   "toys|TRAMPOLINE",
-  "toys|TRICYCLE",
   "toys|WAGON",
   "toys|WATER GUN",
-  "toys|WIND-UP TOY",
   "toys|YO-YO",
   "vegetables|ARUGULA",
   "vegetables|ASPARAGUS",
@@ -22712,7 +23290,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1244,
-  "flagged": 1389
+  "with_photo": 1292,
+  "flagged": 1367
  }
 }

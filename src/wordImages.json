@@ -7811,12 +7811,26 @@
   "license": "CC BY-SA 4.0",
   "score": 0.45
  },
+ "toys|ACTION FIGURE": {
+  "file": "w/toys__action-figure.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Soldier_action_figures.jpg",
+  "author": "puuikibeach",
+  "license": "CC BY 2.0",
+  "score": 0.845
+ },
  "toys|BALL": {
   "file": "w/toys__ball.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Glaskugel_--_2022_--_9846.jpg",
   "author": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
   "score": 0.741
+ },
+ "toys|BALL PIT": {
+  "file": "w/toys__ball-pit.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Balls_%26_Colors.JPG",
+  "author": "Halfalah",
+  "license": "CC BY 3.0",
+  "score": 1.013
  },
  "toys|BALLOON": {
   "file": "w/toys__balloon.jpg",
@@ -7832,6 +7846,13 @@
   "license": "Public domain",
   "score": 0.781
  },
+ "toys|BEACH BALL": {
+  "file": "w/toys__beach-ball.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Fotothek_df_roe-neg_0006450_002_Kleiner_Junge,_mit_einem_Ball_im_Wasser_spielend.jpg",
+  "author": "Roger Rössing / Renate Rössing",
+  "license": "CC BY-SA 3.0 de",
+  "score": 0.845
+ },
  "toys|BLOCKS": {
   "file": "w/toys__blocks.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:A_girl_play_toy_blocks.jpg",
@@ -7846,12 +7867,40 @@
   "license": "Public domain",
   "score": 0.694
  },
+ "toys|BOUNCY CASTLE": {
+  "file": "w/toys__bouncy-castle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Fun,_food_and_fireworks_140704-F-IM659-679.jpg",
+  "author": "Airman 1st Class Nicole Sikorski",
+  "license": "Public domain",
+  "score": 0.543
+ },
  "toys|BUBBLES": {
   "file": "w/toys__bubbles.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Reflection_in_a_soap_bubble_edit.jpg",
   "author": "Brocken Inaglory . The image was edited by user:Alvesgaspar",
   "license": "CC BY-SA 3.0",
   "score": 1.121
+ },
+ "toys|CHECKERS": {
+  "file": "w/toys__checkers.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%B1%D0%BE%D1%80_%D1%88%D0%B0%D1%88%D0%B5%D0%BA_%D0%B8_%D0%B4%D0%BE%D1%81%D0%BA%D0%B0,_1980-%D0%B5_%D0%B3%D0%BE%D0%B4%D1%8B,_%D0%A1%D0%A1%D0%A1%D0%A0.jpg",
+  "author": "Prostranstvo",
+  "license": "CC BY-SA 4.0",
+  "score": 1.349
+ },
+ "toys|CLAY": {
+  "file": "w/toys__clay.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Old_pottery.jpg",
+  "author": "Mahinur11",
+  "license": "CC BY-SA 4.0",
+  "score": 1.072
+ },
+ "toys|COLORING BOOK": {
+  "file": "w/toys__coloring-book.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_mothercraft_manual_(1916)_(14589603358).jpg",
+  "author": "Read, Mary Lillian, 1878-",
+  "license": "No restrictions",
+  "score": 0.625
  },
  "toys|CRAYONS": {
   "file": "w/toys__crayons.jpg",
@@ -7867,12 +7916,33 @@
   "license": "CC BY-SA 3.0",
   "score": 0.976
  },
+ "toys|DOCTOR KIT": {
+  "file": "w/toys__doctor-kit.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Doctor%27s_Kit_-_Toy_(432834207).jpg",
+  "author": "Cristiano Betta from London, UK",
+  "license": "CC BY 2.0",
+  "score": 0.353
+ },
  "toys|DOLL": {
   "file": "w/toys__doll.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Matryoshka_from_Hungary.jpg",
   "author": "Wilfredor",
   "license": "CC0",
   "score": 0.703
+ },
+ "toys|DOLLHOUSE": {
+  "file": "w/toys__dollhouse.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Antique_German_dollhouse_(26444495322).jpg",
+  "author": "Thomas Quine",
+  "license": "CC BY 2.0",
+  "score": 1.134
+ },
+ "toys|DOMINOES": {
+  "file": "w/toys__dominoes.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Domino,_xviii-xix_secolo,_in_osso_e_mogano.jpg",
+  "author": "Sailko",
+  "license": "CC BY-SA 4.0",
+  "score": 0.997
  },
  "toys|DRUM": {
   "file": "w/toys__drum.jpg",
@@ -7881,6 +7951,13 @@
   "license": "Public domain",
   "score": 0.981
  },
+ "toys|FRISBEE": {
+  "file": "w/toys__frisbee.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Eddi_with_Frisbee.JPG",
+  "author": "Steve-65",
+  "license": "CC BY-SA 3.0",
+  "score": 1.222
+ },
  "toys|GUITAR": {
   "file": "w/toys__guitar.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bridge_of_Hohner_bass_guitar_LX90B.jpg",
@@ -7888,12 +7965,54 @@
   "license": "CC BY-SA 4.0",
   "score": 1.107
  },
+ "toys|HIDE-AND-SEEK": {
+  "file": "w/toys__hide-and-seek.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hide_and_seek._Find_me_if_you_can.jpg",
+  "author": "Tarekheikal",
+  "license": "CC BY-SA 4.0",
+  "score": 1.319
+ },
+ "toys|HOPSCOTCH": {
+  "file": "w/toys__hopscotch.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Marelle_(DSC_3214).jpg",
+  "author": "Trougnouf (Benoit Brummer)",
+  "license": "CC BY 4.0",
+  "score": 1.313
+ },
+ "toys|HULA HOOP": {
+  "file": "w/toys__hula-hoop.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:60_Hula_Hoops.jpg",
+  "author": "Samantha Quigley, Office of the Secretary of Defense Public Affairs",
+  "license": "Public domain",
+  "score": 0.897
+ },
+ "toys|JACK-IN-THE-BOX": {
+  "file": "w/toys__jack-in-the-box.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Wooden_Jack-in-the-Box_Toy_Owned_by_Charles_A._Lindbergh_-_DPLA_-_88182d5b381ab17647f4850fcb65abfb_(page_8).jpg",
+  "author": "This file was contributed to Wikimedia Commons by Missouri Historical Society as part of a cooperation project. The donation was facilitated by the Digital Public Library of America , via its partner ",
+  "license": "Public domain",
+  "score": 0.649
+ },
+ "toys|KALEIDOSCOPE": {
+  "file": "w/toys__kaleidoscope.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kaleidoscopic-pattern-00.jpg",
+  "author": "Rnbc at en.wikipedia",
+  "license": "CC BY-SA 3.0",
+  "score": 0.847
+ },
  "toys|KITE": {
   "file": "w/toys__kite.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Kitesflying.jpg",
   "author": "Jon Sullivan",
   "license": "Public domain",
   "score": 1.13
+ },
+ "toys|LEGO": {
+  "file": "w/toys__lego.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2_duplo_lego_bricks.jpg",
+  "author": "Klasbricks at English Wikipedia",
+  "license": "Public domain",
+  "score": 1.124
  },
  "toys|MAGNET": {
   "file": "w/toys__magnet.jpg",
@@ -7909,12 +8028,96 @@
   "license": "CC BY-SA 2.0",
   "score": 1.054
  },
+ "toys|MERRY-GO-ROUND": {
+  "file": "w/toys__merry-go-round.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Home-Made_Toys_for_Boys_and_Girls_-_Fig_135.jpg",
+  "author": "Albert Neely Hall",
+  "license": "Public domain",
+  "score": 1.03
+ },
+ "toys|MONKEY BARS": {
+  "file": "w/toys__monkey-bars.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:US_Navy_070116-N-8218W-089_U.S._Air_Force_1st_Lt._Lea_Ann_Fracasso_assigned_to_Wright-Patterson_Air_Force_Base_in_Ohio,_helps_an_Iraqi_girl_cross_the_monkey_bars_on_the_play_ground_at_the_Civilian_Military_Operations_Center_(CM.jpg",
+  "author": "U.S. Navy photo by Senior Chief Mass Communication Specialist Jerry Woller",
+  "license": "Public domain",
+  "score": 0.78
+ },
+ "toys|ORIGAMI": {
+  "file": "w/toys__origami.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Origami_cranes_at_a_train_station_in_Tochigi_prefecture,_Japan.jpg",
+  "author": "Joli Rumi",
+  "license": "CC BY-SA 4.0",
+  "score": 1.265
+ },
+ "toys|PAINT SET": {
+  "file": "w/toys__paint-set.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Parro-Toy_(NZ)_Farmyard_Set_(AM_2013.52.1-3).jpg",
+  "author": "Parro Toy",
+  "license": "CC BY 4.0",
+  "score": 0.602
+ },
+ "toys|PAPER PLANE": {
+  "file": "w/toys__paper-plane.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Paper_Airplane.png",
+  "author": "Ushakaron",
+  "license": "CC0",
+  "score": 0.45
+ },
  "toys|PIANO": {
   "file": "w/toys__piano.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Steinway_Vienna_002.JPG",
   "author": "Gryffindor",
   "license": "CC BY-SA 3.0",
   "score": 1.031
+ },
+ "toys|PICTURE BOOK": {
+  "file": "w/toys__picture-book.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Toy_Train_Station_at_NN_Park,_Cooch_Behar_03.jpg",
+  "author": "Kingshuk Mondal",
+  "license": "CC BY 4.0",
+  "score": 0.63
+ },
+ "toys|PIGGY BANK": {
+  "file": "w/toys__piggy-bank.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:20250828_ceramic_piggy_banks.jpg",
+  "author": "Abraham",
+  "license": "CC0",
+  "score": 0.465
+ },
+ "toys|PINWHEEL": {
+  "file": "w/toys__pinwheel.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:1189Toy_windmills_in_of_the_Philippines_03.jpg",
+  "author": "Judgefloro",
+  "license": "CC0",
+  "score": 1.227
+ },
+ "toys|PLAY TENT": {
+  "file": "w/toys__play-tent.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:SAKIKO_-_KID%27S_Corner._(31217242923).jpg",
+  "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
+  "license": "CC BY 2.0",
+  "score": 0.876
+ },
+ "toys|PLAYDOUGH": {
+  "file": "w/toys__playdough.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Play-Doh.jpg",
+  "author": "Letstown",
+  "license": "CC0",
+  "score": 1.251
+ },
+ "toys|PLAYHOUSE": {
+  "file": "w/toys__playhouse.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Plastic_house.jpg",
+  "author": "Jebulon",
+  "license": "CC0",
+  "score": 1.218
+ },
+ "toys|PLAYING CARDS": {
+  "file": "w/toys__playing-cards.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Maureen_Stapleton_-_Toys_in_the_Attic_(1960;_front).jpg",
+  "author": "N/A studio",
+  "license": "Public domain",
+  "score": 0.598
  },
  "toys|PUPPET": {
   "file": "w/toys__puppet.jpg",
@@ -7929,6 +8132,13 @@
   "author": "Scouten",
   "license": "CC BY-SA 3.0",
   "score": 1.01
+ },
+ "toys|RATTLE": {
+  "file": "w/toys__rattle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Baby_tattle_toy.jpg",
+  "author": "Zeromonk",
+  "license": "CC BY-SA 4.0",
+  "score": 1.136
  },
  "toys|ROBOT": {
   "file": "w/toys__robot.jpg",
@@ -7951,12 +8161,33 @@
   "license": "CC BY-SA 3.0",
   "score": 0.872
  },
+ "toys|RUBBER DUCK": {
+  "file": "w/toys__rubber-duck.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Yellow_rubber_duck_in_Rishon_Lezion,_August_2024_04.jpg",
+  "author": "Chenspec",
+  "license": "CC BY-SA 4.0",
+  "score": 1.361
+ },
+ "toys|RUBIK'S CUBE": {
+  "file": "w/toys__rubiks-cube.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kubik-Rubik.jpg",
+  "author": "Solijon Solayev",
+  "license": "CC BY-SA 4.0",
+  "score": 1.263
+ },
  "toys|SANDBOX": {
   "file": "w/toys__sandbox.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Sandbox_Lawn_Jam_Our_Community_Place_Harrisonburg_VA_June_2008.jpg",
   "author": "Artaxerxes",
   "license": "CC BY-SA 3.0",
   "score": 0.891
+ },
+ "toys|SCOOTER": {
+  "file": "w/toys__scooter.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ex_scooter,_Frankfurt_am_Main_(LRM_20210815_134347).jpg",
+  "author": "Matti Blume",
+  "license": "CC BY-SA 4.0",
+  "score": 1.288
  },
  "toys|SEESAW": {
   "file": "w/toys__seesaw.jpg",
@@ -7965,6 +8196,48 @@
   "license": "Public domain",
   "score": 0.16
  },
+ "toys|SHAPE SORTER": {
+  "file": "w/toys__shape-sorter.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Shape_sorter.jpg",
+  "author": "Mvolz",
+  "license": "CC0",
+  "score": 1.353
+ },
+ "toys|SLIDE": {
+  "file": "w/toys__slide.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Big_Slide,_Kids_Playground_-_geograph.org.uk_-_5185307.jpg",
+  "author": "Billy McCrorie",
+  "license": "CC BY-SA 2.0",
+  "score": 0.938
+ },
+ "toys|SLIME": {
+  "file": "w/toys__slime.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Slime_02471_Nevit.jpg",
+  "author": "Nevit",
+  "license": "CC BY-SA 3.0",
+  "score": 1.298
+ },
+ "toys|SNOW GLOBE": {
+  "file": "w/toys__snow-globe.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:KRYONIUM_1_Matthias_A._K._Zimmermann_Kulturverlag_Kadmos.jpg",
+  "author": "Matthias A. K. Zimmermann, Schweiz/Switzerland",
+  "license": "CC BY-SA 3.0",
+  "score": 0.49
+ },
+ "toys|SPINNING TOP": {
+  "file": "w/toys__spinning-top.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Spinning_top.jpg",
+  "author": "",
+  "license": "Public domain",
+  "score": 0.77
+ },
+ "toys|STACKING CUPS": {
+  "file": "w/toys__stacking-cups.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Baby_toys.jpg",
+  "author": "Mvolz",
+  "license": "CC0",
+  "score": 0.367
+ },
  "toys|STICKER BOOK": {
   "file": "w/toys__sticker-book.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Figurine_del_Mondo_degli_Animali.jpg",
@@ -7972,12 +8245,54 @@
   "license": "CC BY-SA 4.0",
   "score": 0.175
  },
+ "toys|STUFFED ANIMAL": {
+  "file": "w/toys__stuffed-animal.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Beagle_with_a_penguin_stuffed_toy.jpg",
+  "author": "Slyronit",
+  "license": "CC BY-SA 4.0",
+  "score": 1.256
+ },
+ "toys|SWING": {
+  "file": "w/toys__swing.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Wet_swing_at_the_West_Park_playground_-_geograph.org.uk_-_2094718.jpg",
+  "author": "David Lally",
+  "license": "CC BY-SA 2.0",
+  "score": 1.196
+ },
+ "toys|TEA SET": {
+  "file": "w/toys__tea-set.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Toy,_tea_set_(AM_1959.137-7).jpg",
+  "author": "API data Catalogue record Photo",
+  "license": "CC BY 4.0",
+  "score": 0.555
+ },
  "toys|TEDDY BEAR": {
   "file": "w/toys__teddy-bear.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Teddy_bear_soft_toy.jpg",
   "author": "Dharaniyakumar",
   "license": "CC BY 4.0",
   "score": 1.069
+ },
+ "toys|TOY BOX": {
+  "file": "w/toys__toy-box.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_little_girl_with_her_plastic_toy.jpg",
+  "author": "Summering2018",
+  "license": "CC BY-SA 4.0",
+  "score": 1.015
+ },
+ "toys|TOY CAR": {
+  "file": "w/toys__toy-car.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Old_tin_car_toy_photo_1.jpg",
+  "author": "Alfvanbeem",
+  "license": "CC0",
+  "score": 0.991
+ },
+ "toys|TOY KITCHEN": {
+  "file": "w/toys__toy-kitchen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Toy_kitchen_set.jpg",
+  "author": "మురళీకృష్ణ ముసునూరి",
+  "license": "CC BY-SA 4.0",
+  "score": 1.148
  },
  "toys|TRAIN SET": {
   "file": "w/toys__train-set.jpg",
@@ -7993,12 +8308,33 @@
   "license": "Public domain",
   "score": 0.894
  },
+ "toys|TRICYCLE": {
+  "file": "w/toys__tricycle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Portrait,_kid,_toy,_tricycle,_garden_Fortepan_9111.jpg",
+  "author": "FOTO:Fortepan — ID 9111 : Adományozó/Donor: Orosz Heléna.",
+  "license": "CC BY-SA 3.0",
+  "score": 1.004
+ },
+ "toys|WAGON": {
+  "file": "w/toys__wagon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:July_4_Little_Red_Wagon_on_the_Algiers_Levee.jpg",
+  "author": "Derek Bridges",
+  "license": "CC BY 2.0",
+  "score": 0.996
+ },
  "toys|WATER GUN": {
   "file": "w/toys__water-gun.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:The_girls_fight_with_water_cannons!.jpg",
   "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
   "license": "CC BY 2.0",
   "score": 0.553
+ },
+ "toys|WIND-UP TOY": {
+  "file": "w/toys__wind-up-toy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Antique_tin_toy_wind-up_clown_and_wind-up_mouse_(25196969284).jpg",
+  "author": "Thomas Quine",
+  "license": "CC BY 2.0",
+  "score": 1.1
  },
  "toys|YO-YO": {
   "file": "w/toys__yo-yo.jpg",

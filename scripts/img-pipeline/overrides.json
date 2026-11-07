@@ -1302,5 +1302,32 @@
    "blue jeans folded",
    "denim jeans"
   ]
+ },
+ "nature|ROCK": {
+  "file": "File:Fallen boulder beside Dumbarton Rock - geograph.org.uk - 2302520.jpg"
+ },
+ "nature|HILL": {
+  "file": "File:Uliveti monte cinto.JPG"
+ },
+ "nature|SEA": {
+  "file": "File:Spring Lake, New Jersey Beach at Sunrise.jpg"
+ },
+ "nature|EARTH": {
+  "file": "File:NASA-Apollo8-Dec24-Earthrise.jpg"
+ },
+ "nature|TWIG": {
+  "file": "File:20210131 twig withBuds coveredByIce DSC05404 PtrQs.jpg"
+ },
+ "nature|DESERT": {
+  "file": "File:Rub al Khali 002.JPG"
+ },
+ "nature|MUD": {
+  "file": "File:2003-11-27 Northerner boots in mud.jpg"
+ },
+ "nature|SKY": {
+  "file": "File:Cirrus uncinus clouds in the morning sky.jpg"
+ },
+ "nature|STONE": {
+  "file": "File:Pebble Dash (15366562092).jpg"
  }
 }

@@ -209,7 +209,8 @@ def main(words, top):
         sc = [s for s in scores.get(k, []) if s["title"] in cands]
         if ov.get("exclude"): sc = [s for s in sc if s["title"] not in set(ov["exclude"])]
         # one photo per word: skip photos already used by another word
-        sc = [s for s in sc if used.get(s["title"], k) == k]
+        ovf_t = ("File:" + ov["file"] if ov.get("file") and not ov["file"].startswith("File:") else ov.get("file"))
+        sc = [s for s in sc if used.get(s["title"], k) == k or s["title"] == ovf_t]
         if not sc:
             report["words"][k] = {"status": "no candidates"}; out.pop(k, None); continue
         forced = None

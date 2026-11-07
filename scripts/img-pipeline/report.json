@@ -17849,7 +17849,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "countries|FLAG": {
@@ -20142,7 +20142,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "countries|GREECE": {
@@ -20225,8 +20225,8 @@
   },
   "countries|SCOTLAND": {
    "title": "File:Seagull Edinburgh castle 02.jpg",
-   "final": 1.333,
-   "p": 0.9998,
+   "final": 1.324,
+   "p": 0.9803,
    "photo": 0.9847,
    "fit": 1.0,
    "how": "scene",

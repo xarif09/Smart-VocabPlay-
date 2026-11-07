@@ -17012,7 +17012,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:New Year fireworks",
-   "n_cands": 7,
+   "n_cands": 5,
    "forced": false
   },
   "time|FEBRUARY": {
@@ -17027,7 +17027,7 @@
     "not photo-like 0.10"
    ],
    "origin": "search:Valentine heart",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "time|MARCH": {
@@ -17070,7 +17070,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:flowers",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "time|JUNE": {
@@ -17100,7 +17100,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:summer",
-   "n_cands": 9,
+   "n_cands": 7,
    "forced": false
   },
   "time|AUGUST": {
@@ -17115,7 +17115,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:summer",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "time|SEPTEMBER": {
@@ -17145,22 +17145,22 @@
     "low word prob 0.00"
    ],
    "origin": "search:Halloween pumpkins",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "time|NOVEMBER": {
-   "title": "File:Thai people setting their candle-lit krathongs in the Ping river at night during Loy Krathong 2015-10 (22715933524).jpg",
-   "final": 0.503,
-   "p": 0.0,
-   "photo": 0.9792,
+   "title": "File:Loi krathong rafts.jpg",
+   "final": 0.769,
+   "p": 0.0001,
+   "photo": 0.9857,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:Loy Krathong",
+   "n_cands": 10,
    "forced": false
   },
   "time|DECEMBER": {
@@ -17175,7 +17175,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:Christmas tree",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "time|TODAY": {
@@ -17225,18 +17225,16 @@
    "forced": false
   },
   "time|MORNING": {
-   "title": "File:Spring Lake, New Jersey Beach at Sunrise.jpg",
-   "final": 0.47,
-   "p": 0.0219,
-   "photo": 0.9893,
+   "title": "File:Dülmen, Umland -- 2014 -- 7056.jpg",
+   "final": 1.287,
+   "p": 0.9863,
+   "photo": 0.9669,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.02"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:morning sunrise",
+   "n_cands": 8,
    "forced": false
   },
   "time|AFTERNOON": {
@@ -17255,24 +17253,22 @@
    "forced": false
   },
   "time|EVENING": {
-   "title": "File:Full cycle of a Sunset on the high plains of the Mojave Desert.jpg",
-   "final": 0.766,
-   "p": 0.3264,
-   "photo": 0.9999,
+   "title": "File:Schwaigern - Massenbach - Baumgruppe am Wilhelmstaler Bach bei Sonnenuntergang (1).jpg",
+   "final": 1.177,
+   "p": 0.7568,
+   "photo": 0.9838,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.33"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:evening sunset",
+   "n_cands": 9,
    "forced": false
   },
   "time|NIGHT": {
    "title": "File:Savault Chapel Under Milky Way BLS.jpg",
-   "final": 0.937,
-   "p": 0.816,
+   "final": 1.144,
+   "p": 0.8153,
    "photo": 0.9809,
    "fit": 1.0,
    "how": "scene",
@@ -17342,7 +17338,7 @@
     "low word prob 0.50"
    ],
    "origin": "search:sand timer",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "time|MINUTE": {
@@ -17357,7 +17353,7 @@
    ],
    "flags": [],
    "origin": "search:stopwatch",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "time|O'CLOCK": {
@@ -17379,7 +17375,7 @@
   },
   "time|BIRTHDAY": {
    "title": "File:Delicious Birthday Cake (14346969741).jpg",
-   "final": 1.025,
+   "final": 1.169,
    "p": 0.9999,
    "photo": 0.4388,
    "fit": 1.0,
@@ -17389,37 +17385,35 @@
     "not photo-like 0.44"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "time|HOLIDAY": {
-   "title": "File:Vacation Village at Weston Pool, Weston, Florida February 24, 2022 B.jpg",
-   "final": 0.451,
-   "p": 0.0045,
-   "photo": 0.9712,
+   "title": "File:Cabo-San-Lucas-Playa-Solmar.jpg",
+   "final": 0.75,
+   "p": 0.0108,
+   "photo": 0.9483,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.01"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:family vacation beach",
+   "n_cands": 7,
    "forced": false
   },
   "time|WEEKEND": {
-   "title": "File:Halleyparknovember b (cropped).jpg",
-   "final": 0.45,
-   "p": 0.0,
-   "photo": 0.9988,
+   "title": "File:Summit Lake Fun (9688690532).jpg",
+   "final": 1.246,
+   "p": 0.9938,
+   "photo": 0.8776,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:weekend park family",
+   "n_cands": 8,
    "forced": false
   },
   "countries|THAILAND": {
@@ -23620,7 +23614,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:Christmas tree",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "time|CHINESE NEW YEAR": {
@@ -23746,7 +23740,7 @@
     "low word prob 0.15"
    ],
    "origin": "search:early morning sunrise",
-   "n_cands": 5,
+   "n_cands": 4,
    "forced": false
   },
   "time|LATE": {
@@ -29891,7 +29885,6 @@
   "time|DAYTIME",
   "time|DECEMBER",
   "time|EARLY",
-  "time|EVENING",
   "time|FATHER'S DAY",
   "time|FEBRUARY",
   "time|FRIDAY",
@@ -29906,7 +29899,6 @@
   "time|MIDNIGHT",
   "time|MONDAY",
   "time|MONTH",
-  "time|MORNING",
   "time|NEW YEAR",
   "time|NOON",
   "time|NOVEMBER",
@@ -29925,7 +29917,6 @@
   "time|TUESDAY",
   "time|WEDNESDAY",
   "time|WEEK",
-  "time|WEEKEND",
   "time|YEAR",
   "time|YESTERDAY",
   "toys|ACTION FIGURE",
@@ -30094,6 +30085,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1890,
-  "flagged": 1078
+  "flagged": 1075
  }
 }

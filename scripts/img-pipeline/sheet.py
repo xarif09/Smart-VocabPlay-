@@ -39,10 +39,15 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("out"); ap.add_argument("--cats"); ap.add_argument("--cands")
     a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
     if a.cands:
-        sc = json.load(open(os.path.join(CACHE, "scores.json")))
-        items = [(os.path.join(CACHE, "thumbs", h(s["title"]) + ".jpg"), f"{i} p{s['p']:.2f} {s['title'][5:20]}", False)
-                 for i, s in enumerate(sorted(sc.get(a.cands, []), key=lambda s: -s["p"]))]
-        print(grid(items, os.path.join(a.out, "cands_" + W.slug(a.cands) + ".jpg"), a.cands)); return
+        # one row per word: all its candidates (index = position in cands/<key>.json), for picking overrides
+        items = []
+        for k in a.cands.split(","):
+            cs = json.load(open(os.path.join(CACHE, "cands", h(k) + ".json")))[:COLS - 1]
+            items.append((None, k.split("|")[1], True))
+            for i, c in enumerate(cs):
+                items.append((os.path.join(CACHE, "thumbs", h(c["title"]) + ".jpg"), f"{i} {c['title'][5:22]}", False))
+            items += [(None, "", False)] * (COLS - 1 - len(cs))
+        print(grid(items, os.path.join(a.out, "cands_" + W.slug(a.cands.split(",")[0]) + ".jpg"), "candidates")); return
     wi = json.load(open(os.path.join(ROOT, "src", "wordImages.json")))
     rep = json.load(open(os.path.join(HERE, "report.json"))).get("words", {})
     by = {}

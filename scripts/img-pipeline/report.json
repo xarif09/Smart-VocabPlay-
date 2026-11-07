@@ -3577,27 +3577,26 @@
    "forced": false
   },
   "home|BED": {
-   "title": "File:Canopy bed of Amantaka Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg",
-   "final": 0.715,
-   "p": 0.6112,
-   "photo": 0.0956,
-   "fit": 0.779,
-   "how": "yolo:bed",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
+   "title": "File:State bed MET DP110864.jpg",
+   "final": 0.678,
+   "p": 0.0036,
+   "photo": 0.4315,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
    "flags": [
-    "not photo-like 0.10"
+    "low word prob 0.00",
+    "not photo-like 0.43"
    ],
    "origin": "search:bed",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "home|CHAIR": {
    "title": "File:Set of fourteen side chairs MET DP110780.jpg",
-   "final": 1.006,
-   "p": 1.0,
-   "photo": 0.4683,
+   "final": 1.152,
+   "p": 0.9999,
+   "photo": 0.4681,
    "fit": 1.0,
    "how": "yolo:chair",
    "notes": [],
@@ -3605,12 +3604,12 @@
     "not photo-like 0.47"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "home|TABLE": {
    "title": "File:Heiligengrabe, Kloster Stift zum Heiligengrabe, Abtei, Speiseraum -- 2017 -- 7082-8.jpg",
-   "final": 0.765,
+   "final": 0.416,
    "p": 0.9965,
    "photo": 0.0499,
    "fit": 0.388,
@@ -3624,27 +3623,27 @@
     "not photo-like 0.05"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|DOOR": {
-   "title": "File:Fischerkirche (main door), Born a. Darß.jpg",
-   "final": 1.075,
-   "p": 0.9999,
-   "photo": 0.0892,
-   "fit": 1.0,
+   "title": "File:Heiligengrabe, Kloster Stift zum Heiligengrabe, Abtei, Treppenturm -- 2017 -- 9941-7.jpg",
+   "final": 1.136,
+   "p": 1.0,
+   "photo": 0.6673,
+   "fit": 0.806,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.09"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
+   "flags": [],
    "origin": "search:door",
    "n_cands": 6,
    "forced": false
   },
   "home|WINDOW": {
    "title": "File:Atua Kosua shrine4.jpg",
-   "final": 1.082,
+   "final": 1.277,
    "p": 0.9821,
    "photo": 0.9421,
    "fit": 1.0,
@@ -3657,7 +3656,7 @@
   },
   "home|TV": {
    "title": "File:Cptvdisplay.jpg",
-   "final": 0.808,
+   "final": 0.87,
    "p": 1.0,
    "photo": 0.717,
    "fit": 0.263,
@@ -3675,9 +3674,9 @@
   },
   "home|PHONE": {
    "title": "File:Telephone in a telephone box - geograph.org.uk - 6300042.jpg",
-   "final": 1.029,
-   "p": 0.9572,
-   "photo": 0.602,
+   "final": 1.192,
+   "p": 0.9571,
+   "photo": 0.6018,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -3688,9 +3687,9 @@
   },
   "home|CLOCK": {
    "title": "File:Pendulum clock by Jacob Kock, antique furniture photography, IMG 0931 edit.jpg",
-   "final": 0.98,
+   "final": 1.145,
    "p": 1.0,
-   "photo": 0.9071,
+   "photo": 0.8999,
    "fit": 0.839,
    "how": "yolo:clock",
    "notes": [
@@ -3703,7 +3702,7 @@
   },
   "home|LAMP": {
    "title": "File:Lampshades.jpg",
-   "final": 1.047,
+   "final": 1.216,
    "p": 0.9988,
    "photo": 0.9925,
    "fit": 0.797,
@@ -3718,7 +3717,7 @@
   },
   "home|SOFA": {
    "title": "File:Sofa MET 192943.jpg",
-   "final": 0.882,
+   "final": 0.743,
    "p": 0.9969,
    "photo": 0.9932,
    "fit": 0.411,
@@ -3730,13 +3729,13 @@
     "fit 0.41"
    ],
    "origin": "search:sofa",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|MIRROR": {
    "title": "File:Lüdinghausen, Burg Vischering -- 2021 -- 5233.jpg",
-   "final": 0.849,
-   "p": 0.7524,
+   "final": 0.719,
+   "p": 0.2409,
    "photo": 0.9671,
    "fit": 0.665,
    "how": "saliency",
@@ -3745,33 +3744,31 @@
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
+    "low word prob 0.24",
     "fit 0.66"
    ],
    "origin": "search:mirror",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|BATH": {
-   "title": "File:Clawfoot bathtub.jpg",
-   "final": 0.844,
-   "p": 1.0,
-   "photo": 0.9903,
-   "fit": 0.271,
+   "title": "File:Otto Wagner's glass bathtub.png",
+   "final": 0.831,
+   "p": 0.0898,
+   "photo": 1.0,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.56)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.27"
+    "low word prob 0.09"
    ],
-   "origin": "current",
+   "origin": "search:bathtub",
    "n_cands": 6,
    "forced": false
   },
   "home|FRIDGE": {
    "title": "File:New Shelf Life Books RVA Community Fridge.jpg",
-   "final": 1.122,
+   "final": 1.314,
    "p": 1.0,
    "photo": 0.9135,
    "fit": 1.0,
@@ -3784,7 +3781,7 @@
   },
   "home|STOVE": {
    "title": "File:Iron stove.jpg",
-   "final": 1.043,
+   "final": 1.218,
    "p": 0.998,
    "photo": 0.9791,
    "fit": 0.846,
@@ -3794,29 +3791,25 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "home|SINK": {
-   "title": "File:Luxury sink.jpg",
-   "final": 0.929,
-   "p": 0.9947,
-   "photo": 0.7661,
-   "fit": 0.586,
+   "title": "File:Sink and dustbin.jpg",
+   "final": 1.077,
+   "p": 0.5588,
+   "photo": 0.9835,
+   "fit": 1.0,
    "how": "yolo:sink",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.98)"
-   ],
-   "flags": [
-    "fit 0.59"
-   ],
-   "origin": "current",
-   "n_cands": 6,
+   "notes": [],
+   "flags": [],
+   "origin": "search:sink",
+   "n_cands": 7,
    "forced": false
   },
   "home|TOILET": {
    "title": "File:Australian Toilet.JPG",
-   "final": 1.145,
+   "final": 1.332,
    "p": 1.0,
    "photo": 0.8695,
    "fit": 1.0,
@@ -3824,55 +3817,47 @@
    "notes": [],
    "flags": [],
    "origin": "search:toilet",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "home|SHOWER": {
-   "title": "File:IMG Duschender.jpg",
-   "final": 1.027,
-   "p": 1.0,
-   "photo": 0.9676,
+   "title": "File:Silver shower head.jpg",
+   "final": 0.922,
+   "p": 0.9632,
+   "photo": 0.9484,
    "fit": 0.8,
    "how": "saliency",
    "notes": [
     "touches 1 edge(s)"
    ],
    "flags": [],
-   "origin": "current",
+   "origin": "search:shower head",
    "n_cands": 7,
    "forced": false
   },
   "home|BOOKSHELF": {
-   "title": "File:Interior of Bibliothèque Mazarine 003.JPG",
-   "final": 1.057,
-   "p": 0.986,
-   "photo": 0.845,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "home|COMPUTER": {
-   "title": "File:Steve Jobs and Macintosh computer, January 1984, by Bernard Gotfryd - edited.jpg",
-   "final": 0.952,
-   "p": 0.9964,
-   "photo": 0.9922,
-   "fit": 0.812,
+   "title": "File:Amiga A1000 IMG 4275.jpg",
+   "final": 1.051,
+   "p": 1.0,
+   "photo": 0.8108,
+   "fit": 0.578,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.96)"
    ],
-   "flags": [],
+   "flags": [
+    "fit 0.58"
+   ],
    "origin": "search:computer",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|KITCHEN": {
    "title": "File:La cuisine (musée dart nouveau, Riga) (7563655820).jpg",
-   "final": 0.991,
+   "final": 1.195,
    "p": 0.8114,
    "photo": 0.9479,
    "fit": 1.0,
@@ -4758,25 +4743,26 @@
    "forced": false
   },
   "home|TOOTHBRUSH": {
-   "title": "File:Six-sided toothbrush.png",
-   "final": 0.947,
+   "title": "File:Toothbrush 20050716 004.jpg",
+   "final": 1.013,
    "p": 1.0,
-   "photo": 0.1381,
-   "fit": 0.81,
+   "photo": 0.9422,
+   "fit": 0.347,
    "how": "yolo:toothbrush",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.72)"
    ],
    "flags": [
-    "not photo-like 0.14"
+    "fit 0.35"
    ],
-   "origin": "search:toothbrush",
-   "n_cands": 5,
+   "origin": "current",
+   "n_cands": 6,
    "forced": false
   },
   "home|TOWEL": {
    "title": "File:Zusammengelegte Handtücher.jpg",
-   "final": 0.963,
+   "final": 1.06,
    "p": 0.9999,
    "photo": 0.9818,
    "fit": 0.329,
@@ -4789,12 +4775,12 @@
     "fit 0.33"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|SOAP": {
    "title": "File:Handmade soap.jpg",
-   "final": 1.108,
+   "final": 1.308,
    "p": 1.0,
    "photo": 0.9998,
    "fit": 1.0,
@@ -4806,15 +4792,18 @@
    "forced": false
   },
   "home|PILLOW": {
-   "title": "File:Self-portrait, Study of a Hand and a Pillow (recto); Six Studies of Pillows (verso) MET DP282111.jpg",
-   "final": 0.849,
-   "p": 0.9058,
-   "photo": 0.0004,
-   "fit": 1.0,
+   "title": "File:Pillow MET DP275207.jpg",
+   "final": 0.448,
+   "p": 0.9998,
+   "photo": 0.1096,
+   "fit": 0.446,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.74)"
+   ],
    "flags": [
-    "not photo-like 0.00"
+    "fit 0.45",
+    "not photo-like 0.11"
    ],
    "origin": "search:pillow",
    "n_cands": 7,
@@ -4822,8 +4811,8 @@
   },
   "home|BLANKET": {
    "title": "File:Russellquilter.jpg",
-   "final": 0.969,
-   "p": 0.9983,
+   "final": 1.119,
+   "p": 0.9918,
    "photo": 0.7892,
    "fit": 0.824,
    "how": "saliency",
@@ -4832,14 +4821,14 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "home|KEY": {
    "title": "File:The Key, Key House, Tewkesbury - geograph.org.uk - 3260896.jpg",
-   "final": 1.075,
+   "final": 1.267,
    "p": 0.9996,
-   "photo": 0.9308,
+   "photo": 0.9304,
    "fit": 1.0,
    "how": "saliency",
    "notes": [
@@ -4847,13 +4836,13 @@
    ],
    "flags": [],
    "origin": "search:house key",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|CUP": {
    "title": "File:A small cup of coffee.JPG",
-   "final": 0.946,
-   "p": 0.9999,
+   "final": 1.074,
+   "p": 0.9997,
    "photo": 0.9298,
    "fit": 0.567,
    "how": "yolo:cup",
@@ -4864,29 +4853,30 @@
     "fit 0.57"
    ],
    "origin": "search:cup",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|PLATE": {
-   "title": "File:Piece of chocolate cake on a white plate decorated with chocolate sauce.jpg",
-   "final": 0.576,
-   "p": 0.6009,
-   "photo": 0.8569,
-   "fit": 0.418,
+   "title": "File:Rust and dirt.jpg",
+   "final": 0.507,
+   "p": 0.0058,
+   "photo": 0.4913,
+   "fit": 0.75,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.70)"
+    "tiny subject"
    ],
    "flags": [
-    "fit 0.42"
+    "low word prob 0.01",
+    "not photo-like 0.49"
    ],
    "origin": "search:plate",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "home|SPOON": {
    "title": "File:Soup Spoon.jpg",
-   "final": 0.949,
+   "final": 1.038,
    "p": 0.9999,
    "photo": 0.8343,
    "fit": 0.374,
@@ -4898,24 +4888,25 @@
     "fit 0.37"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|FORK": {
-   "title": "File:Assorted forks.jpg",
-   "final": 0.873,
-   "p": 0.9937,
-   "photo": 0.9903,
-   "fit": 0.566,
+   "title": "File:BiodegradablePlasticUtensils1.jpg",
+   "final": 0.933,
+   "p": 0.9359,
+   "photo": 0.957,
+   "fit": 0.242,
    "how": "yolo:fork",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.94)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.63)"
    ],
    "flags": [
-    "fit 0.57"
+    "fit 0.24"
    ],
-   "origin": "current",
-   "n_cands": 7,
+   "origin": "search:fork",
+   "n_cands": 8,
    "forced": false
   },
   "nature|SKY": {
@@ -11506,7 +11497,7 @@
   },
   "home|LIVING ROOM": {
    "title": "File:Sittingroom-edit1.jpg",
-   "final": 1.038,
+   "final": 1.233,
    "p": 0.9227,
    "photo": 0.9162,
    "fit": 1.0,
@@ -11531,23 +11522,21 @@
    "forced": false
   },
   "home|BATHROOM": {
-   "title": "File:Clawfoot bathtub.jpg",
-   "final": 0.5,
-   "p": 0.0,
-   "photo": 0.9903,
+   "title": "File:Bathroom 1.jpg",
+   "final": 1.278,
+   "p": 0.945,
+   "photo": 0.5347,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:bathroom",
+   "n_cands": 8,
    "forced": false
   },
   "home|GARAGE": {
    "title": "File:Residential House USA.JPG",
-   "final": 0.994,
+   "final": 1.199,
    "p": 0.8672,
    "photo": 0.983,
    "fit": 1.0,
@@ -11560,36 +11549,36 @@
   },
   "home|GARDEN": {
    "title": "File:Brooklyn Botanic Garden New York May 2015 010.jpg",
-   "final": 1.02,
-   "p": 0.9919,
+   "final": 0.823,
+   "p": 0.1993,
    "photo": 0.9901,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "home|BALCONY": {
-   "title": "File:Overzicht van het bovenste deel van de voorgevel met dakkapel (kajuit) en balkon - Groningen - 20387674 - RCE.jpg",
-   "final": 0.904,
-   "p": 0.7871,
-   "photo": 0.2841,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
    "flags": [
-    "not photo-like 0.28"
+    "low word prob 0.20"
    ],
    "origin": "current",
    "n_cands": 1,
    "forced": false
   },
+  "home|BALCONY": {
+   "title": "File:Balcony in Otranto.jpg",
+   "final": 1.339,
+   "p": 0.9381,
+   "photo": 0.9835,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:balcony",
+   "n_cands": 7,
+   "forced": false
+  },
   "home|ROOF": {
    "title": "File:Tak - Ystad-2022.jpg",
-   "final": 0.936,
-   "p": 0.8264,
+   "final": 1.138,
+   "p": 0.8224,
    "photo": 0.9508,
    "fit": 1.0,
    "how": "scene",
@@ -11600,23 +11589,21 @@
    "forced": false
   },
   "home|WALL": {
-   "title": "File:Noel 2005 Pékin 031 muraille de chine Mutianyu.jpg",
-   "final": 0.711,
-   "p": 0.4166,
-   "photo": 0.984,
+   "title": "File:Common hop on former factory wall, Ursus (Warsaw), 2024-07-20.jpg",
+   "final": 1.265,
+   "p": 0.8524,
+   "photo": 0.88,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.42"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:wall",
+   "n_cands": 7,
    "forced": false
   },
   "home|FLOOR": {
    "title": "File:Parquet flooring in Musée des arts décoratifs de Strasbourg.jpg",
-   "final": 0.986,
+   "final": 0.737,
    "p": 0.9994,
    "photo": 0.0604,
    "fit": 1.0,
@@ -11626,14 +11613,14 @@
     "not photo-like 0.06"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "home|STAIRS": {
    "title": "File:At Victoria and Albert Museum 2025 018.jpg",
-   "final": 1.097,
+   "final": 1.293,
    "p": 1.0,
-   "photo": 0.9586,
+   "photo": 0.9585,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
@@ -11644,8 +11631,8 @@
   },
   "home|FENCE": {
    "title": "File:Westtown.jpg",
-   "final": 1.097,
-   "p": 1.0,
+   "final": 1.283,
+   "p": 0.9812,
    "photo": 0.9577,
    "fit": 1.0,
    "how": "scene",
@@ -11657,7 +11644,7 @@
   },
   "home|CURTAIN": {
    "title": "File:Gordijnen aan venster.JPG",
-   "final": 0.834,
+   "final": 0.85,
    "p": 0.5474,
    "photo": 0.3447,
    "fit": 1.0,
@@ -11667,12 +11654,12 @@
     "not photo-like 0.34"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "home|CARPET": {
    "title": "File:Wollteppich 1.jpg",
-   "final": 1.0,
+   "final": 1.118,
    "p": 0.9735,
    "photo": 0.8133,
    "fit": 0.57,
@@ -11684,46 +11671,42 @@
     "fit 0.57"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "home|FAN": {
-   "title": "File:Ventilatore a soffitto (3).png",
-   "final": 0.84,
+   "title": "File:Electric Fan 240x355.jpg",
+   "final": 1.298,
    "p": 0.9999,
-   "photo": 0.5526,
-   "fit": 0.423,
+   "photo": 0.9904,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.71)"
-   ],
-   "flags": [
-    "fit 0.42"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:electric fan",
+   "n_cands": 5,
    "forced": false
   },
   "home|AIR CONDITIONER": {
-   "title": "File:MITSUBISHI ELECTRIC WINDOW TYPE AIR CONDITIONER OUTDOOR UNIT.jpg",
-   "final": 0.92,
-   "p": 1.0,
-   "photo": 0.9081,
-   "fit": 0.511,
+   "title": "File:LG AIR CONDITIONER OUTDOOR UNIT, Panasonic AIR CONDITIONER OUTDOOR UNIT, National (Panasonic) AIR CONDITIONER OUTDOOR UNIT & DAIKIN AIR CONDITIONER OUTDOOR UNIT.jpg",
+   "final": 1.088,
+   "p": 0.9963,
+   "photo": 0.9382,
+   "fit": 0.592,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.85)"
+    "subject cannot fit 3:4 (box cov 0.99)"
    ],
    "flags": [
-    "fit 0.51"
+    "fit 0.59"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:air conditioner",
+   "n_cands": 8,
    "forced": false
   },
   "home|WASHING MACHINE": {
    "title": "File:LG 드럼세탁기와 식기세척기, 영국서 물사용 효율 최우수 제품 수상.jpg",
-   "final": 1.089,
+   "final": 1.034,
    "p": 0.9993,
    "photo": 0.9471,
    "fit": 1.0,
@@ -11736,7 +11719,7 @@
   },
   "home|MICROWAVE": {
    "title": "File:Panasonic NN-SD69LS 20220410.jpg",
-   "final": 0.912,
+   "final": 1.028,
    "p": 1.0,
    "photo": 0.955,
    "fit": 0.473,
@@ -11748,7 +11731,7 @@
     "fit 0.47"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "home|OVEN": {
@@ -11766,7 +11749,7 @@
   },
   "home|KETTLE": {
    "title": "File:Bernadotte Wasserkessel.jpg",
-   "final": 0.905,
+   "final": 1.012,
    "p": 0.9664,
    "photo": 0.666,
    "fit": 0.588,
@@ -11778,27 +11761,24 @@
     "fit 0.59"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "home|RICE COOKER": {
-   "title": "File:Rice Cooker 1.png",
-   "final": 0.766,
-   "p": 0.9998,
-   "photo": 0.1352,
-   "fit": 0.295,
+   "title": "File:Panasonic RICE COOKER SR-DQ102-N.jpg",
+   "final": 0.759,
+   "p": 0.9999,
+   "photo": 0.8866,
+   "fit": 0.463,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.61)",
-    "upscaled x1.5"
+    "subject cannot fit 3:4 (box cov 0.77)"
    ],
    "flags": [
-    "fit 0.30",
-    "not photo-like 0.14"
+    "fit 0.46"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:rice cooker",
+   "n_cands": 6,
    "forced": false
   },
   "home|PAN": {
@@ -11819,23 +11799,23 @@
    "forced": false
   },
   "home|POT": {
-   "title": "File:Pans (113563802).jpg",
-   "final": 0.527,
-   "p": 0.1113,
-   "photo": 0.9889,
-   "fit": 1.0,
+   "title": "File:Steam-boiling green asparagus.jpg",
+   "final": 1.159,
+   "p": 0.8247,
+   "photo": 0.9693,
+   "fit": 0.803,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.11"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:cooking pot",
+   "n_cands": 7,
    "forced": false
   },
   "home|KNIFE": {
    "title": "File:Cucina 012.jpg",
-   "final": 0.867,
+   "final": 0.98,
    "p": 1.0,
    "photo": 0.9759,
    "fit": 0.437,
@@ -11847,7 +11827,7 @@
     "fit 0.44"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "home|BOWL": {
@@ -11866,77 +11846,64 @@
    "forced": false
   },
   "home|GLASS": {
-   "title": "File:Drinkware.jpg",
-   "final": 1.107,
-   "p": 1.0,
-   "photo": 0.7536,
-   "fit": 0.818,
+   "title": "File:170426 - Faceted drinking glass (1st century) - Zadar Archaeological glass museum - Photo by Giovanni Dall'Orto, April 22 2026.jpg",
+   "final": 1.283,
+   "p": 0.9056,
+   "photo": 0.9815,
+   "fit": 1.0,
    "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:drinking glass",
+   "n_cands": 8,
+   "forced": false
+  },
+  "home|BOTTLE": {
+   "title": "File:Ron-Zacapa-XO.jpg",
+   "final": 1.196,
+   "p": 0.9992,
+   "photo": 0.9597,
+   "fit": 0.819,
+   "how": "yolo:bottle",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "home|BOTTLE": {
-   "title": "File:Bouteille.jpg",
-   "final": 0.963,
-   "p": 0.9995,
-   "photo": 0.1596,
-   "fit": 0.587,
-   "how": "yolo:bottle",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.98)"
-   ],
-   "flags": [
-    "fit 0.59",
-    "not photo-like 0.16"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:bottle",
+   "n_cands": 7,
    "forced": false
   },
   "home|CHOPSTICKS": {
-   "title": "File:Many-chopsticks.jpg",
-   "final": 0.86,
-   "p": 1.0,
-   "photo": 0.7655,
-   "fit": 0.386,
+   "title": "File:Doritos with chopsticks - Massachusetts.jpg",
+   "final": 1.36,
+   "p": 0.9609,
+   "photo": 0.8999,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.64)",
-    "upscaled x1.5"
-   ],
-   "flags": [
-    "fit 0.39"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:chopsticks",
+   "n_cands": 4,
    "forced": false
   },
   "home|TRASH CAN": {
-   "title": "File:Waste container in Japan.jpg",
-   "final": 0.813,
+   "title": "File:Trash can, New York (DSC01398).jpg",
+   "final": 1.209,
    "p": 1.0,
-   "photo": 0.8193,
-   "fit": 0.305,
+   "photo": 0.89,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.79)"
+    "touches 1 edge(s)"
    ],
-   "flags": [
-    "fit 0.30"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:trash can",
+   "n_cands": 7,
    "forced": false
   },
   "home|BROOM": {
    "title": "File:BroomsforSale.jpg",
-   "final": 1.058,
+   "final": 1.215,
    "p": 1.0,
    "photo": 0.87,
    "fit": 0.798,
@@ -11946,12 +11913,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "home|BUCKET": {
    "title": "File:Gotland-Bottarve Museumshof 07.jpg",
-   "final": 0.488,
+   "final": 0.71,
    "p": 0.0503,
    "photo": 0.9867,
    "fit": 0.843,
@@ -11963,7 +11930,7 @@
     "low word prob 0.05"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "home|HANGER": {
@@ -11985,7 +11952,7 @@
   },
   "home|WARDROBE": {
    "title": "File:Old Jefferson Louisiana 2016 - Coolidge Street 58.jpg",
-   "final": 0.907,
+   "final": 1.122,
    "p": 0.6524,
    "photo": 0.9786,
    "fit": 1.0,
@@ -11998,7 +11965,7 @@
   },
   "home|DRAWER": {
    "title": "File:Drawer.agr.jpg",
-   "final": 0.828,
+   "final": 0.906,
    "p": 1.0,
    "photo": 0.9084,
    "fit": 0.249,
@@ -12011,27 +11978,30 @@
     "fit 0.25"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "home|SHELF": {
-   "title": "File:Interior of Bibliothèque Mazarine 003.JPG",
-   "final": 0.494,
-   "p": 0.0139,
-   "photo": 0.845,
-   "fit": 1.0,
+   "title": "File:Illuminated wooden shelf with many glass jars containing cookies for sale in Tokyo.jpg",
+   "final": 0.762,
+   "p": 0.7348,
+   "photo": 0.5162,
+   "fit": 0.477,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.01"
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.99)"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [
+    "fit 0.48"
+   ],
+   "origin": "search:shelf",
+   "n_cands": 6,
    "forced": false
   },
   "home|CANDLE": {
    "title": "File:LA2 Skultuna kontorsljusstake.jpg",
-   "final": 1.068,
+   "final": 1.246,
    "p": 1.0,
    "photo": 0.7779,
    "fit": 1.0,
@@ -12060,58 +12030,53 @@
    "forced": false
   },
   "home|PHOTO": {
-   "title": "File:Picture of Polaroid image.jpg",
-   "final": 0.925,
-   "p": 0.9869,
-   "photo": 0.3132,
-   "fit": 0.823,
+   "title": "File:Photo frame 1.JPG",
+   "final": 1.175,
+   "p": 0.9342,
+   "photo": 0.8424,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:photo frame",
+   "n_cands": 8,
+   "forced": false
+  },
+  "home|DOORBELL": {
+   "title": "File:Chevening Flats doorbell.jpg",
+   "final": 0.932,
+   "p": 0.2974,
+   "photo": 0.9934,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.30"
+   ],
+   "origin": "search:doorbell",
+   "n_cands": 8,
+   "forced": false
+  },
+  "home|LIGHT": {
+   "title": "File:Light painting gnangarra-1.jpg",
+   "final": 0.635,
+   "p": 0.0049,
+   "photo": 0.6832,
+   "fit": 0.793,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "not photo-like 0.31"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "home|DOORBELL": {
-   "title": "File:Chetham's Library 2015 28.jpg",
-   "final": 0.616,
-   "p": 0.2789,
-   "photo": 0.9324,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.28"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "home|LIGHT": {
-   "title": "File:Wide array of lamps.jpg",
-   "final": 0.419,
-   "p": 0.1316,
-   "photo": 0.4006,
-   "fit": 0.75,
-   "how": "saliency",
-   "notes": [
-    "tiny subject"
-   ],
-   "flags": [
-    "low word prob 0.13",
-    "not photo-like 0.40"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:light",
+   "n_cands": 7,
    "forced": false
   },
   "home|SWITCH": {
    "title": "File:Opened light switch.JPG",
-   "final": 1.026,
+   "final": 1.192,
    "p": 1.0,
    "photo": 0.9606,
    "fit": 0.8,
@@ -12121,7 +12086,7 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "places|HOME": {
@@ -29681,23 +29646,20 @@
   "fruits|TANGERINE",
   "fruits|WATERMELON",
   "home|AIR CONDITIONER",
-  "home|BALCONY",
   "home|BATH",
-  "home|BATHROOM",
   "home|BED",
-  "home|BOTTLE",
+  "home|BOOKSHELF",
   "home|BUCKET",
   "home|CARPET",
   "home|CHAIR",
-  "home|CHOPSTICKS",
+  "home|COMPUTER",
   "home|CUP",
   "home|CURTAIN",
-  "home|DOOR",
   "home|DOORBELL",
   "home|DRAWER",
-  "home|FAN",
   "home|FLOOR",
   "home|FORK",
+  "home|GARDEN",
   "home|HANGER",
   "home|KETTLE",
   "home|KNIFE",
@@ -29705,22 +29667,17 @@
   "home|MICROWAVE",
   "home|MIRROR",
   "home|PAN",
-  "home|PHOTO",
   "home|PILLOW",
   "home|PLATE",
-  "home|POT",
   "home|RICE COOKER",
   "home|SHELF",
-  "home|SINK",
   "home|SOFA",
   "home|SPOON",
   "home|TABLE",
   "home|TOOTHBRUSH",
   "home|TOWEL",
-  "home|TRASH CAN",
   "home|TV",
   "home|VASE",
-  "home|WALL",
   "jobs|ACCOUNTANT",
   "jobs|ARCHITECT",
   "jobs|ARTIST",
@@ -30385,7 +30342,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1897,
-  "flagged": 1109
+  "with_photo": 1896,
+  "flagged": 1101
  }
 }

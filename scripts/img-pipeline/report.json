@@ -5115,7 +5115,7 @@
   },
   "actions|RUN": {
    "title": "File:Child running on hillside.jpg",
-   "final": 1.167,
+   "final": 1.217,
    "p": 0.859,
    "photo": 0.9334,
    "fit": 1.0,
@@ -5128,8 +5128,8 @@
   },
   "actions|WALK": {
    "title": "File:Walking reflection.jpg",
-   "final": 0.835,
-   "p": 0.4816,
+   "final": 0.661,
+   "p": 0.4815,
    "photo": 0.9996,
    "fit": 0.8,
    "how": "saliency",
@@ -5144,15 +5144,18 @@
    "forced": false
   },
   "actions|EAT": {
-   "title": "File:Children eating watermelon - C.M. Burd - 1921.jpg",
-   "final": 0.928,
-   "p": 0.6259,
-   "photo": 0.2163,
-   "fit": 1.0,
+   "title": "File:Cute child girl is eating soup at home.jpg",
+   "final": 0.836,
+   "p": 0.9859,
+   "photo": 0.5662,
+   "fit": 0.256,
    "how": "yolo:person",
-   "notes": [],
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.67)"
+   ],
    "flags": [
-    "not photo-like 0.22"
+    "fit 0.26"
    ],
    "origin": "search:child eating",
    "n_cands": 7,
@@ -5160,7 +5163,7 @@
   },
   "actions|DRINK": {
    "title": "File:A Rwandan Child Drinking.png",
-   "final": 1.079,
+   "final": 1.126,
    "p": 0.8849,
    "photo": 0.9103,
    "fit": 0.8,
@@ -5170,66 +5173,60 @@
    ],
    "flags": [],
    "origin": "search:child drinking",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "actions|SLEEP": {
    "title": "File:Elizabeth Strong Sleeping child with dog 1887.jpg",
-   "final": 1.116,
+   "final": 0.863,
    "p": 0.9343,
-   "photo": 0.2488,
+   "photo": 0.2298,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "not photo-like 0.25"
+    "not photo-like 0.23"
    ],
    "origin": "search:sleeping child",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "actions|READ": {
-   "title": "File:Close-up of child reading a book.jpg",
-   "final": 0.76,
-   "p": 0.9993,
-   "photo": 0.0089,
-   "fit": 0.22,
+   "title": "File:Family Style Meal Service With Children in the CACFP (20221214-USDA-FNS-UNK-035).jpg",
+   "final": 0.769,
+   "p": 0.0,
+   "photo": 0.9031,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.71)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.22",
-    "not photo-like 0.01"
+    "low word prob 0.00"
    ],
    "origin": "search:child reading book",
    "n_cands": 6,
    "forced": false
   },
   "actions|WRITE": {
-   "title": "File:Aimée Thibault - The King of Rome (Napoleon II), as a child, writing to his father (Napoleon I).jpg",
-   "final": 0.581,
-   "p": 0.0684,
-   "photo": 0.0244,
+   "title": "File:Pencil at Freedom250 event.jpg",
+   "final": 0.458,
+   "p": 0.006,
+   "photo": 0.6933,
    "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [
-    "upscaled x1.9"
-   ],
+   "how": "saliency",
+   "notes": [],
    "flags": [
-    "low word prob 0.07",
-    "not photo-like 0.02"
+    "low word prob 0.01",
+    "check safety 0.70"
    ],
-   "origin": "search:child writing",
+   "origin": "search:writing with pencil",
    "n_cands": 3,
    "forced": false
   },
   "actions|SING": {
    "title": "File:Hombre cantando por dinero en las cercanías del Hotel Humbodlt.jpg",
-   "final": 0.963,
+   "final": 0.993,
    "p": 0.9792,
-   "photo": 0.7926,
+   "photo": 0.7903,
    "fit": 0.363,
    "how": "yolo:person",
    "notes": [
@@ -5240,12 +5237,12 @@
     "fit 0.36"
    ],
    "origin": "search:person singing",
-   "n_cands": 7,
+   "n_cands": 5,
    "forced": false
   },
   "actions|DANCE": {
    "title": "File:Two dancers.jpg",
-   "final": 1.02,
+   "final": 1.07,
    "p": 0.9963,
    "photo": 0.9996,
    "fit": 0.47,
@@ -5258,12 +5255,12 @@
     "fit 0.47"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "actions|SWIM": {
    "title": "File:40. Schwimmzonen- und Mastersmeeting Enns 2017 100m Brust Herren USC Traun-9897.jpg",
-   "final": 1.242,
+   "final": 1.287,
    "p": 1.0,
    "photo": 0.946,
    "fit": 0.799,
@@ -5277,27 +5274,24 @@
    "forced": false
   },
   "actions|PLAY": {
-   "title": "File:Kids play area - geograph.org.uk - 1978844.jpg",
-   "final": 0.909,
-   "p": 0.8405,
-   "photo": 0.2726,
+   "title": "File:All this new playground needs is kids to play in it.jpg",
+   "final": 0.948,
+   "p": 0.6166,
+   "photo": 0.7843,
    "fit": 0.75,
    "how": "yolo:person",
    "notes": [
-    "tiny subject",
-    "upscaled x1.8"
+    "tiny subject"
    ],
-   "flags": [
-    "not photo-like 0.27"
-   ],
+   "flags": [],
    "origin": "search:kids playing playground",
    "n_cands": 7,
    "forced": false
   },
   "actions|COOK": {
    "title": "File:Grandmother preparing food inside traditional kitchen (edited).jpg",
-   "final": 1.249,
-   "p": 0.9759,
+   "final": 1.248,
+   "p": 0.9756,
    "photo": 0.4812,
    "fit": 1.0,
    "how": "yolo:person",
@@ -5311,7 +5305,7 @@
   },
   "actions|WASH": {
    "title": "File:Child washing hands closeup.jpg",
-   "final": 1.166,
+   "final": 1.213,
    "p": 1.0,
    "photo": 0.9625,
    "fit": 0.8,
@@ -5321,13 +5315,13 @@
    ],
    "flags": [],
    "origin": "search:child washing hands",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "actions|DRAW": {
    "title": "File:Buntstifte -- 2021 -- 9156.jpg",
-   "final": 0.625,
-   "p": 0.0033,
+   "final": 0.391,
+   "p": 0.0023,
    "photo": 0.1964,
    "fit": 1.0,
    "how": "saliency",
@@ -5337,102 +5331,104 @@
     "not photo-like 0.20"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "actions|SIT": {
-   "title": "File:Cast sitting victim Pompeii.jpg",
-   "final": 1.091,
-   "p": 0.9987,
-   "photo": 0.6736,
-   "fit": 0.805,
-   "how": "saliency",
+   "title": "File:Three saddhus at Kathmandu Durbar Square.jpg",
+   "final": 0.641,
+   "p": 0.3066,
+   "photo": 0.9847,
+   "fit": 0.37,
+   "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.62)"
    ],
-   "flags": [],
+   "flags": [
+    "low word prob 0.31",
+    "fit 0.37"
+   ],
    "origin": "search:person sitting",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "actions|STAND": {
-   "title": "File:Standing Virgin and Child MET DP212401.jpg",
-   "final": 0.917,
-   "p": 0.774,
-   "photo": 0.8927,
-   "fit": 0.801,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [],
-   "origin": "search:child standing",
-   "n_cands": 8,
-   "forced": false
-  },
-  "actions|LAUGH": {
-   "title": "File:Cavalier soldier Hals-1624x.jpg",
-   "final": 0.738,
-   "p": 0.4349,
-   "photo": 0.0009,
+   "title": "File:Little Shiva edited.jpg",
+   "final": 0.69,
+   "p": 0.0,
+   "photo": 0.9974,
    "fit": 0.8,
    "how": "yolo:person",
    "notes": [
     "touches 1 edge(s)"
    ],
    "flags": [
-    "low word prob 0.43",
-    "not photo-like 0.00"
+    "low word prob 0.00"
    ],
-   "origin": "search:laughing",
+   "origin": "search:child standing",
+   "n_cands": 8,
+   "forced": false
+  },
+  "actions|LAUGH": {
+   "title": "File:Laughing boy at golden hour.jpg",
+   "final": 0.745,
+   "p": 0.0268,
+   "photo": 0.9448,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.03"
+   ],
+   "origin": "current",
    "n_cands": 8,
    "forced": false
   },
   "actions|CRY": {
-   "title": "File:Crying-girl.jpg",
-   "final": 0.796,
-   "p": 0.9999,
-   "photo": 0.5552,
-   "fit": 0.181,
-   "how": "yolo:person",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.59)"
-   ],
+   "title": "File:Yellow-eyed Penguin crying MC.jpg",
+   "final": 0.691,
+   "p": 0.0,
+   "photo": 0.939,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
    "flags": [
-    "fit 0.18"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 7,
+   "origin": "search:crying",
+   "n_cands": 6,
    "forced": false
   },
   "actions|CLIMB": {
-   "title": "File:Flo dans Juvsøyla à Rjukan, Norvège-rotated.jpg",
-   "final": 1.257,
-   "p": 0.9989,
-   "photo": 0.2234,
-   "fit": 1.0,
+   "title": "File:Crack climbing in Indian Creek, Utah.jpg",
+   "final": 1.154,
+   "p": 0.9999,
+   "photo": 0.6412,
+   "fit": 0.75,
    "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.22"
+   "notes": [
+    "tiny subject"
    ],
-   "origin": "search:person climbing",
+   "flags": [],
+   "origin": "current",
    "n_cands": 6,
    "forced": false
   },
   "actions|LISTEN": {
-   "title": "File:StateLibQld 1 119372 Woman standing beside a child wearing radio transmission equipment, Kalpowar, Queensland, 1950.jpg",
-   "final": 0.536,
-   "p": 0.023,
-   "photo": 1.0,
-   "fit": 0.823,
+   "title": "File:Radio, miracle of the 20th century a story of human achievement that stands unrivalled in the history of humanity, together with a colorful portrayal, giving a broad, general view of the whole subject (14570110488).jpg",
+   "final": 0.417,
+   "p": 0.045,
+   "photo": 0.7768,
+   "fit": 0.39,
    "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.65)"
    ],
    "flags": [
-    "low word prob 0.02"
+    "low word prob 0.04",
+    "fit 0.39"
    ],
    "origin": "search:child listening headphones",
    "n_cands": 8,
@@ -7600,16 +7596,16 @@
    "forced": false
   },
   "actions|OPEN": {
-   "title": "File:Poster for Burnand and Sullivan's Cox and Box - Royal Gallery of Illustration.jpg",
-   "final": 0.586,
-   "p": 0.1306,
-   "photo": 0.0023,
+   "title": "File:Epimetheus opening Pandora's box MET DP812748.jpg",
+   "final": 0.332,
+   "p": 0.0,
+   "photo": 0.2446,
    "fit": 1.0,
-   "how": "yolo:person",
+   "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.13",
-    "not photo-like 0.00"
+    "low word prob 0.00",
+    "not photo-like 0.24"
    ],
    "origin": "search:opening box",
    "n_cands": 7,
@@ -7617,7 +7613,7 @@
   },
   "actions|CLOSE": {
    "title": "File:Fischerkirche (main door), Born a. Darß.jpg",
-   "final": 1.177,
+   "final": 0.803,
    "p": 0.986,
    "photo": 0.0892,
    "fit": 1.0,
@@ -7627,12 +7623,12 @@
     "not photo-like 0.09"
    ],
    "origin": "search:closing door",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "actions|PUSH": {
    "title": "File:Person collecting recyclables, pushing a cart on the road in Ebisu.jpg",
-   "final": 0.638,
+   "final": 0.702,
    "p": 0.0402,
    "photo": 0.6565,
    "fit": 1.0,
@@ -7647,8 +7643,8 @@
   },
   "actions|PULL": {
    "title": "File:Person pulling kayak on wheels at Solent shore.jpg",
-   "final": 1.073,
-   "p": 0.7788,
+   "final": 1.125,
+   "p": 0.7787,
    "photo": 0.9093,
    "fit": 1.0,
    "how": "yolo:person",
@@ -7660,7 +7656,7 @@
   },
   "actions|THROW": {
    "title": "File:Throwing ball exercise.jpg",
-   "final": 0.641,
+   "final": 0.721,
    "p": 0.0118,
    "photo": 0.8028,
    "fit": 1.0,
@@ -7674,27 +7670,23 @@
    "forced": false
   },
   "actions|CATCH": {
-   "title": "File:Baseball catcher.jpg",
-   "final": 0.9,
-   "p": 0.9954,
-   "photo": 0.1868,
-   "fit": 0.325,
+   "title": "File:Man catching ball 001.jpg",
+   "final": 0.797,
+   "p": 0.181,
+   "photo": 0.5333,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.85)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.32",
-    "not photo-like 0.19"
+    "low word prob 0.18"
    ],
-   "origin": "current",
+   "origin": "search:catching ball",
    "n_cands": 7,
    "forced": false
   },
   "actions|KICK": {
    "title": "File:Deb Haaland kicking a soccer ball.jpg",
-   "final": 1.236,
+   "final": 1.279,
    "p": 0.9853,
    "photo": 0.9241,
    "fit": 1.0,
@@ -7707,9 +7699,9 @@
   },
   "actions|HUG": {
    "title": "File:A person with \"Hug Me\" poster was hugged by another person on Dundas Square in Toronto.jpg",
-   "final": 1.057,
+   "final": 1.103,
    "p": 0.9997,
-   "photo": 0.9598,
+   "photo": 0.959,
    "fit": 0.57,
    "how": "yolo:person",
    "notes": [
@@ -7723,26 +7715,26 @@
    "forced": false
   },
   "actions|SMILE": {
-   "title": "File:Little kid smiling..jpg",
-   "final": 0.917,
-   "p": 0.9957,
-   "photo": 0.9971,
-   "fit": 0.271,
+   "title": "File:Aminah Cendrakasih, c. 1959, by Tati Photo Studio.jpg",
+   "final": 0.665,
+   "p": 0.8603,
+   "photo": 0.9318,
+   "fit": 0.531,
    "how": "yolo:person",
    "notes": [
     "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.70)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.27"
+    "fit 0.53"
    ],
-   "origin": "current",
-   "n_cands": 7,
+   "origin": "search:smile",
+   "n_cands": 5,
    "forced": false
   },
   "actions|CLAP": {
    "title": "File:Arabic arts festival applause.jpg",
-   "final": 0.825,
+   "final": 0.857,
    "p": 0.992,
    "photo": 0.8116,
    "fit": 0.219,
@@ -9834,7 +9826,7 @@
   },
   "actions|JUMP": {
    "title": "File:720th Special Tactics Group airmen jump 20071003.jpg",
-   "final": 1.004,
+   "final": 1.034,
    "p": 0.9967,
    "photo": 0.7974,
    "fit": 0.592,
@@ -9846,14 +9838,14 @@
     "fit 0.59"
    ],
    "origin": "search:person jumping",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "actions|STOP": {
    "title": "File:STOP sign.jpg",
-   "final": 1.25,
+   "final": 1.299,
    "p": 1.0,
-   "photo": 0.9905,
+   "photo": 0.9904,
    "fit": 0.806,
    "how": "saliency",
    "notes": [
@@ -9861,12 +9853,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "actions|GO": {
    "title": "File:UK Green Traffic Light Signal - geograph.org.uk - 5264299.jpg",
-   "final": 1.272,
+   "final": 1.322,
    "p": 1.0,
    "photo": 0.9996,
    "fit": 1.0,
@@ -9879,7 +9871,7 @@
   },
   "actions|COME": {
    "title": "File:Waving RCMP (7612733982) (cropped).jpg",
-   "final": 1.088,
+   "final": 0.763,
    "p": 1.0,
    "photo": 0.1473,
    "fit": 0.842,
@@ -9895,24 +9887,23 @@
    "forced": false
   },
   "actions|LOOK": {
-   "title": "File:Child looking out window - \"Singing As We Go\" (1925) - Mabel Betsy Hill.jpg",
-   "final": 0.715,
-   "p": 0.2917,
-   "photo": 0.0443,
+   "title": "File:Gabriel looking through pretend binoculars at a playground, Parque das Nações, Lisbon, Portugal julesvernex2.jpg",
+   "final": 0.788,
+   "p": 0.0001,
+   "photo": 0.9404,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "low word prob 0.29",
-    "not photo-like 0.04"
+    "low word prob 0.00"
    ],
-   "origin": "search:child looking",
+   "origin": "search:looking through binoculars",
    "n_cands": 6,
    "forced": false
   },
   "actions|SEE": {
    "title": "File:US Navy 070702-N-5621B-007 Boatswain's Mate 3rd Class Christopher Pullon helps a Russian child look through the binoculars during a tour of the Guam-based submarine tender USS Frank Cable (AS-40).jpg",
-   "final": 1.106,
+   "final": 1.152,
    "p": 0.9474,
    "photo": 0.9364,
    "fit": 0.8,
@@ -9922,14 +9913,14 @@
    ],
    "flags": [],
    "origin": "search:child looking binoculars",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "actions|HEAR": {
    "title": "File:Human right ear (cropped).jpg",
-   "final": 1.218,
+   "final": 1.259,
    "p": 0.9999,
-   "photo": 0.9127,
+   "photo": 0.9125,
    "fit": 0.844,
    "how": "saliency",
    "notes": [
@@ -9941,23 +9932,26 @@
    "forced": false
   },
   "actions|SMELL": {
-   "title": "File:Precious Child little girl with flower.jpg",
-   "final": 1.147,
-   "p": 0.999,
-   "photo": 0.9773,
-   "fit": 0.8,
+   "title": "File:Young girl smelling the flowers at the Scandinavian Festival.jpg",
+   "final": 0.963,
+   "p": 0.9596,
+   "photo": 0.9991,
+   "fit": 0.312,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.81)"
    ],
-   "flags": [],
-   "origin": "search:child smelling flower",
+   "flags": [
+    "fit 0.31"
+   ],
+   "origin": "search:smelling flower",
    "n_cands": 7,
    "forced": false
   },
   "actions|TOUCH": {
    "title": "File:Hand, fingers - back.jpg",
-   "final": 0.751,
+   "final": 0.825,
    "p": 0.5158,
    "photo": 0.9955,
    "fit": 0.479,
@@ -9974,28 +9968,27 @@
    "forced": false
   },
   "actions|TASTE": {
-   "title": "File:A taste of Fried Plantain.jpg",
-   "final": 0.886,
-   "p": 0.9404,
-   "photo": 0.1843,
-   "fit": 0.512,
-   "how": "yolo:person",
+   "title": "File:Greek - Reliquary Pendant with Virgin and Child - Walters 571511 - Interior (2).jpg",
+   "final": 0.589,
+   "p": 0.0,
+   "photo": 0.9535,
+   "fit": 0.796,
+   "how": "saliency",
    "notes": [
-    "touches 3 edge(s)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.51",
-    "not photo-like 0.18"
+    "low word prob 0.00"
    ],
    "origin": "search:child tasting",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "actions|SPEAK": {
    "title": "File:Chicago Mayor Edward Joseph Kelly Speaking into Microphone 135843916 001 007 029a.jpg",
-   "final": 0.982,
+   "final": 1.052,
    "p": 0.5936,
-   "photo": 0.9978,
+   "photo": 0.9975,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
@@ -10005,13 +9998,15 @@
    "forced": false
   },
   "actions|SAY": {
-   "title": "File:Man talking on the phone in Montréal-Pierre Elliott Trudeau International Airport 006.jpg",
+   "title": "File:Louisiana State Capitol Building.jpg",
    "final": 0.636,
-   "p": 0.0004,
-   "photo": 0.8984,
-   "fit": 1.0,
+   "p": 0.0,
+   "photo": 0.9105,
+   "fit": 0.75,
    "how": "yolo:person",
-   "notes": [],
+   "notes": [
+    "tiny subject"
+   ],
    "flags": [
     "low word prob 0.00"
    ],
@@ -10020,27 +10015,27 @@
    "forced": false
   },
   "actions|ASK": {
-   "title": "File:U S Marines and sailors conduct a HIRAIN class (9783801).jpg",
-   "final": 0.601,
-   "p": 0.7046,
-   "photo": 0.1654,
-   "fit": 0.192,
+   "title": "File:Call On Me (53392862922).jpg",
+   "final": 0.403,
+   "p": 0.0019,
+   "photo": 0.9086,
+   "fit": 0.274,
    "how": "yolo:person",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.50)"
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
    ],
    "flags": [
-    "fit 0.19",
-    "not photo-like 0.17"
+    "low word prob 0.00",
+    "fit 0.27"
    ],
-   "origin": "search:raising hand question",
+   "origin": "search:student raising hand",
    "n_cands": 8,
    "forced": false
   },
   "actions|ANSWER": {
    "title": "File:Student panel at MSU March 2025.jpg",
-   "final": 1.014,
+   "final": 0.586,
    "p": 0.9703,
    "photo": 0.0242,
    "fit": 0.839,
@@ -10057,7 +10052,7 @@
   },
   "actions|HELP": {
    "title": "File:, geneeskunde, Bestanddeelnr 900-8145.jpg",
-   "final": 1.045,
+   "final": 0.845,
    "p": 0.9894,
    "photo": 0.998,
    "fit": 0.647,
@@ -10075,8 +10070,8 @@
   },
   "actions|GIVE": {
    "title": "File:Prezenty EXP 096 (ubt).JPG",
-   "final": 0.928,
-   "p": 1.0,
+   "final": 0.947,
+   "p": 0.9998,
    "photo": 0.6924,
    "fit": 0.446,
    "how": "saliency",
@@ -10092,8 +10087,8 @@
   },
   "actions|TAKE": {
    "title": "File:Two House Sparrows (Passer domesticus) feeding from hand.JPG",
-   "final": 0.548,
-   "p": 0.0405,
+   "final": 0.645,
+   "p": 0.0397,
    "photo": 0.9985,
    "fit": 0.8,
    "how": "yolo:person",
@@ -10109,7 +10104,7 @@
   },
   "actions|BUY": {
    "title": "File:Souk in Tunisia 1.jpg",
-   "final": 0.646,
+   "final": 0.746,
    "p": 0.0001,
    "photo": 0.9958,
    "fit": 1.0,
@@ -10124,7 +10119,7 @@
   },
   "actions|SELL": {
    "title": "File:A fruit vendor in Arusha Central Market.jpg",
-   "final": 1.248,
+   "final": 1.259,
    "p": 1.0,
    "photo": 0.6075,
    "fit": 1.0,
@@ -10132,12 +10127,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:market vendor selling",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "actions|PAY": {
    "title": "File:PayCashWallet PayCashSwap.png",
-   "final": 0.748,
+   "final": 0.531,
    "p": 0.9992,
    "photo": 0.2738,
    "fit": 0.272,
@@ -10156,7 +10151,7 @@
   },
   "actions|WAIT": {
    "title": "File:People San Francisco Spanish Flu 1918.webp",
-   "final": 1.25,
+   "final": 1.3,
    "p": 1.0,
    "photo": 0.9982,
    "fit": 1.0,
@@ -10169,7 +10164,7 @@
   },
   "actions|START": {
    "title": "File:Start line, Isle of Jura Fell Race 2013 - geograph.org.uk - 3488479.jpg",
-   "final": 0.907,
+   "final": 0.909,
    "p": 0.9998,
    "photo": 0.5226,
    "fit": 0.41,
@@ -10187,7 +10182,7 @@
   },
   "actions|FINISH": {
    "title": "File:Ambrose Burfoot crosses finish line at 1968 Boston Marathon.jpg",
-   "final": 1.209,
+   "final": 1.011,
    "p": 0.9319,
    "photo": 0.9874,
    "fit": 1.0,
@@ -10195,12 +10190,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:finish line",
-   "n_cands": 5,
+   "n_cands": 4,
    "forced": false
   },
   "actions|WIN": {
    "title": "File:Indian Softbaseball Team after winning the South Asian Softbaseball Games 2026.jpg",
-   "final": 0.801,
+   "final": 0.836,
    "p": 0.9889,
    "photo": 0.8386,
    "fit": 0.224,
@@ -10217,16 +10212,19 @@
    "forced": false
   },
   "actions|LOSE": {
-   "title": "File:Vancouver Riot (5847612932).jpg",
-   "final": 0.502,
-   "p": 0.0001,
-   "photo": 0.0241,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
+   "title": "File:Scared (64870631).jpeg",
+   "final": 0.309,
+   "p": 0.0021,
+   "photo": 0.9946,
+   "fit": 0.677,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [
     "low word prob 0.00",
-    "not photo-like 0.02"
+    "fit 0.68"
    ],
    "origin": "search:losing team sad",
    "n_cands": 8,
@@ -10234,8 +10232,8 @@
   },
   "actions|FLY": {
    "title": "File:Domestic Pigeon Flock.jpg",
-   "final": 1.164,
-   "p": 0.9886,
+   "final": 1.196,
+   "p": 0.9514,
    "photo": 0.9982,
    "fit": 0.821,
    "how": "saliency",
@@ -10249,8 +10247,8 @@
   },
   "actions|DRIVE": {
    "title": "File:Convertible Mercedes Car Driving On A Highway.jpg",
-   "final": 1.105,
-   "p": 1.0,
+   "final": 1.12,
+   "p": 0.9322,
    "photo": 0.987,
    "fit": 0.75,
    "how": "yolo:person",
@@ -10264,9 +10262,9 @@
   },
   "actions|RIDE": {
    "title": "File:Cycliste à place d'Italie-Paris crop.jpg",
-   "final": 1.176,
-   "p": 0.9934,
-   "photo": 0.4832,
+   "final": 1.174,
+   "p": 0.9933,
+   "photo": 0.483,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
@@ -10278,17 +10276,16 @@
    "forced": false
   },
   "actions|CARRY": {
-   "title": "File:SADM carry bag.jpg",
-   "final": 0.663,
-   "p": 0.6755,
-   "photo": 0.5546,
-   "fit": 0.472,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.79)"
-   ],
+   "title": "File:Woman in casual attire carrying shopping bag.jpg",
+   "final": 0.479,
+   "p": 0.0294,
+   "photo": 0.3565,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
    "flags": [
-    "fit 0.47"
+    "low word prob 0.03",
+    "not photo-like 0.36"
    ],
    "origin": "search:carrying bag",
    "n_cands": 8,
@@ -10296,9 +10293,9 @@
   },
   "actions|BUILD": {
    "title": "File:Children using bundles of marks as toys in Germany, Literary Digest (1923-12-08), p17.jpg",
-   "final": 0.974,
+   "final": 0.794,
    "p": 0.5842,
-   "photo": 0.9929,
+   "photo": 0.9928,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
@@ -10309,103 +10306,100 @@
   },
   "actions|BREAK": {
    "title": "File:Cedar Breaks National Monument partially.jpg",
-   "final": 0.601,
-   "p": 0.0114,
-   "photo": 0.5376,
+   "final": 0.635,
+   "p": 0.0,
+   "photo": 0.5375,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.01"
+    "low word prob 0.00"
    ],
    "origin": "search:breaking",
    "n_cands": 8,
    "forced": false
   },
   "actions|FIX": {
-   "title": "File:2008-04-17 1989 Saab 900 Turbo getting new tyres.jpg",
-   "final": 0.694,
-   "p": 0.1422,
-   "photo": 0.9916,
+   "title": "File:Repairing bicycle Shenandoah Valley Bicycle Festival Our Community Place Harrisonburg VA July 2012.jpg",
+   "final": 0.751,
+   "p": 0.0475,
+   "photo": 0.846,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "low word prob 0.14"
+    "low word prob 0.05"
    ],
-   "origin": "current",
+   "origin": "search:repairing bicycle",
    "n_cands": 8,
    "forced": false
   },
   "actions|CUT": {
    "title": "File:Onion and a group of vegetables on a cutting board.jpg",
-   "final": 1.036,
-   "p": 0.5969,
+   "final": 0.801,
+   "p": 0.0009,
    "photo": 0.9278,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
    "origin": "search:cutting vegetables",
    "n_cands": 7,
    "forced": false
   },
   "actions|PAINT": {
-   "title": "File:Leonardo da Vinci - Virgin and Child with St Anne C2RMF retouched.jpg",
-   "final": 0.517,
-   "p": 0.004,
-   "photo": 0.1482,
+   "title": "File:Bamberg Altes Rathaus BW 1.JPG",
+   "final": 0.591,
+   "p": 0.0,
+   "photo": 0.8855,
+   "fit": 0.826,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:painting wall",
+   "n_cands": 7,
+   "forced": false
+  },
+  "actions|COLOR": {
+   "title": "File:The air brush in photography, incorporating a progressive series of lessons (1920) (14588142749).jpg",
+   "final": 0.7,
+   "p": 0.0,
+   "photo": 0.9997,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.15"
+    "low word prob 0.00"
    ],
-   "origin": "search:child painting",
-   "n_cands": 8,
-   "forced": false
-  },
-  "actions|COLOR": {
-   "title": "File:Crayones cera.jpg",
-   "final": 1.121,
-   "p": 0.9906,
-   "photo": 0.6904,
-   "fit": 0.679,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "fit 0.68"
-   ],
-   "origin": "current",
-   "n_cands": 8,
+   "origin": "search:coloring book crayons",
+   "n_cands": 7,
    "forced": false
   },
   "actions|FOLD": {
-   "title": "File:Mirko Siakkou-Flodin Metamofrog Ravensburg 07.jpg",
-   "final": 0.836,
-   "p": 0.8028,
-   "photo": 0.3224,
-   "fit": 0.488,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.81)"
-   ],
+   "title": "File:Folding Clothesline in Perth, Western Australia, 2026.jpg",
+   "final": 0.75,
+   "p": 0.0553,
+   "photo": 0.8878,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
    "flags": [
-    "fit 0.49",
-    "not photo-like 0.32"
+    "low word prob 0.06"
    ],
-   "origin": "search:folding paper origami",
+   "origin": "search:folding clothes",
    "n_cands": 6,
    "forced": false
   },
   "actions|CLEAN": {
    "title": "File:Aerogelflower filtered.jpg",
-   "final": 0.624,
-   "p": 0.0007,
+   "final": 0.72,
+   "p": 0.0,
    "photo": 0.9712,
    "fit": 1.0,
    "how": "saliency",
@@ -10418,23 +10412,26 @@
    "forced": false
   },
   "actions|SWEEP": {
-   "title": "File:BroomsforSale.jpg",
-   "final": 1.131,
-   "p": 0.9695,
-   "photo": 0.87,
-   "fit": 0.798,
+   "title": "File:Iziko Broom.JPG",
+   "final": 0.809,
+   "p": 0.9783,
+   "photo": 0.4875,
+   "fit": 0.307,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.51)"
    ],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 6,
+   "flags": [
+    "fit 0.31",
+    "not photo-like 0.49"
+   ],
+   "origin": "search:sweeping floor broom",
+   "n_cands": 5,
    "forced": false
   },
   "actions|WIPE": {
    "title": "File:Battle Group Poland shows of their Athleticism! (4886687).jpg",
-   "final": 0.606,
+   "final": 0.673,
    "p": 0.0026,
    "photo": 0.676,
    "fit": 1.0,
@@ -10448,32 +10445,34 @@
    "forced": false
   },
   "actions|POUR": {
-   "title": "File:Woman with watering can, Dent de Man.jpg",
-   "final": 0.61,
+   "title": "File:Penguin in Antarctica jumping out of the water.jpg",
+   "final": 0.591,
    "p": 0.0,
-   "photo": 0.9638,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
+   "photo": 0.9272,
+   "fit": 0.796,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [
     "low word prob 0.00"
    ],
    "origin": "search:pouring water",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "actions|MIX": {
    "title": "File:Terracotta krater (mixing bowl) MET DP130720.jpg",
-   "final": 0.454,
-   "p": 0.0109,
-   "photo": 0.6616,
+   "final": 0.515,
+   "p": 0.0005,
+   "photo": 0.6612,
    "fit": 0.763,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.01"
+    "low word prob 0.00"
    ],
    "origin": "search:mixing bowl",
    "n_cands": 8,
@@ -10481,8 +10480,8 @@
   },
   "actions|BAKE": {
    "title": "File:Freshly baked bread loaves.jpg",
-   "final": 0.879,
-   "p": 0.8909,
+   "final": 0.852,
+   "p": 0.8053,
    "photo": 0.6012,
    "fit": 0.658,
    "how": "yolo:person",
@@ -10494,28 +10493,30 @@
     "fit 0.66"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "actions|FRY": {
-   "title": "File:PLAINTAIN.jpg",
-   "final": 1.168,
+   "title": "File:A pan of frying egg.jpg",
+   "final": 1.034,
    "p": 1.0,
-   "photo": 0.1813,
-   "fit": 1.0,
+   "photo": 0.988,
+   "fit": 0.465,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.18"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.78)"
    ],
-   "origin": "current",
-   "n_cands": 8,
+   "flags": [
+    "fit 0.47"
+   ],
+   "origin": "search:frying egg",
+   "n_cands": 7,
    "forced": false
   },
   "actions|BOIL": {
    "title": "File:Boilingkettle.jpg",
-   "final": 1.24,
-   "p": 0.9996,
+   "final": 1.274,
+   "p": 0.999,
    "photo": 0.8475,
    "fit": 1.0,
    "how": "saliency",
@@ -10527,7 +10528,7 @@
   },
   "actions|FEED": {
    "title": "File:Water reflection of a boy feeding hay to a cow in a paddy field at golden hour in Laos.jpg",
-   "final": 1.265,
+   "final": 1.288,
    "p": 0.9683,
    "photo": 0.7095,
    "fit": 1.0,
@@ -10540,8 +10541,8 @@
   },
   "actions|WATER": {
    "title": "File:Woman with watering can, Dent de Man.jpg",
-   "final": 1.227,
-   "p": 0.9805,
+   "final": 1.274,
+   "p": 0.9801,
    "photo": 0.9638,
    "fit": 1.0,
    "how": "yolo:person",
@@ -10553,8 +10554,8 @@
   },
   "actions|PLANT": {
    "title": "File:Dülmen, Hausdülmen, eisbedeckter Strauch -- 2021 -- 5033-7.jpg",
-   "final": 0.662,
-   "p": 0.0002,
+   "final": 0.762,
+   "p": 0.0,
    "photo": 0.9941,
    "fit": 1.0,
    "how": "saliency",
@@ -10567,43 +10568,43 @@
    "forced": false
   },
   "actions|PICK": {
-   "title": "File:Picking Fruit, by William Glackens.png",
-   "final": 1.155,
-   "p": 0.9928,
-   "photo": 0.0,
-   "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.00"
+   "title": "File:Apples - soon to be ready for picking - geograph.org.uk - 5855782.jpg",
+   "final": 1.033,
+   "p": 1.0,
+   "photo": 0.9842,
+   "fit": 0.547,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.91)",
+    "upscaled x1.5"
    ],
-   "origin": "search:picking fruit",
+   "flags": [
+    "fit 0.55"
+   ],
+   "origin": "search:picking apples",
    "n_cands": 7,
    "forced": false
   },
   "actions|DIG": {
-   "title": "File:Skovl.jpg",
-   "final": 1.039,
-   "p": 1.0,
-   "photo": 0.3041,
-   "fit": 0.64,
+   "title": "File:Zeus, Digging For China.jpg",
+   "final": 0.774,
+   "p": 0.0449,
+   "photo": 0.9838,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.64",
-    "not photo-like 0.30"
+    "low word prob 0.04"
    ],
-   "origin": "current",
+   "origin": "search:digging",
    "n_cands": 6,
    "forced": false
   },
   "actions|WAKE UP": {
    "title": "File:Waking Up the Town (1925) - 2.jpg",
-   "final": 1.168,
-   "p": 0.9907,
-   "photo": 0.9583,
+   "final": 0.884,
+   "p": 0.9575,
+   "photo": 0.6385,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
@@ -10613,23 +10614,25 @@
    "forced": false
   },
   "actions|GET UP": {
-   "title": "File:A woman getting out of bed Met DP885487.jpg",
-   "final": 0.964,
-   "p": 0.7792,
-   "photo": 0.0016,
-   "fit": 1.0,
+   "title": "File:Getting up in the morning - geograph.org.uk - 8136574.jpg",
+   "final": 0.513,
+   "p": 0.0,
+   "photo": 0.6863,
+   "fit": 0.75,
    "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.00"
+   "notes": [
+    "tiny subject"
    ],
-   "origin": "search:getting out of bed",
-   "n_cands": 7,
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:getting up morning",
+   "n_cands": 6,
    "forced": false
   },
   "actions|BRUSH": {
    "title": "File:Man brushing teeth.jpg",
-   "final": 0.836,
+   "final": 0.879,
    "p": 0.9813,
    "photo": 0.9292,
    "fit": 0.238,
@@ -10647,7 +10650,7 @@
   },
   "actions|SHOWER": {
    "title": "File:IMG Duschender.jpg",
-   "final": 1.147,
+   "final": 1.194,
    "p": 1.0,
    "photo": 0.9676,
    "fit": 0.8,
@@ -10662,14 +10665,14 @@
   },
   "actions|DRESS": {
    "title": "File:Dressing Bessie for the party - \"A Year of Fun\" (1886) - Margaret Johnson.jpg",
-   "final": 1.136,
+   "final": 0.684,
    "p": 0.9863,
-   "photo": 0.0689,
+   "photo": 0.0043,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
    "flags": [
-    "not photo-like 0.07"
+    "not photo-like 0.00"
    ],
    "origin": "search:child getting dressed",
    "n_cands": 8,
@@ -10677,8 +10680,8 @@
   },
   "actions|COMB": {
    "title": "File:Hair Comb, Papua New Guinea, Brücke Museum Berlin, 64983, view a.jpg",
-   "final": 1.167,
-   "p": 0.9975,
+   "final": 1.198,
+   "p": 0.9968,
    "photo": 0.8161,
    "fit": 1.0,
    "how": "saliency",
@@ -10690,7 +10693,7 @@
   },
   "actions|STUDY": {
    "title": "File:Sias Library - Students Studying 2017.jpg",
-   "final": 0.75,
+   "final": 0.746,
    "p": 0.9706,
    "photo": 0.442,
    "fit": 0.198,
@@ -10709,7 +10712,7 @@
   },
   "actions|LEARN": {
    "title": "File:Niños estudiantes chilenos.jpg",
-   "final": 1.038,
+   "final": 1.062,
    "p": 0.9593,
    "photo": 0.7221,
    "fit": 0.676,
@@ -10726,42 +10729,45 @@
    "forced": false
   },
   "actions|TEACH": {
-   "title": "File:Mother teaching children numbers and alphabet in home of sharecropper, Transylvania, Louisiana, 8b37034.jpg",
-   "final": 1.14,
-   "p": 0.9248,
-   "photo": 0.3779,
-   "fit": 1.0,
+   "title": "File:The art of teaching 02.jpg",
+   "final": 1.094,
+   "p": 0.9858,
+   "photo": 0.4631,
+   "fit": 0.678,
    "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.38"
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "origin": "search:teaching children",
+   "flags": [
+    "fit 0.68",
+    "not photo-like 0.46"
+   ],
+   "origin": "search:teacher teaching",
    "n_cands": 8,
    "forced": false
   },
   "actions|THINK": {
-   "title": "File:Temperament Model of Thinking Approach.jpg",
-   "final": 0.86,
-   "p": 0.9978,
-   "photo": 0.0083,
-   "fit": 0.387,
-   "how": "saliency",
+   "title": "File:Backward Child C.jpg",
+   "final": 0.381,
+   "p": 0.0012,
+   "photo": 0.9982,
+   "fit": 0.844,
+   "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.65)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.39",
-    "not photo-like 0.01"
+    "low word prob 0.00"
    ],
-   "origin": "search:thinking",
+   "origin": "search:child thinking",
    "n_cands": 8,
    "forced": false
   },
   "actions|KNOW": {
    "title": "File:Narzisse.jpg",
-   "final": 0.695,
-   "p": 0.0001,
+   "final": 0.79,
+   "p": 0.0,
    "photo": 0.9546,
    "fit": 1.0,
    "how": "saliency",
@@ -10770,36 +10776,34 @@
     "low word prob 0.00"
    ],
    "origin": "search:know",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "actions|REMEMBER": {
-   "title": "File:Coeds looking at photo album and scrapbooks for the San Souci club at Arlington State College (10006219).jpg",
-   "final": 0.772,
-   "p": 0.6495,
-   "photo": 0.9988,
-   "fit": 0.512,
+   "title": "File:Tram interior edit1.jpg",
+   "final": 0.747,
+   "p": 0.0003,
+   "photo": 0.9881,
+   "fit": 1.0,
    "how": "yolo:person",
-   "notes": [
-    "touches 3 edge(s)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.51"
+    "low word prob 0.00"
    ],
-   "origin": "search:looking at photo album",
-   "n_cands": 6,
+   "origin": "search:memories photos",
+   "n_cands": 5,
    "forced": false
   },
   "actions|FORGET": {
    "title": "File:Rue de l'École Normale.jpg",
-   "final": 0.603,
-   "p": 0.007,
+   "final": 0.698,
+   "p": 0.0005,
    "photo": 0.9865,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.01"
+    "low word prob 0.00"
    ],
    "origin": "search:forgetful",
    "n_cands": 6,
@@ -10807,7 +10811,7 @@
   },
   "actions|COUNT": {
    "title": "File:Finger-counting to 12 from pinkie-tip.png",
-   "final": 0.835,
+   "final": 0.863,
    "p": 0.9461,
    "photo": 0.7548,
    "fit": 0.093,
@@ -10824,46 +10828,43 @@
    "forced": false
   },
   "actions|SPELL": {
-   "title": "File:Neutraface Blocks!.jpg",
-   "final": 0.973,
-   "p": 1.0,
-   "photo": 0.0844,
-   "fit": 0.442,
+   "title": "File:Cluster Brooch with Letters Spelling \"Amor\" MET LC-57 26 1-02.jpg",
+   "final": 0.627,
+   "p": 0.0,
+   "photo": 0.6372,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.92)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.44",
-    "not photo-like 0.08"
+    "low word prob 0.00"
    ],
-   "origin": "search:alphabet blocks",
+   "origin": "search:spelling letters",
    "n_cands": 7,
    "forced": false
   },
   "actions|LOVE": {
-   "title": "File:The Heart and Hand - geograph.org.uk - 4804738.jpg",
-   "final": 0.95,
-   "p": 0.7669,
-   "photo": 0.0007,
-   "fit": 0.806,
-   "how": "saliency",
+   "title": "File:Lessons of love and money help before the holidays (8168144).jpg",
+   "final": 0.466,
+   "p": 0.0,
+   "photo": 0.9406,
+   "fit": 0.553,
+   "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.92)"
    ],
    "flags": [
-    "not photo-like 0.00"
+    "low word prob 0.00",
+    "fit 0.55"
    ],
-   "origin": "search:heart hands",
+   "origin": "search:hug love",
    "n_cands": 7,
    "forced": false
   },
   "actions|LIKE": {
    "title": "File:Jempol Ngadep Atas (cropped).jpg",
-   "final": 1.158,
+   "final": 1.2,
    "p": 0.9968,
-   "photo": 0.9131,
+   "photo": 0.9129,
    "fit": 0.653,
    "how": "yolo:person",
    "notes": [
@@ -10878,39 +10879,42 @@
    "forced": false
   },
   "actions|WANT": {
-   "title": "File:Catanzaro - Chiesa del Rosario - 01.jpg",
-   "final": 0.5,
+   "title": "File:Cahors - Église Saint-Urcisse.jpg",
+   "final": 0.508,
    "p": 0.0,
-   "photo": 0.0004,
-   "fit": 1.0,
+   "photo": 0.5275,
+   "fit": 0.806,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.00"
+    "low word prob 0.00"
    ],
    "origin": "search:child pointing want",
    "n_cands": 7,
    "forced": false
   },
   "actions|NEED": {
-   "title": "File:7 Collection Eybl Great Britain - E. Kealey - Women of Britain say – GO.jpg",
-   "final": 0.568,
-   "p": 0.0,
-   "photo": 0.682,
-   "fit": 1.0,
+   "title": "File:A shelter in need of help - geograph.org.uk - 7087278.jpg",
+   "final": 0.503,
+   "p": 0.0254,
+   "photo": 0.55,
+   "fit": 0.75,
    "how": "yolo:person",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "tiny subject"
    ],
-   "origin": "search:needing",
+   "flags": [
+    "low word prob 0.03"
+   ],
+   "origin": "search:need help",
    "n_cands": 8,
    "forced": false
   },
   "actions|SHARE": {
    "title": "File:Five children on a motorcycle.jpg",
-   "final": 1.165,
+   "final": 1.219,
    "p": 0.8828,
    "photo": 0.9847,
    "fit": 1.0,
@@ -10918,14 +10922,14 @@
    "notes": [],
    "flags": [],
    "origin": "search:children sharing",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "actions|WAVE": {
-   "title": "File:Child waving-Rwanda.jpg",
-   "final": 0.494,
-   "p": 0.0005,
-   "photo": 0.6384,
+   "title": "File:The American Battle Monuments Commission commemorates Memorial Day at the Henri-Chapelle American Cemetery (7829318).jpg",
+   "final": 0.568,
+   "p": 0.0002,
+   "photo": 0.832,
    "fit": 0.8,
    "how": "yolo:person",
    "notes": [
@@ -10935,7 +10939,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:child waving",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "jobs|LAWYER": {
@@ -29015,13 +29019,13 @@
   "actions|CATCH",
   "actions|CLAP",
   "actions|CLEAN",
-  "actions|CLIMB",
   "actions|CLOSE",
   "actions|COLOR",
   "actions|COME",
   "actions|COOK",
   "actions|COUNT",
   "actions|CRY",
+  "actions|CUT",
   "actions|DANCE",
   "actions|DIG",
   "actions|DRAW",
@@ -29051,7 +29055,6 @@
   "actions|PAY",
   "actions|PICK",
   "actions|PLANT",
-  "actions|PLAY",
   "actions|POUR",
   "actions|PUSH",
   "actions|READ",
@@ -29059,11 +29062,15 @@
   "actions|RIDE",
   "actions|SAY",
   "actions|SING",
+  "actions|SIT",
   "actions|SLEEP",
+  "actions|SMELL",
   "actions|SMILE",
   "actions|SPELL",
+  "actions|STAND",
   "actions|START",
   "actions|STUDY",
+  "actions|SWEEP",
   "actions|TAKE",
   "actions|TASTE",
   "actions|TEACH",
@@ -30083,6 +30090,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1890,
-  "flagged": 1074
+  "flagged": 1077
  }
 }

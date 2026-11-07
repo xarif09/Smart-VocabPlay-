@@ -8623,6 +8623,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.805
  },
+ "sports|ARCHERY": {
+  "file": "w/sports__archery.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Field_archery_targets_at_Beecraigs_-_geograph.org.uk_-_4725038.jpg",
+  "author": "M J Richardson",
+  "license": "CC BY-SA 2.0",
+  "score": 1.169
+ },
  "sports|BADMINTON": {
   "file": "w/sports__badminton.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Olympics_2012_Mixed_Doubles_Final.jpg",
@@ -8665,6 +8672,20 @@
   "license": "CC BY 3.0",
   "score": 0.64
  },
+ "sports|CHAMPION": {
+  "file": "w/sports__champion.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2013_Longines_Global_Champions_-_Lausanne_-_14-09-2013_-_Pius_Schwizer_et_Coolgirl.jpg",
+  "author": "Clément Bucco-Lechat",
+  "license": "CC BY-SA 3.0",
+  "score": 0.661
+ },
+ "sports|CHEERLEADER": {
+  "file": "w/sports__cheerleader.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Awty_Sport.jpg",
+  "author": "Tech Office",
+  "license": "CC0",
+  "score": 1.29
+ },
  "sports|CHESS": {
   "file": "w/sports__chess.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:ChessSet.jpg",
@@ -8700,12 +8721,33 @@
   "license": "CC BY-SA 3.0",
   "score": 0.925
  },
+ "sports|DODGEBALL": {
+  "file": "w/sports__dodgeball.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:4th_Marine_Regiment_Sports_Day_(9187217).jpg",
+  "author": "U.S. Marine Corps photo by Lance Cpl. Kendrick Jackson",
+  "license": "Public domain",
+  "score": 1.056
+ },
+ "sports|DUMBBELL": {
+  "file": "w/sports__dumbbell.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dumbbell_Nebula_(Messier_27).png",
+  "author": "Taavi Niittee",
+  "license": "CC0",
+  "score": 0.899
+ },
  "sports|EXERCISE": {
   "file": "w/sports__exercise.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Cycling_in_Amsterdam_(893).jpg",
   "author": "Marc van Woudenberg",
   "license": "CC BY-SA 2.0",
   "score": 0.351
+ },
+ "sports|FINISH LINE": {
+  "file": "w/sports__finish-line.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Finishing_line,_Race_For_Life,_Hull_-_geograph.org.uk_-_8371362.jpg",
+  "author": "Paul Harrop",
+  "license": "CC BY-SA 2.0",
+  "score": 1.282
  },
  "sports|FISHING": {
   "file": "w/sports__fishing.jpg",
@@ -8728,12 +8770,33 @@
   "license": "CC BY-SA 2.5",
   "score": 0.283
  },
+ "sports|GOALKEEPER": {
+  "file": "w/sports__goalkeeper.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:AUT_vs._LIE_2015-10-12_(170).jpg",
+  "author": "Steindy ( talk ) 20:36, 16 October 2015 (UTC)",
+  "license": "CC BY-SA 3.0",
+  "score": 1.085
+ },
  "sports|GOLF": {
   "file": "w/sports__golf.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Golfer_swing.jpg",
   "author": "Lilrizz",
   "license": "CC0",
   "score": 1.047
+ },
+ "sports|GYM": {
+  "file": "w/sports__gym.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chorzow_Urbanowicza_2_sala_gimnastyczna_2021.jpg",
+  "author": "Adrian Tync",
+  "license": "CC BY-SA 4.0",
+  "score": 1.15
+ },
+ "sports|GYMNASTICS": {
+  "file": "w/sports__gymnastics.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:15th_Austrian_Future_Cup_Linz_Painchaude_Alexandre-8478.jpg",
+  "author": "Isiwal",
+  "license": "CC BY-SA 4.0",
+  "score": 0.934
  },
  "sports|HIKING": {
   "file": "w/sports__hiking.jpg",
@@ -8742,6 +8805,13 @@
   "license": "CC BY-SA 4.0",
   "score": 1.013
  },
+ "sports|HOCKEY": {
+  "file": "w/sports__hockey.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Servette_HC_vs_Black_Bloys_HC_-_LNA_hommes_-_20141012_-_Positionnement_sur_p%C3%A9nalty_1.jpg",
+  "author": "Clément Bucco-Lechat",
+  "license": "CC BY-SA 3.0",
+  "score": 1.155
+ },
  "sports|HORSE RIDING": {
   "file": "w/sports__horse-riding.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Horse-riding-07765-nevit.jpg",
@@ -8749,12 +8819,33 @@
   "license": "CC BY-SA 3.0",
   "score": 1.152
  },
+ "sports|HURDLES": {
+  "file": "w/sports__hurdles.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sport,_SFA006002750.jpg",
+  "author": "Unknown author Unknown author",
+  "license": "Public domain",
+  "score": 1.039
+ },
  "sports|ICE SKATING": {
   "file": "w/sports__ice-skating.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:XtremeIceSkating_SquatJump.jpg",
   "author": "Dan Perceval",
   "license": "CC BY-SA 3.0",
   "score": 1.136
+ },
+ "sports|JOGGING": {
+  "file": "w/sports__jogging.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Payakumbuh_Bugar_Sport_Center_Jogging_Track_Payakumbuh_Utara_West_Sumatra_2026.jpg",
+  "author": "Undeka 11",
+  "license": "CC BY-SA 4.0",
+  "score": 1.096
+ },
+ "sports|JUDO": {
+  "file": "w/sports__judo.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_judo_competition_(FL45964559).jpg",
+  "author": "IPPA photographer",
+  "license": "CC BY 4.0",
+  "score": 1.032
  },
  "sports|JUMP": {
   "file": "w/sports__jump.jpg",
@@ -8798,12 +8889,82 @@
   "license": "CC0",
   "score": 1.048
  },
+ "sports|MUAY THAI": {
+  "file": "w/sports__muay-thai.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Muay_Thai_Fight_Us_Vs_Burma_(80668055).jpeg",
+  "author": "Gerrit Phil Baumann",
+  "license": "CC BY 3.0",
+  "score": 0.823
+ },
+ "sports|NET": {
+  "file": "w/sports__net.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Skegness_Pier_and_a_beach_volleyball_net_-_geograph.org.uk_-_6723070.jpg",
+  "author": "habiloid",
+  "license": "CC BY-SA 2.0",
+  "score": 0.79
+ },
+ "sports|OLYMPICS": {
+  "file": "w/sports__olympics.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Olympic_rings_on_the_Eiffel_Tower_2024_(7).jpg",
+  "author": "Ibex73",
+  "license": "CC BY 4.0",
+  "score": 0.944
+ },
+ "sports|PETANQUE": {
+  "file": "w/sports__petanque.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:P%C3%A9tanque._Not_Boules,_P%C3%A9tanque_-_geograph.org.uk_-_3652206.jpg",
+  "author": "Bob Harvey",
+  "license": "CC BY-SA 2.0",
+  "score": 1.086
+ },
+ "sports|PLAYER": {
+  "file": "w/sports__player.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:USO_-_RCT_-_28-09-2013_-_Stade_Mathon_-_Xavier_Chiocci.jpg",
+  "author": "Clément Bucco-Lechat",
+  "license": "CC BY-SA 3.0",
+  "score": 0.695
+ },
+ "sports|PUSH-UP": {
+  "file": "w/sports__push-up.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Standing_Push-Up_instructions,_Tredegar_-_geograph.org.uk_-_8357325.jpg",
+  "author": "Jaggery",
+  "license": "CC BY-SA 2.0",
+  "score": 0.521
+ },
  "sports|RACE": {
   "file": "w/sports__race.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Usain_Bolt_2012_Olympics_1.jpg",
   "author": "Nick Webb from London, United Kingdom",
   "license": "CC BY 2.0",
   "score": 0.216
+ },
+ "sports|RACKET": {
+  "file": "w/sports__racket.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Table_tennis_racket.jpg",
+  "author": "Samson Ssemakadde",
+  "license": "CC0",
+  "score": 0.646
+ },
+ "sports|REFEREE": {
+  "file": "w/sports__referee.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:AUT_vs._TUR_2016-03-29_(396).jpg",
+  "author": "Steindy ( talk ) 11:23, 11 April 2016 (UTC)",
+  "license": "CC BY-SA 3.0",
+  "score": 0.951
+ },
+ "sports|ROCK CLIMBING": {
+  "file": "w/sports__rock-climbing.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Rock_climbers_at_Seynes,_France.jpg",
+  "author": "Alexandra Gadina",
+  "license": "CC BY-SA 3.0",
+  "score": 1.263
+ },
+ "sports|ROWING": {
+  "file": "w/sports__rowing.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Rowing_training,_S%C3%A8te_03.jpg",
+  "author": "Christian Ferrer",
+  "license": "CC BY-SA 4.0",
+  "score": 1.027
  },
  "sports|RUGBY": {
   "file": "w/sports__rugby.jpg",
@@ -8826,6 +8987,34 @@
   "license": "CC BY-SA 4.0",
   "score": 0.655
  },
+ "sports|SAILING": {
+  "file": "w/sports__sailing.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sailing_at_the_OHSF_Water_Sport_Camp_(52724394291).jpg",
+  "author": "Outer Harbour Sailing Federation OHSF from Canada",
+  "license": "CC BY 2.0",
+  "score": 1.303
+ },
+ "sports|SCOREBOARD": {
+  "file": "w/sports__scoreboard.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Stansted_Hall_%26_Elsenham_CC_digital_scoreboard,_Stansted_Mountfitchet,_Essex_01.jpg",
+  "author": "Acabashi",
+  "license": "CC BY-SA 4.0",
+  "score": 1.181
+ },
+ "sports|SHUTTLECOCK": {
+  "file": "w/sports__shuttlecock.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Male_Fern_shuttlecock_-_geograph.org.uk_-_2700288.jpg",
+  "author": "Jonathan Kington",
+  "license": "CC BY-SA 2.0",
+  "score": 0.59
+ },
+ "sports|SIT-UP": {
+  "file": "w/sports__sit-up.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:208-PU-171-4_(29238815562).jpg",
+  "author": "National Museum of the U.S. Navy",
+  "license": "Public domain",
+  "score": 0.521
+ },
  "sports|SKATEBOARD": {
   "file": "w/sports__skateboard.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:BackSmithGrind.jpg",
@@ -8839,6 +9028,27 @@
   "author": "Granada",
   "license": "CC BY-SA 4.0",
   "score": 1.148
+ },
+ "sports|SNORKELING": {
+  "file": "w/sports__snorkeling.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Snorkeling_Reef.JPG",
+  "author": "Reefmaker",
+  "license": "CC BY-SA 3.0",
+  "score": 0.855
+ },
+ "sports|SNOWBOARDING": {
+  "file": "w/sports__snowboarding.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Snowboarding_on_railing.jpg",
+  "author": "Andrew Brown from Solli, Norway",
+  "license": "CC BY 2.0",
+  "score": 0.97
+ },
+ "sports|SPORTS DAY": {
+  "file": "w/sports__sports-day.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Berlin,_Flughafen_Tempelhof,_Berlin_E-Prix_2019,_Greentech_Festival,_Porsche_--_2019_--_5545.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.502
  },
  "sports|STRETCH": {
   "file": "w/sports__stretch.jpg",
@@ -8875,6 +9085,13 @@
   "license": "CC BY 4.0",
   "score": 0.776
  },
+ "sports|TAKRAW": {
+  "file": "w/sports__takraw.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Akrobatik_sang_ahli.jpg",
+  "author": "Moh. Aripin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.875
+ },
  "sports|TEAM": {
   "file": "w/sports__team.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:IIHF_Ice_Hockey_Women_20170405_08.jpg",
@@ -8889,12 +9106,26 @@
   "license": "CC BY-SA 3.0",
   "score": 1.17
  },
+ "sports|TREADMILL": {
+  "file": "w/sports__treadmill.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tapis_roulant_%C3%A0_ski_(Sondernach)_(2).jpg",
+  "author": "Gzen92",
+  "license": "CC BY-SA 4.0",
+  "score": 0.427
+ },
  "sports|TROPHY": {
   "file": "w/sports__trophy.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Grey_Cup_Trophy_on_Base_4.png",
   "author": "Apollomarconi",
   "license": "CC0",
   "score": 0.859
+ },
+ "sports|TUG OF WAR": {
+  "file": "w/sports__tug-of-war.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tug_O%27_War_at_the_Helmsdale_Highland_Games_2014_-_geograph.org.uk_-_4125691.jpg",
+  "author": "Andrew Tryon",
+  "license": "CC BY-SA 2.0",
+  "score": 1.116
  },
  "sports|VOLLEYBALL": {
   "file": "w/sports__volleyball.jpg",
@@ -8903,12 +9134,26 @@
   "license": "CC BY-SA 4.0",
   "score": 0.948
  },
+ "sports|WEIGHTLIFTING": {
+  "file": "w/sports__weightlifting.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:20181006_Paul_Tischler_Gewichtheben_Bundesliga_Finale_by_Isiwal-3437.jpg",
+  "author": "Isiwal",
+  "license": "CC BY-SA 4.0",
+  "score": 1.221
+ },
  "sports|WHISTLE": {
   "file": "w/sports__whistle.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Pea_Whistle.jpg",
   "author": "Zephyris at English Wikipedia",
   "license": "CC BY-SA 3.0",
   "score": 0.935
+ },
+ "sports|WINNER": {
+  "file": "w/sports__winner.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hanselfingerhut_Spiel_035_2025_03_30.jpg",
+  "author": "Friedrich Haag",
+  "license": "CC BY-SA 4.0",
+  "score": 0.729
  },
  "sports|YOGA": {
   "file": "w/sports__yoga.jpg",

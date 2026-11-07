@@ -13787,7 +13787,20 @@
    "forced": false
   },
   "sports|RACKET": {
-   "status": "no candidates"
+   "title": "File:Table tennis racket.jpg",
+   "final": 0.646,
+   "p": 0.0,
+   "photo": 0.4802,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.48"
+   ],
+   "origin": "search:tennis racket",
+   "n_cands": 4,
+   "forced": false
   },
   "sports|BAT": {
    "title": "File:Fourbats.jpg",
@@ -13807,7 +13820,22 @@
    "forced": false
   },
   "sports|NET": {
-   "status": "no candidates"
+   "title": "File:Skegness Pier and a beach volleyball net - geograph.org.uk - 6723070.jpg",
+   "final": 0.79,
+   "p": 0.833,
+   "photo": 0.9223,
+   "fit": 0.202,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.42)"
+   ],
+   "flags": [
+    "fit 0.20"
+   ],
+   "origin": "search:volleyball net",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|WHISTLE": {
    "title": "File:Pea Whistle.jpg",
@@ -13940,7 +13968,22 @@
    "forced": false
   },
   "sports|PUSH-UP": {
-   "status": "no candidates"
+   "title": "File:Standing Push-Up instructions, Tredegar - geograph.org.uk - 8357325.jpg",
+   "final": 0.521,
+   "p": 0.0,
+   "photo": 0.4983,
+   "fit": 0.843,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.50"
+   ],
+   "origin": "search:push-up",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|DIVING": {
    "title": "File:Underwater photograph of a recreational scuba diver in Playa del Carmen 2006.jpg",
@@ -22815,100 +22858,506 @@
    "forced": false
   },
   "sports|MUAY THAI": {
-   "status": "no candidates"
+   "title": "File:Muay Thai Fight Us Vs Burma (80668055).jpeg",
+   "final": 0.823,
+   "p": 0.9988,
+   "photo": 0.3164,
+   "fit": 0.446,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.93)"
+   ],
+   "flags": [
+    "fit 0.45",
+    "not photo-like 0.32"
+   ],
+   "origin": "search:Muay Thai",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|TAKRAW": {
-   "status": "no candidates"
+   "title": "File:Akrobatik sang ahli.jpg",
+   "final": 0.875,
+   "p": 0.1232,
+   "photo": 0.6641,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.12"
+   ],
+   "origin": "search:sepak takraw",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|PETANQUE": {
-   "status": "no candidates"
+   "title": "File:Pétanque. Not Boules, Pétanque - geograph.org.uk - 3652206.jpg",
+   "final": 1.086,
+   "p": 0.851,
+   "photo": 0.9977,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:petanque",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|GYMNASTICS": {
-   "status": "no candidates"
+   "title": "File:15th Austrian Future Cup Linz Painchaude Alexandre-8478.jpg",
+   "final": 0.934,
+   "p": 0.9793,
+   "photo": 0.2557,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.26"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|ARCHERY": {
-   "status": "no candidates"
+   "title": "File:Field archery targets at Beecraigs - geograph.org.uk - 4725038.jpg",
+   "final": 1.169,
+   "p": 0.9924,
+   "photo": 0.4276,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.43"
+   ],
+   "origin": "search:archery sport",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|JUDO": {
-   "status": "no candidates"
+   "title": "File:A judo competition (FL45964559).jpg",
+   "final": 1.032,
+   "p": 0.9667,
+   "photo": 0.9931,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:judo sport",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|HOCKEY": {
-   "status": "no candidates"
+   "title": "File:Servette HC vs Black Bloys HC - LNA hommes - 20141012 - Positionnement sur pénalty 1.jpg",
+   "final": 1.155,
+   "p": 0.9876,
+   "photo": 0.382,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.38"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|ROWING": {
-   "status": "no candidates"
+   "title": "File:Rowing training, Sète 03.jpg",
+   "final": 1.027,
+   "p": 0.9264,
+   "photo": 0.9516,
+   "fit": 0.6,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "tiny subject"
+   ],
+   "flags": [
+    "fit 0.60"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "sports|SAILING": {
-   "status": "no candidates"
+   "title": "File:Sailing at the OHSF Water Sport Camp (52724394291).jpg",
+   "final": 1.303,
+   "p": 0.9997,
+   "photo": 0.999,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:sailing sport",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|ROCK CLIMBING": {
-   "status": "no candidates"
+   "title": "File:Rock climbers at Seynes, France.jpg",
+   "final": 1.263,
+   "p": 1.0,
+   "photo": 0.615,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:rock climbing sport",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|SNOWBOARDING": {
-   "status": "no candidates"
+   "title": "File:Snowboarding on railing.jpg",
+   "final": 0.97,
+   "p": 0.9755,
+   "photo": 0.661,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:snowboarding sport",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|WEIGHTLIFTING": {
-   "status": "no candidates"
+   "title": "File:20181006 Paul Tischler Gewichtheben Bundesliga Finale by Isiwal-3437.jpg",
+   "final": 1.221,
+   "p": 1.0,
+   "photo": 0.4089,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.41"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|TUG OF WAR": {
-   "status": "no candidates"
+   "title": "File:Tug O' War at the Helmsdale Highland Games 2014 - geograph.org.uk - 4125691.jpg",
+   "final": 1.116,
+   "p": 0.9863,
+   "photo": 0.6118,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:tug of war sport",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|SPORTS DAY": {
-   "status": "no candidates"
+   "title": "File:Berlin, Flughafen Tempelhof, Berlin E-Prix 2019, Greentech Festival, Porsche -- 2019 -- 5545.jpg",
+   "final": 0.502,
+   "p": 0.0,
+   "photo": 0.7807,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "sports|SIT-UP": {
-   "status": "no candidates"
+   "title": "File:208-PU-171-4 (29238815562).jpg",
+   "final": 0.521,
+   "p": 0.0024,
+   "photo": 0.9966,
+   "fit": 0.64,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.64"
+   ],
+   "origin": "search:sit-up sport",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|JOGGING": {
-   "status": "no candidates"
+   "title": "File:Payakumbuh Bugar Sport Center Jogging Track Payakumbuh Utara West Sumatra 2026.jpg",
+   "final": 1.096,
+   "p": 0.9357,
+   "photo": 0.6496,
+   "fit": 0.791,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:jogging sport",
+   "n_cands": 6,
+   "forced": false
   },
   "sports|OLYMPICS": {
-   "status": "no candidates"
+   "title": "File:Olympic rings on the Eiffel Tower 2024 (7).jpg",
+   "final": 0.944,
+   "p": 1.0,
+   "photo": 0.5444,
+   "fit": 0.287,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.48)"
+   ],
+   "flags": [
+    "fit 0.29"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|REFEREE": {
-   "status": "no candidates"
+   "title": "File:AUT vs. TUR 2016-03-29 (396).jpg",
+   "final": 0.951,
+   "p": 1.0,
+   "photo": 0.5348,
+   "fit": 0.439,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.92)"
+   ],
+   "flags": [
+    "fit 0.44"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|PLAYER": {
-   "status": "no candidates"
+   "title": "File:USO - RCT - 28-09-2013 - Stade Mathon - Xavier Chiocci.jpg",
+   "final": 0.695,
+   "p": 0.0141,
+   "photo": 0.9929,
+   "fit": 0.803,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|SCOREBOARD": {
-   "status": "no candidates"
+   "title": "File:Stansted Hall & Elsenham CC digital scoreboard, Stansted Mountfitchet, Essex 01.jpg",
+   "final": 1.181,
+   "p": 1.0,
+   "photo": 0.8922,
+   "fit": 0.806,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:scoreboard",
+   "n_cands": 6,
+   "forced": false
   },
   "sports|GOALKEEPER": {
-   "status": "no candidates"
+   "title": "File:AUT vs. LIE 2015-10-12 (170).jpg",
+   "final": 1.085,
+   "p": 1.0,
+   "photo": 0.5203,
+   "fit": 0.569,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.95)"
+   ],
+   "flags": [
+    "fit 0.57"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|SHUTTLECOCK": {
-   "status": "no candidates"
+   "title": "File:Male Fern shuttlecock - geograph.org.uk - 2700288.jpg",
+   "final": 0.59,
+   "p": 0.0,
+   "photo": 0.9845,
+   "fit": 0.784,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:shuttlecock",
+   "n_cands": 4,
+   "forced": false
   },
   "sports|GYM": {
-   "status": "no candidates"
+   "title": "File:Chorzow Urbanowicza 2 sala gimnastyczna 2021.jpg",
+   "final": 1.15,
+   "p": 0.9986,
+   "photo": 0.3824,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.38"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|TREADMILL": {
-   "status": "no candidates"
+   "title": "File:Tapis roulant à ski (Sondernach) (2).jpg",
+   "final": 0.427,
+   "p": 0.3018,
+   "photo": 0.5474,
+   "fit": 0.235,
+   "how": "saliency",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.77)"
+   ],
+   "flags": [
+    "low word prob 0.30",
+    "fit 0.24"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|DUMBBELL": {
-   "status": "no candidates"
+   "title": "File:Dumbbell Nebula (Messier 27).png",
+   "final": 0.899,
+   "p": 0.1782,
+   "photo": 0.998,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.18"
+   ],
+   "origin": "search:dumbbell",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|FINISH LINE": {
-   "status": "no candidates"
+   "title": "File:Finishing line, Race For Life, Hull - geograph.org.uk - 8371362.jpg",
+   "final": 1.282,
+   "p": 0.9973,
+   "photo": 0.8926,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:finish line race",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|WINNER": {
-   "status": "no candidates"
+   "title": "File:Hanselfingerhut Spiel 035 2025 03 30.jpg",
+   "final": 0.729,
+   "p": 0.0224,
+   "photo": 0.8671,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.02"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|CHAMPION": {
-   "status": "no candidates"
+   "title": "File:2013 Longines Global Champions - Lausanne - 14-09-2013 - Pius Schwizer et Coolgirl.jpg",
+   "final": 0.661,
+   "p": 0.001,
+   "photo": 0.4769,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.48"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|SNORKELING": {
-   "status": "no candidates"
+   "title": "File:Snorkeling Reef.JPG",
+   "final": 0.855,
+   "p": 0.9841,
+   "photo": 0.8124,
+   "fit": 0.23,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.60)"
+   ],
+   "flags": [
+    "fit 0.23"
+   ],
+   "origin": "search:snorkeling sport",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|HURDLES": {
-   "status": "no candidates"
+   "title": "File:Sport, SFA006002750.jpg",
+   "final": 1.039,
+   "p": 0.9997,
+   "photo": 0.9826,
+   "fit": 0.485,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.81)"
+   ],
+   "flags": [
+    "fit 0.49"
+   ],
+   "origin": "search:hurdles sport",
+   "n_cands": 7,
+   "forced": false
   },
   "sports|DODGEBALL": {
-   "status": "no candidates"
+   "title": "File:4th Marine Regiment Sports Day (9187217).jpg",
+   "final": 1.056,
+   "p": 0.9993,
+   "photo": 0.9851,
+   "fit": 0.322,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.67)"
+   ],
+   "flags": [
+    "fit 0.32"
+   ],
+   "origin": "search:dodgeball sport",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|CHEERLEADER": {
-   "status": "no candidates"
+   "title": "File:Awty Sport.jpg",
+   "final": 1.29,
+   "p": 0.9969,
+   "photo": 0.9495,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:cheerleader sport",
+   "n_cands": 8,
+   "forced": false
   },
   "school|CHALK": {
    "title": "File:2019 - Nationalpark Jasmund - 03.jpg",
@@ -25492,7 +25941,6 @@
   "sports|BOWLING",
   "sports|BOXING",
   "sports|CHAMPION",
-  "sports|CHEERLEADER",
   "sports|CHESS",
   "sports|COACH",
   "sports|DANCING",
@@ -25500,7 +25948,6 @@
   "sports|DODGEBALL",
   "sports|DUMBBELL",
   "sports|EXERCISE",
-  "sports|FINISH LINE",
   "sports|FISHING",
   "sports|FOOTBALL",
   "sports|GOAL",
@@ -25510,30 +25957,23 @@
   "sports|GYMNASTICS",
   "sports|HOCKEY",
   "sports|HURDLES",
-  "sports|JOGGING",
-  "sports|JUDO",
   "sports|JUMP",
   "sports|KARATE",
   "sports|MARATHON",
   "sports|MUAY THAI",
   "sports|NET",
   "sports|OLYMPICS",
-  "sports|PETANQUE",
   "sports|PLAYER",
   "sports|PUSH-UP",
   "sports|RACE",
   "sports|RACKET",
   "sports|REFEREE",
-  "sports|ROCK CLIMBING",
   "sports|ROWING",
   "sports|RUGBY",
   "sports|RUNNING SHOES",
-  "sports|SAILING",
-  "sports|SCOREBOARD",
   "sports|SHUTTLECOCK",
   "sports|SIT-UP",
   "sports|SNORKELING",
-  "sports|SNOWBOARDING",
   "sports|SPORTS DAY",
   "sports|STRETCH",
   "sports|TAEKWONDO",
@@ -25541,7 +25981,6 @@
   "sports|TEAM",
   "sports|TREADMILL",
   "sports|TROPHY",
-  "sports|TUG OF WAR",
   "sports|VOLLEYBALL",
   "sports|WEIGHTLIFTING",
   "sports|WHISTLE",
@@ -25887,7 +26326,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1512,
-  "flagged": 1270
+  "with_photo": 1547,
+  "flagged": 1260
  }
 }

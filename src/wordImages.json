@@ -9638,6 +9638,41 @@
   "license": "Public domain",
   "score": 0.831
  },
+ "technology|3D PRINTER": {
+  "file": "w/technology__3d-printer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Make-_3D_Printer_Testing_-_7960486742.jpg",
+  "author": "jabella",
+  "license": "CC BY 2.0",
+  "score": 1.021
+ },
+ "technology|ANTENNA": {
+  "file": "w/technology__antenna.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sender_Gaisberg.jpg",
+  "author": "Florian Fuchs",
+  "license": "CC BY 3.0",
+  "score": 1.335
+ },
+ "technology|BARCODE": {
+  "file": "w/technology__barcode.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Barcode_on_food_products_in_Israel_06.jpg",
+  "author": "Chenspec",
+  "license": "CC BY-SA 4.0",
+  "score": 0.775
+ },
+ "technology|BATTERY": {
+  "file": "w/technology__battery.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Campark_Trail_T70_Open_Batteries_Aug21_D72_20523.jpg",
+  "author": "This Photo was taken by Timothy A. Gonsalves . Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk pa",
+  "license": "CC BY-SA 4.0",
+  "score": 0.955
+ },
+ "technology|CABLE": {
+  "file": "w/technology__cable.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Apple_usb_extension_cable.JPG",
+  "author": "Massimo Barbieri",
+  "license": "CC BY-SA 3.0",
+  "score": 1.029
+ },
  "technology|CAMERA": {
   "file": "w/technology__camera.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:LEI0440_Leica_IIIf_chrom_-_Sn._580566_1951-52-M39_Blitzsynchron_front_view-6531_hf-.jpg",
@@ -9652,12 +9687,26 @@
   "license": "Public domain",
   "score": 0.788
  },
+ "technology|CIRCUIT BOARD": {
+  "file": "w/technology__circuit-board.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Kirchspiel,_ehem._Sondermunitionslager_Visbeck,_Schaltkasten_--_2023_--_6756.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.047
+ },
  "technology|CLOCK APP": {
   "file": "w/technology__clock-app.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:2010-07-20_Black_windup_alarm_clock_face.jpg",
   "author": "Sun Ladder",
   "license": "CC BY-SA 3.0",
   "score": 0.994
+ },
+ "technology|CODING": {
+  "file": "w/technology__coding.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lubyanka_CDM_view_from_Panoramic_view_point_05-2015_img12.jpg",
+  "author": "A.Savin",
+  "license": "CC BY-SA 3.0",
+  "score": 0.614
  },
  "technology|DRONE": {
   "file": "w/technology__drone.jpg",
@@ -9666,12 +9715,68 @@
   "license": "Public domain",
   "score": 0.844
  },
+ "technology|E-READER": {
+  "file": "w/technology__e-reader.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kobo_by_FNAC_White_bg.jpg",
+  "author": "D4m1en",
+  "license": "CC BY-SA 3.0",
+  "score": 0.955
+ },
+ "technology|EARBUDS": {
+  "file": "w/technology__earbuds.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bose_Sport_Open_Earbuds_-_5.jpg",
+  "author": "Kyu3a",
+  "license": "CC BY-SA 4.0",
+  "score": 1.258
+ },
+ "technology|EMAIL": {
+  "file": "w/technology__email.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Girl_listening_to_music_with_a_smartphone.jpg",
+  "author": "Jerónimo Roure",
+  "license": "CC BY-SA 4.0",
+  "score": 0.436
+ },
+ "technology|EXTENSION CORD": {
+  "file": "w/technology__extension-cord.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Homes_in_Need_(20220129-RD-LSC-0177).jpg",
+  "author": "USDAgov",
+  "license": "Public domain",
+  "score": 1.276
+ },
+ "technology|FLASH DRIVE": {
+  "file": "w/technology__flash-drive.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2015_Pendrive_SanDisk_4GB.jpg",
+  "author": "Jacek Halicki",
+  "license": "CC BY-SA 4.0",
+  "score": 1.022
+ },
+ "technology|FLASHLIGHT": {
+  "file": "w/technology__flashlight.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Radio_during_blackout_2022_G1.jpg",
+  "author": "George Chernilevsky",
+  "license": "CC BY-SA 4.0",
+  "score": 1.208
+ },
  "technology|GAME": {
   "file": "w/technology__game.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Nintendo-Switch-Pro-Controller-FL.jpg",
   "author": "Evan-Amos",
   "license": "Public domain",
   "score": 0.161
+ },
+ "technology|GAME CONSOLE": {
+  "file": "w/technology__game-console.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Nintendo-Super-Game-Boy-JP-2.jpg",
+  "author": "Evan-Amos",
+  "license": "Public domain",
+  "score": 0.905
+ },
+ "technology|GAME CONTROLLER": {
+  "file": "w/technology__game-controller.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Xbox_360_wired_controller_1.jpg",
+  "author": "Asim18",
+  "license": "CC BY 3.0",
+  "score": 0.88
  },
  "technology|HEADPHONES": {
   "file": "w/technology__headphones.jpg",
@@ -9680,12 +9785,26 @@
   "license": "CC BY-SA 4.0",
   "score": 0.928
  },
+ "technology|ICON": {
+  "file": "w/technology__icon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cycling_apps_on_mobile_phone.jpg",
+  "author": "Alextredz",
+  "license": "CC BY-SA 4.0",
+  "score": 0.651
+ },
  "technology|INTERNET": {
   "file": "w/technology__internet.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:D-Link_DI-524.jpg",
   "author": "Weihao Chiu @ Chinese Wikipedia",
   "license": "CC BY-SA 3.0",
   "score": -0.338
+ },
+ "technology|KEYBOARD": {
+  "file": "w/technology__keyboard.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:IBM_Model_M_Spanish_layout_Keyboard.jpg",
+  "author": "Wilfredor",
+  "license": "CC0",
+  "score": 0.59
  },
  "technology|LAPTOP": {
   "file": "w/technology__laptop.jpg",
@@ -9694,12 +9813,40 @@
   "license": "CC BY 2.0",
   "score": 0.784
  },
+ "technology|LIGHT BULB": {
+  "file": "w/technology__light-bulb.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Osram_Infrarot_Lampe_BW_2025-07-04_17-28-48_s.jpg",
+  "author": "Berthold Werner",
+  "license": "CC BY-SA 4.0",
+  "score": 1.272
+ },
+ "technology|MEMORY CARD": {
+  "file": "w/technology__memory-card.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sony_Memory_Stick_Pro_Duo_4GB.jpg",
+  "author": "Mister rf",
+  "license": "CC BY-SA 4.0",
+  "score": 0.889
+ },
+ "technology|MONITOR": {
+  "file": "w/technology__monitor.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Vga-cable.jpg",
+  "author": "Evan-Amos",
+  "license": "Public domain",
+  "score": 0.382
+ },
  "technology|MOUSE": {
   "file": "w/technology__mouse.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:3-Tasten-Maus_Microsoft.jpg",
   "author": "Darkone",
   "license": "CC BY-SA 2.5",
   "score": 0.858
+ },
+ "technology|MOUSE PAD": {
+  "file": "w/technology__mouse-pad.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Logitech_Red_mouse_on_a_mouse_pad.jpg",
+  "author": "mycurrency.com",
+  "license": "CC BY-SA 4.0",
+  "score": 1.263
  },
  "technology|PASSWORD": {
   "file": "w/technology__password.jpg",
@@ -9708,12 +9855,47 @@
   "license": "CC BY-SA 3.0",
   "score": 0.474
  },
+ "technology|PLUG": {
+  "file": "w/technology__plug.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:IAA_Transportation_2026,_Hanover_(20260914-P1086924).jpg",
+  "author": "Matti Blume",
+  "license": "CC BY-SA 4.0",
+  "score": 0.747
+ },
+ "technology|POWER BANK": {
+  "file": "w/technology__power-bank.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2023_Powerbank_Green_Cell_PowerPlay_20_(3).jpg",
+  "author": "Jacek Halicki",
+  "license": "CC BY-SA 4.0",
+  "score": 0.752
+ },
+ "technology|POWER BUTTON": {
+  "file": "w/technology__power-button.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Haltern_am_See,_Sythen,_Werkzeughalle_der_Quarzwerke_--_2015_--_4468.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.204
+ },
+ "technology|POWER OUTLET": {
+  "file": "w/technology__power-outlet.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bremerhaven,_Richtfunkturm_--_2024_--_2150.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.7
+ },
  "technology|PRINTER": {
   "file": "w/technology__printer.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:HP_Laserjet_5_DN_1.jpg",
   "author": "Thiemo Schuff",
   "license": "CC BY-SA 3.0 de",
   "score": 0.875
+ },
+ "technology|QR CODE": {
+  "file": "w/technology__qr-code.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:QR_code_sign,_Gravetye_Estate_woodland_-_geograph.org.uk_-_7879460.jpg",
+  "author": "Robin Webster",
+  "license": "CC BY-SA 2.0",
+  "score": 1.3
  },
  "technology|REMOTE": {
   "file": "w/technology__remote.jpg",
@@ -9722,6 +9904,13 @@
   "license": "Public domain",
   "score": 0.817
  },
+ "technology|ROBOT ARM": {
+  "file": "w/technology__robot-arm.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:PRO_Imagery_Submittal_-_Nanoracks-GITAI_Robotic_Arm_(jsc2021e036655).jpg",
+  "author": "NASA Johnson Space Center",
+  "license": "Public domain",
+  "score": 1.08
+ },
  "technology|ROBOT VACUUM": {
   "file": "w/technology__robot-vacuum.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Reinigungsroboter_tcm_100.JPG",
@@ -9729,12 +9918,82 @@
   "license": "CC BY-SA 2.0 de",
   "score": 0.946
  },
+ "technology|ROUTER": {
+  "file": "w/technology__router.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4_%D0%9F%D0%B5%D1%82%D1%80%D0%B0_%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B3%D0%BE_(%D1%81%D1%83%D0%B1%D1%82%D1%80%D0%BE%D0%BF%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BC%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82)_03.jpg",
+  "author": "Anastasiya Lvova",
+  "license": "CC BY-SA 4.0",
+  "score": 0.774
+ },
  "technology|SATELLITE": {
   "file": "w/technology__satellite.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Two_3U_CubeSats.jpg",
   "author": "NASA",
   "license": "Public domain",
   "score": 0.927
+ },
+ "technology|SCANNER": {
+  "file": "w/technology__scanner.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Interboot_2023,_Friedrichshafen_(P1130424).jpg",
+  "author": "Matti Blume",
+  "license": "CC BY-SA 4.0",
+  "score": 0.73
+ },
+ "technology|SCREEN": {
+  "file": "w/technology__screen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Apple_II_IMG_4213.jpg",
+  "author": "Rama & Musée Bolo",
+  "license": "CC BY-SA 2.0 fr",
+  "score": 0.797
+ },
+ "technology|SCREENSHOT": {
+  "file": "w/technology__screenshot.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Boy_holding_a_smartphone_with_purple_screen.jpg",
+  "author": "Shixart1985",
+  "license": "CC BY 2.0",
+  "score": 0.955
+ },
+ "technology|SECURITY CAMERA": {
+  "file": "w/technology__security-camera.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Security_camera,_September_2018.jpg",
+  "author": "Cody Logan",
+  "license": "CC BY-SA 4.0",
+  "score": 1.363
+ },
+ "technology|SELFIE": {
+  "file": "w/technology__selfie.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2016_Selfie.jpg",
+  "author": "Jacek Halicki",
+  "license": "CC BY-SA 4.0",
+  "score": 0.943
+ },
+ "technology|SELFIE STICK": {
+  "file": "w/technology__selfie-stick.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ubud_Bali_Girl-with-selfie-stick-01.jpg",
+  "author": "CEphoto, Uwe Aranas",
+  "license": "CC BY-SA 3.0",
+  "score": 1.186
+ },
+ "technology|SMARTPHONE": {
+  "file": "w/technology__smartphone.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Smartphone_Samsung_Galaxy_J3_2016.jpg",
+  "author": "Gzen92",
+  "license": "CC BY-SA 4.0",
+  "score": 0.979
+ },
+ "technology|SMARTWATCH": {
+  "file": "w/technology__smartwatch.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Infiniti_2.0_smartwatch.jpg",
+  "author": "The Final Checklist",
+  "license": "CC0",
+  "score": 1.288
+ },
+ "technology|SOLAR PANEL": {
+  "file": "w/technology__solar-panel.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Solar_panels_and_a_tourist_shelter_on_the_top_of_Mt_Tripylos,_Troodos_Mountains,_Cyprus.jpg",
+  "author": "Michal Klajban",
+  "license": "CC BY-SA 4.0",
+  "score": 1.02
  },
  "technology|SPEAKER": {
   "file": "w/technology__speaker.jpg",
@@ -9750,12 +10009,68 @@
   "license": "CC0",
   "score": 1.076
  },
+ "technology|TEXT MESSAGE": {
+  "file": "w/technology__text-message.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:CB_Seoul.png",
+  "author": "Vergänglichkeit",
+  "license": "CC BY-SA 4.0",
+  "score": 0.799
+ },
+ "technology|TOUCHSCREEN": {
+  "file": "w/technology__touchscreen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Touchscreen_plastic_packaging_or_part_of_touchscreen_(light_reflection).jpg",
+  "author": "Techbubble",
+  "license": "CC0",
+  "score": 0.744
+ },
+ "technology|TRIPOD": {
+  "file": "w/technology__tripod.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2023_Huawei_P30_Pro_na_statywie.jpg",
+  "author": "Jacek Halicki",
+  "license": "CC BY-SA 4.0",
+  "score": 1.311
+ },
  "technology|VIDEO": {
   "file": "w/technology__video.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Sony_Handycam_DCR-SR35_20190810.jpg",
   "author": "Sammlung der Medien und Wissenschaft",
   "license": "CC BY 4.0",
   "score": 0.304
+ },
+ "technology|VIDEO CALL": {
+  "file": "w/technology__video-call.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cheerful_woman_smiling_and_making_gestures_with_her_hands_while_talking_on_a_video_call_on_her_laptop.jpg",
+  "author": "Shixart1985",
+  "license": "CC BY 2.0",
+  "score": 0.991
+ },
+ "technology|VR HEADSET": {
+  "file": "w/technology__vr-headset.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Alex_Davies-Jones_using_a_VR_headset.jpg",
+  "author": "Sleepytimecat",
+  "license": "CC BY 4.0",
+  "score": 1.23
+ },
+ "technology|WALKIE-TALKIE": {
+  "file": "w/technology__walkie-talkie.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Walkie-Talkie,_Londres,_Inglaterra,_2014-08-11,_DD_098.JPG",
+  "author": "Diego Delso",
+  "license": "CC BY-SA 4.0",
+  "score": 1.296
+ },
+ "technology|WEBCAM": {
+  "file": "w/technology__webcam.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Webcam_Pico_do_Areeiro_2024-08-17_2340.jpg",
+  "author": "No author, automated feed from fixed webcams in well know touristic and scenic spots.",
+  "license": "Public domain",
+  "score": 0.941
+ },
+ "technology|WIFI": {
+  "file": "w/technology__wifi.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:FREE_WIFI,_Start_exploring_.SouthwestPlazaGuest_sign_on_elevator_shaft,_SW_Plaza_2022-01-06.jpg",
+  "author": "Xnatedawgx",
+  "license": "CC BY-SA 4.0",
+  "score": 1.201
  },
  "time|BIRTHDAY": {
   "file": "w/time__birthday.jpg",

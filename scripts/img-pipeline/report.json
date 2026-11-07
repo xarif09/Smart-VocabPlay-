@@ -15712,7 +15712,21 @@
    "forced": false
   },
   "technology|SMARTPHONE": {
-   "status": "no candidates"
+   "title": "File:Smartphone Samsung Galaxy J3 2016.jpg",
+   "final": 0.979,
+   "p": 0.9366,
+   "photo": 0.882,
+   "fit": 0.486,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.81)"
+   ],
+   "flags": [
+    "fit 0.49"
+   ],
+   "origin": "search:QI",
+   "n_cands": 10,
+   "forced": false
   },
   "technology|TABLET": {
    "title": "File:12.9 iPad Pro 1st Gen And Galaxy Tab S8 Ultra Size Comparison.jpg",
@@ -15748,7 +15762,22 @@
    "forced": false
   },
   "technology|KEYBOARD": {
-   "status": "no candidates"
+   "title": "File:IBM Model M Spanish layout Keyboard.jpg",
+   "final": 0.59,
+   "p": 0.9999,
+   "photo": 0.276,
+   "fit": 0.256,
+   "how": "yolo:keyboard",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.43)"
+   ],
+   "flags": [
+    "fit 0.26",
+    "not photo-like 0.28"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|MOUSE": {
    "title": "File:3-Tasten-Maus Microsoft.jpg",
@@ -15768,7 +15797,21 @@
    "forced": false
   },
   "technology|SCREEN": {
-   "status": "no candidates"
+   "title": "File:Apple II IMG 4213.jpg",
+   "final": 0.797,
+   "p": 0.1836,
+   "photo": 0.9958,
+   "fit": 0.837,
+   "how": "yolo:tv",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.18"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|HEADPHONES": {
    "title": "File:Słuchawki referencyjne K-701 firmy AKG.jpg",
@@ -15841,7 +15884,21 @@
    "forced": false
   },
   "technology|BATTERY": {
-   "status": "no candidates"
+   "title": "File:Campark Trail T70 Open Batteries Aug21 D72 20523.jpg",
+   "final": 0.955,
+   "p": 0.9978,
+   "photo": 0.9502,
+   "fit": 0.331,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.55)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|CHARGER": {
    "title": "File:Notebook-Computer-AC-Adapter.jpg",
@@ -15861,10 +15918,32 @@
    "forced": false
   },
   "technology|CABLE": {
-   "status": "no candidates"
+   "title": "File:Apple usb extension cable.JPG",
+   "final": 1.029,
+   "p": 0.578,
+   "photo": 0.7822,
+   "fit": 0.818,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:USB cable",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|WIFI": {
-   "status": "no candidates"
+   "title": "File:FREE WIFI, Start exploring .SouthwestPlazaGuest sign on elevator shaft, SW Plaza 2022-01-06.jpg",
+   "final": 1.201,
+   "p": 0.9983,
+   "photo": 0.6029,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:wifi sign",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|INTERNET": {
    "title": "File:D-Link DI-524.jpg",
@@ -15887,7 +15966,20 @@
    "forced": false
   },
   "technology|EMAIL": {
-   "status": "no candidates"
+   "title": "File:Girl listening to music with a smartphone.jpg",
+   "final": 0.436,
+   "p": 0.0,
+   "photo": 0.3526,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.35"
+   ],
+   "origin": "search:QI",
+   "n_cands": 2,
+   "forced": false
   },
   "technology|VIDEO": {
    "title": "File:Sony Handycam DCR-SR35 20190810.jpg",
@@ -15995,7 +16087,21 @@
    "forced": false
   },
   "technology|SCREENSHOT": {
-   "status": "no candidates"
+   "title": "File:Boy holding a smartphone with purple screen.jpg",
+   "final": 0.955,
+   "p": 0.4648,
+   "photo": 0.9033,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.46"
+   ],
+   "origin": "search:smartphone screen",
+   "n_cands": 6,
+   "forced": false
   },
   "technology|DRONE": {
    "title": "File:MQ-9 Reaper UAV (cropped).jpg",
@@ -19712,118 +19818,581 @@
    "forced": false
   },
   "technology|MONITOR": {
-   "status": "no candidates"
+   "title": "File:Vga-cable.jpg",
+   "final": 0.382,
+   "p": 0.0006,
+   "photo": 0.9773,
+   "fit": 0.309,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.64)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.31"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "technology|EARBUDS": {
-   "status": "no candidates"
+   "title": "File:Bose Sport Open Earbuds - 5.jpg",
+   "final": 1.258,
+   "p": 0.9755,
+   "photo": 0.9015,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:earbuds",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|SMARTWATCH": {
-   "status": "no candidates"
+   "title": "File:Infiniti 2.0 smartwatch.jpg",
+   "final": 1.288,
+   "p": 1.0,
+   "photo": 0.9323,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:smartwatch",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|FLASH DRIVE": {
-   "status": "no candidates"
+   "title": "File:2015 Pendrive SanDisk 4GB.jpg",
+   "final": 1.022,
+   "p": 0.9998,
+   "photo": 0.8806,
+   "fit": 0.34,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.57)"
+   ],
+   "flags": [
+    "fit 0.34"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|MEMORY CARD": {
-   "status": "no candidates"
+   "title": "File:Sony Memory Stick Pro Duo 4GB.jpg",
+   "final": 0.889,
+   "p": 0.9959,
+   "photo": 0.288,
+   "fit": 0.834,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.29"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "technology|POWER BANK": {
-   "status": "no candidates"
+   "title": "File:2023 Powerbank Green Cell PowerPlay 20 (3).jpg",
+   "final": 0.752,
+   "p": 0.9916,
+   "photo": 0.9944,
+   "fit": 0.415,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.69)"
+   ],
+   "flags": [
+    "fit 0.41"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|PLUG": {
-   "status": "no candidates"
+   "title": "File:IAA Transportation 2026, Hanover (20260914-P1086924).jpg",
+   "final": 0.747,
+   "p": 0.0168,
+   "photo": 0.9213,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.02"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|POWER OUTLET": {
-   "status": "no candidates"
+   "title": "File:Bremerhaven, Richtfunkturm -- 2024 -- 2150.jpg",
+   "final": 0.7,
+   "p": 0.0,
+   "photo": 0.9664,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|EXTENSION CORD": {
-   "status": "no candidates"
+   "title": "File:Homes in Need (20220129-RD-LSC-0177).jpg",
+   "final": 1.276,
+   "p": 0.9981,
+   "photo": 0.8082,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:extension cord",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|LIGHT BULB": {
-   "status": "no candidates"
+   "title": "File:Osram Infrarot Lampe BW 2025-07-04 17-28-48 s.jpg",
+   "final": 1.272,
+   "p": 0.8536,
+   "photo": 0.9904,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|FLASHLIGHT": {
-   "status": "no candidates"
+   "title": "File:Radio during blackout 2022 G1.jpg",
+   "final": 1.208,
+   "p": 0.948,
+   "photo": 0.9928,
+   "fit": 0.825,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|SCANNER": {
-   "status": "no candidates"
+   "title": "File:Interboot 2023, Friedrichshafen (P1130424).jpg",
+   "final": 0.73,
+   "p": 0.0797,
+   "photo": 0.9391,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.08"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|WEBCAM": {
-   "status": "no candidates"
+   "title": "File:Webcam Pico do Areeiro 2024-08-17 2340.jpg",
+   "final": 0.941,
+   "p": 0.8327,
+   "photo": 0.4631,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "not photo-like 0.46"
+   ],
+   "origin": "search:webcam",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|VR HEADSET": {
-   "status": "no candidates"
+   "title": "File:Alex Davies-Jones using a VR headset.jpg",
+   "final": 1.23,
+   "p": 0.9897,
+   "photo": 0.8439,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:vr headset",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|GAME CONTROLLER": {
-   "status": "no candidates"
+   "title": "File:Xbox 360 wired controller 1.jpg",
+   "final": 0.88,
+   "p": 0.9768,
+   "photo": 0.6337,
+   "fit": 0.329,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.68)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "technology|GAME CONSOLE": {
-   "status": "no candidates"
+   "title": "File:Nintendo-Super-Game-Boy-JP-2.jpg",
+   "final": 0.905,
+   "p": 0.9208,
+   "photo": 0.6707,
+   "fit": 0.47,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.78)"
+   ],
+   "flags": [
+    "fit 0.47"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|MOUSE PAD": {
-   "status": "no candidates"
+   "title": "File:Logitech Red mouse on a mouse pad.jpg",
+   "final": 1.263,
+   "p": 0.999,
+   "photo": 0.8142,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:mouse pad",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|TOUCHSCREEN": {
-   "status": "no candidates"
+   "title": "File:Touchscreen plastic packaging or part of touchscreen (light reflection).jpg",
+   "final": 0.744,
+   "p": 0.1136,
+   "photo": 0.9984,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.11"
+   ],
+   "origin": "search:touchscreen",
+   "n_cands": 9,
+   "forced": false
   },
   "technology|ROUTER": {
-   "status": "no candidates"
+   "title": "File:Ботанический сад Петра Великого (субтропический маршрут) 03.jpg",
+   "final": 0.774,
+   "p": 0.0,
+   "photo": 0.9754,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "technology|ANTENNA": {
-   "status": "no candidates"
+   "title": "File:Sender Gaisberg.jpg",
+   "final": 1.335,
+   "p": 0.9978,
+   "photo": 0.9454,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|CIRCUIT BOARD": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Kirchspiel, ehem. Sondermunitionslager Visbeck, Schaltkasten -- 2023 -- 6756.jpg",
+   "final": 1.047,
+   "p": 0.9908,
+   "photo": 0.9353,
+   "fit": 0.529,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|SOLAR PANEL": {
-   "status": "no candidates"
+   "title": "File:Solar panels and a tourist shelter on the top of Mt Tripylos, Troodos Mountains, Cyprus.jpg",
+   "final": 1.02,
+   "p": 1.0,
+   "photo": 0.9993,
+   "fit": 0.434,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.72)"
+   ],
+   "flags": [
+    "fit 0.43"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|SELFIE STICK": {
-   "status": "no candidates"
+   "title": "File:Ubud Bali Girl-with-selfie-stick-01.jpg",
+   "final": 1.186,
+   "p": 0.9998,
+   "photo": 0.8018,
+   "fit": 0.665,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.66"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|TRIPOD": {
-   "status": "no candidates"
+   "title": "File:2023 Huawei P30 Pro na statywie.jpg",
+   "final": 1.311,
+   "p": 0.9969,
+   "photo": 0.9734,
+   "fit": 0.843,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|3D PRINTER": {
-   "status": "no candidates"
+   "title": "File:Make- 3D Printer Testing - 7960486742.jpg",
+   "final": 1.021,
+   "p": 0.9212,
+   "photo": 0.5971,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:3d printer",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|ICON": {
-   "status": "no candidates"
+   "title": "File:Cycling apps on mobile phone.jpg",
+   "final": 0.651,
+   "p": 0.4215,
+   "photo": 0.9849,
+   "fit": 0.345,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.57)"
+   ],
+   "flags": [
+    "low word prob 0.42",
+    "fit 0.34"
+   ],
+   "origin": "search:app icons smartphone",
+   "n_cands": 3,
+   "forced": false
   },
   "technology|EMOJI": {
    "status": "no candidates"
   },
   "technology|VIDEO CALL": {
-   "status": "no candidates"
+   "title": "File:Cheerful woman smiling and making gestures with her hands while talking on a video call on her laptop.jpg",
+   "final": 0.991,
+   "p": 0.9999,
+   "photo": 0.4437,
+   "fit": 0.64,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64",
+    "not photo-like 0.44"
+   ],
+   "origin": "search:video call laptop",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|QR CODE": {
-   "status": "no candidates"
+   "title": "File:QR code sign, Gravetye Estate woodland - geograph.org.uk - 7879460.jpg",
+   "final": 1.3,
+   "p": 0.9988,
+   "photo": 0.9985,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QR code sign",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|BARCODE": {
-   "status": "no candidates"
+   "title": "File:Barcode on food products in Israel 06.jpg",
+   "final": 0.775,
+   "p": 0.8905,
+   "photo": 0.7008,
+   "fit": 0.283,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.59)"
+   ],
+   "flags": [
+    "fit 0.28"
+   ],
+   "origin": "search:barcode on product",
+   "n_cands": 9,
+   "forced": false
   },
   "technology|WALKIE-TALKIE": {
-   "status": "no candidates"
+   "title": "File:Walkie-Talkie, Londres, Inglaterra, 2014-08-11, DD 098.JPG",
+   "final": 1.296,
+   "p": 0.9999,
+   "photo": 0.9662,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "technology|SECURITY CAMERA": {
-   "status": "no candidates"
+   "title": "File:Security camera, September 2018.jpg",
+   "final": 1.363,
+   "p": 0.9988,
+   "photo": 0.9482,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|SELFIE": {
-   "status": "no candidates"
+   "title": "File:2016 Selfie.jpg",
+   "final": 0.943,
+   "p": 0.9852,
+   "photo": 0.9378,
+   "fit": 0.365,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.76)"
+   ],
+   "flags": [
+    "fit 0.36"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|TEXT MESSAGE": {
-   "status": "no candidates"
+   "title": "File:CB Seoul.png",
+   "final": 0.799,
+   "p": 0.7898,
+   "photo": 0.6578,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:text message smartphone",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|CODING": {
-   "status": "no candidates"
+   "title": "File:Lubyanka CDM view from Panoramic view point 05-2015 img12.jpg",
+   "final": 0.614,
+   "p": 0.0,
+   "photo": 0.9158,
+   "fit": 0.82,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|ROBOT ARM": {
-   "status": "no candidates"
+   "title": "File:PRO Imagery Submittal - Nanoracks-GITAI Robotic Arm (jsc2021e036655).jpg",
+   "final": 1.08,
+   "p": 0.9982,
+   "photo": 0.9745,
+   "fit": 0.624,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.62"
+   ],
+   "origin": "search:robot arm",
+   "n_cands": 7,
+   "forced": false
   },
   "technology|POWER BUTTON": {
-   "status": "no candidates"
+   "title": "File:Haltern am See, Sythen, Werkzeughalle der Quarzwerke -- 2015 -- 4468.jpg",
+   "final": 1.204,
+   "p": 0.8686,
+   "photo": 0.9952,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "technology|E-READER": {
-   "status": "no candidates"
+   "title": "File:Kobo by FNAC White bg.jpg",
+   "final": 0.955,
+   "p": 0.9958,
+   "photo": 0.9246,
+   "fit": 0.844,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|LIGHTNING": {
    "title": "File:0005512-สถานีกรุงเทพมุมสูงจะเห็นสถานีทั้งหมด.jpg",
@@ -27762,23 +28331,16 @@
   "sports|WHISTLE",
   "sports|WINNER",
   "sports|YOGA",
-  "technology|3D PRINTER",
-  "technology|ANTENNA",
   "technology|BARCODE",
   "technology|BATTERY",
-  "technology|CABLE",
   "technology|CAMERA",
   "technology|CHARGER",
   "technology|CIRCUIT BOARD",
   "technology|CODING",
   "technology|DRONE",
-  "technology|E-READER",
-  "technology|EARBUDS",
   "technology|EMAIL",
   "technology|EMOJI",
-  "technology|EXTENSION CORD",
   "technology|FLASH DRIVE",
-  "technology|FLASHLIGHT",
   "technology|GAME",
   "technology|GAME CONSOLE",
   "technology|GAME CONTROLLER",
@@ -27787,18 +28349,14 @@
   "technology|INTERNET",
   "technology|KEYBOARD",
   "technology|LAPTOP",
-  "technology|LIGHT BULB",
   "technology|MEMORY CARD",
   "technology|MONITOR",
   "technology|MOUSE",
-  "technology|MOUSE PAD",
   "technology|PASSWORD",
   "technology|PLUG",
   "technology|POWER BANK",
-  "technology|POWER BUTTON",
   "technology|POWER OUTLET",
   "technology|PRINTER",
-  "technology|QR CODE",
   "technology|REMOTE",
   "technology|ROBOT ARM",
   "technology|ROBOT VACUUM",
@@ -27807,22 +28365,15 @@
   "technology|SCANNER",
   "technology|SCREEN",
   "technology|SCREENSHOT",
-  "technology|SECURITY CAMERA",
   "technology|SELFIE",
   "technology|SELFIE STICK",
   "technology|SMARTPHONE",
-  "technology|SMARTWATCH",
   "technology|SOLAR PANEL",
   "technology|SPEAKER",
-  "technology|TEXT MESSAGE",
   "technology|TOUCHSCREEN",
-  "technology|TRIPOD",
   "technology|VIDEO",
   "technology|VIDEO CALL",
-  "technology|VR HEADSET",
-  "technology|WALKIE-TALKIE",
   "technology|WEBCAM",
-  "technology|WIFI",
   "time|AFTERNOON",
   "time|APRIL",
   "time|AUGUST",
@@ -28072,7 +28623,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1692,
-  "flagged": 1203
+  "with_photo": 1737,
+  "flagged": 1185
  }
 }

@@ -4780,12 +4780,26 @@
   "license": "CC BY-SA 3.0",
   "score": 0.915
  },
+ "fruits|ALMOND": {
+  "file": "w/fruits__almond.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ripe_almond_along_Glenwood_Avenue,_September_2023-6908.jpg",
+  "author": "Frank Schulenburg",
+  "license": "CC BY-SA 4.0",
+  "score": 1.211
+ },
  "fruits|APPLE": {
   "file": "w/fruits__apple.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
   "author": "Abhijit Tembhekar from Mumbai, India",
   "license": "CC BY 2.0",
   "score": 1.033
+ },
+ "fruits|APRICOT": {
+  "file": "w/fruits__apricot.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Apricot_whole444.jpg",
+  "author": "Benjamint444",
+  "license": "CC BY-SA 3.0",
+  "score": 1.25
  },
  "fruits|AVOCADO": {
   "file": "w/fruits__avocado.jpg",
@@ -4801,12 +4815,26 @@
   "license": "CC BY-SA 4.0",
   "score": 1.129
  },
+ "fruits|BLACKBERRY": {
+  "file": "w/fruits__blackberry.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Blackberry_(Rubus_fruticosus)_-_fruit_-_geograph.org.uk_-_5537304.jpg",
+  "author": "Evelyn Simak",
+  "license": "CC BY-SA 2.0",
+  "score": 1.298
+ },
  "fruits|BLUEBERRY": {
   "file": "w/fruits__blueberry.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Blueberry_Picking_(125267747).jpeg",
   "author": "Wendy Pramik",
   "license": "CC BY 3.0",
   "score": 1.149
+ },
+ "fruits|BREADFRUIT": {
+  "file": "w/fruits__breadfruit.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Parts_of_Breadfruit.png",
+  "author": "Paul-pladera",
+  "license": "CC0",
+  "score": 1.296
  },
  "fruits|CANTALOUPE": {
   "file": "w/fruits__cantaloupe.jpg",
@@ -4815,12 +4843,26 @@
   "license": "CC BY-SA 3.0",
   "score": 0.576
  },
+ "fruits|CASHEW": {
+  "file": "w/fruits__cashew.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:CASHEW_FRUIT.jpg",
+  "author": "Preetti Sri",
+  "license": "CC0",
+  "score": 1.336
+ },
  "fruits|CHERRY": {
   "file": "w/fruits__cherry.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Cherry_Stella444.jpg",
   "author": "Benjamint444 , edited by Fir0002",
   "license": "CC BY-SA 3.0",
   "score": 1.145
+ },
+ "fruits|CHESTNUT": {
+  "file": "w/fruits__chestnut.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Afgevallen_kastanje_van_een_Tamme_kastanje_(Castanea_sativa)_17-10-2021_(d.j.b.)_01.jpg",
+  "author": "Dominicus Johannes Bergsma",
+  "license": "CC BY-SA 4.0",
+  "score": 1.286
  },
  "fruits|COCONUT": {
   "file": "w/fruits__coconut.jpg",
@@ -4836,12 +4878,26 @@
   "license": "Public domain",
   "score": 1.029
  },
+ "fruits|CUSTARD APPLE": {
+  "file": "w/fruits__custard-apple.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Split_custard_apple_fruit_showing_white_pulp.png",
+  "author": "Kaviya Sakthivel",
+  "license": "CC BY 4.0",
+  "score": 1.393
+ },
  "fruits|DRAGON FRUIT": {
   "file": "w/fruits__dragon-fruit.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Red_dragon_fruit.jpg",
   "author": "Fumikas Sagisavas",
   "license": "CC0",
   "score": 1.103
+ },
+ "fruits|DRIED MANGO": {
+  "file": "w/fruits__dried-mango.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cincinnati_CBP_Agriculture_Finds_Two_Tons_of_Prohibited_Fruit_(39779487655).jpg",
+  "author": "CBP Photography",
+  "license": "Public domain",
+  "score": 0.707
  },
  "fruits|DURIAN": {
   "file": "w/fruits__durian.jpg",
@@ -4850,12 +4906,47 @@
   "license": "CC BY-SA 2.0",
   "score": 1.189
  },
+ "fruits|FIG": {
+  "file": "w/fruits__fig.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Figuier_commun_FR_2012.jpg",
+  "author": "JLPC",
+  "license": "CC BY-SA 3.0",
+  "score": 1.212
+ },
+ "fruits|FRUIT BASKET": {
+  "file": "w/fruits__fruit-basket.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tomatoes_in_basket_2026_G1.jpg",
+  "author": "George Chernilevsky",
+  "license": "CC BY 4.0",
+  "score": 1.27
+ },
+ "fruits|FRUIT SALAD": {
+  "file": "w/fruits__fruit-salad.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ehrenbach,_fruit_salad_with_wild_blackberries.jpg",
+  "author": "Gerda Arendt",
+  "license": "CC0",
+  "score": 1.276
+ },
+ "fruits|GOOSEBERRY": {
+  "file": "w/fruits__gooseberry.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Physalis_--_2026_--_2069.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.167
+ },
  "fruits|GRAPE": {
   "file": "w/fruits__grape.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Grapes,_Dry_Creek_Valley-7705.jpg",
   "author": "Frank Schulenburg",
   "license": "CC BY-SA 4.0",
   "score": 1.2
+ },
+ "fruits|GRAPEFRUIT": {
+  "file": "w/fruits__grapefruit.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Citrus_paradisi_(Grapefruit,_pink)_white_bg.jpg",
+  "author": "Citrus_paradisi_(Grapefruit,_pink).jpg : א (Aleph) derivative work: — raeky",
+  "license": "CC BY-SA 2.5",
+  "score": 1.049
  },
  "fruits|GUAVA": {
   "file": "w/fruits__guava.jpg",
@@ -4864,6 +4955,13 @@
   "license": "CC BY-SA 4.0",
   "score": 1.131
  },
+ "fruits|HAZELNUT": {
+  "file": "w/fruits__hazelnut.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hazelnuts.jpg",
+  "author": "Fir0002 at English Wikipedia",
+  "license": "CC BY-SA 3.0",
+  "score": 1.395
+ },
  "fruits|JACKFRUIT": {
   "file": "w/fruits__jackfruit.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:The_jackfruit_is_holding_on_to_the_tree.jpg",
@@ -4871,12 +4969,26 @@
   "license": "CC BY-SA 4.0",
   "score": 1.142
  },
+ "fruits|JUJUBE": {
+  "file": "w/fruits__jujube.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Red_dates_(jujube)_-_Massachusetts.jpg",
+  "author": "Daderot",
+  "license": "CC0",
+  "score": 1.212
+ },
  "fruits|KIWI": {
   "file": "w/fruits__kiwi.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Kiwi_aka.jpg",
   "author": "André Karwath aka Aka",
   "license": "CC BY-SA 2.5",
   "score": 0.978
+ },
+ "fruits|KUMQUAT": {
+  "file": "w/fruits__kumquat.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kumquat_vert_FR_2012.jpg",
+  "author": "JLPC",
+  "license": "CC BY-SA 3.0",
+  "score": 1.279
  },
  "fruits|LEMON": {
   "file": "w/fruits__lemon.jpg",
@@ -4891,6 +5003,13 @@
   "author": "",
   "license": "Public domain",
   "score": 1.107
+ },
+ "fruits|LONGKONG": {
+  "file": "w/fruits__longkong.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lansiumdomesticumfruit.jpg",
+  "author": "Calliopejen",
+  "license": "CC BY-SA 3.0",
+  "score": 0.669
  },
  "fruits|LYCHEE": {
   "file": "w/fruits__lychee.jpg",
@@ -4913,12 +5032,33 @@
   "license": "Public domain",
   "score": 0.924
  },
+ "fruits|MARIAN PLUM": {
+  "file": "w/fruits__marian-plum.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Marian_plum_fruits.jpg",
+  "author": "Philsacor",
+  "license": "CC0",
+  "score": 0.776
+ },
  "fruits|MELON": {
   "file": "w/fruits__melon.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Meloen_vrucht_met_bloem.jpg",
   "author": "Rasbak at Dutch Wikipedia",
   "license": "CC BY-SA 3.0",
   "score": 1.111
+ },
+ "fruits|MULBERRY": {
+  "file": "w/fruits__mulberry.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mulberry_fruit_-_geograph.org.uk_-_5845433.jpg",
+  "author": "Jonathan Billinger",
+  "license": "CC BY-SA 2.0",
+  "score": 1.287
+ },
+ "fruits|NECTARINE": {
+  "file": "w/fruits__nectarine.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Nectarine_on_white.jpg",
+  "author": "Rhododendrites",
+  "license": "CC BY-SA 4.0",
+  "score": 1.174
  },
  "fruits|ORANGE": {
   "file": "w/fruits__orange.jpg",
@@ -4955,12 +5095,33 @@
   "license": "Public domain",
   "score": 1.18
  },
+ "fruits|PEEL": {
+  "file": "w/fruits__peel.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Parking_lot_banana_peel.jpg",
+  "author": "Ser Amantio di Nicolao",
+  "license": "CC BY-SA 4.0",
+  "score": 0.967
+ },
+ "fruits|PERSIMMON": {
+  "file": "w/fruits__persimmon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Caqui_chocolate_em_fundo_preto_02.jpg",
+  "author": "Rodrigo.Argenton",
+  "license": "CC BY-SA 4.0",
+  "score": 1.355
+ },
  "fruits|PINEAPPLE": {
   "file": "w/fruits__pineapple.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Pineapple_fruit_2.jpg",
   "author": "Wilfredor",
   "license": "CC0",
   "score": 1.182
+ },
+ "fruits|PISTACHIO": {
+  "file": "w/fruits__pistachio.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:ARS_pistachio.jpg",
+  "author": "Scott Bauer, USDA",
+  "license": "Public domain",
+  "score": 1.267
  },
  "fruits|PLUM": {
   "file": "w/fruits__plum.jpg",
@@ -4969,12 +5130,26 @@
   "license": "CC BY-SA 4.0",
   "score": 0.952
  },
+ "fruits|POMEGRANATE": {
+  "file": "w/fruits__pomegranate.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%85%D0%BE%D0%BB%D0%B0%D1%80%D0%B8,_%D0%B3%D1%80%D0%B0%D0%BD%D0%B0%D1%82.jpg",
+  "author": "Nikolai Bulykin",
+  "license": "CC BY-SA 4.0",
+  "score": 1.37
+ },
  "fruits|POMELO": {
   "file": "w/fruits__pomelo.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Pomelo_fruit.jpg",
   "author": "Ivar Leidus",
   "license": "CC BY-SA 4.0",
   "score": 0.986
+ },
+ "fruits|PRUNE": {
+  "file": "w/fruits__prune.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Plums_-_The_Fruit_Bowl,_Brighton_2023-08-23.jpg",
+  "author": "Andy Li",
+  "license": "CC0",
+  "score": 0.781
  },
  "fruits|RAISIN": {
   "file": "w/fruits__raisin.jpg",
@@ -4997,6 +5172,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.675
  },
+ "fruits|RIPE": {
+  "file": "w/fruits__ripe.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Prepared_ripe_bananas_for_making_banana_juice_01.jpg",
+  "author": "Adellah owobusingye",
+  "license": "CC BY-SA 4.0",
+  "score": 0.69
+ },
  "fruits|ROSE APPLE": {
   "file": "w/fruits__rose-apple.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Plant_Life_in_Chayalode.jpg",
@@ -5004,12 +5186,40 @@
   "license": "CC BY-SA 3.0",
   "score": 0.992
  },
+ "fruits|SALAK": {
+  "file": "w/fruits__salak.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kundasang_Sabah_Vegetable-Market-10.jpg",
+  "author": "CEphoto, Uwe Aranas",
+  "license": "CC BY-SA 3.0",
+  "score": 1.274
+ },
+ "fruits|SANTOL": {
+  "file": "w/fruits__santol.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:330Santol_fruit,_pulp,_seeds_and_peeling_textures_62.jpg",
+  "author": "Judgefloro",
+  "license": "CC0",
+  "score": 1.139
+ },
  "fruits|SAPODILLA": {
   "file": "w/fruits__sapodilla.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:%E0%B4%B8%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%8B%E0%B4%9F%E0%B5%8D%E0%B4%9F.jpg",
   "author": "Sugeesh at Malayalam Wikipedia",
   "license": "CC BY-SA 3.0",
   "score": 1.003
+ },
+ "fruits|SLICE": {
+  "file": "w/fruits__slice.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Watermelon_slice,_May_2024.jpg",
+  "author": "Ralff Nestor Nacor",
+  "license": "CC BY-SA 4.0",
+  "score": 0.945
+ },
+ "fruits|SOURSOP": {
+  "file": "w/fruits__soursop.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Soursop_fruit2.jpg",
+  "author": "Tom Corser",
+  "license": "CC BY-SA 3.0",
+  "score": 1.252
  },
  "fruits|STAR FRUIT": {
   "file": "w/fruits__star-fruit.jpg",
@@ -5025,12 +5235,33 @@
   "license": "CC BY-SA 4.0",
   "score": 1.078
  },
+ "fruits|SUGARCANE": {
+  "file": "w/fruits__sugarcane.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mixed_Indigenous_Food_Crops.jpg",
+  "author": "Paul The Writer",
+  "license": "CC0",
+  "score": 0.933
+ },
  "fruits|TAMARIND": {
   "file": "w/fruits__tamarind.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Tamarindus_indica_pods.JPG",
   "author": "B.navez",
   "license": "CC BY 2.5",
   "score": 1.078
+ },
+ "fruits|TANGERINE": {
+  "file": "w/fruits__tangerine.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tangerine_halves.jpg",
+  "author": "多多123",
+  "license": "CC BY 4.0",
+  "score": 1.008
+ },
+ "fruits|WALNUT": {
+  "file": "w/fruits__walnut.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Juglans_regia_Echte_Walnussfrucht_3.jpg",
+  "author": "Böhringer Friedrich",
+  "license": "CC BY-SA 2.5",
+  "score": 1.291
  },
  "fruits|WATERMELON": {
   "file": "w/fruits__watermelon.jpg",

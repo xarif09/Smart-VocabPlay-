@@ -14835,10 +14835,34 @@
    "forced": false
   },
   "fruits|APRICOT": {
-   "status": "no candidates"
+   "title": "File:Apricot whole444.jpg",
+   "final": 1.25,
+   "p": 0.9591,
+   "photo": 0.8746,
+   "fit": 0.791,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "fruits|FIG": {
-   "status": "no candidates"
+   "title": "File:Figuier commun FR 2012.jpg",
+   "final": 1.212,
+   "p": 0.9874,
+   "photo": 0.9997,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 10,
+   "forced": false
   },
   "fruits|RASPBERRY": {
    "title": "File:Raspberry - halved (Rubus idaeus).jpg",
@@ -14924,7 +14948,22 @@
    "forced": false
   },
   "fruits|SUGARCANE": {
-   "status": "no candidates"
+   "title": "File:Mixed Indigenous Food Crops.jpg",
+   "final": 0.933,
+   "p": 0.931,
+   "photo": 0.7488,
+   "fit": 0.418,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.42"
+   ],
+   "origin": "search:sugarcane stalks",
+   "n_cands": 10,
+   "forced": false
   },
   "fruits|RAISIN": {
    "title": "File:Raisins 01.jpg",
@@ -21462,94 +21501,446 @@
    "status": "no candidates"
   },
   "fruits|TANGERINE": {
-   "status": "no candidates"
+   "title": "File:Tangerine halves.jpg",
+   "final": 1.008,
+   "p": 0.9775,
+   "photo": 0.8957,
+   "fit": 0.281,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.47)"
+   ],
+   "flags": [
+    "fit 0.28"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|GRAPEFRUIT": {
-   "status": "no candidates"
+   "title": "File:Citrus paradisi (Grapefruit, pink) white bg.jpg",
+   "final": 1.049,
+   "p": 0.9802,
+   "photo": 0.9573,
+   "fit": 0.334,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|NECTARINE": {
-   "status": "no candidates"
+   "title": "File:Nectarine on white.jpg",
+   "final": 1.174,
+   "p": 0.9632,
+   "photo": 0.9998,
+   "fit": 0.585,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.98)"
+   ],
+   "flags": [
+    "fit 0.59"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|BLACKBERRY": {
-   "status": "no candidates"
+   "title": "File:Blackberry (Rubus fruticosus) - fruit - geograph.org.uk - 5537304.jpg",
+   "final": 1.298,
+   "p": 0.9822,
+   "photo": 0.9846,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [
+    "upscaled x1.7"
+   ],
+   "flags": [],
+   "origin": "search:blackberry fruit",
+   "n_cands": 7,
+   "forced": false
   },
   "fruits|MULBERRY": {
-   "status": "no candidates"
+   "title": "File:Mulberry fruit - geograph.org.uk - 5845433.jpg",
+   "final": 1.287,
+   "p": 0.9971,
+   "photo": 0.9428,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:mulberry fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|GOOSEBERRY": {
-   "status": "no candidates"
+   "title": "File:Physalis -- 2026 -- 2069.jpg",
+   "final": 1.167,
+   "p": 0.7731,
+   "photo": 0.9374,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "fruits|LONGKONG": {
-   "status": "no candidates"
+   "title": "File:Lansiumdomesticumfruit.jpg",
+   "final": 0.669,
+   "p": 0.2017,
+   "photo": 0.9974,
+   "fit": 0.536,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "low word prob 0.20",
+    "fit 0.54"
+   ],
+   "origin": "search:longkong fruit",
+   "n_cands": 1,
+   "forced": false
   },
   "fruits|SALAK": {
-   "status": "no candidates"
+   "title": "File:Kundasang Sabah Vegetable-Market-10.jpg",
+   "final": 1.274,
+   "p": 0.9997,
+   "photo": 0.9877,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|SANTOL": {
-   "status": "no candidates"
+   "title": "File:330Santol fruit, pulp, seeds and peeling textures 62.jpg",
+   "final": 1.139,
+   "p": 0.9592,
+   "photo": 0.993,
+   "fit": 0.529,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:santol fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|CUSTARD APPLE": {
-   "status": "no candidates"
+   "title": "File:Split custard apple fruit showing white pulp.png",
+   "final": 1.393,
+   "p": 0.9967,
+   "photo": 0.9989,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:custard apple fruit",
+   "n_cands": 7,
+   "forced": false
   },
   "fruits|JUJUBE": {
-   "status": "no candidates"
+   "title": "File:Red dates (jujube) - Massachusetts.jpg",
+   "final": 1.212,
+   "p": 0.996,
+   "photo": 0.9953,
+   "fit": 0.828,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:jujube fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|PERSIMMON": {
-   "status": "no candidates"
+   "title": "File:Caqui chocolate em fundo preto 02.jpg",
+   "final": 1.355,
+   "p": 0.9396,
+   "photo": 0.9273,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "fruits|POMEGRANATE": {
-   "status": "no candidates"
+   "title": "File:Схолари, гранат.jpg",
+   "final": 1.37,
+   "p": 0.984,
+   "photo": 0.9842,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|KUMQUAT": {
-   "status": "no candidates"
+   "title": "File:Kumquat vert FR 2012.jpg",
+   "final": 1.279,
+   "p": 0.8005,
+   "photo": 0.9997,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "fruits|SOURSOP": {
-   "status": "no candidates"
+   "title": "File:Soursop fruit2.jpg",
+   "final": 1.252,
+   "p": 0.8991,
+   "photo": 0.9996,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:soursop fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|BREADFRUIT": {
-   "status": "no candidates"
+   "title": "File:Parts of Breadfruit.png",
+   "final": 1.296,
+   "p": 0.9998,
+   "photo": 0.9933,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:breadfruit fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|MARIAN PLUM": {
-   "status": "no candidates"
+   "title": "File:Marian plum fruits.jpg",
+   "final": 0.776,
+   "p": 0.1754,
+   "photo": 0.9991,
+   "fit": 0.579,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.96)"
+   ],
+   "flags": [
+    "low word prob 0.18",
+    "fit 0.58"
+   ],
+   "origin": "search:Bouea macrophylla fruit",
+   "n_cands": 3,
+   "forced": false
   },
   "fruits|PRUNE": {
-   "status": "no candidates"
+   "title": "File:Plums - The Fruit Bowl, Brighton 2023-08-23.jpg",
+   "final": 0.781,
+   "p": 0.0,
+   "photo": 0.9981,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:prune fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|DRIED MANGO": {
-   "status": "no candidates"
+   "title": "File:Cincinnati CBP Agriculture Finds Two Tons of Prohibited Fruit (39779487655).jpg",
+   "final": 0.707,
+   "p": 0.0,
+   "photo": 0.8695,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:dried mango fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|FRUIT SALAD": {
-   "status": "no candidates"
+   "title": "File:Ehrenbach, fruit salad with wild blackberries.jpg",
+   "final": 1.276,
+   "p": 0.911,
+   "photo": 0.6048,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:fruit salad fruit",
+   "n_cands": 9,
+   "forced": false
   },
   "fruits|FRUIT BASKET": {
-   "status": "no candidates"
+   "title": "File:Tomatoes in basket 2026 G1.jpg",
+   "final": 1.27,
+   "p": 0.8101,
+   "photo": 0.9974,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|PEEL": {
-   "status": "no candidates"
+   "title": "File:Parking lot banana peel.jpg",
+   "final": 0.967,
+   "p": 0.9835,
+   "photo": 0.628,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:banana peel",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|SLICE": {
-   "status": "no candidates"
+   "title": "File:Watermelon slice, May 2024.jpg",
+   "final": 0.945,
+   "p": 0.6584,
+   "photo": 0.8096,
+   "fit": 0.507,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.85)"
+   ],
+   "flags": [
+    "fit 0.51"
+   ],
+   "origin": "search:watermelon slice",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|RIPE": {
-   "status": "no candidates"
+   "title": "File:Prepared ripe bananas for making banana juice 01.jpg",
+   "final": 0.69,
+   "p": 0.0001,
+   "photo": 0.878,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:ripe bananas",
+   "n_cands": 7,
+   "forced": false
   },
   "fruits|CHESTNUT": {
-   "status": "no candidates"
+   "title": "File:Afgevallen kastanje van een Tamme kastanje (Castanea sativa) 17-10-2021 (d.j.b.) 01.jpg",
+   "final": 1.286,
+   "p": 0.9976,
+   "photo": 0.9751,
+   "fit": 0.784,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|WALNUT": {
-   "status": "no candidates"
+   "title": "File:Juglans regia Echte Walnussfrucht 3.jpg",
+   "final": 1.291,
+   "p": 0.9707,
+   "photo": 0.9973,
+   "fit": 0.815,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "fruits|ALMOND": {
-   "status": "no candidates"
+   "title": "File:Ripe almond along Glenwood Avenue, September 2023-6908.jpg",
+   "final": 1.211,
+   "p": 0.9897,
+   "photo": 0.9922,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|CASHEW": {
-   "status": "no candidates"
+   "title": "File:CASHEW FRUIT.jpg",
+   "final": 1.336,
+   "p": 0.9976,
+   "photo": 0.9919,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:cashew fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|PISTACHIO": {
-   "status": "no candidates"
+   "title": "File:ARS pistachio.jpg",
+   "final": 1.267,
+   "p": 0.9997,
+   "photo": 0.9999,
+   "fit": 0.823,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:pistachio fruit",
+   "n_cands": 8,
+   "forced": false
   },
   "fruits|HAZELNUT": {
-   "status": "no candidates"
+   "title": "File:Hazelnuts.jpg",
+   "final": 1.395,
+   "p": 0.9994,
+   "photo": 0.9995,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:hazelnut fruit",
+   "n_cands": 7,
+   "forced": false
   },
   "body|EYELASH": {
    "title": "File:Close-up of human eyelashes.jpg",
@@ -25924,51 +26315,29 @@
   "food|TACO",
   "food|TOAST",
   "food|YOGURT",
-  "fruits|ALMOND",
   "fruits|APPLE",
-  "fruits|APRICOT",
-  "fruits|BLACKBERRY",
-  "fruits|BREADFRUIT",
   "fruits|CANTALOUPE",
-  "fruits|CASHEW",
-  "fruits|CHESTNUT",
-  "fruits|CUSTARD APPLE",
   "fruits|DRIED MANGO",
-  "fruits|FIG",
-  "fruits|FRUIT BASKET",
-  "fruits|FRUIT SALAD",
-  "fruits|GOOSEBERRY",
   "fruits|GRAPEFRUIT",
-  "fruits|HAZELNUT",
-  "fruits|JUJUBE",
   "fruits|KIWI",
-  "fruits|KUMQUAT",
   "fruits|LONGKONG",
   "fruits|MANGOSTEEN",
   "fruits|MARIAN PLUM",
-  "fruits|MULBERRY",
   "fruits|NECTARINE",
   "fruits|ORANGE",
   "fruits|PASSION FRUIT",
-  "fruits|PEEL",
-  "fruits|PERSIMMON",
-  "fruits|PISTACHIO",
   "fruits|PLUM",
-  "fruits|POMEGRANATE",
   "fruits|POMELO",
   "fruits|PRUNE",
   "fruits|RAISIN",
   "fruits|RAMBUTAN",
   "fruits|RASPBERRY",
   "fruits|RIPE",
-  "fruits|SALAK",
   "fruits|SANTOL",
   "fruits|SLICE",
-  "fruits|SOURSOP",
   "fruits|STRAWBERRY",
   "fruits|SUGARCANE",
   "fruits|TANGERINE",
-  "fruits|WALNUT",
   "fruits|WATERMELON",
   "home|AIR CONDITIONER",
   "home|BALCONY",
@@ -26791,7 +27160,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1582,
-  "flagged": 1255
+  "with_photo": 1615,
+  "flagged": 1233
  }
 }

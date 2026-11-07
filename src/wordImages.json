@@ -10800,12 +10800,96 @@
   "license": "CC BY-SA 4.0",
   "score": 1.201
  },
+ "time|AFTERNOON": {
+  "file": "w/time__afternoon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Reflexos_do_Planalto.jpg",
+  "author": "Jonas Richter",
+  "license": "CC BY-SA 4.0",
+  "score": 0.798
+ },
+ "time|APRIL": {
+  "file": "w/time__april.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Saturday_12_April_2025_Songkran_on_Si_Lom_Road_Bangkok_-_img_08.jpg",
+  "author": "Chainwit.",
+  "license": "CC BY 4.0",
+  "score": 0.715
+ },
+ "time|AUGUST": {
+  "file": "w/time__august.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Antelope_Canyon_Mittags.jpg",
+  "author": "Raimund Marx (Raimund.Marx@ch.tum.de)",
+  "license": "CC BY-SA 3.0",
+  "score": 0.786
+ },
+ "time|BEDTIME": {
+  "file": "w/time__bedtime.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dial_a_bedtime_story_-_Moxy_New_Orleans.jpg",
+  "author": "Kristina D.C. Hoeppner",
+  "license": "CC BY-SA 2.0",
+  "score": 0.696
+ },
  "time|BIRTHDAY": {
   "file": "w/time__birthday.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Delicious_Birthday_Cake_(14346969741).jpg",
   "author": "Jonathan Rolande from Worthing, England",
   "license": "CC BY 2.0",
   "score": 1.025
+ },
+ "time|CALENDAR": {
+  "file": "w/time__calendar.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hooded_wall_clock_with_calendar_MET_204019.jpg",
+  "author": "Ahasuerus Fromanteel",
+  "license": "CC0",
+  "score": 0.432
+ },
+ "time|CHILDREN'S DAY": {
+  "file": "w/time__childrens-day.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Children%27s_Day_at_Government_House_of_Thailand_by_Trisorn_Triboon_22.jpg",
+  "author": "Tris T7",
+  "license": "CC BY-SA 4.0",
+  "score": 1.298
+ },
+ "time|CHINESE NEW YEAR": {
+  "file": "w/time__chinese-new-year.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:20190202_Nagasaki_Chinese_New_Year_lantern-2.jpg",
+  "author": "Balon Greyjoy",
+  "license": "CC0",
+  "score": 1.374
+ },
+ "time|CHRISTMAS": {
+  "file": "w/time__christmas.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Galerie_Lafayette_Haussmann_Dome.jpg",
+  "author": "Benh LIEU SONG ( Flickr )",
+  "license": "CC BY-SA 3.0",
+  "score": 1.201
+ },
+ "time|DAY": {
+  "file": "w/time__day.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Daytime_fox_-_geograph.org.uk_-_7509197.jpg",
+  "author": "Stephen Craven",
+  "license": "CC BY-SA 2.0",
+  "score": 1.181
+ },
+ "time|DAYTIME": {
+  "file": "w/time__daytime.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Letterwinged_Kite_Sunny_Roost_Diamantina_2019.jpg",
+  "author": "PeterValentine9",
+  "license": "CC BY-SA 4.0",
+  "score": 0.816
+ },
+ "time|DECEMBER": {
+  "file": "w/time__december.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_bright_Christmas_tree_in_a_Christmas_village.jpg",
+  "author": "Bim24",
+  "license": "CC0",
+  "score": 0.839
+ },
+ "time|EARLY": {
+  "file": "w/time__early.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Wis%C5%82a_wczesnym_ranem_poni%C5%BCej_zapory_w_%C5%81%C4%85czanach_pod_Krakowem,_20250105_0832_6930.jpg",
+  "author": "Jakub Hałun",
+  "license": "CC BY 4.0",
+  "score": 0.831
  },
  "time|EVENING": {
   "file": "w/time__evening.jpg",
@@ -10814,12 +10898,138 @@
   "license": "CC BY-SA 3.0",
   "score": 0.766
  },
+ "time|FATHER'S DAY": {
+  "file": "w/time__fathers-day.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Second_Gentleman_on_Father%27s_Day_(2024)_-_01.jpg",
+  "author": "The White House",
+  "license": "Public domain",
+  "score": 0.749
+ },
+ "time|FEBRUARY": {
+  "file": "w/time__february.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Equation_for_a_heart.jpg",
+  "author": "Luka Maglc",
+  "license": "CC0",
+  "score": 0.744
+ },
+ "time|FRIDAY": {
+  "file": "w/time__friday.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Footpath_No.28a_sign_at_Friday_Street_-_geograph.org.uk_-_2287052.jpg",
+  "author": "Adrian S Pye",
+  "license": "CC BY-SA 2.0",
+  "score": 0.66
+ },
+ "time|GRADUATION": {
+  "file": "w/time__graduation.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Student_Graduation_at_Powidz_(9617252).jpg",
+  "author": "U.S. Army USARASGP by Staff Sgt. Stanford Toran",
+  "license": "Public domain",
+  "score": 1.306
+ },
+ "time|HALLOWEEN": {
+  "file": "w/time__halloween.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Carved_Halloween_pumpkin.jpg",
+  "author": "SpoonPaladin",
+  "license": "CC0",
+  "score": 1.299
+ },
  "time|HOLIDAY": {
   "file": "w/time__holiday.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Vacation_Village_at_Weston_Pool,_Weston,_Florida_February_24,_2022_B.jpg",
   "author": "AITFFan1",
   "license": "CC BY-SA 4.0",
   "score": 0.451
+ },
+ "time|HOUR": {
+  "file": "w/time__hour.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Glass_egg_timer.jpg",
+  "author": "John Cummings",
+  "license": "CC BY-SA 4.0",
+  "score": 1.048
+ },
+ "time|HOURGLASS": {
+  "file": "w/time__hourglass.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Wooden_hourglass_edit.jpg",
+  "author": "",
+  "license": "CC BY-SA 3.0",
+  "score": 0.821
+ },
+ "time|JANUARY": {
+  "file": "w/time__january.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Fireworks_on_New_Year%27s_Eve_in_a_small_Swabian_village_(1),_brightened.jpg",
+  "author": "Andreas Weith",
+  "license": "CC BY-SA 4.0",
+  "score": 0.819
+ },
+ "time|JULY": {
+  "file": "w/time__july.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Field_Hamois_Belgium_Luc_Viatour.jpg",
+  "author": "Luc Viatour",
+  "license": "CC BY-SA 3.0",
+  "score": 0.795
+ },
+ "time|JUNE": {
+  "file": "w/time__june.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Rainy_Season_Floods_in_the_Sahel_(15374).jpg",
+  "author": "NASA images created by Jesse Allen, Earth Observatory, using data obtained from the MODIS Rapid Response team.",
+  "license": "Public domain",
+  "score": 0.679
+ },
+ "time|LATE": {
+  "file": "w/time__late.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Greyhound_Racing_2_amk.jpg",
+  "author": "AngMoKio",
+  "license": "CC BY-SA 3.0",
+  "score": 0.697
+ },
+ "time|LOY KRATHONG": {
+  "file": "w/time__loy-krathong.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Loi_Krathong_2010_John_Shedrick.jpg",
+  "author": "John Shedrick",
+  "license": "CC BY 2.0",
+  "score": 1.298
+ },
+ "time|MARCH": {
+  "file": "w/time__march.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Krokussen_(Crocus),_Locatie,_Tuinreservaat_Jonkervallei.jpg",
+  "author": "Dominicus Johannes Bergsma",
+  "license": "CC BY-SA 4.0",
+  "score": 1.305
+ },
+ "time|MAY": {
+  "file": "w/time__may.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bloemknoppen_van_een_Crocosmia._25-06-2024._(d.j.b)_02.jpg",
+  "author": "Dominicus Johannes Bergsma",
+  "license": "CC BY-SA 4.0",
+  "score": 0.799
+ },
+ "time|MIDNIGHT": {
+  "file": "w/time__midnight.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Nathorst_glacier,_Svalbard,_at_midnight_sun.jpg",
+  "author": "AWeith",
+  "license": "CC BY-SA 4.0",
+  "score": 0.697
+ },
+ "time|MINUTE": {
+  "file": "w/time__minute.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ca_1970_mechanical_stopwatch_by_Herwins_Switzerland.jpg",
+  "author": "R. Henrik Nilsson",
+  "license": "CC BY 4.0",
+  "score": 1.035
+ },
+ "time|MONDAY": {
+  "file": "w/time__monday.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Letter_%E2%80%98V%E2%80%99_in_Nigerian_Sign_Language.jpg",
+  "author": "Monday Amos7",
+  "license": "CC BY-SA 4.0",
+  "score": 0.795
+ },
+ "time|MONTH": {
+  "file": "w/time__month.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lamtaa_(Lamt%C4%81),_a_lunar_month_of_the_classical_Meitei_calendar_of_Ancient_Kangleipak_(early_Manipur).jpg",
+  "author": "Haoreima",
+  "license": "Public domain",
+  "score": 0.1
  },
  "time|MORNING": {
   "file": "w/time__morning.jpg",
@@ -10828,12 +11038,33 @@
   "license": "CC BY 2.5",
   "score": 0.47
  },
+ "time|MOTHER'S DAY": {
+  "file": "w/time__mothers-day.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Jimmy_Panetta_getting_flowers_for_Mother%27s_Day_02.jpg",
+  "author": "Creator:Jimmy Panetta",
+  "license": "Public domain",
+  "score": 1.008
+ },
+ "time|NEW YEAR": {
+  "file": "w/time__new-year.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:View_from_McQueens_Pass_towards_Lyttelton_Harbour,_New_Zealand.jpg",
+  "author": "Michal Klajban",
+  "license": "CC BY-SA 4.0",
+  "score": 0.7
+ },
  "time|NIGHT": {
   "file": "w/time__night.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Savault_Chapel_Under_Milky_Way_BLS.jpg",
   "author": "Benh LIEU SONG",
   "license": "CC BY-SA 4.0",
   "score": 0.937
+ },
+ "time|NOON": {
+  "file": "w/time__noon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Near_Noon_Sun_-_geograph.org.uk_-_2487654.jpg",
+  "author": "Michael Fox",
+  "license": "CC BY-SA 2.0",
+  "score": 0.734
  },
  "time|NOVEMBER": {
   "file": "w/time__november.jpg",
@@ -10842,12 +11073,166 @@
   "license": "CC BY 2.0",
   "score": 0.503
  },
+ "time|O'CLOCK": {
+  "file": "w/time__oclock.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ein_halb_004_2023_07_20.jpg",
+  "author": "Friedrich Haag",
+  "license": "CC BY-SA 4.0",
+  "score": 0.947
+ },
+ "time|OCTOBER": {
+  "file": "w/time__october.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pumpkins_for_Halloween%5E_-_geograph.org.uk_-_3128509.jpg",
+  "author": "Richard Humphrey",
+  "license": "CC BY-SA 2.0",
+  "score": 0.76
+ },
+ "time|PARTY": {
+  "file": "w/time__party.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Costume_Contest_Eeyores_Birthday_Austin_Texas_2023.jpg",
+  "author": "Larry D. Moore",
+  "license": "CC BY 4.0",
+  "score": 0.729
+ },
+ "time|SATURDAY": {
+  "file": "w/time__saturday.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Manual_scrollable_wooden_wall_calendar.jpg",
+  "author": "Amitbalani",
+  "license": "CC0",
+  "score": 0.929
+ },
+ "time|SEASON": {
+  "file": "w/time__season.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:009_Greater_flamingos_male_and_female_in_the_Camargue_during_mating_season_Photo_by_Giles_Laurent.jpg",
+  "author": "Giles Laurent",
+  "license": "CC BY-SA 4.0",
+  "score": 0.798
+ },
+ "time|SEPTEMBER": {
+  "file": "w/time__september.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Matanaka_-_Granary,_Privy_%26_Schoolhouse.jpg",
+  "author": "Karora",
+  "license": "Public domain",
+  "score": 0.683
+ },
+ "time|SONGKRAN": {
+  "file": "w/time__songkran.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Songkran_in_Wat_Kungthapao_02.jpg",
+  "author": "ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส มากคล้าย",
+  "license": "Public domain",
+  "score": 1.276
+ },
+ "time|STOPWATCH": {
+  "file": "w/time__stopwatch.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Stopwatch,_1810201155,_ako.jpg",
+  "author": "Ansgar Koreng",
+  "license": "CC BY-SA 4.0",
+  "score": 1.188
+ },
+ "time|SUNDAY": {
+  "file": "w/time__sunday.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sunday_Market_sign,_Bridgend_-_geograph.org.uk_-_5417337.jpg",
+  "author": "Jaggery",
+  "license": "CC BY-SA 2.0",
+  "score": 0.673
+ },
+ "time|SUNDIAL": {
+  "file": "w/time__sundial.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sundial,_Sundial_House_-_geograph.org.uk_-_7953962.jpg",
+  "author": "N Chadwick",
+  "license": "CC BY-SA 2.0",
+  "score": 1.222
+ },
+ "time|TEACHER'S DAY": {
+  "file": "w/time__teachers-day.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%E0%B9%84%E0%B8%AB%E0%B8%A7%E0%B9%89%E0%B8%84%E0%B8%A3%E0%B8%B9%E0%B8%97%E0%B8%AA1.jpg",
+  "author": "•โรงเรียนสาธิตมหาวิทยาลัยราชภัฏเทพสตรี สาขาวัดพระพุทธบาท ราชวรมหาวิหาร",
+  "license": "CC BY-SA 4.0",
+  "score": 0.827
+ },
+ "time|THURSDAY": {
+  "file": "w/time__thursday.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:RR_Xing_Sign.jpg",
+  "author": "JoBrLa at en.wikipedia",
+  "license": "Public domain",
+  "score": 0.7
+ },
+ "time|TIMER": {
+  "file": "w/time__timer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Egg_timer_digital.jpg",
+  "author": "Carnby",
+  "license": "CC BY-SA 4.0",
+  "score": 0.962
+ },
+ "time|TIMETABLE": {
+  "file": "w/time__timetable.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tram_Timetable_at_Rossall_School_-_geograph.org.uk_-_3826728.jpg",
+  "author": "Gerald England",
+  "license": "CC BY-SA 2.0",
+  "score": 1.276
+ },
+ "time|TODAY": {
+  "file": "w/time__today.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Table_for_Badnjak_celebration_(2026_Christmas_Eve,_Serbian_Christmas_celebrations).jpg",
+  "author": "Petar Milošević",
+  "license": "CC BY-SA 4.0",
+  "score": 0.672
+ },
+ "time|TOMORROW": {
+  "file": "w/time__tomorrow.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Independence_Day_%26_Independence_Day_Observation,_Hillegersberg,_Rotterdam_(2021).jpg",
+  "author": "Donald Trung Quoc Don (Chữ Hán: 徵國單) - Wikimedia Commons - © CC BY-SA 4.0 International . ( Want to use this image? ) Original publication 📤: -- Donald Trung 『徵國單』 ( No Fake News 💬 ) ( WikiProject Num",
+  "license": "CC BY-SA 4.0",
+  "score": 0.457
+ },
+ "time|TUESDAY": {
+  "file": "w/time__tuesday.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:South_Santa_Rosa_VA_Clinic_-_April_2025_-_Sarah_Stierch_01.jpg",
+  "author": "Missvain",
+  "license": "CC0",
+  "score": 0.734
+ },
+ "time|VALENTINE'S DAY": {
+  "file": "w/time__valentines-day.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hearts-of-mars.jpg",
+  "author": "",
+  "license": "Public domain",
+  "score": 1.253
+ },
+ "time|WEDNESDAY": {
+  "file": "w/time__wednesday.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%22Closed_Wednesday%22_sign,_Belfast_-_geograph.org.uk_-_2267815.jpg",
+  "author": "Albert Bridge",
+  "license": "CC BY-SA 2.0",
+  "score": 0.704
+ },
+ "time|WEEK": {
+  "file": "w/time__week.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:O_Bharat_the_bilingual_weekly_newspaper_run_by_Govind_Pundalik_Hegde_Desai_in_Goa(2).jpg",
+  "author": "Govind Pundalik Hegde Desai",
+  "license": "Public domain",
+  "score": 0.679
+ },
  "time|WEEKEND": {
   "file": "w/time__weekend.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Halleyparknovember_b_(cropped).jpg",
   "author": "File:Halleyparknovember.jpg : Celco85 derivative work: Georgfotoart",
   "license": "CC BY-SA 4.0",
   "score": 0.45
+ },
+ "time|YEAR": {
+  "file": "w/time__year.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bratislava_New_Year_Fireworks.jpg",
+  "author": "Ondrejk",
+  "license": "Public domain",
+  "score": 0.78
+ },
+ "time|YESTERDAY": {
+  "file": "w/time__yesterday.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:1922-1927_journal_-_DPLA_-_69e947751bb6bdae75c36e99a014c61a_(page_69).jpg",
+  "author": "Claassen, Elise, author",
+  "license": "Public domain",
+  "score": 0.641
  },
  "toys|ACTION FIGURE": {
   "file": "w/toys__action-figure.jpg",

@@ -17274,55 +17274,259 @@
    "forced": false
   },
   "time|MONDAY": {
-   "status": "no candidates"
+   "title": "File:Letter ‘V’ in Nigerian Sign Language.jpg",
+   "final": 0.795,
+   "p": 0.0,
+   "photo": 0.9726,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:Monday sign",
+   "n_cands": 7,
+   "forced": false
   },
   "time|TUESDAY": {
-   "status": "no candidates"
+   "title": "File:South Santa Rosa VA Clinic - April 2025 - Sarah Stierch 01.jpg",
+   "final": 0.734,
+   "p": 0.0001,
+   "photo": 0.8288,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:Tuesday sign",
+   "n_cands": 7,
+   "forced": false
   },
   "time|WEDNESDAY": {
-   "status": "no candidates"
+   "title": "File:\"Closed Wednesday\" sign, Belfast - geograph.org.uk - 2267815.jpg",
+   "final": 0.704,
+   "p": 0.9901,
+   "photo": 0.0153,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [
+    "upscaled x1.5"
+   ],
+   "flags": [
+    "not photo-like 0.02"
+   ],
+   "origin": "search:Wednesday sign",
+   "n_cands": 5,
+   "forced": false
   },
   "time|THURSDAY": {
-   "status": "no candidates"
+   "title": "File:RR Xing Sign.jpg",
+   "final": 0.7,
+   "p": 0.0,
+   "photo": 0.9996,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:Thursday sign",
+   "n_cands": 7,
+   "forced": false
   },
   "time|FRIDAY": {
-   "status": "no candidates"
+   "title": "File:Footpath No.28a sign at Friday Street - geograph.org.uk - 2287052.jpg",
+   "final": 0.66,
+   "p": 0.0012,
+   "photo": 0.7965,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:Friday sign",
+   "n_cands": 6,
+   "forced": false
   },
   "time|SATURDAY": {
-   "status": "no candidates"
+   "title": "File:Manual scrollable wooden wall calendar.jpg",
+   "final": 0.929,
+   "p": 0.3194,
+   "photo": 0.8695,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.32"
+   ],
+   "origin": "search:Saturday calendar",
+   "n_cands": 7,
+   "forced": false
   },
   "time|SUNDAY": {
-   "status": "no candidates"
+   "title": "File:Sunday Market sign, Bridgend - geograph.org.uk - 5417337.jpg",
+   "final": 0.673,
+   "p": 0.0007,
+   "photo": 0.8268,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:Sunday sign",
+   "n_cands": 4,
+   "forced": false
   },
   "time|JANUARY": {
-   "status": "no candidates"
+   "title": "File:Fireworks on New Year's Eve in a small Swabian village (1), brightened.jpg",
+   "final": 0.819,
+   "p": 0.0001,
+   "photo": 0.8751,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:New Year fireworks",
+   "n_cands": 7,
+   "forced": false
   },
   "time|FEBRUARY": {
-   "status": "no candidates"
+   "title": "File:Equation for a heart.jpg",
+   "final": 0.744,
+   "p": 0.9402,
+   "photo": 0.1026,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.10"
+   ],
+   "origin": "search:Valentine heart",
+   "n_cands": 9,
+   "forced": false
   },
   "time|MARCH": {
-   "status": "no candidates"
+   "title": "File:Krokussen (Crocus), Locatie, Tuinreservaat Jonkervallei.jpg",
+   "final": 1.305,
+   "p": 0.9018,
+   "photo": 0.9998,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:spring flowers",
+   "n_cands": 9,
+   "forced": false
   },
   "time|APRIL": {
-   "status": "no candidates"
+   "title": "File:Saturday 12 April 2025 Songkran on Si Lom Road Bangkok - img 08.jpg",
+   "final": 0.715,
+   "p": 0.0,
+   "photo": 0.9163,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:Songkran water festival",
+   "n_cands": 9,
+   "forced": false
   },
   "time|MAY": {
-   "status": "no candidates"
+   "title": "File:Bloemknoppen van een Crocosmia. 25-06-2024. (d.j.b) 02.jpg",
+   "final": 0.799,
+   "p": 0.0,
+   "photo": 0.9931,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:flowers",
+   "n_cands": 6,
+   "forced": false
   },
   "time|JUNE": {
-   "status": "no candidates"
+   "title": "File:Rainy Season Floods in the Sahel (15374).jpg",
+   "final": 0.679,
+   "p": 0.0007,
+   "photo": 0.8863,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:rainy season",
+   "n_cands": 6,
+   "forced": false
   },
   "time|JULY": {
-   "status": "no candidates"
+   "title": "File:Field Hamois Belgium Luc Viatour.jpg",
+   "final": 0.795,
+   "p": 0.0012,
+   "photo": 0.9693,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:summer",
+   "n_cands": 9,
+   "forced": false
   },
   "time|AUGUST": {
-   "status": "no candidates"
+   "title": "File:Antelope Canyon Mittags.jpg",
+   "final": 0.786,
+   "p": 0.0,
+   "photo": 0.9481,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:summer",
+   "n_cands": 7,
+   "forced": false
   },
   "time|SEPTEMBER": {
-   "status": "no candidates"
+   "title": "File:Matanaka - Granary, Privy & Schoolhouse.jpg",
+   "final": 0.683,
+   "p": 0.0,
+   "photo": 0.9141,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:back to school",
+   "n_cands": 6,
+   "forced": false
   },
   "time|OCTOBER": {
-   "status": "no candidates"
+   "title": "File:Pumpkins for Halloween^ - geograph.org.uk - 3128509.jpg",
+   "final": 0.76,
+   "p": 0.0019,
+   "photo": 0.9819,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:Halloween pumpkins",
+   "n_cands": 7,
+   "forced": false
   },
   "time|NOVEMBER": {
    "title": "File:Thai people setting their candle-lit krathongs in the Ping river at night during Loy Krathong 2015-10 (22715933524).jpg",
@@ -17340,16 +17544,65 @@
    "forced": false
   },
   "time|DECEMBER": {
-   "status": "no candidates"
+   "title": "File:A bright Christmas tree in a Christmas village.jpg",
+   "final": 0.839,
+   "p": 0.0002,
+   "photo": 0.9614,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:Christmas tree",
+   "n_cands": 8,
+   "forced": false
   },
   "time|TODAY": {
-   "status": "no candidates"
+   "title": "File:Table for Badnjak celebration (2026 Christmas Eve, Serbian Christmas celebrations).jpg",
+   "final": 0.672,
+   "p": 0.0,
+   "photo": 0.8595,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:calendar today",
+   "n_cands": 9,
+   "forced": false
   },
   "time|TOMORROW": {
-   "status": "no candidates"
+   "title": "File:Independence Day & Independence Day Observation, Hillegersberg, Rotterdam (2021).jpg",
+   "final": 0.457,
+   "p": 0.0009,
+   "photo": 0.2463,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.25"
+   ],
+   "origin": "search:calendar next day",
+   "n_cands": 6,
+   "forced": false
   },
   "time|YESTERDAY": {
-   "status": "no candidates"
+   "title": "File:1922-1927 journal - DPLA - 69e947751bb6bdae75c36e99a014c61a (page 69).jpg",
+   "final": 0.641,
+   "p": 0.0009,
+   "photo": 0.6586,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:calendar torn page",
+   "n_cands": 8,
+   "forced": false
   },
   "time|MORNING": {
    "title": "File:Spring Lake, New Jersey Beach at Sunrise.jpg",
@@ -17367,7 +17620,19 @@
    "forced": false
   },
   "time|AFTERNOON": {
-   "status": "no candidates"
+   "title": "File:Reflexos do Planalto.jpg",
+   "final": 0.798,
+   "p": 0.0008,
+   "photo": 0.9767,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:afternoon",
+   "n_cands": 7,
+   "forced": false
   },
   "time|EVENING": {
    "title": "File:Full cycle of a Sunset on the high plains of the Mojave Desert.jpg",
@@ -17398,22 +17663,99 @@
    "forced": false
   },
   "time|WEEK": {
-   "status": "no candidates"
+   "title": "File:O Bharat the bilingual weekly newspaper run by Govind Pundalik Hegde Desai in Goa(2).jpg",
+   "final": 0.679,
+   "p": 0.0,
+   "photo": 0.8971,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:weekly calendar",
+   "n_cands": 9,
+   "forced": false
   },
   "time|MONTH": {
-   "status": "no candidates"
+   "title": "File:Lamtaa (Lamtā), a lunar month of the classical Meitei calendar of Ancient Kangleipak (early Manipur).jpg",
+   "final": 0.1,
+   "p": 0.0001,
+   "photo": 0.0,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [
+    "upscaled x1.4"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.00"
+   ],
+   "origin": "search:calendar month",
+   "n_cands": 4,
+   "forced": false
   },
   "time|YEAR": {
-   "status": "no candidates"
+   "title": "File:Bratislava New Year Fireworks.jpg",
+   "final": 0.78,
+   "p": 0.0,
+   "photo": 0.7596,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:new year fireworks",
+   "n_cands": 5,
+   "forced": false
   },
   "time|HOUR": {
-   "status": "no candidates"
+   "title": "File:Glass egg timer.jpg",
+   "final": 1.048,
+   "p": 0.4999,
+   "photo": 0.9812,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.50"
+   ],
+   "origin": "search:sand timer",
+   "n_cands": 8,
+   "forced": false
   },
   "time|MINUTE": {
-   "status": "no candidates"
+   "title": "File:Ca 1970 mechanical stopwatch by Herwins Switzerland.jpg",
+   "final": 1.035,
+   "p": 0.7486,
+   "photo": 0.7607,
+   "fit": 0.815,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:stopwatch",
+   "n_cands": 8,
+   "forced": false
   },
   "time|O'CLOCK": {
-   "status": "no candidates"
+   "title": "File:Ein halb 004 2023 07 20.jpg",
+   "final": 0.947,
+   "p": 0.8983,
+   "photo": 0.9911,
+   "fit": 0.444,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.74)"
+   ],
+   "flags": [
+    "fit 0.44"
+   ],
+   "origin": "search:analog clock face",
+   "n_cands": 6,
+   "forced": false
   },
   "time|BIRTHDAY": {
    "title": "File:Delicious Birthday Cake (14346969741).jpg",
@@ -23459,85 +23801,389 @@
    "forced": false
   },
   "time|NOON": {
-   "status": "no candidates"
+   "title": "File:Near Noon Sun - geograph.org.uk - 2487654.jpg",
+   "final": 0.734,
+   "p": 0.001,
+   "photo": 0.9873,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:noon sun",
+   "n_cands": 6,
+   "forced": false
   },
   "time|MIDNIGHT": {
-   "status": "no candidates"
+   "title": "File:Nathorst glacier, Svalbard, at midnight sun.jpg",
+   "final": 0.697,
+   "p": 0.0,
+   "photo": 0.9859,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:midnight",
+   "n_cands": 5,
+   "forced": false
   },
   "time|DAY": {
-   "status": "no candidates"
+   "title": "File:Daytime fox - geograph.org.uk - 7509197.jpg",
+   "final": 1.181,
+   "p": 0.9393,
+   "photo": 0.6447,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:daytime",
+   "n_cands": 7,
+   "forced": false
   },
   "time|CALENDAR": {
-   "status": "no candidates"
+   "title": "File:Hooded wall clock with calendar MET 204019.jpg",
+   "final": 0.432,
+   "p": 0.0,
+   "photo": 0.9089,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:wall calendar",
+   "n_cands": 6,
+   "forced": false
   },
   "time|HOURGLASS": {
-   "status": "no candidates"
+   "title": "File:Wooden hourglass edit.jpg",
+   "final": 0.821,
+   "p": 0.4999,
+   "photo": 0.9912,
+   "fit": 0.455,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.76)"
+   ],
+   "flags": [
+    "low word prob 0.50",
+    "fit 0.46"
+   ],
+   "origin": "search:hourglass",
+   "n_cands": 7,
+   "forced": false
   },
   "time|STOPWATCH": {
-   "status": "no candidates"
+   "title": "File:Stopwatch, 1810201155, ako.jpg",
+   "final": 1.188,
+   "p": 0.9505,
+   "photo": 0.9815,
+   "fit": 0.832,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:stopwatch",
+   "n_cands": 6,
+   "forced": false
   },
   "time|TIMER": {
-   "status": "no candidates"
+   "title": "File:Egg timer digital.jpg",
+   "final": 0.962,
+   "p": 0.3657,
+   "photo": 0.8949,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.37"
+   ],
+   "origin": "search:kitchen timer",
+   "n_cands": 7,
+   "forced": false
   },
   "time|BEDTIME": {
-   "status": "no candidates"
+   "title": "File:Dial a bedtime story - Moxy New Orleans.jpg",
+   "final": 0.696,
+   "p": 0.0,
+   "photo": 0.9779,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:bedtime story",
+   "n_cands": 5,
+   "forced": false
   },
   "time|DAYTIME": {
-   "status": "no candidates"
+   "title": "File:Letterwinged Kite Sunny Roost Diamantina 2019.jpg",
+   "final": 0.816,
+   "p": 0.1845,
+   "photo": 0.996,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.18"
+   ],
+   "origin": "search:sunny daytime park",
+   "n_cands": 7,
+   "forced": false
   },
   "time|NEW YEAR": {
-   "status": "no candidates"
+   "title": "File:View from McQueens Pass towards Lyttelton Harbour, New Zealand.jpg",
+   "final": 0.7,
+   "p": 0.0,
+   "photo": 0.9978,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:new year",
+   "n_cands": 3,
+   "forced": false
   },
   "time|SONGKRAN": {
-   "status": "no candidates"
+   "title": "File:Songkran in Wat Kungthapao 02.jpg",
+   "final": 1.276,
+   "p": 0.9993,
+   "photo": 0.9201,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:Songkran",
+   "n_cands": 7,
+   "forced": false
   },
   "time|LOY KRATHONG": {
-   "status": "no candidates"
+   "title": "File:Loi Krathong 2010 John Shedrick.jpg",
+   "final": 1.298,
+   "p": 1.0,
+   "photo": 0.9868,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:krathong floating",
+   "n_cands": 7,
+   "forced": false
   },
   "time|CHRISTMAS": {
-   "status": "no candidates"
+   "title": "File:Galerie Lafayette Haussmann Dome.jpg",
+   "final": 1.201,
+   "p": 0.9852,
+   "photo": 0.5203,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:Christmas tree",
+   "n_cands": 8,
+   "forced": false
   },
   "time|CHINESE NEW YEAR": {
-   "status": "no candidates"
+   "title": "File:20190202 Nagasaki Chinese New Year lantern-2.jpg",
+   "final": 1.374,
+   "p": 0.998,
+   "photo": 0.9048,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:Chinese New Year lanterns",
+   "n_cands": 8,
+   "forced": false
   },
   "time|HALLOWEEN": {
-   "status": "no candidates"
+   "title": "File:Carved Halloween pumpkin.jpg",
+   "final": 1.299,
+   "p": 0.9999,
+   "photo": 0.9649,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:Halloween pumpkins",
+   "n_cands": 6,
+   "forced": false
   },
   "time|MOTHER'S DAY": {
-   "status": "no candidates"
+   "title": "File:Jimmy Panetta getting flowers for Mother's Day 02.jpg",
+   "final": 1.008,
+   "p": 0.615,
+   "photo": 0.5949,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:mother's day flowers",
+   "n_cands": 7,
+   "forced": false
   },
   "time|FATHER'S DAY": {
-   "status": "no candidates"
+   "title": "File:Second Gentleman on Father's Day (2024) - 01.jpg",
+   "final": 0.749,
+   "p": 0.0089,
+   "photo": 0.9944,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:father's day",
+   "n_cands": 9,
+   "forced": false
   },
   "time|CHILDREN'S DAY": {
-   "status": "no candidates"
+   "title": "File:Children's Day at Government House of Thailand by Trisorn Triboon 22.jpg",
+   "final": 1.298,
+   "p": 0.9784,
+   "photo": 0.9605,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:children's day Thailand",
+   "n_cands": 8,
+   "forced": false
   },
   "time|TEACHER'S DAY": {
-   "status": "no candidates"
+   "title": "File:ไหว้ครูทส1.jpg",
+   "final": 0.827,
+   "p": 0.1307,
+   "photo": 0.857,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.13"
+   ],
+   "origin": "search:Wai Khru ceremony",
+   "n_cands": 5,
+   "forced": false
   },
   "time|VALENTINE'S DAY": {
-   "status": "no candidates"
+   "title": "File:Hearts-of-mars.jpg",
+   "final": 1.253,
+   "p": 0.98,
+   "photo": 0.9996,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:Valentine's Day hearts",
+   "n_cands": 7,
+   "forced": false
   },
   "time|PARTY": {
-   "status": "no candidates"
+   "title": "File:Costume Contest Eeyores Birthday Austin Texas 2023.jpg",
+   "final": 0.729,
+   "p": 0.0149,
+   "photo": 0.4967,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01",
+    "not photo-like 0.50"
+   ],
+   "origin": "search:birthday party children",
+   "n_cands": 6,
+   "forced": false
   },
   "time|EARLY": {
-   "status": "no candidates"
+   "title": "File:Wisła wczesnym ranem poniżej zapory w Łączanach pod Krakowem, 20250105 0832 6930.jpg",
+   "final": 0.831,
+   "p": 0.1455,
+   "photo": 0.9658,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.15"
+   ],
+   "origin": "search:early morning sunrise",
+   "n_cands": 5,
+   "forced": false
   },
   "time|LATE": {
-   "status": "no candidates"
+   "title": "File:Greyhound Racing 2 amk.jpg",
+   "final": 0.697,
+   "p": 0.0249,
+   "photo": 0.7971,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.02"
+   ],
+   "origin": "search:late running",
+   "n_cands": 7,
+   "forced": false
   },
   "time|SEASON": {
-   "status": "no candidates"
+   "title": "File:009 Greater flamingos male and female in the Camargue during mating season Photo by Giles Laurent.jpg",
+   "final": 0.798,
+   "p": 0.0,
+   "photo": 0.9985,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:seasons",
+   "n_cands": 6,
+   "forced": false
   },
   "time|GRADUATION": {
-   "status": "no candidates"
+   "title": "File:Student Graduation at Powidz (9617252).jpg",
+   "final": 1.306,
+   "p": 1.0,
+   "photo": 0.9937,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:graduation cap",
+   "n_cands": 8,
+   "forced": false
   },
   "time|TIMETABLE": {
-   "status": "no candidates"
+   "title": "File:Tram Timetable at Rossall School - geograph.org.uk - 3826728.jpg",
+   "final": 1.276,
+   "p": 1.0,
+   "photo": 0.8804,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:school timetable",
+   "n_cands": 8,
+   "forced": false
   },
   "time|SUNDIAL": {
-   "status": "no candidates"
+   "title": "File:Sundial, Sundial House - geograph.org.uk - 7953962.jpg",
+   "final": 1.222,
+   "p": 1.0,
+   "photo": 0.5831,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:sundial",
+   "n_cands": 7,
+   "forced": false
   },
   "fruits|TANGERINE": {
    "title": "File:Tangerine halves.jpg",
@@ -29640,10 +30286,6 @@
   "time|BEDTIME",
   "time|BIRTHDAY",
   "time|CALENDAR",
-  "time|CHILDREN'S DAY",
-  "time|CHINESE NEW YEAR",
-  "time|CHRISTMAS",
-  "time|DAY",
   "time|DAYTIME",
   "time|DECEMBER",
   "time|EARLY",
@@ -29651,8 +30293,6 @@
   "time|FATHER'S DAY",
   "time|FEBRUARY",
   "time|FRIDAY",
-  "time|GRADUATION",
-  "time|HALLOWEEN",
   "time|HOLIDAY",
   "time|HOUR",
   "time|HOURGLASS",
@@ -29660,15 +30300,11 @@
   "time|JULY",
   "time|JUNE",
   "time|LATE",
-  "time|LOY KRATHONG",
-  "time|MARCH",
   "time|MAY",
   "time|MIDNIGHT",
-  "time|MINUTE",
   "time|MONDAY",
   "time|MONTH",
   "time|MORNING",
-  "time|MOTHER'S DAY",
   "time|NEW YEAR",
   "time|NOON",
   "time|NOVEMBER",
@@ -29678,18 +30314,13 @@
   "time|SATURDAY",
   "time|SEASON",
   "time|SEPTEMBER",
-  "time|SONGKRAN",
-  "time|STOPWATCH",
   "time|SUNDAY",
-  "time|SUNDIAL",
   "time|TEACHER'S DAY",
   "time|THURSDAY",
   "time|TIMER",
-  "time|TIMETABLE",
   "time|TODAY",
   "time|TOMORROW",
   "time|TUESDAY",
-  "time|VALENTINE'S DAY",
   "time|WEDNESDAY",
   "time|WEEK",
   "time|WEEKEND",
@@ -29883,7 +30514,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1841,
-  "flagged": 1147
+  "with_photo": 1896,
+  "flagged": 1132
  }
 }

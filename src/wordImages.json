@@ -4792,7 +4792,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
   "author": "Abhijit Tembhekar from Mumbai, India",
   "license": "CC BY 2.0",
-  "score": 1.033
+  "score": 1.162
  },
  "fruits|APRICOT": {
   "file": "w/fruits__apricot.jpg",
@@ -4806,14 +4806,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Persea_americana_fruit_2.JPG",
   "author": "B.navez",
   "license": "CC BY-SA 3.0",
-  "score": 1.107
+  "score": 1.307
  },
  "fruits|BANANA": {
   "file": "w/fruits__banana.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Banana_on_whitebackground.jpg",
   "author": "Filo gèn'",
   "license": "CC BY-SA 4.0",
-  "score": 1.129
+  "score": 1.299
  },
  "fruits|BLACKBERRY": {
   "file": "w/fruits__blackberry.jpg",
@@ -4827,7 +4827,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Blueberry_Picking_(125267747).jpeg",
   "author": "Wendy Pramik",
   "license": "CC BY 3.0",
-  "score": 1.149
+  "score": 1.349
  },
  "fruits|BREADFRUIT": {
   "file": "w/fruits__breadfruit.jpg",
@@ -4838,10 +4838,10 @@
  },
  "fruits|CANTALOUPE": {
   "file": "w/fruits__cantaloupe.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Meloen_vrucht_met_bloem.jpg",
-  "author": "Rasbak at Dutch Wikipedia",
+  "src": "https://commons.wikimedia.org/wiki/File:Rockmelons.JPG",
+  "author": "Toby Hudson",
   "license": "CC BY-SA 3.0",
-  "score": 0.576
+  "score": 1.246
  },
  "fruits|CASHEW": {
   "file": "w/fruits__cashew.jpg",
@@ -4855,7 +4855,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Cherry_Stella444.jpg",
   "author": "Benjamint444 , edited by Fir0002",
   "license": "CC BY-SA 3.0",
-  "score": 1.145
+  "score": 1.322
  },
  "fruits|CHESTNUT": {
   "file": "w/fruits__chestnut.jpg",
@@ -4869,14 +4869,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Young_Coconut_Drink.jpg",
   "author": "Shameelnurani313",
   "license": "CC BY-SA 4.0",
-  "score": 1.118
+  "score": 1.316
  },
  "fruits|CRANBERRY": {
   "file": "w/fruits__cranberry.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Cranberry_bog.jpg",
   "author": "Photo by Keith Weller",
   "license": "Public domain",
-  "score": 1.029
+  "score": 1.192
  },
  "fruits|CUSTARD APPLE": {
   "file": "w/fruits__custard-apple.jpg",
@@ -4890,7 +4890,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Red_dragon_fruit.jpg",
   "author": "Fumikas Sagisavas",
   "license": "CC0",
-  "score": 1.103
+  "score": 1.261
  },
  "fruits|DRIED MANGO": {
   "file": "w/fruits__dried-mango.jpg",
@@ -4904,7 +4904,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Durian_Fruit_in_Yunnan.jpg",
   "author": "Rod Waddington",
   "license": "CC BY-SA 2.0",
-  "score": 1.189
+  "score": 1.387
  },
  "fruits|FIG": {
   "file": "w/fruits__fig.jpg",
@@ -4939,7 +4939,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Grapes,_Dry_Creek_Valley-7705.jpg",
   "author": "Frank Schulenburg",
   "license": "CC BY-SA 4.0",
-  "score": 1.2
+  "score": 1.399
  },
  "fruits|GRAPEFRUIT": {
   "file": "w/fruits__grapefruit.jpg",
@@ -4953,7 +4953,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Goiaba_vermelha.jpg",
   "author": "Rodrigo.Argenton",
   "license": "CC BY-SA 4.0",
-  "score": 1.131
+  "score": 1.307
  },
  "fruits|HAZELNUT": {
   "file": "w/fruits__hazelnut.jpg",
@@ -4967,7 +4967,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:The_jackfruit_is_holding_on_to_the_tree.jpg",
   "author": "This work was made by Tushar Hossain and released under the license(s) stated below. Please feel free to use it for any purpose as long as you credit Tushar Hossain as author and follow the terms of t",
   "license": "CC BY-SA 4.0",
-  "score": 1.142
+  "score": 1.345
  },
  "fruits|JUJUBE": {
   "file": "w/fruits__jujube.jpg",
@@ -4978,10 +4978,10 @@
  },
  "fruits|KIWI": {
   "file": "w/fruits__kiwi.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Kiwi_aka.jpg",
-  "author": "André Karwath aka Aka",
-  "license": "CC BY-SA 2.5",
-  "score": 0.978
+  "src": "https://commons.wikimedia.org/wiki/File:(kiwifruit_or_Chinese_gooseberry)_is_the_edible_berry_of_a_woody_vine_in_the_genus_Actinidia.JPG",
+  "author": "David Adam Kess",
+  "license": "CC BY-SA 4.0",
+  "score": 1.164
  },
  "fruits|KUMQUAT": {
   "file": "w/fruits__kumquat.jpg",
@@ -4990,19 +4990,12 @@
   "license": "CC BY-SA 3.0",
   "score": 1.279
  },
- "fruits|LEMON": {
-  "file": "w/fruits__lemon.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:P1030323.JPG",
-  "author": "Elena Chochkova",
-  "license": "CC BY-SA 4.0",
-  "score": 1.136
- },
  "fruits|LONGAN": {
   "file": "w/fruits__longan.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Dimocarpus_longan_fruits.jpg",
   "author": "",
   "license": "Public domain",
-  "score": 1.107
+  "score": 1.307
  },
  "fruits|LONGKONG": {
   "file": "w/fruits__longkong.jpg",
@@ -5016,21 +5009,21 @@
   "src": "https://commons.wikimedia.org/wiki/File:Litchi_chinensis_fruits.JPG",
   "author": "B.navez",
   "license": "CC BY-SA 3.0",
-  "score": 1.037
+  "score": 1.244
  },
  "fruits|MANGO": {
   "file": "w/fruits__mango.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:An_unripe_mango_in_jaffna.JPG",
   "author": "Aathavan jaffna",
   "license": "CC BY-SA 3.0",
-  "score": 1.171
+  "score": 1.372
  },
  "fruits|MANGOSTEEN": {
   "file": "w/fruits__mangosteen.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Berthe_Hoola_van_Nooten48.jpg",
-  "author": "Berthe Hoola van Nooten (1817-1892), Pieter De Pannemaeker (lithographer)",
-  "license": "Public domain",
-  "score": 0.924
+  "src": "https://commons.wikimedia.org/wiki/File:Peeled_Mangosteen.jpg",
+  "author": "Azreey",
+  "license": "CC BY-SA 4.0",
+  "score": 1.293
  },
  "fruits|MARIAN PLUM": {
   "file": "w/fruits__marian-plum.jpg",
@@ -5041,10 +5034,10 @@
  },
  "fruits|MELON": {
   "file": "w/fruits__melon.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Meloen_vrucht_met_bloem.jpg",
-  "author": "Rasbak at Dutch Wikipedia",
-  "license": "CC BY-SA 3.0",
-  "score": 1.111
+  "src": "https://commons.wikimedia.org/wiki/File:Picture_of_a_melon_plant.jpg",
+  "author": "Nubelbariloe",
+  "license": "CC BY 4.0",
+  "score": 1.079
  },
  "fruits|MULBERRY": {
   "file": "w/fruits__mulberry.jpg",
@@ -5065,35 +5058,35 @@
   "src": "https://commons.wikimedia.org/wiki/File:Open_refrigerator_with_food_at_night.jpg",
   "author": "W.carter",
   "license": "CC BY-SA 4.0",
-  "score": 0.334
+  "score": 0.093
  },
  "fruits|PAPAYA": {
   "file": "w/fruits__papaya.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Carica_papaya_14_7_2012.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Carica_papaya_22_08_2012.JPG",
   "author": "Joydeep",
   "license": "CC BY-SA 3.0",
-  "score": 1.053
+  "score": 1.256
  },
  "fruits|PASSION FRUIT": {
   "file": "w/fruits__passion-fruit.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Passiflora_edulis_forma_flavicarpa.jpg",
-  "author": "Unknown author Unknown author",
-  "license": "Public domain",
-  "score": 0.866
+  "src": "https://commons.wikimedia.org/wiki/File:Passiflora_Edulis_Open_Fruit2.jpg",
+  "author": "Alexander Klink",
+  "license": "CC BY 3.0",
+  "score": 1.399
  },
  "fruits|PEACH": {
   "file": "w/fruits__peach.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Peach_tree_branch_with_fruits_(2).jpg",
   "author": "Harry Van den Bulck",
   "license": "CC BY-SA 4.0",
-  "score": 1.089
+  "score": 1.291
  },
  "fruits|PEAR": {
   "file": "w/fruits__pear.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Pears.jpg",
   "author": "Keith Weller",
   "license": "Public domain",
-  "score": 1.18
+  "score": 1.38
  },
  "fruits|PEEL": {
   "file": "w/fruits__peel.jpg",
@@ -5114,7 +5107,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Pineapple_fruit_2.jpg",
   "author": "Wilfredor",
   "license": "CC0",
-  "score": 1.182
+  "score": 1.383
  },
  "fruits|PISTACHIO": {
   "file": "w/fruits__pistachio.jpg",
@@ -5128,7 +5121,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Plums_African_Rose_-_whole,_halved_and_slice.jpg",
   "author": "Ivar Leidus",
   "license": "CC BY-SA 4.0",
-  "score": 0.952
+  "score": 1.061
  },
  "fruits|POMEGRANATE": {
   "file": "w/fruits__pomegranate.jpg",
@@ -5142,7 +5135,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Pomelo_fruit.jpg",
   "author": "Ivar Leidus",
   "license": "CC BY-SA 4.0",
-  "score": 0.986
+  "score": 1.101
  },
  "fruits|PRUNE": {
   "file": "w/fruits__prune.jpg",
@@ -5153,24 +5146,24 @@
  },
  "fruits|RAISIN": {
   "file": "w/fruits__raisin.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Raisins_01.jpg",
-  "author": "Paweł Kuźniar ( Jojo_1 , Jojo )",
-  "license": "CC BY-SA 3.0",
-  "score": 0.873
+  "src": "https://commons.wikimedia.org/wiki/File:2023_Rodzynki_(2).jpg",
+  "author": "Jacek Halicki",
+  "license": "CC BY-SA 4.0",
+  "score": 1.086
  },
  "fruits|RAMBUTAN": {
   "file": "w/fruits__rambutan.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Nephelium_lappaceum201907mx.jpg",
-  "author": "Carlos Valenzuela",
-  "license": "CC BY-SA 4.0",
-  "score": 1.023
+  "src": "https://commons.wikimedia.org/wiki/File:Rambutan_One_Kind_of_Fruit_in_Indonesia.jpg",
+  "author": "Diah Isnawati S",
+  "license": "CC0",
+  "score": 1.181
  },
  "fruits|RASPBERRY": {
   "file": "w/fruits__raspberry.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Raspberry_-_halved_(Rubus_idaeus).jpg",
-  "author": "Ivar Leidus",
+  "src": "https://commons.wikimedia.org/wiki/File:Raspberry_with_fuzz_(40969).jpg",
+  "author": "Rhododendrites",
   "license": "CC BY-SA 4.0",
-  "score": 0.675
+  "score": 1.386
  },
  "fruits|RIPE": {
   "file": "w/fruits__ripe.jpg",
@@ -5184,7 +5177,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Plant_Life_in_Chayalode.jpg",
   "author": "Jubinthomas235",
   "license": "CC BY-SA 3.0",
-  "score": 0.992
+  "score": 1.169
  },
  "fruits|SALAK": {
   "file": "w/fruits__salak.jpg",
@@ -5202,10 +5195,10 @@
  },
  "fruits|SAPODILLA": {
   "file": "w/fruits__sapodilla.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:%E0%B4%B8%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%8B%E0%B4%9F%E0%B5%8D%E0%B4%9F.jpg",
-  "author": "Sugeesh at Malayalam Wikipedia",
-  "license": "CC BY-SA 3.0",
-  "score": 1.003
+  "src": "https://commons.wikimedia.org/wiki/File:Sapodilla_fruit_image.jpg",
+  "author": "KIRUTHIKA OFF",
+  "license": "CC BY-SA 4.0",
+  "score": 1.278
  },
  "fruits|SLICE": {
   "file": "w/fruits__slice.jpg",
@@ -5226,14 +5219,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Averrhoa_carambola_ARS_k5735-7.jpg",
   "author": "http://www.ars.usda.gov/is/graphics/photos/k5735-7.htm",
   "license": "Public domain",
-  "score": 1.112
+  "score": 1.312
  },
  "fruits|STRAWBERRY": {
   "file": "w/fruits__strawberry.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Fragaria_vesca_fruit_-_Keila.jpg",
   "author": "Ivar Leidus",
   "license": "CC BY-SA 4.0",
-  "score": 1.078
+  "score": 1.228
  },
  "fruits|SUGARCANE": {
   "file": "w/fruits__sugarcane.jpg",
@@ -5247,7 +5240,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Tamarindus_indica_pods.JPG",
   "author": "B.navez",
   "license": "CC BY 2.5",
-  "score": 1.078
+  "score": 1.278
  },
  "fruits|TANGERINE": {
   "file": "w/fruits__tangerine.jpg",
@@ -5268,7 +5261,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg",
   "author": "Fred Hsu ( Wikipedia:User:Fred Hsu on en.wikipedia )",
   "license": "CC BY-SA 3.0",
-  "score": 0.885
+  "score": 1.113
  },
  "home|AIR CONDITIONER": {
   "file": "w/home__air-conditioner.jpg",

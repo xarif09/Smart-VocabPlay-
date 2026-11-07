@@ -443,7 +443,7 @@
   },
   "fruits|APPLE": {
    "title": "File:Red Apple.jpg",
-   "final": 1.033,
+   "final": 1.162,
    "p": 0.9975,
    "photo": 0.9998,
    "fit": 0.527,
@@ -455,12 +455,12 @@
     "fit 0.53"
    ],
    "origin": "search:apple fruit",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "fruits|BANANA": {
    "title": "File:Banana on whitebackground.jpg",
-   "final": 1.129,
+   "final": 1.299,
    "p": 0.9948,
    "photo": 0.9616,
    "fit": 0.822,
@@ -475,7 +475,7 @@
   },
   "fruits|ORANGE": {
    "title": "File:Open refrigerator with food at night.jpg",
-   "final": 0.334,
+   "final": 0.093,
    "p": 0.0,
    "photo": 0.0547,
    "fit": 0.75,
@@ -493,7 +493,7 @@
   },
   "fruits|GRAPE": {
    "title": "File:Grapes, Dry Creek Valley-7705.jpg",
-   "final": 1.2,
+   "final": 1.399,
    "p": 1.0,
    "photo": 0.9986,
    "fit": 1.0,
@@ -501,12 +501,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:grapes fruit",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "fruits|MANGO": {
    "title": "File:An unripe mango in jaffna.JPG",
-   "final": 1.171,
+   "final": 1.372,
    "p": 0.9771,
    "photo": 0.9989,
    "fit": 1.0,
@@ -519,7 +519,7 @@
   },
   "fruits|CHERRY": {
    "title": "File:Cherry Stella444.jpg",
-   "final": 1.145,
+   "final": 1.322,
    "p": 0.9985,
    "photo": 0.9975,
    "fit": 0.847,
@@ -529,12 +529,12 @@
    ],
    "flags": [],
    "origin": "search:cherries fruit",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "fruits|PEACH": {
    "title": "File:Peach tree branch with fruits (2).jpg",
-   "final": 1.089,
+   "final": 1.291,
    "p": 0.9733,
    "photo": 0.9991,
    "fit": 1.0,
@@ -547,7 +547,7 @@
   },
   "fruits|STRAWBERRY": {
    "title": "File:Fragaria vesca fruit - Keila.jpg",
-   "final": 1.078,
+   "final": 1.228,
    "p": 0.9925,
    "photo": 0.9951,
    "fit": 0.665,
@@ -560,14 +560,14 @@
     "fit 0.66"
    ],
    "origin": "search:strawberry fruit",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "fruits|PINEAPPLE": {
    "title": "File:Pineapple fruit 2.jpg",
-   "final": 1.182,
-   "p": 0.9669,
-   "photo": 0.9989,
+   "final": 1.383,
+   "p": 0.9667,
+   "photo": 0.9987,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -577,25 +577,21 @@
    "forced": false
   },
   "fruits|KIWI": {
-   "title": "File:Kiwi aka.jpg",
-   "final": 0.978,
-   "p": 0.9864,
-   "photo": 0.9955,
-   "fit": 0.393,
+   "title": "File:(kiwifruit or Chinese gooseberry) is the edible berry of a woody vine in the genus Actinidia.JPG",
+   "final": 1.164,
+   "p": 0.728,
+   "photo": 0.9945,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.65)"
-   ],
-   "flags": [
-    "fit 0.39"
-   ],
+   "notes": [],
+   "flags": [],
    "origin": "search:kiwifruit",
    "n_cands": 8,
    "forced": false
   },
   "fruits|BLUEBERRY": {
    "title": "File:Blueberry Picking (125267747).jpeg",
-   "final": 1.149,
+   "final": 1.349,
    "p": 0.9997,
    "photo": 0.9979,
    "fit": 1.0,
@@ -607,23 +603,23 @@
    "forced": false
   },
   "fruits|MELON": {
-   "title": "File:Meloen vrucht met bloem.jpg",
-   "final": 1.111,
-   "p": 0.9814,
-   "photo": 0.8143,
-   "fit": 0.835,
+   "title": "File:Picture of a melon plant.jpg",
+   "final": 1.079,
+   "p": 0.4946,
+   "photo": 0.9976,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+   "notes": [],
+   "flags": [
+    "low word prob 0.49"
    ],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 8,
+   "origin": "search:melon fruit",
+   "n_cands": 7,
    "forced": false
   },
   "fruits|GUAVA": {
    "title": "File:Goiaba vermelha.jpg",
-   "final": 1.131,
+   "final": 1.307,
    "p": 0.9821,
    "photo": 0.9996,
    "fit": 0.833,
@@ -637,15 +633,13 @@
    "forced": false
   },
   "fruits|PAPAYA": {
-   "title": "File:Carica papaya 14 7 2012.jpg",
-   "final": 1.053,
-   "p": 0.9982,
-   "photo": 0.9985,
-   "fit": 0.846,
+   "title": "File:Carica papaya 22 08 2012.JPG",
+   "final": 1.256,
+   "p": 0.8073,
+   "photo": 0.9988,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
+   "notes": [],
    "flags": [],
    "origin": "search:papaya fruit",
    "n_cands": 8,
@@ -653,7 +647,7 @@
   },
   "fruits|DURIAN": {
    "title": "File:Durian Fruit in Yunnan.jpg",
-   "final": 1.189,
+   "final": 1.387,
    "p": 0.9846,
    "photo": 0.978,
    "fit": 1.0,
@@ -665,25 +659,23 @@
    "forced": false
   },
   "fruits|RAMBUTAN": {
-   "title": "File:Nephelium lappaceum201907mx.jpg",
-   "final": 1.023,
-   "p": 0.9879,
-   "photo": 0.9597,
-   "fit": 0.526,
+   "title": "File:Rambutan One Kind of Fruit in Indonesia.jpg",
+   "final": 1.181,
+   "p": 0.8274,
+   "photo": 0.8951,
+   "fit": 0.778,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.88)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.53"
-   ],
+   "flags": [],
    "origin": "search:rambutan fruit",
    "n_cands": 8,
    "forced": false
   },
   "fruits|LONGAN": {
    "title": "File:Dimocarpus longan fruits.jpg",
-   "final": 1.107,
+   "final": 1.307,
    "p": 0.9859,
    "photo": 0.9926,
    "fit": 1.0,
@@ -696,7 +688,7 @@
   },
   "fruits|POMELO": {
    "title": "File:Pomelo fruit.jpg",
-   "final": 0.986,
+   "final": 1.101,
    "p": 0.9805,
    "photo": 0.9969,
    "fit": 0.426,
@@ -708,7 +700,7 @@
     "fit 0.43"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "food|RICE": {
@@ -2207,21 +2199,11 @@
    "forced": false
   },
   "fruits|LEMON": {
-   "title": "File:P1030323.JPG",
-   "final": 1.136,
-   "p": 0.9852,
-   "photo": 0.9794,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "fruits|WATERMELON": {
    "title": "File:Taiwan 2009 Tainan City Organic Farm Watermelon FRD 7962.jpg",
-   "final": 0.885,
+   "final": 1.113,
    "p": 0.4274,
    "photo": 0.9976,
    "fit": 1.0,
@@ -2236,8 +2218,8 @@
   },
   "fruits|COCONUT": {
    "title": "File:Young Coconut Drink.jpg",
-   "final": 1.118,
-   "p": 0.9997,
+   "final": 1.316,
+   "p": 0.9996,
    "photo": 0.9818,
    "fit": 1.0,
    "how": "saliency",
@@ -2249,7 +2231,7 @@
   },
   "fruits|PEAR": {
    "title": "File:Pears.jpg",
-   "final": 1.18,
+   "final": 1.38,
    "p": 0.9919,
    "photo": 1.0,
    "fit": 1.0,
@@ -2262,7 +2244,7 @@
   },
   "fruits|AVOCADO": {
    "title": "File:Persea americana fruit 2.JPG",
-   "final": 1.107,
+   "final": 1.307,
    "p": 0.9921,
    "photo": 0.9999,
    "fit": 1.0,
@@ -2275,7 +2257,7 @@
   },
   "fruits|LYCHEE": {
    "title": "File:Litchi chinensis fruits.JPG",
-   "final": 1.037,
+   "final": 1.244,
    "p": 0.8509,
    "photo": 0.9985,
    "fit": 1.0,
@@ -2288,7 +2270,7 @@
   },
   "fruits|JACKFRUIT": {
    "title": "File:The jackfruit is holding on to the tree.jpg",
-   "final": 1.142,
+   "final": 1.345,
    "p": 0.9419,
    "photo": 0.9992,
    "fit": 1.0,
@@ -6209,7 +6191,7 @@
   },
   "fruits|DRAGON FRUIT": {
    "title": "File:Red dragon fruit.jpg",
-   "final": 1.103,
+   "final": 1.261,
    "p": 0.9943,
    "photo": 0.9453,
    "fit": 0.75,
@@ -6219,14 +6201,14 @@
    ],
    "flags": [],
    "origin": "search:dragon fruit",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "fruits|ROSE APPLE": {
    "title": "File:Plant Life in Chayalode.jpg",
-   "final": 0.992,
-   "p": 0.9075,
-   "photo": 0.9552,
+   "final": 1.169,
+   "p": 0.9073,
+   "photo": 0.9551,
    "fit": 0.846,
    "how": "saliency",
    "notes": [
@@ -6239,7 +6221,7 @@
   },
   "fruits|TAMARIND": {
    "title": "File:Tamarindus indica pods.JPG",
-   "final": 1.078,
+   "final": 1.278,
    "p": 0.9671,
    "photo": 0.9815,
    "fit": 1.0,
@@ -6252,7 +6234,7 @@
   },
   "fruits|PLUM": {
    "title": "File:Plums African Rose - whole, halved and slice.jpg",
-   "final": 0.952,
+   "final": 1.061,
    "p": 0.9453,
    "photo": 0.9997,
    "fit": 0.378,
@@ -6269,7 +6251,7 @@
   },
   "fruits|STAR FRUIT": {
    "title": "File:Averrhoa carambola ARS k5735-7.jpg",
-   "final": 1.112,
+   "final": 1.312,
    "p": 0.9998,
    "photo": 0.9989,
    "fit": 1.0,
@@ -14830,20 +14812,16 @@
    "forced": false
   },
   "fruits|CANTALOUPE": {
-   "title": "File:Meloen vrucht met bloem.jpg",
-   "final": 0.576,
-   "p": 0.0172,
-   "photo": 0.8143,
-   "fit": 0.835,
+   "title": "File:Rockmelons.JPG",
+   "final": 1.246,
+   "p": 0.8224,
+   "photo": 0.9953,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.02"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 10,
    "forced": false
   },
   "fruits|APRICOT": {
@@ -14877,25 +14855,21 @@
    "forced": false
   },
   "fruits|RASPBERRY": {
-   "title": "File:Raspberry - halved (Rubus idaeus).jpg",
-   "final": 0.675,
-   "p": 0.1517,
-   "photo": 0.998,
-   "fit": 0.833,
+   "title": "File:Raspberry with fuzz (40969).jpg",
+   "final": 1.386,
+   "p": 0.9981,
+   "photo": 0.9909,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.15"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "fruits|CRANBERRY": {
    "title": "File:Cranberry bog.jpg",
-   "final": 1.029,
+   "final": 1.192,
    "p": 0.9998,
    "photo": 1.0,
    "fit": 0.75,
@@ -14905,58 +14879,48 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 10,
    "forced": false
   },
   "fruits|PASSION FRUIT": {
-   "title": "File:Passiflora edulis forma flavicarpa.jpg",
-   "final": 0.866,
-   "p": 0.9974,
-   "photo": 0.9977,
-   "fit": 0.313,
+   "title": "File:Passiflora Edulis Open Fruit2.jpg",
+   "final": 1.399,
+   "p": 0.9999,
+   "photo": 0.9973,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.65)",
-    "upscaled x1.5"
-   ],
-   "flags": [
-    "fit 0.31"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "fruits|MANGOSTEEN": {
-   "title": "File:Berthe Hoola van Nooten48.jpg",
-   "final": 0.924,
-   "p": 0.9584,
-   "photo": 0.0041,
-   "fit": 0.826,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "not photo-like 0.00"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "fruits|SAPODILLA": {
-   "title": "File:സപ്പോട്ട.jpg",
-   "final": 1.003,
-   "p": 0.9605,
-   "photo": 0.9829,
-   "fit": 0.789,
+   "title": "File:Peeled Mangosteen.jpg",
+   "final": 1.293,
+   "p": 0.9969,
+   "photo": 0.999,
+   "fit": 0.792,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:mangosteen fruit",
+   "n_cands": 10,
+   "forced": false
+  },
+  "fruits|SAPODILLA": {
+   "title": "File:Sapodilla fruit image.jpg",
+   "final": 1.278,
+   "p": 0.9659,
+   "photo": 0.9727,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:sapodilla fruit",
+   "n_cands": 10,
    "forced": false
   },
   "fruits|SUGARCANE": {
@@ -14978,21 +14942,20 @@
    "forced": false
   },
   "fruits|RAISIN": {
-   "title": "File:Raisins 01.jpg",
-   "final": 0.873,
-   "p": 1.0,
-   "photo": 0.9987,
-   "fit": 0.231,
+   "title": "File:2023 Rodzynki (2).jpg",
+   "final": 1.086,
+   "p": 0.9998,
+   "photo": 0.9999,
+   "fit": 0.537,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.48)"
+    "subject cannot fit 3:4 (box cov 0.89)"
    ],
    "flags": [
-    "fit 0.23"
+    "fit 0.54"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "weather|TORNADO": {
@@ -24260,7 +24223,7 @@
    ],
    "flags": [],
    "origin": "search:blackberry fruit",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "fruits|MULBERRY": {
@@ -29785,22 +29748,18 @@
   "food|TOAST",
   "food|YOGURT",
   "fruits|APPLE",
-  "fruits|CANTALOUPE",
   "fruits|DRIED MANGO",
   "fruits|GRAPEFRUIT",
-  "fruits|KIWI",
+  "fruits|LEMON",
   "fruits|LONGKONG",
-  "fruits|MANGOSTEEN",
   "fruits|MARIAN PLUM",
+  "fruits|MELON",
   "fruits|NECTARINE",
   "fruits|ORANGE",
-  "fruits|PASSION FRUIT",
   "fruits|PLUM",
   "fruits|POMELO",
   "fruits|PRUNE",
   "fruits|RAISIN",
-  "fruits|RAMBUTAN",
-  "fruits|RASPBERRY",
   "fruits|RIPE",
   "fruits|SANTOL",
   "fruits|SLICE",
@@ -30528,7 +30487,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1896,
-  "flagged": 1134
+  "with_photo": 1895,
+  "flagged": 1130
  }
 }

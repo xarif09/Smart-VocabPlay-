@@ -14,13 +14,14 @@ For each word we build a Spec:
 import re
 
 STYLE_NEG = ["a drawing", "a cartoon", "a clip art illustration", "a map", "a diagram", "text on a page",
-             "a logo", "a painting", "a 3D render", "a screenshot", "a sketch", "a scanned document"]
+             "a logo", "a painting", "a 3D render", "a screenshot", "a sketch", "a scanned document",
+             "a statue or sculpture", "a vintage illustration or poster"]
 PHOTO_POS = ["a real photo", "a photograph"]
 QUALITY_POS = "a bright, sharp, colorful photo with one clear subject"
 QUALITY_NEG = ["a dark, blurry photo", "a cluttered, busy photo with many things", "a black and white photo",
                "a low quality old photo", "a tiny subject far away"]
 UNSAFE = ["blood and gore", "a dead animal", "nudity", "a scary horror image", "a weapon", "a dangerous injury",
-          "a sexy photo of a person in underwear"]
+          "a sexy photo of a person in underwear", "a woman in lingerie or stockings", "a prison or concentration camp"]
 SAFE_REF = ["a friendly photo suitable for children", "an ordinary everyday photo"]
 
 COCO = set("""person bicycle car motorcycle airplane bus train truck boat traffic_light fire_hydrant stop_sign parking_meter bench
@@ -294,6 +295,8 @@ o("shapes|CIRCLE", q=["round circle object", "circle shape", "round plate"], p=[
 o("shapes|SQUARE", q=["square shape", "square tile", "square object"], p=["a photo of a square shaped object", "a square"])
 o("shapes|TRIANGLE", q=["triangle road sign", "triangle shape", "triangle object"], p=["a photo of a triangle shaped object", "a triangle"])
 o("shapes|STAR", q=["star shaped cookie", "star shaped object", "star shape"], p=["a photo of a star shaped object", "a five-pointed star"], neg=["a photo of stars in the night sky"])
+O["shapes|KNOT"] = dict(q=["rope knot"], p=["a photo of a knot tied in a rope"], neg=["a photo of a bird"])
+O["shapes|STRIPES"] = dict(q=["zebra stripes"], p=["a photo of a striped pattern"], neg=["a prison uniform"])
 o("shapes|HEART", q=["heart shape", "heart shaped object", "heart shaped cookie"], p=["a photo of a heart shaped object", "a heart shape"], neg=["a photo of an anatomical human heart"])
 o("shapes|RECTANGLE", q=["rectangle shape", "rectangular object", "rectangle"], p=["a photo of a rectangle shaped object", "a rectangle"])
 o("shapes|OVAL", q=["oval shape", "oval mirror", "oval object"], p=["a photo of an oval shaped object", "an oval"])
@@ -1097,6 +1100,10 @@ STRICT_SAFE = {"body|ARMPIT", "body|THIGH", "body|WAIST", "body|BELLY BUTTON", "
                "actions|SWIM", "actions|SHOWER", "home|BATH", "home|BATHROOM", "home|SHOWER", "family|HUSBAND", "family|WIFE"}
 
 
+O["shapes|KNOT"]["neg"] = ["a photo of a bird"]
+O["shapes|STRIPES"]["neg"] = ["a prison uniform"]
+
+
 def spec_for(w):
     cat, word = w["cat"], w["word"]
     k = f"{cat}|{word}"
@@ -1118,6 +1125,9 @@ def spec_for(w):
         neg += ["a fruit tree in an orchard", "a refrigerator full of food", "a market stall with many kinds of produce"]
     if cat == "colors":
         neg += ["a dark night photo", "an astronomy image of space", "a color swatch chart"]
+    nostyle = list(ov.get("nostyle", []))
+    if word in ("STATUE", "DINOSAUR", "SKELETON", "SKULL") or cat == "countries" or k in ("places|MUSEUM", "jobs|ARTIST", "jobs|PAINTER", "school|ART"):
+        nostyle += ["a statue or sculpture", "a painting"]
     return dict(key=k, cat=cat, word=word, queries=qs[:3], prompts=ps, neg=neg, mode=mode, coco=coco,
-                text_ok=ov.get("text_ok", base.get("text_ok", False)), nostyle=ov.get("nostyle", []),
-                strict=k in STRICT_SAFE)
+                text_ok=ov.get("text_ok", base.get("text_ok", False)), nostyle=nostyle,
+                strict=k in STRICT_SAFE or cat in ("colors", "shapes", "feelings", "family", "clothes", "body", "opposites"))

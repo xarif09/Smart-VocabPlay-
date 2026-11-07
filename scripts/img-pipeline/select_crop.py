@@ -1,6 +1,6 @@
 """Stage 3+4+5: pick the best candidate per word, find the subject box, crop to 3:4 portrait, write outputs.
 
-  final = 0.55*p_word + 0.10*p_photo + 0.10*p_quality + 0.10*cos_norm + 0.35*fit  - unsafe penalty
+  final = 0.50*p_word + 0.20*p_photo + 0.10*p_quality + 0.10*cos_norm + 0.50*fit  - unsafe penalty
 Outputs: public/img/w/<cat>__<slug>.jpg (600x800), src/wordImages.json, scripts/img-pipeline/report.json
 Usage: python select_crop.py [--only k1,k2] [--cats c1,c2] [--top 4]
 """
@@ -127,13 +127,13 @@ def plan_crop(W_, H_, box, how, centre=None, edge_pen=0.82):
     return [X0, Y0, X0 + cw, Y0 + ch], fit, notes
 
 
-def save_jpeg(img, path, target=int(os.environ.get("JPEG_TARGET_KB", "52")) * 1024):
+def save_jpeg(img, path, target=int(os.environ.get("JPEG_TARGET_KB", "45")) * 1024):
     """progressive JPEG; lower quality step by step (min 60) until under the size target."""
     q = QUALITY
     while True:
         buf = io.BytesIO()
         img.save(buf, "JPEG", quality=q, optimize=True, progressive=True)
-        if buf.tell() <= target or q <= 52: break
+        if buf.tell() <= target or q <= 48: break
         q -= 4
     open(path, "wb").write(buf.getvalue())
 
@@ -142,15 +142,32 @@ def cos_norm(c):
     return float(min(1, max(0, (c - 0.15) / 0.15)))
 
 
-def pre_score(s, strict):
+_sat = {}
+
+
+def saturation(title):
+    """mean HSV saturation of the thumbnail (0 = black & white)"""
+    if title not in _sat:
+        try:
+            im = Image.open(os.path.join(CACHE, "thumbs", h(title) + ".jpg")).convert("HSV").resize((64, 64))
+            _sat[title] = float(np.asarray(im)[:, :, 1].mean() / 255.0)
+        except Exception:
+            _sat[title] = 0.3
+    return _sat[title]
+
+
+def pre_score(s, strict, gray_ok=False):
     pen = max(0.0, s["unsafe"] - 0.3) / 0.7 * (0.8 if strict else 0.5)
-    return 0.55 * s["p"] + 0.10 * s["photo"] + 0.10 * s["q"] + 0.10 * cos_norm(s["cos"]) - pen
+    if s["photo"] < 0.4: pen += 0.3 * (0.4 - s["photo"]) / 0.4 + 0.1      # drawings, paintings, statues, posters
+    if not gray_ok and saturation(s["title"]) < 0.07: pen += 0.25          # black-and-white / sepia photos
+    return 0.50 * s["p"] + 0.20 * s["photo"] + 0.10 * s["q"] + 0.10 * cos_norm(s["cos"]) - pen
 
 
 def load_json(p, d):
     return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else d
 
 
+GRAY_OK = {"BLACK", "WHITE", "GRAY", "BLACK AND WHITE", "SILVER", "LIGHT GRAY", "DARK GRAY", "CHARCOAL", "ZEBRA", "PANDA", "FOG", "FOGGY", "MIST", "SNOW", "SNOWY"}
 DRY = False
 META_ONLY = False
 pre = {}
@@ -168,10 +185,11 @@ def main(words, top):
     for w in words:
         sp = spec_for(w)
         cands = {c["title"]: c for c in load_json(os.path.join(CACHE, "cands", h(w["key"]) + ".json"), [])}
-        sc = sorted([s for s in scores.get(w["key"], []) if s["title"] in cands], key=lambda s: -pre_score(s, sp["strict"]))
+        sc = sorted([s for s in scores.get(w["key"], []) if s["title"] in cands], key=lambda s: -pre_score(s, sp["strict"], sp["word"] in GRAY_OK))
         need += [s["title"] for s in sc[:top + 2] if not cands[s["title"]].get("license")]
     meta.ensure(need)
     if META_ONLY: return
+    used = {v["title"]: kk for kk, v in report["words"].items() if kk in out and v.get("title")}
     for n, w in enumerate(words):
         k = w["key"]; sp = spec_for(w)
         ov = overrides.get(k) or {}
@@ -183,6 +201,8 @@ def main(words, top):
             if c: cands[c["title"]] = c
         sc = [s for s in scores.get(k, []) if s["title"] in cands]
         if ov.get("exclude"): sc = [s for s in sc if s["title"] not in set(ov["exclude"])]
+        # one photo per word: skip photos already used by another word
+        sc = [s for s in sc if used.get(s["title"], k) == k]
         if not sc:
             report["words"][k] = {"status": "no candidates"}; out.pop(k, None); continue
         forced = None
@@ -190,7 +210,7 @@ def main(words, top):
             ft = ov["file"] if ov["file"].startswith("File:") else "File:" + ov["file"]
             forced = next((s for s in sc if s["title"] == ft), None)
             if forced is None: print("  override file not among candidates:", k, ft)
-        ranked = sorted(sc, key=lambda s: -pre_score(s, sp["strict"]))
+        ranked = sorted(sc, key=lambda s: -pre_score(s, sp["strict"], sp["word"] in GRAY_OK))
         finals = [forced] if forced else ranked[:top]
         best = None
         for s in finals:
@@ -214,7 +234,7 @@ def main(words, top):
                                          edge_pen=0.6 if w["cat"] in ("animals", "vehicles") else 0.8)
             res = min(1.0, (crop[2] - crop[0]) / 420)  # source pixels across the 600px output
             if res < 1: notes.append(f"upscaled x{OUT_W / (crop[2] - crop[0]):.1f}")
-            final = pre_score(s, sp["strict"]) + 0.35 * fit * (0.8 + 0.2 * res)
+            final = pre_score(s, sp["strict"], sp["word"] in GRAY_OK) + 0.5 * fit * (0.8 + 0.2 * res)
             if forced: final = max(final, 0.5)
             rcrop = [crop[0] / Lw, crop[1] / Lh, crop[2] / Lw, crop[3] / Lh]
             cand = dict(final=final, s=s, c=c, rcrop=rcrop, fit=fit, notes=notes, how=how)
@@ -250,6 +270,9 @@ def main(words, top):
         fn = W.out_name(w["cat"], w["word"])
         save_jpeg(img, os.path.join(OUT_DIR, fn))
         s = best["s"]
+        old_t = report["words"].get(k, {}).get("title")
+        if old_t and used.get(old_t) == k: used.pop(old_t)
+        used[c["title"]] = k
         out[k] = {"file": "w/" + fn, "src": c["src"], "author": c["author"], "license": c["license"],
                   "score": round(best["final"], 3)}
         flags = []
@@ -282,7 +305,7 @@ def main(words, top):
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("--only"); ap.add_argument("--cats"); ap.add_argument("--top", type=int, default=5)
+    ap = argparse.ArgumentParser(); ap.add_argument("--only"); ap.add_argument("--cats"); ap.add_argument("--top", type=int, default=6)
     ap.add_argument("--meta-only", action="store_true", help="only look up licence/author for the top candidates")
     ap.add_argument("--dry", action="store_true", help="score only (pre-check of current photos), no output")
     a = ap.parse_args()

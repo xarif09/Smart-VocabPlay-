@@ -1,1 +1,770 @@
-{}
+{
+ "colors|RED": {
+  "queries": [
+   "red apple",
+   "red balloons"
+  ]
+ },
+ "colors|BLUE": {
+  "queries": [
+   "blue balloons",
+   "blue door"
+  ]
+ },
+ "colors|GREEN": {
+  "queries": [
+   "green leaf",
+   "green apples"
+  ]
+ },
+ "colors|YELLOW": {
+  "queries": [
+   "yellow lemons",
+   "yellow balloons"
+  ]
+ },
+ "colors|PURPLE": {
+  "queries": [
+   "purple grapes",
+   "purple flowers"
+  ]
+ },
+ "colors|ORANGE": {
+  "queries": [
+   "orange balloons",
+   "orange pumpkin"
+  ]
+ },
+ "colors|PINK": {
+  "queries": [
+   "pink flamingo",
+   "pink balloons"
+  ]
+ },
+ "colors|BROWN": {
+  "queries": [
+   "brown teddy bear",
+   "brown leaves autumn"
+  ]
+ },
+ "colors|BLACK": {
+  "queries": [
+   "black cat",
+   "black balloons"
+  ]
+ },
+ "colors|WHITE": {
+  "queries": [
+   "white swan",
+   "white eggs"
+  ]
+ },
+ "colors|GRAY": {
+  "queries": [
+   "grey elephant",
+   "grey stones"
+  ]
+ },
+ "colors|GOLD": {
+  "queries": [
+   "gold coins",
+   "gold trophy"
+  ]
+ },
+ "colors|SILVER": {
+  "queries": [
+   "silver spoons",
+   "silver coins"
+  ]
+ },
+ "colors|LIGHT BLUE": {
+  "queries": [
+   "light blue sky",
+   "light blue balloons"
+  ]
+ },
+ "colors|DARK GREEN": {
+  "queries": [
+   "dark green leaves",
+   "dark green forest"
+  ]
+ },
+ "colors|BEIGE": {
+  "queries": [
+   "beige sand dunes",
+   "beige fabric"
+  ]
+ },
+ "colors|TURQUOISE": {
+  "queries": [
+   "turquoise sea water",
+   "turquoise stone"
+  ]
+ },
+ "colors|VIOLET": {
+  "queries": [
+   "violet flowers",
+   "African violet"
+  ]
+ },
+ "colors|NAVY": {
+  "queries": [
+   "navy blue uniform",
+   "navy blue fabric"
+  ]
+ },
+ "colors|DARK BLUE": {
+  "queries": [
+   "dark blue sea",
+   "dark blue car"
+  ]
+ },
+ "colors|LIGHT GREEN": {
+  "queries": [
+   "light green leaves",
+   "lime fruit"
+  ]
+ },
+ "colors|DARK RED": {
+  "queries": [
+   "dark red roses",
+   "dark red cherries"
+  ]
+ },
+ "colors|LIGHT PINK": {
+  "queries": [
+   "light pink roses",
+   "cherry blossom"
+  ]
+ },
+ "colors|HOT PINK": {
+  "queries": [
+   "bougainvillea hot pink flowers",
+   "pink dragon fruit"
+  ]
+ },
+ "colors|DARK BROWN": {
+  "queries": [
+   "coffee beans",
+   "dark chocolate"
+  ]
+ },
+ "colors|LIGHT BROWN": {
+  "queries": [
+   "light brown puppy",
+   "bread loaf"
+  ]
+ },
+ "colors|LIGHT GRAY": {
+  "queries": [
+   "light grey pebbles",
+   "grey kitten"
+  ]
+ },
+ "colors|DARK GRAY": {
+  "queries": [
+   "dark grey storm clouds",
+   "slate rock"
+  ]
+ },
+ "colors|SKY BLUE": {
+  "queries": [
+   "clear blue sky",
+   "sky blue"
+  ]
+ },
+ "colors|LIME GREEN": {
+  "queries": [
+   "lime green frog",
+   "lime green leaves"
+  ]
+ },
+ "colors|MAROON": {
+  "queries": [
+   "maroon fabric",
+   "maroon car"
+  ]
+ },
+ "colors|CREAM": {
+  "queries": [
+   "cream colored roses",
+   "cream colored"
+  ]
+ },
+ "colors|IVORY": {
+  "queries": [
+   "ivory white roses",
+   "ivory colored"
+  ]
+ },
+ "colors|TAN": {
+  "queries": [
+   "tan leather shoes",
+   "tan puppy"
+  ]
+ },
+ "colors|LAVENDER": {
+  "queries": [
+   "lavender field",
+   "lavender flowers"
+  ]
+ },
+ "colors|MAGENTA": {
+  "queries": [
+   "magenta flowers",
+   "magenta orchid"
+  ]
+ },
+ "colors|CYAN": {
+  "queries": [
+   "cyan water",
+   "cyan colored"
+  ]
+ },
+ "colors|TEAL": {
+  "queries": [
+   "teal ceramic vase",
+   "teal door"
+  ]
+ },
+ "colors|AQUA": {
+  "queries": [
+   "swimming pool water",
+   "aqua colored"
+  ]
+ },
+ "colors|CRIMSON": {
+  "queries": [
+   "crimson roses",
+   "crimson"
+  ]
+ },
+ "colors|SCARLET": {
+  "queries": [
+   "scarlet macaw",
+   "scarlet ibis"
+  ]
+ },
+ "colors|BRONZE": {
+  "queries": [
+   "bronze medal",
+   "bronze bell"
+  ]
+ },
+ "colors|COPPER": {
+  "queries": [
+   "copper pots",
+   "copper kettle"
+  ]
+ },
+ "colors|INDIGO": {
+  "queries": [
+   "indigo dyed fabric",
+   "indigo"
+  ]
+ },
+ "colors|AMBER": {
+  "queries": [
+   "amber gemstone",
+   "amber jewelry"
+  ]
+ },
+ "colors|MUSTARD YELLOW": {
+  "queries": [
+   "mustard yellow fabric",
+   "mustard yellow"
+  ]
+ },
+ "colors|CHARCOAL": {
+  "queries": [
+   "charcoal briquettes",
+   "charcoal grey"
+  ]
+ },
+ "colors|BURGUNDY": {
+  "queries": [
+   "burgundy wine glass",
+   "burgundy color"
+  ]
+ },
+ "colors|ROYAL BLUE": {
+  "queries": [
+   "royal blue fabric",
+   "royal blue"
+  ]
+ },
+ "colors|BABY BLUE": {
+  "queries": [
+   "baby blue blanket",
+   "baby blue"
+  ]
+ },
+ "colors|NEON GREEN": {
+  "queries": [
+   "neon green",
+   "neon green sign"
+  ]
+ },
+ "colors|PASTEL COLORS": {
+  "queries": [
+   "pastel macarons",
+   "pastel colored houses"
+  ]
+ },
+ "colors|DARK PURPLE": {
+  "queries": [
+   "eggplant",
+   "dark purple flowers"
+  ]
+ },
+ "colors|LIGHT PURPLE": {
+  "queries": [
+   "lilac flowers",
+   "light purple flowers"
+  ]
+ },
+ "colors|SALMON PINK": {
+  "queries": [
+   "salmon pink roses",
+   "salmon fillet"
+  ]
+ },
+ "shapes|CIRCLE": {
+  "queries": [
+   "round wall clock",
+   "coins"
+  ]
+ },
+ "shapes|SQUARE": {
+  "queries": [
+   "square tiles",
+   "square window"
+  ]
+ },
+ "shapes|TRIANGLE": {
+  "queries": [
+   "triangle warning road sign",
+   "triangular sandwich"
+  ]
+ },
+ "shapes|STAR": {
+  "queries": [
+   "starfish",
+   "star shaped cookies"
+  ]
+ },
+ "shapes|RECTANGLE": {
+  "queries": [
+   "rectangular window",
+   "red brick"
+  ]
+ },
+ "shapes|OVAL": {
+  "queries": [
+   "oval mirror",
+   "rugby ball"
+  ]
+ },
+ "shapes|DIAMOND": {
+  "queries": [
+   "diamond shaped road sign",
+   "kite flying diamond"
+  ]
+ },
+ "shapes|PENTAGON": {
+  "queries": [
+   "pentagonal",
+   "pentagon shaped"
+  ]
+ },
+ "shapes|HEXAGON": {
+  "queries": [
+   "honeycomb",
+   "hexagonal tiles"
+  ]
+ },
+ "shapes|CUBE": {
+  "queries": [
+   "Rubik's cube",
+   "dice"
+  ]
+ },
+ "shapes|CRESCENT": {
+  "queries": [
+   "crescent moon sky",
+   "croissant"
+  ]
+ },
+ "shapes|HEPTAGON": {
+  "queries": [
+   "50 pence coin",
+   "heptagonal"
+  ]
+ },
+ "shapes|DECAGON": {
+  "queries": [
+   "decagonal",
+   "decagon"
+  ]
+ },
+ "shapes|SPHERE": {
+  "queries": [
+   "glass sphere ball",
+   "crystal ball"
+  ]
+ },
+ "shapes|CONE": {
+  "queries": [
+   "traffic cone",
+   "ice cream cone"
+  ]
+ },
+ "shapes|CYLINDER": {
+  "queries": [
+   "tin can",
+   "cylinder"
+  ]
+ },
+ "shapes|HEMISPHERE": {
+  "queries": [
+   "igloo",
+   "half sphere dome"
+  ]
+ },
+ "shapes|SEMICIRCLE": {
+  "queries": [
+   "semicircular window",
+   "half moon window"
+  ]
+ },
+ "shapes|QUARTER CIRCLE": {
+  "queries": [
+   "pizza slice",
+   "quarter circle"
+  ]
+ },
+ "shapes|PARALLELOGRAM": {
+  "queries": [
+   "parallelogram",
+   "parallelogram shape"
+  ]
+ },
+ "shapes|TRAPEZOID": {
+  "queries": [
+   "trapezoid",
+   "trapezoid table"
+  ]
+ },
+ "shapes|RHOMBUS": {
+  "queries": [
+   "rhombus tiles",
+   "rhombus"
+  ]
+ },
+ "shapes|ZIGZAG": {
+  "queries": [
+   "zigzag road",
+   "zigzag pattern"
+  ]
+ },
+ "shapes|CROSS": {
+  "queries": [
+   "red cross sign",
+   "Swiss flag"
+  ]
+ },
+ "shapes|CURVE": {
+  "queries": [
+   "curved road",
+   "curve"
+  ]
+ },
+ "shapes|DOT": {
+  "queries": [
+   "ladybug",
+   "red dot"
+  ]
+ },
+ "shapes|WAVY LINE": {
+  "queries": [
+   "wavy sand ripples",
+   "wavy lines"
+  ]
+ },
+ "shapes|DOTTED LINE": {
+  "queries": [
+   "dotted line road marking",
+   "dotted line"
+  ]
+ },
+ "shapes|DIAGONAL LINE": {
+  "queries": [
+   "diagonal stripes",
+   "diagonal lines"
+  ]
+ },
+ "shapes|CHECKMARK": {
+  "queries": [
+   "check mark",
+   "tick mark"
+  ]
+ },
+ "shapes|STRIPES": {
+  "queries": [
+   "zebra stripes",
+   "striped shirt"
+  ]
+ },
+ "shapes|POLKA DOTS": {
+  "queries": [
+   "polka dot fabric",
+   "polka dots"
+  ]
+ },
+ "shapes|CHECKERED": {
+  "queries": [
+   "checkerboard",
+   "checkered tablecloth"
+  ]
+ },
+ "shapes|GRID": {
+  "queries": [
+   "graph paper",
+   "grid paper"
+  ]
+ },
+ "shapes|ANGLE": {
+  "queries": [
+   "set square",
+   "right angle"
+  ]
+ },
+ "shapes|CORNER": {
+  "queries": [
+   "room corner",
+   "street corner"
+  ]
+ },
+ "shapes|SQUIGGLE": {
+  "queries": [
+   "squiggle",
+   "squiggly line"
+  ]
+ },
+ "shapes|TUBE": {
+  "queries": [
+   "toothpaste tube",
+   "cardboard tube"
+  ]
+ },
+ "shapes|PATTERN": {
+  "queries": [
+   "colorful fabric pattern",
+   "pattern"
+  ]
+ },
+ "shapes|OUTLINE": {
+  "queries": [
+   "silhouette",
+   "outline"
+  ]
+ },
+ "shapes|WEDGE": {
+  "queries": [
+   "cheese wedge",
+   "door wedge"
+  ]
+ },
+ "shapes|EDGE": {
+  "queries": [
+   "table edge",
+   "cliff edge"
+  ]
+ },
+ "shapes|MAZE": {
+  "queries": [
+   "hedge maze",
+   "maze"
+  ]
+ },
+ "shapes|KNOT": {
+  "queries": [
+   "rope knot",
+   "reef knot rope"
+  ]
+ },
+ "shapes|SHAPE": {
+  "queries": [
+   "shape sorter toy",
+   "geometric shapes toy"
+  ]
+ },
+ "shapes|FRAME": {
+  "queries": [
+   "picture frame",
+   "empty picture frame"
+  ]
+ },
+ "shapes|SYMMETRY": {
+  "queries": [
+   "butterfly symmetry",
+   "symmetrical butterfly"
+  ]
+ },
+ "shapes|LINE": {
+  "queries": [
+   "straight road line",
+   "line"
+  ]
+ },
+ "shapes|ARROW": {
+  "queries": [
+   "arrow road marking",
+   "arrow sign"
+  ]
+ },
+ "numbers|ZERO": {
+  "queries": [
+   "empty plate",
+   "number 0"
+  ]
+ },
+ "numbers|ONE": {
+  "queries": [
+   "single red apple",
+   "one apple"
+  ]
+ },
+ "numbers|TWO": {
+  "queries": [
+   "two apples",
+   "two eggs"
+  ]
+ },
+ "numbers|THREE": {
+  "queries": [
+   "three apples",
+   "three balls"
+  ]
+ },
+ "numbers|FOUR": {
+  "queries": [
+   "four apples",
+   "four eggs"
+  ]
+ },
+ "numbers|FIVE": {
+  "queries": [
+   "five apples",
+   "five fingers hand"
+  ]
+ },
+ "numbers|SIX": {
+  "queries": [
+   "six eggs carton",
+   "six apples"
+  ]
+ },
+ "numbers|SEVEN": {
+  "queries": [
+   "seven apples",
+   "house number 7"
+  ]
+ },
+ "numbers|EIGHT": {
+  "queries": [
+   "eight eggs",
+   "house number 8"
+  ]
+ },
+ "numbers|NINE": {
+  "queries": [
+   "house number 9",
+   "nine balls"
+  ]
+ },
+ "numbers|TEN": {
+  "queries": [
+   "ten fingers",
+   "house number 10"
+  ]
+ },
+ "numbers|THIRTY": {
+  "queries": [
+   "house number 30",
+   "speed limit 30 sign"
+  ]
+ },
+ "numbers|SIXTY": {
+  "queries": [
+   "house number 60",
+   "speed limit 60 sign"
+  ]
+ },
+ "numbers|SEVENTY": {
+  "queries": [
+   "house number 70",
+   "speed limit 70 sign"
+  ]
+ },
+ "numbers|EIGHTY": {
+  "queries": [
+   "house number 80",
+   "speed limit 80 sign"
+  ]
+ },
+ "numbers|NINETY": {
+  "queries": [
+   "house number 90",
+   "speed limit 90 sign"
+  ]
+ },
+ "numbers|THIRTEEN": {
+  "queries": [
+   "house number 13",
+   "number 13"
+  ]
+ },
+ "numbers|FOURTEEN": {
+  "queries": [
+   "house number 14",
+   "number 14"
+  ]
+ },
+ "numbers|SIXTEEN": {
+  "queries": [
+   "house number 16",
+   "number 16"
+  ]
+ },
+ "numbers|SEVENTEEN": {
+  "queries": [
+   "house number 17",
+   "number 17"
+  ]
+ },
+ "numbers|EIGHTEEN": {
+  "queries": [
+   "house number 18",
+   "number 18"
+  ]
+ },
+ "numbers|NINETEEN": {
+  "queries": [
+   "house number 19",
+   "number 19"
+  ]
+ },
+ "numbers|MILLION": {
+  "queries": [
+   "pile of coins",
+   "lots of coins"
+  ]
+ },
+ "numbers|THOUSAND": {
+  "queries": [
+   "number 1000",
+   "1000 sign"
+  ]
+ }
+}

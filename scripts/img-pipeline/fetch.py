@@ -162,6 +162,12 @@ def gather(words, overrides, cur, current_only=False):
         sp = spec_for(w)
         ov = overrides.get(w["key"])
         extra_q = (ov or {}).get("queries", []) if isinstance(ov, dict) else []
+        cf = os.path.join(CACHE, "cands", h(w["key"]) + ".json")
+        if os.environ.get("SKIP_DONE") == "1" and os.path.exists(cf) and not extra_q:
+            old = json.load(open(cf, encoding="utf-8"))
+            if any(c["origin"].startswith("search") for c in old) or w["key"] in keep:
+                allc[w["key"]] = old
+                continue
         cands, seen = [], set()
 
         def add(title, info, origin):
@@ -188,8 +194,14 @@ def gather(words, overrides, cur, current_only=False):
         skip = current_only or (w["key"] in keep and not extra_q and not ovf)
         for t in ([] if skip else art[w["key"]]):
             for f in wp.get(t, [])[:12]: add(f, infos.get(f), "wiki:" + t)
-        nq = 0 if skip else (2 if w["cat"] in ABSTRACT else 1)
-        for qi, q in enumerate((extra_q + sp["queries"])[:nq + len(extra_q)]):
+        nq = 0 if skip else (2 if w["cat"] in ABSTRACT else 1) + int(os.environ.get("EXTRA_QUERIES", "0"))
+        qlist = (extra_q + sp["queries"])[:nq + len(extra_q)]
+        if qlist and os.environ.get("QI", "1") == "1" and w["cat"] not in ("colors", "numbers", "shapes", "time", "opposites"):
+            # Commons "Quality images" first: sharp, well-composed, reviewed photos
+            res = commons_search(f"{qlist[0]} incategory:Quality_images", 20)
+            for f, info in res: add(f, info, "search:QI")
+            if len(res) >= 6 and not extra_q and not os.environ.get("EXTRA_QUERIES"): qlist = []
+        for qi, q in enumerate(qlist):
             for f, info in commons_search(q, 20): add(f, info, "search:" + q)
         # cap: keep override/current/wiki lead images, then interleave search results across queries
         cands = cap(cands, MAX_CANDS)
@@ -219,7 +231,7 @@ def download_thumbs(allc):
     jobs = {}
     for cands in allc.values():
         for c in cands:
-            jobs[c["title"]] = c["small"]
+            jobs[c["title"]] = c.get("small")
     print("thumbs to ensure:", len(jobs), flush=True)
 
     allcand = {c["title"]: c for cands in allc.values() for c in cands}

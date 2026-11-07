@@ -1950,23 +1950,23 @@
    "forced": false
   },
   "weather|SUN": {
-   "title": "File:Sun shining in the sky.jpg",
-   "final": 1.008,
-   "p": 0.9799,
-   "photo": 0.1584,
+   "title": "File:Sun shining above the Clouds 02.jpg",
+   "final": 0.846,
+   "p": 0.1587,
+   "photo": 0.8308,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "not photo-like 0.16"
+    "low word prob 0.16"
    ],
    "origin": "search:sun shining sky",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "weather|RAIN": {
    "title": "File:Purple rain on roof.jpg",
-   "final": 0.881,
+   "final": 1.108,
    "p": 0.4592,
    "photo": 0.9998,
    "fit": 1.0,
@@ -1976,14 +1976,14 @@
     "low word prob 0.46"
    ],
    "origin": "search:rain weather",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "weather|SNOW": {
    "title": "File:Kolomenskoe in white - Dec12 - 03 snow.jpg",
-   "final": 0.568,
+   "final": 0.816,
    "p": 0.0017,
-   "photo": 0.9802,
+   "photo": 0.9801,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
@@ -1991,12 +1991,12 @@
     "low word prob 0.00"
    ],
    "origin": "search:snow weather",
-   "n_cands": 8,
+   "n_cands": 5,
    "forced": false
   },
   "weather|CLOUD": {
    "title": "File:Iridescent clouds during snowfall 1.jpg",
-   "final": 0.806,
+   "final": 1.033,
    "p": 0.4712,
    "photo": 0.999,
    "fit": 1.0,
@@ -2010,32 +2010,30 @@
    "forced": false
   },
   "weather|WIND": {
-   "title": "File:Blowing trees - DPLA - 130b193d79a91de894901401aaab6872.jpg",
-   "final": 0.859,
-   "p": 0.8839,
-   "photo": 0.0197,
+   "title": "File:Blowing wind.jpg",
+   "final": 1.045,
+   "p": 0.4174,
+   "photo": 0.9108,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "not photo-like 0.02"
+    "low word prob 0.42"
    ],
    "origin": "search:wind blowing trees",
    "n_cands": 8,
    "forced": false
   },
   "weather|STORM": {
-   "title": "File:Hestskjær fyr i storm fra Nordvest.jpg",
-   "final": 0.872,
-   "p": 0.7185,
-   "photo": 0.3729,
+   "title": "File:Port and lighthouse overnight storm with lightning in Port-la-Nouvelle.jpg",
+   "final": 0.906,
+   "p": 0.1842,
+   "photo": 0.9988,
    "fit": 1.0,
    "how": "scene",
-   "notes": [
-    "upscaled x1.6"
-   ],
+   "notes": [],
    "flags": [
-    "not photo-like 0.37"
+    "low word prob 0.18"
    ],
    "origin": "search:storm weather",
    "n_cands": 8,
@@ -2043,7 +2041,7 @@
   },
   "weather|FOG": {
    "title": "File:Blassenstein Erlauftal mit Nebel 02 Panorama.JPG",
-   "final": 0.916,
+   "final": 1.126,
    "p": 0.6771,
    "photo": 0.9341,
    "fit": 1.0,
@@ -2056,7 +2054,7 @@
   },
   "weather|HOT": {
    "title": "File:A very hot afternoon in Abuja.jpg",
-   "final": 0.565,
+   "final": 0.813,
    "p": 0.017,
    "photo": 0.998,
    "fit": 1.0,
@@ -2071,7 +2069,7 @@
   },
   "weather|COLD": {
    "title": "File:Winter forest silver.jpg",
-   "final": 0.781,
+   "final": 0.758,
    "p": 0.424,
    "photo": 0.9786,
    "fit": 1.0,
@@ -2086,9 +2084,9 @@
   },
   "weather|SUNNY": {
    "title": "File:Wooden footbridge in Shinjuku Gyoen National Garden, Tokyo, Japan, a sunny day with blue sky.jpg",
-   "final": 1.077,
+   "final": 1.237,
    "p": 0.9734,
-   "photo": 0.5895,
+   "photo": 0.5894,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
@@ -2099,20 +2097,20 @@
   },
   "weather|THUNDER": {
    "title": "File:Lightning striking the Eiffel Tower - NOAA.jpg",
-   "final": 0.829,
+   "final": 1.022,
    "p": 0.5282,
-   "photo": 0.9767,
+   "photo": 0.8371,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
    "origin": "search:lightning",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "weather|HUMID": {
    "title": "File:Aerial view of the Amazon Rainforest.jpg",
-   "final": 0.451,
+   "final": 0.701,
    "p": 0.0027,
    "photo": 0.9997,
    "fit": 1.0,
@@ -2127,9 +2125,9 @@
   },
   "weather|WARM": {
    "title": "File:A warm, sunny day at Neptune's Staircase - geograph.org.uk - 7557850.jpg",
-   "final": 0.983,
-   "p": 0.96,
-   "photo": 0.6724,
+   "final": 1.151,
+   "p": 0.9578,
+   "photo": 0.6723,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
@@ -2140,7 +2138,7 @@
   },
   "weather|DRY": {
    "title": "File:Drought.jpg",
-   "final": 0.711,
+   "final": 0.939,
    "p": 0.3019,
    "photo": 0.9379,
    "fit": 1.0,
@@ -2330,17 +2328,7 @@
    "forced": false
   },
   "weather|RAINBOW": {
-   "title": "File:Double-alaskan-rainbow.jpg",
-   "final": 1.183,
-   "p": 1.0,
-   "photo": 0.9754,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "numbers|ONE": {
    "title": "File:Apple II at Musée Bolo.jpg",
@@ -6542,7 +6530,7 @@
   },
   "weather|CLOUDY": {
    "title": "File:Cloudy Weather - geograph.org.uk - 2505067.jpg",
-   "final": 0.714,
+   "final": 0.938,
    "p": 0.3416,
    "photo": 0.9242,
    "fit": 1.0,
@@ -6554,12 +6542,12 @@
     "low word prob 0.34"
    ],
    "origin": "search:cloudy weather",
-   "n_cands": 4,
+   "n_cands": 5,
    "forced": false
   },
   "weather|WINDY": {
    "title": "File:The results of a windy day (3) - geograph.org.uk - 7104829.jpg",
-   "final": 1.036,
+   "final": 1.239,
    "p": 0.9212,
    "photo": 0.9906,
    "fit": 1.0,
@@ -6567,27 +6555,27 @@
    "notes": [],
    "flags": [],
    "origin": "search:windy day trees",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "weather|RAINY": {
-   "title": "File:Hard rain on a roof.jpg",
-   "final": 0.63,
-   "p": 0.1574,
-   "photo": 0.9309,
+   "title": "File:Rainy weather 2.jpg",
+   "final": 0.783,
+   "p": 0.0015,
+   "photo": 0.9659,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.16"
+    "low word prob 0.00"
    ],
-   "origin": "current",
+   "origin": "search:rainy weather",
    "n_cands": 6,
    "forced": false
   },
   "weather|FLOOD": {
    "title": "File:Defense.gov photo essay 111016-M-ZN194-162.jpg",
-   "final": 1.088,
+   "final": 1.287,
    "p": 0.9987,
    "photo": 0.9809,
    "fit": 1.0,
@@ -6600,9 +6588,9 @@
   },
   "weather|ICE": {
    "title": "File:Ice Block, Canal Park, Duluth (32752478892).jpg",
-   "final": 0.916,
+   "final": 1.014,
    "p": 0.9992,
-   "photo": 0.9794,
+   "photo": 0.9793,
    "fit": 0.331,
    "how": "saliency",
    "notes": [
@@ -6612,12 +6600,12 @@
     "fit 0.33"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "weather|SUMMER": {
    "title": "File:Hermosa beach summer day.jpg",
-   "final": 1.095,
+   "final": 1.295,
    "p": 0.998,
    "photo": 0.9997,
    "fit": 1.0,
@@ -6630,9 +6618,9 @@
   },
   "weather|WINTER": {
    "title": "File:BrockenSnowedTreesInSun.jpg",
-   "final": 0.78,
+   "final": 0.969,
    "p": 0.5049,
-   "photo": 0.6388,
+   "photo": 0.6387,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
@@ -6643,7 +6631,7 @@
   },
   "weather|SPRING": {
    "title": "File:Arboretum Robert Lenoir - Jardin des méllifères.jpg",
-   "final": 1.067,
+   "final": 1.233,
    "p": 1.0,
    "photo": 0.6639,
    "fit": 1.0,
@@ -6656,7 +6644,7 @@
   },
   "weather|AUTUMN": {
    "title": "File:Dülmen, Wildpark -- 2014 -- 3808 color balanced.jpg",
-   "final": 1.122,
+   "final": 1.324,
    "p": 0.9672,
    "photo": 0.9986,
    "fit": 1.0,
@@ -6669,9 +6657,9 @@
   },
   "weather|SNOWMAN": {
    "title": "File:Snowman in Indiana 2014.jpg",
-   "final": 1.028,
+   "final": 1.196,
    "p": 0.9989,
-   "photo": 0.9817,
+   "photo": 0.9816,
    "fit": 0.8,
    "how": "saliency",
    "notes": [
@@ -14746,7 +14734,7 @@
   },
   "weather|TORNADO": {
    "title": "File:F5 tornado Elie Manitoba 2007.jpg",
-   "final": 1.103,
+   "final": 1.303,
    "p": 0.9993,
    "photo": 0.9991,
    "fit": 1.0,
@@ -14758,18 +14746,18 @@
    "forced": false
   },
   "weather|TYPHOON": {
-   "title": "File:Sinlaku 2026-04-12 2100z.png",
-   "final": 0.724,
-   "p": 0.3311,
-   "photo": 0.9132,
+   "title": "File:Eurofighter Typhoon FGR4 of Royal Air Force (ZJ914), Radom Air Show, 20230826 1655 9933.jpg",
+   "final": 1.025,
+   "p": 0.4371,
+   "photo": 0.9581,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.33"
+    "low word prob 0.44"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 10,
    "forced": false
   },
   "weather|DRIZZLE": {
@@ -14786,37 +14774,35 @@
    "forced": false
   },
   "weather|HAIL": {
-   "title": "File:Granizo.jpg",
-   "final": 0.757,
-   "p": 0.6437,
-   "photo": 0.9986,
-   "fit": 0.594,
+   "title": "File:Hailstones-size.jpg",
+   "final": 0.948,
+   "p": 0.9366,
+   "photo": 0.9989,
+   "fit": 0.36,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.99)"
+    "subject cannot fit 3:4 (box cov 0.60)"
    ],
    "flags": [
-    "fit 0.59"
+    "fit 0.36"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:hailstones",
+   "n_cands": 6,
    "forced": false
   },
   "weather|TEMPERATURE": {
-   "title": "File:Mercury Thermometer.jpg",
-   "final": 0.811,
-   "p": 0.8431,
-   "photo": 0.997,
-   "fit": 0.421,
+   "title": "File:Kopenhagen (DK), Kastell von Kopenhagen, Artilleristok -- 2017 -- 1597.jpg",
+   "final": 1.025,
+   "p": 0.5401,
+   "photo": 0.9162,
+   "fit": 0.786,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.70)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.42"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 10,
    "forced": false
   },
   "vegetables|CABBAGE": {
@@ -21383,7 +21369,7 @@
     "low word prob 0.33"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 5,
    "forced": false
   },
   "weather|ICY": {
@@ -21512,7 +21498,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:sunshine weather",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "weather|SUNRISE": {
@@ -21540,7 +21526,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "weather|THERMOMETER": {
@@ -21585,7 +21571,7 @@
     "low word prob 0.33"
    ],
    "origin": "search:heat wave weather",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "weather|DROUGHT": {
@@ -21643,7 +21629,19 @@
    "forced": false
   },
   "weather|COOL SEASON": {
-   "status": "no candidates"
+   "title": "File:Morning at Tham Sakoen.jpg",
+   "final": 0.706,
+   "p": 0.0,
+   "photo": 0.9088,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:misty mountain morning Thailand",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|SNOWBALL": {
    "title": "File:Proglacial lacustrine rhythmitic argillite (varvite) (Konnarock Formation, Neoproterozoic, ~750 Ma; Grassy Branch Outcrop - Rt. 603 roadcut, Smyth County, Virginia, USA) 10 (30464418931).jpg",
@@ -30077,6 +30075,7 @@
   "weather|MIST",
   "weather|MONSOON",
   "weather|RAIN",
+  "weather|RAINBOW",
   "weather|RAINDROP",
   "weather|RAINY",
   "weather|SNOW",
@@ -30087,7 +30086,6 @@
   "weather|STORMY",
   "weather|SUN",
   "weather|SUNRISE",
-  "weather|TEMPERATURE",
   "weather|THERMOMETER",
   "weather|THUNDERSTORM",
   "weather|TYPHOON",

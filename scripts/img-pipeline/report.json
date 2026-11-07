@@ -5364,7 +5364,7 @@
     "fit 0.36"
    ],
    "origin": "search:person singing",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "actions|DANCE": {
@@ -5397,7 +5397,7 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "actions|PLAY": {
@@ -5458,7 +5458,7 @@
     "not photo-like 0.20"
    ],
    "origin": "current",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "actions|SIT": {
@@ -7791,7 +7791,7 @@
     "not photo-like 0.09"
    ],
    "origin": "search:closing door",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "actions|PUSH": {
@@ -7879,25 +7879,25 @@
     "fit 0.57"
    ],
    "origin": "search:hug",
-   "n_cands": 5,
+   "n_cands": 4,
    "forced": false
   },
   "actions|SMILE": {
-   "title": "File:Aminah Cendrakasih, c. 1959, by Tati Photo Studio.jpg",
-   "final": 0.665,
-   "p": 0.8603,
-   "photo": 0.9318,
-   "fit": 0.531,
+   "title": "File:Little kid smiling..jpg",
+   "final": 0.967,
+   "p": 0.9957,
+   "photo": 0.9971,
+   "fit": 0.271,
    "how": "yolo:person",
    "notes": [
     "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.70)"
    ],
    "flags": [
-    "fit 0.53"
+    "fit 0.27"
    ],
-   "origin": "search:smile",
-   "n_cands": 5,
+   "origin": "current",
+   "n_cands": 7,
    "forced": false
   },
   "actions|CLAP": {
@@ -10536,7 +10536,7 @@
     "low word prob 0.05"
    ],
    "origin": "search:repairing bicycle",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "actions|CUT": {
@@ -10698,23 +10698,23 @@
     "fit 0.66"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "actions|FRY": {
-   "title": "File:A pan of frying egg.jpg",
-   "final": 1.034,
-   "p": 1.0,
-   "photo": 0.988,
-   "fit": 0.465,
+   "title": "File:Eggplant roasting on a frying pan.jpg",
+   "final": 1.084,
+   "p": 0.9993,
+   "photo": 0.9784,
+   "fit": 0.64,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.78)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "fit 0.47"
+    "fit 0.64"
    ],
-   "origin": "search:frying egg",
+   "origin": "search:frying pan",
    "n_cands": 7,
    "forced": false
   },
@@ -10728,7 +10728,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "actions|FEED": {

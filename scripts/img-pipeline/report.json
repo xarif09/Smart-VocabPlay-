@@ -15012,7 +15012,17 @@
    "forced": false
   },
   "weather|DRIZZLE": {
-   "status": "no candidates"
+   "title": "File:Looking towards the Christmas market at Place de l'université from Rue des Wallons on a drizzly evening (Louvain la Neuve, Belgium).jpg",
+   "final": 1.106,
+   "p": 0.7371,
+   "photo": 0.9175,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 10,
+   "forced": false
   },
   "weather|HAIL": {
    "title": "File:Granizo.jpg",
@@ -19684,103 +19694,475 @@
    "status": "no candidates"
   },
   "weather|LIGHTNING": {
-   "status": "no candidates"
+   "title": "File:0005512-สถานีกรุงเทพมุมสูงจะเห็นสถานีทั้งหมด.jpg",
+   "final": 0.799,
+   "p": 0.0711,
+   "photo": 0.9199,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.07"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|SNOWY": {
-   "status": "no candidates"
+   "title": "File:Полярное сияние над заброшенным зданием метеостанцией.jpg",
+   "final": 0.833,
+   "p": 0.1896,
+   "photo": 0.9922,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.19"
+   ],
+   "origin": "search:snowy weather",
+   "n_cands": 6,
+   "forced": false
   },
   "weather|FOGGY": {
-   "status": "no candidates"
+   "title": "File:Schönau am Königssee (DE), Priesbergalm vom Jenner -- 2024 -- 0459.jpg",
+   "final": 1.001,
+   "p": 0.4233,
+   "photo": 0.9912,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.42"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "weather|STORMY": {
-   "status": "no candidates"
+   "title": "File:Porto Covo January 2014-10a.jpg",
+   "final": 0.949,
+   "p": 0.3293,
+   "photo": 0.9754,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.33"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|ICY": {
-   "status": "no candidates"
+   "title": "File:Icy snow on a twig.jpg",
+   "final": 0.858,
+   "p": 0.1672,
+   "photo": 0.8712,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.17"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|FREEZING": {
-   "status": "no candidates"
+   "title": "File:A frozen tree.jpg",
+   "final": 0.932,
+   "p": 0.2472,
+   "photo": 0.9799,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.25"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|COOL": {
-   "status": "no candidates"
+   "title": "File:Two water buffaloes bathing at sunset.jpg",
+   "final": 0.797,
+   "p": 0.0001,
+   "photo": 0.9986,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "weather|BREEZE": {
-   "status": "no candidates"
+   "title": "File:Blowing Dust Breezes Across the Desert Southwest (CIRA 2025-02-27 - dust blowingdust nolabels0).png",
+   "final": 0.728,
+   "p": 0.0031,
+   "photo": 0.9887,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:breeze weather",
+   "n_cands": 6,
+   "forced": false
   },
   "weather|SNOWFLAKE": {
-   "status": "no candidates"
+   "title": "File:Snowflake on web Bytom.jpg",
+   "final": 0.842,
+   "p": 1.0,
+   "photo": 0.1234,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.12"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|RAINDROP": {
-   "status": "no candidates"
+   "title": "File:242-365 - My favorite weather - Flickr - olfiika.jpg",
+   "final": 0.898,
+   "p": 0.0535,
+   "photo": 0.9984,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.05"
+   ],
+   "origin": "search:raindrop weather",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|PUDDLE": {
-   "status": "no candidates"
+   "title": "File:Muddy Puddle on a asphalt road.jpg",
+   "final": 1.273,
+   "p": 0.9984,
+   "photo": 0.8691,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:puddle weather",
+   "n_cands": 6,
+   "forced": false
   },
   "weather|ICICLE": {
-   "status": "no candidates"
+   "title": "File:Exercise Joint Viking 25- Advanced Armor Mobility Training (8872778).jpg",
+   "final": 1.263,
+   "p": 0.9862,
+   "photo": 0.8491,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:icicle weather",
+   "n_cands": 5,
+   "forced": false
   },
   "weather|SUNSHINE": {
-   "status": "no candidates"
+   "title": "File:Overturned Sunshine Furniture Truck.jpg",
+   "final": 1.113,
+   "p": 0.831,
+   "photo": 0.5669,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:sunshine weather",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|SUNRISE": {
-   "status": "no candidates"
+   "title": "File:Santorin (GR), Akrotiri, Leuchtturm -- 2017 -- 2553.jpg",
+   "final": 0.822,
+   "p": 0.176,
+   "photo": 0.9041,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.18"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|SUNSET": {
-   "status": "no candidates"
+   "title": "File:2012-09-14 19-43-26-sunset-seloncourt.jpg",
+   "final": 1.171,
+   "p": 0.8081,
+   "photo": 0.9768,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "weather|THERMOMETER": {
-   "status": "no candidates"
+   "title": "File:001 2015 06 08 Messungen.jpg",
+   "final": 0.935,
+   "p": 0.9525,
+   "photo": 0.5267,
+   "fit": 0.37,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.62)"
+   ],
+   "flags": [
+    "fit 0.37"
+   ],
+   "origin": "search:thermometer weather",
+   "n_cands": 6,
+   "forced": false
   },
   "weather|WEATHER FORECAST": {
-   "status": "no candidates"
+   "title": "File:Harry Volkman WGN TV.jpg",
+   "final": 1.256,
+   "p": 0.9944,
+   "photo": 0.7955,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:weather forecast TV",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|HEAT WAVE": {
-   "status": "no candidates"
+   "title": "File:NASA’s ECOSTRESS Captures Short-Lived Heat Wave in L A Area (PIA26651).jpg",
+   "final": 0.853,
+   "p": 0.326,
+   "photo": 0.6106,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.33"
+   ],
+   "origin": "search:heat wave weather",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|DROUGHT": {
-   "status": "no candidates"
+   "title": "File:California Drought-Free After a Quarter-Century (CIRA 2026-01-08 - 202501092051 n21-snpp-n20 viirs truecolor californiadroughtfree nolabels0).png",
+   "final": 1.127,
+   "p": 0.7031,
+   "photo": 0.974,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:drought weather",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|MONSOON": {
-   "status": "no candidates"
+   "title": "File:Tiny house surrounded by trees, inhabited in the middle of green paddy fields in sunshine under a stormy sky at golden hour in Laos.jpg",
+   "final": 0.852,
+   "p": 0.0043,
+   "photo": 0.9971,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|RAINY SEASON": {
-   "status": "no candidates"
+   "title": "File:Mok Fha waterfall in the Rainy season.jpg",
+   "final": 1.351,
+   "p": 0.9977,
+   "photo": 0.9901,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:rainy season Thailand",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|HOT SEASON": {
-   "status": "no candidates"
+   "title": "File:DFC 4185 Three whole fish sizzling over hot coals charred skin and smoky grill marks ready to be served.jpg",
+   "final": 1.238,
+   "p": 0.8762,
+   "photo": 0.9957,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:hot season Thailand",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|COOL SEASON": {
    "status": "no candidates"
   },
   "weather|SNOWBALL": {
-   "status": "no candidates"
+   "title": "File:Proglacial lacustrine rhythmitic argillite (varvite) (Konnarock Formation, Neoproterozoic, ~750 Ma; Grassy Branch Outcrop - Rt. 603 roadcut, Smyth County, Virginia, USA) 10 (30464418931).jpg",
+   "final": 0.552,
+   "p": 0.0,
+   "photo": 0.9919,
+   "fit": 0.7,
+   "how": "none",
+   "notes": [
+    "no subject found"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.70"
+   ],
+   "origin": "search:snowball weather",
+   "n_cands": 4,
+   "forced": false
   },
   "weather|BLIZZARD": {
-   "status": "no candidates"
+   "title": "File:Active Weather for the Central US Continues (CIRA 2024-03-25).png",
+   "final": 1.29,
+   "p": 0.9903,
+   "photo": 0.9627,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:blizzard weather",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|THUNDERSTORM": {
-   "status": "no candidates"
+   "title": "File:Vézère orage Reignac.jpg",
+   "final": 0.78,
+   "p": 0.1441,
+   "photo": 0.5721,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.14"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "weather|HURRICANE": {
-   "status": "no candidates"
+   "title": "File:Global tropical cyclone tracks-edit2.jpg",
+   "final": 0.803,
+   "p": 0.8957,
+   "photo": 0.1871,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.19"
+   ],
+   "origin": "search:hurricane weather",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|MIST": {
-   "status": "no candidates"
+   "title": "File:Purekkari neemel.jpg",
+   "final": 0.776,
+   "p": 0.0476,
+   "photo": 0.983,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.05"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|FROST": {
-   "status": "no candidates"
+   "title": "File:Frosty Raftsundet landscape with Trolltindan in afternoon, 2012 October.jpg",
+   "final": 0.864,
+   "p": 0.9656,
+   "photo": 0.8499,
+   "fit": 0.21,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.50)"
+   ],
+   "flags": [
+    "fit 0.21"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|DEW": {
-   "status": "no candidates"
+   "title": "File:5615Mountain Dew in Philippines 04.jpg",
+   "final": 0.783,
+   "p": 0.0002,
+   "photo": 0.9159,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:dew weather",
+   "n_cands": 8,
+   "forced": false
   },
   "weather|HAZE": {
-   "status": "no candidates"
+   "title": "File:Dust Storm Sweeps Through Iraq and Iran (CIRA 2025-05-06).png",
+   "final": 1.112,
+   "p": 0.6554,
+   "photo": 0.9397,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:haze weather",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|CLEAR SKY": {
-   "status": "no candidates"
+   "title": "File:Crystal-Clear Colour (paranal-conjuction2).jpg",
+   "final": 0.697,
+   "p": 0.001,
+   "photo": 0.9838,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:clear sky weather",
+   "n_cands": 7,
+   "forced": false
   },
   "weather|HEAVY RAIN": {
-   "status": "no candidates"
+   "title": "File:Three Days of Heavy Rain For Hawai’i (CIRA 2026-03-23).png",
+   "final": 0.9,
+   "p": 0.3274,
+   "photo": 0.8505,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.33"
+   ],
+   "origin": "search:heavy rain weather",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|GLAD": {
    "title": "File:2026-08-12 face projection during solar eclipse ending.jpg",
@@ -27107,7 +27489,6 @@
   "vehicles|WHEEL",
   "vehicles|WHEELCHAIR",
   "vehicles|YACHT",
-  "weather|BLIZZARD",
   "weather|BREEZE",
   "weather|CLEAR SKY",
   "weather|CLOUD",
@@ -27116,31 +27497,24 @@
   "weather|COOL",
   "weather|COOL SEASON",
   "weather|DEW",
-  "weather|DRIZZLE",
-  "weather|DROUGHT",
   "weather|DRY",
   "weather|FOGGY",
   "weather|FREEZING",
   "weather|FROST",
   "weather|HAIL",
-  "weather|HAZE",
   "weather|HEAT WAVE",
   "weather|HEAVY RAIN",
   "weather|HOT",
-  "weather|HOT SEASON",
   "weather|HUMID",
   "weather|HURRICANE",
   "weather|ICE",
-  "weather|ICICLE",
   "weather|ICY",
   "weather|LIGHTNING",
   "weather|MIST",
   "weather|MONSOON",
-  "weather|PUDDLE",
   "weather|RAIN",
   "weather|RAINDROP",
   "weather|RAINY",
-  "weather|RAINY SEASON",
   "weather|SNOW",
   "weather|SNOWBALL",
   "weather|SNOWFLAKE",
@@ -27149,18 +27523,15 @@
   "weather|STORMY",
   "weather|SUN",
   "weather|SUNRISE",
-  "weather|SUNSET",
-  "weather|SUNSHINE",
   "weather|TEMPERATURE",
   "weather|THERMOMETER",
   "weather|THUNDERSTORM",
   "weather|TYPHOON",
-  "weather|WEATHER FORECAST",
   "weather|WIND"
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1615,
-  "flagged": 1233
+  "with_photo": 1648,
+  "flagged": 1222
  }
 }

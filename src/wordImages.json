@@ -11108,6 +11108,27 @@
   "license": "CC BY-SA 4.0",
   "score": 1.122
  },
+ "weather|BLIZZARD": {
+  "file": "w/weather__blizzard.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Active_Weather_for_the_Central_US_Continues_(CIRA_2024-03-25).png",
+  "author": "GOES imagery: CSU/CIRA & NOAA",
+  "license": "Public domain",
+  "score": 1.29
+ },
+ "weather|BREEZE": {
+  "file": "w/weather__breeze.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Blowing_Dust_Breezes_Across_the_Desert_Southwest_(CIRA_2025-02-27_-_dust_blowingdust_nolabels0).png",
+  "author": "JPSS imagery: CSU/CIRA & NOAA/NESDIS",
+  "license": "Public domain",
+  "score": 0.728
+ },
+ "weather|CLEAR SKY": {
+  "file": "w/weather__clear-sky.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Crystal-Clear_Colour_(paranal-conjuction2).jpg",
+  "author": "P. Horálek /ESO",
+  "license": "CC BY 4.0",
+  "score": 0.697
+ },
  "weather|CLOUD": {
   "file": "w/weather__cloud.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Iridescent_clouds_during_snowfall_1.jpg",
@@ -11128,6 +11149,34 @@
   "author": "Ernst Vikne",
   "license": "CC BY-SA 2.0",
   "score": 0.781
+ },
+ "weather|COOL": {
+  "file": "w/weather__cool.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Two_water_buffaloes_bathing_at_sunset.jpg",
+  "author": "Basile Morin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.797
+ },
+ "weather|DEW": {
+  "file": "w/weather__dew.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:5615Mountain_Dew_in_Philippines_04.jpg",
+  "author": "Judgefloro",
+  "license": "CC0",
+  "score": 0.783
+ },
+ "weather|DRIZZLE": {
+  "file": "w/weather__drizzle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Looking_towards_the_Christmas_market_at_Place_de_l%27universit%C3%A9_from_Rue_des_Wallons_on_a_drizzly_evening_(Louvain_la_Neuve,_Belgium).jpg",
+  "author": "Trougnouf",
+  "license": "CC BY 4.0",
+  "score": 1.106
+ },
+ "weather|DROUGHT": {
+  "file": "w/weather__drought.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:California_Drought-Free_After_a_Quarter-Century_(CIRA_2026-01-08_-_202501092051_n21-snpp-n20_viirs_truecolor_californiadroughtfree_nolabels0).png",
+  "author": "JPSS imagery: CSU/CIRA & NOAA/NESDIS",
+  "license": "Public domain",
+  "score": 1.127
  },
  "weather|DRY": {
   "file": "w/weather__dry.jpg",
@@ -11150,12 +11199,54 @@
   "license": "CC BY-SA 3.0",
   "score": 0.916
  },
+ "weather|FOGGY": {
+  "file": "w/weather__foggy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sch%C3%B6nau_am_K%C3%B6nigssee_(DE),_Priesbergalm_vom_Jenner_--_2024_--_0459.jpg",
+  "author": "Anil Öztas",
+  "license": "CC BY 4.0",
+  "score": 1.001
+ },
+ "weather|FREEZING": {
+  "file": "w/weather__freezing.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_frozen_tree.jpg",
+  "author": "Горбунова М.С.",
+  "license": "CC BY-SA 4.0",
+  "score": 0.932
+ },
+ "weather|FROST": {
+  "file": "w/weather__frost.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Frosty_Raftsundet_landscape_with_Trolltindan_in_afternoon,_2012_October.jpg",
+  "author": "Ximonic (Simo Räsänen)",
+  "license": "CC BY-SA 3.0",
+  "score": 0.864
+ },
  "weather|HAIL": {
   "file": "w/weather__hail.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Granizo.jpg",
   "author": "nssl0001, National Severe Storms Laboratory (NSSL) Collection",
   "license": "Public domain",
   "score": 0.757
+ },
+ "weather|HAZE": {
+  "file": "w/weather__haze.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dust_Storm_Sweeps_Through_Iraq_and_Iran_(CIRA_2025-05-06).png",
+  "author": "JPSS imagery: CSU/CIRA & NOAA/NESDIS",
+  "license": "Public domain",
+  "score": 1.112
+ },
+ "weather|HEAT WAVE": {
+  "file": "w/weather__heat-wave.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_ECOSTRESS_Captures_Short-Lived_Heat_Wave_in_L_A_Area_(PIA26651).jpg",
+  "author": "NASA/JPL-Caltech",
+  "license": "Public domain",
+  "score": 0.853
+ },
+ "weather|HEAVY RAIN": {
+  "file": "w/weather__heavy-rain.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Three_Days_of_Heavy_Rain_For_Hawai%E2%80%99i_(CIRA_2026-03-23).png",
+  "author": "GOES imagery: CSU/CIRA & NOAA",
+  "license": "Public domain",
+  "score": 0.9
  },
  "weather|HOT": {
   "file": "w/weather__hot.jpg",
@@ -11164,6 +11255,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.565
  },
+ "weather|HOT SEASON": {
+  "file": "w/weather__hot-season.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:DFC_4185_Three_whole_fish_sizzling_over_hot_coals_charred_skin_and_smoky_grill_marks_ready_to_be_served.jpg",
+  "author": "PattayaPatrol",
+  "license": "CC BY-SA 4.0",
+  "score": 1.238
+ },
  "weather|HUMID": {
   "file": "w/weather__humid.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg",
@@ -11171,12 +11269,61 @@
   "license": "CC BY-SA 2.0",
   "score": 0.451
  },
+ "weather|HURRICANE": {
+  "file": "w/weather__hurricane.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Global_tropical_cyclone_tracks-edit2.jpg",
+  "author": "Background image: NASA this version: Nilfanion",
+  "license": "Public domain",
+  "score": 0.803
+ },
  "weather|ICE": {
   "file": "w/weather__ice.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Ice_Block,_Canal_Park,_Duluth_(32752478892).jpg",
   "author": "Sharon Mollerus",
   "license": "CC BY 2.0",
   "score": 0.916
+ },
+ "weather|ICICLE": {
+  "file": "w/weather__icicle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Exercise_Joint_Viking_25-_Advanced_Armor_Mobility_Training_(8872778).jpg",
+  "author": "U.S. Marine Corps photo by Sgt. Antonino Mazzamuto",
+  "license": "Public domain",
+  "score": 1.263
+ },
+ "weather|ICY": {
+  "file": "w/weather__icy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Icy_snow_on_a_twig.jpg",
+  "author": "Kritzolina",
+  "license": "CC BY-SA 4.0",
+  "score": 0.858
+ },
+ "weather|LIGHTNING": {
+  "file": "w/weather__lightning.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:0005512-%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%B8%E0%B8%A1%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%88%E0%B8%B0%E0%B9%80%E0%B8%AB%E0%B9%87%E0%B8%99%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%97%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%94.jpg",
+  "author": "Preecha.MJ",
+  "license": "CC BY-SA 4.0",
+  "score": 0.799
+ },
+ "weather|MIST": {
+  "file": "w/weather__mist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Purekkari_neemel.jpg",
+  "author": "Abrget47j",
+  "license": "CC BY-SA 3.0",
+  "score": 0.776
+ },
+ "weather|MONSOON": {
+  "file": "w/weather__monsoon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tiny_house_surrounded_by_trees,_inhabited_in_the_middle_of_green_paddy_fields_in_sunshine_under_a_stormy_sky_at_golden_hour_in_Laos.jpg",
+  "author": "Basile Morin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.852
+ },
+ "weather|PUDDLE": {
+  "file": "w/weather__puddle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Muddy_Puddle_on_a_asphalt_road.jpg",
+  "author": "Adeyinka Ekundayo",
+  "license": "CC BY-SA 4.0",
+  "score": 1.273
  },
  "weather|RAIN": {
   "file": "w/weather__rain.jpg",
@@ -11192,12 +11339,26 @@
   "license": "CC BY-SA 2.5",
   "score": 1.183
  },
+ "weather|RAINDROP": {
+  "file": "w/weather__raindrop.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:242-365_-_My_favorite_weather_-_Flickr_-_olfiika.jpg",
+  "author": "Olga Dudenko from Abakan, Russia",
+  "license": "CC BY-SA 2.0",
+  "score": 0.898
+ },
  "weather|RAINY": {
   "file": "w/weather__rainy.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Hard_rain_on_a_roof.jpg",
   "author": "W.carter",
   "license": "CC0",
   "score": 0.63
+ },
+ "weather|RAINY SEASON": {
+  "file": "w/weather__rainy-season.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mok_Fha_waterfall_in_the_Rainy_season.jpg",
+  "author": "Sakchai Ruankam",
+  "license": "CC BY-SA 4.0",
+  "score": 1.351
  },
  "weather|SNOW": {
   "file": "w/weather__snow.jpg",
@@ -11206,12 +11367,33 @@
   "license": "CC BY-SA 3.0",
   "score": 0.568
  },
+ "weather|SNOWBALL": {
+  "file": "w/weather__snowball.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Proglacial_lacustrine_rhythmitic_argillite_(varvite)_(Konnarock_Formation,_Neoproterozoic,_~750_Ma;_Grassy_Branch_Outcrop_-_Rt._603_roadcut,_Smyth_County,_Virginia,_USA)_10_(30464418931).jpg",
+  "author": "James St. John",
+  "license": "CC BY 2.0",
+  "score": 0.552
+ },
+ "weather|SNOWFLAKE": {
+  "file": "w/weather__snowflake.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Snowflake_on_web_Bytom.jpg",
+  "author": "Adrian Tync",
+  "license": "CC BY 4.0",
+  "score": 0.842
+ },
  "weather|SNOWMAN": {
   "file": "w/weather__snowman.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Snowman_in_Indiana_2014.jpg",
   "author": "GutMaze",
   "license": "CC BY-SA 3.0",
   "score": 1.028
+ },
+ "weather|SNOWY": {
+  "file": "w/weather__snowy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B5_%D1%81%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0%D0%B4_%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC_%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%BC%D0%B5%D1%82%D0%B5%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B5%D0%B9.jpg",
+  "author": "Ted.ns",
+  "license": "CC BY 4.0",
+  "score": 0.833
  },
  "weather|SPRING": {
   "file": "w/weather__spring.jpg",
@@ -11226,6 +11408,13 @@
   "author": "Marianne Johnsen",
   "license": "CC BY-SA 4.0",
   "score": 0.872
+ },
+ "weather|STORMY": {
+  "file": "w/weather__stormy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Porto_Covo_January_2014-10a.jpg",
+  "author": "Alvesgaspar",
+  "license": "CC BY-SA 3.0",
+  "score": 0.949
  },
  "weather|SUMMER": {
   "file": "w/weather__summer.jpg",
@@ -11248,6 +11437,27 @@
   "license": "CC BY-SA 4.0",
   "score": 1.077
  },
+ "weather|SUNRISE": {
+  "file": "w/weather__sunrise.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Santorin_(GR),_Akrotiri,_Leuchtturm_--_2017_--_2553.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.822
+ },
+ "weather|SUNSET": {
+  "file": "w/weather__sunset.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2012-09-14_19-43-26-sunset-seloncourt.jpg",
+  "author": "Thomas Bresson",
+  "license": "CC BY 3.0",
+  "score": 1.171
+ },
+ "weather|SUNSHINE": {
+  "file": "w/weather__sunshine.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Overturned_Sunshine_Furniture_Truck.jpg",
+  "author": "WeatheredAviation",
+  "license": "CC0",
+  "score": 1.113
+ },
  "weather|TEMPERATURE": {
   "file": "w/weather__temperature.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Mercury_Thermometer.jpg",
@@ -11255,12 +11465,26 @@
   "license": "CC BY-SA 3.0",
   "score": 0.811
  },
+ "weather|THERMOMETER": {
+  "file": "w/weather__thermometer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:001_2015_06_08_Messungen.jpg",
+  "author": "Friedrich Haag",
+  "license": "CC BY-SA 4.0",
+  "score": 0.935
+ },
  "weather|THUNDER": {
   "file": "w/weather__thunder.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Lightning_striking_the_Eiffel_Tower_-_NOAA.jpg",
   "author": "Gabriel Loppé",
   "license": "Public domain",
   "score": 0.829
+ },
+ "weather|THUNDERSTORM": {
+  "file": "w/weather__thunderstorm.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:V%C3%A9z%C3%A8re_orage_Reignac.jpg",
+  "author": "Jebulon",
+  "license": "CC0",
+  "score": 0.78
  },
  "weather|TORNADO": {
   "file": "w/weather__tornado.jpg",
@@ -11282,6 +11506,13 @@
   "author": "Peter S",
   "license": "CC BY-SA 2.0",
   "score": 0.983
+ },
+ "weather|WEATHER FORECAST": {
+  "file": "w/weather__weather-forecast.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Harry_Volkman_WGN_TV.jpg",
+  "author": "WGN Radio and Television",
+  "license": "Public domain",
+  "score": 1.256
  },
  "weather|WIND": {
   "file": "w/weather__wind.jpg",

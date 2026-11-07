@@ -6043,101 +6043,109 @@
    "forced": false
   },
   "places|TEMPLE": {
-   "title": "File:พระอุโบสถและศาลาราย2.jpg",
-   "final": 1.279,
-   "p": 0.9758,
-   "photo": 0.8857,
+   "title": "File:Temple with flowering frangipani tree at Ancient City (Muang Boran), Thailand.jpg",
+   "final": 1.315,
+   "p": 0.9627,
+   "photo": 0.9099,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "places|PARK": {
-   "status": "no candidates"
-  },
-  "places|ZOO": {
-   "title": "File:Columbus Zoo - 51284624854.jpg",
-   "final": 1.265,
-   "p": 0.9426,
-   "photo": 0.9636,
+   "title": "File:Halleyparknovember b (cropped).jpg",
+   "final": 1.3,
+   "p": 0.9997,
+   "photo": 0.9986,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "override",
+   "n_cands": 8,
+   "forced": true
+  },
+  "places|ZOO": {
+   "title": "File:Chitra Deers at Bangladesh National Zoo (Axis axis),(2).jpg",
+   "final": 1.293,
+   "p": 0.9986,
+   "photo": 0.9557,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "places|BEACH": {
-   "title": "File:Beach at Fort Lauderdale.jpg",
-   "final": 1.3,
-   "p": 0.9998,
-   "photo": 0.9995,
+   "title": "File:Beach of Cape Fiolent, Crimea.jpg",
+   "final": 1.344,
+   "p": 0.9736,
+   "photo": 0.9622,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "places|FARM": {
-   "title": "File:Agama aculeata in Farm Hingurakgoda (Sri Lanka).jpg",
-   "final": 0.79,
-   "p": 0.0,
-   "photo": 0.9601,
+   "title": "File:Field with barn or animal shelter near Mayor House Farm - geograph.org.uk - 2599089.jpg",
+   "final": 1.271,
+   "p": 0.9823,
+   "photo": 0.9641,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:farm",
-   "n_cands": 5,
+   "flags": [],
+   "origin": "search:farm barn animals",
+   "n_cands": 7,
    "forced": false
   },
   "places|RESTAURANT": {
-   "title": "File:Münster, Aasee, Restaurants -- 2019 -- 3464-8.jpg",
-   "final": 0.785,
-   "p": 0.0,
-   "photo": 0.9929,
+   "title": "File:Barbieri - ViaSophia25668.jpg",
+   "final": 0.713,
+   "p": 0.9998,
+   "photo": 0.0373,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "not photo-like 0.04"
    ],
-   "origin": "search:restaurant",
+   "origin": "current",
+   "n_cands": 8,
+   "forced": true
+  },
+  "places|BANK": {
+   "title": "File:Bank of Montreal, Essex, Ontario, 2025-08-30.jpg",
+   "final": 1.302,
+   "p": 0.9776,
+   "photo": 0.7615,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
    "n_cands": 8,
    "forced": false
   },
-  "places|BANK": {
-   "title": "File:London.bankofengland.arp.jpg",
-   "final": 1.286,
-   "p": 0.9998,
-   "photo": 0.9496,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
   "places|AIRPORT": {
-   "title": "File:Aerial wiew of Los Angeles International Airport, Juy 2022 (2).jpg",
-   "final": 1.264,
+   "title": "File:Weeze, Flughafen -- 2016 -- 2522-8.jpg",
+   "final": 1.284,
    "p": 0.9997,
-   "photo": 0.8912,
+   "photo": 0.9477,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "places|LIBRARY": {
@@ -6150,7 +6158,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:library",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "places|SUPERMARKET": {
@@ -8228,7 +8236,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "places|POLICE STATION": {
@@ -8241,7 +8249,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "places|FIRE STATION": {
@@ -8254,7 +8262,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "places|PHARMACY": {
@@ -8280,7 +8288,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "places|BUS STOP": {
@@ -8306,20 +8314,20 @@
    "notes": [],
    "flags": [],
    "origin": "search:train station",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "places|SWIMMING POOL": {
-   "title": "File:Backyardpool.jpg",
-   "final": 1.308,
-   "p": 1.0,
-   "photo": 0.999,
+   "title": "File:Girl with swimming board.jpg",
+   "final": 1.35,
+   "p": 0.9901,
+   "photo": 0.9098,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "places|SHOPPING MALL": {
@@ -8345,7 +8353,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "places|BAKERY": {
@@ -12160,20 +12168,20 @@
    "notes": [],
    "flags": [],
    "origin": "search:house",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "places|VILLAGE": {
-   "title": "File:Bourton-on-the-Water 2010 PD 09.JPG",
-   "final": 1.189,
-   "p": 0.7802,
-   "photo": 0.9996,
+   "title": "File:Arhbalou High Atlas Al Haouz Morocco Oct25 A7CR 08381.jpg",
+   "final": 1.291,
+   "p": 0.9894,
+   "photo": 0.9971,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "places|CITY": {
@@ -12201,7 +12209,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 10,
    "forced": false
   },
   "places|BRIDGE": {
@@ -12227,7 +12235,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "places|HOTEL": {
@@ -12296,33 +12304,33 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "places|CHURCH": {
-   "title": "File:Husby-Sjuhundra kyrka.jpg",
-   "final": 1.293,
+   "title": "File:Münster, St.-Paulus-Dom, Alter Chor -- 2019 -- 3789-93.jpg",
+   "final": 1.313,
    "p": 0.9998,
-   "photo": 0.96,
+   "photo": 0.8244,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "places|MOSQUE": {
-   "title": "File:Masjid e Nabawi Interior 2.jpg",
-   "final": 1.263,
-   "p": 0.9995,
-   "photo": 0.8184,
+   "title": "File:Mezquita de Nasirolmolk, Shiraz, Irán, 2016-09-24, DD 66-68 HDR.jpg",
+   "final": 1.391,
+   "p": 0.9999,
+   "photo": 0.9998,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "places|PALACE": {
@@ -12343,16 +12351,16 @@
    "forced": false
   },
   "places|CASTLE": {
-   "title": "File:Panorámica Otoño Alcázar de Segovia.jpg",
-   "final": 1.3,
-   "p": 0.9925,
-   "photo": 0.9995,
+   "title": "File:46-233-0009 Svirzh Castle RB.jpg",
+   "final": 1.389,
+   "p": 0.9938,
+   "photo": 0.9721,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "places|TOWER": {
@@ -12365,21 +12373,19 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "places|OFFICE": {
-   "title": "File:West side of Manhattan from Hudson Commons (95103p).jpg",
-   "final": 0.682,
-   "p": 0.0,
-   "photo": 0.9057,
+   "title": "File:(USA) 99 High Street (cool modern interior) Boston Financial District.jpg",
+   "final": 1.115,
+   "p": 0.6916,
+   "photo": 0.9887,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "current",
+   "flags": [],
+   "origin": "search:modern office interior",
    "n_cands": 8,
    "forced": false
   },
@@ -12393,20 +12399,20 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "places|HARBOR": {
-   "title": "File:Jebel Ali Port 2 Imresolt.jpg",
-   "final": 1.187,
-   "p": 0.9205,
-   "photo": 0.9409,
+   "title": "File:Fishing boats in Ano Symi harbor. Greece.jpg",
+   "final": 1.316,
+   "p": 0.9616,
+   "photo": 0.7974,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 6,
    "forced": false
   },
   "places|ISLAND": {
@@ -12421,7 +12427,7 @@
     "low word prob 0.39"
    ],
    "origin": "search:tropical island",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "places|JUNGLE": {
@@ -12434,7 +12440,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "places|FLOATING MARKET": {
@@ -12447,7 +12453,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "places|NIGHT MARKET": {
@@ -12466,16 +12472,16 @@
    "forced": false
   },
   "places|CONVENIENCE STORE": {
-   "title": "File:Convenience store interior.jpg",
-   "final": 1.127,
-   "p": 0.7196,
-   "photo": 0.8263,
+   "title": "File:Convenience Store Shelf, Tokyo 2014.jpg",
+   "final": 1.317,
+   "p": 0.9976,
+   "photo": 0.9695,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "school|CLASSMATE": {
@@ -17539,42 +17545,42 @@
    "forced": false
   },
   "countries|THAILAND": {
-   "title": "File:เจดีย์ประธานทรงปรางค์วัดอรุณ2.jpg",
-   "final": 1.316,
-   "p": 1.0,
-   "photo": 0.9917,
+   "title": "File:The sculptures of two mythical giant demons, Thotsakan and Sahatsadecha, guarding the eastern gate of the main chapel of Wat Arun, Bangkok.jpg",
+   "final": 1.36,
+   "p": 0.9875,
+   "photo": 0.868,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "countries|JAPAN": {
-   "title": "File:View of Mount Fuji from Ōwakudani 20211202.jpg",
-   "final": 1.3,
+   "title": "File:View towards Mount Fuji from Arakurayama Sengen Park in Fujiyoshida, Yamanashi, Japan, 2024 May - 2.jpg",
+   "final": 1.397,
    "p": 1.0,
-   "photo": 0.955,
+   "photo": 0.9994,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "countries|CHINA": {
-   "title": "File:The Great Wall of China at Jinshanling-edit.jpg",
-   "final": 1.304,
+   "title": "File:20090529 Great Wall 8219.jpg",
+   "final": 1.316,
    "p": 1.0,
-   "photo": 0.9948,
+   "photo": 0.997,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "countries|KOREA": {
@@ -17591,42 +17597,42 @@
    "forced": false
   },
   "countries|INDIA": {
-   "title": "File:Taj Mahal (Edited).jpeg",
-   "final": 1.314,
-   "p": 0.9996,
-   "photo": 0.9882,
+   "title": "File:Aks The Reflection Taj Mahal.jpg",
+   "final": 1.377,
+   "p": 0.9991,
+   "photo": 0.9007,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "countries|VIETNAM": {
-   "title": "File:Ha Long Bay in 2019.jpg",
-   "final": 1.318,
+   "title": "File:Cat Ba Island, Vietnam, 20240131 1431 4699.jpg",
+   "final": 1.395,
    "p": 1.0,
-   "photo": 0.9882,
+   "photo": 0.9756,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "countries|LAOS": {
-   "title": "File:Phou si Luang Prabang Laos プーシーの丘 ラオス・ルアンプラバーン DSCF6777.jpg",
-   "final": 1.3,
-   "p": 0.9996,
-   "photo": 0.9991,
+   "title": "File:20171118 Pha That Luang in Vientiane 3174 DxO.jpg",
+   "final": 1.313,
+   "p": 1.0,
+   "photo": 0.9439,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "countries|MYANMAR": {
@@ -17639,20 +17645,20 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "countries|CAMBODIA": {
-   "title": "File:Angkor Wat.jpg",
-   "final": 1.296,
-   "p": 0.9998,
-   "photo": 0.9764,
+   "title": "File:20171126 Angkor Wat 4689 DxO.jpg",
+   "final": 1.301,
+   "p": 0.9991,
+   "photo": 0.9947,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "countries|MALAYSIA": {
@@ -17682,111 +17688,109 @@
    "forced": false
   },
   "countries|AUSTRALIA": {
-   "title": "File:Sydney Opera House 2026.jpg",
-   "final": 1.294,
+   "title": "File:Sydney (AU), Opera House -- 2019 -- 3061-4.jpg",
+   "final": 1.311,
    "p": 1.0,
-   "photo": 0.9579,
+   "photo": 0.9833,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "countries|ENGLAND": {
-   "title": "File:Elizabeth Tower and the north front of the Palace of Westminster, London.jpg",
-   "final": 1.39,
+   "title": "File:Big Ben, Londres, Inglaterra, 2022-11-23, DD 73-75 HDR.jpg",
+   "final": 1.398,
    "p": 1.0,
-   "photo": 0.9922,
+   "photo": 0.9956,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "countries|AMERICA": {
-   "title": "File:Front view of Statue of Liberty (cropped).jpg",
-   "final": 1.398,
+   "title": "File:New York City (New York, USA), Statue of Liberty -- 2012 -- 6673.jpg",
+   "final": 1.4,
    "p": 1.0,
-   "photo": 0.9987,
+   "photo": 0.9992,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "countries|FRANCE": {
-   "title": "File:Louvre Museum Wikimedia Commons.jpg",
-   "final": 1.142,
-   "p": 0.8028,
-   "photo": 0.8076,
+   "title": "File:Reflet-tour-Eiffel-Paris-Luc-Viatour.jpg",
+   "final": 1.398,
+   "p": 0.9999,
+   "photo": 0.9999,
    "fit": 1.0,
    "how": "scene",
-   "notes": [
-    "upscaled x1.5"
-   ],
+   "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "countries|ITALY": {
-   "title": "File:Colosseo 2020.jpg",
-   "final": 1.32,
+   "title": "File:Rom (IT), Kolosseum -- 2024 -- 0610.jpg",
+   "final": 1.389,
    "p": 1.0,
+   "photo": 0.9998,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
+  },
+  "countries|EGYPT": {
+   "title": "File:Great Sphinx of Giza (أبو الهول).jpg",
+   "final": 1.397,
+   "p": 0.999,
    "photo": 0.9995,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "countries|EGYPT": {
-   "title": "File:All Gizah Pyramids.jpg",
-   "final": 1.378,
-   "p": 1.0,
-   "photo": 0.9994,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 4,
    "forced": false
   },
   "countries|BRAZIL": {
-   "title": "File:Christ the Redeemer - Cristo Redentor.jpg",
-   "final": 1.293,
+   "title": "File:Redentor Over Clouds 1.jpg",
+   "final": 1.363,
    "p": 1.0,
-   "photo": 0.9053,
+   "photo": 0.9654,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "countries|WORLD": {
-   "title": "File:Dülmen, Wegkreuz (Coesfelder Straße) -- 2012 -- 3892.jpg",
-   "final": 0.704,
-   "p": 0.0,
-   "photo": 0.997,
-   "fit": 1.0,
+   "title": "File:Person holding world globe.jpg",
+   "final": 1.24,
+   "p": 0.9993,
+   "photo": 0.971,
+   "fit": 0.8,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "touches 1 edge(s)"
    ],
-   "origin": "search:QI",
-   "n_cands": 9,
+   "flags": [],
+   "origin": "search:world globe",
+   "n_cands": 7,
    "forced": false
   },
   "countries|FLAG": {
@@ -20067,7 +20071,17 @@
    "forced": false
   },
   "countries|NETHERLANDS": {
-   "status": "no candidates"
+   "title": "File:The windmills of Kinderdijk.JPG",
+   "final": 1.396,
+   "p": 1.0,
+   "photo": 0.9854,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:Kinderdijk windmills",
+   "n_cands": 7,
+   "forced": false
   },
   "countries|SWITZERLAND": {
    "title": "File:CH.VS.Zermatt Sunnegga Grindjisee Matterhorn 9034 16x9-R 16K.jpg",
@@ -20083,17 +20097,17 @@
    "forced": false
   },
   "countries|GREECE": {
-   "title": "File:Santorin (GR), Ia, Vier Glocken -- 2017 -- 2720-6-2.jpg",
-   "final": 1.337,
+   "title": "File:1000 Three domes of Oia in Santorini Photo by Giles Laurent.jpg",
+   "final": 1.329,
    "p": 1.0,
-   "photo": 0.993,
+   "photo": 0.9642,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
    "origin": "search:QI",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "countries|NORWAY": {
    "title": "File:Seven Sisters LC0187.jpg",
@@ -20161,17 +20175,17 @@
    "forced": false
   },
   "countries|SCOTLAND": {
-   "title": "File:Seagull Edinburgh castle 02.jpg",
-   "final": 1.324,
-   "p": 0.9803,
-   "photo": 0.9847,
+   "title": "File:Edinburgh Castle gate 20211019.jpg",
+   "final": 1.273,
+   "p": 1.0,
+   "photo": 0.9223,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
    "origin": "search:QI",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "countries|BELGIUM": {
    "title": "File:Ayuntamiento, Grand-Place, Bruselas, Bélgica, 2021-12-15, DD 190-192 HDR.jpg",
@@ -28017,7 +28031,7 @@
     "fit 0.56"
    ],
    "origin": "search:QI",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "places|APARTMENT": {
@@ -29403,8 +29417,6 @@
   "colors|TAN",
   "colors|TEAL",
   "colors|VIOLET",
-  "countries|NETHERLANDS",
-  "countries|WORLD",
   "family|AUNT",
   "family|BABY",
   "family|BEST FRIEND",
@@ -29826,16 +29838,13 @@
   "places|CIRCUS",
   "places|CITY",
   "places|CLINIC",
-  "places|FARM",
   "places|FOOD COURT",
   "places|HOSPITAL",
   "places|HOUSE",
   "places|ISLAND",
   "places|MUSEUM",
   "places|NIGHT MARKET",
-  "places|OFFICE",
   "places|PALACE",
-  "places|PARK",
   "places|PARKING LOT",
   "places|RESTAURANT",
   "places|SCHOOL",
@@ -30241,7 +30250,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1893,
-  "flagged": 1091
+  "with_photo": 1895,
+  "flagged": 1086
  }
 }

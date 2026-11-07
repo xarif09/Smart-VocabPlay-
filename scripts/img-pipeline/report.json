@@ -16373,7 +16373,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 5,
    "forced": false
   },
   "opposites|SMALL": {
@@ -16399,7 +16399,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:tall giraffe",
-   "n_cands": 3,
+   "n_cands": 4,
    "forced": false
   },
   "opposites|SHORT": {
@@ -16413,7 +16413,7 @@
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:short and tall",
+   "origin": "search:short tall",
    "n_cands": 6,
    "forced": false
   },
@@ -16442,7 +16442,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:cheetah running",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "opposites|SLOW": {
@@ -16483,7 +16483,7 @@
     "low word prob 0.00"
    ],
    "origin": "current",
-   "n_cands": 5,
+   "n_cands": 4,
    "forced": false
   },
   "opposites|NEW": {
@@ -16528,41 +16528,42 @@
    "notes": [],
    "flags": [],
    "origin": "search:young child",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "opposites|HAPPY": {
-   "title": "File:A happy child.jpg",
-   "final": 1.112,
-   "p": 0.9988,
-   "photo": 0.9628,
-   "fit": 0.64,
+   "title": "File:Woman lifting child during daytime.jpg",
+   "final": 1.161,
+   "p": 0.9934,
+   "photo": 0.949,
+   "fit": 0.657,
    "how": "yolo:person",
    "notes": [
-    "touches 2 edge(s)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.64"
+    "fit 0.66"
    ],
    "origin": "search:happy child",
    "n_cands": 6,
    "forced": false
   },
   "opposites|SAD": {
-   "title": "File:Crying-girl.jpg",
-   "final": 0.794,
-   "p": 0.9861,
-   "photo": 0.5551,
-   "fit": 0.181,
+   "title": "File:Sad feeling of a child.jpg",
+   "final": 0.953,
+   "p": 0.6738,
+   "photo": 0.9989,
+   "fit": 0.653,
    "how": "yolo:person",
    "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.59)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.18"
+    "fit 0.65"
    ],
-   "origin": "current",
+   "origin": "search:sad child",
    "n_cands": 8,
    "forced": false
   },
@@ -16591,7 +16592,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "opposites|WET": {
@@ -16624,7 +16625,7 @@
     "fit 0.37"
    ],
    "origin": "search:dry cracked earth",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "opposites|FULL": {
@@ -16641,17 +16642,17 @@
    "forced": false
   },
   "opposites|EMPTY": {
-   "title": "File:An empty box - geograph.org.uk - 5871457.jpg",
-   "final": 0.699,
+   "title": "File:Dülmen, Haus Osthoff -- 2012 -- 8846.jpg",
+   "final": 0.799,
    "p": 0.0,
-   "photo": 0.9937,
+   "photo": 0.9952,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:empty box",
+   "origin": "search:empty glass",
    "n_cands": 8,
    "forced": false
   },
@@ -16710,7 +16711,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:child slide going down",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "opposites|IN": {
@@ -16741,19 +16742,19 @@
     "fit 0.38"
    ],
    "origin": "search:exit sign out",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|LEFT": {
-   "title": "File:UK No Turn Left Sign - geograph.org.uk - 6296640.jpg",
-   "final": 1.108,
-   "p": 0.6481,
-   "photo": 0.9181,
+   "title": "File:Left Turn Only Sign, Old Upper Thomson Road.jpg",
+   "final": 1.157,
+   "p": 0.7281,
+   "photo": 0.9646,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "search:turn left sign",
+   "origin": "search:turn left arrow sign",
    "n_cands": 8,
    "forced": false
   },
@@ -16799,7 +16800,7 @@
    ],
    "flags": [],
    "origin": "search:rear view car",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|NEAR": {
@@ -16814,7 +16815,7 @@
     "low word prob 0.04"
    ],
    "origin": "search:close up",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|FAR": {
@@ -16898,7 +16899,7 @@
     "fit 0.64"
    ],
    "origin": "search:soft toy",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "opposites|LOUD": {
@@ -16919,18 +16920,18 @@
    "forced": false
   },
   "opposites|QUIET": {
-   "title": "File:Baraboo Public Library.jpg",
-   "final": 0.658,
+   "title": "File:Do not disturb seals or fall off cliff Godrevy Cornwall 03.jpg",
+   "final": 0.687,
    "p": 0.0,
-   "photo": 0.791,
+   "photo": 0.8549,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:quiet library",
-   "n_cands": 8,
+   "origin": "search:finger on lips quiet",
+   "n_cands": 7,
    "forced": false
   },
   "opposites|EASY": {
@@ -16945,22 +16946,24 @@
     "not photo-like 0.03"
    ],
    "origin": "search:easy",
-   "n_cands": 8,
+   "n_cands": 10,
    "forced": false
   },
   "opposites|DIFFICULT": {
-   "title": "File:“The Rock” PT Competition (4673217).jpg",
-   "final": 0.643,
+   "title": "File:“The Rock” PT Competition (4673211).jpg",
+   "final": 0.568,
    "p": 0.0,
-   "photo": 0.6912,
-   "fit": 1.0,
+   "photo": 0.8968,
+   "fit": 0.773,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [
     "low word prob 0.00"
    ],
    "origin": "search:rock climbing difficult",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "opposites|RICH": {
@@ -16978,7 +16981,7 @@
     "fit 0.25"
    ],
    "origin": "search:gold coins treasure",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|POOR": {
@@ -17030,13 +17033,15 @@
    "forced": false
   },
   "opposites|THICK": {
-   "title": "File:Thick-billed Flowerpecker by Tisha Mukherjee 04.jpg",
-   "final": 0.684,
+   "title": "File:Mønsted kalkgruber exposure fused 2014-07-18.jpg",
+   "final": 0.575,
    "p": 0.0,
-   "photo": 0.9077,
-   "fit": 1.0,
+   "photo": 0.8114,
+   "fit": 0.823,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [
     "low word prob 0.00"
    ],
@@ -17045,51 +17050,50 @@
    "forced": false
   },
   "opposites|THIN": {
-   "title": "File:Maurice brazil prendergast may party125347).jpg",
-   "final": -0.117,
-   "p": 0.0005,
-   "photo": 0.0,
-   "fit": 0.834,
+   "title": "File:Greenwood Pottery Company, Illustrated Catalogue MET 268949.jpg",
+   "final": 0.023,
+   "p": 0.0,
+   "photo": 0.9891,
+   "fit": 0.15,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 4 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.61)"
    ],
    "flags": [
     "low word prob 0.00",
-    "not photo-like 0.00"
+    "fit 0.15"
    ],
-   "origin": "search:thin pencil",
+   "origin": "search:thin book",
    "n_cands": 7,
    "forced": false
   },
   "opposites|SWEET": {
-   "title": "File:Candy kitten sweet aug 21.jpg",
-   "final": 1.039,
-   "p": 0.9711,
-   "photo": 0.917,
-   "fit": 0.498,
+   "title": "File:Sweets displayed inside a candy shop, Verona - 2026-09-12.jpg",
+   "final": 1.193,
+   "p": 0.9999,
+   "photo": 0.4256,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.83)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.50"
+    "not photo-like 0.43"
    ],
    "origin": "search:candy sweets",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "opposites|SOUR": {
-   "title": "File:P1030323.JPG",
-   "final": 1.336,
-   "p": 0.9998,
-   "photo": 0.9794,
+   "title": "File:Citronnier au champ GIE 18 Safar de Thiès 02.jpg",
+   "final": 1.399,
+   "p": 0.9999,
+   "photo": 0.9975,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:sour lemon",
+   "n_cands": 8,
    "forced": false
   },
   "opposites|SAME": {
@@ -17153,20 +17157,18 @@
    "forced": false
   },
   "time|WEDNESDAY": {
-   "title": "File:\"Closed Wednesday\" sign, Belfast - geograph.org.uk - 2267815.jpg",
-   "final": 0.704,
-   "p": 0.9901,
-   "photo": 0.0153,
+   "title": "File:Zack Greinke on July 29, 2009.jpg",
+   "final": 0.761,
+   "p": 0.0005,
+   "photo": 0.8076,
    "fit": 1.0,
    "how": "scene",
-   "notes": [
-    "upscaled x1.5"
-   ],
+   "notes": [],
    "flags": [
-    "not photo-like 0.02"
+    "low word prob 0.00"
    ],
-   "origin": "search:Wednesday sign",
-   "n_cands": 5,
+   "origin": "search:Wednesday",
+   "n_cands": 6,
    "forced": false
   },
   "time|THURSDAY": {
@@ -17269,7 +17271,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:spring flowers",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "time|APRIL": {
@@ -17288,33 +17290,33 @@
    "forced": false
   },
   "time|MAY": {
-   "title": "File:Bloemknoppen van een Crocosmia. 25-06-2024. (d.j.b) 02.jpg",
-   "final": 0.799,
-   "p": 0.0,
-   "photo": 0.9931,
+   "title": "File:Paris - The Eiffel Tower in spring - 2307.jpg",
+   "final": 0.806,
+   "p": 0.0139,
+   "photo": 0.9642,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.01"
    ],
-   "origin": "search:flowers",
+   "origin": "search:spring flowers May",
    "n_cands": 5,
    "forced": false
   },
   "time|JUNE": {
-   "title": "File:Rainy Season Floods in the Sahel (15374).jpg",
-   "final": 0.679,
-   "p": 0.0007,
-   "photo": 0.8863,
+   "title": "File:Children Using Nature’s Umbrella During the Rainy Season.jpg",
+   "final": 0.832,
+   "p": 0.1992,
+   "photo": 0.997,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.20"
    ],
-   "origin": "search:rainy season",
-   "n_cands": 6,
+   "origin": "search:rainy season umbrella",
+   "n_cands": 7,
    "forced": false
   },
   "time|JULY": {
@@ -17329,7 +17331,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:summer",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "time|AUGUST": {
@@ -17344,21 +17346,21 @@
     "low word prob 0.00"
    ],
    "origin": "search:summer",
-   "n_cands": 6,
+   "n_cands": 4,
    "forced": false
   },
   "time|SEPTEMBER": {
-   "title": "File:Matanaka - Granary, Privy & Schoolhouse.jpg",
-   "final": 0.683,
-   "p": 0.0,
-   "photo": 0.9141,
+   "title": "File:Sky Soldiers Take Their Children To Their First Day of School (7981914).jpg",
+   "final": 0.699,
+   "p": 0.0001,
+   "photo": 0.9915,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:back to school",
+   "origin": "search:first day of school children",
    "n_cands": 6,
    "forced": false
   },
@@ -17418,8 +17420,8 @@
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:calendar today",
-   "n_cands": 9,
+   "origin": "search:today calendar",
+   "n_cands": 8,
    "forced": false
   },
   "time|TOMORROW": {
@@ -17439,10 +17441,10 @@
    "forced": false
   },
   "time|YESTERDAY": {
-   "title": "File:1922-1927 journal - DPLA - 69e947751bb6bdae75c36e99a014c61a (page 69).jpg",
-   "final": 0.641,
-   "p": 0.0009,
-   "photo": 0.6586,
+   "title": "File:1922-1927 journal - DPLA - 69e947751bb6bdae75c36e99a014c61a (page 39).jpg",
+   "final": 0.627,
+   "p": 0.0042,
+   "photo": 0.5485,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
@@ -17450,7 +17452,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:calendar torn page",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "time|MORNING": {
@@ -17463,7 +17465,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:morning sunrise",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "time|AFTERNOON": {
@@ -17495,49 +17497,47 @@
    "forced": false
   },
   "time|NIGHT": {
-   "title": "File:Savault Chapel Under Milky Way BLS.jpg",
-   "final": 1.144,
-   "p": 0.8153,
-   "photo": 0.9809,
+   "title": "File:The Moon shining in the night sky.jpg",
+   "final": 1.299,
+   "p": 1.0,
+   "photo": 0.9969,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:night sky moon",
+   "n_cands": 8,
    "forced": false
   },
   "time|WEEK": {
-   "title": "File:O Bharat the bilingual weekly newspaper run by Govind Pundalik Hegde Desai in Goa(2).jpg",
-   "final": 0.679,
+   "title": "File:Weekly Calendar MET DP229742.jpg",
+   "final": 0.467,
+   "p": 0.0007,
+   "photo": 0.9137,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "check safety 0.60"
+   ],
+   "origin": "search:weekly calendar",
+   "n_cands": 8,
+   "forced": false
+  },
+  "time|MONTH": {
+   "title": "File:Second laps after the Simchat Torah holiday at the Western Wall.jpg",
+   "final": 0.674,
    "p": 0.0,
-   "photo": 0.8971,
+   "photo": 0.8655,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:weekly calendar",
-   "n_cands": 9,
-   "forced": false
-  },
-  "time|MONTH": {
-   "title": "File:Lamtaa (Lamtā), a lunar month of the classical Meitei calendar of Ancient Kangleipak (early Manipur).jpg",
-   "final": 0.1,
-   "p": 0.0001,
-   "photo": 0.0,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [
-    "upscaled x1.4"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.00"
-   ],
-   "origin": "search:calendar month",
-   "n_cands": 4,
+   "origin": "search:wall calendar month",
+   "n_cands": 6,
    "forced": false
   },
   "time|YEAR": {
@@ -17642,7 +17642,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:weekend park family",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "countries|THAILAND": {
@@ -23693,33 +23693,33 @@
    "forced": false
   },
   "time|NOON": {
-   "title": "File:Near Noon Sun - geograph.org.uk - 2487654.jpg",
-   "final": 0.734,
-   "p": 0.001,
-   "photo": 0.9873,
+   "title": "File:Midday sun - geograph.org.uk - 6713329.jpg",
+   "final": 0.742,
+   "p": 0.0781,
+   "photo": 0.5624,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.08"
    ],
-   "origin": "search:noon sun",
-   "n_cands": 6,
+   "origin": "search:midday sun",
+   "n_cands": 7,
    "forced": false
   },
   "time|MIDNIGHT": {
-   "title": "File:Nathorst glacier, Svalbard, at midnight sun.jpg",
-   "final": 0.697,
-   "p": 0.0,
-   "photo": 0.9859,
+   "title": "File:Glacier Bay Entrance Night Sky with Aurora and Moon (53943226099).jpg",
+   "final": 0.732,
+   "p": 0.0209,
+   "photo": 0.9964,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.02"
    ],
-   "origin": "search:midnight",
-   "n_cands": 5,
+   "origin": "search:night sky stars moon",
+   "n_cands": 6,
    "forced": false
   },
   "time|DAY": {
@@ -23732,22 +23732,22 @@
    "notes": [],
    "flags": [],
    "origin": "search:daytime",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "time|CALENDAR": {
-   "title": "File:Hooded wall clock with calendar MET 204019.jpg",
-   "final": 0.432,
+   "title": "File:Collectie het Utrechts Archief; Nederlandse Spoorwegen; 165659.jpg",
+   "final": 0.433,
    "p": 0.0,
-   "photo": 0.9089,
+   "photo": 0.9131,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:wall calendar",
-   "n_cands": 6,
+   "origin": "search:desk calendar",
+   "n_cands": 7,
    "forced": false
   },
   "time|HOURGLASS": {
@@ -23799,18 +23799,18 @@
    "forced": false
   },
   "time|BEDTIME": {
-   "title": "File:Dial a bedtime story - Moxy New Orleans.jpg",
-   "final": 0.696,
-   "p": 0.0,
-   "photo": 0.9779,
+   "title": "File:Cuddle.jpg",
+   "final": 1.253,
+   "p": 1.0,
+   "photo": 0.7807,
    "fit": 1.0,
    "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "upscaled x1.5"
    ],
-   "origin": "search:bedtime story",
-   "n_cands": 5,
+   "flags": [],
+   "origin": "search:child sleeping teddy",
+   "n_cands": 7,
    "forced": false
   },
   "time|DAYTIME": {
@@ -23840,7 +23840,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:new year",
-   "n_cands": 3,
+   "n_cands": 4,
    "forced": false
   },
   "time|SONGKRAN": {
@@ -23933,7 +23933,7 @@
     "low word prob 0.01"
    ],
    "origin": "search:father's day",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "time|CHILDREN'S DAY": {
@@ -23965,32 +23965,31 @@
    "forced": false
   },
   "time|VALENTINE'S DAY": {
-   "title": "File:Hearts-of-mars.jpg",
-   "final": 1.253,
-   "p": 0.98,
-   "photo": 0.9996,
+   "title": "File:Scarlet Red Roses.jpg",
+   "final": 1.342,
+   "p": 0.9819,
+   "photo": 0.9982,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "search:Valentine's Day hearts",
-   "n_cands": 7,
+   "origin": "search:red roses heart",
+   "n_cands": 8,
    "forced": false
   },
   "time|PARTY": {
-   "title": "File:Costume Contest Eeyores Birthday Austin Texas 2023.jpg",
-   "final": 0.729,
-   "p": 0.0149,
-   "photo": 0.4967,
+   "title": "File:Münster, Montgolfiade (an den Aaseewiesen) -- 2019 -- 9668 (crop).jpg",
+   "final": 0.829,
+   "p": 0.1393,
+   "photo": 0.9963,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.01",
-    "not photo-like 0.50"
+    "low word prob 0.14"
    ],
-   "origin": "search:birthday party children",
-   "n_cands": 6,
+   "origin": "search:party balloons",
+   "n_cands": 5,
    "forced": false
   },
   "time|EARLY": {
@@ -24009,32 +24008,30 @@
    "forced": false
   },
   "time|LATE": {
-   "title": "File:Greyhound Racing 2 amk.jpg",
-   "final": 0.697,
-   "p": 0.0249,
-   "photo": 0.7971,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.02"
-   ],
-   "origin": "search:late running",
-   "n_cands": 7,
-   "forced": false
-  },
-  "time|SEASON": {
-   "title": "File:009 Greater flamingos male and female in the Camargue during mating season Photo by Giles Laurent.jpg",
-   "final": 0.798,
-   "p": 0.0,
-   "photo": 0.9985,
+   "title": "File:-Astronomical clock- (3684419967).jpg",
+   "final": 0.717,
+   "p": 0.0002,
+   "photo": 0.9887,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:seasons",
+   "origin": "search:running late clock",
+   "n_cands": 6,
+   "forced": false
+  },
+  "time|SEASON": {
+   "title": "File:Yellow leaves floating next to water volcano, Alameda dos Oceanos, Parque das Nações, Lisbon, Portugal julesvernex2.jpg",
+   "final": 1.356,
+   "p": 0.9644,
+   "photo": 0.9995,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:autumn leaves",
    "n_cands": 6,
    "forced": false
   },
@@ -28874,21 +28871,15 @@
    "forced": false
   },
   "opposites|ON": {
-   "title": "File:Energy Arc (central electrode of a Plasma Lamp).jpg",
-   "final": 0.937,
-   "p": 0.4558,
-   "photo": 0.9919,
-   "fit": 0.668,
+   "title": "File:Cricklade, Solitary lamp switched on well before normal time by rapidly darkening skies - geograph.org.uk - 5443127.jpg",
+   "final": 1.152,
+   "p": 0.7276,
+   "photo": 0.9419,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.46",
-    "fit 0.67"
-   ],
-   "origin": "search:lamp on",
+   "notes": [],
+   "flags": [],
+   "origin": "search:lamp switched on",
    "n_cands": 9,
    "forced": false
   },
@@ -28904,7 +28895,7 @@
    ],
    "flags": [],
    "origin": "search:lamp off",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "opposites|ABOVE": {
@@ -28918,7 +28909,7 @@
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:bird above",
+   "origin": "search:bird flying above",
    "n_cands": 7,
    "forced": false
   },
@@ -28937,7 +28928,7 @@
     "fit 0.42"
    ],
    "origin": "search:below",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "opposites|INSIDE": {
@@ -28969,18 +28960,18 @@
    "forced": false
   },
   "opposites|HIGH": {
-   "title": "File:Cesenatico - Porto Canale (2023).jpg",
-   "final": 0.742,
-   "p": 0.0003,
-   "photo": 0.9037,
+   "title": "File:Hong Kong skyscrapers in a night of typhoon.jpg",
+   "final": 0.759,
+   "p": 0.0008,
+   "photo": 0.7937,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:high up",
-   "n_cands": 8,
+   "origin": "search:skyscraper",
+   "n_cands": 7,
    "forced": false
   },
   "opposites|LOW": {
@@ -28997,7 +28988,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:low table",
-   "n_cands": 6,
+   "n_cands": 4,
    "forced": false
   },
   "opposites|WIDE": {
@@ -29247,20 +29238,20 @@
    "forced": false
   },
   "opposites|STRAIGHT": {
-   "title": "File:In a straight line - geograph.org.uk - 6968711.jpg",
-   "final": 0.608,
-   "p": 0.0271,
-   "photo": 0.9931,
-   "fit": 0.75,
+   "title": "File:Straight Line - geograph.org.uk - 2173561.jpg",
+   "final": 0.646,
+   "p": 0.0384,
+   "photo": 0.9678,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "tiny subject"
+    "touches 1 edge(s)"
    ],
    "flags": [
-    "low word prob 0.03"
+    "low word prob 0.04"
    ],
    "origin": "search:straight line",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "opposites|DEEP": {
@@ -29945,7 +29936,6 @@
   "opposites|NEAR",
   "opposites|NEW",
   "opposites|OLD",
-  "opposites|ON",
   "opposites|OUT",
   "opposites|QUIET",
   "opposites|RICH",
@@ -30176,7 +30166,6 @@
   "time|AFTERNOON",
   "time|APRIL",
   "time|AUGUST",
-  "time|BEDTIME",
   "time|BIRTHDAY",
   "time|CALENDAR",
   "time|DAYTIME",
@@ -30203,7 +30192,6 @@
   "time|OCTOBER",
   "time|PARTY",
   "time|SATURDAY",
-  "time|SEASON",
   "time|SEPTEMBER",
   "time|SUNDAY",
   "time|TEACHER'S DAY",
@@ -30385,6 +30373,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1902,
-  "flagged": 1083
+  "flagged": 1080
  }
 }

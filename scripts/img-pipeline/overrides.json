@@ -1,0 +1,2293 @@
+{
+ "colors|RED": {
+  "queries": [
+   "red apple",
+   "red balloons"
+  ]
+ },
+ "colors|BLUE": {
+  "queries": [
+   "blue balloons",
+   "blue door"
+  ]
+ },
+ "colors|GREEN": {
+  "queries": [
+   "green leaf",
+   "green apples"
+  ]
+ },
+ "colors|YELLOW": {
+  "queries": [
+   "yellow lemons",
+   "yellow balloons"
+  ]
+ },
+ "colors|PURPLE": {
+  "queries": [
+   "purple grapes",
+   "purple flowers"
+  ]
+ },
+ "colors|ORANGE": {
+  "queries": [
+   "orange balloons",
+   "orange pumpkin"
+  ]
+ },
+ "colors|PINK": {
+  "queries": [
+   "pink flamingo",
+   "pink balloons"
+  ]
+ },
+ "colors|BROWN": {
+  "queries": [
+   "brown teddy bear",
+   "brown leaves autumn"
+  ]
+ },
+ "colors|BLACK": {
+  "queries": [
+   "black cat",
+   "black balloons"
+  ],
+  "skip": true
+ },
+ "colors|WHITE": {
+  "queries": [
+   "white swan",
+   "white eggs"
+  ]
+ },
+ "colors|GRAY": {
+  "queries": [
+   "grey elephant",
+   "grey stones"
+  ]
+ },
+ "colors|GOLD": {
+  "queries": [
+   "gold coins",
+   "gold trophy"
+  ]
+ },
+ "colors|SILVER": {
+  "queries": [
+   "silver spoons",
+   "silver coins"
+  ]
+ },
+ "colors|LIGHT BLUE": {
+  "queries": [
+   "light blue sky",
+   "light blue balloons"
+  ]
+ },
+ "colors|DARK GREEN": {
+  "queries": [
+   "dark green leaves",
+   "dark green forest"
+  ]
+ },
+ "colors|BEIGE": {
+  "queries": [
+   "beige sand dunes",
+   "beige fabric"
+  ],
+  "skip": true
+ },
+ "colors|TURQUOISE": {
+  "queries": [
+   "turquoise sea water",
+   "turquoise stone"
+  ]
+ },
+ "colors|VIOLET": {
+  "queries": [
+   "violet flowers",
+   "African violet"
+  ]
+ },
+ "colors|NAVY": {
+  "queries": [
+   "navy blue uniform",
+   "navy blue fabric"
+  ],
+  "skip": true
+ },
+ "colors|DARK BLUE": {
+  "queries": [
+   "dark blue sea",
+   "dark blue car"
+  ]
+ },
+ "colors|LIGHT GREEN": {
+  "queries": [
+   "light green leaves",
+   "lime fruit"
+  ]
+ },
+ "colors|DARK RED": {
+  "queries": [
+   "dark red roses",
+   "dark red cherries"
+  ]
+ },
+ "colors|LIGHT PINK": {
+  "queries": [
+   "light pink roses",
+   "cherry blossom"
+  ]
+ },
+ "colors|HOT PINK": {
+  "queries": [
+   "bougainvillea hot pink flowers",
+   "pink dragon fruit"
+  ]
+ },
+ "colors|DARK BROWN": {
+  "queries": [
+   "coffee beans",
+   "dark chocolate"
+  ]
+ },
+ "colors|LIGHT BROWN": {
+  "queries": [
+   "light brown puppy",
+   "bread loaf"
+  ]
+ },
+ "colors|LIGHT GRAY": {
+  "queries": [
+   "light grey pebbles",
+   "grey kitten"
+  ],
+  "skip": true
+ },
+ "colors|DARK GRAY": {
+  "queries": [
+   "dark grey storm clouds",
+   "slate rock"
+  ]
+ },
+ "colors|SKY BLUE": {
+  "queries": [
+   "clear blue sky",
+   "sky blue"
+  ]
+ },
+ "colors|LIME GREEN": {
+  "queries": [
+   "lime green frog",
+   "lime green leaves"
+  ]
+ },
+ "colors|MAROON": {
+  "queries": [
+   "maroon fabric",
+   "maroon car"
+  ],
+  "skip": true
+ },
+ "colors|CREAM": {
+  "queries": [
+   "cream colored roses",
+   "cream colored"
+  ]
+ },
+ "colors|IVORY": {
+  "queries": [
+   "ivory white roses",
+   "ivory colored"
+  ]
+ },
+ "colors|TAN": {
+  "queries": [
+   "tan leather shoes",
+   "tan puppy"
+  ]
+ },
+ "colors|LAVENDER": {
+  "queries": [
+   "lavender field",
+   "lavender flowers"
+  ]
+ },
+ "colors|MAGENTA": {
+  "queries": [
+   "magenta flowers",
+   "magenta orchid"
+  ]
+ },
+ "colors|CYAN": {
+  "queries": [
+   "cyan water",
+   "cyan colored"
+  ],
+  "skip": true
+ },
+ "colors|TEAL": {
+  "queries": [
+   "teal ceramic vase",
+   "teal door"
+  ]
+ },
+ "colors|AQUA": {
+  "queries": [
+   "swimming pool water",
+   "aqua colored"
+  ],
+  "skip": true
+ },
+ "colors|CRIMSON": {
+  "queries": [
+   "crimson roses",
+   "crimson"
+  ]
+ },
+ "colors|SCARLET": {
+  "queries": [
+   "scarlet macaw",
+   "scarlet ibis"
+  ]
+ },
+ "colors|BRONZE": {
+  "queries": [
+   "bronze medal",
+   "bronze bell"
+  ]
+ },
+ "colors|COPPER": {
+  "queries": [
+   "copper pots",
+   "copper kettle"
+  ],
+  "skip": true
+ },
+ "colors|INDIGO": {
+  "queries": [
+   "indigo dyed fabric",
+   "indigo"
+  ],
+  "skip": true
+ },
+ "colors|AMBER": {
+  "queries": [
+   "amber gemstone",
+   "amber jewelry"
+  ]
+ },
+ "colors|MUSTARD YELLOW": {
+  "queries": [
+   "mustard yellow fabric",
+   "mustard yellow"
+  ]
+ },
+ "colors|CHARCOAL": {
+  "queries": [
+   "charcoal briquettes",
+   "charcoal grey"
+  ],
+  "skip": true
+ },
+ "colors|BURGUNDY": {
+  "queries": [
+   "burgundy wine glass",
+   "burgundy color"
+  ]
+ },
+ "colors|ROYAL BLUE": {
+  "queries": [
+   "royal blue fabric",
+   "royal blue"
+  ],
+  "skip": true
+ },
+ "colors|BABY BLUE": {
+  "queries": [
+   "baby blue blanket",
+   "baby blue"
+  ]
+ },
+ "colors|NEON GREEN": {
+  "queries": [
+   "neon green",
+   "neon green sign"
+  ]
+ },
+ "colors|PASTEL COLORS": {
+  "queries": [
+   "pastel macarons",
+   "pastel colored houses"
+  ]
+ },
+ "colors|DARK PURPLE": {
+  "queries": [
+   "eggplant",
+   "dark purple flowers"
+  ],
+  "skip": true
+ },
+ "colors|LIGHT PURPLE": {
+  "queries": [
+   "lilac flowers",
+   "light purple flowers"
+  ],
+  "skip": true
+ },
+ "colors|SALMON PINK": {
+  "queries": [
+   "salmon pink roses",
+   "salmon fillet"
+  ]
+ },
+ "shapes|CIRCLE": {
+  "queries": [
+   "round wall clock",
+   "coins"
+  ]
+ },
+ "shapes|SQUARE": {
+  "queries": [
+   "square tiles",
+   "square window"
+  ]
+ },
+ "shapes|TRIANGLE": {
+  "queries": [
+   "triangle warning road sign",
+   "triangular sandwich"
+  ]
+ },
+ "shapes|STAR": {
+  "queries": [
+   "starfish",
+   "star shaped cookies"
+  ]
+ },
+ "shapes|RECTANGLE": {
+  "queries": [
+   "rectangular window",
+   "red brick"
+  ]
+ },
+ "shapes|OVAL": {
+  "queries": [
+   "oval mirror",
+   "rugby ball"
+  ]
+ },
+ "shapes|DIAMOND": {
+  "queries": [
+   "diamond shaped road sign",
+   "kite flying diamond"
+  ]
+ },
+ "shapes|PENTAGON": {
+  "queries": [
+   "pentagonal",
+   "pentagon shaped"
+  ]
+ },
+ "shapes|HEXAGON": {
+  "queries": [
+   "honeycomb",
+   "hexagonal tiles"
+  ]
+ },
+ "shapes|CUBE": {
+  "queries": [
+   "Rubik's cube",
+   "dice"
+  ]
+ },
+ "shapes|CRESCENT": {
+  "queries": [
+   "crescent moon sky",
+   "croissant"
+  ]
+ },
+ "shapes|HEPTAGON": {
+  "queries": [
+   "50 pence coin",
+   "heptagonal"
+  ]
+ },
+ "shapes|DECAGON": {
+  "queries": [
+   "decagonal",
+   "decagon"
+  ]
+ },
+ "shapes|SPHERE": {
+  "queries": [
+   "glass sphere ball",
+   "crystal ball"
+  ]
+ },
+ "shapes|CONE": {
+  "queries": [
+   "traffic cone",
+   "ice cream cone"
+  ]
+ },
+ "shapes|CYLINDER": {
+  "queries": [
+   "tin can",
+   "cylinder"
+  ]
+ },
+ "shapes|HEMISPHERE": {
+  "queries": [
+   "igloo",
+   "half sphere dome"
+  ]
+ },
+ "shapes|SEMICIRCLE": {
+  "queries": [
+   "semicircular window",
+   "half moon window"
+  ]
+ },
+ "shapes|QUARTER CIRCLE": {
+  "queries": [
+   "pizza slice",
+   "quarter circle"
+  ]
+ },
+ "shapes|PARALLELOGRAM": {
+  "queries": [
+   "parallelogram",
+   "parallelogram shape"
+  ]
+ },
+ "shapes|TRAPEZOID": {
+  "queries": [
+   "trapezoid",
+   "trapezoid table"
+  ]
+ },
+ "shapes|RHOMBUS": {
+  "queries": [
+   "rhombus tiles",
+   "rhombus"
+  ]
+ },
+ "shapes|ZIGZAG": {
+  "queries": [
+   "zigzag road",
+   "zigzag pattern"
+  ]
+ },
+ "shapes|CROSS": {
+  "queries": [
+   "red cross sign",
+   "Swiss flag"
+  ]
+ },
+ "shapes|CURVE": {
+  "queries": [
+   "curved road",
+   "curve"
+  ]
+ },
+ "shapes|DOT": {
+  "queries": [
+   "ladybug",
+   "red dot"
+  ]
+ },
+ "shapes|WAVY LINE": {
+  "queries": [
+   "wavy sand ripples",
+   "wavy lines"
+  ]
+ },
+ "shapes|DOTTED LINE": {
+  "queries": [
+   "dotted line road marking",
+   "dotted line"
+  ]
+ },
+ "shapes|DIAGONAL LINE": {
+  "queries": [
+   "diagonal stripes",
+   "diagonal lines"
+  ]
+ },
+ "shapes|CHECKMARK": {
+  "queries": [
+   "check mark",
+   "tick mark"
+  ]
+ },
+ "shapes|STRIPES": {
+  "queries": [
+   "zebra stripes",
+   "striped shirt"
+  ]
+ },
+ "shapes|POLKA DOTS": {
+  "queries": [
+   "polka dot fabric",
+   "polka dots"
+  ]
+ },
+ "shapes|CHECKERED": {
+  "queries": [
+   "checkerboard",
+   "checkered tablecloth"
+  ]
+ },
+ "shapes|GRID": {
+  "queries": [
+   "graph paper",
+   "grid paper"
+  ]
+ },
+ "shapes|ANGLE": {
+  "queries": [
+   "set square",
+   "right angle"
+  ]
+ },
+ "shapes|CORNER": {
+  "queries": [
+   "room corner",
+   "street corner"
+  ]
+ },
+ "shapes|SQUIGGLE": {
+  "queries": [
+   "squiggle",
+   "squiggly line"
+  ]
+ },
+ "shapes|TUBE": {
+  "queries": [
+   "toothpaste tube",
+   "cardboard tube"
+  ]
+ },
+ "shapes|PATTERN": {
+  "queries": [
+   "colorful fabric pattern",
+   "pattern"
+  ]
+ },
+ "shapes|OUTLINE": {
+  "queries": [
+   "silhouette",
+   "outline"
+  ]
+ },
+ "shapes|WEDGE": {
+  "queries": [
+   "cheese wedge",
+   "door wedge"
+  ]
+ },
+ "shapes|EDGE": {
+  "queries": [
+   "table edge",
+   "cliff edge"
+  ]
+ },
+ "shapes|MAZE": {
+  "queries": [
+   "hedge maze",
+   "maze"
+  ]
+ },
+ "shapes|KNOT": {
+  "queries": [
+   "rope knot",
+   "reef knot rope"
+  ]
+ },
+ "shapes|SHAPE": {
+  "queries": [
+   "shape sorter toy",
+   "geometric shapes toy"
+  ]
+ },
+ "shapes|FRAME": {
+  "queries": [
+   "picture frame",
+   "empty picture frame"
+  ]
+ },
+ "shapes|SYMMETRY": {
+  "queries": [
+   "butterfly symmetry",
+   "symmetrical butterfly"
+  ]
+ },
+ "shapes|LINE": {
+  "queries": [
+   "straight road line",
+   "line"
+  ]
+ },
+ "shapes|ARROW": {
+  "queries": [
+   "arrow road marking",
+   "arrow sign"
+  ]
+ },
+ "numbers|ZERO": {
+  "queries": [
+   "empty plate",
+   "number 0"
+  ]
+ },
+ "numbers|ONE": {
+  "queries": [
+   "single red apple",
+   "one apple"
+  ],
+  "skip": true
+ },
+ "numbers|TWO": {
+  "queries": [
+   "two apples",
+   "two eggs"
+  ]
+ },
+ "numbers|THREE": {
+  "queries": [
+   "three apples",
+   "three balls"
+  ]
+ },
+ "numbers|FOUR": {
+  "queries": [
+   "four apples",
+   "four eggs"
+  ]
+ },
+ "numbers|FIVE": {
+  "queries": [
+   "five apples",
+   "five fingers hand"
+  ]
+ },
+ "numbers|SIX": {
+  "queries": [
+   "six eggs carton",
+   "six apples"
+  ]
+ },
+ "numbers|SEVEN": {
+  "queries": [
+   "seven apples",
+   "house number 7"
+  ]
+ },
+ "numbers|EIGHT": {
+  "queries": [
+   "eight eggs",
+   "house number 8"
+  ],
+  "skip": true
+ },
+ "numbers|NINE": {
+  "queries": [
+   "house number 9",
+   "nine balls"
+  ]
+ },
+ "numbers|TEN": {
+  "queries": [
+   "ten fingers",
+   "house number 10"
+  ],
+  "skip": true
+ },
+ "numbers|THIRTY": {
+  "queries": [
+   "house number 30",
+   "speed limit 30 sign"
+  ]
+ },
+ "numbers|SIXTY": {
+  "queries": [
+   "house number 60",
+   "speed limit 60 sign"
+  ]
+ },
+ "numbers|SEVENTY": {
+  "queries": [
+   "house number 70",
+   "speed limit 70 sign"
+  ],
+  "skip": true
+ },
+ "numbers|EIGHTY": {
+  "queries": [
+   "house number 80",
+   "speed limit 80 sign"
+  ],
+  "skip": true
+ },
+ "numbers|NINETY": {
+  "queries": [
+   "house number 90",
+   "speed limit 90 sign"
+  ],
+  "skip": true
+ },
+ "numbers|THIRTEEN": {
+  "queries": [
+   "house number 13",
+   "number 13"
+  ]
+ },
+ "numbers|FOURTEEN": {
+  "queries": [
+   "house number 14",
+   "number 14"
+  ],
+  "skip": true
+ },
+ "numbers|SIXTEEN": {
+  "queries": [
+   "house number 16",
+   "number 16"
+  ],
+  "skip": true
+ },
+ "numbers|SEVENTEEN": {
+  "queries": [
+   "house number 17",
+   "number 17"
+  ]
+ },
+ "numbers|EIGHTEEN": {
+  "queries": [
+   "house number 18",
+   "number 18"
+  ],
+  "skip": true
+ },
+ "numbers|NINETEEN": {
+  "queries": [
+   "house number 19",
+   "number 19"
+  ],
+  "skip": true
+ },
+ "numbers|MILLION": {
+  "queries": [
+   "pile of coins",
+   "lots of coins"
+  ]
+ },
+ "numbers|THOUSAND": {
+  "queries": [
+   "number 1000",
+   "1000 sign"
+  ]
+ },
+ "food|JUICE": {
+  "queries": [
+   "glass of orange juice",
+   "fruit juice glass"
+  ]
+ },
+ "clothes|CAP": {
+  "queries": [
+   "baseball cap",
+   "cap hat"
+  ]
+ },
+ "countries|NETHERLANDS": {
+  "queries": [
+   "Kinderdijk windmills",
+   "Dutch windmill"
+  ]
+ },
+ "technology|EMOJI": {
+  "queries": [
+   "emoji cushions",
+   "smiley face balloon"
+  ]
+ },
+ "weather|COOL SEASON": {
+  "queries": [
+   "misty mountain morning Thailand",
+   "Doi Inthanon fog"
+  ]
+ },
+ "toys|SANDCASTLE": {
+  "queries": [
+   "sandcastle beach",
+   "sand castle"
+  ]
+ },
+ "toys|GLOW STICK": {
+  "queries": [
+   "glow sticks",
+   "glowsticks"
+  ]
+ },
+ "animals|DOG": {
+  "file": "File:Human–canine friendship - girl hugging her dog tightly at golden hour in Laos.jpg"
+ },
+ "animals|COW": {
+  "file": "File:Cow female black white.jpg"
+ },
+ "animals|MOUSE": {
+  "file": "File:Домовая мышь (Mus musculus), Москва.jpg"
+ },
+ "animals|CROCODILE": {
+  "file": "File:Mugger crocodile (Crocodylus palustris) Gal Oya.jpg"
+ },
+ "animals|SPIDER": {
+  "file": "File:Araneus diadematus (Clerck, 1757).JPG"
+ },
+ "animals|REINDEER": {
+  "file": "File:Reinbukken på frisk grønt beite. - panoramio.jpg"
+ },
+ "animals|SEAL": {
+  "file": "File:Common seal (Phoca vitulina) 2.jpg"
+ },
+ "animals|GIRAFFE": {
+  "file": "File:Giraffe Ithala KZN South Africa Luca Galuzzi 2004.JPG"
+ },
+ "animals|CHEETAH": {
+  "file": "File:Male cheetah facing left in South Africa.jpg"
+ },
+ "animals|MOOSE": {
+  "file": "File:Alaska moose.jpg"
+ },
+ "animals|ROOSTER": {
+  "file": "File:Male and female chicken sitting together.jpg"
+ },
+ "animals|FLAMINGO": {
+  "file": "File:Chilean flamingo at the Hoenderdaell animal park in Anna Paulowna 1.jpg"
+ },
+ "animals|PEACOCK": {
+  "file": "File:Peacock at Heaton Park Animal Centre - geograph.org.uk - 4787456.jpg"
+ },
+ "animals|SHRIMP": {
+  "file": "File:A heap of shrimp shells on a plate in Tuntorp 1.jpg"
+ },
+ "animals|SCORPION": {
+  "file": "File:Androctonus bicolor.jpg"
+ },
+ "animals|SWAN": {
+  "file": "File:CygneVaires.jpg"
+ },
+ "animals|KITTEN": {
+  "file": "File:Juvenile Ragdoll.jpg"
+ },
+ "animals|DRAGONFLY": {
+  "file": "File:Red grasshawk (Neurothemis fluctuans) male Phuket 2.jpg"
+ },
+ "animals|GRASSHOPPER": {
+  "file": "File:American Bird Grasshopper.jpg"
+ },
+ "fruits|MELON": {
+  "file": "File:A hami melon for sale at a Publix market in Knoxville, Tennessee.jpg"
+ },
+ "fruits|BREADFRUIT": {
+  "file": "File:Breadfruit at fruit store in Brisbane, 2021.jpg"
+ },
+ "fruits|PRUNE": {
+  "file": "File:Prune de 200.jpg"
+ },
+ "fruits|DRIED MANGO": {
+  "file": "File:Dried mango pineapple and melon.jpg"
+ },
+ "fruits|TANGERINE": {
+  "file": "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2666.jpg"
+ },
+ "fruits|SUGARCANE": {
+  "file": "File:Red Sugarcane.jpg"
+ },
+ "fruits|GRAPE": {
+  "file": "File:Pinot Grigio-20201027-RM-114053.jpg"
+ },
+ "food|CHEESE": {
+  "file": "File:Schmelzkäse-1.jpg"
+ },
+ "food|CANDY": {
+  "file": "File:Pastel Peppermint Candy Buttons by Andie's Specialty Sweets IMG 3169.JPG"
+ },
+ "food|BUTTER": {
+  "file": "File:Švédský koláč naruby 904 (cropped).JPG"
+ },
+ "food|SALT": {
+  "file": "File:Salt-crystals.jpg"
+ },
+ "food|POPCORN": {
+  "file": "File:Bowl of Popcorn (Unsplash).jpg"
+ },
+ "food|HONEY": {
+  "file": "File:Runny hunny.jpg"
+ },
+ "food|CEREAL": {
+  "file": "File:NCI Visuals Food Meal Breakfast.jpg"
+ },
+ "food|WAFFLE": {
+  "file": "File:Waffles with Strawberries.jpg"
+ },
+ "food|SAUSAGE": {
+  "file": "File:JP 日本 Japan 沖繩 OKINAWA 那霸 Naha 安里 Asato Hewitt Resort Naha Okinawa Hotel 自助早餐 breakfast buffet food restaurant 腸仔 grilled sausage February 2026 N13P 06.jpg"
+ },
+ "food|KETCHUP": {
+  "file": "File:Ketchup 20160918 181342 (cropped).jpg"
+ },
+ "food|BACON": {
+  "queries": [
+   "bacon strips",
+   "fried bacon"
+  ]
+ },
+ "vegetables|SPRING ONION": {
+  "file": "File:CSA-Red-Spring-Onions.jpg"
+ },
+ "vegetables|STRAW MUSHROOM": {
+  "file": "File:StrawMushroom.jpg"
+ },
+ "vegetables|CASSAVA": {
+  "file": "File:PeeLawPeeNam Cassava root Yuca Manioc.jpg"
+ },
+ "vegetables|LEEK": {
+  "file": "File:Leek on a white background.png"
+ },
+ "vegetables|LUFFA": {
+  "file": "File:Luffa acutangula vegetable 019.jpg"
+ },
+ "vegetables|MINT": {
+  "file": "File:CSA-Chocolate-Mint.jpg"
+ },
+ "vegetables|DILL": {
+  "queries": [
+   "dill herb",
+   "fresh dill"
+  ]
+ },
+ "vegetables|ENOKI": {
+  "queries": [
+   "enoki mushrooms",
+   "Flammulina enoki"
+  ]
+ },
+ "vegetables|BEANS": {
+  "queries": [
+   "green beans",
+   "string beans"
+  ]
+ },
+ "school|BOOK": {
+  "file": "File:Latin dictionary.jpg"
+ },
+ "school|MARKER": {
+  "file": "File:Felt Tip.jpg"
+ },
+ "school|PAINT": {
+  "file": "File:Multicolored tempera paints.jpg"
+ },
+ "school|PAINTBRUSH": {
+  "file": "File:Transparent Paintbrush.png"
+ },
+ "school|CHAIR": {
+  "file": "File:Set of fourteen side chairs MET DP110780.jpg"
+ },
+ "school|CLASSMATE": {
+  "file": "File:Head, Shoulders, Knees and Toes.jpg"
+ },
+ "school|PRINCIPAL": {
+  "file": "File:A high school principal shows off a newly-built classroom at Hayesville High School in North Carolina.jpg"
+ },
+ "school|STICKER": {
+  "file": "File:Sticker mule custom stickers.jpg"
+ },
+ "school|CHALK": {
+  "file": "File:Chalk on sidewalk in Park Slope (02730).jpg"
+ },
+ "school|TEXTBOOK": {
+  "file": "File:A tower of used books - 8443.jpg"
+ },
+ "school|DESK": {
+  "file": "File:Bureau table MET DP108643.jpg"
+ },
+ "school|PAPER": {
+  "file": "File:Paper 450x450.jpg"
+ },
+ "school|THUMBTACK": {
+  "file": "File:Red thumbtack (2814122833).jpg"
+ },
+ "school|HIGHLIGHTER": {
+  "queries": [
+   "highlighter pens",
+   "highlighter marker"
+  ]
+ },
+ "school|FOLDER": {
+  "queries": [
+   "file folders office",
+   "paper folder"
+  ]
+ },
+ "school|ENGLISH": {
+  "queries": [
+   "alphabet blocks",
+   "ABC letters toy"
+  ]
+ },
+ "body|GUMS": {
+  "file": "File:Lao woman chewing paan.jpg"
+ },
+ "body|CHIN": {
+  "file": "File:Queenie Chong Chin Yee (DSCF0718).jpg"
+ },
+ "body|HEAD": {
+  "queries": [
+   "boy head portrait",
+   "child portrait face"
+  ]
+ },
+ "body|THIGH": {
+  "queries": [
+   "athlete legs thigh",
+   "cyclist legs"
+  ]
+ },
+ "body|FIST": {
+  "queries": [
+   "clenched fist hand",
+   "fist bump"
+  ]
+ },
+ "body|PALM": {
+  "queries": [
+   "open palm hand",
+   "palm of the hand"
+  ]
+ },
+ "body|CHEST": {
+  "queries": [
+   "doctor stethoscope child chest",
+   "stethoscope on chest"
+  ]
+ },
+ "body|STOMACH": {
+  "queries": [
+   "child belly",
+   "pregnant belly"
+  ]
+ },
+ "body|NECK": {
+  "queries": [
+   "giraffe neck",
+   "woman neck scarf"
+  ]
+ },
+ "body|LIPS": {
+  "queries": [
+   "smiling lips",
+   "red lips"
+  ]
+ },
+ "body|SKIN": {
+  "queries": [
+   "skin of hand close-up",
+   "human skin texture"
+  ]
+ },
+ "body|SHOULDER": {
+  "queries": [
+   "shoulder",
+   "child on father's shoulders"
+  ]
+ },
+ "body|KNEE": {
+  "queries": [
+   "knee",
+   "child knee bandage"
+  ]
+ },
+ "body|TEETH": {
+  "queries": [
+   "smiling teeth child",
+   "toothy smile"
+  ]
+ },
+ "body|MUSTACHE": {
+  "queries": [
+   "man with moustache portrait",
+   "mustache"
+  ]
+ },
+ "body|HIP": {
+  "queries": [
+   "hands on hips",
+   "hip"
+  ]
+ },
+ "body|THROAT": {
+  "queries": [
+   "doctor checking throat",
+   "sore throat"
+  ]
+ },
+ "body|LUNGS": {
+  "queries": [
+   "lungs anatomical model",
+   "lung model"
+  ]
+ },
+ "body|RIBS": {
+  "queries": [
+   "rib cage skeleton model",
+   "ribs skeleton"
+  ]
+ },
+ "body|JAW": {
+  "queries": [
+   "jaw bone model",
+   "jaw"
+  ]
+ },
+ "body|CHEEK": {
+  "queries": [
+   "child cheek",
+   "rosy cheeks child"
+  ]
+ },
+ "body|TOE": {
+  "queries": [
+   "toes feet",
+   "bare toes"
+  ]
+ },
+ "body|WRIST": {
+  "queries": [
+   "wristwatch on wrist",
+   "wrist"
+  ]
+ },
+ "body|BODY": {
+  "queries": [
+   "child standing full body",
+   "human body"
+  ]
+ },
+ "body|LEG": {
+  "queries": [
+   "legs walking",
+   "child legs running"
+  ]
+ },
+ "body|ARM": {
+  "queries": [
+   "arm",
+   "child arm raised"
+  ]
+ },
+ "body|FINGER": {
+  "queries": [
+   "pointing finger",
+   "index finger"
+  ]
+ },
+ "body|FOREHEAD": {
+  "queries": [
+   "forehead",
+   "child forehead"
+  ]
+ },
+ "body|EYEBROW": {
+  "queries": [
+   "eyebrow",
+   "eyebrows close-up"
+  ]
+ },
+ "body|TOOTHACHE": {
+  "queries": [
+   "toothache",
+   "person with toothache"
+  ]
+ },
+ "body|HEADACHE": {
+  "queries": [
+   "headache",
+   "person with headache"
+  ]
+ },
+ "clothes|BLOUSE": {
+  "file": "File:Slightly business casual Informal wear - pose 1.jpg",
+  "exclude": [
+   "File:Wolford bodysuit blouses in faux wrap and high-waisted styles - Variant 1.jpg",
+   "File:Wolford bodysuit blouses in faux wrap and high-waisted styles - Variant 2.jpg",
+   "File:Wolford Cosmopolitan bodysuit and tights - without blouse insert - version 1 - modelled by Anastasia Voloshina.jpg",
+   "File:Wolford Cosmopolitan bodysuit and tights - without blouse insert - version 2 - modelled by Anastasia Voloshina.jpg",
+   "File:Calvin Klein underwear and Kunert Raffinesse Net tights in the colour powder and a blouse - light-footed pose.jpg",
+   "File:Dirndl backside with often to find decorative seams.jpg",
+   "File:Wolford Cosmopolitan bodysuit and tights - modelled by Anastasia Voloshina.jpg",
+   "File:Slightly business casual Informal wear - pose 2 with fishnet tights.jpg",
+   "File:Slightly business casual Informal wear - possible look underneath - pose 2.jpg"
+  ]
+ },
+ "clothes|HIGH HEELS": {
+  "file": "File:High-heeled shoes on display in Huangpu, Shanghai (20180211145140).jpg"
+ },
+ "clothes|MASK": {
+  "file": "File:Surgical face mask.jpg"
+ },
+ "clothes|JACKET": {
+  "file": "File:Jacket2-1.jpg"
+ },
+ "clothes|UNDERWEAR": {
+  "file": "File:Boxers.jpg",
+  "exclude": [
+   "File:Bodysuit worn with sheer tights (pantyhose) and Shirt worn with opaque tights - variant with street clothing.jpg",
+   "File:Tier 3 protective clothing MOD 45153081.jpg",
+   "File:Tier Two of the Pelvic Protection Clothing MOD 45153076.jpg",
+   "File:Tier Two of the Pelvic Protection Clothing MOD 45153077.jpg",
+   "File:Tier Two of the Pelvic Protection Clothing MOD 45153078.jpg",
+   "File:Tier3 of the Pelveic Protective Clothing System MOD 45153029.jpg",
+   "File:Tier Two of the Pelvic Protection Clothing MOD 45153077 2.jpg",
+   "File:Canadian forest industries 1911 (1911) (20501270756).jpg"
+  ]
+ },
+ "clothes|SHORTS": {
+  "queries": [
+   "child shorts clothing",
+   "khaki shorts"
+  ],
+  "exclude": [
+   "File:Red short shorts.jpg",
+   "File:HK SKD TKO Tseung Kwan O PopCorn Shopping Mall void sports demo visitors in sport clothing shorts n tee-shirts October 2025 N13P 01.jpg",
+   "File:HK SKD TKO Tseung Kwan O PopCorn Shopping Mall void sports demo visitors in sport clothing shorts n tee-shirts October 2025 N13P 02.jpg",
+   "File:Boxers.jpg",
+   "File:Fetish clothing - blue PVC shorts and top 2.jpg",
+   "File:Fetish clothing - blue PVC shorts and top 3.jpg",
+   "File:Fetish clothing - blue PVC shorts and top 4.jpg",
+   "File:Fetish clothing - blue PVC shorts and top 1.jpg"
+  ]
+ },
+ "clothes|SWIMSUIT": {
+  "queries": [
+   "child swimsuit swimming pool",
+   "kids swimming costume"
+  ],
+  "exclude": [
+   "File:Swimsuit open boobs.jpg",
+   "File:An Iranian poses in her swimsuit at a beach in the 1960s.jpg",
+   "File:Wanda Hendrix pin-up in Leopard swimsuit 1954.jpg",
+   "File:Apasra Hongsakula, in swimsuit on pool ladder.jpg",
+   "File:Kindai Mahjong Swimsuit Festival (September 30, 2026)IMG 0611.jpg",
+   "File:Missy Robinson - Swimsuit.jpg",
+   "File:Kindai Mahjong Swimsuit Festival (September 22, 2024)IMG 5246.jpg",
+   "File:Oriental girl swimsuit.jpg"
+  ]
+ },
+ "clothes|BIKINI": {
+  "queries": [
+   "two-piece swimsuit on hanger",
+   "bikini swimwear product"
+  ],
+  "exclude": [
+   "File:Young women of Naples in swimsuit, Italy 1948.jpg",
+   "File:Young women of Naples in swimsuit, Italy 1948 (cropped).jpg",
+   "File:Young women of Naples in swimsuit, Italy 1948 (2) - Bathing boxes.jpg",
+   "File:Young women of Naples in swimsuit, Italy 1948 (2) - Bathing boxes (cropped).jpg",
+   "File:Rossana Podestà 1956.jpg",
+   "File:Young Neapolitan women swimsuit competition - Naples, Italy 1950s.jpg",
+   "File:Rossana Podestà 1956c.jpg"
+  ]
+ },
+ "clothes|HEADBAND": {
+  "queries": [
+   "headband hair accessory",
+   "girl headband"
+  ],
+  "exclude": [
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 10.JPG",
+   "File:The Pima Indians - pg 152b.png",
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 11.JPG",
+   "File:The Pima Indians - pg 152a.png",
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 3.JPG",
+   "File:Lawung Dayak.jpg",
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 5.JPG",
+   "File:Umqhele.jpg",
+   "File:13-08-09 Taubertal Jennifer Rostock Jennifer 1.JPG",
+   "File:Lady in Traditional Attire with Beaded Headband.jpg"
+  ]
+ },
+ "clothes|JEANS": {
+  "queries": [
+   "blue jeans folded",
+   "denim jeans"
+  ]
+ },
+ "nature|ROCK": {
+  "file": "File:Fallen boulder beside Dumbarton Rock - geograph.org.uk - 2302520.jpg"
+ },
+ "nature|HILL": {
+  "file": "File:Uliveti monte cinto.JPG"
+ },
+ "nature|SEA": {
+  "file": "File:Spring Lake, New Jersey Beach at Sunrise.jpg"
+ },
+ "nature|EARTH": {
+  "file": "File:NASA-Apollo8-Dec24-Earthrise.jpg"
+ },
+ "nature|TWIG": {
+  "file": "File:20210131 twig withBuds coveredByIce DSC05404 PtrQs.jpg"
+ },
+ "nature|DESERT": {
+  "file": "File:Rub al Khali 002.JPG"
+ },
+ "nature|MUD": {
+  "file": "File:2003-11-27 Northerner boots in mud.jpg"
+ },
+ "nature|SKY": {
+  "file": "File:Cirrus uncinus clouds in the morning sky.jpg"
+ },
+ "nature|STONE": {
+  "file": "File:Pebble Dash (15366562092).jpg"
+ },
+ "places|PARK": {
+  "file": "File:Halleyparknovember b (cropped).jpg"
+ },
+ "places|RESTAURANT": {
+  "file": "File:Barbieri - ViaSophia25668.jpg"
+ },
+ "places|FARM": {
+  "queries": [
+   "farm barn animals",
+   "farmhouse with cows"
+  ]
+ },
+ "places|OFFICE": {
+  "queries": [
+   "modern office interior",
+   "office workers desks"
+  ]
+ },
+ "countries|SCOTLAND": {
+  "file": "File:Edinburgh Castle gate 20211019.jpg"
+ },
+ "countries|GREECE": {
+  "file": "File:1000 Three domes of Oia in Santorini Photo by Giles Laurent.jpg"
+ },
+ "countries|PAKISTAN": {
+  "file": "File:Northern facade of Badshahi mosque.JPG"
+ },
+ "countries|WORLD": {
+  "queries": [
+   "The Blue Marble",
+   "world globe"
+  ]
+ },
+ "home|BED": {
+  "file": "File:Canopy bed of Amantaka Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg"
+ },
+ "home|SOFA": {
+  "file": "File:2009-05-16 Main office lobby at Hampton Forest Apartments.jpg"
+ },
+ "home|BATH": {
+  "file": "File:Clawfoot bathtub.jpg"
+ },
+ "home|PLATE": {
+  "file": "File:Piece of chocolate cake on a white plate decorated with chocolate sauce.jpg"
+ },
+ "home|PAN": {
+  "file": "File:Pan frying sausages.jpg"
+ },
+ "home|BOTTLE": {
+  "file": "File:Bouteille.jpg"
+ },
+ "home|BOOKSHELF": {
+  "file": "File:Interior of Bibliothèque Mazarine 003.JPG"
+ },
+ "home|PILLOW": {
+  "file": "File:Pillows on a hotel bed.jpg"
+ },
+ "home|MIRROR": {
+  "queries": [
+   "bathroom mirror",
+   "wall mirror"
+  ]
+ },
+ "home|BEDROOM": {
+  "queries": [
+   "children's bedroom",
+   "modern bedroom interior"
+  ]
+ },
+ "vehicles|BIKE": {
+  "file": "File:Left side of Flying Pigeon.jpg"
+ },
+ "vehicles|TRUCK": {
+  "file": "File:Steam Whistle Mack truck 20110613-IMG 3584.JPG"
+ },
+ "vehicles|HELICOPTER": {
+  "file": "File:VH-SUF Taking Off.jpg"
+ },
+ "vehicles|SHIP": {
+  "file": "File:Rhapsody (ship, 1996), Sète cf01.jpg"
+ },
+ "vehicles|SUBMARINE": {
+  "file": "File:US Navy 040730-N-1234E-002 PCU Virginia (SSN 774) returns to the General Dynamics Electric Boat shipyard.jpg"
+ },
+ "vehicles|VAN": {
+  "file": "File:2018 Ford Transit Custom 300 Base 2.0 facelift.jpg"
+ },
+ "vehicles|WHEEL": {
+  "file": "File:Wheel of car.jpg"
+ },
+ "vehicles|WHEELCHAIR": {
+  "file": "File:Man in wheelchair with AFO braces and crutches b.jpg"
+ },
+ "vehicles|STROLLER": {
+  "file": "File:Baby pram.jpg"
+ },
+ "vehicles|CARGO SHIP": {
+  "file": "File:2023-05-20 AMALIE - IMO 9163702.jpg"
+ },
+ "vehicles|YACHT": {
+  "file": "File:Triplete, Zadar (P1080748).jpg"
+ },
+ "vehicles|JET": {
+  "file": "File:105 Polish Air Force MiG-29A Fulcrum ILA Berlin 2016 10.jpg"
+ },
+ "vehicles|SKYTRAIN": {
+  "file": "File:Bangkok BTS 01.jpg"
+ },
+ "vehicles|HELMET": {
+  "file": "File:Bicycle Helmet 0085.jpg"
+ },
+ "vehicles|TUK-TUK": {
+  "file": "File:Bajaj auto-rickshaw in Sri Lanka.jpg"
+ },
+ "sports|BASKETBALL": {
+  "file": "File:USA vs. China Mens Basketball - Beijing 2008 Olympic Games (2751923597).jpg"
+ },
+ "sports|BASEBALL": {
+  "file": "File:Tommy Milone gives up a home run to Mike Trout on May 21, 2017.jpg"
+ },
+ "sports|TEAM": {
+  "file": "File:Canadian sports team on the Clyde Walkway - geograph.org.uk - 4122206.jpg"
+ },
+ "sports|COACH": {
+  "file": "File:SFU head coach Steve Hanson with his 2023-2024 team.jpg"
+ },
+ "sports|WHISTLE": {
+  "file": "File:Pea Whistle.jpg"
+ },
+ "sports|NET": {
+  "file": "File:Volleyball net on Skegness Beach - geograph.org.uk - 3800125.jpg"
+ },
+ "sports|GOAL": {
+  "file": "File:Football goal on a misty morning - geograph.org.uk - 7275275.jpg"
+ },
+ "sports|PUSH-UP": {
+  "file": "File:Push up al la traditionnelle.jpg"
+ },
+ "sports|DIVING": {
+  "file": "File:Underwater photograph of a recreational scuba diver in Playa del Carmen 2006.jpg"
+ },
+ "sports|ARCHERY": {
+  "file": "File:Taymon Tokyo.jpg"
+ },
+ "sports|JUDO": {
+  "file": "File:Sara Mäntykenttä Nordic Judo Championship 2026 Four Gold Medals.jpg"
+ },
+ "sports|ROWING": {
+  "file": "File:Rowing training, Sète 04.jpg"
+ },
+ "sports|FISHING": {
+  "file": "File:Stilts fishermen Sri Lanka 02.jpg"
+ },
+ "sports|SNOWBOARDING": {
+  "file": "File:Team U S competes in advanced alpine skiing, snowboarding slalom run (8868883).jpg"
+ },
+ "sports|SPORTS DAY": {
+  "queries": [
+   "school sports day children race",
+   "sports day"
+  ]
+ },
+ "sports|SIT-UP": {
+  "queries": [
+   "sit-ups exercise",
+   "crunches exercise"
+  ]
+ },
+ "feelings|HAPPY": {
+  "queries": [
+   "happy smiling child",
+   "laughing girl"
+  ]
+ },
+ "feelings|SAD": {
+  "queries": [
+   "sad child crying",
+   "sad boy"
+  ],
+  "skip": true
+ },
+ "feelings|SCARED": {
+  "queries": [
+   "frightened child",
+   "scared girl"
+  ]
+ },
+ "feelings|TIRED": {
+  "queries": [
+   "tired child yawning",
+   "exhausted child sleeping on desk"
+  ]
+ },
+ "feelings|HUNGRY": {
+  "queries": [
+   "child eating hungrily",
+   "hungry boy eating"
+  ]
+ },
+ "feelings|SURPRISED": {
+  "queries": [
+   "surprised child face open mouth",
+   "astonished child"
+  ],
+  "skip": true
+ },
+ "feelings|EXCITED": {
+  "queries": [
+   "excited children cheering",
+   "excited kids jumping"
+  ]
+ },
+ "feelings|BORED": {
+  "queries": [
+   "bored child",
+   "bored student desk"
+  ],
+  "skip": true
+ },
+ "feelings|SHY": {
+  "queries": [
+   "shy child hiding",
+   "shy girl smiling"
+  ],
+  "skip": true
+ },
+ "feelings|NERVOUS": {
+  "queries": [
+   "nervous child biting nails",
+   "nervous girl"
+  ]
+ },
+ "feelings|SLEEPY": {
+  "queries": [
+   "sleepy child yawning",
+   "yawning baby"
+  ]
+ },
+ "feelings|CALM": {
+  "queries": [
+   "child meditating",
+   "calm girl relaxing"
+  ],
+  "skip": true
+ },
+ "feelings|LONELY": {
+  "queries": [
+   "lonely child sitting alone",
+   "alone boy bench"
+  ]
+ },
+ "feelings|BRAVE": {
+  "queries": [
+   "child climbing wall brave",
+   "child superhero costume"
+  ]
+ },
+ "feelings|WORRIED": {
+  "queries": [
+   "worried child face",
+   "worried girl"
+  ]
+ },
+ "feelings|CONFUSED": {
+  "queries": [
+   "confused child scratching head",
+   "puzzled boy"
+  ]
+ },
+ "feelings|SILLY": {
+  "queries": [
+   "child making funny face",
+   "silly face kids"
+  ]
+ },
+ "feelings|GRUMPY": {
+  "queries": [
+   "grumpy child frowning",
+   "pouting child"
+  ]
+ },
+ "feelings|CURIOUS": {
+  "queries": [
+   "child with magnifying glass",
+   "curious child looking"
+  ]
+ },
+ "feelings|THANKFUL": {
+  "queries": [
+   "child giving thank you card",
+   "grateful hug"
+  ],
+  "skip": true
+ },
+ "feelings|SORRY": {
+  "queries": [
+   "child apologizing hug",
+   "sad sorry child"
+  ],
+  "skip": true
+ },
+ "feelings|HURT": {
+  "queries": [
+   "child with bandage on knee",
+   "plaster on child's knee"
+  ],
+  "skip": true
+ },
+ "feelings|FULL": {
+  "queries": [
+   "child full after eating",
+   "empty plate after meal child"
+  ],
+  "skip": true
+ },
+ "feelings|COLD": {
+  "queries": [
+   "child shivering snow",
+   "child in winter hat scarf"
+  ],
+  "skip": true
+ },
+ "feelings|HOT": {
+  "queries": [
+   "child sweating sun",
+   "hot day child water"
+  ],
+  "skip": true
+ },
+ "feelings|GLAD": {
+  "queries": [
+   "glad smiling woman",
+   "happy smiling man"
+  ],
+  "skip": true
+ },
+ "feelings|JOYFUL": {
+  "queries": [
+   "joyful children running",
+   "joyful girl jumping"
+  ]
+ },
+ "feelings|CHEERFUL": {
+  "queries": [
+   "cheerful child smiling",
+   "cheerful girl"
+  ],
+  "skip": true
+ },
+ "feelings|UPSET": {
+  "queries": [
+   "upset child crying",
+   "upset boy"
+  ],
+  "skip": true
+ },
+ "feelings|FRUSTRATED": {
+  "queries": [
+   "frustrated student homework",
+   "frustrated man"
+  ],
+  "skip": true
+ },
+ "feelings|JEALOUS": {
+  "queries": [
+   "jealous child sibling",
+   "jealous girl"
+  ],
+  "skip": true
+ },
+ "feelings|EMBARRASSED": {
+  "queries": [
+   "embarrassed child covering face",
+   "blushing girl"
+  ]
+ },
+ "feelings|DISAPPOINTED": {
+  "queries": [
+   "disappointed child",
+   "disappointed football fans"
+  ]
+ },
+ "feelings|RELAXED": {
+  "queries": [
+   "relaxed person hammock",
+   "relaxing in hammock"
+  ],
+  "skip": true
+ },
+ "feelings|FRIENDLY": {
+  "queries": [
+   "friendly children waving",
+   "friendly smile handshake"
+  ],
+  "skip": true
+ },
+ "feelings|KIND": {
+  "queries": [
+   "child helping elderly",
+   "kind child sharing"
+  ],
+  "skip": true
+ },
+ "feelings|ANNOYED": {
+  "queries": [
+   "annoyed child",
+   "annoyed woman"
+  ],
+  "skip": true
+ },
+ "feelings|AFRAID": {
+  "queries": [
+   "afraid child hiding",
+   "frightened boy"
+  ]
+ },
+ "feelings|HOPEFUL": {
+  "queries": [
+   "hopeful child looking up",
+   "child making a wish birthday"
+  ]
+ },
+ "feelings|PEACEFUL": {
+  "queries": [
+   "peaceful sleeping baby",
+   "peaceful lake meditation"
+  ],
+  "skip": true
+ },
+ "feelings|CONFIDENT": {
+  "queries": [
+   "confident girl smiling",
+   "confident student"
+  ],
+  "skip": true
+ },
+ "feelings|DISGUSTED": {
+  "queries": [
+   "disgusted face child",
+   "child refusing food"
+  ],
+  "skip": true
+ },
+ "feelings|SHOCKED": {
+  "queries": [
+   "shocked face",
+   "shocked child"
+  ],
+  "skip": true
+ },
+ "feelings|AMAZED": {
+  "queries": [
+   "amazed child",
+   "children amazed watching"
+  ],
+  "skip": true
+ },
+ "feelings|DELIGHTED": {
+  "queries": [
+   "delighted child gift",
+   "delighted girl present"
+  ],
+  "skip": true
+ },
+ "feelings|PLAYFUL": {
+  "queries": [
+   "playful kitten",
+   "playful children"
+  ]
+ },
+ "feelings|LAZY": {
+  "queries": [
+   "lazy cat sleeping",
+   "lazy dog lying"
+  ],
+  "skip": true
+ },
+ "feelings|ENERGETIC": {
+  "queries": [
+   "energetic children jumping",
+   "kids jumping trampoline"
+  ]
+ },
+ "feelings|DIZZY": {
+  "queries": [
+   "dizzy spinning child",
+   "dizzy"
+  ],
+  "skip": true
+ },
+ "feelings|ITCHY": {
+  "queries": [
+   "child scratching",
+   "mosquito bite scratching"
+  ],
+  "skip": true
+ },
+ "feelings|COMFORTABLE": {
+  "queries": [
+   "comfortable armchair reading",
+   "child cosy blanket sofa"
+  ]
+ },
+ "feelings|HELPFUL": {
+  "queries": [
+   "child helping wash dishes",
+   "kids helping clean"
+  ],
+  "skip": true
+ },
+ "feelings|NAUGHTY": {
+  "queries": [
+   "naughty child mess",
+   "mischievous child"
+  ],
+  "skip": true
+ },
+ "feelings|STRESSED": {
+  "queries": [
+   "stressed student books",
+   "stressed man"
+  ],
+  "skip": true
+ },
+ "feelings|TERRIFIED": {
+  "queries": [
+   "terrified face",
+   "terrified child"
+  ],
+  "skip": true
+ },
+ "feelings|FUNNY": {
+  "queries": [
+   "funny face child",
+   "clown funny"
+  ]
+ },
+ "feelings|SERIOUS": {
+  "queries": [
+   "serious child face",
+   "serious boy"
+  ]
+ },
+ "feelings|HEALTHY": {
+  "queries": [
+   "healthy child eating fruit",
+   "healthy kids playing"
+  ]
+ },
+ "feelings|MAD": {
+  "queries": [
+   "angry child shouting",
+   "mad boy"
+  ]
+ },
+ "feelings|ANGRY": {
+  "queries": [
+   "angry child",
+   "angry boy shouting"
+  ],
+  "skip": true
+ },
+ "feelings|PROUD": {
+  "queries": [
+   "proud child medal",
+   "proud girl trophy"
+  ],
+  "skip": true
+ },
+ "feelings|LOVE": {
+  "queries": [
+   "mother hugging child",
+   "family hug"
+  ],
+  "skip": true
+ },
+ "feelings|THIRSTY": {
+  "queries": [
+   "child drinking water",
+   "boy drinking water bottle"
+  ]
+ },
+ "feelings|SICK": {
+  "queries": [
+   "sick child in bed thermometer",
+   "ill child"
+  ],
+  "skip": true
+ },
+ "opposites|DIFFICULT": {
+  "queries": [
+   "difficult jigsaw puzzle",
+   "child hard puzzle"
+  ],
+  "skip": true
+ },
+ "opposites|EASY": {
+  "queries": [
+   "easy jigsaw puzzle toddler",
+   "simple wooden puzzle"
+  ]
+ },
+ "opposites|QUIET": {
+  "queries": [
+   "finger on lips quiet",
+   "library reading quietly"
+  ]
+ },
+ "opposites|LEFT": {
+  "queries": [
+   "turn left arrow sign",
+   "left arrow road sign"
+  ]
+ },
+ "opposites|SAME": {
+  "queries": [
+   "identical twins",
+   "identical eggs"
+  ]
+ },
+ "opposites|THIN": {
+  "queries": [
+   "thin pencil",
+   "thin book"
+  ]
+ },
+ "opposites|LOW": {
+  "queries": [
+   "low fence",
+   "low table"
+  ]
+ },
+ "opposites|WIDE": {
+  "queries": [
+   "wide river",
+   "wide road"
+  ]
+ },
+ "opposites|ON": {
+  "queries": [
+   "lamp switched on",
+   "light switch on"
+  ]
+ },
+ "opposites|SHORT": {
+  "queries": [
+   "short pencil",
+   "short tall"
+  ]
+ },
+ "opposites|LONG": {
+  "queries": [
+   "long train",
+   "long bridge"
+  ]
+ },
+ "opposites|OUT": {
+  "queries": [
+   "exit sign",
+   "dog outside door"
+  ]
+ },
+ "opposites|THICK": {
+  "queries": [
+   "thick book",
+   "thick rope"
+  ]
+ },
+ "opposites|WEAK": {
+  "queries": [
+   "wilted flower",
+   "weak"
+  ]
+ },
+ "opposites|NEAR": {
+  "queries": [
+   "close up face",
+   "near"
+  ]
+ },
+ "opposites|HIGH": {
+  "queries": [
+   "high mountain peak",
+   "skyscraper"
+  ]
+ },
+ "opposites|ABOVE": {
+  "queries": [
+   "airplane above clouds",
+   "bird flying above"
+  ]
+ },
+ "opposites|BELOW": {
+  "queries": [
+   "under the table cat",
+   "below"
+  ]
+ },
+ "time|MAY": {
+  "queries": [
+   "May calendar page",
+   "spring flowers May"
+  ],
+  "skip": true
+ },
+ "time|JUNE": {
+  "queries": [
+   "June calendar page",
+   "rainy season umbrella"
+  ]
+ },
+ "time|AUGUST": {
+  "queries": [
+   "August calendar page",
+   "summer beach"
+  ],
+  "skip": true
+ },
+ "time|SEPTEMBER": {
+  "queries": [
+   "September calendar",
+   "first day of school children"
+  ],
+  "skip": true
+ },
+ "time|VALENTINE'S DAY": {
+  "queries": [
+   "Valentine heart chocolates",
+   "red roses heart"
+  ]
+ },
+ "time|CALENDAR": {
+  "queries": [
+   "wall calendar",
+   "desk calendar"
+  ],
+  "skip": true
+ },
+ "time|NOON": {
+  "queries": [
+   "clock showing noon 12",
+   "midday sun"
+  ],
+  "skip": true
+ },
+ "time|MIDNIGHT": {
+  "queries": [
+   "clock midnight 12",
+   "night sky stars moon"
+  ],
+  "skip": true
+ },
+ "time|BEDTIME": {
+  "queries": [
+   "child bedtime story",
+   "child sleeping teddy"
+  ]
+ },
+ "time|SEASON": {
+  "queries": [
+   "four seasons tree",
+   "autumn leaves"
+  ]
+ },
+ "time|PARTY": {
+  "queries": [
+   "children birthday party",
+   "party balloons"
+  ]
+ },
+ "time|LATE": {
+  "queries": [
+   "running late clock",
+   "late for school"
+  ]
+ },
+ "time|MONDAY": {
+  "queries": [
+   "Monday calendar",
+   "Monday sign"
+  ],
+  "skip": true
+ },
+ "time|TUESDAY": {
+  "queries": [
+   "Tuesday calendar",
+   "Tuesday sign"
+  ],
+  "skip": true
+ },
+ "time|WEDNESDAY": {
+  "queries": [
+   "Wednesday calendar",
+   "Wednesday"
+  ],
+  "skip": true
+ },
+ "time|THURSDAY": {
+  "queries": [
+   "Thursday calendar",
+   "Thursday sign"
+  ],
+  "skip": true
+ },
+ "time|FRIDAY": {
+  "queries": [
+   "Friday calendar",
+   "Friday sign"
+  ],
+  "skip": true
+ },
+ "time|SUNDAY": {
+  "queries": [
+   "Sunday calendar",
+   "Sunday sign"
+  ],
+  "skip": true
+ },
+ "time|APRIL": {
+  "queries": [
+   "Songkran water festival",
+   "April calendar"
+  ],
+  "skip": true
+ },
+ "time|WEEK": {
+  "queries": [
+   "weekly planner",
+   "week calendar"
+  ],
+  "skip": true
+ },
+ "time|MONTH": {
+  "queries": [
+   "monthly calendar page",
+   "wall calendar month"
+  ],
+  "skip": true
+ },
+ "time|TODAY": {
+  "queries": [
+   "calendar date circled",
+   "today calendar"
+  ],
+  "skip": true
+ },
+ "time|YESTERDAY": {
+  "queries": [
+   "calendar page torn",
+   "yesterday"
+  ],
+  "skip": true
+ },
+ "time|SATURDAY": {
+  "skip": true
+ },
+ "time|FEBRUARY": {
+  "skip": true
+ },
+ "time|JULY": {
+  "skip": true
+ },
+ "time|NOVEMBER": {
+  "skip": true
+ },
+ "time|TOMORROW": {
+  "skip": true
+ },
+ "time|AFTERNOON": {
+  "skip": true
+ },
+ "time|DAYTIME": {
+  "skip": true
+ },
+ "time|NEW YEAR": {
+  "skip": true
+ },
+ "numbers|HUNDRED": {
+  "skip": true
+ },
+ "numbers|FIRST": {
+  "skip": true
+ },
+ "numbers|FOURTH": {
+  "skip": true
+ },
+ "numbers|FIFTH": {
+  "skip": true
+ },
+ "numbers|SIXTH": {
+  "skip": true
+ },
+ "numbers|SEVENTH": {
+  "skip": true
+ },
+ "numbers|ELEVENTH": {
+  "skip": true
+ },
+ "numbers|TWELFTH": {
+  "skip": true
+ },
+ "numbers|LAST": {
+  "skip": true
+ },
+ "numbers|TWENTY-ONE": {
+  "skip": true
+ },
+ "numbers|TWENTY-FIVE": {
+  "skip": true
+ },
+ "numbers|TWO HUNDRED": {
+  "skip": true
+ },
+ "numbers|FIVE HUNDRED": {
+  "skip": true
+ },
+ "numbers|BILLION": {
+  "skip": true
+ },
+ "numbers|DOUBLE": {
+  "skip": true
+ },
+ "numbers|PAIR": {
+  "skip": true
+ },
+ "numbers|PLUS": {
+  "skip": true
+ },
+ "numbers|MINUS": {
+  "skip": true
+ },
+ "numbers|EQUALS": {
+  "skip": true
+ },
+ "numbers|TIMES": {
+  "skip": true
+ }
+}

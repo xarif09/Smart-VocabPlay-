@@ -2752,36 +2752,45 @@
     "low word prob 0.27"
    ],
    "origin": "search:boat vehicle",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "vehicles|BIKE": {
-   "title": "File:Commuting by bicycle.jpg",
-   "final": 0.955,
-   "p": 0.8279,
-   "photo": 0.9535,
-   "fit": 1.0,
+   "title": "File:Left side of Flying Pigeon.jpg",
+   "final": 0.932,
+   "p": 0.9999,
+   "photo": 0.7895,
+   "fit": 0.317,
    "how": "yolo:bicycle",
-   "notes": [],
-   "flags": [],
-   "origin": "search:bicycle",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.53)"
+   ],
+   "flags": [
+    "fit 0.32"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|TRUCK": {
-   "title": "File:Broke, baby sick, and car trouble! - Dorothea Langes photo of a Missouri family of five in the vicinity of Tracy, California.jpg",
-   "final": 0.874,
-   "p": 0.915,
-   "photo": 0.9911,
-   "fit": 0.81,
+   "title": "File:Steam Whistle Mack truck 20110613-IMG 3584.JPG",
+   "final": 0.5,
+   "p": 0.3966,
+   "photo": 0.0575,
+   "fit": 0.117,
    "how": "yolo:truck",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.54)"
    ],
-   "flags": [],
+   "flags": [
+    "low word prob 0.40",
+    "fit 0.12",
+    "not photo-like 0.06"
+   ],
    "origin": "search:truck vehicle",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|TAXI": {
    "title": "File:Green and yellow taxi at night in Yasukuni-dori Avenue, Shinjuku, Tokyo.jpg",
@@ -2799,34 +2808,41 @@
    "forced": false
   },
   "vehicles|HELICOPTER": {
-   "title": "File:NASA's Ingenuity helicopter on Mars by Perseverance Mastcam-Z, Sol 768 (53475637956).jpg",
-   "final": 1.116,
+   "title": "File:VH-SUF Taking Off.jpg",
+   "final": 0.5,
    "p": 0.9999,
-   "photo": 0.7044,
-   "fit": 0.75,
+   "photo": 0.0345,
+   "fit": 0.427,
    "how": "saliency",
    "notes": [
-    "tiny subject"
+    "subject cannot fit 3:4 (box cov 0.71)"
    ],
-   "flags": [],
-   "origin": "search:helicopter vehicle",
+   "flags": [
+    "fit 0.43",
+    "not photo-like 0.03"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|SHIP": {
-   "title": "File:USS Ozark (LSV-2) on 16 September 1944.jpg",
-   "final": 1.012,
-   "p": 0.9796,
-   "photo": 0.9718,
-   "fit": 1.0,
+   "title": "File:Rhapsody (ship, 1996), Sète cf01.jpg",
+   "final": 0.5,
+   "p": 0.0267,
+   "photo": 0.9204,
+   "fit": 0.175,
    "how": "yolo:boat",
    "notes": [
-    "upscaled x1.7"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.49)"
    ],
-   "flags": [],
+   "flags": [
+    "low word prob 0.03",
+    "fit 0.17"
+   ],
    "origin": "search:ship vehicle",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|MOTORCYCLE": {
    "title": "File:Couple Riding Motorcycle in Bike lane W Lone Mountain Rd.jpg",
@@ -2917,40 +2933,44 @@
    "notes": [],
    "flags": [],
    "origin": "search:rocket launch",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|SUBMARINE": {
-   "title": "File:AG class submarines and submarine tender Oland.jpg",
-   "final": 1.096,
-   "p": 0.9994,
-   "photo": 0.9994,
-   "fit": 0.593,
+   "title": "File:US Navy 040730-N-1234E-002 PCU Virginia (SSN 774) returns to the General Dynamics Electric Boat shipyard.jpg",
+   "final": 0.977,
+   "p": 1.0,
+   "photo": 0.736,
+   "fit": 0.459,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.99)"
+    "subject cannot fit 3:4 (box cov 0.76)"
    ],
    "flags": [
-    "fit 0.59"
+    "fit 0.46"
    ],
-   "origin": "search:submarine",
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|VAN": {
-   "title": "File:Ocado grocery delivery van, West Acton - geograph.org.uk - 6785843.jpg",
-   "final": 0.931,
-   "p": 0.2727,
-   "photo": 0.9704,
-   "fit": 1.0,
+   "title": "File:2018 Ford Transit Custom 300 Base 2.0 facelift.jpg",
+   "final": 0.754,
+   "p": 0.9795,
+   "photo": 0.4111,
+   "fit": 0.164,
    "how": "yolo:car",
-   "notes": [],
-   "flags": [
-    "low word prob 0.27"
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.45)"
    ],
-   "origin": "search:van vehicle",
+   "flags": [
+    "fit 0.16",
+    "not photo-like 0.41"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|SCOOTER": {
    "title": "File:Yamaha Aerox 2011 .jpg",
@@ -2962,25 +2982,26 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|TUK-TUK": {
-   "title": "File:Three quarter view of Hotel 3 Nagas with a tuk-tuk and an old red Citroen in Luang Prabang Laos.jpg",
-   "final": 0.962,
-   "p": 0.9472,
-   "photo": 0.9066,
-   "fit": 0.45,
+   "title": "File:Bajaj auto-rickshaw in Sri Lanka.jpg",
+   "final": 0.54,
+   "p": 0.0053,
+   "photo": 0.9871,
+   "fit": 0.493,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.75)"
+    "subject cannot fit 3:4 (box cov 0.82)"
    ],
    "flags": [
-    "fit 0.45"
+    "low word prob 0.01",
+    "fit 0.49"
    ],
-   "origin": "search:tuk-tuk Thailand",
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "jobs|DOCTOR": {
    "title": "File:Female doctor.jpg",
@@ -4197,17 +4218,22 @@
    "forced": false
   },
   "sports|BASKETBALL": {
-   "title": "File:Elbayane 25 Decembre 1978 basketball est vs ezzahar sport.jpg",
-   "final": 1.013,
-   "p": 0.9263,
-   "photo": 0.9984,
-   "fit": 1.0,
+   "title": "File:USA vs. China Mens Basketball - Beijing 2008 Olympic Games (2751923597).jpg",
+   "final": 0.915,
+   "p": 0.9999,
+   "photo": 0.8794,
+   "fit": 0.154,
    "how": "yolo:person",
-   "notes": [],
-   "flags": [],
-   "origin": "search:basketball sport",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.50)"
+   ],
+   "flags": [
+    "fit 0.15"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "sports|TENNIS": {
    "title": "File:2013 Australian Open - Guillaume Rufin.jpg",
@@ -4219,7 +4245,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "sports|SWIMMING": {
@@ -4328,7 +4354,7 @@
    ],
    "origin": "current",
    "n_cands": 5,
-   "forced": false
+   "forced": true
   },
   "sports|BADMINTON": {
    "title": "File:Olympics 2012 Mixed Doubles Final.jpg",
@@ -6905,7 +6931,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|PICKUP TRUCK": {
@@ -6935,7 +6961,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|CRANE": {
@@ -6961,7 +6987,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:hot air balloon",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "vehicles|TRAM": {
@@ -6974,7 +7000,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:tram vehicle",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "vehicles|SPEEDBOAT": {
@@ -6995,17 +7021,23 @@
    "forced": false
   },
   "vehicles|SKYTRAIN": {
-   "title": "File:Bangkok skytrain sunset.jpg",
-   "final": 1.306,
-   "p": 0.9999,
-   "photo": 0.9927,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [],
-   "origin": "search:BTS Skytrain Bangkok",
+   "title": "File:Bangkok BTS 01.jpg",
+   "final": 0.684,
+   "p": 0.9984,
+   "photo": 0.3983,
+   "fit": 0.214,
+   "how": "yolo:train",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.59)"
+   ],
+   "flags": [
+    "fit 0.21",
+    "not photo-like 0.40"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "jobs|VET": {
    "title": "File:Close-up of a veterinarian examining a maltese dog.jpg",
@@ -7472,21 +7504,22 @@
    "forced": false
   },
   "sports|FISHING": {
-   "title": "File:Red fishing huts in Rågårdsdal.jpg",
-   "final": 0.679,
-   "p": 0.0293,
-   "photo": 0.8813,
-   "fit": 0.75,
-   "how": "saliency",
+   "title": "File:Stilts fishermen Sri Lanka 02.jpg",
+   "final": 0.532,
+   "p": 0.1145,
+   "photo": 0.9432,
+   "fit": 0.457,
+   "how": "yolo:person",
    "notes": [
-    "tiny subject"
+    "subject cannot fit 3:4 (box cov 0.76)"
    ],
    "flags": [
-    "low word prob 0.03"
+    "low word prob 0.11",
+    "fit 0.46"
    ],
-   "origin": "search:fishing",
+   "origin": "current",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "sports|HIKING": {
    "title": "File:Hiking to the Ice Lakes. San Juan National Forest, Colorado.jpg",
@@ -13287,19 +13320,21 @@
    "forced": false
   },
   "vehicles|JET": {
-   "title": "File:2003 Thunderbirds Mountain Home airshow crash ejection.jpg",
-   "final": 0.978,
-   "p": 0.8951,
-   "photo": 0.3889,
-   "fit": 1.0,
+   "title": "File:105 Polish Air Force MiG-29A Fulcrum ILA Berlin 2016 10.jpg",
+   "final": 0.911,
+   "p": 0.8936,
+   "photo": 0.8941,
+   "fit": 0.427,
    "how": "yolo:airplane",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.71)"
+   ],
    "flags": [
-    "not photo-like 0.39"
+    "fit 0.43"
    ],
    "origin": "search:jet aircraft",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|SUBWAY": {
    "title": "File:Metro de São Paulo, Luz Station, Brazil.jpg",
@@ -13401,52 +13436,58 @@
    "forced": false
   },
   "vehicles|WHEELCHAIR": {
-   "title": "File:MecanumWheelchair.jpg",
-   "final": 1.028,
-   "p": 0.999,
-   "photo": 0.9735,
-   "fit": 0.488,
+   "title": "File:Man in wheelchair with AFO braces and crutches b.jpg",
+   "final": 0.835,
+   "p": 1.0,
+   "photo": 0.8543,
+   "fit": 0.128,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.99)"
    ],
    "flags": [
-    "fit 0.49"
+    "fit 0.13"
    ],
-   "origin": "search:wheelchair",
+   "origin": "current",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "vehicles|STROLLER": {
-   "title": "File:A family with a stroller on the Grotto Falls trail -432 Custer Gallatin NF 3W6A3487 (53255122171).jpg",
-   "final": 0.765,
-   "p": 0.1358,
-   "photo": 0.9545,
-   "fit": 1.0,
+   "title": "File:Baby pram.jpg",
+   "final": 0.5,
+   "p": 0.9999,
+   "photo": 0.0653,
+   "fit": 0.439,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.14"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.73)"
    ],
-   "origin": "search:baby stroller",
+   "flags": [
+    "fit 0.44",
+    "not photo-like 0.07"
+   ],
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|WHEEL": {
-   "title": "File:Laxey Wheel seen from car park - geograph.org.uk - 2111950.jpg",
-   "final": 0.924,
-   "p": 0.3779,
-   "photo": 0.8869,
-   "fit": 1.0,
+   "title": "File:Wheel of car.jpg",
+   "final": 0.647,
+   "p": 0.2666,
+   "photo": 0.9609,
+   "fit": 0.493,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.82)"
+   ],
    "flags": [
-    "low word prob 0.38"
+    "low word prob 0.27",
+    "fit 0.49"
    ],
    "origin": "search:car wheel",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "vehicles|ENGINE": {
    "title": "File:Steam car \"engine\".jpg",
@@ -13471,7 +13512,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|SEAT BELT": {
@@ -13488,19 +13529,21 @@
    "forced": false
   },
   "vehicles|HELMET": {
-   "title": "File:Building better riders, 86th AW hosts annual safety motorcycle mentorship ride (9745093).jpg",
-   "final": 1.169,
-   "p": 0.9676,
-   "photo": 0.4236,
-   "fit": 1.0,
+   "title": "File:Bicycle Helmet 0085.jpg",
+   "final": 0.721,
+   "p": 1.0,
+   "photo": 0.8918,
+   "fit": 0.385,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.42"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.64)"
    ],
-   "origin": "search:motorcycle helmet",
+   "flags": [
+    "fit 0.39"
+   ],
+   "origin": "current",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "clothes|JEANS": {
    "title": "File:2002 Junya Watanabe for Comme des Garçons jacket, blue denim jeans patchwork 03.jpg",
@@ -13734,7 +13777,7 @@
    ],
    "flags": [],
    "origin": "search:running shoes",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "sports|GOAL": {
@@ -13752,7 +13795,7 @@
    ],
    "origin": "search:football goal",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "sports|RACKET": {
    "title": "File:Table tennis racket.jpg",
@@ -13788,40 +13831,38 @@
    "forced": false
   },
   "sports|NET": {
-   "title": "File:Skegness Pier and a beach volleyball net - geograph.org.uk - 6723070.jpg",
-   "final": 0.79,
-   "p": 0.833,
-   "photo": 0.9223,
-   "fit": 0.202,
+   "title": "File:Volleyball net on Skegness Beach - geograph.org.uk - 3800125.jpg",
+   "final": 0.681,
+   "p": 0.5494,
+   "photo": 0.5292,
+   "fit": 0.43,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.42)"
+    "subject cannot fit 3:4 (box cov 0.72)"
    ],
    "flags": [
-    "fit 0.20"
+    "fit 0.43"
    ],
    "origin": "search:volleyball net",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "sports|WHISTLE": {
-   "title": "File:Rattle, Whistle, and Bells MET DP242568.jpg",
-   "final": 1.06,
-   "p": 0.9544,
-   "photo": 0.8482,
-   "fit": 0.665,
+   "title": "File:Pea Whistle.jpg",
+   "final": 0.776,
+   "p": 1.0,
+   "photo": 0.539,
+   "fit": 0.582,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.97)"
    ],
    "flags": [
-    "fit 0.67"
+    "fit 0.58"
    ],
-   "origin": "search:whistle",
+   "origin": "current",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "sports|TEAM": {
    "title": "File:Flower Team Culture Association, Tree Group photo.png",
@@ -13842,22 +13883,23 @@
    "forced": false
   },
   "sports|COACH": {
-   "title": "File:Gill, line coach, 1944 North Carolina Tar Heels football team.png",
-   "final": 0.901,
-   "p": 0.9998,
-   "photo": 0.841,
-   "fit": 0.291,
+   "title": "File:SFU head coach Steve Hanson with his 2023-2024 team.jpg",
+   "final": 0.5,
+   "p": 0.0,
+   "photo": 0.9334,
+   "fit": 0.349,
    "how": "yolo:person",
    "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.95)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.91)"
    ],
    "flags": [
-    "fit 0.29"
+    "low word prob 0.00",
+    "fit 0.35"
    ],
    "origin": "search:coach with team",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "sports|RACE": {
    "title": "File:10 k running race, Cranny - 2 - geograph.org.uk - 7501681.jpg",
@@ -13923,49 +13965,54 @@
    "forced": false
   },
   "sports|PUSH-UP": {
-   "title": "File:Standing Push-Up instructions, Tredegar - geograph.org.uk - 8357325.jpg",
-   "final": 0.521,
-   "p": 0.0,
-   "photo": 0.4983,
-   "fit": 0.843,
+   "title": "File:Push up al la traditionnelle.jpg",
+   "final": 0.5,
+   "p": 0.0069,
+   "photo": 0.4567,
+   "fit": 0.64,
    "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.50"
+    "low word prob 0.01",
+    "fit 0.64",
+    "not photo-like 0.46"
    ],
    "origin": "search:push-up",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "sports|DIVING": {
-   "title": "File:Sport diver, present day.jpg",
-   "final": 1.123,
-   "p": 0.9999,
-   "photo": 0.7932,
-   "fit": 0.806,
+   "title": "File:Underwater photograph of a recreational scuba diver in Playa del Carmen 2006.jpg",
+   "final": 1.022,
+   "p": 0.9988,
+   "photo": 0.7415,
+   "fit": 0.484,
    "how": "yolo:person",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.81)"
    ],
-   "flags": [],
-   "origin": "search:diving sport",
+   "flags": [
+    "fit 0.48"
+   ],
+   "origin": "current",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "sports|KAYAKING": {
-   "title": "File:Woman kayaking on a turquoise lake (51125937521).jpg",
-   "final": 1.355,
-   "p": 0.999,
-   "photo": 0.8258,
+   "title": "File:3 kayaks Sèvre Niortaise (79).jpg",
+   "final": 1.358,
+   "p": 0.9998,
+   "photo": 0.9843,
    "fit": 1.0,
-   "how": "yolo:person",
-   "notes": [],
+   "how": "saliency",
+   "notes": [
+    "upscaled x1.4"
+   ],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:kayaking sport",
+   "n_cands": 5,
    "forced": false
   },
   "toys|LEGO": {
@@ -25747,21 +25794,21 @@
    "forced": false
   },
   "vehicles|CARGO SHIP": {
-   "title": "File:Errimel Bizerte.jpg",
-   "final": 0.806,
-   "p": 0.7048,
-   "photo": 0.9244,
-   "fit": 0.36,
+   "title": "File:2023-05-20 AMALIE - IMO 9163702.jpg",
+   "final": 0.801,
+   "p": 0.7752,
+   "photo": 0.6821,
+   "fit": 0.354,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.60)"
+    "subject cannot fit 3:4 (box cov 0.59)"
    ],
    "flags": [
-    "fit 0.36"
+    "fit 0.35"
    ],
    "origin": "search:QI",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "vehicles|CRUISE SHIP": {
    "title": "File:Seattle (WA, USA), Pier 66, Norwegian Bliss -- 2022 -- 1794.jpg",
@@ -26671,32 +26718,36 @@
    "forced": false
   },
   "sports|ARCHERY": {
-   "title": "File:Field archery targets at Beecraigs - geograph.org.uk - 4725038.jpg",
-   "final": 1.169,
-   "p": 0.9924,
-   "photo": 0.4276,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
+   "title": "File:Taymon Tokyo.jpg",
+   "final": 0.668,
+   "p": 1.0,
+   "photo": 0.0292,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
    "flags": [
-    "not photo-like 0.43"
+    "not photo-like 0.03"
    ],
    "origin": "search:archery sport",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "sports|JUDO": {
-   "title": "File:A judo competition (FL45964559).jpg",
-   "final": 1.032,
-   "p": 0.9667,
-   "photo": 0.9931,
+   "title": "File:Sara Mäntykenttä Nordic Judo Championship 2026 Four Gold Medals.jpg",
+   "final": 0.822,
+   "p": 0.9953,
+   "photo": 0.1303,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
-   "flags": [],
+   "flags": [
+    "not photo-like 0.13"
+   ],
    "origin": "search:judo sport",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "sports|HOCKEY": {
    "title": "File:Servette HC vs Black Bloys HC - LNA hommes - 20141012 - Positionnement sur pénalty 1.jpg",
@@ -26714,22 +26765,21 @@
    "forced": false
   },
   "sports|ROWING": {
-   "title": "File:Rowing training, Sète 03.jpg",
-   "final": 1.027,
-   "p": 0.9264,
-   "photo": 0.9516,
-   "fit": 0.6,
+   "title": "File:Rowing training, Sète 04.jpg",
+   "final": 0.976,
+   "p": 0.9986,
+   "photo": 0.7503,
+   "fit": 0.452,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)",
-    "tiny subject"
+    "subject cannot fit 3:4 (box cov 0.75)"
    ],
    "flags": [
-    "fit 0.60"
+    "fit 0.45"
    ],
    "origin": "search:QI",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "sports|SAILING": {
    "title": "File:Sailing at the OHSF Water Sport Camp (52724394291).jpg",
@@ -26758,17 +26808,19 @@
    "forced": false
   },
   "sports|SNOWBOARDING": {
-   "title": "File:Snowboarding on railing.jpg",
-   "final": 0.97,
-   "p": 0.9755,
-   "photo": 0.661,
+   "title": "File:Team U S competes in advanced alpine skiing, snowboarding slalom run (8868883).jpg",
+   "final": 0.677,
+   "p": 0.9486,
+   "photo": 0.0028,
    "fit": 1.0,
    "how": "yolo:person",
    "notes": [],
-   "flags": [],
+   "flags": [
+    "not photo-like 0.00"
+   ],
    "origin": "search:snowboarding sport",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "sports|WEIGHTLIFTING": {
    "title": "File:20181006 Paul Tischler Gewichtheben Bundesliga Finale by Isiwal-3437.jpg",
@@ -26801,35 +26853,33 @@
    "forced": false
   },
   "sports|SPORTS DAY": {
-   "title": "File:Berlin, Flughafen Tempelhof, Berlin E-Prix 2019, Greentech Festival, Porsche -- 2019 -- 5545.jpg",
-   "final": 0.502,
-   "p": 0.0,
-   "photo": 0.7807,
+   "title": "File:Airman, soldiers share in \"Sports Day\" with local children 140204-Z-QD538-209.jpg",
+   "final": 1.258,
+   "p": 0.9808,
+   "photo": 0.8357,
    "fit": 1.0,
-   "how": "saliency",
+   "how": "yolo:person",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:QI",
+   "flags": [],
+   "origin": "search:school sports day children race",
    "n_cands": 9,
    "forced": false
   },
   "sports|SIT-UP": {
-   "title": "File:208-PU-171-4 (29238815562).jpg",
-   "final": 0.521,
-   "p": 0.0024,
-   "photo": 0.9966,
-   "fit": 0.64,
+   "title": "File:Girl exercising doing crunches on stability ball.jpg",
+   "final": 0.935,
+   "p": 0.998,
+   "photo": 0.9877,
+   "fit": 0.249,
    "how": "yolo:person",
    "notes": [
-    "touches 2 edge(s)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.65)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.64"
+    "fit 0.25"
    ],
-   "origin": "search:sit-up sport",
+   "origin": "search:crunches exercise",
    "n_cands": 8,
    "forced": false
   },
@@ -29958,6 +30008,7 @@
   "sports|ARCHERY",
   "sports|BADMINTON",
   "sports|BASEBALL",
+  "sports|BASKETBALL",
   "sports|BAT",
   "sports|BOWLING",
   "sports|BOXING",
@@ -29965,6 +30016,7 @@
   "sports|CHESS",
   "sports|COACH",
   "sports|DANCING",
+  "sports|DIVING",
   "sports|DODGEBALL",
   "sports|DUMBBELL",
   "sports|EXERCISE",
@@ -29977,6 +30029,7 @@
   "sports|GYMNASTICS",
   "sports|HOCKEY",
   "sports|HURDLES",
+  "sports|JUDO",
   "sports|JUMP",
   "sports|KARATE",
   "sports|MUAY THAI",
@@ -29992,7 +30045,7 @@
   "sports|SHUTTLECOCK",
   "sports|SIT-UP",
   "sports|SNORKELING",
-  "sports|SPORTS DAY",
+  "sports|SNOWBOARDING",
   "sports|TAEKWONDO",
   "sports|TAKRAW",
   "sports|TEAM",
@@ -30166,6 +30219,7 @@
   "vegetables|YAM",
   "vehicles|AIRPLANE",
   "vehicles|AMBULANCE",
+  "vehicles|BIKE",
   "vehicles|BOAT",
   "vehicles|BUS",
   "vehicles|CANOE",
@@ -30176,6 +30230,7 @@
   "vehicles|EXCAVATOR",
   "vehicles|FIRETRUCK",
   "vehicles|GO-KART",
+  "vehicles|HELICOPTER",
   "vehicles|HELMET",
   "vehicles|HORSE CART",
   "vehicles|ICE CREAM TRUCK",
@@ -30194,6 +30249,8 @@
   "vehicles|RACE CAR",
   "vehicles|RAFT",
   "vehicles|RICKSHAW",
+  "vehicles|SHIP",
+  "vehicles|SKYTRAIN",
   "vehicles|SONGTHAEW",
   "vehicles|SPACESHIP",
   "vehicles|SPEEDBOAT",
@@ -30202,6 +30259,7 @@
   "vehicles|SUBWAY",
   "vehicles|TOW TRUCK",
   "vehicles|TRAIN",
+  "vehicles|TRUCK",
   "vehicles|TUK-TUK",
   "vehicles|UNICYCLE",
   "vehicles|VAN",
@@ -30251,6 +30309,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1895,
-  "flagged": 1086
+  "flagged": 1094
  }
 }

@@ -9525,5 +9525,12 @@
   "author": "Andreas Tille",
   "license": "CC BY-SA 4.0",
   "score": 0.78
+ },
+ "school|GRADE": {
+  "file": "w/school__grade.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Testing_the_absorbtion_120216-A-ZF401-003.jpg",
+  "author": "Spc. Brandon Bednarek",
+  "license": "Public domain",
+  "score": 0.635
  }
 }

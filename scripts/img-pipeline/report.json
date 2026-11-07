@@ -12495,7 +12495,21 @@
    "forced": false
   },
   "school|GRADE": {
-   "status": "no candidates"
+   "title": "File:Testing the absorbtion 120216-A-ZF401-003.jpg",
+   "final": 0.635,
+   "p": 0.0,
+   "photo": 0.5558,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:graded test paper A+",
+   "n_cands": 7,
+   "forced": false
   },
   "school|ENGLISH": {
    "status": "no candidates"

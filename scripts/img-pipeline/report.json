@@ -16211,16 +16211,65 @@
    "forced": false
   },
   "music|XYLOPHONE": {
-   "status": "no candidates"
+   "title": "File:Sieben prismatische Farben 003 2023 03 16.jpg",
+   "final": 1.275,
+   "p": 0.9525,
+   "photo": 0.9591,
+   "fit": 0.814,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "music|TAMBOURINE": {
-   "status": "no candidates"
+   "title": "File:Miriam, the golden Haggadah.jpg",
+   "final": 0.474,
+   "p": 0.0557,
+   "photo": 0.4176,
+   "fit": 0.846,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.06",
+    "not photo-like 0.42"
+   ],
+   "origin": "search:tambourine musical instrument",
+   "n_cands": 6,
+   "forced": false
   },
   "music|HARP": {
-   "status": "no candidates"
+   "title": "File:A musical instrument. A harp.jpg",
+   "final": 1.172,
+   "p": 0.9999,
+   "photo": 0.8525,
+   "fit": 0.775,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:harp musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|UKULELE": {
-   "status": "no candidates"
+   "title": "File:Acoustic guitars, ukuleles, and percussions - musical instrument store at San Francisco.jpg",
+   "final": 1.239,
+   "p": 0.9415,
+   "photo": 0.9007,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:ukulele musical instrument",
+   "n_cands": 7,
+   "forced": false
   },
   "music|ACCORDION": {
    "title": "File:A converter free-bass piano-accordion and a Russian bayan.jpg",
@@ -16291,7 +16340,21 @@
    "forced": false
   },
   "music|SONG": {
-   "status": "no candidates"
+   "title": "File:School children singing, Pie Town, New Mexico (LOC).jpg",
+   "final": 0.997,
+   "p": 0.9928,
+   "photo": 0.9625,
+   "fit": 0.415,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.69)"
+   ],
+   "flags": [
+    "fit 0.42"
+   ],
+   "origin": "search:children singing",
+   "n_cands": 7,
+   "forced": false
   },
   "music|SINGER": {
    "title": "File:Ah cricket 20122 (7364759010).jpg",
@@ -16343,10 +16406,38 @@
    "forced": false
   },
   "music|RHYTHM": {
-   "status": "no candidates"
+   "title": "File:Métronome - face sans couvercle.jpg",
+   "final": 0.625,
+   "p": 0.001,
+   "photo": 0.6199,
+   "fit": 0.805,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "music|LOUD": {
-   "status": "no candidates"
+   "title": "File:Tonhalle Munich Concert 2017 Crowd 2.jpg",
+   "final": 0.65,
+   "p": 0.0001,
+   "photo": 0.9674,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:loudspeaker concert",
+   "n_cands": 8,
+   "forced": false
   },
   "music|QUIET": {
    "title": "File:SanDiegoCityCollegeLearningResource - bookshelf.jpg",
@@ -16367,7 +16458,17 @@
    "forced": false
   },
   "music|DANCE FLOOR": {
-   "status": "no candidates"
+   "title": "File:The Bar Complex Dance Floor.jpg",
+   "final": 1.249,
+   "p": 1.0,
+   "photo": 0.6104,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:dance floor",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|BIG": {
    "title": "File:Elephas maximus (Bandipur).jpg",
@@ -18699,130 +18800,663 @@
    "forced": false
   },
   "music|CELLO": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Hermann-Leeser-Schule, \"Spin!\" (Absolventen der staatlichen Artistenschule) -- 2019 -- 5475.jpg",
+   "final": 1.171,
+   "p": 0.907,
+   "photo": 0.757,
+   "fit": 0.818,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "music|DOUBLE BASS": {
-   "status": "no candidates"
+   "title": "File:Double Bass MET DP218932.jpg",
+   "final": 1.013,
+   "p": 0.9831,
+   "photo": 0.9088,
+   "fit": 0.477,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.80)"
+   ],
+   "flags": [
+    "fit 0.48"
+   ],
+   "origin": "search:double bass musical instrument",
+   "n_cands": 6,
+   "forced": false
   },
   "music|TROMBONE": {
-   "status": "no candidates"
+   "title": "File:WANZ musical instrument photography shoot Sept 2024 03.jpg",
+   "final": 1.187,
+   "p": 0.6786,
+   "photo": 0.9986,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:trombone musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|TUBA": {
-   "status": "no candidates"
+   "title": "File:Tuba MET DP340077.jpg",
+   "final": 1.068,
+   "p": 0.7136,
+   "photo": 0.982,
+   "fit": 0.827,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:tuba musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|FRENCH HORN": {
-   "status": "no candidates"
+   "title": "File:French Horn MET DP-12679-062.jpg",
+   "final": 1.291,
+   "p": 0.9854,
+   "photo": 0.983,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:french horn musical instrument",
+   "n_cands": 7,
+   "forced": false
   },
   "music|CLARINET": {
-   "status": "no candidates"
+   "title": "File:Clarinet in B-flat MET DP302568.jpg",
+   "final": 0.689,
+   "p": 0.3504,
+   "photo": 0.9227,
+   "fit": 0.457,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.76)"
+   ],
+   "flags": [
+    "low word prob 0.35",
+    "fit 0.46"
+   ],
+   "origin": "search:clarinet musical instrument",
+   "n_cands": 4,
+   "forced": false
   },
   "music|OBOE": {
-   "status": "no candidates"
+   "title": "File:Oboe MET 206955.jpg",
+   "final": 0.525,
+   "p": 0.1401,
+   "photo": 0.9928,
+   "fit": 0.813,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.14"
+   ],
+   "origin": "search:oboe musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|HARMONICA": {
-   "status": "no candidates"
+   "title": "File:Harmonica, Musical Instrument, National Museum, New Delhi.jpg",
+   "final": 0.806,
+   "p": 0.9999,
+   "photo": 0.3544,
+   "fit": 0.348,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.58)"
+   ],
+   "flags": [
+    "fit 0.35",
+    "not photo-like 0.35"
+   ],
+   "origin": "search:harmonica musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|RECORDER": {
-   "status": "no candidates"
+   "title": "File:Yamaha recorder - Musical instruments in Israel 03.jpg",
+   "final": 0.824,
+   "p": 0.8213,
+   "photo": 0.8034,
+   "fit": 0.303,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.50)"
+   ],
+   "flags": [
+    "fit 0.30"
+   ],
+   "origin": "search:recorder musical instrument",
+   "n_cands": 6,
+   "forced": false
   },
   "music|BANJO": {
-   "status": "no candidates"
+   "title": "File:Banjo MET 206246.jpg",
+   "final": 1.033,
+   "p": 0.9999,
+   "photo": 0.9173,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:banjo musical instrument",
+   "n_cands": 6,
+   "forced": false
   },
   "music|ORGAN": {
-   "status": "no candidates"
+   "title": "File:Münster, St.-Paulus-Dom, Johanneschor, Orgel -- 2019 -- 3821.jpg",
+   "final": 1.246,
+   "p": 1.0,
+   "photo": 0.7287,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "music|BAGPIPES": {
-   "status": "no candidates"
+   "title": "File:გუდასტვირი - ქართული ხალხური სიმღერის და საკრავების ეროვნული მუზეუმი.jpg",
+   "final": 1.151,
+   "p": 0.8647,
+   "photo": 0.9912,
+   "fit": 0.667,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.67"
+   ],
+   "origin": "search:bagpipes musical instrument",
+   "n_cands": 4,
+   "forced": false
   },
   "music|CYMBALS": {
-   "status": "no candidates"
+   "title": "File:Musical Instruments and Raja of Pudukkottai.png",
+   "final": 0.727,
+   "p": 0.0001,
+   "photo": 0.9993,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:cymbals musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|GONG": {
-   "status": "no candidates"
+   "title": "File:Western Zuu Temple 05.jpg",
+   "final": 0.982,
+   "p": 0.8265,
+   "photo": 0.9105,
+   "fit": 0.499,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.50"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "music|CASTANETS": {
-   "status": "no candidates"
+   "title": "File:Qairaq or kairak (stone castanets) mid-20th century.jpg",
+   "final": 1.108,
+   "p": 0.6879,
+   "photo": 0.9939,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:castanets musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|BONGOS": {
-   "status": "no candidates"
+   "title": "File:Drum Shop.jpg",
+   "final": 1.064,
+   "p": 0.6056,
+   "photo": 0.9818,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:bongos musical instrument",
+   "n_cands": 7,
+   "forced": false
   },
   "music|DRUMSTICKS": {
-   "status": "no candidates"
+   "title": "File:Sean Kinney (Alice In Chains) Cutoffs and Drumsticks - Rock & Roll Hall of Fame and Museum, Cleveland (by Adam Jones).jpg",
+   "final": 1.212,
+   "p": 0.9972,
+   "photo": 0.5676,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:drumsticks musical instrument",
+   "n_cands": 7,
+   "forced": false
   },
   "music|KHAEN": {
-   "status": "no candidates"
+   "title": "File:A Mangkong man plays khene in Laos.jpg",
+   "final": 1.284,
+   "p": 0.9989,
+   "photo": 0.8788,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:khaen",
+   "n_cands": 8,
+   "forced": false
   },
   "music|CHING": {
-   "status": "no candidates"
+   "title": "File:Khrueang Mahori Piphat (1929, p. 26).jpg",
+   "final": 0.453,
+   "p": 0.0041,
+   "photo": 0.8996,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:ching cymbals Thai",
+   "n_cands": 2,
+   "forced": false
   },
   "music|KHONG WONG": {
-   "status": "no candidates"
+   "title": "File:10340 Lampang.jpg",
+   "final": 1.25,
+   "p": 0.9999,
+   "photo": 0.7275,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:khong wong",
+   "n_cands": 9,
+   "forced": false
   },
   "music|MUSIC NOTE": {
-   "status": "no candidates"
+   "title": "File:Welcome home comrade, sheet music, p. 4.jpg",
+   "final": 0.36,
+   "p": 0.0024,
+   "photo": 0.4635,
+   "fit": 0.378,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.99)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.38",
+    "not photo-like 0.46"
+   ],
+   "origin": "search:music notes sheet",
+   "n_cands": 8,
+   "forced": false
   },
   "music|BAND": {
-   "status": "no candidates"
+   "title": "File:Band of the Welsh Guards, Buckingham Palace, London - Diliff.jpg",
+   "final": 0.872,
+   "p": 0.7693,
+   "photo": 0.9769,
+   "fit": 0.327,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.54)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "music|ORCHESTRA": {
-   "status": "no candidates"
+   "title": "File:Saxophonist of the Tuvan Wind Orchestra in costume of Cham dance.jpg",
+   "final": 0.709,
+   "p": 0.0004,
+   "photo": 0.9231,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "music|CHOIR": {
-   "status": "no candidates"
+   "title": "File:005 2014 12 29 Pfeifenorgel.jpg",
+   "final": 0.546,
+   "p": 0.0002,
+   "photo": 0.9536,
+   "fit": 0.36,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.86)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.36"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "music|CONDUCTOR": {
-   "status": "no candidates"
+   "title": "File:Sariaya, Quezon October 4 2026 Samahan ng Rondalla 03.jpg",
+   "final": 0.259,
+   "p": 0.0,
+   "photo": 0.9445,
+   "fit": 0.14,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.36)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.14"
+   ],
+   "origin": "search:conductor musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|STAGE": {
-   "status": "no candidates"
+   "title": "File:Hausdülmen, Große Teichsmühle, Veranstaltung -Klangspuren- (Glengar) -- 2013 -- 2614.jpg",
+   "final": 0.761,
+   "p": 0.0073,
+   "photo": 0.7092,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "music|RADIO": {
-   "status": "no candidates"
+   "title": "File:Theremin At The Musical Museum, Brentford, London (clip).jpg",
+   "final": 0.745,
+   "p": 0.1719,
+   "photo": 0.6644,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.17"
+   ],
+   "origin": "search:radio musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|RECORD PLAYER": {
-   "status": "no candidates"
+   "title": "File:Sony XO-D20S Midi HiFi and CDP-M29 CD player (white bg).jpg",
+   "final": 0.772,
+   "p": 0.959,
+   "photo": 0.9967,
+   "fit": 0.527,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:record player musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|SHEET MUSIC": {
-   "status": "no candidates"
+   "title": "File:Welcome home comrade, sheet music, p. 5.jpg",
+   "final": 0.821,
+   "p": 0.9972,
+   "photo": 0.5101,
+   "fit": 0.24,
+   "how": "saliency",
+   "notes": [
+    "touches 4 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.98)"
+   ],
+   "flags": [
+    "fit 0.24"
+   ],
+   "origin": "search:sheet music",
+   "n_cands": 8,
+   "forced": false
   },
   "music|KARAOKE": {
-   "status": "no candidates"
+   "title": "File:Palace KTV - 歌.jpg",
+   "final": 0.652,
+   "p": 0.0003,
+   "photo": 0.7293,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:karaoke musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|PIANIST": {
-   "status": "no candidates"
+   "title": "File:Mihaita Zama portrait piano recital.jpg",
+   "final": 1.235,
+   "p": 0.9996,
+   "photo": 0.6166,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:pianist musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|DRUMMER": {
-   "status": "no candidates"
+   "title": "File:Drummer of the Tuvan Wind Orchestra with marching bass drum.jpg",
+   "final": 1.07,
+   "p": 0.514,
+   "photo": 0.993,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:drummer musical instrument",
+   "n_cands": 7,
+   "forced": false
   },
   "music|GUITARIST": {
-   "status": "no candidates"
+   "title": "File:String instrument gallery, Zemun - Nemanja Bogunović, guitarist 04.jpg",
+   "final": 0.646,
+   "p": 0.0004,
+   "photo": 0.6582,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:guitarist musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|VIOLINIST": {
-   "status": "no candidates"
+   "title": "File:Dr. Jubal Fulks.jpg",
+   "final": 1.077,
+   "p": 0.9835,
+   "photo": 0.8727,
+   "fit": 0.622,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.62"
+   ],
+   "origin": "search:violinist musical instrument",
+   "n_cands": 7,
+   "forced": false
   },
   "music|MUSIC BOX": {
-   "status": "no candidates"
+   "title": "File:Music Box MET DP169440.jpg",
+   "final": 1.135,
+   "p": 0.8285,
+   "photo": 0.9146,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:music box musical instrument",
+   "n_cands": 7,
+   "forced": false
   },
   "music|METRONOME": {
-   "status": "no candidates"
+   "title": "File:Metronomes 101 clean.jpg",
+   "final": 1.14,
+   "p": 0.9998,
+   "photo": 0.9647,
+   "fit": 0.588,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.98)"
+   ],
+   "flags": [
+    "fit 0.59"
+   ],
+   "origin": "search:metronome musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|AUDIENCE": {
-   "status": "no candidates"
+   "title": "File:Akash Reddy D.jpg",
+   "final": 0.694,
+   "p": 0.0597,
+   "photo": 0.5169,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.06"
+   ],
+   "origin": "search:audience musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|KAZOO": {
-   "status": "no candidates"
+   "title": "File:Acme Queen Parlor Organ, $27.45 at c.1902 Sears Roebuck Catalog, MIM PHX.jpg",
+   "final": 0.605,
+   "p": 0.0,
+   "photo": 0.5222,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:kazoo musical instrument",
+   "n_cands": 7,
+   "forced": false
   },
   "music|WIND CHIMES": {
-   "status": "no candidates"
+   "title": "File:Wind chime 5.jpg",
+   "final": 0.747,
+   "p": 0.9994,
+   "photo": 0.2889,
+   "fit": 0.525,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.87)"
+   ],
+   "flags": [
+    "fit 0.52",
+    "not photo-like 0.29"
+   ],
+   "origin": "search:wind chimes musical instrument",
+   "n_cands": 6,
+   "forced": false
   },
   "music|HANDBELLS": {
-   "status": "no candidates"
+   "title": "File:Handbell.jpg",
+   "final": 1.209,
+   "p": 0.9997,
+   "photo": 0.4383,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.44"
+   ],
+   "origin": "search:handbells musical instrument",
+   "n_cands": 8,
+   "forced": false
   },
   "music|STEEL PAN": {
-   "status": "no candidates"
+   "title": "File:Abuv in Temple.png",
+   "final": 0.408,
+   "p": 0.0911,
+   "photo": 0.9339,
+   "fit": 0.277,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.58)"
+   ],
+   "flags": [
+    "low word prob 0.09",
+    "fit 0.28"
+   ],
+   "origin": "search:steel pan musical instrument",
+   "n_cands": 4,
+   "forced": false
   },
   "music|BATON": {
-   "status": "no candidates"
+   "title": "File:Harvard Band Largest Baton.jpg",
+   "final": 0.499,
+   "p": 0.007,
+   "photo": 0.2758,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01",
+    "not photo-like 0.28"
+   ],
+   "origin": "search:baton musical instrument",
+   "n_cands": 5,
+   "forced": false
   },
   "countries|INDONESIA": {
    "title": "File:Borobudur-Temple-Park Indonesia Stupas-of-Borobudur-01.jpg",
@@ -27943,42 +28577,28 @@
   "music|AUDIENCE",
   "music|BAGPIPES",
   "music|BAND",
-  "music|BANJO",
   "music|BATON",
-  "music|BONGOS",
-  "music|CASTANETS",
-  "music|CELLO",
   "music|CHING",
   "music|CHOIR",
   "music|CLARINET",
   "music|CONCERT",
   "music|CONDUCTOR",
   "music|CYMBALS",
-  "music|DANCE FLOOR",
   "music|DOUBLE BASS",
-  "music|DRUMMER",
-  "music|DRUMSTICKS",
   "music|FLUTE",
-  "music|FRENCH HORN",
   "music|GONG",
   "music|GUITARIST",
   "music|HANDBELLS",
   "music|HARMONICA",
-  "music|HARP",
   "music|KARAOKE",
   "music|KAZOO",
-  "music|KHAEN",
   "music|KHIM",
-  "music|KHONG WONG",
   "music|LOUD",
   "music|MARACAS",
   "music|METRONOME",
-  "music|MUSIC BOX",
   "music|MUSIC NOTE",
   "music|OBOE",
   "music|ORCHESTRA",
-  "music|ORGAN",
-  "music|PIANIST",
   "music|QUIET",
   "music|RADIO",
   "music|RANAT",
@@ -27992,14 +28612,10 @@
   "music|STAGE",
   "music|STEEL PAN",
   "music|TAMBOURINE",
-  "music|TROMBONE",
   "music|TRUMPET",
-  "music|TUBA",
-  "music|UKULELE",
   "music|VIOLIN",
   "music|VIOLINIST",
   "music|WIND CHIMES",
-  "music|XYLOPHONE",
   "nature|ACORN",
   "nature|AIR",
   "nature|BAMBOO",
@@ -28623,7 +29239,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1737,
-  "flagged": 1185
+  "with_photo": 1787,
+  "flagged": 1167
  }
 }

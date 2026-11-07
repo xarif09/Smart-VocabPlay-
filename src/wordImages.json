@@ -6327,12 +6327,131 @@
   "license": "CC BY-SA 3.0",
   "score": 1.042
  },
+ "music|AUDIENCE": {
+  "file": "w/music__audience.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Akash_Reddy_D.jpg",
+  "author": "Navya Shetty",
+  "license": "CC BY-SA 4.0",
+  "score": 0.694
+ },
+ "music|BAGPIPES": {
+  "file": "w/music__bagpipes.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%E1%83%92%E1%83%A3%E1%83%93%E1%83%90%E1%83%A1%E1%83%A2%E1%83%95%E1%83%98%E1%83%A0%E1%83%98_-_%E1%83%A5%E1%83%90%E1%83%A0%E1%83%97%E1%83%A3%E1%83%9A%E1%83%98_%E1%83%AE%E1%83%90%E1%83%9A%E1%83%AE%E1%83%A3%E1%83%A0%E1%83%98_%E1%83%A1%E1%83%98%E1%83%9B%E1%83%A6%E1%83%94%E1%83%A0%E1%83%98%E1%83%A1_%E1%83%93%E1%83%90_%E1%83%A1%E1%83%90%E1%83%99%E1%83%A0%E1%83%90%E1%83%95%E1%83%94%E1%83%91%E1%83%98%E1%83%A1_%E1%83%94%E1%83%A0%E1%83%9D%E1%83%95%E1%83%9C%E1%83%A3%E1%83%9A%E1%83%98_%E1%83%9B%E1%83%A3%E1%83%96%E1%83%94%E1%83%A3%E1%83%9B%E1%83%98.jpg",
+  "author": "Ekkatterrinna",
+  "license": "CC BY-SA 4.0",
+  "score": 1.151
+ },
+ "music|BAND": {
+  "file": "w/music__band.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Band_of_the_Welsh_Guards,_Buckingham_Palace,_London_-_Diliff.jpg",
+  "author": "Diliff",
+  "license": "CC BY-SA 3.0",
+  "score": 0.872
+ },
+ "music|BANJO": {
+  "file": "w/music__banjo.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Banjo_MET_206246.jpg",
+  "author": "Creator:Hercules McCord",
+  "license": "CC0",
+  "score": 1.033
+ },
+ "music|BATON": {
+  "file": "w/music__baton.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Harvard_Band_Largest_Baton.jpg",
+  "author": "The original uploader was Rodageo at English Wikipedia .",
+  "license": "CC BY-SA 2.5",
+  "score": 0.499
+ },
+ "music|BONGOS": {
+  "file": "w/music__bongos.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Drum_Shop.jpg",
+  "author": "Joysaha.bd",
+  "license": "CC BY-SA 4.0",
+  "score": 1.064
+ },
+ "music|CASTANETS": {
+  "file": "w/music__castanets.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Qairaq_or_kairak_(stone_castanets)_mid-20th_century.jpg",
+  "author": "Metropolitan Museum of Art",
+  "license": "CC0",
+  "score": 1.108
+ },
+ "music|CELLO": {
+  "file": "w/music__cello.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Hermann-Leeser-Schule,_%22Spin!%22_(Absolventen_der_staatlichen_Artistenschule)_--_2019_--_5475.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.171
+ },
+ "music|CHING": {
+  "file": "w/music__ching.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Khrueang_Mahori_Piphat_(1929,_p._26).jpg",
+  "author": "Unknown author Unknown author",
+  "license": "Public domain",
+  "score": 0.453
+ },
+ "music|CHOIR": {
+  "file": "w/music__choir.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:005_2014_12_29_Pfeifenorgel.jpg",
+  "author": "Friedrich Haag",
+  "license": "CC BY-SA 4.0",
+  "score": 0.546
+ },
+ "music|CLARINET": {
+  "file": "w/music__clarinet.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Clarinet_in_B-flat_MET_DP302568.jpg",
+  "author": "Charles-Joseph Sax",
+  "license": "CC0",
+  "score": 0.689
+ },
  "music|CONCERT": {
   "file": "w/music__concert.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_D%C3%BClmener_Sommer,_Open-Air-Konzert,_%22Bounce%22_--_2018_--_0051.jpg",
   "author": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
   "score": 1.004
+ },
+ "music|CONDUCTOR": {
+  "file": "w/music__conductor.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sariaya,_Quezon_October_4_2026_Samahan_ng_Rondalla_03.jpg",
+  "author": "P1898",
+  "license": "CC BY 4.0",
+  "score": 0.259
+ },
+ "music|CYMBALS": {
+  "file": "w/music__cymbals.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Musical_Instruments_and_Raja_of_Pudukkottai.png",
+  "author": "University of Edinburgh",
+  "license": "CC BY 3.0",
+  "score": 0.727
+ },
+ "music|DANCE FLOOR": {
+  "file": "w/music__dance-floor.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_Bar_Complex_Dance_Floor.jpg",
+  "author": "Itsjoshporter",
+  "license": "CC BY-SA 4.0",
+  "score": 1.249
+ },
+ "music|DOUBLE BASS": {
+  "file": "w/music__double-bass.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Double_Bass_MET_DP218932.jpg",
+  "author": "Bartolomeo Cristofori",
+  "license": "CC0",
+  "score": 1.013
+ },
+ "music|DRUMMER": {
+  "file": "w/music__drummer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Drummer_of_the_Tuvan_Wind_Orchestra_with_marching_bass_drum.jpg",
+  "author": "Dmitry Ivanov .",
+  "license": "CC BY-SA 4.0",
+  "score": 1.07
+ },
+ "music|DRUMSTICKS": {
+  "file": "w/music__drumsticks.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sean_Kinney_(Alice_In_Chains)_Cutoffs_and_Drumsticks_-_Rock_%26_Roll_Hall_of_Fame_and_Museum,_Cleveland_(by_Adam_Jones).jpg",
+  "author": "Adam Jones from Kelowna, BC, Canada",
+  "license": "CC BY-SA 2.0",
+  "score": 1.212
  },
  "music|FLUTE": {
   "file": "w/music__flute.jpg",
@@ -6341,12 +6460,89 @@
   "license": "CC BY-SA 4.0",
   "score": 0.698
  },
+ "music|FRENCH HORN": {
+  "file": "w/music__french-horn.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:French_Horn_MET_DP-12679-062.jpg",
+  "author": "Creator:Gautrot",
+  "license": "CC0",
+  "score": 1.291
+ },
+ "music|GONG": {
+  "file": "w/music__gong.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Western_Zuu_Temple_05.jpg",
+  "author": "Bernard Gagnon",
+  "license": "CC0",
+  "score": 0.982
+ },
+ "music|GUITARIST": {
+  "file": "w/music__guitarist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:String_instrument_gallery,_Zemun_-_Nemanja_Bogunovi%C4%87,_guitarist_04.jpg",
+  "author": "Viktor Lazić",
+  "license": "CC BY-SA 4.0",
+  "score": 0.646
+ },
+ "music|HANDBELLS": {
+  "file": "w/music__handbells.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Handbell.jpg",
+  "author": "Sa95123",
+  "license": "CC BY-SA 4.0",
+  "score": 1.209
+ },
+ "music|HARMONICA": {
+  "file": "w/music__harmonica.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Harmonica,_Musical_Instrument,_National_Museum,_New_Delhi.jpg",
+  "author": "Gajarion27",
+  "license": "CC BY-SA 3.0",
+  "score": 0.806
+ },
+ "music|HARP": {
+  "file": "w/music__harp.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_musical_instrument._A_harp.jpg",
+  "author": "Eacquahdennis",
+  "license": "CC BY 4.0",
+  "score": 1.172
+ },
+ "music|KARAOKE": {
+  "file": "w/music__karaoke.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Palace_KTV_-_%E6%AD%8C.jpg",
+  "author": "My Community Sg",
+  "license": "CC BY-SA 4.0",
+  "score": 0.652
+ },
+ "music|KAZOO": {
+  "file": "w/music__kazoo.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Acme_Queen_Parlor_Organ,_$27.45_at_c.1902_Sears_Roebuck_Catalog,_MIM_PHX.jpg",
+  "author": "catalog: Sears, Roebuck and Company photograph: Dave Fey",
+  "license": "Public domain",
+  "score": 0.605
+ },
+ "music|KHAEN": {
+  "file": "w/music__khaen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_Mangkong_man_plays_khene_in_Laos.jpg",
+  "author": "BigBrotherMouse",
+  "license": "CC BY-SA 3.0",
+  "score": 1.284
+ },
  "music|KHIM": {
   "file": "w/music__khim.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Kim_Thai_Instrument.jpg",
   "author": "",
   "license": "CC BY-SA 3.0",
   "score": 0.831
+ },
+ "music|KHONG WONG": {
+  "file": "w/music__khong-wong.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:10340_Lampang.jpg",
+  "author": "YashiWong",
+  "license": "CC BY-SA 3.0",
+  "score": 1.25
+ },
+ "music|LOUD": {
+  "file": "w/music__loud.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tonhalle_Munich_Concert_2017_Crowd_2.jpg",
+  "author": "Arne Müseler",
+  "license": "CC BY-SA 2.0",
+  "score": 0.65
  },
  "music|MARACAS": {
   "file": "w/music__maracas.jpg",
@@ -6355,12 +6551,61 @@
   "license": "CC BY-SA 3.0",
   "score": 0.947
  },
+ "music|METRONOME": {
+  "file": "w/music__metronome.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Metronomes_101_clean.jpg",
+  "author": "Metronomes 101.jpg:James F. Perry derivative work: Luigi Chiesa",
+  "license": "CC BY-SA 2.0",
+  "score": 1.14
+ },
  "music|MICROPHONE": {
   "file": "w/music__microphone.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Shure_mikrofon_55S.jpg",
   "author": "Holger.Ellgaard",
   "license": "CC BY-SA 3.0",
   "score": 0.986
+ },
+ "music|MUSIC BOX": {
+  "file": "w/music__music-box.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Music_Box_MET_DP169440.jpg",
+  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
+  "license": "CC0",
+  "score": 1.135
+ },
+ "music|MUSIC NOTE": {
+  "file": "w/music__music-note.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Welcome_home_comrade,_sheet_music,_p._4.jpg",
+  "author": "Lawrence Monahan, Jr. (music and lyrics), unknown (photo)",
+  "license": "Public domain",
+  "score": 0.36
+ },
+ "music|OBOE": {
+  "file": "w/music__oboe.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Oboe_MET_206955.jpg",
+  "author": "Theodore Berteling",
+  "license": "CC0",
+  "score": 0.525
+ },
+ "music|ORCHESTRA": {
+  "file": "w/music__orchestra.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Saxophonist_of_the_Tuvan_Wind_Orchestra_in_costume_of_Cham_dance.jpg",
+  "author": "Dmitry Ivanov .",
+  "license": "CC BY-SA 4.0",
+  "score": 0.709
+ },
+ "music|ORGAN": {
+  "file": "w/music__organ.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_St.-Paulus-Dom,_Johanneschor,_Orgel_--_2019_--_3821.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.246
+ },
+ "music|PIANIST": {
+  "file": "w/music__pianist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mihaita_Zama_portrait_piano_recital.jpg",
+  "author": "Mihai131",
+  "license": "CC0",
+  "score": 1.235
  },
  "music|QUIET": {
   "file": "w/music__quiet.jpg",
@@ -6369,12 +6614,40 @@
   "license": "CC BY 2.0",
   "score": 0.298
  },
+ "music|RADIO": {
+  "file": "w/music__radio.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Theremin_At_The_Musical_Museum,_Brentford,_London_(clip).jpg",
+  "author": "Theremin At The Musical Museum, Brentford, London.jpg : Jim Linwood derivative work: Clusternote ( talk )",
+  "license": "CC BY 3.0",
+  "score": 0.745
+ },
  "music|RANAT": {
   "file": "w/music__ranat.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Ranat_ek.jpg",
   "author": "Paul_012",
   "license": "CC BY-SA 3.0",
   "score": 0.445
+ },
+ "music|RECORD PLAYER": {
+  "file": "w/music__record-player.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sony_XO-D20S_Midi_HiFi_and_CDP-M29_CD_player_(white_bg).jpg",
+  "author": "Oisacc",
+  "license": "CC BY-SA 4.0",
+  "score": 0.772
+ },
+ "music|RECORDER": {
+  "file": "w/music__recorder.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Yamaha_recorder_-_Musical_instruments_in_Israel_03.jpg",
+  "author": "Chenspec",
+  "license": "CC BY-SA 4.0",
+  "score": 0.824
+ },
+ "music|RHYTHM": {
+  "file": "w/music__rhythm.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:M%C3%A9tronome_-_face_sans_couvercle.jpg",
+  "author": "Clément Bucco-Lechat",
+  "license": "CC BY-SA 3.0",
+  "score": 0.625
  },
  "music|SAXOPHONE": {
   "file": "w/music__saxophone.jpg",
@@ -6383,12 +6656,54 @@
   "license": "CC BY-SA 4.0",
   "score": 0.9
  },
+ "music|SHEET MUSIC": {
+  "file": "w/music__sheet-music.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Welcome_home_comrade,_sheet_music,_p._5.jpg",
+  "author": "Lawrence Monahan, Jr. (music and lyrics), unknown (photo)",
+  "license": "Public domain",
+  "score": 0.821
+ },
  "music|SINGER": {
   "file": "w/music__singer.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Ah_cricket_20122_(7364759010).jpg",
   "author": "Owen Lucas from Bath, UK",
   "license": "Public domain",
   "score": 0.207
+ },
+ "music|SONG": {
+  "file": "w/music__song.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:School_children_singing,_Pie_Town,_New_Mexico_(LOC).jpg",
+  "author": "The Library of Congress",
+  "license": "No restrictions",
+  "score": 0.997
+ },
+ "music|STAGE": {
+  "file": "w/music__stage.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hausd%C3%BClmen,_Gro%C3%9Fe_Teichsm%C3%BChle,_Veranstaltung_-Klangspuren-_(Glengar)_--_2013_--_2614.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.761
+ },
+ "music|STEEL PAN": {
+  "file": "w/music__steel-pan.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Abuv_in_Temple.png",
+  "author": "ChatGPT",
+  "license": "Public domain",
+  "score": 0.408
+ },
+ "music|TAMBOURINE": {
+  "file": "w/music__tambourine.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Miriam,_the_golden_Haggadah.jpg",
+  "author": "Unknown author Unknown author",
+  "license": "Public domain",
+  "score": 0.474
+ },
+ "music|TROMBONE": {
+  "file": "w/music__trombone.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:WANZ_musical_instrument_photography_shoot_Sept_2024_03.jpg",
+  "author": "Jonathanischoice",
+  "license": "CC BY 4.0",
+  "score": 1.187
  },
  "music|TRUMPET": {
   "file": "w/music__trumpet.jpg",
@@ -6397,12 +6712,47 @@
   "license": "CC BY-SA 4.0",
   "score": 0.786
  },
+ "music|TUBA": {
+  "file": "w/music__tuba.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tuba_MET_DP340077.jpg",
+  "author": "Creator:C.W. Moritz",
+  "license": "CC0",
+  "score": 1.068
+ },
+ "music|UKULELE": {
+  "file": "w/music__ukulele.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Acoustic_guitars,_ukuleles,_and_percussions_-_musical_instrument_store_at_San_Francisco.jpg",
+  "author": "marilyn cole",
+  "license": "CC BY-SA 2.0",
+  "score": 1.239
+ },
  "music|VIOLIN": {
   "file": "w/music__violin.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Violin_VL100.png",
   "author": "Just plain Bill",
   "license": "CC0",
   "score": 0.95
+ },
+ "music|VIOLINIST": {
+  "file": "w/music__violinist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dr._Jubal_Fulks.jpg",
+  "author": "Zombat2021",
+  "license": "CC BY-SA 4.0",
+  "score": 1.077
+ },
+ "music|WIND CHIMES": {
+  "file": "w/music__wind-chimes.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Wind_chime_5.jpg",
+  "author": "Nayan j Nath",
+  "license": "CC BY-SA 4.0",
+  "score": 0.747
+ },
+ "music|XYLOPHONE": {
+  "file": "w/music__xylophone.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sieben_prismatische_Farben_003_2023_03_16.jpg",
+  "author": "Friedrich Haag",
+  "license": "CC BY-SA 4.0",
+  "score": 1.275
  },
  "nature|ACORN": {
   "file": "w/nature__acorn.jpg",

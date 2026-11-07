@@ -1413,12 +1413,26 @@
   "license": "CC BY 2.0",
   "score": 0.951
  },
+ "body|ARMPIT": {
+  "file": "w/body__armpit.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Matthew_Anderson_(FIVB_MWC_Poland_2014).jpg",
+  "author": "Grzegorz Gigol",
+  "license": "CC BY-SA 4.0",
+  "score": 0.731
+ },
  "body|BACK": {
   "file": "w/body__back.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Posterior_view_of_human_female_and_male_backs_(cropped).jpg",
   "author": "Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence",
   "license": "CC0",
   "score": 0.881
+ },
+ "body|BANDAGE": {
+  "file": "w/body__bandage.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:DRK_Verbandsmull.jpg",
+  "author": "Superbass",
+  "license": "CC BY-SA 4.0",
+  "score": 0.976
  },
  "body|BEARD": {
   "file": "w/body__beard.jpg",
@@ -1427,12 +1441,26 @@
   "license": "CC0",
   "score": 0.955
  },
+ "body|BELLY BUTTON": {
+  "file": "w/body__belly-button.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Belly_Button.jpg",
+  "author": "Md farhan anis",
+  "license": "CC BY-SA 4.0",
+  "score": 1.263
+ },
  "body|BLOOD": {
   "file": "w/body__blood.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Venous_and_arterial_blood.jpg",
   "author": "Wesalius",
   "license": "CC BY-SA 3.0",
   "score": 0.545
+ },
+ "body|BODY": {
+  "file": "w/body__body.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Epitafium_ca%C5%82opostaciowe_dziecka_z_rodziny_Hochberg_w_%C5%9Bcianie_kaplicy_bocznej_w_ko%C5%9Bciele_%C5%9Awi%C4%99tego_Miko%C5%82aja_w_%C5%9Awiebodzicach.jpg",
+  "author": "Grzegorz Godek",
+  "license": "CC0",
+  "score": 0.538
  },
  "body|BONE": {
   "file": "w/body__bone.jpg",
@@ -1441,12 +1469,26 @@
   "license": "CC BY 4.0",
   "score": 0.872
  },
+ "body|BRAID": {
+  "file": "w/body__braid.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mganga_wa_kienyeji.jpg",
+  "author": "Happiness Stephen",
+  "license": "CC BY-SA 4.0",
+  "score": 1.214
+ },
  "body|BRAIN": {
   "file": "w/body__brain.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:The_Human_Brain_Model_01.jpg",
   "author": "Edeh Sophia",
   "license": "CC0",
   "score": 1.107
+ },
+ "body|BRUISE": {
+  "file": "w/body__bruise.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bruise-leg.jpg",
+  "author": "Justin thomas kuz",
+  "license": "CC0",
+  "score": 1.086
  },
  "body|CHEEK": {
   "file": "w/body__cheek.jpg",
@@ -1455,12 +1497,33 @@
   "license": "CC BY-SA 2.0",
   "score": 0.552
  },
+ "body|CHEST": {
+  "file": "w/body__chest.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chest-on-Chest_MET_DP116693.jpg",
+  "author": "Creator:Thomas Townsend",
+  "license": "CC0",
+  "score": 0.965
+ },
  "body|CHIN": {
   "file": "w/body__chin.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Black-chinned_Yuhina_in_Kurseong_April_2024_by_Tisha_Mukherjee_02.jpg",
   "author": "Tisha Mukherjee",
   "license": "CC BY-SA 4.0",
   "score": 0.529
+ },
+ "body|COUGH": {
+  "file": "w/body__cough.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Woman_coughing.png",
+  "author": "MelConfidentiel",
+  "license": "CC BY 4.0",
+  "score": 0.786
+ },
+ "body|DIMPLE": {
+  "file": "w/body__dimple.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Teenage_girl_with_gap_teeth_and_dimples.jpg",
+  "author": "Flame, not lame",
+  "license": "CC0",
+  "score": 0.763
  },
  "body|EAR": {
   "file": "w/body__ear.jpg",
@@ -1490,12 +1553,26 @@
   "license": "CC0",
   "score": 0.772
  },
+ "body|EYELASH": {
+  "file": "w/body__eyelash.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Close-up_of_human_eyelashes.jpg",
+  "author": "Ivan Radic",
+  "license": "CC BY 2.0",
+  "score": 1.056
+ },
  "body|FACE": {
   "file": "w/body__face.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Human_faces.jpg",
   "author": "Autisticeditor 20",
   "license": "CC BY-SA 4.0",
   "score": 0.285
+ },
+ "body|FEVER": {
+  "file": "w/body__fever.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:When_to_send_for_the_doctor_-_and_what_to_do_before_the_doctor_comes_(1913)_(14577134339).jpg",
+  "author": "Internet Archive Book Images",
+  "license": "No restrictions",
+  "score": 1.221
  },
  "body|FINGER": {
   "file": "w/body__finger.jpg",
@@ -1504,12 +1581,54 @@
   "license": "CC BY-SA 4.0",
   "score": 0.367
  },
+ "body|FINGERPRINT": {
+  "file": "w/body__fingerprint.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ebakiivrik-_(Simocephalus).jpg",
+  "author": "Janek Lass",
+  "license": "CC BY 4.0",
+  "score": 0.79
+ },
+ "body|FIST": {
+  "file": "w/body__fist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:27_Brigade_Memorial_071215_09.jpg",
+  "author": "Oren Rozen",
+  "license": "CC BY-SA 4.0",
+  "score": 0.479
+ },
  "body|FOOT": {
   "file": "w/body__foot.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Foot_Fetish.jpg",
   "author": "Pure male feet",
   "license": "CC0",
   "score": 1.124
+ },
+ "body|FOOTPRINT": {
+  "file": "w/body__footprint.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Human_footprint.jpg",
+  "author": "Kritzolina",
+  "license": "CC BY-SA 4.0",
+  "score": 1.057
+ },
+ "body|FOREHEAD": {
+  "file": "w/body__forehead.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Human_Forehead.JPG",
+  "author": "Faceofwiki",
+  "license": "Public domain",
+  "score": 0.877
+ },
+ "body|FRECKLES": {
+  "file": "w/body__freckles.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Smiling_model_with_freckles.jpg",
+  "author": "Eddy Van 3000",
+  "license": "CC BY-SA 2.0",
+  "score": 0.712
+ },
+ "body|GUMS": {
+  "file": "w/body__gums.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Scorbutic_gums.jpg",
+  "author": "Centers for Disease Control and Prevention",
+  "license": "Public domain",
+  "score": 0.94
  },
  "body|HAIR": {
   "file": "w/body__hair.jpg",
@@ -1525,6 +1644,20 @@
   "license": "CC BY-SA 3.0",
   "score": 0.921
  },
+ "body|HEAD": {
+  "file": "w/body__head.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mumified_head_IMG_0515.jpg",
+  "author": "Rama Own work",
+  "license": "CC BY-SA 2.0 fr",
+  "score": 0.99
+ },
+ "body|HEADACHE": {
+  "file": "w/body__headache.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Headache_Stone_-_geograph.org.uk_-_4894267.jpg",
+  "author": "DeeEmm",
+  "license": "CC BY-SA 2.0",
+  "score": 0.528
+ },
  "body|HEART": {
   "file": "w/body__heart.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Human_heart_model.jpg",
@@ -1532,12 +1665,40 @@
   "license": "CC BY-SA 3.0",
   "score": 1.161
  },
+ "body|HEEL": {
+  "file": "w/body__heel.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Girls_heel.jpg",
+  "author": "Stilfehler",
+  "license": "CC BY-SA 3.0",
+  "score": 0.984
+ },
+ "body|HIP": {
+  "file": "w/body__hip.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_unusual_exoplanet_HIP_65426b_%E2%80%94_SPHERE%27s_first.jpg",
+  "author": "ESO",
+  "license": "CC BY 4.0",
+  "score": 0.681
+ },
+ "body|JAW": {
+  "file": "w/body__jaw.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Penny_Magazine_1837_476_Fig_CLXI.jpg",
+  "author": "Unknown artist Unknown artist",
+  "license": "Public domain",
+  "score": 0.85
+ },
  "body|KNEE": {
   "file": "w/body__knee.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Knee_prosthesis_zones_by_Knee_Society_2015,_AP_view.jpg",
   "author": "Mikael Häggström , M.D. Author info - Reusing images - Conflicts of interest: None Mikael Häggström , M.D. Consent note : Written informed consent was obtained from the individual, including online pu",
   "license": "CC0",
   "score": 0.989
+ },
+ "body|KNUCKLE": {
+  "file": "w/body__knuckle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Eczema_on_knuckle.jpg",
+  "author": "JIP",
+  "license": "CC BY-SA 4.0",
+  "score": 0.904
  },
  "body|LEG": {
   "file": "w/body__leg.jpg",
@@ -1553,12 +1714,40 @@
   "license": "Public domain",
   "score": 0.659
  },
+ "body|LUNGS": {
+  "file": "w/body__lungs.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ivory_female_anatomical_figure,_Europe_Wellcome_L0058669.jpg",
+  "author": "https://wellcomeimages.org/indexplus/obf_images/f2/83/0f1c116a99043fedf5024ecfe0e2.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058669.html Wellcome Collection gallery (2018-03-30): https",
+  "license": "CC BY 4.0",
+  "score": 0.559
+ },
+ "body|MEDICINE": {
+  "file": "w/body__medicine.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_collection_of_generic_medicine_pills_on_a_white_background.jpg",
+  "author": "Subhrajyoti07",
+  "license": "CC BY-SA 4.0",
+  "score": 1.029
+ },
  "body|MOUTH": {
   "file": "w/body__mouth.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Detailed_view_of_the_inside_of_the_human_mouth.jpg",
   "author": "JonaLane",
   "license": "CC0",
   "score": 0.74
+ },
+ "body|MUSCLE": {
+  "file": "w/body__muscle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Arm_flex_pronate.jpg",
+  "author": "No machine-readable author provided. EncycloPetey assumed (based on copyright claims).",
+  "license": "CC BY 2.5",
+  "score": 1.125
+ },
+ "body|MUSTACHE": {
+  "file": "w/body__mustache.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:-Man_with_Mustache_Wearing_Oilskin_Hat-_MET_DP700082.jpg",
+  "author": "Creator:Edward M. Tyler",
+  "license": "CC0",
+  "score": 0.999
  },
  "body|NAIL": {
   "file": "w/body__nail.jpg",
@@ -1581,12 +1770,61 @@
   "license": "CC BY-SA 4.0",
   "score": 1.077
  },
+ "body|NOSTRIL": {
+  "file": "w/body__nostril.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Nostrils_by_David_Shankbone.jpg",
+  "author": "David Shankbone",
+  "license": "CC BY-SA 3.0",
+  "score": 1.087
+ },
+ "body|PALM": {
+  "file": "w/body__palm.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Singapore_(SG),_Bayfront_Ave_--_2019_--_4669.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.327
+ },
+ "body|PINKY": {
+  "file": "w/body__pinky.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pinky_rose27.jpg",
+  "author": "Rathipriya Mohankumar",
+  "license": "CC0",
+  "score": 1.395
+ },
+ "body|PONYTAIL": {
+  "file": "w/body__ponytail.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Queue_de_cheval_Comtois.jpg",
+  "author": "Celeda",
+  "license": "CC BY-SA 4.0",
+  "score": 1.069
+ },
+ "body|RIBS": {
+  "file": "w/body__ribs.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Edmontosaurus_annectens_(mummy,_UCRC_PV31).png",
+  "author": "E. T. Saitta et al.",
+  "license": "CC BY 4.0",
+  "score": 0.559
+ },
+ "body|SCAR": {
+  "file": "w/body__scar.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Scarred_forearm,_bandaged_knee_and_bowed_leg_(1499478).jpg",
+  "author": "Geoff Charles",
+  "license": "CC BY-SA 4.0",
+  "score": 0.465
+ },
  "body|SHOULDER": {
   "file": "w/body__shoulder.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Shoulder_impingement_syndrome,_X-ray.jpg",
   "author": "Jmarchn",
   "license": "CC0",
   "score": 1.027
+ },
+ "body|SKELETON": {
+  "file": "w/body__skeleton.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Skeleton_model_20200122_184823074_iOS.jpg",
+  "author": "Sam Nabi",
+  "license": "CC BY-SA 4.0",
+  "score": 1.194
  },
  "body|SKIN": {
   "file": "w/body__skin.jpg",
@@ -1595,6 +1833,20 @@
   "license": "Public domain",
   "score": 1.087
  },
+ "body|SKULL": {
+  "file": "w/body__skull.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_Human_Skull_01.jpg",
+  "author": "Edeh Sophia",
+  "license": "CC0",
+  "score": 1.29
+ },
+ "body|SPINE": {
+  "file": "w/body__spine.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cervical_spine_from_behind_(15426186453).jpg",
+  "author": "John Campbell",
+  "license": "CC BY 2.0",
+  "score": 1.166
+ },
  "body|STOMACH": {
   "file": "w/body__stomach.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Chestnut-bellied_Sandgrouse_in_Bhigwan_August_2025_by_Tisha_Mukherjee_02.jpg",
@@ -1602,12 +1854,47 @@
   "license": "CC BY-SA 4.0",
   "score": 0.444
  },
+ "body|STOMACHACHE": {
+  "file": "w/body__stomachache.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Abdominal_pain.jpg",
+  "author": "Robystarm07",
+  "license": "CC0",
+  "score": 1.068
+ },
+ "body|SWEAT": {
+  "file": "w/body__sweat.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pocari_Sweat,_Canada_(label),_2026-04-04.jpg",
+  "author": "Chris Woodrich",
+  "license": "Public domain",
+  "score": 0.815
+ },
+ "body|TEARS": {
+  "file": "w/body__tears.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%E6%B7%9A%E4%B8%AD%E4%B9%8B%E6%84%9B.jpg",
+  "author": "黃孝擎",
+  "license": "CC BY-SA 4.0",
+  "score": 0.755
+ },
  "body|TEETH": {
   "file": "w/body__teeth.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:06-10-06smile.jpg",
   "author": "dozenist",
   "license": "CC BY-SA 3.0",
   "score": 0.42
+ },
+ "body|THIGH": {
+  "file": "w/body__thigh.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Untilting_an_Intentional_camera_tilt_with_posing_of_the_model_-_example_in_fashion_photography_for_filling_the_frame_-_ModelTanja.jpg",
+  "author": "Tobias ToMar Maier",
+  "license": "CC BY-SA 3.0",
+  "score": 0.553
+ },
+ "body|THROAT": {
+  "file": "w/body__throat.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Heilig-Kreuz-Kirche,_The_Cast_Whale_Project_--_2022_--_0493.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.693
  },
  "body|THUMB": {
   "file": "w/body__thumb.jpg",
@@ -1636,6 +1923,27 @@
   "author": "No machine-readable author provided. Gleam~commonswiki assumed (based on copyright claims).",
   "license": "CC BY-SA 3.0",
   "score": 1.099
+ },
+ "body|TOOTHACHE": {
+  "file": "w/body__toothache.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Acmella_ciliata_by_Kadavoor.jpg",
+  "author": "Jeevan Jose, Kerala, India",
+  "license": "CC BY-SA 4.0",
+  "score": 0.73
+ },
+ "body|VEIN": {
+  "file": "w/body__vein.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Starr-100317-3872-Dubautia_platyphylla-leaf_in_hand_showing_veins-Pohakuokala_Gulch-Maui_(25013224445).jpg",
+  "author": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "score": 0.723
+ },
+ "body|WAIST": {
+  "file": "w/body__waist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Traditional_silver_waist_belt_worn_by_a_Bhil_community_woman,_Jhabua,_Madhya_Pradesh,_India.jpg",
+  "author": "Suyash Dwivedi",
+  "license": "CC BY-SA 4.0",
+  "score": 0.913
  },
  "body|WRIST": {
   "file": "w/body__wrist.jpg",

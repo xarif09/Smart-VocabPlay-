@@ -12780,10 +12780,38 @@
    "forced": false
   },
   "body|HEAD": {
-   "status": "no candidates"
+   "title": "File:Mumified head IMG 0515.jpg",
+   "final": 0.99,
+   "p": 0.5453,
+   "photo": 0.8475,
+   "fit": 0.841,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:human head",
+   "n_cands": 8,
+   "forced": false
   },
   "body|BODY": {
-   "status": "no candidates"
+   "title": "File:Epitafium całopostaciowe dziecka z rodziny Hochberg w ścianie kaplicy bocznej w kościele Świętego Mikołaja w Świebodzicach.jpg",
+   "final": 0.538,
+   "p": 0.0001,
+   "photo": 0.9933,
+   "fit": 0.679,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.68"
+   ],
+   "origin": "search:child full body",
+   "n_cands": 6,
+   "forced": false
   },
   "body|TEETH": {
    "title": "File:06-10-06smile.jpg",
@@ -12822,7 +12850,21 @@
    "forced": false
   },
   "body|MUSTACHE": {
-   "status": "no candidates"
+   "title": "File:-Man with Mustache Wearing Oilskin Hat- MET DP700082.jpg",
+   "final": 0.999,
+   "p": 0.996,
+   "photo": 0.9457,
+   "fit": 0.423,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.70)"
+   ],
+   "flags": [
+    "fit 0.42"
+   ],
+   "origin": "search:man with mustache",
+   "n_cands": 5,
+   "forced": false
   },
   "body|ANKLE": {
    "title": "File:Ankle.jpg",
@@ -12843,10 +12885,38 @@
    "forced": false
   },
   "body|HIP": {
-   "status": "no candidates"
+   "title": "File:The unusual exoplanet HIP 65426b — SPHERE's first.jpg",
+   "final": 0.681,
+   "p": 0.0002,
+   "photo": 0.917,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [
+    "upscaled x1.5"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:hip",
+   "n_cands": 6,
+   "forced": false
   },
   "body|CHEST": {
-   "status": "no candidates"
+   "title": "File:Chest-on-Chest MET DP116693.jpg",
+   "final": 0.965,
+   "p": 0.9993,
+   "photo": 0.5696,
+   "fit": 0.581,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.97)"
+   ],
+   "flags": [
+    "fit 0.58"
+   ],
+   "origin": "search:chest",
+   "n_cands": 8,
+   "forced": false
   },
   "body|BLOOD": {
    "title": "File:Venous and arterial blood.jpg",
@@ -20878,121 +20948,636 @@
    "status": "no candidates"
   },
   "body|EYELASH": {
-   "status": "no candidates"
+   "title": "File:Close-up of human eyelashes.jpg",
+   "final": 1.056,
+   "p": 0.9995,
+   "photo": 0.9571,
+   "fit": 0.334,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:human eyelash",
+   "n_cands": 7,
+   "forced": false
   },
   "body|FOREHEAD": {
-   "status": "no candidates"
+   "title": "File:Human Forehead.JPG",
+   "final": 0.877,
+   "p": 0.9908,
+   "photo": 0.5882,
+   "fit": 0.328,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.85)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:human forehead",
+   "n_cands": 6,
+   "forced": false
   },
   "body|THROAT": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Heilig-Kreuz-Kirche, The Cast Whale Project -- 2022 -- 0493.jpg",
+   "final": 0.693,
+   "p": 0.0,
+   "photo": 0.9654,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "body|HEEL": {
-   "status": "no candidates"
+   "title": "File:Girls heel.jpg",
+   "final": 0.984,
+   "p": 0.9686,
+   "photo": 0.9925,
+   "fit": 0.397,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.83)"
+   ],
+   "flags": [
+    "fit 0.40"
+   ],
+   "origin": "search:human heel",
+   "n_cands": 7,
+   "forced": false
   },
   "body|PALM": {
-   "status": "no candidates"
+   "title": "File:Singapore (SG), Bayfront Ave -- 2019 -- 4669.jpg",
+   "final": 1.327,
+   "p": 0.9822,
+   "photo": 0.9967,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "body|FIST": {
-   "status": "no candidates"
+   "title": "File:27 Brigade Memorial 071215 09.jpg",
+   "final": 0.479,
+   "p": 0.1699,
+   "photo": 0.5303,
+   "fit": 0.481,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.80)"
+   ],
+   "flags": [
+    "low word prob 0.17",
+    "fit 0.48"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "body|SKULL": {
-   "status": "no candidates"
+   "title": "File:The Human Skull 01.jpg",
+   "final": 1.29,
+   "p": 0.9983,
+   "photo": 0.9535,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:human skull model",
+   "n_cands": 8,
+   "forced": false
   },
   "body|SKELETON": {
-   "status": "no candidates"
+   "title": "File:Skeleton model 20200122 184823074 iOS.jpg",
+   "final": 1.194,
+   "p": 0.9981,
+   "photo": 0.4757,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.48"
+   ],
+   "origin": "search:human skeleton model",
+   "n_cands": 8,
+   "forced": false
   },
   "body|MUSCLE": {
-   "status": "no candidates"
+   "title": "File:Arm flex pronate.jpg",
+   "final": 1.125,
+   "p": 0.9998,
+   "photo": 0.9993,
+   "fit": 0.64,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:muscle arm flex",
+   "n_cands": 8,
+   "forced": false
   },
   "body|LUNGS": {
-   "status": "no candidates"
+   "title": "File:Ivory female anatomical figure, Europe Wellcome L0058669.jpg",
+   "final": 0.559,
+   "p": 0.0003,
+   "photo": 0.6971,
+   "fit": 0.792,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:lungs anatomical model",
+   "n_cands": 8,
+   "forced": false
   },
   "body|RIBS": {
-   "status": "no candidates"
+   "title": "File:Edmontosaurus annectens (mummy, UCRC PV31).png",
+   "final": 0.559,
+   "p": 0.0489,
+   "photo": 0.5559,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.05"
+   ],
+   "origin": "search:rib cage model",
+   "n_cands": 7,
+   "forced": false
   },
   "body|SPINE": {
-   "status": "no candidates"
+   "title": "File:Cervical spine from behind (15426186453).jpg",
+   "final": 1.166,
+   "p": 0.9831,
+   "photo": 0.8268,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:spine model",
+   "n_cands": 8,
+   "forced": false
   },
   "body|BELLY BUTTON": {
-   "status": "no candidates"
+   "title": "File:Belly Button.jpg",
+   "final": 1.263,
+   "p": 0.968,
+   "photo": 0.8933,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:belly button",
+   "n_cands": 8,
+   "forced": false
   },
   "body|WAIST": {
-   "status": "no candidates"
+   "title": "File:Traditional silver waist belt worn by a Bhil community woman, Jhabua, Madhya Pradesh, India.jpg",
+   "final": 0.913,
+   "p": 0.9886,
+   "photo": 0.9888,
+   "fit": 0.272,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.57)"
+   ],
+   "flags": [
+    "fit 0.27"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "body|THIGH": {
-   "status": "no candidates"
+   "title": "File:Untilting an Intentional camera tilt with posing of the model - example in fashion photography for filling the frame - ModelTanja.jpg",
+   "final": 0.553,
+   "p": 0.2403,
+   "photo": 0.8456,
+   "fit": 0.433,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.90)"
+   ],
+   "flags": [
+    "low word prob 0.24",
+    "fit 0.43"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "body|JAW": {
-   "status": "no candidates"
+   "title": "File:Penny Magazine 1837 476 Fig CLXI.jpg",
+   "final": 0.85,
+   "p": 0.9814,
+   "photo": 0.4167,
+   "fit": 0.352,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.59)"
+   ],
+   "flags": [
+    "fit 0.35",
+    "not photo-like 0.42"
+   ],
+   "origin": "search:human jaw",
+   "n_cands": 6,
+   "forced": false
   },
   "body|GUMS": {
-   "status": "no candidates"
+   "title": "File:Scorbutic gums.jpg",
+   "final": 0.94,
+   "p": 0.5147,
+   "photo": 0.9999,
+   "fit": 0.765,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:human gums",
+   "n_cands": 7,
+   "forced": false
   },
   "body|FRECKLES": {
-   "status": "no candidates"
+   "title": "File:Smiling model with freckles.jpg",
+   "final": 0.712,
+   "p": 0.6678,
+   "photo": 0.8276,
+   "fit": 0.23,
+   "how": "saliency",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.75)"
+   ],
+   "flags": [
+    "fit 0.23"
+   ],
+   "origin": "search:freckles",
+   "n_cands": 7,
+   "forced": false
   },
   "body|DIMPLE": {
-   "status": "no candidates"
+   "title": "File:Teenage girl with gap teeth and dimples.jpg",
+   "final": 0.763,
+   "p": 0.0012,
+   "photo": 0.9367,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:dimple smile",
+   "n_cands": 6,
+   "forced": false
   },
   "body|PONYTAIL": {
-   "status": "no candidates"
+   "title": "File:Queue de cheval Comtois.jpg",
+   "final": 1.069,
+   "p": 0.7359,
+   "photo": 0.9946,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "body|BRAID": {
-   "status": "no candidates"
+   "title": "File:Mganga wa kienyeji.jpg",
+   "final": 1.214,
+   "p": 0.9622,
+   "photo": 0.9644,
+   "fit": 0.805,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 4,
+   "forced": false
   },
   "body|SWEAT": {
-   "status": "no candidates"
+   "title": "File:Pocari Sweat, Canada (label), 2026-04-04.jpg",
+   "final": 0.815,
+   "p": 0.9945,
+   "photo": 0.988,
+   "fit": 0.599,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.60"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "body|TEARS": {
-   "status": "no candidates"
+   "title": "File:淚中之愛.jpg",
+   "final": 0.755,
+   "p": 0.3593,
+   "photo": 0.8335,
+   "fit": 0.55,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.92)"
+   ],
+   "flags": [
+    "low word prob 0.36",
+    "fit 0.55"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "body|FINGERPRINT": {
-   "status": "no candidates"
+   "title": "File:Ebakiivrik- (Simocephalus).jpg",
+   "final": 0.79,
+   "p": 0.0006,
+   "photo": 0.9965,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "body|FOOTPRINT": {
-   "status": "no candidates"
+   "title": "File:Human footprint.jpg",
+   "final": 1.057,
+   "p": 0.9995,
+   "photo": 0.918,
+   "fit": 0.544,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.91)"
+   ],
+   "flags": [
+    "fit 0.54"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "body|VEIN": {
-   "status": "no candidates"
+   "title": "File:Starr-100317-3872-Dubautia platyphylla-leaf in hand showing veins-Pohakuokala Gulch-Maui (25013224445).jpg",
+   "final": 0.723,
+   "p": 0.0004,
+   "photo": 0.9924,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:veins hand",
+   "n_cands": 8,
+   "forced": false
   },
   "body|NOSTRIL": {
-   "status": "no candidates"
+   "title": "File:Nostrils by David Shankbone.jpg",
+   "final": 1.087,
+   "p": 0.7784,
+   "photo": 0.9722,
+   "fit": 0.668,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.67"
+   ],
+   "origin": "search:human nostril",
+   "n_cands": 6,
+   "forced": false
   },
   "body|ARMPIT": {
-   "status": "no candidates"
+   "title": "File:Matthew Anderson (FIVB MWC Poland 2014).jpg",
+   "final": 0.731,
+   "p": 0.396,
+   "photo": 0.7798,
+   "fit": 0.587,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.98)"
+   ],
+   "flags": [
+    "low word prob 0.40",
+    "fit 0.59"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "body|KNUCKLE": {
-   "status": "no candidates"
+   "title": "File:Eczema on knuckle.jpg",
+   "final": 0.904,
+   "p": 0.3805,
+   "photo": 0.9723,
+   "fit": 0.781,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.38"
+   ],
+   "origin": "search:human knuckle",
+   "n_cands": 7,
+   "forced": false
   },
   "body|PINKY": {
-   "status": "no candidates"
+   "title": "File:Pinky rose27.jpg",
+   "final": 1.395,
+   "p": 0.9903,
+   "photo": 0.9971,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:human pinky",
+   "n_cands": 8,
+   "forced": false
   },
   "body|SCAR": {
-   "status": "no candidates"
+   "title": "File:Scarred forearm, bandaged knee and bowed leg (1499478).jpg",
+   "final": 0.465,
+   "p": 0.0002,
+   "photo": 0.9991,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:scar on knee",
+   "n_cands": 8,
+   "forced": false
   },
   "body|BRUISE": {
-   "status": "no candidates"
+   "title": "File:Bruise-leg.jpg",
+   "final": 1.086,
+   "p": 0.946,
+   "photo": 0.9661,
+   "fit": 0.64,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:bruise",
+   "n_cands": 7,
+   "forced": false
   },
   "body|HEADACHE": {
-   "status": "no candidates"
+   "title": "File:Headache Stone - geograph.org.uk - 4894267.jpg",
+   "final": 0.528,
+   "p": 0.0,
+   "photo": 0.9868,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:headache",
+   "n_cands": 6,
+   "forced": false
   },
   "body|TOOTHACHE": {
-   "status": "no candidates"
+   "title": "File:Acmella ciliata by Kadavoor.jpg",
+   "final": 0.73,
+   "p": 0.0,
+   "photo": 0.6503,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "body|STOMACHACHE": {
-   "status": "no candidates"
+   "title": "File:Abdominal pain.jpg",
+   "final": 1.068,
+   "p": 0.9953,
+   "photo": 0.9875,
+   "fit": 0.358,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.93)"
+   ],
+   "flags": [
+    "fit 0.36"
+   ],
+   "origin": "search:stomach ache",
+   "n_cands": 7,
+   "forced": false
   },
   "body|FEVER": {
-   "status": "no candidates"
+   "title": "File:When to send for the doctor - and what to do before the doctor comes (1913) (14577134339).jpg",
+   "final": 1.221,
+   "p": 0.9412,
+   "photo": 0.9544,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:child fever thermometer",
+   "n_cands": 4,
+   "forced": false
   },
   "body|COUGH": {
-   "status": "no candidates"
+   "title": "File:Woman coughing.png",
+   "final": 0.786,
+   "p": 0.2676,
+   "photo": 0.9617,
+   "fit": 0.758,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.27"
+   ],
+   "origin": "search:coughing",
+   "n_cands": 8,
+   "forced": false
   },
   "body|BANDAGE": {
-   "status": "no candidates"
+   "title": "File:DRK Verbandsmull.jpg",
+   "final": 0.976,
+   "p": 0.9958,
+   "photo": 0.8893,
+   "fit": 0.442,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.74)"
+   ],
+   "flags": [
+    "fit 0.44"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "body|MEDICINE": {
-   "status": "no candidates"
+   "title": "File:A collection of generic medicine pills on a white background.jpg",
+   "final": 1.029,
+   "p": 0.9972,
+   "photo": 0.986,
+   "fit": 0.326,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.68)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:medicine pills",
+   "n_cands": 7,
+   "forced": false
   },
   "vegetables|CHINESE CABBAGE": {
    "status": "no candidates"
@@ -23274,11 +23859,9 @@
   "body|BACK",
   "body|BANDAGE",
   "body|BEARD",
-  "body|BELLY BUTTON",
   "body|BLOOD",
   "body|BODY",
   "body|BONE",
-  "body|BRAID",
   "body|BRUISE",
   "body|CHEEK",
   "body|CHEST",
@@ -23289,16 +23872,13 @@
   "body|EYEBROW",
   "body|EYELASH",
   "body|FACE",
-  "body|FEVER",
   "body|FINGER",
   "body|FINGERPRINT",
   "body|FIST",
   "body|FOOTPRINT",
   "body|FOREHEAD",
   "body|FRECKLES",
-  "body|GUMS",
   "body|HAIR",
-  "body|HEAD",
   "body|HEADACHE",
   "body|HEEL",
   "body|HIP",
@@ -23315,15 +23895,10 @@
   "body|NAIL",
   "body|NECK",
   "body|NOSTRIL",
-  "body|PALM",
-  "body|PINKY",
-  "body|PONYTAIL",
   "body|RIBS",
   "body|SCAR",
   "body|SKELETON",
   "body|SKIN",
-  "body|SKULL",
-  "body|SPINE",
   "body|STOMACH",
   "body|STOMACHACHE",
   "body|SWEAT",
@@ -24497,7 +25072,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1396,
-  "flagged": 1320
+  "with_photo": 1440,
+  "flagged": 1310
  }
 }

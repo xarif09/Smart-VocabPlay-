@@ -7624,7 +7624,23 @@
    "forced": false
   },
   "family|NEIGHBOR": {
-   "status": "no candidates"
+   "title": "File:MadamuTonyobo.jpg",
+   "final": 0.484,
+   "p": 0.0,
+   "photo": 0.7332,
+   "fit": 0.656,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.66"
+   ],
+   "origin": "search:neighbors talking",
+   "n_cands": 8,
+   "forced": false
   },
   "actions|OPEN": {
    "title": "File:Poster for Burnand and Sullivan's Cox and Box - Royal Gallery of Illustration.jpg",
@@ -12898,7 +12914,17 @@
    "forced": false
   },
   "clothes|JEANS": {
-   "status": "no candidates"
+   "title": "File:Jeans Centre, Winschoten (2020) 03.jpg",
+   "final": 1.28,
+   "p": 0.9962,
+   "photo": 0.7941,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:jeans clothing",
+   "n_cands": 6,
+   "forced": false
   },
   "clothes|HOODIE": {
    "title": "File:Marvin Jones 2019 (cropped).jpg",
@@ -12937,13 +12963,50 @@
    "forced": false
   },
   "clothes|SUIT": {
-   "status": "no candidates"
+   "title": "File:DALL-E2 Photographs taken by Polaroid camera showing anthropomorphic rhinoceros wearing business suit and standing on two feet.jpg",
+   "final": 1.12,
+   "p": 0.9413,
+   "photo": 0.5175,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:business suit",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|UNDERWEAR": {
-   "status": "no candidates"
+   "title": "File:Bodysuit worn with sheer tights (pantyhose) and Shirt worn with opaque tights - variant with street clothing.jpg",
+   "final": -0.009,
+   "p": 0.0,
+   "photo": 0.9987,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "check safety 0.92"
+   ],
+   "origin": "search:underwear clothing product",
+   "n_cands": 2,
+   "forced": false
   },
   "clothes|BIKINI": {
-   "status": "no candidates"
+   "title": "File:Young women of Naples in swimsuit, Italy 1948 (2) - Bathing boxes.jpg",
+   "final": 0.614,
+   "p": 0.0018,
+   "photo": 0.9994,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:bikini swimsuit product",
+   "n_cands": 6,
+   "forced": false
   },
   "clothes|SNEAKERS": {
    "title": "File:Air Jordan 1 Banned.jpg",
@@ -12996,7 +13059,21 @@
    "forced": false
   },
   "clothes|EARRINGS": {
-   "status": "no candidates"
+   "title": "File:Pair of Earrings (with 16.10.313) MET 16.10.313-16.10.312 EGDP014157.jpg",
+   "final": 1.016,
+   "p": 0.9926,
+   "photo": 0.9902,
+   "fit": 0.444,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.74)"
+   ],
+   "flags": [
+    "fit 0.44"
+   ],
+   "origin": "search:earrings",
+   "n_cands": 6,
+   "forced": false
   },
   "clothes|BRACELET": {
    "title": "File:Bracelet (jewelry).jpg",
@@ -13668,7 +13745,23 @@
    "status": "no candidates"
   },
   "family|ME": {
-   "status": "no candidates"
+   "title": "File:Cavalry Soldiers Support Bavarian USO (4940794).jpg",
+   "final": 0.323,
+   "p": 0.0325,
+   "photo": 0.7969,
+   "fit": 0.26,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.68)"
+   ],
+   "flags": [
+    "low word prob 0.03",
+    "fit 0.26"
+   ],
+   "origin": "search:selfie child",
+   "n_cands": 7,
+   "forced": false
   },
   "family|BOY": {
    "title": "File:Smiling little boy of Laos.jpg",
@@ -17987,88 +18080,474 @@
    "forced": false
   },
   "family|MOM": {
-   "status": "no candidates"
+   "title": "File:MOM Cultural Center.jpg",
+   "final": 0.613,
+   "p": 0.0,
+   "photo": 0.769,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:mom",
+   "n_cands": 4,
+   "forced": false
   },
   "family|DAD": {
-   "status": "no candidates"
+   "title": "File:Old Dad (1920) - 5.jpg",
+   "final": 0.85,
+   "p": 0.9622,
+   "photo": 0.4677,
+   "fit": 0.43,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.90)"
+   ],
+   "flags": [
+    "fit 0.43",
+    "not photo-like 0.47"
+   ],
+   "origin": "search:dad",
+   "n_cands": 7,
+   "forced": false
   },
   "family|GRANDMA": {
-   "status": "no candidates"
+   "title": "File:NPG 81.8 Grandma Moses Clara Sipprell (cropped).jpg",
+   "final": 0.873,
+   "p": 0.3593,
+   "photo": 0.9669,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.36"
+   ],
+   "origin": "search:grandma",
+   "n_cands": 8,
+   "forced": false
   },
   "family|GRANDPA": {
-   "status": "no candidates"
+   "title": "File:Grandpa in 1950.jpg",
+   "final": 0.597,
+   "p": 0.1072,
+   "photo": 0.9361,
+   "fit": 0.512,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.11",
+    "fit 0.51"
+   ],
+   "origin": "search:grandpa",
+   "n_cands": 8,
+   "forced": false
   },
   "family|NEPHEW": {
-   "status": "no candidates"
+   "title": "File:Smith ^ Nephew Healthcare, Hull - geograph.org.uk - 3717776.jpg",
+   "final": 0.59,
+   "p": 0.0001,
+   "photo": 0.9511,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:nephew",
+   "n_cands": 6,
+   "forced": false
   },
   "family|NIECE": {
-   "status": "no candidates"
+   "title": "File:My Japanese Niece.jpg",
+   "final": 0.205,
+   "p": 0.9351,
+   "photo": 0.0004,
+   "fit": 0.224,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.37)"
+   ],
+   "flags": [
+    "fit 0.22",
+    "not photo-like 0.00"
+   ],
+   "origin": "search:niece",
+   "n_cands": 3,
+   "forced": false
   },
   "family|GRANDSON": {
-   "status": "no candidates"
+   "title": "File:Grandson railway station.jpg",
+   "final": 0.234,
+   "p": 0.0,
+   "photo": 0.7272,
+   "fit": 0.178,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.42)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.18"
+   ],
+   "origin": "search:grandson",
+   "n_cands": 2,
+   "forced": false
   },
   "family|GRANDDAUGHTER": {
-   "status": "no candidates"
+   "title": "File:Mary Jane Richardson Jones and granddaughter.jpg",
+   "final": 0.664,
+   "p": 0.0006,
+   "photo": 0.9999,
+   "fit": 0.822,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:granddaughter",
+   "n_cands": 8,
+   "forced": false
   },
   "family|CHILD": {
-   "status": "no candidates"
+   "title": "File:Child with Smallpox Bangladesh.jpg",
+   "final": 0.867,
+   "p": 0.8634,
+   "photo": 0.9979,
+   "fit": 0.274,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "fit 0.27"
+   ],
+   "origin": "search:child",
+   "n_cands": 9,
+   "forced": false
   },
   "family|TODDLER": {
-   "status": "no candidates"
+   "title": "File:Toddler tunnel - geograph.org.uk - 2468659.jpg",
+   "final": 0.694,
+   "p": 0.0001,
+   "photo": 0.965,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:toddler",
+   "n_cands": 6,
+   "forced": false
   },
   "family|TEENAGER": {
-   "status": "no candidates"
+   "title": "File:Couple of teenagers riding a jetski splashing on the Mekong in Laos.jpg",
+   "final": 0.75,
+   "p": 0.2271,
+   "photo": 0.6777,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.23"
+   ],
+   "origin": "search:teenager",
+   "n_cands": 6,
+   "forced": false
   },
   "family|ADULT": {
-   "status": "no candidates"
+   "title": "File:Blackbuck in Tal Chhapar Sanctuary November 2025 by Tisha Mukherjee 06.jpg",
+   "final": 1.163,
+   "p": 0.9344,
+   "photo": 0.8583,
+   "fit": 0.847,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:adult",
+   "n_cands": 7,
+   "forced": false
   },
   "family|BEST FRIEND": {
-   "status": "no candidates"
+   "title": "File:Your Best Friend (1922) - 5.jpg",
+   "final": 1.188,
+   "p": 0.9999,
+   "photo": 0.4396,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.44"
+   ],
+   "origin": "search:best friend",
+   "n_cands": 7,
+   "forced": false
   },
   "family|PET": {
-   "status": "no candidates"
+   "title": "File:Boy and his dog.jpg",
+   "final": 1.137,
+   "p": 0.9975,
+   "photo": 0.9959,
+   "fit": 0.677,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.68"
+   ],
+   "origin": "search:child with pet dog",
+   "n_cands": 8,
+   "forced": false
   },
   "family|GUEST": {
-   "status": "no candidates"
+   "title": "File:Aks The Reflection Taj Mahal.jpg",
+   "final": 0.721,
+   "p": 0.1265,
+   "photo": 0.898,
+   "fit": 0.762,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.13"
+   ],
+   "origin": "search:guest",
+   "n_cands": 6,
+   "forced": false
   },
   "family|LADY": {
-   "status": "no candidates"
+   "title": "File:Lady with an Ermine - Leonardo da Vinci - Google Art Project.jpg",
+   "final": 0.785,
+   "p": 0.6331,
+   "photo": 0.6192,
+   "fit": 0.542,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.54"
+   ],
+   "origin": "search:lady",
+   "n_cands": 8,
+   "forced": false
   },
   "family|GENTLEMAN": {
-   "status": "no candidates"
+   "title": "File:Portrait of an elegant young gentleman by John White Restored.jpg",
+   "final": 1.291,
+   "p": 0.9803,
+   "photo": 0.9991,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:gentleman",
+   "n_cands": 6,
+   "forced": false
   },
   "family|PEOPLE": {
-   "status": "no candidates"
+   "title": "File:Crowds of French patriots line the Champs Elysees-edit2.jpg",
+   "final": 1.1,
+   "p": 0.9762,
+   "photo": 0.9928,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:people crowd",
+   "n_cands": 8,
+   "forced": false
   },
   "family|PERSON": {
-   "status": "no candidates"
+   "title": "File:Giant Marbles in Joshua Tree National Park.jpg",
+   "final": 0.8,
+   "p": 0.0215,
+   "photo": 0.9613,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.02"
+   ],
+   "origin": "search:person",
+   "n_cands": 9,
+   "forced": false
   },
   "family|NANNY": {
-   "status": "no candidates"
+   "title": "File:Nanny Nilsson.jpg",
+   "final": 0.356,
+   "p": 0.0014,
+   "photo": 0.7937,
+   "fit": 0.272,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.27"
+   ],
+   "origin": "search:nanny",
+   "n_cands": 4,
+   "forced": false
   },
   "family|GREAT-GRANDMOTHER": {
-   "status": "no candidates"
+   "title": "File:Great grandmother and mermaids, Ballina, NSW 20250101 111615.jpg",
+   "final": 0.456,
+   "p": 0.0001,
+   "photo": 0.9998,
+   "fit": 0.512,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.51"
+   ],
+   "origin": "search:great-grandmother",
+   "n_cands": 7,
+   "forced": false
   },
   "family|BRIDE": {
-   "status": "no candidates"
+   "title": "File:Hindu Bride, Ahmedabad, Gujarat.jpg",
+   "final": 1.097,
+   "p": 0.9929,
+   "photo": 0.9883,
+   "fit": 0.54,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.54"
+   ],
+   "origin": "search:bride",
+   "n_cands": 7,
+   "forced": false
   },
   "family|GROOM": {
-   "status": "no candidates"
+   "title": "File:Identifying the groom on kwanjula ceremony.jpg",
+   "final": 0.656,
+   "p": 0.2913,
+   "photo": 0.9751,
+   "fit": 0.463,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.96)"
+   ],
+   "flags": [
+    "low word prob 0.29",
+    "fit 0.46"
+   ],
+   "origin": "search:groom",
+   "n_cands": 7,
+   "forced": false
   },
   "family|WEDDING": {
-   "status": "no candidates"
+   "title": "File:Wedding couple at war memorial, vologda.JPG",
+   "final": 1.297,
+   "p": 0.9986,
+   "photo": 0.9883,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:wedding couple",
+   "n_cands": 7,
+   "forced": false
   },
   "family|NEWBORN": {
-   "status": "no candidates"
+   "title": "File:Newborn baby sleeps in a basket.jpg",
+   "final": 0.95,
+   "p": 0.9772,
+   "photo": 0.7637,
+   "fit": 0.417,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.70)"
+   ],
+   "flags": [
+    "fit 0.42"
+   ],
+   "origin": "search:newborn baby",
+   "n_cands": 9,
+   "forced": false
   },
   "family|SIBLINGS": {
-   "status": "no candidates"
+   "title": "File:Chichen Itza Siblings Arch.jpg",
+   "final": 0.602,
+   "p": 0.0035,
+   "photo": 0.9786,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:siblings",
+   "n_cands": 7,
+   "forced": false
   },
   "family|FAMILY TREE": {
-   "status": "no candidates"
+   "title": "File:Family Tree of the Tahboub Al-Marwani clan.jpg",
+   "final": 0.712,
+   "p": 1.0,
+   "photo": 0.1404,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "upscaled x2.0"
+   ],
+   "flags": [
+    "not photo-like 0.14"
+   ],
+   "origin": "search:family tree",
+   "n_cands": 7,
+   "forced": false
   },
   "family|VISITOR": {
-   "status": "no candidates"
+   "title": "File:Kitt Peak Visitor Center (Ordered KPNO Visitor Center-CC).jpg",
+   "final": 1.133,
+   "p": 0.8357,
+   "photo": 0.4505,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.45"
+   ],
+   "origin": "search:visitor",
+   "n_cands": 9,
+   "forced": false
   },
   "technology|MONITOR": {
    "status": "no candidates"
@@ -19082,100 +19561,517 @@
    "status": "no candidates"
   },
   "clothes|BLOUSE": {
-   "status": "no candidates"
+   "title": "File:Wolford bodysuit blouses in faux wrap and high-waisted styles - Variant 2.jpg",
+   "final": 0.722,
+   "p": 0.4797,
+   "photo": 0.9981,
+   "fit": 0.448,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.93)"
+   ],
+   "flags": [
+    "low word prob 0.48",
+    "fit 0.45"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|CARDIGAN": {
-   "status": "no candidates"
+   "title": "File:UNIQLO clothing 2026-08-18 Philippines 03.jpg",
+   "final": 0.799,
+   "p": 0.0251,
+   "photo": 0.9962,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.03"
+   ],
+   "origin": "search:cardigan clothing",
+   "n_cands": 6,
+   "forced": false
   },
   "clothes|LEGGINGS": {
-   "status": "no candidates"
+   "title": "File:Young woman wearing a shirt and leggings - photograph by Liz Welsh 02.jpg",
+   "final": 1.027,
+   "p": 0.876,
+   "photo": 0.9476,
+   "fit": 0.451,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "fit 0.45"
+   ],
+   "origin": "search:leggings clothing",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|OVERALLS": {
-   "status": "no candidates"
+   "title": "File:Finck's detroit special union made overalls 1908 advertisement.jpg",
+   "final": 1.292,
+   "p": 0.9991,
+   "photo": 0.9638,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:overalls clothing",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|TRACKSUIT": {
-   "status": "no candidates"
+   "title": "File:Tracksuit jacket (AM 2017.66.31-6).jpg",
+   "final": 1.038,
+   "p": 0.9583,
+   "photo": 0.8372,
+   "fit": 0.582,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.97)"
+   ],
+   "flags": [
+    "fit 0.58"
+   ],
+   "origin": "search:tracksuit clothing",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|GOGGLES": {
-   "status": "no candidates"
+   "title": "File:Snow goggles, Alaska Eskimo, 1883 - Ethnological Museum, Berlin - DSC01065.JPG",
+   "final": 0.533,
+   "p": 0.4366,
+   "photo": 0.4974,
+   "fit": 0.287,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.48)"
+   ],
+   "flags": [
+    "low word prob 0.44",
+    "fit 0.29",
+    "not photo-like 0.50"
+   ],
+   "origin": "search:goggles clothing",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|BEANIE": {
-   "status": "no candidates"
+   "title": "File:Girl with blue and black hair.jpg",
+   "final": 1.139,
+   "p": 0.8998,
+   "photo": 0.6777,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:beanie clothing",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|CROWN": {
-   "status": "no candidates"
+   "title": "File:The Pahlavi Crown from the Treasury of National Jewels photographed by Soleiman Meftah.jpg",
+   "final": 1.228,
+   "p": 1.0,
+   "photo": 0.9794,
+   "fit": 0.668,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.67"
+   ],
+   "origin": "search:crown jewels",
+   "n_cands": 5,
+   "forced": false
   },
   "clothes|HEADBAND": {
-   "status": "no candidates"
+   "title": "File:13-08-09 Taubertal Jennifer Rostock Jennifer 5.JPG",
+   "final": 0.313,
+   "p": 0.0,
+   "photo": 0.4748,
+   "fit": 0.436,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.91)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.44",
+    "not photo-like 0.47"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|HAIR CLIP": {
-   "status": "no candidates"
+   "title": "File:St. Patrick's Day Outfit- Dark Green Polka Dot Dress, Brown Belt, Shamrock Hair Clip, and Tan Loafers (16846145752).jpg",
+   "final": 0.683,
+   "p": 0.0,
+   "photo": 0.9694,
+   "fit": 0.818,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:hair clip clothing",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|HANDBAG": {
-   "status": "no candidates"
+   "title": "File:HK SKD 寶琳 Po Lam MCL two Central mall shop 包浩斯 Bauhaus 手袋 handbag store window display May 2024 R12S 19.jpg",
+   "final": 1.013,
+   "p": 0.7622,
+   "photo": 0.771,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:handbag clothing",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|BACKPACK": {
-   "status": "no candidates"
+   "title": "File:Jack Wolfskin, OutDoor 2018, Friedrichshafen (1X7A0417).jpg",
+   "final": 1.269,
+   "p": 0.9999,
+   "photo": 0.8448,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|PURSE": {
-   "status": "no candidates"
+   "title": "File:Denim backpack coin purse recycled jeans patchwork.jpg",
+   "final": 1.144,
+   "p": 0.7613,
+   "photo": 0.9162,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:purse clothing",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|WALLET": {
-   "status": "no candidates"
+   "title": "File:Tagum October 11 2026 Davao City culture intangible properties 05.jpg",
+   "final": 0.505,
+   "p": 0.0,
+   "photo": 0.8338,
+   "fit": 0.667,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.67"
+   ],
+   "origin": "search:wallet clothing",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|MITTENS": {
-   "status": "no candidates"
+   "title": "File:Mittens SU4106 372ab.jpg",
+   "final": 1.349,
+   "p": 0.9992,
+   "photo": 0.9322,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:mittens clothing",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|EARMUFFS": {
-   "status": "no candidates"
+   "title": "File:August Ruoff, Kürschnermeister in Reutlingen, Dezember 2022.jpg",
+   "final": 0.821,
+   "p": 0.3121,
+   "photo": 0.9976,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.31"
+   ],
+   "origin": "search:earmuffs clothing",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|FLIP-FLOPS": {
-   "status": "no candidates"
+   "title": "File:Many flip flops on a rack.jpg",
+   "final": 1.347,
+   "p": 0.9862,
+   "photo": 0.7709,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:flip-flops clothing",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|NIGHTGOWN": {
-   "status": "no candidates"
+   "title": "File:Nightgown MET CI45.124.1 B.jpg",
+   "final": 0.893,
+   "p": 0.9251,
+   "photo": 0.4245,
+   "fit": 0.49,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.82)"
+   ],
+   "flags": [
+    "fit 0.49",
+    "not photo-like 0.42"
+   ],
+   "origin": "search:nightgown clothing",
+   "n_cands": 3,
+   "forced": false
   },
   "clothes|BATHROBE": {
-   "status": "no candidates"
+   "title": "File:Смоларски манастир 4.jpg",
+   "final": 1.252,
+   "p": 0.9843,
+   "photo": 0.7964,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:bathrobe clothing",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|BIB": {
-   "status": "no candidates"
+   "title": "File:Bib MET CI41.15.22.jpg",
+   "final": 1.185,
+   "p": 0.9973,
+   "photo": 0.9308,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:bib clothing",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|DIAPER": {
-   "status": "no candidates"
+   "title": "File:Baby care, Baby girl, Moscow, Russia.jpg",
+   "final": 1.268,
+   "p": 0.9998,
+   "photo": 0.8419,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|KIMONO": {
-   "status": "no candidates"
+   "title": "File:Tokio Hamarikyu-Garten Kimono Damen-20091017-RM-135639.jpg",
+   "final": 1.29,
+   "p": 0.9996,
+   "photo": 0.9495,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|SARONG": {
-   "status": "no candidates"
+   "title": "File:Traditional worker with coconut rope (edited).jpg",
+   "final": 1.209,
+   "p": 0.9989,
+   "photo": 0.5947,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 5,
+   "forced": false
   },
   "clothes|CHUT THAI": {
-   "status": "no candidates"
+   "title": "File:(Detail) Siam traditional clothes.jpg",
+   "final": 1.159,
+   "p": 0.9986,
+   "photo": 0.9961,
+   "fit": 0.64,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:chut thai traditional dress",
+   "n_cands": 1,
+   "forced": false
   },
   "clothes|CAPE": {
-   "status": "no candidates"
+   "title": "File:Camp - Notes on Fashion at the Met - Burberry rainbow cape (73854).jpg",
+   "final": 1.272,
+   "p": 0.9821,
+   "photo": 0.8569,
+   "fit": 0.819,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|COSTUME": {
-   "status": "no candidates"
+   "title": "File:Uzbek girl in traditional clothing.jpg",
+   "final": 1.296,
+   "p": 0.9985,
+   "photo": 0.9626,
+   "fit": 0.832,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|SLEEVE": {
-   "status": "no candidates"
+   "title": "File:Folk like shirt bodysuit with short puffed sleeves in white.jpg",
+   "final": 0.431,
+   "p": 0.0876,
+   "photo": 0.9696,
+   "fit": 0.274,
+   "how": "saliency",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "low word prob 0.09",
+    "fit 0.27"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|COLLAR": {
-   "status": "no candidates"
+   "title": "File:BDSM leather collar made with salmon skin, by Les Cuirs dAgathe (DSC02801).jpg",
+   "final": 1.022,
+   "p": 0.9999,
+   "photo": 0.9479,
+   "fit": 0.505,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.84)"
+   ],
+   "flags": [
+    "fit 0.51"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "clothes|SHOELACES": {
-   "status": "no candidates"
+   "title": "File:Knoten 001 2024 02 20.jpg",
+   "final": 0.724,
+   "p": 1.0,
+   "photo": 0.2862,
+   "fit": 0.338,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.34",
+    "not photo-like 0.29"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|KNEE PADS": {
-   "status": "no candidates"
+   "title": "File:東レ 2011 (5839420046).jpg",
+   "final": 1.02,
+   "p": 0.9205,
+   "photo": 0.8962,
+   "fit": 0.677,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.68"
+   ],
+   "origin": "search:knee pads clothing",
+   "n_cands": 6,
+   "forced": false
   },
   "clothes|TANK TOP": {
-   "status": "no candidates"
+   "title": "File:HK white clothing tank top Flexer8 brand man October 2025 N13P.jpg",
+   "final": 0.598,
+   "p": 0.001,
+   "photo": 0.9124,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:tank top clothing",
+   "n_cands": 7,
+   "forced": false
   },
   "clothes|BANDANA": {
-   "status": "no candidates"
+   "title": "File:(1) Bandanna Sweet Pink.jpg",
+   "final": 1.033,
+   "p": 0.9865,
+   "photo": 0.9834,
+   "fit": 0.3,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.78)"
+   ],
+   "flags": [
+    "fit 0.30"
+   ],
+   "origin": "search:bandana clothing",
+   "n_cands": 8,
+   "forced": false
   },
   "sports|MUAY THAI": {
    "status": "no candidates"
@@ -19849,48 +20745,33 @@
   "body|WAIST",
   "body|WRIST",
   "clothes|APRON",
-  "clothes|BACKPACK",
   "clothes|BANDANA",
-  "clothes|BATHROBE",
-  "clothes|BEANIE",
   "clothes|BELT",
-  "clothes|BIB",
   "clothes|BIKINI",
   "clothes|BLOUSE",
   "clothes|BRACELET",
   "clothes|BUTTON",
   "clothes|CAP",
-  "clothes|CAPE",
   "clothes|CARDIGAN",
   "clothes|CHUT THAI",
   "clothes|COAT",
   "clothes|COLLAR",
-  "clothes|COSTUME",
   "clothes|CROWN",
-  "clothes|DIAPER",
   "clothes|DRESS",
   "clothes|EARMUFFS",
   "clothes|EARRINGS",
-  "clothes|FLIP-FLOPS",
   "clothes|GLASSES",
   "clothes|GOGGLES",
   "clothes|HAIR CLIP",
-  "clothes|HANDBAG",
   "clothes|HEADBAND",
   "clothes|HIGH HEELS",
   "clothes|HOODIE",
-  "clothes|JEANS",
-  "clothes|KIMONO",
   "clothes|KNEE PADS",
   "clothes|LEGGINGS",
-  "clothes|MITTENS",
   "clothes|NIGHTGOWN",
-  "clothes|OVERALLS",
   "clothes|PAJAMAS",
   "clothes|POCKET",
-  "clothes|PURSE",
   "clothes|RAINCOAT",
-  "clothes|SARONG",
   "clothes|SHIRT",
   "clothes|SHOELACES",
   "clothes|SHORTS",
@@ -19898,7 +20779,6 @@
   "clothes|SLEEVE",
   "clothes|SLIPPERS",
   "clothes|SNEAKERS",
-  "clothes|SUIT",
   "clothes|SUNGLASSES",
   "clothes|SWEATER",
   "clothes|SWIMSUIT",
@@ -19957,7 +20837,6 @@
   "colors|VIOLET",
   "countries|NETHERLANDS",
   "countries|WORLD",
-  "family|ADULT",
   "family|AUNT",
   "family|BABY",
   "family|BEST FRIEND",
@@ -19972,7 +20851,6 @@
   "family|FAMILY TREE",
   "family|FATHER",
   "family|FRIEND",
-  "family|GENTLEMAN",
   "family|GIRL",
   "family|GRANDDAUGHTER",
   "family|GRANDFATHER",
@@ -19994,7 +20872,6 @@
   "family|NEWBORN",
   "family|NIECE",
   "family|PARENTS",
-  "family|PEOPLE",
   "family|PERSON",
   "family|PET",
   "family|SIBLINGS",
@@ -20005,7 +20882,6 @@
   "family|TWINS",
   "family|UNCLE",
   "family|VISITOR",
-  "family|WEDDING",
   "family|WIFE",
   "family|WOMAN",
   "feelings|AFRAID",
@@ -21101,7 +21977,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1124,
-  "flagged": 1412
+  "with_photo": 1191,
+  "flagged": 1392
  }
 }

@@ -286,6 +286,9 @@ def main(words, top):
         if n % 20 == 0:
             print(f"  {n}/{len(words)} {k}: {c['title'][:50]} final={best['final']:.2f} p={s['p']:.2f} fit={best['fit']:.2f}", flush=True)
             json.dump(boxes, open(BOXES, "w"))
+            if not DRY:  # checkpoint so a restart loses little
+                json.dump(out, open(JSON_OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                json.dump(report, open(REPORT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(boxes, open(BOXES, "w"))
     if DRY:
         old = load_json(os.path.join(CACHE, "precheck.json"), {}); old.update(pre)

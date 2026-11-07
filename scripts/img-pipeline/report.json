@@ -3599,20 +3599,21 @@
    "forced": false
   },
   "home|BED": {
-   "title": "File:State bed MET DP110864.jpg",
-   "final": 0.678,
-   "p": 0.0036,
-   "photo": 0.4315,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
+   "title": "File:Canopy bed of Amantaka Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg",
+   "final": 0.5,
+   "p": 0.6112,
+   "photo": 0.0956,
+   "fit": 0.779,
+   "how": "yolo:bed",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
    "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.43"
+    "not photo-like 0.10"
    ],
    "origin": "search:bed",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "home|CHAIR": {
    "title": "File:Set of fourteen side chairs MET DP110780.jpg",
@@ -3626,7 +3627,7 @@
     "not photo-like 0.47"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|TABLE": {
@@ -3673,7 +3674,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "home|TV": {
@@ -3704,7 +3705,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:telephone",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|CLOCK": {
@@ -3719,7 +3720,7 @@
    ],
    "flags": [],
    "origin": "search:clock",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "home|LAMP": {
@@ -3738,55 +3739,56 @@
    "forced": false
   },
   "home|SOFA": {
-   "title": "File:Sofa MET 192943.jpg",
-   "final": 0.743,
-   "p": 0.9969,
-   "photo": 0.9932,
-   "fit": 0.411,
+   "title": "File:2009-05-16 Main office lobby at Hampton Forest Apartments.jpg",
+   "final": 0.5,
+   "p": 0.0166,
+   "photo": 0.854,
+   "fit": 0.23,
    "how": "yolo:couch",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.68)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.60)"
    ],
    "flags": [
-    "fit 0.41"
+    "low word prob 0.02",
+    "fit 0.23"
    ],
-   "origin": "search:sofa",
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "home|MIRROR": {
-   "title": "File:Lüdinghausen, Burg Vischering -- 2021 -- 5233.jpg",
-   "final": 0.719,
-   "p": 0.2409,
-   "photo": 0.9671,
-   "fit": 0.665,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "low word prob 0.24",
-    "fit 0.66"
-   ],
-   "origin": "search:mirror",
-   "n_cands": 8,
-   "forced": false
-  },
-  "home|BATH": {
-   "title": "File:Otto Wagner's glass bathtub.png",
-   "final": 0.831,
-   "p": 0.0898,
-   "photo": 1.0,
+   "title": "File:Buldern, Schloss Buldern -- 2.jpg",
+   "final": 0.687,
+   "p": 0.0031,
+   "photo": 0.8753,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.09"
+    "low word prob 0.00"
    ],
-   "origin": "search:bathtub",
-   "n_cands": 6,
+   "origin": "search:mirror",
+   "n_cands": 10,
    "forced": false
+  },
+  "home|BATH": {
+   "title": "File:Clawfoot bathtub.jpg",
+   "final": 0.933,
+   "p": 1.0,
+   "photo": 0.9903,
+   "fit": 0.271,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.27"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": true
   },
   "home|FRIDGE": {
    "title": "File:New Shelf Life Books RVA Community Fridge.jpg",
@@ -3858,7 +3860,17 @@
    "forced": false
   },
   "home|BOOKSHELF": {
-   "status": "no candidates"
+   "title": "File:Interior of Bibliothèque Mazarine 003.JPG",
+   "final": 1.242,
+   "p": 0.986,
+   "photo": 0.845,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "override",
+   "n_cands": 7,
+   "forced": true
   },
   "home|COMPUTER": {
    "title": "File:Amiga A1000 IMG 4275.jpg",
@@ -3878,16 +3890,16 @@
    "forced": false
   },
   "home|KITCHEN": {
-   "title": "File:La cuisine (musée dart nouveau, Riga) (7563655820).jpg",
-   "final": 1.195,
-   "p": 0.8114,
-   "photo": 0.9479,
+   "title": "File:Modern kitchen gnangarra.JPG",
+   "final": 1.207,
+   "p": 0.9987,
+   "photo": 0.5309,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 6,
    "forced": false
   },
   "nature|TREE": {
@@ -3931,7 +3943,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "nature|RIVER": {
@@ -3944,7 +3956,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "nature|OCEAN": {
@@ -3961,16 +3973,16 @@
    "forced": false
   },
   "nature|GRASS": {
-   "title": "File:Poa annua.jpg",
-   "final": 1.315,
-   "p": 0.9806,
-   "photo": 0.9908,
+   "title": "File:Dew on grass Luc Viatour.jpg",
+   "final": 1.376,
+   "p": 0.9661,
+   "photo": 0.9999,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "nature|LEAF": {
@@ -4031,7 +4043,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "nature|SUN": {
@@ -4044,7 +4056,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:the sun in the sky",
-   "n_cands": 3,
+   "n_cands": 4,
    "forced": false
   },
   "nature|CLOUD": {
@@ -4087,34 +4099,44 @@
    "forced": false
   },
   "nature|DESERT": {
-   "status": "no candidates"
-  },
-  "nature|ISLAND": {
-   "title": "File:The Neck Bruny Island.jpg",
-   "final": 0.839,
-   "p": 0.2396,
-   "photo": 0.9847,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [
-    "low word prob 0.24"
-   ],
-   "origin": "search:island",
-   "n_cands": 7,
-   "forced": false
-  },
-  "nature|CAVE": {
-   "title": "File:Lechuguilla Cave Pearlsian Gulf.jpg",
-   "final": 1.292,
-   "p": 1.0,
-   "photo": 0.9599,
+   "title": "File:Rub al Khali 002.JPG",
+   "final": 1.301,
+   "p": 0.997,
+   "photo": 0.9853,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
+   "origin": "override",
+   "n_cands": 8,
+   "forced": true
+  },
+  "nature|ISLAND": {
+   "title": "File:KohPhiPhi.JPG",
+   "final": 0.909,
+   "p": 0.3243,
+   "photo": 0.9426,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.32"
+   ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
+   "forced": false
+  },
+  "nature|CAVE": {
+   "title": "File:По гротам пещеры 1.jpg",
+   "final": 1.389,
+   "p": 0.9994,
+   "photo": 0.9472,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "nature|WATERFALL": {
@@ -4140,20 +4162,20 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "nature|RAINBOW": {
-   "title": "File:Double-alaskan-rainbow.jpg",
-   "final": 1.381,
-   "p": 1.0,
-   "photo": 0.9754,
+   "title": "File:Burg Hohenzollern - 6620-2.jpg",
+   "final": 1.385,
+   "p": 0.9999,
+   "photo": 0.9912,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 6,
    "forced": false
   },
   "sports|FOOTBALL": {
@@ -4815,22 +4837,24 @@
    "forced": false
   },
   "home|PILLOW": {
-   "title": "File:Pillow MET DP275207.jpg",
-   "final": 0.448,
-   "p": 0.9998,
-   "photo": 0.1096,
-   "fit": 0.446,
+   "title": "File:Pillows on a hotel bed.jpg",
+   "final": 0.5,
+   "p": 0.3682,
+   "photo": 0.175,
+   "fit": 0.386,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.74)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.81)"
    ],
    "flags": [
-    "fit 0.45",
-    "not photo-like 0.11"
+    "low word prob 0.37",
+    "fit 0.39",
+    "not photo-like 0.17"
    ],
-   "origin": "search:pillow",
-   "n_cands": 7,
-   "forced": false
+   "origin": "current",
+   "n_cands": 8,
+   "forced": true
   },
   "home|BLANKET": {
    "title": "File:Russellquilter.jpg",
@@ -4880,22 +4904,22 @@
    "forced": false
   },
   "home|PLATE": {
-   "title": "File:Rust and dirt.jpg",
-   "final": 0.507,
-   "p": 0.0058,
-   "photo": 0.4913,
-   "fit": 0.75,
+   "title": "File:Piece of chocolate cake on a white plate decorated with chocolate sauce.jpg",
+   "final": 0.5,
+   "p": 0.0003,
+   "photo": 0.8569,
+   "fit": 0.418,
    "how": "saliency",
    "notes": [
-    "tiny subject"
+    "subject cannot fit 3:4 (box cov 0.70)"
    ],
    "flags": [
-    "low word prob 0.01",
-    "not photo-like 0.49"
+    "low word prob 0.00",
+    "fit 0.42"
    ],
    "origin": "search:plate",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "home|SPOON": {
    "title": "File:Soup Spoon.jpg",
@@ -4911,7 +4935,7 @@
     "fit 0.37"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "home|FORK": {
@@ -4933,19 +4957,20 @@
    "forced": false
   },
   "nature|SKY": {
-   "title": "File:Trees rising out of Cheow Lan Lake, blue sky, eternal summer in Surat Thani edited.jpg",
-   "final": 0.741,
-   "p": 0.0,
-   "photo": 0.9995,
+   "title": "File:Cirrus uncinus clouds in the morning sky.jpg",
+   "final": 0.666,
+   "p": 0.0193,
+   "photo": 0.4644,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.02",
+    "not photo-like 0.46"
    ],
    "origin": "search:sky",
    "n_cands": 6,
-   "forced": false
+   "forced": true
   },
   "nature|FIRE": {
    "title": "File:Boiling kettle over campfire in forest.jpg",
@@ -7304,19 +7329,19 @@
    "forced": false
   },
   "nature|HILL": {
-   "title": "File:Cape Town (ZA), Sea Point, Nachtansicht -- 2024 -- 1867-70 - 2.jpg",
-   "final": 0.79,
-   "p": 0.0063,
-   "photo": 0.9325,
+   "title": "File:Uliveti monte cinto.JPG",
+   "final": 0.725,
+   "p": 0.0195,
+   "photo": 0.9866,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.01"
+    "low word prob 0.02"
    ],
-   "origin": "search:hill",
+   "origin": "current",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "nature|FIELD": {
    "title": "File:Field with mixed intercropping of oat and rye.jpg",
@@ -7341,7 +7366,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "nature|SEED": {
@@ -7363,16 +7388,16 @@
    "forced": false
   },
   "nature|CACTUS": {
-   "title": "File:Carnegiea gigantea in Saguaro National Park near Tucson, Arizona during November (58).jpg",
-   "final": 1.344,
-   "p": 0.9354,
-   "photo": 0.9972,
+   "title": "File:Pine View Nursery - Cactus - Cleistocactus winteri - Golden Rat Tail 03.jpg",
+   "final": 1.393,
+   "p": 1.0,
+   "photo": 0.9956,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "nature|BAMBOO": {
@@ -11536,20 +11561,20 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "home|BEDROOM": {
-   "title": "File:Bedroom in Government House, Halifax.jpg",
-   "final": 0.991,
-   "p": 0.9783,
-   "photo": 0.757,
+   "title": "File:The Children's Bedroom in Muckross House - geograph.org.uk - 7871728.jpg",
+   "final": 1.202,
+   "p": 0.97,
+   "photo": 0.6554,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "search:bedroom",
-   "n_cands": 5,
+   "origin": "search:children's bedroom",
+   "n_cands": 8,
    "forced": false
   },
   "home|BATHROOM": {
@@ -11562,7 +11587,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:bathroom",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "home|GARAGE": {
@@ -11575,22 +11600,22 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "home|GARDEN": {
-   "title": "File:Brooklyn Botanic Garden New York May 2015 010.jpg",
-   "final": 0.823,
-   "p": 0.1993,
-   "photo": 0.9901,
+   "title": "File:Telephone in the Botanical Garden of Sao Paulo.jpg",
+   "final": 0.892,
+   "p": 0.3541,
+   "photo": 0.8161,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.20"
+    "low word prob 0.35"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "home|BALCONY": {
@@ -11607,16 +11632,16 @@
    "forced": false
   },
   "home|ROOF": {
-   "title": "File:Tak - Ystad-2022.jpg",
-   "final": 1.138,
-   "p": 0.8224,
-   "photo": 0.9508,
+   "title": "File:Roof tiles packed in crate 1.jpg",
+   "final": 1.219,
+   "p": 0.9862,
+   "photo": 0.8459,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 7,
    "forced": false
   },
   "home|WALL": {
@@ -11648,16 +11673,16 @@
    "forced": false
   },
   "home|STAIRS": {
-   "title": "File:At Victoria and Albert Museum 2025 018.jpg",
-   "final": 1.293,
-   "p": 1.0,
-   "photo": 0.9585,
+   "title": "File:Dülmen, Kreuzkapelle, Treppe zur Empore -- 2021 -- 7409.jpg",
+   "final": 1.342,
+   "p": 0.9989,
+   "photo": 0.7211,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "home|FENCE": {
@@ -11670,7 +11695,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "home|CURTAIN": {
@@ -11745,7 +11770,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "home|MICROWAVE": {
@@ -11813,21 +11838,23 @@
    "forced": false
   },
   "home|PAN": {
-   "title": "File:Eggplant roasting on a frying pan.jpg",
-   "final": 1.014,
-   "p": 0.9368,
-   "photo": 0.9784,
-   "fit": 0.64,
+   "title": "File:Pan frying sausages.jpg",
+   "final": 0.649,
+   "p": 0.9985,
+   "photo": 0.3544,
+   "fit": 0.34,
    "how": "saliency",
    "notes": [
-    "touches 2 edge(s)"
+    "subject cannot fit 3:4 (box cov 0.57)",
+    "upscaled x1.5"
    ],
    "flags": [
-    "fit 0.64"
+    "fit 0.34",
+    "not photo-like 0.35"
    ],
    "origin": "search:frying pan",
    "n_cands": 8,
-   "forced": false
+   "forced": true
   },
   "home|POT": {
    "title": "File:Steam-boiling green asparagus.jpg",
@@ -11890,19 +11917,22 @@
    "forced": false
   },
   "home|BOTTLE": {
-   "title": "File:Ron-Zacapa-XO.jpg",
-   "final": 1.196,
-   "p": 0.9992,
-   "photo": 0.9597,
-   "fit": 0.819,
+   "title": "File:Bouteille.jpg",
+   "final": 0.737,
+   "p": 0.9995,
+   "photo": 0.1596,
+   "fit": 0.587,
    "how": "yolo:bottle",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.98)"
    ],
-   "flags": [],
-   "origin": "search:bottle",
+   "flags": [
+    "fit 0.59",
+    "not photo-like 0.16"
+   ],
+   "origin": "current",
    "n_cands": 7,
-   "forced": false
+   "forced": true
   },
   "home|CHOPSTICKS": {
    "title": "File:Doritos with chopsticks - Massachusetts.jpg",
@@ -11991,7 +12021,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 9,
    "forced": false
   },
   "home|DRAWER": {
@@ -12027,20 +12057,20 @@
     "fit 0.48"
    ],
    "origin": "search:shelf",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "home|CANDLE": {
-   "title": "File:LA2 Skultuna kontorsljusstake.jpg",
-   "final": 1.246,
+   "title": "File:Манастир Моштаница-капела за паљење свећа (Moštanica Monastery, chapel for lighting candles).jpg",
+   "final": 1.319,
    "p": 1.0,
-   "photo": 0.7779,
+   "photo": 0.9984,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "home|VASE": {
@@ -12935,19 +12965,19 @@
    "forced": false
   },
   "nature|SEA": {
-   "title": "File:California sea lion in La Jolla (70568).jpg",
-   "final": 0.934,
-   "p": 0.2898,
-   "photo": 0.9525,
+   "title": "File:Spring Lake, New Jersey Beach at Sunrise.jpg",
+   "final": 0.806,
+   "p": 0.1717,
+   "photo": 0.9885,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.29"
+    "low word prob 0.17"
    ],
-   "origin": "search:sea",
-   "n_cands": 7,
-   "forced": false
+   "origin": "current",
+   "n_cands": 8,
+   "forced": true
   },
   "nature|STREAM": {
    "title": "File:Breil-Brigels, Lag da Breil- Flem. 23-09-2022. (d.j.b) 04.jpg",
@@ -12974,29 +13004,40 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "nature|MUD": {
-   "status": "no candidates"
+   "title": "File:2003-11-27 Northerner boots in mud.jpg",
+   "final": 1.242,
+   "p": 0.9923,
+   "photo": 0.7262,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "override",
+   "n_cands": 9,
+   "forced": true
   },
   "nature|STONE": {
-   "title": "File:Gravel stones - Preview (Amal Kumar via Poly Haven).webp",
-   "final": 0.456,
-   "p": 0.0,
-   "photo": 0.9657,
-   "fit": 0.527,
+   "title": "File:Pebble Dash (15366562092).jpg",
+   "final": 0.567,
+   "p": 0.0362,
+   "photo": 0.9984,
+   "fit": 0.306,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.88)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.80)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.53"
+    "low word prob 0.04",
+    "fit 0.31"
    ],
-   "origin": "search:stones pebbles",
-   "n_cands": 7,
-   "forced": false
+   "origin": "current",
+   "n_cands": 8,
+   "forced": true
   },
   "nature|SHELL": {
    "title": "File:Bufonaria perelegans 2010 G1.jpg",
@@ -13116,7 +13157,7 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "nature|SUNFLOWER": {
@@ -13146,7 +13187,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "nature|PLANET": {
@@ -13163,19 +13204,21 @@
    "forced": false
   },
   "nature|EARTH": {
-   "title": "File:STS-135 final flyaround of ISS 1.jpg",
-   "final": 0.994,
-   "p": 0.4947,
-   "photo": 0.8517,
-   "fit": 1.0,
+   "title": "File:NASA-Apollo8-Dec24-Earthrise.jpg",
+   "final": 0.621,
+   "p": 0.4227,
+   "photo": 0.9966,
+   "fit": 0.75,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "tiny subject"
+   ],
    "flags": [
-    "low word prob 0.49"
+    "low word prob 0.42"
    ],
    "origin": "search:Earth from space",
-   "n_cands": 4,
-   "forced": false
+   "n_cands": 3,
+   "forced": true
   },
   "nature|SPACE": {
    "title": "File:Webb's First Deep Field.jpg",
@@ -13217,7 +13260,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|AIRPLANE": {
@@ -27636,21 +27679,26 @@
     "fit 0.60"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "nature|TWIG": {
-   "title": "File:Village weaver (Ploceus cucullatus cucullatus) female.jpg",
-   "final": 1.276,
-   "p": 0.879,
-   "photo": 0.9854,
-   "fit": 1.0,
+   "title": "File:20210131 twig withBuds coveredByIce DSC05404 PtrQs.jpg",
+   "final": 0.62,
+   "p": 0.8989,
+   "photo": 0.9391,
+   "fit": 0.229,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.48)"
+   ],
+   "flags": [
+    "fit 0.23"
+   ],
    "origin": "search:QI",
    "n_cands": 9,
-   "forced": false
+   "forced": true
   },
   "nature|THORN": {
    "title": "File:Succulent leaf impaled on a thorn, Estufa Fria, Lisbon, Portugal julesvernex2.jpg",
@@ -27720,7 +27768,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "nature|MOSS": {
@@ -27735,7 +27783,7 @@
    ],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "nature|FERN": {
@@ -27921,7 +27969,7 @@
    ],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|FEATHER": {
@@ -29530,7 +29578,7 @@
   "home|AIR CONDITIONER",
   "home|BATH",
   "home|BED",
-  "home|BOOKSHELF",
+  "home|BOTTLE",
   "home|BUCKET",
   "home|CARPET",
   "home|CHAIR",
@@ -29653,7 +29701,6 @@
   "nature|AIR",
   "nature|BAMBOO",
   "nature|BUSH",
-  "nature|DESERT",
   "nature|EARTH",
   "nature|FLOWER",
   "nature|FRANGIPANI",
@@ -29662,7 +29709,6 @@
   "nature|JASMINE",
   "nature|LAVA",
   "nature|LEAF",
-  "nature|MUD",
   "nature|PEBBLE",
   "nature|PETAL",
   "nature|ROOT",
@@ -29675,6 +29721,7 @@
   "nature|STONE",
   "nature|STREAM",
   "nature|SUNFLOWER",
+  "nature|TWIG",
   "nature|WOOD",
   "numbers|DOUBLE",
   "numbers|DOZEN",
@@ -30194,7 +30241,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1890,
-  "flagged": 1092
+  "with_photo": 1893,
+  "flagged": 1091
  }
 }

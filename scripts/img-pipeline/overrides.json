@@ -1398,5 +1398,104 @@
    "children's bedroom",
    "modern bedroom interior"
   ]
+ },
+ "vehicles|BIKE": {
+  "file": "File:Left side of Flying Pigeon.jpg"
+ },
+ "vehicles|TRUCK": {
+  "file": "File:Steam Whistle Mack truck 20110613-IMG 3584.JPG"
+ },
+ "vehicles|HELICOPTER": {
+  "file": "File:VH-SUF Taking Off.jpg"
+ },
+ "vehicles|SHIP": {
+  "file": "File:Rhapsody (ship, 1996), Sète cf01.jpg"
+ },
+ "vehicles|SUBMARINE": {
+  "file": "File:US Navy 040730-N-1234E-002 PCU Virginia (SSN 774) returns to the General Dynamics Electric Boat shipyard.jpg"
+ },
+ "vehicles|VAN": {
+  "file": "File:2018 Ford Transit Custom 300 Base 2.0 facelift.jpg"
+ },
+ "vehicles|WHEEL": {
+  "file": "File:Wheel of car.jpg"
+ },
+ "vehicles|WHEELCHAIR": {
+  "file": "File:Man in wheelchair with AFO braces and crutches b.jpg"
+ },
+ "vehicles|STROLLER": {
+  "file": "File:Baby pram.jpg"
+ },
+ "vehicles|CARGO SHIP": {
+  "file": "File:2023-05-20 AMALIE - IMO 9163702.jpg"
+ },
+ "vehicles|YACHT": {
+  "file": "File:Triplete, Zadar (P1080748).jpg"
+ },
+ "vehicles|JET": {
+  "file": "File:105 Polish Air Force MiG-29A Fulcrum ILA Berlin 2016 10.jpg"
+ },
+ "vehicles|SKYTRAIN": {
+  "file": "File:Bangkok BTS 01.jpg"
+ },
+ "vehicles|HELMET": {
+  "file": "File:Bicycle Helmet 0085.jpg"
+ },
+ "vehicles|TUK-TUK": {
+  "file": "File:Bajaj auto-rickshaw in Sri Lanka.jpg"
+ },
+ "sports|BASKETBALL": {
+  "file": "File:USA vs. China Mens Basketball - Beijing 2008 Olympic Games (2751923597).jpg"
+ },
+ "sports|BASEBALL": {
+  "file": "File:Tommy Milone gives up a home run to Mike Trout on May 21, 2017.jpg"
+ },
+ "sports|TEAM": {
+  "file": "File:Canadian sports team on the Clyde Walkway - geograph.org.uk - 4122206.jpg"
+ },
+ "sports|COACH": {
+  "file": "File:SFU head coach Steve Hanson with his 2023-2024 team.jpg"
+ },
+ "sports|WHISTLE": {
+  "file": "File:Pea Whistle.jpg"
+ },
+ "sports|NET": {
+  "file": "File:Volleyball net on Skegness Beach - geograph.org.uk - 3800125.jpg"
+ },
+ "sports|GOAL": {
+  "file": "File:Football goal on a misty morning - geograph.org.uk - 7275275.jpg"
+ },
+ "sports|PUSH-UP": {
+  "file": "File:Push up al la traditionnelle.jpg"
+ },
+ "sports|DIVING": {
+  "file": "File:Underwater photograph of a recreational scuba diver in Playa del Carmen 2006.jpg"
+ },
+ "sports|ARCHERY": {
+  "file": "File:Taymon Tokyo.jpg"
+ },
+ "sports|JUDO": {
+  "file": "File:Sara Mäntykenttä Nordic Judo Championship 2026 Four Gold Medals.jpg"
+ },
+ "sports|ROWING": {
+  "file": "File:Rowing training, Sète 04.jpg"
+ },
+ "sports|FISHING": {
+  "file": "File:Stilts fishermen Sri Lanka 02.jpg"
+ },
+ "sports|SNOWBOARDING": {
+  "file": "File:Team U S competes in advanced alpine skiing, snowboarding slalom run (8868883).jpg"
+ },
+ "sports|SPORTS DAY": {
+  "queries": [
+   "school sports day children race",
+   "sports day"
+  ]
+ },
+ "sports|SIT-UP": {
+  "queries": [
+   "sit-ups exercise",
+   "crunches exercise"
+  ]
  }
 }

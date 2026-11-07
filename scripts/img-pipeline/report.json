@@ -1343,7 +1343,7 @@
   },
   "school|PEN": {
    "title": "File:Pen salem.jpg",
-   "final": 1.118,
+   "final": 0.998,
    "p": 0.9947,
    "photo": 0.2121,
    "fit": 1.0,
@@ -1358,8 +1358,8 @@
   },
   "school|BOOK": {
    "title": "File:13-11-02-olb-by-RalfR-03.jpg",
-   "final": 0.664,
-   "p": 0.3194,
+   "final": 0.896,
+   "p": 0.319,
    "photo": 0.9821,
    "fit": 1.0,
    "how": "saliency",
@@ -1373,7 +1373,7 @@
   },
   "school|BAG": {
    "title": "File:Trungyi High School stop board and KLCIVS backpack 20251120.jpg",
-   "final": 1.035,
+   "final": 1.212,
    "p": 0.9777,
    "photo": 0.7632,
    "fit": 1.0,
@@ -1386,7 +1386,7 @@
   },
   "school|PENCIL": {
    "title": "File:Pencil 4.jpg",
-   "final": 1.045,
+   "final": 1.056,
    "p": 0.9471,
    "photo": 0.396,
    "fit": 0.812,
@@ -1398,12 +1398,12 @@
     "not photo-like 0.40"
    ],
    "origin": "search:pencil",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "school|RULER": {
    "title": "File:Ruler image.jpg",
-   "final": 0.98,
+   "final": 1.085,
    "p": 0.9997,
    "photo": 0.9511,
    "fit": 0.399,
@@ -1421,7 +1421,7 @@
   },
   "school|SCISSORS": {
    "title": "File:A pair of scissors.jpg",
-   "final": 0.973,
+   "final": 1.065,
    "p": 1.0,
    "photo": 0.8119,
    "fit": 0.408,
@@ -1438,7 +1438,7 @@
   },
   "school|NOTEBOOK": {
    "title": "File:Small blue notepad - 8 x 11 cm - D.jpg",
-   "final": 0.993,
+   "final": 0.687,
    "p": 0.9735,
    "photo": 0.0293,
    "fit": 0.783,
@@ -1454,70 +1454,75 @@
    "forced": false
   },
   "school|COMPUTER": {
-   "title": "File:Backlit Laptop Keyboard.jpg",
-   "final": 0.693,
-   "p": 0.9823,
-   "photo": 0.0159,
-   "fit": 0.216,
-   "how": "saliency",
+   "title": "File:HP Pavilion Computer laptop keyboard closeup.jpg",
+   "final": 0.426,
+   "p": 0.8556,
+   "photo": 0.2707,
+   "fit": 0.095,
+   "how": "yolo:laptop",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.56)"
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.31)",
+    "upscaled x1.5"
    ],
    "flags": [
-    "fit 0.22",
-    "not photo-like 0.02"
+    "fit 0.09",
+    "not photo-like 0.27"
    ],
    "origin": "search:laptop computer",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "school|CALCULATOR": {
-   "title": "File:Citizen SLD-100NR calculator.jpg",
-   "final": 1.069,
-   "p": 0.9999,
-   "photo": 0.8111,
-   "fit": 1.0,
+   "title": "File:Texas Instruments Longines Symphonette Calculator 1st version.jpg",
+   "final": 1.037,
+   "p": 1.0,
+   "photo": 0.9843,
+   "fit": 0.497,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.83)"
+   ],
+   "flags": [
+    "fit 0.50"
+   ],
    "origin": "search:calculator",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "school|GLOBE": {
-   "title": "File:Globe with yellow background 1.jpg",
-   "final": 1.11,
+   "title": "File:Coronelli globe terrestre.jpg",
+   "final": 1.28,
    "p": 1.0,
-   "photo": 0.883,
-   "fit": 0.785,
+   "photo": 0.9009,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
+   "notes": [],
    "flags": [],
    "origin": "search:globe",
    "n_cands": 8,
    "forced": false
   },
   "school|CRAYON": {
-   "title": "File:Crayola crayons.jpg",
-   "final": 1.104,
-   "p": 0.9991,
-   "photo": 0.0474,
-   "fit": 1.0,
+   "title": "File:Pastellkreide -- 2025 -- 8665.jpg",
+   "final": 0.859,
+   "p": 0.8946,
+   "photo": 0.239,
+   "fit": 0.8,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "touches 1 edge(s)"
+   ],
    "flags": [
-    "not photo-like 0.05"
+    "not photo-like 0.24"
    ],
    "origin": "search:crayon",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "school|ERASER": {
    "title": "File:Pink Pearl eraser.jpg",
-   "final": 0.949,
+   "final": 0.86,
    "p": 0.9992,
    "photo": 0.3409,
    "fit": 0.473,
@@ -1535,7 +1540,7 @@
   },
   "school|DESK": {
    "title": "File:Asad Rustum's Desk I.png",
-   "final": 1.082,
+   "final": 1.025,
    "p": 0.9991,
    "photo": 0.9941,
    "fit": 1.0,
@@ -1549,36 +1554,36 @@
    "forced": false
   },
   "school|CHAIR": {
-   "title": "File:Set of fourteen side chairs MET DP110780.jpg",
-   "final": 1.044,
-   "p": 1.0,
-   "photo": 0.4683,
-   "fit": 1.0,
+   "title": "File:Schenna (IT), Vorlandweg 2 -- 2026 -- 4026.jpg",
+   "final": 1.166,
+   "p": 0.9315,
+   "photo": 0.9879,
+   "fit": 0.75,
    "how": "yolo:chair",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.47"
+   "notes": [
+    "tiny subject"
    ],
-   "origin": "current",
-   "n_cands": 8,
+   "flags": [],
+   "origin": "search:chair",
+   "n_cands": 7,
    "forced": false
   },
   "school|CLASSROOM": {
-   "title": "File:Elementary classroom in Alaska.jpg",
-   "final": 1.078,
-   "p": 0.9931,
-   "photo": 0.5802,
+   "title": "File:Palamuse kihelkonnakooli klassiruum.jpg",
+   "final": 1.265,
+   "p": 0.9362,
+   "photo": 0.9834,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 8,
+   "origin": "search:classroom",
+   "n_cands": 7,
    "forced": false
   },
   "school|TEACHER": {
    "title": "File:A public high school teacher in a classroom in the United States 06.jpg",
-   "final": 0.986,
+   "final": 1.113,
    "p": 0.9977,
    "photo": 0.5715,
    "fit": 0.8,
@@ -1588,12 +1593,12 @@
    ],
    "flags": [],
    "origin": "search:teacher classroom",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "school|STUDENT": {
    "title": "File:Pupil washes hands during COVID-19 pandemic in Ghana.jpg",
-   "final": 0.929,
+   "final": 1.114,
    "p": 0.7941,
    "photo": 0.987,
    "fit": 0.842,
@@ -1608,7 +1613,7 @@
   },
   "school|HOMEWORK": {
    "title": "File:Containment measures in Brussels - Home isolation (P-043027-00-06).jpg",
-   "final": 0.931,
+   "final": 0.662,
    "p": 0.9885,
    "photo": 0.0712,
    "fit": 0.8,
@@ -1625,9 +1630,9 @@
   },
   "school|MAP": {
    "title": "File:Kunyu Wanguo Quantu (坤輿萬國全圖).jpg",
-   "final": 0.981,
+   "final": 0.692,
    "p": 0.9952,
-   "photo": 0.0131,
+   "photo": 0.0129,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -1640,8 +1645,8 @@
   },
   "school|PAINT": {
    "title": "File:Microsoft Paint color palettes.png",
-   "final": 0.986,
-   "p": 0.7837,
+   "final": 1.173,
+   "p": 0.7826,
    "photo": 0.7664,
    "fit": 1.0,
    "how": "saliency",
@@ -6283,8 +6288,8 @@
   },
   "school|BLACKBOARD": {
    "title": "File:Information Blackboard - geograph.org.uk - 6425551.jpg",
-   "final": 0.897,
-   "p": 0.792,
+   "final": 1.057,
+   "p": 0.7919,
    "photo": 0.4929,
    "fit": 1.0,
    "how": "saliency",
@@ -6298,7 +6303,7 @@
   },
   "school|MARKER": {
    "title": "File:USGS Vertical Control Marker - 1940 NOGLS - 1903.jpg",
-   "final": 1.1,
+   "final": 1.3,
    "p": 0.9994,
    "photo": 0.9997,
    "fit": 1.0,
@@ -6306,12 +6311,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:marker",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "school|GLUE": {
    "title": "File:Glue Stick.jpg",
-   "final": 0.984,
+   "final": 0.906,
    "p": 0.9553,
    "photo": 0.2592,
    "fit": 1.0,
@@ -6321,12 +6326,12 @@
     "not photo-like 0.26"
    ],
    "origin": "search:glue",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "school|PAPER": {
    "title": "File:Photo Interior of a paper mill in the Pescia valley in Tuscany 1964 - Touring Club Italiano 06-4831.01.jpg",
-   "final": 0.939,
+   "final": 0.831,
    "p": 0.9993,
    "photo": 0.959,
    "fit": 0.64,
@@ -6338,13 +6343,13 @@
     "fit 0.64"
    ],
    "origin": "search:paper sheets",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "school|PAINTBRUSH": {
    "title": "File:Desert Paintbrush (Castilleja chromosa) near Paonia, Colorado, USA, with Mt. Lamborn in background.jpg",
-   "final": 1.187,
-   "p": 1.0,
+   "final": 1.361,
+   "p": 0.9739,
    "photo": 0.87,
    "fit": 1.0,
    "how": "saliency",
@@ -6356,7 +6361,7 @@
   },
   "school|SCHOOL BUS": {
    "title": "File:Government operated Indian school school bus in the United States.jpg",
-   "final": 1.018,
+   "final": 1.174,
    "p": 1.0,
    "photo": 0.8614,
    "fit": 0.8,
@@ -6366,13 +6371,13 @@
    ],
    "flags": [],
    "origin": "search:school bus",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "school|LUNCH BOX": {
    "title": "File:Rice Lunch Box in Taipei, Taiwan.jpg",
-   "final": 1.082,
-   "p": 1.0,
+   "final": 1.206,
+   "p": 0.884,
    "photo": 0.8196,
    "fit": 1.0,
    "how": "saliency",
@@ -6384,8 +6389,8 @@
   },
   "school|BELL": {
    "title": "File:The school bell - geograph.org.uk - 2133867.jpg",
-   "final": 1.083,
-   "p": 1.0,
+   "final": 1.275,
+   "p": 0.9998,
    "photo": 0.9934,
    "fit": 1.0,
    "how": "saliency",
@@ -6394,12 +6399,12 @@
    ],
    "flags": [],
    "origin": "search:school bell",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "school|FLAG": {
    "title": "File:NATIONAL FLAG MX (MN).jpg",
-   "final": 1.13,
+   "final": 1.33,
    "p": 1.0,
    "photo": 0.9971,
    "fit": 1.0,
@@ -6407,12 +6412,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:flag on flagpole",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "school|TAPE": {
    "title": "File:Adhesive surgical paper tape.jpg",
-   "final": 0.935,
+   "final": 1.058,
    "p": 0.999,
    "photo": 0.9512,
    "fit": 0.518,
@@ -6424,7 +6429,7 @@
     "fit 0.52"
    ],
    "origin": "search:adhesive tape",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "body|KNEE": {
@@ -12447,70 +12452,67 @@
    "forced": false
   },
   "school|CLASSMATE": {
-   "title": "File:Head, Shoulders, Knees and Toes.jpg",
-   "final": 0.283,
-   "p": 0.0068,
-   "photo": 0.8885,
-   "fit": 0.243,
+   "title": "File:Classmates (1924) - 5.jpg",
+   "final": 0.633,
+   "p": 0.0146,
+   "photo": 0.6744,
+   "fit": 1.0,
    "how": "yolo:person",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.63)"
+    "upscaled x1.6"
    ],
    "flags": [
-    "low word prob 0.01",
-    "fit 0.24"
+    "low word prob 0.01"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:classmates",
+   "n_cands": 6,
    "forced": false
   },
   "school|PRINCIPAL": {
-   "title": "File:A high school principal shows off a newly-built classroom at Hayesville High School in North Carolina.jpg",
-   "final": 0.674,
-   "p": 0.4881,
-   "photo": 0.1833,
-   "fit": 0.8,
+   "title": "File:Nicholas Wilson, Principal of the Old Union School, City of London, Ontario, Canada (1897), p56.jpg",
+   "final": 0.744,
+   "p": 0.9998,
+   "photo": 0.5673,
+   "fit": 0.566,
    "how": "yolo:person",
    "notes": [
-    "touches 1 edge(s)"
+    "subject cannot fit 3:4 (box cov 0.94)"
    ],
    "flags": [
-    "low word prob 0.49",
-    "not photo-like 0.18"
+    "fit 0.57"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:school principal",
+   "n_cands": 6,
    "forced": false
   },
   "school|LESSON": {
-   "title": "File:Elementary classroom in Alaska.jpg",
-   "final": 0.533,
-   "p": 0.0026,
-   "photo": 0.5802,
+   "title": "File:2012-Anchorage-Play (9474714548).jpg",
+   "final": 1.098,
+   "p": 0.8108,
+   "photo": 0.4583,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "not photo-like 0.46"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:lesson classroom",
+   "n_cands": 6,
    "forced": false
   },
   "school|TEST": {
-   "title": "File:Donboscocambodia0001.JPG",
-   "final": 1.017,
-   "p": 0.9889,
-   "photo": 0.2333,
+   "title": "File:Students taking computerized exam.jpg",
+   "final": 0.923,
+   "p": 0.2844,
+   "photo": 0.9048,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "not photo-like 0.23"
+    "low word prob 0.28"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:students taking exam",
+   "n_cands": 8,
    "forced": false
   },
   "school|GRADE": {
@@ -12580,27 +12582,26 @@
    "forced": false
   },
   "school|ART": {
-   "title": "File:Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg",
-   "final": 0.168,
-   "p": 0.0005,
-   "photo": 0.619,
-   "fit": 0.303,
+   "title": "File:Șoimii patriei de la Grădinița IMUA București, pregătind expoziția Frumoasă ești Republică, patria mea.png",
+   "final": 0.624,
+   "p": 0.5205,
+   "photo": 0.9942,
+   "fit": 0.129,
    "how": "saliency",
    "notes": [
     "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.99)"
+    "subject cannot fit 3:4 (box cov 0.42)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.30"
+    "fit 0.13"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:children painting art class",
+   "n_cands": 7,
    "forced": false
   },
   "school|MUSIC": {
    "title": "File:Historical instruments.jpg",
-   "final": 0.87,
+   "final": 1.053,
    "p": 0.8163,
    "photo": 0.9982,
    "fit": 0.829,
@@ -12610,119 +12611,107 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "school|P.E.": {
-   "title": "File:Planche.jpg",
-   "final": 0.76,
-   "p": 0.9966,
-   "photo": 0.992,
-   "fit": 0.231,
-   "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.48)"
-   ],
-   "flags": [
-    "fit 0.23"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "school|HISTORY": {
-   "title": "File:Ayutthaya World Heritage sign.jpg",
-   "final": 0.736,
-   "p": 0.5306,
-   "photo": 0.9593,
+   "title": "File:Physical education class.jpg",
+   "final": 1.178,
+   "p": 0.9999,
+   "photo": 0.8913,
    "fit": 0.8,
    "how": "saliency",
    "notes": [
     "touches 1 edge(s)"
    ],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:physical education class",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|HISTORY": {
+   "title": "File:Natural History Museum Main Hall, London, UK - Diliff.jpg",
+   "final": 0.964,
+   "p": 0.7349,
+   "photo": 0.9697,
+   "fit": 0.793,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:history museum",
+   "n_cands": 8,
    "forced": false
   },
   "school|LIBRARY CARD": {
-   "title": "File:ROC National Central Library membership card 20050531 face.jpg",
-   "final": 0.891,
-   "p": 0.9998,
-   "photo": 0.7016,
-   "fit": 0.487,
+   "title": "File:Toronto Library card 1916.jpg",
+   "final": 1.114,
+   "p": 0.9992,
+   "photo": 0.9728,
+   "fit": 0.64,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.81)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "fit 0.49"
+    "fit 0.64"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:library card",
+   "n_cands": 8,
    "forced": false
   },
   "school|DICTIONARY": {
-   "title": "File:Woerterbuchstapel Langenscheidt.jpg",
-   "final": 0.533,
-   "p": 0.2874,
-   "photo": 0.2256,
-   "fit": 0.539,
+   "title": "File:Book “Russian English Dictionary of Mathematical Terms” by Yagutil Mishiev.jpg",
+   "final": 0.57,
+   "p": 0.0045,
+   "photo": 0.3983,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.90)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.29",
-    "fit 0.54",
-    "not photo-like 0.23"
+    "low word prob 0.00",
+    "not photo-like 0.40"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:dictionary book",
+   "n_cands": 7,
    "forced": false
   },
   "school|WHITEBOARD": {
-   "title": "File:NCTR Intern Claire Boyle (15558843862).jpg",
-   "final": 0.375,
-   "p": 0.2255,
-   "photo": 0.4946,
-   "fit": 0.275,
+   "title": "File:67 Whiteboard 2025-11-09.jpg",
+   "final": 0.676,
+   "p": 0.9454,
+   "photo": 0.0035,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.72)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.23",
-    "fit 0.28",
-    "not photo-like 0.49"
+    "not photo-like 0.00"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:whiteboard",
+   "n_cands": 6,
    "forced": false
   },
   "school|PROJECTOR": {
-   "title": "File:Projektor PGD2870W firmy Sharp.jpg",
-   "final": 0.792,
-   "p": 1.0,
-   "photo": 0.6062,
-   "fit": 0.233,
+   "title": "File:Super Zett III Slide projektor BW 2025-07-25 16-38-31 stack.jpg",
+   "final": 1.01,
+   "p": 0.9669,
+   "photo": 0.6382,
+   "fit": 0.434,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.48)"
+    "subject cannot fit 3:4 (box cov 0.72)"
    ],
    "flags": [
-    "fit 0.23"
+    "fit 0.43"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:projector",
+   "n_cands": 8,
    "forced": false
   },
   "school|PENCIL CASE": {
    "title": "File:Skolni penal.jpg",
-   "final": 1.026,
+   "final": 1.192,
    "p": 1.0,
    "photo": 0.9591,
    "fit": 0.8,
@@ -12732,12 +12721,12 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "school|SHARPENER": {
    "title": "File:Sharpener with Pencil.jpg",
-   "final": 0.999,
+   "final": 1.107,
    "p": 1.0,
    "photo": 0.9116,
    "fit": 0.45,
@@ -12749,7 +12738,7 @@
     "fit 0.45"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "school|STICKER": {
@@ -12769,8 +12758,8 @@
   },
   "school|CANTEEN": {
    "title": "File:Infosys.Electronic.City.Cafeteria.JPG",
-   "final": 1.095,
-   "p": 1.0,
+   "final": 1.284,
+   "p": 0.9999,
    "photo": 0.8892,
    "fit": 1.0,
    "how": "scene",
@@ -27276,7 +27265,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:QI",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "school|HIGHLIGHTER": {
@@ -27693,7 +27682,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "school|KINDERGARTEN": {
@@ -30018,8 +30007,8 @@
   "school|BOOK",
   "school|BOOKMARK",
   "school|BULLETIN BOARD",
+  "school|CALCULATOR",
   "school|CERTIFICATE",
-  "school|CHAIR",
   "school|CHALK",
   "school|CLASSMATE",
   "school|COMPUTER",
@@ -30044,7 +30033,6 @@
   "school|MICROSCOPE",
   "school|NAME TAG",
   "school|NOTEBOOK",
-  "school|P.E.",
   "school|PAPER",
   "school|PEN",
   "school|PENCIL",
@@ -30430,6 +30418,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1896,
-  "flagged": 1116
+  "flagged": 1115
  }
 }

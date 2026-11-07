@@ -1730,7 +1730,7 @@ export default function App() {
   // หน้า audit (dev): เปิด ?audit=1 → ตัวเลขความครบของเนื้อหา (รูป/ภาพออกแบบ/อีโมจิ · เสียงคนจริง · คำอ่าน/ประโยค) อ่านโดย scripts/audit.cjs
   if (typeof window !== "undefined" && /[?&]audit=1/.test(window.location.search)) {
     const rows = INITIAL_WORDS.map(w => {
-      const t = imageTitleOf(w); const photo = !!(t && cachedImageUrl(t)); const concept = !photo && !!conceptFor(w);
+      const t = imageTitleOf(w); const photo = !!wordImageUrl(w) || !!(t && cachedImageUrl(t)); const concept = !photo && !!conceptFor(w);
       const lx = lexOf(w); const parts = w.word.toLowerCase().split(/[\s-]+/);
       const audio = !!audioManifest[w.word.toLowerCase()] || (parts.length > 1 && parts.every(x => audioManifest[x]));
       return { key:`${w.cat}|${w.word}`, visual: photo ? "photo" : concept ? "concept" : "emoji", audio, read: !!lx?.read, sen: !!lx?.sen };
@@ -4714,7 +4714,12 @@ function CreditsScreen({ words }) {
     Promise.all([
       fetch(`${import.meta.env.BASE_URL}img/credits.json`).then(r => r.json()).catch(() => ({})),
       fetch(`${import.meta.env.BASE_URL}audio/credits.json`).then(r => r.json()).catch(() => ({})),
-    ]).then(([img, au]) => setList([...Object.entries(img), ...Object.entries(au).map(([w, c]) => [w, { ...c, audio: true }])])).catch(() => setList([]));
+    ]).then(([img, au]) => {
+      const std = Object.entries(WORD_IMG).map(([k, e]) => [k, { file: e.file, source: e.src, artist: e.author, license: e.license, std: true }]);
+      const stdWords = new Set(Object.keys(WORD_IMG));
+      const old = Object.entries(img).filter(([t]) => { const w = wordOf(t); return !(w && stdWords.has(`${w.cat}|${w.word}`)); });
+      setList([...std, ...old, ...Object.entries(au).map(([w, c]) => [w, { ...c, audio: true }])]);
+    }).catch(() => setList([]));
   }, []);
   const wordOf = title => words.find(w => imageTitleOf(w) === title);
   return (
@@ -4732,13 +4737,13 @@ function CreditsScreen({ words }) {
       {list === null && <div style={{ textAlign:"center",color:T.ink3 }}>กำลังโหลด…</div>}
       {list && list.length === 0 && <div style={{ textAlign:"center",color:T.ink3 }}>ยังไม่มีรายการ</div>}
       {list && list.map(([title, c]) => {
-        const w = c.audio ? words.find(x => x.word.toLowerCase() === title) : wordOf(title);
+        const w = c.audio ? words.find(x => x.word.toLowerCase() === title) : c.std ? words.find(x => `${x.cat}|${x.word}` === title) : wordOf(title);
         return (
           <a key={(c.audio ? "a:" : "i:") + title} href={c.source || c.page || "#"} target="_blank" rel="noreferrer" style={{ display:"flex",alignItems:"center",gap:10,padding:"6px 0",borderBottom:"1px solid var(--md-outline-variant)",textDecoration:"none",color:"inherit",minHeight:44 }}>
             {c.audio ? <div style={{ width:44,height:33,borderRadius:6,flexShrink:0,background:T.secondaryC,display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🔊</div>
-              : c.file && <img src={`${import.meta.env.BASE_URL}img/${c.file}`} alt="" loading="lazy" style={{ width:44,height:33,objectFit:"cover",borderRadius:6,flexShrink:0 }} />}
+              : c.file && <img src={`${import.meta.env.BASE_URL}img/${c.file}`} alt="" loading="lazy" style={{ width:44,height:c.std ? 58 : 33,objectFit:"cover",borderRadius:6,flexShrink:0 }} />}
             <div style={{ flex:1,minWidth:0 }}>
-              <div style={{ fontWeight:800,fontSize:13,color:T.ink }}>{w ? `${w.emoji} ${w.word}` : title} <span style={{ fontWeight:500,color:T.ink3 }}>· {title}</span></div>
+              <div style={{ fontWeight:800,fontSize:13,color:T.ink }}>{w ? `${w.emoji} ${w.word}` : title} {!c.std && <span style={{ fontWeight:500,color:T.ink3 }}>· {title}</span>}</div>
               <div style={{ fontSize:11,color:T.ink2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{c.artist || "—"} · {c.license || "ดูที่ต้นทาง"}</div>
             </div>
           </a>

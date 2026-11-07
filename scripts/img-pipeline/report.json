@@ -1,0 +1,2251 @@
+{
+ "words": {
+  "animals|DOG": {
+   "title": "File:DSC09611a Search and Rescue Dog, Austrian Red Cross Perchtoldsdorf, 2024-10.jpg",
+   "final": 0.931,
+   "p": 0.8861,
+   "photo": 0.9997,
+   "fit": 0.82,
+   "how": "yolo:dog",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:dog",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|RED": {
+   "title": "File:Red Apple.jpg",
+   "final": 0.833,
+   "p": 0.8045,
+   "photo": 0.9998,
+   "fit": 0.53,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:red apples",
+   "n_cands": 7,
+   "forced": false
+  },
+  "numbers|THREE": {
+   "title": "File:Three apples in hand.jpg",
+   "final": 0.956,
+   "p": 0.9577,
+   "photo": 0.9869,
+   "fit": 0.55,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.92)"
+   ],
+   "flags": [
+    "fit 0.55"
+   ],
+   "origin": "search:three apples",
+   "n_cands": 14,
+   "forced": false
+  },
+  "animals|CAT": {
+   "title": "File:Siam lilacpoint.jpg",
+   "final": 0.968,
+   "p": 0.9426,
+   "photo": 0.9966,
+   "fit": 0.647,
+   "how": "yolo:cat",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.65"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|FISH": {
+   "title": "File:Carassius auratus black telescope.jpg",
+   "final": 1.107,
+   "p": 0.9999,
+   "photo": 0.9762,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:goldfish",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|BIRD": {
+   "title": "File:Ploceus velatus beak open.jpg",
+   "final": 1.066,
+   "p": 0.9271,
+   "photo": 0.5695,
+   "fit": 1.0,
+   "how": "yolo:bird",
+   "notes": [],
+   "flags": [],
+   "origin": "search:bird",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|COW": {
+   "title": "File:Anjarle Bridge and Cows-fix.jpg",
+   "final": 0.985,
+   "p": 0.9602,
+   "photo": 0.9838,
+   "fit": 0.802,
+   "how": "yolo:cow",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:cow animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|PIG": {
+   "title": "File:Cochon domestique (Sus scrofa domesticus) (2).jpg",
+   "final": 1.009,
+   "p": 1.0,
+   "photo": 0.8335,
+   "fit": 0.784,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:pig animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|FROG": {
+   "title": "File:Red-eyed Leaf Frog (49661076226).jpg",
+   "final": 1.063,
+   "p": 0.9985,
+   "photo": 0.9696,
+   "fit": 0.761,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|DUCK": {
+   "title": "File:Anas platyrhynchos male female.jpg",
+   "final": 0.994,
+   "p": 0.999,
+   "photo": 0.9999,
+   "fit": 0.594,
+   "how": "yolo:bird",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.99)"
+   ],
+   "flags": [
+    "fit 0.59"
+   ],
+   "origin": "search:duck animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|LION": {
+   "title": "File:Lion (Panthera leo) male 6y.jpg",
+   "final": 1.129,
+   "p": 1.0,
+   "photo": 0.7911,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:lion animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|BEAR": {
+   "title": "File:2010-kodiak-bear-1.jpg",
+   "final": 0.973,
+   "p": 1.0,
+   "photo": 0.9856,
+   "fit": 0.5,
+   "how": "yolo:bear",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.83)"
+   ],
+   "flags": [
+    "fit 0.50"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|HORSE": {
+   "title": "File:Horses grazing at Trunkol meadow, Jammu and Kashmir, India (crop).jpg",
+   "final": 1.074,
+   "p": 0.9846,
+   "photo": 0.9964,
+   "fit": 1.0,
+   "how": "yolo:horse",
+   "notes": [],
+   "flags": [],
+   "origin": "search:horse animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|SHEEP": {
+   "title": "File:Ascain - Oveja -BT- 02.jpg",
+   "final": 1.098,
+   "p": 0.9999,
+   "photo": 0.9851,
+   "fit": 1.0,
+   "how": "yolo:sheep",
+   "notes": [],
+   "flags": [],
+   "origin": "search:sheep animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|MONKEY": {
+   "title": "File:Macaque India 3.jpg",
+   "final": 1.073,
+   "p": 0.9954,
+   "photo": 0.7488,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:monkey",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|ELEPHANT": {
+   "title": "File:Elephas maximus (Bandipur).jpg",
+   "final": 1.032,
+   "p": 0.9999,
+   "photo": 0.8658,
+   "fit": 0.834,
+   "how": "yolo:elephant",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|TIGER": {
+   "title": "File:Amur Tiger Panthera tigris altaica Eye 2112px edit.jpg",
+   "final": 1.141,
+   "p": 0.9896,
+   "photo": 0.9744,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:tiger animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|PANDA": {
+   "title": "File:Ailuropoda melanoleuca (Panda géant) - 445.jpg",
+   "final": 1.07,
+   "p": 0.9992,
+   "photo": 0.6641,
+   "fit": 1.0,
+   "how": "yolo:bear",
+   "notes": [],
+   "flags": [],
+   "origin": "search:panda animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|SHARK": {
+   "title": "File:Tiburón azul (Prionace glauca), canal Fayal-Pico, islas Azores, Portugal, 2020-07-27, DD 29.jpg",
+   "final": 0.975,
+   "p": 0.9978,
+   "photo": 0.1058,
+   "fit": 0.787,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.11"
+   ],
+   "origin": "search:shark animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|WHALE": {
+   "title": "File:031 Humpback whale lobtailing Photo by Giles Laurent.jpg",
+   "final": 1.015,
+   "p": 0.9999,
+   "photo": 0.9064,
+   "fit": 0.782,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:whale animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|OCTOPUS": {
+   "title": "File:Pulpo común (Octopus vulgaris), Parque natural de la Arrábida, Portugal, 2020-07-21, DD 33.jpg",
+   "final": 1.096,
+   "p": 0.9785,
+   "photo": 0.8833,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:octopus animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|CRAB": {
+   "title": "File:Cancer pagurus.jpg",
+   "final": 0.933,
+   "p": 1.0,
+   "photo": 0.9882,
+   "fit": 0.384,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.64)"
+   ],
+   "flags": [
+    "fit 0.38"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|OWL": {
+   "title": "File:004 Great horned owl under a Pink Ipê tree in Encontro das Águas State Park Photo by Giles Laurent.jpg",
+   "final": 1.146,
+   "p": 0.9999,
+   "photo": 0.9876,
+   "fit": 1.0,
+   "how": "yolo:bird",
+   "notes": [],
+   "flags": [],
+   "origin": "search:owl animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|SNAKE": {
+   "title": "File:Cobra-papagaio - Bothrops bilineatus - Ilhéus - Bahia.jpg",
+   "final": 0.895,
+   "p": 0.999,
+   "photo": 0.9348,
+   "fit": 0.345,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.57)"
+   ],
+   "flags": [
+    "fit 0.34"
+   ],
+   "origin": "search:snake animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|TURTLE": {
+   "title": "File:Hawaii turtle 2.JPG",
+   "final": 0.997,
+   "p": 0.9916,
+   "photo": 0.9992,
+   "fit": 0.588,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.98)"
+   ],
+   "flags": [
+    "fit 0.59"
+   ],
+   "origin": "search:sea turtle",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|BUTTERFLY": {
+   "title": "File:Butterfly Luc Viatour.JPG",
+   "final": 0.989,
+   "p": 1.0,
+   "photo": 0.9951,
+   "fit": 0.547,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.91)"
+   ],
+   "flags": [
+    "fit 0.55"
+   ],
+   "origin": "search:butterfly animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|MOUSE": {
+   "title": "File:Mus musculus 131536695.jpg",
+   "final": 0.898,
+   "p": 0.7784,
+   "photo": 0.7531,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:house mouse",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|PENGUIN": {
+   "title": "File:Magellanic penguin, Valdes Peninsula, e.jpg",
+   "final": 1.102,
+   "p": 1.0,
+   "photo": 0.9683,
+   "fit": 1.0,
+   "how": "yolo:bird",
+   "notes": [],
+   "flags": [],
+   "origin": "search:penguin animal",
+   "n_cands": 7,
+   "forced": false
+  },
+  "animals|FOX": {
+   "title": "File:Portrait of a red fox in Rautas fjällurskog.jpg",
+   "final": 0.978,
+   "p": 1.0,
+   "photo": 0.9996,
+   "fit": 0.529,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:red fox",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|APPLE": {
+   "title": "File:Tree with red apples in Barkedal 4.jpg",
+   "final": 1.008,
+   "p": 0.951,
+   "photo": 0.9994,
+   "fit": 0.75,
+   "how": "yolo:apple",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:apple fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|BANANA": {
+   "title": "File:Banana on whitebackground.jpg",
+   "final": 1.081,
+   "p": 0.9968,
+   "photo": 0.9616,
+   "fit": 0.822,
+   "how": "yolo:banana",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:banana fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|ORANGE": {
+   "title": "File:Open refrigerator with food at night.jpg",
+   "final": 0.309,
+   "p": 0.0141,
+   "photo": 0.0547,
+   "fit": 0.75,
+   "how": "yolo:orange",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [
+    "low word prob 0.01",
+    "not photo-like 0.05"
+   ],
+   "origin": "search:orange fruit",
+   "n_cands": 1,
+   "forced": false
+  },
+  "fruits|GRAPE": {
+   "title": "File:Grapes, Dry Creek Valley-7705.jpg",
+   "final": 1.15,
+   "p": 1.0,
+   "photo": 0.9986,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:grapes fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|MANGO": {
+   "title": "File:Mangos - single and halved.jpg",
+   "final": 0.914,
+   "p": 0.985,
+   "photo": 0.9989,
+   "fit": 0.35,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.58)"
+   ],
+   "flags": [
+    "fit 0.35"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|CHERRY": {
+   "title": "File:Cherry Stella444.jpg",
+   "final": 1.094,
+   "p": 0.9962,
+   "photo": 0.9975,
+   "fit": 0.847,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:cherries fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|PEACH": {
+   "title": "File:Peach tree branch with fruits (2).jpg",
+   "final": 1.087,
+   "p": 0.9728,
+   "photo": 0.9991,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:peach fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|STRAWBERRY": {
+   "title": "File:Fragaria vesca fruit - Keila.jpg",
+   "final": 1.033,
+   "p": 0.9911,
+   "photo": 0.9951,
+   "fit": 0.681,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.68"
+   ],
+   "origin": "search:strawberry fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|PINEAPPLE": {
+   "title": "File:Pineapple fruit 2.jpg",
+   "final": 1.138,
+   "p": 0.978,
+   "photo": 0.9989,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:pineapple fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|KIWI": {
+   "title": "File:(kiwifruit or Chinese gooseberry) is the edible berry of a woody vine in the genus Actinidia.JPG",
+   "final": 0.932,
+   "p": 0.694,
+   "photo": 0.9945,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:kiwifruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|BLUEBERRY": {
+   "title": "File:Blueberry Picking (125267747).jpeg",
+   "final": 1.125,
+   "p": 0.9998,
+   "photo": 0.9979,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:blueberry fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|MELON": {
+   "title": "File:Meloen vrucht met bloem.jpg",
+   "final": 1.053,
+   "p": 0.9649,
+   "photo": 0.8143,
+   "fit": 0.835,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|GUAVA": {
+   "title": "File:Goiaba vermelha.jpg",
+   "final": 1.082,
+   "p": 0.9833,
+   "photo": 0.9996,
+   "fit": 0.833,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:guava fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|PAPAYA": {
+   "title": "File:Carica papaya 22 08 2012.JPG",
+   "final": 1.067,
+   "p": 0.892,
+   "photo": 0.9988,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:papaya fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|DURIAN": {
+   "title": "File:Durian Fruit in Yunnan.jpg",
+   "final": 1.141,
+   "p": 0.9882,
+   "photo": 0.978,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:durian fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|RAMBUTAN": {
+   "title": "File:Rambutan One Kind of Fruit in Indonesia.jpg",
+   "final": 1.005,
+   "p": 0.8968,
+   "photo": 0.8951,
+   "fit": 0.778,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:rambutan fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|LONGAN": {
+   "title": "File:Dimocarpus longan fruits.jpg",
+   "final": 1.102,
+   "p": 0.9903,
+   "photo": 0.9926,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:longan fruit",
+   "n_cands": 7,
+   "forced": false
+  },
+  "fruits|POMELO": {
+   "title": "File:Pomelo fruit.jpg",
+   "final": 0.94,
+   "p": 0.9864,
+   "photo": 0.9969,
+   "fit": 0.426,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.71)"
+   ],
+   "flags": [
+    "fit 0.43"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|RICE": {
+   "title": "File:Meshi 001.jpg",
+   "final": 1.039,
+   "p": 0.9986,
+   "photo": 0.9917,
+   "fit": 0.827,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|BREAD": {
+   "title": "File:Breads of Russia.jpg",
+   "final": 0.873,
+   "p": 0.9753,
+   "photo": 0.9485,
+   "fit": 0.316,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.53)"
+   ],
+   "flags": [
+    "fit 0.32"
+   ],
+   "origin": "search:bread food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|EGG": {
+   "title": "File:Eggs in basket 2020 G1.jpg",
+   "final": 1.1,
+   "p": 0.9979,
+   "photo": 0.9888,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:chicken eggs",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|MILK": {
+   "title": "File:Glass of Milk (33657535532).jpg",
+   "final": 1.016,
+   "p": 0.9802,
+   "photo": 0.7831,
+   "fit": 0.826,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|PIZZA": {
+   "title": "File:Pizza food.jpg",
+   "final": 1.038,
+   "p": 0.9998,
+   "photo": 0.8655,
+   "fit": 0.82,
+   "how": "yolo:pizza",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:pizza food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|CAKE": {
+   "title": "File:Chocolate cake and Victoria sponge.jpg",
+   "final": 1.062,
+   "p": 0.9963,
+   "photo": 0.6363,
+   "fit": 1.0,
+   "how": "yolo:cake",
+   "notes": [],
+   "flags": [],
+   "origin": "search:cake food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|CORN": {
+   "title": "File:Blackened corn on the cob.png",
+   "final": 1.022,
+   "p": 0.9996,
+   "photo": 0.8831,
+   "fit": 0.813,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:corn food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|NOODLES": {
+   "title": "File:Noodles 7.jpg",
+   "final": 1.02,
+   "p": 0.9798,
+   "photo": 0.9382,
+   "fit": 0.82,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:noodles food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|SOUP": {
+   "title": "File:Mushroom Soup 4.jpg",
+   "final": 1.01,
+   "p": 0.9755,
+   "photo": 0.2328,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.23"
+   ],
+   "origin": "search:soup food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|SALAD": {
+   "title": "File:Fruit Salad with Grilled Halloumi Cheese.jpg",
+   "final": 0.979,
+   "p": 0.9712,
+   "photo": 0.6692,
+   "fit": 0.82,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:salad food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|SANDWICH": {
+   "title": "File:The Mediterranean sandwich - Dyke Road Park Cafe 2025-05-09.jpg",
+   "final": 1.088,
+   "p": 0.9943,
+   "photo": 0.9035,
+   "fit": 1.0,
+   "how": "yolo:sandwich",
+   "notes": [],
+   "flags": [],
+   "origin": "search:sandwich food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|HAMBURGER": {
+   "title": "File:Burger King double cheeseburger.jpg",
+   "final": 1.012,
+   "p": 0.9982,
+   "photo": 0.9128,
+   "fit": 0.776,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:hamburger food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|SUSHI": {
+   "title": "File:Vegan sushi plate.jpg",
+   "final": 0.851,
+   "p": 0.9766,
+   "photo": 0.9673,
+   "fit": 0.332,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.55)"
+   ],
+   "flags": [
+    "fit 0.33"
+   ],
+   "origin": "search:sushi food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|ICECREAM": {
+   "title": "File:Ice cream cone - superman flavor.jpg",
+   "final": 1.082,
+   "p": 0.9999,
+   "photo": 0.6336,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:ice cream cone",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|COOKIE": {
+   "title": "File:Kekse -- 2021 -- 9362.jpg",
+   "final": 1.021,
+   "p": 0.9999,
+   "photo": 0.9882,
+   "fit": 0.775,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:cookie food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|DONUT": {
+   "title": "File:Doughnut 2.jpg",
+   "final": 1.094,
+   "p": 0.9984,
+   "photo": 0.9461,
+   "fit": 1.0,
+   "how": "yolo:donut",
+   "notes": [],
+   "flags": [],
+   "origin": "search:donut food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|CHOCOLATE": {
+   "title": "File:Rocky Mountain chocolates.jpg",
+   "final": 0.956,
+   "p": 0.9999,
+   "photo": 0.9894,
+   "fit": 0.478,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.80)"
+   ],
+   "flags": [
+    "fit 0.48"
+   ],
+   "origin": "search:chocolate food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|CHEESE": {
+   "title": "File:Des ramequins (fromage de Saint-Rambert-en-Bugey).jpg",
+   "final": 1.008,
+   "p": 0.9254,
+   "photo": 0.4914,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.49"
+   ],
+   "origin": "search:cheese food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|CANDY": {
+   "title": "File:Sweets displayed inside a candy shop, Verona - 2026-09-12.jpg",
+   "final": 1.023,
+   "p": 0.9779,
+   "photo": 0.4256,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.43"
+   ],
+   "origin": "search:candy sweets",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|HOTDOG": {
+   "title": "File:Hot dog gourmet.jpg",
+   "final": 0.951,
+   "p": 0.9086,
+   "photo": 0.0153,
+   "fit": 1.0,
+   "how": "yolo:hot_dog",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.02"
+   ],
+   "origin": "search:hot dog",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|TACO": {
+   "title": "File:Shrimp tacos at Los Gallitos - April 2023 - Sarah Stierch.jpg",
+   "final": 0.905,
+   "p": 0.996,
+   "photo": 0.3895,
+   "fit": 0.528,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.88)"
+   ],
+   "flags": [
+    "fit 0.53",
+    "not photo-like 0.39"
+   ],
+   "origin": "search:taco food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|PASTA": {
+   "title": "File:Pasta Pasta.jpg",
+   "final": 0.965,
+   "p": 0.9657,
+   "photo": 0.9881,
+   "fit": 0.672,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.67"
+   ],
+   "origin": "search:pasta food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|MUSHROOM": {
+   "title": "File:Edible fungi in basket 2025 G2.jpg",
+   "final": 1.013,
+   "p": 0.9998,
+   "photo": 0.9929,
+   "fit": 0.76,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:mushroom food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|TOMATO": {
+   "title": "File:Organic home-grown tomatoes - unripe to ripe.jpg",
+   "final": 1.15,
+   "p": 0.9999,
+   "photo": 0.9965,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:tomato food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|POTATO": {
+   "title": "File:Irish Potato Kenya.jpg",
+   "final": 1.103,
+   "p": 0.9998,
+   "photo": 0.9982,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:potato food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|BROCCOLI": {
+   "title": "File:Liat Portal for Foodie Disorder - Broccoli from San Francisco farmers market.jpg",
+   "final": 1.107,
+   "p": 1.0,
+   "photo": 0.6581,
+   "fit": 1.0,
+   "how": "yolo:broccoli",
+   "notes": [],
+   "flags": [],
+   "origin": "search:broccoli food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|HONEY": {
+   "title": "File:Honey, illustration from The Encyclopedia of Food by Artemas Ward.jpg",
+   "final": 0.955,
+   "p": 1.0,
+   "photo": 0.3412,
+   "fit": 0.844,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.34"
+   ],
+   "origin": "search:honey food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|COFFEE": {
+   "title": "File:A small cup of coffee.JPG",
+   "final": 0.905,
+   "p": 0.9991,
+   "photo": 0.9298,
+   "fit": 0.438,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.73)"
+   ],
+   "flags": [
+    "fit 0.44"
+   ],
+   "origin": "search:cup of coffee",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|TEA": {
+   "title": "File:A cup of black tea with biscuits.jpg",
+   "final": 1.051,
+   "p": 0.9525,
+   "photo": 0.9119,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:cup of tea",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|WATER": {
+   "title": "File:Glass of water on vintage sheet.jpg",
+   "final": 1.063,
+   "p": 0.9988,
+   "photo": 0.5055,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:glass of water",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|CURRY": {
+   "title": "File:Curry Pastes (5311654507).jpg",
+   "final": 1.131,
+   "p": 0.9991,
+   "photo": 0.8803,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:curry food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|PANCAKE": {
+   "title": "File:Pancake stack 2.jpg",
+   "final": 0.851,
+   "p": 1.0,
+   "photo": 0.7857,
+   "fit": 0.34,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.69)"
+   ],
+   "flags": [
+    "fit 0.34"
+   ],
+   "origin": "search:pancake food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "food|RAMEN": {
+   "title": "File:Ramen dan Teh Manis Dingin.jpg",
+   "final": 0.963,
+   "p": 0.999,
+   "photo": 0.267,
+   "fit": 0.82,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "not photo-like 0.27"
+   ],
+   "origin": "search:ramen food",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|BLUE": {
+   "title": "File:Innenhafen Duisburg Blaue Stunde 2014.jpg",
+   "final": 0.852,
+   "p": 0.5961,
+   "photo": 0.9811,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:blue color",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|GREEN": {
+   "title": "File:2018-07-16 Green apples on tree.jpg",
+   "final": 0.87,
+   "p": 0.7202,
+   "photo": 0.988,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:green apples",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|YELLOW": {
+   "title": "File:Gabriel with a yellow balloon, Bairro Arco do Cego, Lisbon, Portugal julesvernex2.jpg",
+   "final": 1.083,
+   "p": 0.9953,
+   "photo": 0.9392,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:yellow balloons",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|PURPLE": {
+   "title": "File:Violetsed color nomenclature naturalists.jpg",
+   "final": 0.978,
+   "p": 0.8561,
+   "photo": 0.6671,
+   "fit": 0.828,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:purple color",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|ORANGE": {
+   "title": "File:Bloem van een Papaver (klaproos). 14-05-2021 (actm.) 01.jpg",
+   "final": 1.126,
+   "p": 0.9967,
+   "photo": 0.9996,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:orange color",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|PINK": {
+   "title": "File:Burano Hausfassade Wäsche-20090315-RM-113043.jpg",
+   "final": 1.077,
+   "p": 0.9521,
+   "photo": 0.5308,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:pink color",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|BROWN": {
+   "title": "File:Brown rock chat (Oenanthe fusca).jpg",
+   "final": 1.019,
+   "p": 0.9687,
+   "photo": 0.7781,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:brown color",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|BLACK": {
+   "title": "File:Black hole - Messier 87 crop max res.jpg",
+   "final": 0.931,
+   "p": 0.7477,
+   "photo": 0.9469,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:black objects",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|WHITE": {
+   "title": "File:Yarrow (Achillea millefolium).jpg",
+   "final": 1.036,
+   "p": 0.9988,
+   "photo": 0.9898,
+   "fit": 0.824,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:white color",
+   "n_cands": 7,
+   "forced": false
+  },
+  "colors|GRAY": {
+   "title": "File:Rollright Stones, the King Stone, on a grey December day - geograph.org.uk - 2214388.jpg",
+   "final": 0.768,
+   "p": 0.9538,
+   "photo": 0.8752,
+   "fit": 0.209,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.50)"
+   ],
+   "flags": [
+    "fit 0.21"
+   ],
+   "origin": "search:grey stones",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|PEN": {
+   "title": "File:Pen salem.jpg",
+   "final": 1.068,
+   "p": 0.9947,
+   "photo": 0.2121,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.21"
+   ],
+   "origin": "search:pen",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|BOOK": {
+   "title": "File:13-11-02-olb-by-RalfR-03.jpg",
+   "final": 0.664,
+   "p": 0.3194,
+   "photo": 0.9821,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.32"
+   ],
+   "origin": "search:book",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|BAG": {
+   "title": "File:Trungyi High School stop board and KLCIVS backpack 20251120.jpg",
+   "final": 1.035,
+   "p": 0.9777,
+   "photo": 0.7632,
+   "fit": 1.0,
+   "how": "yolo:backpack",
+   "notes": [],
+   "flags": [],
+   "origin": "search:school backpack",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|PENCIL": {
+   "title": "File:Pencil on a table.jpg",
+   "final": 0.84,
+   "p": 0.9984,
+   "photo": 0.0992,
+   "fit": 0.397,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.66)"
+   ],
+   "flags": [
+    "fit 0.40",
+    "not photo-like 0.10"
+   ],
+   "origin": "search:pencil",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|RULER": {
+   "title": "File:Ruler image.jpg",
+   "final": 0.936,
+   "p": 0.9997,
+   "photo": 0.9511,
+   "fit": 0.409,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.83)"
+   ],
+   "flags": [
+    "fit 0.41"
+   ],
+   "origin": "search:ruler",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|SCISSORS": {
+   "title": "File:A pair of scissors.jpg",
+   "final": 0.924,
+   "p": 1.0,
+   "photo": 0.8119,
+   "fit": 0.408,
+   "how": "yolo:scissors",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.68)"
+   ],
+   "flags": [
+    "fit 0.41"
+   ],
+   "origin": "search:scissors",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|NOTEBOOK": {
+   "title": "File:Notebooks.jpg",
+   "final": 0.797,
+   "p": 0.9435,
+   "photo": 0.2746,
+   "fit": 0.459,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.77)"
+   ],
+   "flags": [
+    "fit 0.46",
+    "not photo-like 0.27"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|COMPUTER": {
+   "title": "File:Backlit Laptop Keyboard.jpg",
+   "final": 0.696,
+   "p": 0.9823,
+   "photo": 0.0159,
+   "fit": 0.226,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.23",
+    "not photo-like 0.02"
+   ],
+   "origin": "search:laptop computer",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|CALCULATOR": {
+   "title": "File:Citizen SLD-100NR calculator.jpg",
+   "final": 1.069,
+   "p": 0.9999,
+   "photo": 0.8111,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:calculator",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|GLOBE": {
+   "title": "File:Coronelli globe terrestre.jpg",
+   "final": 1.09,
+   "p": 1.0,
+   "photo": 0.902,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:globe",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|CRAYON": {
+   "title": "File:Crayola crayons.jpg",
+   "final": 1.054,
+   "p": 0.9991,
+   "photo": 0.0474,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.05"
+   ],
+   "origin": "search:crayon",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|ERASER": {
+   "title": "File:Pink Pearl eraser.jpg",
+   "final": 0.899,
+   "p": 0.9992,
+   "photo": 0.3409,
+   "fit": 0.473,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.79)"
+   ],
+   "flags": [
+    "fit 0.47",
+    "not photo-like 0.34"
+   ],
+   "origin": "search:eraser",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|DESK": {
+   "title": "File:Desk MET DT11195.jpg",
+   "final": 0.915,
+   "p": 0.977,
+   "photo": 0.2245,
+   "fit": 0.831,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.22"
+   ],
+   "origin": "search:desk",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|CHAIR": {
+   "title": "File:Set of fourteen side chairs MET DP110780.jpg",
+   "final": 1.044,
+   "p": 1.0,
+   "photo": 0.4683,
+   "fit": 1.0,
+   "how": "yolo:chair",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.47"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|CLASSROOM": {
+   "title": "File:Elementary classroom in Alaska.jpg",
+   "final": 1.066,
+   "p": 0.9931,
+   "photo": 0.5802,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|TEACHER": {
+   "title": "File:A public high school teacher in a classroom in the United States 16.jpg",
+   "final": 0.801,
+   "p": 0.8143,
+   "photo": 0.0124,
+   "fit": 0.82,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "not photo-like 0.01"
+   ],
+   "origin": "search:teacher classroom",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|STUDENT": {
+   "title": "File:Pupil washes hands during COVID-19 pandemic in Ghana.jpg",
+   "final": 0.911,
+   "p": 0.7941,
+   "photo": 0.987,
+   "fit": 0.842,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:student",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|HOMEWORK": {
+   "title": "File:Child engaged in homework with glass of water on table.jpg",
+   "final": 0.757,
+   "p": 0.9934,
+   "photo": 0.0564,
+   "fit": 0.291,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.59)"
+   ],
+   "flags": [
+    "fit 0.29",
+    "not photo-like 0.06"
+   ],
+   "origin": "search:child doing homework",
+   "n_cands": 7,
+   "forced": false
+  },
+  "school|MAP": {
+   "title": "File:Kunyu Wanguo Quantu (坤輿萬國全圖).jpg",
+   "final": 0.981,
+   "p": 0.9952,
+   "photo": 0.0131,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.01"
+   ],
+   "origin": "search:world map wall",
+   "n_cands": 3,
+   "forced": false
+  },
+  "school|PAINT": {
+   "title": "File:Microsoft Paint color palettes.png",
+   "final": 0.936,
+   "p": 0.7837,
+   "photo": 0.7664,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:paint palette",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|EAR": {
+   "title": "File:Human right ear (cropped).jpg",
+   "final": 1.063,
+   "p": 0.9992,
+   "photo": 0.9127,
+   "fit": 0.844,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|NOSE": {
+   "title": "File:Nose nina.jpg",
+   "final": 1.077,
+   "p": 0.9803,
+   "photo": 0.9991,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [
+    "upscaled x1.7"
+   ],
+   "flags": [],
+   "origin": "search:human nose",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|HAND": {
+   "title": "File:Sitta europaea wildlife 3.jpg",
+   "final": 0.656,
+   "p": 0.72,
+   "photo": 0.9346,
+   "fit": 0.303,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.62)"
+   ],
+   "flags": [
+    "fit 0.30"
+   ],
+   "origin": "search:human hand",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|FOOT": {
+   "title": "File:Foot Fetish.jpg",
+   "final": 1.108,
+   "p": 0.9881,
+   "photo": 0.9949,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:human foot",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|MOUTH": {
+   "title": "File:Detailed view of the inside of the human mouth.jpg",
+   "final": 0.711,
+   "p": 0.4304,
+   "photo": 0.9808,
+   "fit": 0.672,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.43",
+    "fit 0.67"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|HAIR": {
+   "title": "File:Young woman with long red hair from behind.jpg",
+   "final": 0.978,
+   "p": 0.938,
+   "photo": 0.9466,
+   "fit": 0.82,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:long hair",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|TOOTH": {
+   "title": "File:Lower wisdom tooth.jpg",
+   "final": 1.098,
+   "p": 0.9988,
+   "photo": 0.9886,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:human tooth",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|FINGER": {
+   "title": "File:Polydactyly 01 Lhand AP.jpg",
+   "final": 0.334,
+   "p": 0.0192,
+   "photo": 0.9976,
+   "fit": 0.381,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "low word prob 0.02",
+    "fit 0.38"
+   ],
+   "origin": "search:finger",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|LEG": {
+   "title": "File:Leg compartments.jpg",
+   "final": 0.603,
+   "p": 0.3627,
+   "photo": 0.0015,
+   "fit": 0.82,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "upscaled x1.5"
+   ],
+   "flags": [
+    "low word prob 0.36",
+    "not photo-like 0.00"
+   ],
+   "origin": "search:human leg",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|ARM": {
+   "title": "File:Female Elbow and Hand on Arm.png",
+   "final": 0.94,
+   "p": 0.8802,
+   "photo": 0.9839,
+   "fit": 0.672,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.67"
+   ],
+   "origin": "search:human arm",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|TONGUE": {
+   "title": "File:زبان tongue.jpg",
+   "final": 0.977,
+   "p": 0.9802,
+   "photo": 0.9968,
+   "fit": 0.547,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.91)"
+   ],
+   "flags": [
+    "fit 0.55"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|BRAIN": {
+   "title": "File:The Human Brain Model 01.jpg",
+   "final": 1.104,
+   "p": 0.9999,
+   "photo": 0.9994,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:human brain model",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|HEART": {
+   "title": "File:Human heart model.jpg",
+   "final": 1.121,
+   "p": 0.9996,
+   "photo": 0.8129,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:human heart model",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|BONE": {
+   "title": "File:Left femur of extinct elephant, Alaska, Ice Age Wellcome L0057714.jpg",
+   "final": 0.866,
+   "p": 0.9988,
+   "photo": 0.9911,
+   "fit": 0.317,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.53)"
+   ],
+   "flags": [
+    "fit 0.32"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|SKIN": {
+   "title": "File:Skin.png",
+   "final": 1.041,
+   "p": 0.9891,
+   "photo": 0.0097,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.01"
+   ],
+   "origin": "search:human skin",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|BACK": {
+   "title": "File:Posterior view of human female and male backs (cropped).jpg",
+   "final": 0.893,
+   "p": 0.9538,
+   "photo": 0.9506,
+   "fit": 0.551,
+   "how": "saliency",
+   "notes": [
+    "touches 3 edge(s)"
+   ],
+   "flags": [
+    "fit 0.55"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|NECK": {
+   "title": "File:Structure of Adam's apple.png",
+   "final": 0.817,
+   "p": 0.983,
+   "photo": 0.0027,
+   "fit": 0.513,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.85)",
+    "upscaled x1.6"
+   ],
+   "flags": [
+    "fit 0.51",
+    "not photo-like 0.00"
+   ],
+   "origin": "search:neck",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|SHOULDER": {
+   "title": "File:Shoulder impingement syndrome, X-ray.jpg",
+   "final": 1.034,
+   "p": 0.999,
+   "photo": 0.9828,
+   "fit": 0.82,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "upscaled x1.4"
+   ],
+   "flags": [],
+   "origin": "search:shoulder",
+   "n_cands": 7,
+   "forced": false
+  },
+  "body|STOMACH": {
+   "title": "File:Abdomen-periumbilical region.png",
+   "final": 0.404,
+   "p": 0.3936,
+   "photo": 0.0925,
+   "fit": 0.215,
+   "how": "saliency",
+   "notes": [
+    "touches 4 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.79)"
+   ],
+   "flags": [
+    "low word prob 0.39",
+    "fit 0.21",
+    "not photo-like 0.09"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|SUN": {
+   "title": "File:Sun shining in the sky.jpg",
+   "final": 1.006,
+   "p": 0.9799,
+   "photo": 0.1584,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.16"
+   ],
+   "origin": "search:sun shining sky",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|RAIN": {
+   "title": "File:Purple rain on roof.jpg",
+   "final": 0.842,
+   "p": 0.4592,
+   "photo": 0.9998,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.46"
+   ],
+   "origin": "search:rain weather",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|SNOW": {
+   "title": "File:Kolomenskoe in white - Dec12 - 03 snow.jpg",
+   "final": 0.55,
+   "p": 0.0017,
+   "photo": 0.9802,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:snow weather",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|CLOUD": {
+   "title": "File:Iridescent clouds during snowfall 1.jpg",
+   "final": 0.806,
+   "p": 0.4712,
+   "photo": 0.999,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.47"
+   ],
+   "origin": "search:cloud weather",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|WIND": {
+   "title": "File:Blowing trees - DPLA - 130b193d79a91de894901401aaab6872.jpg",
+   "final": 0.859,
+   "p": 0.8839,
+   "photo": 0.0197,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.02"
+   ],
+   "origin": "search:wind blowing trees",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|STORM": {
+   "title": "File:Hestskjær fyr i storm fra Nordvest.jpg",
+   "final": 0.872,
+   "p": 0.7185,
+   "photo": 0.3729,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [
+    "upscaled x1.6"
+   ],
+   "flags": [
+    "not photo-like 0.37"
+   ],
+   "origin": "search:storm weather",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|FOG": {
+   "title": "File:Vallee-brouillard.jpg",
+   "final": 0.856,
+   "p": 0.5693,
+   "photo": 0.9302,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:fog",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|HOT": {
+   "title": "File:Dry and hot weather of chilas.jpg",
+   "final": 0.52,
+   "p": 0.077,
+   "photo": 0.6889,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.08"
+   ],
+   "origin": "search:hot weather sun",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|COLD": {
+   "title": "File:Winter forest silver.jpg",
+   "final": 0.781,
+   "p": 0.424,
+   "photo": 0.9786,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.42"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|SUNNY": {
+   "title": "File:Wooden footbridge in Shinjuku Gyoen National Garden, Tokyo, Japan, a sunny day with blue sky.jpg",
+   "final": 1.038,
+   "p": 0.9734,
+   "photo": 0.5895,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:sunny day",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|THUNDER": {
+   "title": "File:Lightning striking the Eiffel Tower - NOAA.jpg",
+   "final": 0.829,
+   "p": 0.5282,
+   "photo": 0.9767,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:lightning",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|HUMID": {
+   "title": "File:Aerial view of the Amazon Rainforest.jpg",
+   "final": 0.451,
+   "p": 0.0027,
+   "photo": 0.9997,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "current",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|WARM": {
+   "title": "File:A warm, sunny day at Neptune's Staircase - geograph.org.uk - 7557850.jpg",
+   "final": 0.983,
+   "p": 0.96,
+   "photo": 0.6724,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:warm sunny day",
+   "n_cands": 7,
+   "forced": false
+  },
+  "weather|DRY": {
+   "title": "File:Drought.jpg",
+   "final": 0.71,
+   "p": 0.3019,
+   "photo": 0.9379,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.30"
+   ],
+   "origin": "search:drought",
+   "n_cands": 7,
+   "forced": false
+  },
+  "numbers|ZERO": {
+   "title": "File:Empty plate with fork.jpg",
+   "final": 0.894,
+   "p": 0.8061,
+   "photo": 0.996,
+   "fit": 0.808,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:empty plate",
+   "n_cands": 7,
+   "forced": false
+  }
+ },
+ "low_confidence": [
+  "animals|BEAR",
+  "animals|BUTTERFLY",
+  "animals|CAT",
+  "animals|CRAB",
+  "animals|DUCK",
+  "animals|FOX",
+  "animals|SHARK",
+  "animals|SNAKE",
+  "animals|TURTLE",
+  "body|ARM",
+  "body|BACK",
+  "body|BONE",
+  "body|FINGER",
+  "body|HAND",
+  "body|LEG",
+  "body|MOUTH",
+  "body|NECK",
+  "body|SKIN",
+  "body|STOMACH",
+  "body|TONGUE",
+  "colors|GRAY",
+  "colors|RED",
+  "food|BREAD",
+  "food|CANDY",
+  "food|CHEESE",
+  "food|CHOCOLATE",
+  "food|COFFEE",
+  "food|HONEY",
+  "food|HOTDOG",
+  "food|PANCAKE",
+  "food|PASTA",
+  "food|RAMEN",
+  "food|SOUP",
+  "food|SUSHI",
+  "food|TACO",
+  "fruits|MANGO",
+  "fruits|ORANGE",
+  "fruits|POMELO",
+  "fruits|STRAWBERRY",
+  "numbers|THREE",
+  "school|BOOK",
+  "school|CHAIR",
+  "school|COMPUTER",
+  "school|CRAYON",
+  "school|DESK",
+  "school|ERASER",
+  "school|HOMEWORK",
+  "school|MAP",
+  "school|NOTEBOOK",
+  "school|PEN",
+  "school|PENCIL",
+  "school|RULER",
+  "school|SCISSORS",
+  "school|TEACHER",
+  "weather|CLOUD",
+  "weather|COLD",
+  "weather|DRY",
+  "weather|HOT",
+  "weather|HUMID",
+  "weather|RAIN",
+  "weather|SNOW",
+  "weather|STORM",
+  "weather|SUN",
+  "weather|WIND"
+ ],
+ "summary": {
+  "words": 1903,
+  "with_photo": 144,
+  "flagged": 64
+ }
+}

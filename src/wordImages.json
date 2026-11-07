@@ -1,1 +1,1010 @@
-{}
+{
+ "animals|BEAR": {
+  "file": "w/animals__bear.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2010-kodiak-bear-1.jpg",
+  "author": "Yathin S Krishnappa",
+  "license": "CC BY-SA 3.0",
+  "score": 0.973
+ },
+ "animals|BIRD": {
+  "file": "w/animals__bird.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ploceus_velatus_beak_open.jpg",
+  "author": "Prosthetic Head",
+  "license": "CC BY-SA 4.0",
+  "score": 1.066
+ },
+ "animals|BUTTERFLY": {
+  "file": "w/animals__butterfly.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Butterfly_Luc_Viatour.JPG",
+  "author": "Luc Viatour",
+  "license": "CC BY-SA 3.0",
+  "score": 0.989
+ },
+ "animals|CAT": {
+  "file": "w/animals__cat.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Siam_lilacpoint.jpg",
+  "author": "Karin Langner-Bahmann , upload von Martin Bahmann",
+  "license": "CC BY-SA 3.0",
+  "score": 0.968
+ },
+ "animals|COW": {
+  "file": "w/animals__cow.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Anjarle_Bridge_and_Cows-fix.jpg",
+  "author": "Photographer: Dey.sandip Additional Credit: User Atention for water spot removal.",
+  "license": "CC BY-SA 3.0",
+  "score": 0.985
+ },
+ "animals|CRAB": {
+  "file": "w/animals__crab.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cancer_pagurus.jpg",
+  "author": "Hans Hillewaert",
+  "license": "CC BY-SA 4.0",
+  "score": 0.933
+ },
+ "animals|DOG": {
+  "file": "w/animals__dog.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:DSC09611a_Search_and_Rescue_Dog,_Austrian_Red_Cross_Perchtoldsdorf,_2024-10.jpg",
+  "author": "Aciarium",
+  "license": "CC BY 4.0",
+  "score": 0.931
+ },
+ "animals|DUCK": {
+  "file": "w/animals__duck.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Anas_platyrhynchos_male_female.jpg",
+  "author": "This picture was realized by Richard Bartz by using a Canon EF 70-300mm f/4-5.6 IS USM Lens",
+  "license": "CC BY-SA 2.5",
+  "score": 0.994
+ },
+ "animals|ELEPHANT": {
+  "file": "w/animals__elephant.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Elephas_maximus_(Bandipur).jpg",
+  "author": "Yathin S Krishnappa",
+  "license": "CC BY-SA 3.0",
+  "score": 1.032
+ },
+ "animals|FISH": {
+  "file": "w/animals__fish.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Carassius_auratus_black_telescope.jpg",
+  "author": "IssamBarhoumi",
+  "license": "CC BY-SA 4.0",
+  "score": 1.107
+ },
+ "animals|FOX": {
+  "file": "w/animals__fox.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_red_fox_in_Rautas_fj%C3%A4llurskog.jpg",
+  "author": "ClaudiaTen",
+  "license": "CC BY-SA 4.0",
+  "score": 0.978
+ },
+ "animals|FROG": {
+  "file": "w/animals__frog.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Red-eyed_Leaf_Frog_(49661076226).jpg",
+  "author": "Charlie Jackson",
+  "license": "CC BY 2.0",
+  "score": 1.063
+ },
+ "animals|HORSE": {
+  "file": "w/animals__horse.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Horses_grazing_at_Trunkol_meadow,_Jammu_and_Kashmir,_India_(crop).jpg",
+  "author": "UnpetitproleX",
+  "license": "CC BY 4.0",
+  "score": 1.074
+ },
+ "animals|LION": {
+  "file": "w/animals__lion.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lion_(Panthera_leo)_male_6y.jpg",
+  "author": "Charles J. Sharp",
+  "license": "CC BY-SA 4.0",
+  "score": 1.129
+ },
+ "animals|MONKEY": {
+  "file": "w/animals__monkey.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Macaque_India_3.jpg",
+  "author": "Thomas Schoch",
+  "license": "CC BY-SA 4.0",
+  "score": 1.073
+ },
+ "animals|MOUSE": {
+  "file": "w/animals__mouse.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mus_musculus_131536695.jpg",
+  "author": "kcthetc1",
+  "license": "CC0",
+  "score": 0.898
+ },
+ "animals|OCTOPUS": {
+  "file": "w/animals__octopus.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pulpo_com%C3%BAn_(Octopus_vulgaris),_Parque_natural_de_la_Arr%C3%A1bida,_Portugal,_2020-07-21,_DD_33.jpg",
+  "author": "Diego Delso",
+  "license": "CC BY-SA 4.0",
+  "score": 1.096
+ },
+ "animals|OWL": {
+  "file": "w/animals__owl.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:004_Great_horned_owl_under_a_Pink_Ip%C3%AA_tree_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg",
+  "author": "Giles Laurent",
+  "license": "CC BY-SA 4.0",
+  "score": 1.146
+ },
+ "animals|PANDA": {
+  "file": "w/animals__panda.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ailuropoda_melanoleuca_(Panda_g%C3%A9ant)_-_445.jpg",
+  "author": "Another one of my pictures: This photograph was taken by Medium69 (William Crochot) and released under the license stated below. You are free to use it for any purpose as long as you credit the author",
+  "license": "CC BY-SA 4.0",
+  "score": 1.07
+ },
+ "animals|PENGUIN": {
+  "file": "w/animals__penguin.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Magellanic_penguin,_Valdes_Peninsula,_e.jpg",
+  "author": "David",
+  "license": "CC BY 2.0",
+  "score": 1.102
+ },
+ "animals|PIG": {
+  "file": "w/animals__pig.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cochon_domestique_(Sus_scrofa_domesticus)_(2).jpg",
+  "author": "Gzen92",
+  "license": "CC BY-SA 4.0",
+  "score": 1.009
+ },
+ "animals|SHARK": {
+  "file": "w/animals__shark.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tibur%C3%B3n_azul_(Prionace_glauca),_canal_Fayal-Pico,_islas_Azores,_Portugal,_2020-07-27,_DD_29.jpg",
+  "author": "Diego Delso",
+  "license": "CC BY-SA 4.0",
+  "score": 0.975
+ },
+ "animals|SHEEP": {
+  "file": "w/animals__sheep.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ascain_-_Oveja_-BT-_02.jpg",
+  "author": "Basotxerri",
+  "license": "CC BY-SA 4.0",
+  "score": 1.098
+ },
+ "animals|SNAKE": {
+  "file": "w/animals__snake.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cobra-papagaio_-_Bothrops_bilineatus_-_Ilh%C3%A9us_-_Bahia.jpg",
+  "author": "Renato Augusto Martins",
+  "license": "CC BY-SA 4.0",
+  "score": 0.895
+ },
+ "animals|TIGER": {
+  "file": "w/animals__tiger.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Amur_Tiger_Panthera_tigris_altaica_Eye_2112px_edit.jpg",
+  "author": "Photo (c)2007 Derek and Julie Ramsey ( Ram-Man ) edit by Chris_huh .",
+  "license": "Public domain",
+  "score": 1.141
+ },
+ "animals|TURTLE": {
+  "file": "w/animals__turtle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hawaii_turtle_2.JPG",
+  "author": "Brocken Inaglory",
+  "license": "CC BY-SA 3.0",
+  "score": 0.997
+ },
+ "animals|WHALE": {
+  "file": "w/animals__whale.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:031_Humpback_whale_lobtailing_Photo_by_Giles_Laurent.jpg",
+  "author": "Giles Laurent",
+  "license": "CC BY-SA 4.0",
+  "score": 1.015
+ },
+ "body|ARM": {
+  "file": "w/body__arm.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Female_Elbow_and_Hand_on_Arm.png",
+  "author": "Elements Of This World",
+  "license": "CC BY 2.0",
+  "score": 0.94
+ },
+ "body|BACK": {
+  "file": "w/body__back.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Posterior_view_of_human_female_and_male_backs_(cropped).jpg",
+  "author": "Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence",
+  "license": "CC0",
+  "score": 0.893
+ },
+ "body|BONE": {
+  "file": "w/body__bone.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Left_femur_of_extinct_elephant,_Alaska,_Ice_Age_Wellcome_L0057714.jpg",
+  "author": "https://wellcomeimages.org/indexplus/obf_images/b3/24/aea0b12af6c09e6c500e389e5565.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0057714.html Wellcome Collection gallery (2018-03-30): https",
+  "license": "CC BY 4.0",
+  "score": 0.866
+ },
+ "body|BRAIN": {
+  "file": "w/body__brain.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_Human_Brain_Model_01.jpg",
+  "author": "Edeh Sophia",
+  "license": "CC0",
+  "score": 1.104
+ },
+ "body|EAR": {
+  "file": "w/body__ear.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Human_right_ear_(cropped).jpg",
+  "author": "Genusfotografen (Tomas Gunnarsson) / Wikimedia Sverige",
+  "license": "CC BY-SA 4.0",
+  "score": 1.063
+ },
+ "body|FINGER": {
+  "file": "w/body__finger.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Polydactyly_01_Lhand_AP.jpg",
+  "author": "en:User:Drgnu23 , subsequently altered by en:user:Grendelkhan , en:user: Raul654 , and en:user:Solipsist .",
+  "license": "CC BY-SA 3.0",
+  "score": 0.334
+ },
+ "body|FOOT": {
+  "file": "w/body__foot.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Foot_Fetish.jpg",
+  "author": "Pure male feet",
+  "license": "CC0",
+  "score": 1.108
+ },
+ "body|HAIR": {
+  "file": "w/body__hair.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Young_woman_with_long_red_hair_from_behind.jpg",
+  "author": "Alex Neman",
+  "license": "CC BY-SA 4.0",
+  "score": 0.978
+ },
+ "body|HAND": {
+  "file": "w/body__hand.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sitta_europaea_wildlife_3.jpg",
+  "author": "Paweł Kuźniar ( User:Jojo )",
+  "license": "CC BY-SA 3.0",
+  "score": 0.656
+ },
+ "body|HEART": {
+  "file": "w/body__heart.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Human_heart_model.jpg",
+  "author": "Alaa Najjar",
+  "license": "CC BY-SA 3.0",
+  "score": 1.121
+ },
+ "body|LEG": {
+  "file": "w/body__leg.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Leg_compartments.jpg",
+  "author": "Beckie Palmer",
+  "license": "CC BY 4.0",
+  "score": 0.603
+ },
+ "body|MOUTH": {
+  "file": "w/body__mouth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Detailed_view_of_the_inside_of_the_human_mouth.jpg",
+  "author": "JonaLane",
+  "license": "CC0",
+  "score": 0.711
+ },
+ "body|NECK": {
+  "file": "w/body__neck.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Structure_of_Adam%27s_apple.png",
+  "author": "Henry Vandyke Carter",
+  "license": "Public domain",
+  "score": 0.817
+ },
+ "body|NOSE": {
+  "file": "w/body__nose.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Nose_nina.jpg",
+  "author": "Allan-Hermann Pool",
+  "license": "CC BY-SA 4.0",
+  "score": 1.077
+ },
+ "body|SHOULDER": {
+  "file": "w/body__shoulder.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Shoulder_impingement_syndrome,_X-ray.jpg",
+  "author": "Jmarchn",
+  "license": "CC0",
+  "score": 1.034
+ },
+ "body|SKIN": {
+  "file": "w/body__skin.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Skin.png",
+  "author": "US-Gov",
+  "license": "Public domain",
+  "score": 1.041
+ },
+ "body|STOMACH": {
+  "file": "w/body__stomach.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Abdomen-periumbilical_region.png",
+  "author": "7mike5000",
+  "license": "CC BY-SA 3.0",
+  "score": 0.404
+ },
+ "body|TONGUE": {
+  "file": "w/body__tongue.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%D8%B2%D8%A8%D8%A7%D9%86_tongue.jpg",
+  "author": "Mahdiabbasinv",
+  "license": "CC BY-SA 4.0",
+  "score": 0.977
+ },
+ "body|TOOTH": {
+  "file": "w/body__tooth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lower_wisdom_tooth.jpg",
+  "author": "No machine-readable author provided. Gleam~commonswiki assumed (based on copyright claims).",
+  "license": "CC BY-SA 3.0",
+  "score": 1.098
+ },
+ "colors|BLACK": {
+  "file": "w/colors__black.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87_crop_max_res.jpg",
+  "author": "Event Horizon Telescope , uploader cropped and converted TIF to JPG",
+  "license": "CC BY 4.0",
+  "score": 0.931
+ },
+ "colors|BLUE": {
+  "file": "w/colors__blue.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Innenhafen_Duisburg_Blaue_Stunde_2014.jpg",
+  "author": "Tuxyso",
+  "license": "CC BY-SA 3.0",
+  "score": 0.852
+ },
+ "colors|BROWN": {
+  "file": "w/colors__brown.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Brown_rock_chat_(Oenanthe_fusca).jpg",
+  "author": "Charles J. Sharp",
+  "license": "CC BY-SA 4.0",
+  "score": 1.019
+ },
+ "colors|GRAY": {
+  "file": "w/colors__gray.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Rollright_Stones,_the_King_Stone,_on_a_grey_December_day_-_geograph.org.uk_-_2214388.jpg",
+  "author": "Christopher Hilton",
+  "license": "CC BY-SA 2.0",
+  "score": 0.768
+ },
+ "colors|GREEN": {
+  "file": "w/colors__green.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2018-07-16_Green_apples_on_tree.jpg",
+  "author": "Maksym Kozlenko",
+  "license": "CC BY-SA 4.0",
+  "score": 0.87
+ },
+ "colors|ORANGE": {
+  "file": "w/colors__orange.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bloem_van_een_Papaver_(klaproos)._14-05-2021_(actm.)_01.jpg",
+  "author": "Agnes Monkelbaan",
+  "license": "CC BY-SA 4.0",
+  "score": 1.126
+ },
+ "colors|PINK": {
+  "file": "w/colors__pink.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Burano_Hausfassade_W%C3%A4sche-20090315-RM-113043.jpg",
+  "author": "Ermell",
+  "license": "CC BY-SA 4.0",
+  "score": 1.077
+ },
+ "colors|PURPLE": {
+  "file": "w/colors__purple.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Violetsed_color_nomenclature_naturalists.jpg",
+  "author": "Ridgway, Robert, 1850-1929",
+  "license": "Public domain",
+  "score": 0.978
+ },
+ "colors|RED": {
+  "file": "w/colors__red.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
+  "author": "Abhijit Tembhekar from Mumbai, India",
+  "license": "CC BY 2.0",
+  "score": 0.833
+ },
+ "colors|WHITE": {
+  "file": "w/colors__white.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Yarrow_(Achillea_millefolium).jpg",
+  "author": "Petar Milošević",
+  "license": "CC BY-SA 4.0",
+  "score": 1.036
+ },
+ "colors|YELLOW": {
+  "file": "w/colors__yellow.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Gabriel_with_a_yellow_balloon,_Bairro_Arco_do_Cego,_Lisbon,_Portugal_julesvernex2.jpg",
+  "author": "Jules Verne Times Two",
+  "license": "CC BY-SA 4.0",
+  "score": 1.083
+ },
+ "food|BREAD": {
+  "file": "w/food__bread.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Breads_of_Russia.jpg",
+  "author": "Dmitry Makeev",
+  "license": "CC BY-SA 4.0",
+  "score": 0.873
+ },
+ "food|BROCCOLI": {
+  "file": "w/food__broccoli.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Broccoli_from_San_Francisco_farmers_market.jpg",
+  "author": "HaJunkiyada",
+  "license": "CC BY-SA 4.0",
+  "score": 1.107
+ },
+ "food|CAKE": {
+  "file": "w/food__cake.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chocolate_cake_and_Victoria_sponge.jpg",
+  "author": "Acabashi",
+  "license": "CC BY-SA 4.0",
+  "score": 1.062
+ },
+ "food|CANDY": {
+  "file": "w/food__candy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sweets_displayed_inside_a_candy_shop,_Verona_-_2026-09-12.jpg",
+  "author": "NorbertNagel",
+  "license": "CC BY-SA 4.0",
+  "score": 1.023
+ },
+ "food|CHEESE": {
+  "file": "w/food__cheese.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Des_ramequins_(fromage_de_Saint-Rambert-en-Bugey).jpg",
+  "author": "Classiccardinal",
+  "license": "CC BY-SA 4.0",
+  "score": 1.008
+ },
+ "food|CHOCOLATE": {
+  "file": "w/food__chocolate.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Rocky_Mountain_chocolates.jpg",
+  "author": "Wilfredor",
+  "license": "CC0",
+  "score": 0.956
+ },
+ "food|COFFEE": {
+  "file": "w/food__coffee.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_small_cup_of_coffee.JPG",
+  "author": "Julius Schorzman",
+  "license": "CC BY-SA 2.0",
+  "score": 0.905
+ },
+ "food|COOKIE": {
+  "file": "w/food__cookie.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kekse_--_2021_--_9362.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.021
+ },
+ "food|CORN": {
+  "file": "w/food__corn.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Blackened_corn_on_the_cob.png",
+  "author": "WanderingWanda",
+  "license": "CC BY-SA 4.0",
+  "score": 1.022
+ },
+ "food|CURRY": {
+  "file": "w/food__curry.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Curry_Pastes_(5311654507).jpg",
+  "author": "Ryan Snyder",
+  "license": "CC BY 2.0",
+  "score": 1.131
+ },
+ "food|DONUT": {
+  "file": "w/food__donut.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Doughnut_2.jpg",
+  "author": "Gaurav Dhwaj Khadka",
+  "license": "CC BY-SA 4.0",
+  "score": 1.094
+ },
+ "food|EGG": {
+  "file": "w/food__egg.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Eggs_in_basket_2020_G1.jpg",
+  "author": "George Chernilevsky",
+  "license": "CC BY-SA 4.0",
+  "score": 1.1
+ },
+ "food|HAMBURGER": {
+  "file": "w/food__hamburger.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Burger_King_double_cheeseburger.jpg",
+  "author": "Luke",
+  "license": "Public domain",
+  "score": 1.012
+ },
+ "food|HONEY": {
+  "file": "w/food__honey.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Honey,_illustration_from_The_Encyclopedia_of_Food_by_Artemas_Ward.jpg",
+  "author": "Artemas Ward",
+  "license": "Public domain",
+  "score": 0.955
+ },
+ "food|HOTDOG": {
+  "file": "w/food__hotdog.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hot_dog_gourmet.jpg",
+  "author": "Francesc Fort",
+  "license": "CC BY-SA 4.0",
+  "score": 0.951
+ },
+ "food|ICECREAM": {
+  "file": "w/food__icecream.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ice_cream_cone_-_superman_flavor.jpg",
+  "author": "Ben Dominguez-Benner",
+  "license": "CC BY 2.0",
+  "score": 1.082
+ },
+ "food|MILK": {
+  "file": "w/food__milk.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Glass_of_Milk_(33657535532).jpg",
+  "author": "NIAID",
+  "license": "CC BY 2.0",
+  "score": 1.016
+ },
+ "food|MUSHROOM": {
+  "file": "w/food__mushroom.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Edible_fungi_in_basket_2025_G2.jpg",
+  "author": "George Chernilevsky",
+  "license": "CC BY 4.0",
+  "score": 1.013
+ },
+ "food|NOODLES": {
+  "file": "w/food__noodles.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Noodles_7.jpg",
+  "author": "Gaurav Dhwaj Khadka",
+  "license": "CC BY-SA 4.0",
+  "score": 1.02
+ },
+ "food|PANCAKE": {
+  "file": "w/food__pancake.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pancake_stack_2.jpg",
+  "author": "Shisma",
+  "license": "CC BY 4.0",
+  "score": 0.851
+ },
+ "food|PASTA": {
+  "file": "w/food__pasta.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pasta_Pasta.jpg",
+  "author": "Gaurav Dhwaj Khadka",
+  "license": "CC BY-SA 4.0",
+  "score": 0.965
+ },
+ "food|PIZZA": {
+  "file": "w/food__pizza.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pizza_food.jpg",
+  "author": "Arungupta408",
+  "license": "CC BY-SA 4.0",
+  "score": 1.038
+ },
+ "food|POTATO": {
+  "file": "w/food__potato.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Irish_Potato_Kenya.jpg",
+  "author": "safaritravelplus",
+  "license": "CC0",
+  "score": 1.103
+ },
+ "food|RAMEN": {
+  "file": "w/food__ramen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ramen_dan_Teh_Manis_Dingin.jpg",
+  "author": "Dyalim",
+  "license": "CC0",
+  "score": 0.963
+ },
+ "food|RICE": {
+  "file": "w/food__rice.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Meshi_001.jpg",
+  "author": "Ocdp",
+  "license": "CC0",
+  "score": 1.039
+ },
+ "food|SALAD": {
+  "file": "w/food__salad.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Fruit_Salad_with_Grilled_Halloumi_Cheese.jpg",
+  "author": "روتانا",
+  "license": "CC BY 4.0",
+  "score": 0.979
+ },
+ "food|SANDWICH": {
+  "file": "w/food__sandwich.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_Mediterranean_sandwich_-_Dyke_Road_Park_Cafe_2025-05-09.jpg",
+  "author": "Andy Li",
+  "license": "CC0",
+  "score": 1.088
+ },
+ "food|SOUP": {
+  "file": "w/food__soup.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mushroom_Soup_4.jpg",
+  "author": "Gaurav Dhwaj Khadka",
+  "license": "CC BY-SA 4.0",
+  "score": 1.01
+ },
+ "food|SUSHI": {
+  "file": "w/food__sushi.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Vegan_sushi_plate.jpg",
+  "author": "Christo",
+  "license": "CC BY-SA 4.0",
+  "score": 0.851
+ },
+ "food|TACO": {
+  "file": "w/food__taco.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Shrimp_tacos_at_Los_Gallitos_-_April_2023_-_Sarah_Stierch.jpg",
+  "author": "Missvain",
+  "license": "CC BY 4.0",
+  "score": 0.905
+ },
+ "food|TEA": {
+  "file": "w/food__tea.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_cup_of_black_tea_with_biscuits.jpg",
+  "author": "Nayan j Nath",
+  "license": "CC BY-SA 4.0",
+  "score": 1.051
+ },
+ "food|TOMATO": {
+  "file": "w/food__tomato.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Organic_home-grown_tomatoes_-_unripe_to_ripe.jpg",
+  "author": "Michal Klajban",
+  "license": "CC BY-SA 4.0",
+  "score": 1.15
+ },
+ "food|WATER": {
+  "file": "w/food__water.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Glass_of_water_on_vintage_sheet.jpg",
+  "author": "Zmrob25",
+  "license": "CC BY-SA 4.0",
+  "score": 1.063
+ },
+ "fruits|APPLE": {
+  "file": "w/fruits__apple.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tree_with_red_apples_in_Barkedal_4.jpg",
+  "author": "W.carter",
+  "license": "CC0",
+  "score": 1.008
+ },
+ "fruits|BANANA": {
+  "file": "w/fruits__banana.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Banana_on_whitebackground.jpg",
+  "author": "Filo gèn'",
+  "license": "CC BY-SA 4.0",
+  "score": 1.081
+ },
+ "fruits|BLUEBERRY": {
+  "file": "w/fruits__blueberry.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Blueberry_Picking_(125267747).jpeg",
+  "author": "Wendy Pramik",
+  "license": "CC BY 3.0",
+  "score": 1.125
+ },
+ "fruits|CHERRY": {
+  "file": "w/fruits__cherry.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cherry_Stella444.jpg",
+  "author": "Benjamint444 , edited by Fir0002",
+  "license": "CC BY-SA 3.0",
+  "score": 1.094
+ },
+ "fruits|DURIAN": {
+  "file": "w/fruits__durian.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Durian_Fruit_in_Yunnan.jpg",
+  "author": "Rod Waddington",
+  "license": "CC BY-SA 2.0",
+  "score": 1.141
+ },
+ "fruits|GRAPE": {
+  "file": "w/fruits__grape.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Grapes,_Dry_Creek_Valley-7705.jpg",
+  "author": "Frank Schulenburg",
+  "license": "CC BY-SA 4.0",
+  "score": 1.15
+ },
+ "fruits|GUAVA": {
+  "file": "w/fruits__guava.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Goiaba_vermelha.jpg",
+  "author": "Rodrigo.Argenton",
+  "license": "CC BY-SA 4.0",
+  "score": 1.082
+ },
+ "fruits|KIWI": {
+  "file": "w/fruits__kiwi.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:(kiwifruit_or_Chinese_gooseberry)_is_the_edible_berry_of_a_woody_vine_in_the_genus_Actinidia.JPG",
+  "author": "David Adam Kess",
+  "license": "CC BY-SA 4.0",
+  "score": 0.932
+ },
+ "fruits|LONGAN": {
+  "file": "w/fruits__longan.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dimocarpus_longan_fruits.jpg",
+  "author": "",
+  "license": "Public domain",
+  "score": 1.102
+ },
+ "fruits|MANGO": {
+  "file": "w/fruits__mango.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mangos_-_single_and_halved.jpg",
+  "author": "Ivar Leidus",
+  "license": "CC BY-SA 4.0",
+  "score": 0.914
+ },
+ "fruits|MELON": {
+  "file": "w/fruits__melon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Meloen_vrucht_met_bloem.jpg",
+  "author": "Rasbak at Dutch Wikipedia",
+  "license": "CC BY-SA 3.0",
+  "score": 1.053
+ },
+ "fruits|ORANGE": {
+  "file": "w/fruits__orange.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Open_refrigerator_with_food_at_night.jpg",
+  "author": "W.carter",
+  "license": "CC BY-SA 4.0",
+  "score": 0.309
+ },
+ "fruits|PAPAYA": {
+  "file": "w/fruits__papaya.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Carica_papaya_22_08_2012.JPG",
+  "author": "Joydeep",
+  "license": "CC BY-SA 3.0",
+  "score": 1.067
+ },
+ "fruits|PEACH": {
+  "file": "w/fruits__peach.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Peach_tree_branch_with_fruits_(2).jpg",
+  "author": "Harry Van den Bulck",
+  "license": "CC BY-SA 4.0",
+  "score": 1.087
+ },
+ "fruits|PINEAPPLE": {
+  "file": "w/fruits__pineapple.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pineapple_fruit_2.jpg",
+  "author": "Wilfredor",
+  "license": "CC0",
+  "score": 1.138
+ },
+ "fruits|POMELO": {
+  "file": "w/fruits__pomelo.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pomelo_fruit.jpg",
+  "author": "Ivar Leidus",
+  "license": "CC BY-SA 4.0",
+  "score": 0.94
+ },
+ "fruits|RAMBUTAN": {
+  "file": "w/fruits__rambutan.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Rambutan_One_Kind_of_Fruit_in_Indonesia.jpg",
+  "author": "Diah Isnawati S",
+  "license": "CC0",
+  "score": 1.005
+ },
+ "fruits|STRAWBERRY": {
+  "file": "w/fruits__strawberry.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Fragaria_vesca_fruit_-_Keila.jpg",
+  "author": "Ivar Leidus",
+  "license": "CC BY-SA 4.0",
+  "score": 1.033
+ },
+ "numbers|THREE": {
+  "file": "w/numbers__three.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Three_apples_in_hand.jpg",
+  "author": "Paolo Neo",
+  "license": "Public domain",
+  "score": 0.956
+ },
+ "numbers|ZERO": {
+  "file": "w/numbers__zero.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Empty_plate_with_fork.jpg",
+  "author": "SWT666",
+  "license": "CC BY 4.0",
+  "score": 0.894
+ },
+ "school|BAG": {
+  "file": "w/school__bag.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Trungyi_High_School_stop_board_and_KLCIVS_backpack_20251120.jpg",
+  "author": "Solomon203",
+  "license": "CC BY-SA 4.0",
+  "score": 1.035
+ },
+ "school|BOOK": {
+  "file": "w/school__book.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:13-11-02-olb-by-RalfR-03.jpg",
+  "author": "Ralf Roletschek",
+  "license": "CC BY 3.0",
+  "score": 0.664
+ },
+ "school|CALCULATOR": {
+  "file": "w/school__calculator.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Citizen_SLD-100NR_calculator.jpg",
+  "author": "LoMit",
+  "license": "CC BY-SA 4.0",
+  "score": 1.069
+ },
+ "school|CHAIR": {
+  "file": "w/school__chair.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Set_of_fourteen_side_chairs_MET_DP110780.jpg",
+  "author": "Thomas Chippendale",
+  "license": "CC0",
+  "score": 1.044
+ },
+ "school|CLASSROOM": {
+  "file": "w/school__classroom.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Elementary_classroom_in_Alaska.jpg",
+  "author": "Liz",
+  "license": "CC BY 2.0",
+  "score": 1.066
+ },
+ "school|COMPUTER": {
+  "file": "w/school__computer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Backlit_Laptop_Keyboard.jpg",
+  "author": "Gre123gr",
+  "license": "CC0",
+  "score": 0.696
+ },
+ "school|CRAYON": {
+  "file": "w/school__crayon.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Crayola_crayons.jpg",
+  "author": "Conrad 7",
+  "license": "CC0",
+  "score": 1.054
+ },
+ "school|DESK": {
+  "file": "w/school__desk.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Desk_MET_DT11195.jpg",
+  "author": "Carlo Bugatti",
+  "license": "CC0",
+  "score": 0.915
+ },
+ "school|ERASER": {
+  "file": "w/school__eraser.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pink_Pearl_eraser.jpg",
+  "author": "ZooFari",
+  "license": "Public domain",
+  "score": 0.899
+ },
+ "school|GLOBE": {
+  "file": "w/school__globe.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Coronelli_globe_terrestre.jpg",
+  "author": "Myrabella",
+  "license": "CC BY-SA 3.0",
+  "score": 1.09
+ },
+ "school|HOMEWORK": {
+  "file": "w/school__homework.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Child_engaged_in_homework_with_glass_of_water_on_table.jpg",
+  "author": "Shixart1985",
+  "license": "CC BY 2.0",
+  "score": 0.757
+ },
+ "school|MAP": {
+  "file": "w/school__map.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kunyu_Wanguo_Quantu_(%E5%9D%A4%E8%BC%BF%E8%90%AC%E5%9C%8B%E5%85%A8%E5%9C%96).jpg",
+  "author": "Matteo Ricci",
+  "license": "Public domain",
+  "score": 0.981
+ },
+ "school|NOTEBOOK": {
+  "file": "w/school__notebook.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Notebooks.jpg",
+  "author": "L.Marie",
+  "license": "CC BY 2.0",
+  "score": 0.797
+ },
+ "school|PAINT": {
+  "file": "w/school__paint.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Microsoft_Paint_color_palettes.png",
+  "author": "Toby Scratch Fanatic",
+  "license": "CC0",
+  "score": 0.936
+ },
+ "school|PEN": {
+  "file": "w/school__pen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pen_salem.jpg",
+  "author": "Vimalananth V",
+  "license": "CC BY-SA 4.0",
+  "score": 1.068
+ },
+ "school|PENCIL": {
+  "file": "w/school__pencil.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pencil_on_a_table.jpg",
+  "author": "AaronNinetyTwo",
+  "license": "CC BY-SA 4.0",
+  "score": 0.84
+ },
+ "school|RULER": {
+  "file": "w/school__ruler.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ruler_image.jpg",
+  "author": "User:Goele",
+  "license": "CC0",
+  "score": 0.936
+ },
+ "school|SCISSORS": {
+  "file": "w/school__scissors.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_pair_of_scissors.jpg",
+  "author": "Shane Cyrus",
+  "license": "CC BY-SA 3.0",
+  "score": 0.924
+ },
+ "school|STUDENT": {
+  "file": "w/school__student.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pupil_washes_hands_during_COVID-19_pandemic_in_Ghana.jpg",
+  "author": "Amuzujoe",
+  "license": "CC BY-SA 4.0",
+  "score": 0.911
+ },
+ "school|TEACHER": {
+  "file": "w/school__teacher.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_public_high_school_teacher_in_a_classroom_in_the_United_States_16.jpg",
+  "author": "Harrison Keely",
+  "license": "CC BY 4.0",
+  "score": 0.801
+ },
+ "weather|CLOUD": {
+  "file": "w/weather__cloud.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Iridescent_clouds_during_snowfall_1.jpg",
+  "author": "W.carter",
+  "license": "CC BY-SA 4.0",
+  "score": 0.806
+ },
+ "weather|COLD": {
+  "file": "w/weather__cold.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Winter_forest_silver.jpg",
+  "author": "Ernst Vikne",
+  "license": "CC BY-SA 2.0",
+  "score": 0.781
+ },
+ "weather|DRY": {
+  "file": "w/weather__dry.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Drought.jpg",
+  "author": "Tomas Castelazo",
+  "license": "CC BY 3.0",
+  "score": 0.71
+ },
+ "weather|FOG": {
+  "file": "w/weather__fog.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Vallee-brouillard.jpg",
+  "author": "Thomas Bresson",
+  "license": "CC BY 3.0",
+  "score": 0.856
+ },
+ "weather|HOT": {
+  "file": "w/weather__hot.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dry_and_hot_weather_of_chilas.jpg",
+  "author": "Rafiankiani",
+  "license": "CC BY-SA 4.0",
+  "score": 0.52
+ },
+ "weather|HUMID": {
+  "file": "w/weather__humid.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg",
+  "author": "lubasi",
+  "license": "CC BY-SA 2.0",
+  "score": 0.451
+ },
+ "weather|RAIN": {
+  "file": "w/weather__rain.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Purple_rain_on_roof.jpg",
+  "author": "W.carter",
+  "license": "CC0",
+  "score": 0.842
+ },
+ "weather|SNOW": {
+  "file": "w/weather__snow.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kolomenskoe_in_white_-_Dec12_-_03_snow.jpg",
+  "author": "A.Savin",
+  "license": "CC BY-SA 3.0",
+  "score": 0.55
+ },
+ "weather|STORM": {
+  "file": "w/weather__storm.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Hestskj%C3%A6r_fyr_i_storm_fra_Nordvest.jpg",
+  "author": "Marianne Johnsen",
+  "license": "CC BY-SA 4.0",
+  "score": 0.872
+ },
+ "weather|SUN": {
+  "file": "w/weather__sun.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sun_shining_in_the_sky.jpg",
+  "author": "Johnnybam",
+  "license": "CC0",
+  "score": 1.006
+ },
+ "weather|SUNNY": {
+  "file": "w/weather__sunny.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Wooden_footbridge_in_Shinjuku_Gyoen_National_Garden,_Tokyo,_Japan,_a_sunny_day_with_blue_sky.jpg",
+  "author": "Basile Morin",
+  "license": "CC BY-SA 4.0",
+  "score": 1.038
+ },
+ "weather|THUNDER": {
+  "file": "w/weather__thunder.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lightning_striking_the_Eiffel_Tower_-_NOAA.jpg",
+  "author": "Gabriel Loppé",
+  "license": "Public domain",
+  "score": 0.829
+ },
+ "weather|WARM": {
+  "file": "w/weather__warm.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_warm,_sunny_day_at_Neptune%27s_Staircase_-_geograph.org.uk_-_7557850.jpg",
+  "author": "Peter S",
+  "license": "CC BY-SA 2.0",
+  "score": 0.983
+ },
+ "weather|WIND": {
+  "file": "w/weather__wind.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Blowing_trees_-_DPLA_-_130b193d79a91de894901401aaab6872.jpg",
+  "author": "Woodbury, Charles H. (Charles Herbert), 1864-1940",
+  "license": "Public domain",
+  "score": 0.859
+ }
+}

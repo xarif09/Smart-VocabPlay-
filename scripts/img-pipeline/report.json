@@ -8216,7 +8216,17 @@
    "forced": false
   },
   "places|PHARMACY": {
-   "status": "no candidates"
+   "title": "File:Rome (Italy), Pharmacy -- 2013 -- 3519.jpg",
+   "final": 1.307,
+   "p": 0.9985,
+   "photo": 0.7515,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:pharmacy",
+   "n_cands": 7,
+   "forced": false
   },
   "places|GAS STATION": {
    "title": "File:Mattoon Service Station (pre-fabricated), angle view, National & Washington Boulevards, Culver City, California LOC 37555778230.jpg",
@@ -11340,7 +11350,17 @@
    "forced": false
   },
   "home|BEDROOM": {
-   "status": "no candidates"
+   "title": "File:Bedroom in Government House, Halifax.jpg",
+   "final": 0.991,
+   "p": 0.9783,
+   "photo": 0.757,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:bedroom",
+   "n_cands": 5,
+   "forced": false
   },
   "home|BATHROOM": {
    "title": "File:Clawfoot bathtub.jpg",
@@ -11564,7 +11584,17 @@
    "forced": false
   },
   "home|OVEN": {
-   "status": "no candidates"
+   "title": "File:Oven, onbekend, circa 1850-1900, Bakkerijmuseum Veurne, 15437.jpg",
+   "final": 1.011,
+   "p": 0.5513,
+   "photo": 0.6779,
+   "fit": 1.0,
+   "how": "yolo:oven",
+   "notes": [],
+   "flags": [],
+   "origin": "search:oven",
+   "n_cands": 7,
+   "forced": false
   },
   "home|KETTLE": {
    "title": "File:Bernadotte Wasserkessel.jpg",
@@ -11604,7 +11634,21 @@
    "forced": false
   },
   "home|PAN": {
-   "status": "no candidates"
+   "title": "File:Eggplant roasting on a frying pan.jpg",
+   "final": 1.014,
+   "p": 0.9368,
+   "photo": 0.9784,
+   "fit": 0.64,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:frying pan",
+   "n_cands": 8,
+   "forced": false
   },
   "home|POT": {
    "title": "File:Pans (113563802).jpg",
@@ -11639,7 +11683,19 @@
    "forced": false
   },
   "home|BOWL": {
-   "status": "no candidates"
+   "title": "File:Still life with strawberries in a crystal bowl.jpg",
+   "final": 1.202,
+   "p": 0.9803,
+   "photo": 0.8437,
+   "fit": 0.808,
+   "how": "yolo:bowl",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:bowl",
+   "n_cands": 8,
+   "forced": false
   },
   "home|GLASS": {
    "title": "File:Drinkware.jpg",
@@ -11743,7 +11799,21 @@
    "forced": false
   },
   "home|HANGER": {
-   "status": "no candidates"
+   "title": "File:Wood clothes hanger.png",
+   "final": 0.962,
+   "p": 1.0,
+   "photo": 0.7026,
+   "fit": 0.299,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.50)"
+   ],
+   "flags": [
+    "fit 0.30"
+   ],
+   "origin": "search:clothes hanger",
+   "n_cands": 7,
+   "forced": false
   },
   "home|WARDROBE": {
    "title": "File:Old Jefferson Louisiana 2016 - Coolidge Street 58.jpg",
@@ -11805,7 +11875,21 @@
    "forced": false
   },
   "home|VASE": {
-   "status": "no candidates"
+   "title": "File:Vase dit de l'Alhambra - Louvre MAO 429.jpg",
+   "final": 0.97,
+   "p": 0.9988,
+   "photo": 0.6516,
+   "fit": 0.546,
+   "how": "yolo:vase",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.91)"
+   ],
+   "flags": [
+    "fit 0.55"
+   ],
+   "origin": "search:vase",
+   "n_cands": 7,
+   "forced": false
   },
   "home|PHOTO": {
    "title": "File:Picture of Polaroid image.jpg",
@@ -11929,7 +12013,17 @@
    "forced": false
   },
   "places|BRIDGE": {
-   "status": "no candidates"
+   "title": "File:Perth (AU), Elizabeth Quay Bridge -- 2019 -- 0375-9.jpg",
+   "final": 1.369,
+   "p": 1.0,
+   "photo": 0.8455,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:bridge",
+   "n_cands": 7,
+   "forced": false
   },
   "places|GARDEN": {
    "title": "File:Flower garden, Botanic Gardens, Churchtown 2.JPG",
@@ -21688,94 +21782,419 @@
    "status": "no candidates"
   },
   "places|HOUSE": {
-   "status": "no candidates"
+   "title": "File:Adam Thoroughgood House - South LR.jpg",
+   "final": 0.89,
+   "p": 0.7083,
+   "photo": 0.9015,
+   "fit": 0.557,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.93)"
+   ],
+   "flags": [
+    "fit 0.56"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "places|APARTMENT": {
-   "status": "no candidates"
+   "title": "File:Apartment building Vitrolles 6.jpg",
+   "final": 1.285,
+   "p": 0.9878,
+   "photo": 0.8891,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "places|TOWN": {
-   "status": "no candidates"
+   "title": "File:Zürich view Quaibrücke 20200702.jpg",
+   "final": 1.228,
+   "p": 0.8898,
+   "photo": 0.9918,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "places|ROAD": {
-   "status": "no candidates"
+   "title": "File:Darcha Padum Road Below Shinku La Lahaul Oct22 A7C 03533.jpg",
+   "final": 1.238,
+   "p": 0.9978,
+   "photo": 0.892,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "places|PARKING LOT": {
-   "status": "no candidates"
+   "title": "File:Parking lot, Gross-Gerau (P1090665).jpg",
+   "final": 0.974,
+   "p": 0.4166,
+   "photo": 0.9999,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.42"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "places|TOY STORE": {
-   "status": "no candidates"
+   "title": "File:Toy store in stockholm 09.jpg",
+   "final": 1.267,
+   "p": 0.9992,
+   "photo": 0.8391,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:toy store",
+   "n_cands": 8,
+   "forced": false
   },
   "places|BOOKSTORE": {
-   "status": "no candidates"
+   "title": "File:Community Bookstore 2.jpg",
+   "final": 1.293,
+   "p": 0.9991,
+   "photo": 0.9686,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|FLOWER SHOP": {
-   "status": "no candidates"
+   "title": "File:Royal Flowers, Astana (P1190745).jpg",
+   "final": 1.226,
+   "p": 0.7333,
+   "photo": 0.9693,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|BARBER SHOP": {
-   "status": "no candidates"
+   "title": "File:Sunny Dunes Barber Shop, Palm Springs, California, 2024.jpg",
+   "final": 1.231,
+   "p": 0.9998,
+   "photo": 0.6456,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|CLINIC": {
-   "status": "no candidates"
+   "title": "File:Entrada Hogar Clinica San Rafael MG 506220250927.jpg",
+   "final": 1.077,
+   "p": 0.4443,
+   "photo": 0.8375,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.44"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|FOOD COURT": {
-   "status": "no candidates"
+   "title": "File:Sandakan-Sabah Medan-Selera-Tun-Razak-01.jpg",
+   "final": 0.75,
+   "p": 0.0178,
+   "photo": 0.4785,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.02",
+    "not photo-like 0.48"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|THEATER": {
-   "status": "no candidates"
+   "title": "File:Ely State Theater.jpg",
+   "final": 1.262,
+   "p": 0.936,
+   "photo": 0.8184,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|WATER PARK": {
-   "status": "no candidates"
+   "title": "File:Yellowstone National Park (WY, USA), Grand Prismatic Spring -- 2022 -- 2514.jpg",
+   "final": 0.852,
+   "p": 0.0611,
+   "photo": 0.9966,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.06"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|CAMPSITE": {
-   "status": "no candidates"
+   "title": "File:Siberia Campsite, Kahurangi, New Zealand 03.jpg",
+   "final": 1.281,
+   "p": 0.9826,
+   "photo": 0.9471,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|LIGHTHOUSE": {
-   "status": "no candidates"
+   "title": "File:Kiipsaare leaning lighthouse.jpg",
+   "final": 1.384,
+   "p": 0.9999,
+   "photo": 0.996,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|BARN": {
-   "status": "no candidates"
+   "title": "File:Barn, Île d'Orléans, Quebec.jpg",
+   "final": 1.308,
+   "p": 0.9863,
+   "photo": 0.9582,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "places|FOUNTAIN": {
-   "status": "no candidates"
+   "title": "File:Bielerhöhe - Barbarakapelle - Brunnen 02.jpg",
+   "final": 1.148,
+   "p": 0.9939,
+   "photo": 0.6399,
+   "fit": 0.842,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|STATUE": {
-   "status": "no candidates"
+   "title": "File:Statue of Saints Cyril and Methodius on Radhošť.jpg",
+   "final": 1.208,
+   "p": 1.0,
+   "photo": 0.9379,
+   "fit": 0.843,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "places|PAGODA": {
-   "status": "no candidates"
+   "title": "File:Sun and Moon Pagodas Guilin November 2017 HDR.jpg",
+   "final": 1.262,
+   "p": 0.9995,
+   "photo": 0.9986,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|SPIRIT HOUSE": {
-   "status": "no candidates"
+   "title": "File:Oldspirithouses.jpg",
+   "final": 1.273,
+   "p": 0.9995,
+   "photo": 0.9277,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [
+    "upscaled x1.6"
+   ],
+   "flags": [],
+   "origin": "search:spirit house Thailand",
+   "n_cands": 6,
+   "forced": false
   },
   "places|ATM": {
-   "status": "no candidates"
+   "title": "File:Diebold 1063 ATM with modem.jpg",
+   "final": 1.285,
+   "p": 0.9999,
+   "photo": 0.9232,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:ATM machine",
+   "n_cands": 8,
+   "forced": false
   },
   "places|ELEVATOR": {
-   "status": "no candidates"
+   "title": "File:Chrysler Central Elevator 2019-10-03 20-18.jpg",
+   "final": 1.233,
+   "p": 1.0,
+   "photo": 0.6593,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|ESCALATOR": {
-   "status": "no candidates"
+   "title": "File:Escalator, Public Hotel New York (2024)-L1005609.jpg",
+   "final": 1.397,
+   "p": 0.9999,
+   "photo": 0.9953,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|RESTROOM": {
-   "status": "no candidates"
+   "title": "File:Braille on the restroom sign (53985648248).jpg",
+   "final": 1.236,
+   "p": 1.0,
+   "photo": 0.6806,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:public restroom sign",
+   "n_cands": 8,
+   "forced": false
   },
   "places|TUNNEL": {
-   "status": "no candidates"
+   "title": "File:London King's Cross rainbow light tunnel - 2023-06-25.jpg",
+   "final": 1.388,
+   "p": 0.9895,
+   "photo": 0.9678,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|SKYSCRAPER": {
-   "status": "no candidates"
+   "title": "File:Illuminated roof of the skyscraper Millenia Tower at night in Singapore.jpg",
+   "final": 1.369,
+   "p": 0.9825,
+   "photo": 0.9315,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|TEMPLE FAIR": {
-   "status": "no candidates"
+   "title": "File:01.02.2026 Wat Nong Wong Temple Fair งานวัดหนองโว้ง 2569 - img 05.jpg",
+   "final": 1.123,
+   "p": 0.7821,
+   "photo": 0.6593,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:temple fair Thailand",
+   "n_cands": 8,
+   "forced": false
   },
   "places|UNIVERSITY": {
-   "status": "no candidates"
+   "title": "File:Coleus scutellarioides (cultivars) - Jardin universitaire Roger-Van den Hende, Quebec 36.jpg",
+   "final": 0.8,
+   "p": 0.0,
+   "photo": 0.9996,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 9,
+   "forced": false
   },
   "places|CIRCUS": {
-   "status": "no candidates"
+   "title": "File:Circus Liquor, North Hollywood, California.JPG",
+   "final": 0.872,
+   "p": 0.9973,
+   "photo": 0.2235,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.22"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "places|PET SHOP": {
-   "status": "no candidates"
+   "title": "File:Peking birds Pet shop-20131231-RM-110137.jpg",
+   "final": 1.284,
+   "p": 0.9639,
+   "photo": 0.7026,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|LIBRARIAN": {
    "status": "no candidates"
@@ -22372,9 +22791,7 @@
   "home|BATH",
   "home|BATHROOM",
   "home|BED",
-  "home|BEDROOM",
   "home|BOTTLE",
-  "home|BOWL",
   "home|BUCKET",
   "home|CARPET",
   "home|CHAIR",
@@ -22393,7 +22810,6 @@
   "home|LIGHT",
   "home|MICROWAVE",
   "home|MIRROR",
-  "home|OVEN",
   "home|PAN",
   "home|PHOTO",
   "home|PILLOW",
@@ -22712,53 +23128,28 @@
   "opposites|WIDE",
   "opposites|YOUNG",
   "places|AMUSEMENT PARK",
-  "places|APARTMENT",
-  "places|ATM",
   "places|BAKERY",
-  "places|BARBER SHOP",
-  "places|BARN",
-  "places|BOOKSTORE",
-  "places|BRIDGE",
   "places|BUS STOP",
-  "places|CAMPSITE",
   "places|CINEMA",
   "places|CIRCUS",
   "places|CITY",
   "places|CLINIC",
-  "places|ELEVATOR",
-  "places|ESCALATOR",
-  "places|FLOWER SHOP",
   "places|FOOD COURT",
-  "places|FOUNTAIN",
   "places|HOME",
   "places|HOSPITAL",
   "places|HOTEL",
   "places|HOUSE",
   "places|ISLAND",
-  "places|LIGHTHOUSE",
   "places|MUSEUM",
   "places|NIGHT MARKET",
   "places|OFFICE",
-  "places|PAGODA",
   "places|PALACE",
   "places|PARKING LOT",
-  "places|PET SHOP",
-  "places|PHARMACY",
   "places|PLAYGROUND",
   "places|RESTAURANT",
-  "places|RESTROOM",
-  "places|ROAD",
   "places|SCHOOL",
   "places|SHOPPING MALL",
-  "places|SKYSCRAPER",
-  "places|SPIRIT HOUSE",
-  "places|STATUE",
-  "places|TEMPLE FAIR",
-  "places|THEATER",
-  "places|TOWN",
-  "places|TOY STORE",
   "places|TRAIN STATION",
-  "places|TUNNEL",
   "places|UNIVERSITY",
   "places|WATER PARK",
   "school|ABACUS",
@@ -23290,7 +23681,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1292,
-  "flagged": 1367
+  "with_photo": 1330,
+  "flagged": 1339
  }
 }

@@ -4766,6 +4766,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.715
  },
+ "home|BEDROOM": {
+  "file": "w/home__bedroom.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bedroom_in_Government_House,_Halifax.jpg",
+  "author": "Nova Scotia Information Service",
+  "license": "Public domain",
+  "score": 0.991
+ },
  "home|BLANKET": {
   "file": "w/home__blanket.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Russellquilter.jpg",
@@ -4786,6 +4793,13 @@
   "author": "Aurélien Mole",
   "license": "CC BY-SA 3.0",
   "score": 0.963
+ },
+ "home|BOWL": {
+  "file": "w/home__bowl.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Still_life_with_strawberries_in_a_crystal_bowl.jpg",
+  "author": "W.carter",
+  "license": "CC BY-SA 4.0",
+  "score": 1.202
  },
  "home|BROOM": {
   "file": "w/home__broom.jpg",
@@ -4934,6 +4948,13 @@
   "license": "CC0",
   "score": 1.107
  },
+ "home|HANGER": {
+  "file": "w/home__hanger.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Wood_clothes_hanger.png",
+  "author": "RL0919",
+  "license": "CC BY-SA 4.0",
+  "score": 0.962
+ },
  "home|KETTLE": {
   "file": "w/home__kettle.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bernadotte_Wasserkessel.jpg",
@@ -4996,6 +5017,20 @@
   "author": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
   "score": 0.849
+ },
+ "home|OVEN": {
+  "file": "w/home__oven.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Oven,_onbekend,_circa_1850-1900,_Bakkerijmuseum_Veurne,_15437.jpg",
+  "author": "Anonymous Unknown author",
+  "license": "CC0",
+  "score": 1.011
+ },
+ "home|PAN": {
+  "file": "w/home__pan.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Eggplant_roasting_on_a_frying_pan.jpg",
+  "author": "いけ 🇪🇸爆裂大余韻継続中",
+  "license": "CC0",
+  "score": 1.014
  },
  "home|PHONE": {
   "file": "w/home__phone.jpg",
@@ -5150,6 +5185,13 @@
   "author": "Wags05 at English Wikipedia",
   "license": "Public domain",
   "score": 0.808
+ },
+ "home|VASE": {
+  "file": "w/home__vase.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Vase_dit_de_l%27Alhambra_-_Louvre_MAO_429.jpg",
+  "author": "JackyM59",
+  "license": "CC BY-SA 4.0",
+  "score": 0.97
  },
  "home|WALL": {
   "file": "w/home__wall.jpg",
@@ -6278,12 +6320,26 @@
   "license": "CC BY 4.0",
   "score": 1.039
  },
+ "places|APARTMENT": {
+  "file": "w/places__apartment.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Apartment_building_Vitrolles_6.jpg",
+  "author": "kallerna",
+  "license": "CC BY-SA 4.0",
+  "score": 1.285
+ },
  "places|AQUARIUM": {
   "file": "w/places__aquarium.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Male_whale_shark_at_Georgia_Aquarium.jpg",
   "author": "Zac Wolf",
   "license": "CC BY-SA 2.5",
   "score": 1.089
+ },
+ "places|ATM": {
+  "file": "w/places__atm.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Diebold_1063_ATM_with_modem.jpg",
+  "author": "redjar (Flickr)",
+  "license": "CC BY-SA 2.0",
+  "score": 1.285
  },
  "places|BAKERY": {
   "file": "w/places__bakery.jpg",
@@ -6299,12 +6355,40 @@
   "license": "Public domain",
   "score": 1.091
  },
+ "places|BARBER SHOP": {
+  "file": "w/places__barber-shop.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sunny_Dunes_Barber_Shop,_Palm_Springs,_California,_2024.jpg",
+  "author": "Another Believer",
+  "license": "CC BY-SA 4.0",
+  "score": 1.231
+ },
+ "places|BARN": {
+  "file": "w/places__barn.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Barn,_%C3%8Ele_d%27Orl%C3%A9ans,_Quebec.jpg",
+  "author": "Wilfredor",
+  "license": "CC0",
+  "score": 1.308
+ },
  "places|BEACH": {
   "file": "w/places__beach.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Beach_at_Fort_Lauderdale.jpg",
   "author": "Daniel Dudek",
   "license": "CC BY 2.0",
   "score": 1.1
+ },
+ "places|BOOKSTORE": {
+  "file": "w/places__bookstore.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Community_Bookstore_2.jpg",
+  "author": "Rhododendrites",
+  "license": "CC BY-SA 4.0",
+  "score": 1.293
+ },
+ "places|BRIDGE": {
+  "file": "w/places__bridge.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Perth_(AU),_Elizabeth_Quay_Bridge_--_2019_--_0375-9.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.369
  },
  "places|BUS STOP": {
   "file": "w/places__bus-stop.jpg",
@@ -6319,6 +6403,13 @@
   "author": "Arnaud 25",
   "license": "Public domain",
   "score": 1.067
+ },
+ "places|CAMPSITE": {
+  "file": "w/places__campsite.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Siberia_Campsite,_Kahurangi,_New_Zealand_03.jpg",
+  "author": "Michal Klajban",
+  "license": "CC BY-SA 4.0",
+  "score": 1.281
  },
  "places|CASTLE": {
   "file": "w/places__castle.jpg",
@@ -6341,6 +6432,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.751
  },
+ "places|CIRCUS": {
+  "file": "w/places__circus.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Circus_Liquor,_North_Hollywood,_California.JPG",
+  "author": "Cbl62 ( talk )",
+  "license": "CC BY-SA 3.0",
+  "score": 0.872
+ },
  "places|CITY": {
   "file": "w/places__city.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:4Y1A1159_Bangkok_(33536795515).jpg",
@@ -6348,12 +6446,33 @@
   "license": "CC BY 2.0",
   "score": 0.572
  },
+ "places|CLINIC": {
+  "file": "w/places__clinic.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Entrada_Hogar_Clinica_San_Rafael_MG_506220250927.jpg",
+  "author": "Rjcastillo",
+  "license": "CC BY 4.0",
+  "score": 1.077
+ },
  "places|CONVENIENCE STORE": {
   "file": "w/places__convenience-store.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Convenience_store_interior.jpg",
   "author": "Japanexperterna",
   "license": "CC BY-SA 3.0",
   "score": 0.93
+ },
+ "places|ELEVATOR": {
+  "file": "w/places__elevator.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Chrysler_Central_Elevator_2019-10-03_20-18.jpg",
+  "author": "Axel Tschentscher",
+  "license": "CC BY-SA 4.0",
+  "score": 1.233
+ },
+ "places|ESCALATOR": {
+  "file": "w/places__escalator.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Escalator,_Public_Hotel_New_York_(2024)-L1005609.jpg",
+  "author": "Frank Schulenburg",
+  "license": "CC BY-SA 4.0",
+  "score": 1.397
  },
  "places|FACTORY": {
   "file": "w/places__factory.jpg",
@@ -6382,6 +6501,27 @@
   "author": "Muhammad Haris",
   "license": "CC BY-SA 4.0",
   "score": 1.132
+ },
+ "places|FLOWER SHOP": {
+  "file": "w/places__flower-shop.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Royal_Flowers,_Astana_(P1190745).jpg",
+  "author": "Matti Blume",
+  "license": "CC BY-SA 4.0",
+  "score": 1.226
+ },
+ "places|FOOD COURT": {
+  "file": "w/places__food-court.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sandakan-Sabah_Medan-Selera-Tun-Razak-01.jpg",
+  "author": "CEphoto, Uwe Aranas",
+  "license": "CC BY-SA 3.0",
+  "score": 0.75
+ },
+ "places|FOUNTAIN": {
+  "file": "w/places__fountain.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bielerh%C3%B6he_-_Barbarakapelle_-_Brunnen_02.jpg",
+  "author": "Basotxerri",
+  "license": "CC BY-SA 4.0",
+  "score": 1.148
  },
  "places|GARDEN": {
   "file": "w/places__garden.jpg",
@@ -6425,6 +6565,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.563
  },
+ "places|HOUSE": {
+  "file": "w/places__house.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Adam_Thoroughgood_House_-_South_LR.jpg",
+  "author": "PumpkinSky",
+  "license": "CC BY-SA 4.0",
+  "score": 0.89
+ },
  "places|ISLAND": {
   "file": "w/places__island.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:KohPhiPhi.JPG",
@@ -6445,6 +6592,13 @@
   "author": "Václav Jiroušek",
   "license": "CC BY-SA 4.0",
   "score": 1.057
+ },
+ "places|LIGHTHOUSE": {
+  "file": "w/places__lighthouse.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kiipsaare_leaning_lighthouse.jpg",
+  "author": "Abrget47j",
+  "license": "CC BY-SA 3.0",
+  "score": 1.384
  },
  "places|MARKET": {
   "file": "w/places__market.jpg",
@@ -6481,6 +6635,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.442
  },
+ "places|PAGODA": {
+  "file": "w/places__pagoda.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sun_and_Moon_Pagodas_Guilin_November_2017_HDR.jpg",
+  "author": "King of Hearts",
+  "license": "CC BY-SA 4.0",
+  "score": 1.262
+ },
  "places|PALACE": {
   "file": "w/places__palace.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:0005574_-_Wat_Phra_Kaew_006.jpg",
@@ -6494,6 +6655,27 @@
   "author": "File:Halleyparknovember.jpg : Celco85 derivative work: Georgfotoart",
   "license": "CC BY-SA 4.0",
   "score": 1.1
+ },
+ "places|PARKING LOT": {
+  "file": "w/places__parking-lot.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Parking_lot,_Gross-Gerau_(P1090665).jpg",
+  "author": "Matti Blume",
+  "license": "CC BY-SA 4.0",
+  "score": 0.974
+ },
+ "places|PET SHOP": {
+  "file": "w/places__pet-shop.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Peking_birds_Pet_shop-20131231-RM-110137.jpg",
+  "author": "Ermell",
+  "license": "CC BY-SA 4.0",
+  "score": 1.284
+ },
+ "places|PHARMACY": {
+  "file": "w/places__pharmacy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Rome_(Italy),_Pharmacy_--_2013_--_3519.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.307
  },
  "places|PLAYGROUND": {
   "file": "w/places__playground.jpg",
@@ -6523,6 +6705,20 @@
   "license": "CC BY-SA 4.0",
   "score": 0.981
  },
+ "places|RESTROOM": {
+  "file": "w/places__restroom.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Braille_on_the_restroom_sign_(53985648248).jpg",
+  "author": "BLMUtah",
+  "license": "Public domain",
+  "score": 1.236
+ },
+ "places|ROAD": {
+  "file": "w/places__road.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Darcha_Padum_Road_Below_Shinku_La_Lahaul_Oct22_A7C_03533.jpg",
+  "author": "This Photo was taken by Timothy A. Gonsalves . Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk pa",
+  "license": "CC BY-SA 4.0",
+  "score": 1.238
+ },
  "places|SCHOOL": {
   "file": "w/places__school.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Walt_Whitman_High_School_Bethesda_MD_MCPS_20210320_120822_1_16x9.jpg",
@@ -6537,12 +6733,33 @@
   "license": "CC BY-SA 4.0",
   "score": 1.088
  },
+ "places|SKYSCRAPER": {
+  "file": "w/places__skyscraper.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Illuminated_roof_of_the_skyscraper_Millenia_Tower_at_night_in_Singapore.jpg",
+  "author": "Basile Morin",
+  "license": "CC BY-SA 4.0",
+  "score": 1.369
+ },
+ "places|SPIRIT HOUSE": {
+  "file": "w/places__spirit-house.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Oldspirithouses.jpg",
+  "author": "Original uploader was Henry Flower at en.wikipedia",
+  "license": "CC BY-SA 3.0",
+  "score": 1.273
+ },
  "places|STADIUM": {
   "file": "w/places__stadium.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Narendra_Modi_Stadium_view_from_the_gallery.jpg",
   "author": "A Cricket Premi",
   "license": "CC BY-SA 4.0",
   "score": 1.116
+ },
+ "places|STATUE": {
+  "file": "w/places__statue.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Statue_of_Saints_Cyril_and_Methodius_on_Radho%C5%A1%C5%A5.jpg",
+  "author": "Pudelek",
+  "license": "CC BY-SA 4.0",
+  "score": 1.208
  },
  "places|STREET": {
   "file": "w/places__street.jpg",
@@ -6572,12 +6789,40 @@
   "license": "CC BY-SA 4.0",
   "score": 1.09
  },
+ "places|TEMPLE FAIR": {
+  "file": "w/places__temple-fair.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:01.02.2026_Wat_Nong_Wong_Temple_Fair_%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B9%82%E0%B8%A7%E0%B9%89%E0%B8%87_2569_-_img_05.jpg",
+  "author": "Chainwit.",
+  "license": "CC BY 4.0",
+  "score": 1.123
+ },
+ "places|THEATER": {
+  "file": "w/places__theater.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ely_State_Theater.jpg",
+  "author": "McGhiever",
+  "license": "CC BY-SA 4.0",
+  "score": 1.262
+ },
  "places|TOWER": {
   "file": "w/places__tower.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Tokyo_Sky_Tree_2012.JPG",
   "author": "Kakidai",
   "license": "CC BY-SA 3.0",
   "score": 1.122
+ },
+ "places|TOWN": {
+  "file": "w/places__town.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_view_Quaibr%C3%BCcke_20200702.jpg",
+  "author": "Daniel Kraft",
+  "license": "CC BY-SA 3.0",
+  "score": 1.228
+ },
+ "places|TOY STORE": {
+  "file": "w/places__toy-store.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Toy_store_in_stockholm_09.jpg",
+  "author": "Grandmaster Huon",
+  "license": "CC0",
+  "score": 1.267
  },
  "places|TRAIN STATION": {
   "file": "w/places__train-station.jpg",
@@ -6586,12 +6831,33 @@
   "license": "CC BY-SA 4.0",
   "score": 0.585
  },
+ "places|TUNNEL": {
+  "file": "w/places__tunnel.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:London_King%27s_Cross_rainbow_light_tunnel_-_2023-06-25.jpg",
+  "author": "The wub",
+  "license": "CC BY-SA 4.0",
+  "score": 1.388
+ },
+ "places|UNIVERSITY": {
+  "file": "w/places__university.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Coleus_scutellarioides_(cultivars)_-_Jardin_universitaire_Roger-Van_den_Hende,_Quebec_36.jpg",
+  "author": "Wilfredor",
+  "license": "CC0",
+  "score": 0.8
+ },
  "places|VILLAGE": {
   "file": "w/places__village.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bourton-on-the-Water_2010_PD_09.JPG",
   "author": "Bin im Garten",
   "license": "CC BY-SA 3.0",
   "score": 0.978
+ },
+ "places|WATER PARK": {
+  "file": "w/places__water-park.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Yellowstone_National_Park_(WY,_USA),_Grand_Prismatic_Spring_--_2022_--_2514.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.852
  },
  "places|ZOO": {
   "file": "w/places__zoo.jpg",

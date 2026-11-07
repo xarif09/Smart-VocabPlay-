@@ -1329,5 +1329,74 @@
  },
  "nature|STONE": {
   "file": "File:Pebble Dash (15366562092).jpg"
+ },
+ "places|PARK": {
+  "file": "File:Halleyparknovember b (cropped).jpg"
+ },
+ "places|RESTAURANT": {
+  "file": "File:Barbieri - ViaSophia25668.jpg"
+ },
+ "places|FARM": {
+  "queries": [
+   "farm barn animals",
+   "farmhouse with cows"
+  ]
+ },
+ "places|OFFICE": {
+  "queries": [
+   "modern office interior",
+   "office workers desks"
+  ]
+ },
+ "countries|SCOTLAND": {
+  "file": "File:Edinburgh Castle gate 20211019.jpg"
+ },
+ "countries|GREECE": {
+  "file": "File:1000 Three domes of Oia in Santorini Photo by Giles Laurent.jpg"
+ },
+ "countries|PAKISTAN": {
+  "file": "File:Northern facade of Badshahi mosque.JPG"
+ },
+ "countries|WORLD": {
+  "queries": [
+   "The Blue Marble",
+   "world globe"
+  ]
+ },
+ "home|BED": {
+  "file": "File:Canopy bed of Amantaka Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg"
+ },
+ "home|SOFA": {
+  "file": "File:2009-05-16 Main office lobby at Hampton Forest Apartments.jpg"
+ },
+ "home|BATH": {
+  "file": "File:Clawfoot bathtub.jpg"
+ },
+ "home|PLATE": {
+  "file": "File:Piece of chocolate cake on a white plate decorated with chocolate sauce.jpg"
+ },
+ "home|PAN": {
+  "file": "File:Pan frying sausages.jpg"
+ },
+ "home|BOTTLE": {
+  "file": "File:Bouteille.jpg"
+ },
+ "home|BOOKSHELF": {
+  "file": "File:Interior of Bibliothèque Mazarine 003.JPG"
+ },
+ "home|PILLOW": {
+  "file": "File:Pillows on a hotel bed.jpg"
+ },
+ "home|MIRROR": {
+  "queries": [
+   "bathroom mirror",
+   "wall mirror"
+  ]
+ },
+ "home|BEDROOM": {
+  "queries": [
+   "children's bedroom",
+   "modern bedroom interior"
+  ]
  }
 }

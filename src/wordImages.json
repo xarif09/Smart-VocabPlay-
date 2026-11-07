@@ -12268,21 +12268,21 @@
   "src": "https://commons.wikimedia.org/wiki/File:British_Red_Cross_(BRC)_Rapid_Response_Vehicle_(RRV)_Ambulance_1.jpg",
   "author": "Fbo194",
   "license": "CC BY-SA 4.0",
-  "score": 1.039
+  "score": 1.18
  },
  "vehicles|BIKE": {
   "file": "w/vehicles__bike.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Parked_bicycle_with_graffitied_building_facade_and_doors_in_Amsterdam.jpg",
-  "author": "Basile Morin",
+  "src": "https://commons.wikimedia.org/wiki/File:Commuting_by_bicycle.jpg",
+  "author": "Petar Milošević",
   "license": "CC BY-SA 4.0",
-  "score": 1.073
+  "score": 0.955
  },
  "vehicles|BOAT": {
   "file": "w/vehicles__boat.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Vents_du_Sud_-_Le_Grau-du-Roi_03.jpg",
   "author": "Christian Ferrer",
   "license": "CC BY 4.0",
-  "score": 0.66
+  "score": 0.864
  },
  "vehicles|BULLDOZER": {
   "file": "w/vehicles__bulldozer.jpg",
@@ -12300,10 +12300,10 @@
  },
  "vehicles|BUS": {
   "file": "w/vehicles__bus.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:APSRTC_Bus_07122014.jpg",
-  "author": "Nikhilb239",
-  "license": "CC BY 3.0",
-  "score": 0.912
+  "src": "https://commons.wikimedia.org/wiki/File:Malta_Bus_-_City_Gate_Square.jpg",
+  "author": "MrPanyGoff",
+  "license": "CC BY-SA 3.0",
+  "score": 0.924
  },
  "vehicles|CABLE CAR": {
   "file": "w/vehicles__cable-car.jpg",
@@ -12324,7 +12324,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:1925_Ford_Model_T_touring.jpg",
   "author": "ModelTMitch",
   "license": "Public domain",
-  "score": 0.67
+  "score": 0.773
  },
  "vehicles|CARGO SHIP": {
   "file": "w/vehicles__cargo-ship.jpg",
@@ -12345,7 +12345,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:College_10_construction_crane_-_geograph.org.uk_-_6655885.jpg",
   "author": "DS Pugh",
   "license": "CC BY-SA 2.0",
-  "score": 1.101
+  "score": 1.297
  },
  "vehicles|CROSSWALK": {
   "file": "w/vehicles__crosswalk.jpg",
@@ -12384,10 +12384,10 @@
  },
  "vehicles|ENGINE": {
   "file": "w/vehicles__engine.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Chevrolet_small-block_engine_-_Automobile_Driving_Museum_-_El_Segundo,_CA_-_DSC01736.jpg",
-  "author": "Daderot",
-  "license": "CC0",
-  "score": 0.948
+  "src": "https://commons.wikimedia.org/wiki/File:Steam_car_%22engine%22.jpg",
+  "author": "BulldozerD11",
+  "license": "CC BY-SA 3.0",
+  "score": 1.279
  },
  "vehicles|EXCAVATOR": {
   "file": "w/vehicles__excavator.jpg",
@@ -12401,14 +12401,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:DFDS_Transmanche_Ferry_loading_at_Newhaven_Harbour.jpg",
   "author": "FrogsLegs71",
   "license": "CC BY-SA 3.0",
-  "score": 1.099
+  "score": 1.299
  },
  "vehicles|FIRETRUCK": {
   "file": "w/vehicles__firetruck.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Dublin_Fire_Brigade_Pump_Ladder_D32.jpg",
   "author": "William Murphy",
   "license": "CC BY-SA 2.0",
-  "score": 0.924
+  "score": 1.008
  },
  "vehicles|FORKLIFT": {
   "file": "w/vehicles__forklift.jpg",
@@ -12422,7 +12422,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:LA-City-Sanitation-trash-truck-1.jpg",
   "author": "Bdonjc",
   "license": "CC BY-SA 4.0",
-  "score": 1.091
+  "score": 1.287
  },
  "vehicles|GO-KART": {
   "file": "w/vehicles__go-kart.jpg",
@@ -12436,14 +12436,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:NASA%27s_Ingenuity_helicopter_on_Mars_by_Perseverance_Mastcam-Z,_Sol_768_(53475637956).jpg",
   "author": "semeion.photo Credit: NASA/JPL-Caltech/ASU/Simeon Schmauß",
   "license": "CC BY 2.0",
-  "score": 0.983
+  "score": 1.116
  },
  "vehicles|HELMET": {
   "file": "w/vehicles__helmet.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Bicycle_Helmet_0085.jpg",
-  "author": "Ashley Pomeroy",
-  "license": "CC BY-SA 4.0",
-  "score": 0.874
+  "src": "https://commons.wikimedia.org/wiki/File:Building_better_riders,_86th_AW_hosts_annual_safety_motorcycle_mentorship_ride_(9745093).jpg",
+  "author": "U.S. Air Force photo by Airman 1st Class Paden Henry",
+  "license": "Public domain",
+  "score": 1.169
  },
  "vehicles|HORSE CART": {
   "file": "w/vehicles__horse-cart.jpg",
@@ -12454,10 +12454,10 @@
  },
  "vehicles|HOT AIR BALLOON": {
   "file": "w/vehicles__hot-air-balloon.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Cappadocia_Balloon_Inflating_Wikimedia_Commons.JPG",
-  "author": "Benh LIEU SONG ( Flickr )",
+  "src": "https://commons.wikimedia.org/wiki/File:Balloon_over_Luxor_-_Egypt_denoised.jpg",
+  "author": "Balloon_over_Luxor_-_Egypt.jpg : Marcosleal derivative work: Pro2 ( talk )",
   "license": "CC BY-SA 3.0",
-  "score": 1.174
+  "score": 1.206
  },
  "vehicles|ICE CREAM TRUCK": {
   "file": "w/vehicles__ice-cream-truck.jpg",
@@ -12471,7 +12471,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Kelly_Jeep_Chrysler_Dealership.jpg",
   "author": "KellyAuto",
   "license": "CC BY-SA 4.0",
-  "score": 0.894
+  "score": 1.011
  },
  "vehicles|JET": {
   "file": "w/vehicles__jet.jpg",
@@ -12496,17 +12496,17 @@
  },
  "vehicles|LONGTAIL BOAT": {
   "file": "w/vehicles__longtail-boat.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Poda_island_beach.jpg",
-  "author": "kallerna",
-  "license": "CC BY-SA 3.0",
-  "score": 0.865
+  "src": "https://commons.wikimedia.org/wiki/File:Long_Tail_boat_Phi_Phi_Don_05.jpg",
+  "author": "This photo was taken by Anton Zelenov . Please credit this with : Photo : Anton Zelenov in the immediate vicinity of the image. If you use one of my photos, please email me (account needed) or leave m",
+  "license": "CC BY-SA 4.0",
+  "score": 1.283
  },
  "vehicles|LORRY": {
   "file": "w/vehicles__lorry.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Peterbilt_359_Classic_(1977)_pic2.JPG",
-  "author": "AlfvanBeem",
-  "license": "CC0",
-  "score": 0.341
+  "src": "https://commons.wikimedia.org/wiki/File:Rabbits_Vehicle_Hire_Highway_Maintenance_lorry,_Crindau,_Newport_-_geograph.org.uk_-_6917890.jpg",
+  "author": "Jaggery",
+  "license": "CC BY-SA 2.0",
+  "score": 1.043
  },
  "vehicles|MINIBUS": {
   "file": "w/vehicles__minibus.jpg",
@@ -12524,10 +12524,10 @@
  },
  "vehicles|MOTORCYCLE": {
   "file": "w/vehicles__motorcycle.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Victory_motorcycle_Main_Street_downtown_Montpelier_VT_July_2016.jpg",
-  "author": "Artaxerxes",
+  "src": "https://commons.wikimedia.org/wiki/File:Couple_Riding_Motorcycle_in_Bike_lane_W_Lone_Mountain_Rd.jpg",
+  "author": "Noah Wulf",
   "license": "CC BY-SA 3.0",
-  "score": 0.927
+  "score": 1.039
  },
  "vehicles|MOTORCYCLE TAXI": {
   "file": "w/vehicles__motorcycle-taxi.jpg",
@@ -12562,28 +12562,28 @@
   "src": "https://commons.wikimedia.org/wiki/File:1994_Toyota_T100_Deluxe,_rear_left.jpg",
   "author": "Mr.choppers",
   "license": "CC BY-SA 3.0",
-  "score": 0.823
+  "score": 0.902
  },
  "vehicles|PLANE": {
   "file": "w/vehicles__plane.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:United_A320_N405UA_at_BOS_(33787222465).jpg",
   "author": "G B_NZ",
   "license": "CC BY-SA 2.0",
-  "score": 0.716
+  "score": 0.844
  },
  "vehicles|POLICE CAR": {
   "file": "w/vehicles__police-car.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Norwegian_Police_car_in_Fredrikstad_6.6.2024.jpg",
-  "author": "Sebbog13",
+  "src": "https://commons.wikimedia.org/wiki/File:Corfu_police_car_2006-09-24.jpg",
+  "author": "Nord68",
   "license": "CC BY-SA 4.0",
-  "score": 0.85
+  "score": 0.804
  },
  "vehicles|RACE CAR": {
   "file": "w/vehicles__race-car.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Auto_sport_montage.jpg",
-  "author": "2010_Malaysian_GP_opening_lap.jpg : Morio Neste_Oil_Rally_2010_-_Jari-Matti_Latvala_in_shakedown.jpg : kallerna Hansen2004.jpg : The original uploader was RX-Guru at German Wikipedia . Colin_Turkingto",
+  "src": "https://commons.wikimedia.org/wiki/File:Kaipan_57_1.8T.jpg",
+  "author": "For use outside of Wikimedia projects, you have to credit also with hyperlink. For other licenses or terms of use contact me.",
   "license": "CC BY-SA 3.0",
-  "score": 0.81
+  "score": 1.063
  },
  "vehicles|RAFT": {
   "file": "w/vehicles__raft.jpg",
@@ -12604,7 +12604,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:STS-125_Atlantis_Liftoff_02.jpg",
   "author": "Scott Andrews, Canon",
   "license": "Public domain",
-  "score": 1.088
+  "score": 1.28
  },
  "vehicles|ROWBOAT": {
   "file": "w/vehicles__rowboat.jpg",
@@ -12618,35 +12618,35 @@
   "src": "https://commons.wikimedia.org/wiki/File:Zoutelande_(NL),_Strand,_Blick_auf_die_Nordsee_--_2022_--_4984.jpg",
   "author": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
-  "score": 1.095
+  "score": 1.295
  },
  "vehicles|SCOOTER": {
   "file": "w/vehicles__scooter.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Yamaha_Aerox_2011_.jpg",
   "author": "Thomas Wiersma",
   "license": "CC BY-SA 4.0",
-  "score": 1.098
+  "score": 1.297
  },
  "vehicles|SEAT BELT": {
   "file": "w/vehicles__seat-belt.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Female_driver_buckling_seatbelt.jpg",
-  "author": "State Farm",
-  "license": "CC BY 2.0",
-  "score": 0.923
+  "src": "https://commons.wikimedia.org/wiki/File:Car_seat_belt.jpg",
+  "author": "Santeri Viinamäki",
+  "license": "CC BY-SA 4.0",
+  "score": 1.289
  },
  "vehicles|SHIP": {
   "file": "w/vehicles__ship.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:USS_Ozark_(LSV-2)_on_16_September_1944.jpg",
   "author": "U.S. Navy Bureau of Ships",
   "license": "Public domain",
-  "score": 1.068
+  "score": 1.012
  },
  "vehicles|SKYTRAIN": {
   "file": "w/vehicles__skytrain.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bangkok_skytrain_sunset.jpg",
   "author": "User:Diliff",
   "license": "CC BY-SA 3.0",
-  "score": 1.107
+  "score": 1.306
  },
  "vehicles|SLED": {
   "file": "w/vehicles__sled.jpg",
@@ -12664,17 +12664,17 @@
  },
  "vehicles|SPACESHIP": {
   "file": "w/vehicles__spaceship.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:ISS_March_2009.jpg",
-  "author": "National Aeronautics and Space Administration",
+  "src": "https://commons.wikimedia.org/wiki/File:Space_Shuttle_Columbia_launching.jpg",
+  "author": "NASA",
   "license": "Public domain",
-  "score": 0.771
+  "score": 0.896
  },
  "vehicles|SPEEDBOAT": {
   "file": "w/vehicles__speedboat.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:A_speedboat_tournament_race.jpg",
   "author": "Walton LaVonda, U.S. Fish and Wildlife Service",
   "license": "Public domain",
-  "score": 0.846
+  "score": 0.932
  },
  "vehicles|STEAM TRAIN": {
   "file": "w/vehicles__steam-train.jpg",
@@ -12692,31 +12692,31 @@
  },
  "vehicles|STROLLER": {
   "file": "w/vehicles__stroller.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Baby_pram.jpg",
-  "author": "Jason7825 at en.wikipedia",
+  "src": "https://commons.wikimedia.org/wiki/File:A_family_with_a_stroller_on_the_Grotto_Falls_trail_-432_Custer_Gallatin_NF_3W6A3487_(53255122171).jpg",
+  "author": "Forest Service - Northern Region",
   "license": "Public domain",
-  "score": 0.81
+  "score": 0.765
  },
  "vehicles|SUBMARINE": {
   "file": "w/vehicles__submarine.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:AG_class_submarines_and_submarine_tender_Oland.jpg",
   "author": "Unknown author Unknown author",
   "license": "Public domain",
-  "score": 0.957
+  "score": 1.096
  },
  "vehicles|SUBWAY": {
   "file": "w/vehicles__subway.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Seoul-metro-2009-20180916-103548.jpg",
-  "author": "LERK",
+  "src": "https://commons.wikimedia.org/wiki/File:Metro_de_S%C3%A3o_Paulo,_Luz_Station,_Brazil.jpg",
+  "author": "Wilfredor",
   "license": "CC BY-SA 4.0",
-  "score": 0.36
+  "score": 0.974
  },
  "vehicles|TAXI": {
   "file": "w/vehicles__taxi.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Green_and_yellow_taxi_at_night_in_Yasukuni-dori_Avenue,_Shinjuku,_Tokyo.jpg",
   "author": "Basile Morin",
   "license": "CC BY-SA 4.0",
-  "score": 1.096
+  "score": 1.251
  },
  "vehicles|TIRE": {
   "file": "w/vehicles__tire.jpg",
@@ -12734,10 +12734,10 @@
  },
  "vehicles|TRACTOR": {
   "file": "w/vehicles__tractor.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Boy_plowing_with_a_tractor_at_sunset_in_Don_Det,_Laos.jpg",
-  "author": "Basile Morin",
+  "src": "https://commons.wikimedia.org/wiki/File:Tractor_New_Holland_T6.165_plowing_(Zadobrova,_Ljubljana).jpg",
+  "author": "Petar Milošević",
   "license": "CC BY-SA 4.0",
-  "score": 0.984
+  "score": 1.134
  },
  "vehicles|TRAFFIC JAM": {
   "file": "w/vehicles__traffic-jam.jpg",
@@ -12751,35 +12751,35 @@
   "src": "https://commons.wikimedia.org/wiki/File:Modern_British_LED_Traffic_Light.jpg",
   "author": "Unisouth",
   "license": "CC BY 3.0",
-  "score": 1.199
+  "score": 1.399
  },
  "vehicles|TRAIN": {
   "file": "w/vehicles__train.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%B5%D0%B7%D0%B4_%D0%BD%D0%B0_%D1%84%D0%BE%D0%BD%D0%B5_%D0%B3%D0%BE%D1%80%D1%8B_%D0%A8%D0%B0%D1%82%D1%80%D0%B8%D1%89%D0%B5._%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C.jpg",
   "author": "Алексей Задонский",
   "license": "CC BY-SA 4.0",
-  "score": 0.966
+  "score": 1.079
  },
  "vehicles|TRAM": {
   "file": "w/vehicles__tram.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Stadthaus_3,_Stra%C3%9Fenbahn_--_2018_--_0942.jpg",
   "author": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
-  "score": 1.046
+  "score": 1.213
  },
  "vehicles|TRUCK": {
   "file": "w/vehicles__truck.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Broke,_baby_sick,_and_car_trouble!_-_Dorothea_Langes_photo_of_a_Missouri_family_of_five_in_the_vicinity_of_Tracy,_California.jpg",
   "author": "Dorothea Lange / Adam Cuerden",
   "license": "Public domain",
-  "score": 0.949
+  "score": 0.874
  },
  "vehicles|TUK-TUK": {
   "file": "w/vehicles__tuk-tuk.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Tuk-tuk_fastfood_grill_3.jpg",
-  "author": "kallerna",
-  "license": "CC BY-SA 3.0",
-  "score": 0.874
+  "src": "https://commons.wikimedia.org/wiki/File:Three_quarter_view_of_Hotel_3_Nagas_with_a_tuk-tuk_and_an_old_red_Citroen_in_Luang_Prabang_Laos.jpg",
+  "author": "Basile Morin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.962
  },
  "vehicles|UNICYCLE": {
   "file": "w/vehicles__unicycle.jpg",
@@ -12790,24 +12790,24 @@
  },
  "vehicles|VAN": {
   "file": "w/vehicles__van.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Old_Renault_van_on_Kew_Green_-_geograph.org.uk_-_5344850.jpg",
-  "author": "David Howard",
+  "src": "https://commons.wikimedia.org/wiki/File:Ocado_grocery_delivery_van,_West_Acton_-_geograph.org.uk_-_6785843.jpg",
+  "author": "David Hawgood",
   "license": "CC BY-SA 2.0",
-  "score": 0.769
+  "score": 0.931
  },
  "vehicles|WHEEL": {
   "file": "w/vehicles__wheel.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Large_tyre.jpg",
-  "author": "Anselm Schüler",
-  "license": "CC BY-SA 4.0",
-  "score": 0.231
+  "src": "https://commons.wikimedia.org/wiki/File:Laxey_Wheel_seen_from_car_park_-_geograph.org.uk_-_2111950.jpg",
+  "author": "Shazz",
+  "license": "CC BY-SA 2.0",
+  "score": 0.924
  },
  "vehicles|WHEELCHAIR": {
   "file": "w/vehicles__wheelchair.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Man_in_wheelchair_with_AFO_braces_and_crutches_b.jpg",
-  "author": "File:Man in wheelchair with AFO braces and crutches.jpg : Pagemaker787 derivative work: Georgfotoart",
-  "license": "CC BY-SA 4.0",
-  "score": 0.78
+  "src": "https://commons.wikimedia.org/wiki/File:MecanumWheelchair.jpg",
+  "author": "Euchiasmus at English Wikipedia",
+  "license": "Public domain",
+  "score": 1.028
  },
  "vehicles|YACHT": {
   "file": "w/vehicles__yacht.jpg",

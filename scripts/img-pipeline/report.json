@@ -2634,7 +2634,7 @@
   },
   "vehicles|CAR": {
    "title": "File:1925 Ford Model T touring.jpg",
-   "final": 0.67,
+   "final": 0.773,
    "p": 0.7389,
    "photo": 0.9999,
    "fit": 0.263,
@@ -2647,21 +2647,21 @@
     "fit 0.26"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|BUS": {
-   "title": "File:APSRTC Bus 07122014.jpg",
-   "final": 0.912,
-   "p": 0.9347,
-   "photo": 0.072,
-   "fit": 0.829,
+   "title": "File:Malta Bus - City Gate Square.jpg",
+   "final": 0.924,
+   "p": 0.7479,
+   "photo": 0.8801,
+   "fit": 0.55,
    "how": "yolo:bus",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.92)"
    ],
    "flags": [
-    "not photo-like 0.07"
+    "fit 0.55"
    ],
    "origin": "search:bus vehicle",
    "n_cands": 8,
@@ -2669,7 +2669,7 @@
   },
   "vehicles|TRAIN": {
    "title": "File:Поезд на фоне горы Шатрище. Воронежская область.jpg",
-   "final": 0.966,
+   "final": 1.079,
    "p": 0.9865,
    "photo": 0.9983,
    "fit": 0.415,
@@ -2681,12 +2681,12 @@
     "fit 0.41"
    ],
    "origin": "current",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|PLANE": {
    "title": "File:United A320 N405UA at BOS (33787222465).jpg",
-   "final": 0.716,
+   "final": 0.844,
    "p": 0.6629,
    "photo": 0.9058,
    "fit": 0.472,
@@ -2703,7 +2703,7 @@
   },
   "vehicles|BOAT": {
    "title": "File:Vents du Sud - Le Grau-du-Roi 03.jpg",
-   "final": 0.66,
+   "final": 0.864,
    "p": 0.2664,
    "photo": 0.9744,
    "fit": 0.8,
@@ -2715,28 +2715,26 @@
     "low word prob 0.27"
    ],
    "origin": "search:boat vehicle",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|BIKE": {
-   "title": "File:Parked bicycle with graffitied building facade and doors in Amsterdam.jpg",
-   "final": 1.073,
-   "p": 0.9984,
-   "photo": 0.0825,
+   "title": "File:Commuting by bicycle.jpg",
+   "final": 0.955,
+   "p": 0.8279,
+   "photo": 0.9535,
    "fit": 1.0,
    "how": "yolo:bicycle",
    "notes": [],
-   "flags": [
-    "not photo-like 0.08"
-   ],
+   "flags": [],
    "origin": "search:bicycle",
    "n_cands": 8,
    "forced": false
   },
   "vehicles|TRUCK": {
    "title": "File:Broke, baby sick, and car trouble! - Dorothea Langes photo of a Missouri family of five in the vicinity of Tracy, California.jpg",
-   "final": 0.949,
-   "p": 0.9151,
+   "final": 0.874,
+   "p": 0.915,
    "photo": 0.9911,
    "fit": 0.81,
    "how": "yolo:truck",
@@ -2750,7 +2748,7 @@
   },
   "vehicles|TAXI": {
    "title": "File:Green and yellow taxi at night in Yasukuni-dori Avenue, Shinjuku, Tokyo.jpg",
-   "final": 1.096,
+   "final": 1.251,
    "p": 0.9989,
    "photo": 0.8213,
    "fit": 0.824,
@@ -2760,12 +2758,12 @@
    ],
    "flags": [],
    "origin": "search:taxi vehicle",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|HELICOPTER": {
    "title": "File:NASA's Ingenuity helicopter on Mars by Perseverance Mastcam-Z, Sol 768 (53475637956).jpg",
-   "final": 0.983,
+   "final": 1.116,
    "p": 0.9999,
    "photo": 0.7044,
    "fit": 0.75,
@@ -2780,7 +2778,7 @@
   },
   "vehicles|SHIP": {
    "title": "File:USS Ozark (LSV-2) on 16 September 1944.jpg",
-   "final": 1.068,
+   "final": 1.012,
    "p": 0.9796,
    "photo": 0.9718,
    "fit": 1.0,
@@ -2794,42 +2792,36 @@
    "forced": false
   },
   "vehicles|MOTORCYCLE": {
-   "title": "File:Victory motorcycle Main Street downtown Montpelier VT July 2016.jpg",
-   "final": 0.927,
-   "p": 0.9904,
-   "photo": 0.7169,
-   "fit": 0.6,
+   "title": "File:Couple Riding Motorcycle in Bike lane W Lone Mountain Rd.jpg",
+   "final": 1.039,
+   "p": 0.5167,
+   "photo": 0.9045,
+   "fit": 1.0,
    "how": "yolo:motorcycle",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
-   "flags": [
-    "fit 0.60"
-   ],
+   "notes": [],
+   "flags": [],
    "origin": "search:motorcycle vehicle",
    "n_cands": 8,
    "forced": false
   },
   "vehicles|TRACTOR": {
-   "title": "File:Boy plowing with a tractor at sunset in Don Det, Laos.jpg",
-   "final": 0.984,
-   "p": 0.9993,
-   "photo": 0.719,
-   "fit": 0.596,
+   "title": "File:Tractor New Holland T6.165 plowing (Zadobrova, Ljubljana).jpg",
+   "final": 1.134,
+   "p": 1.0,
+   "photo": 0.7949,
+   "fit": 0.75,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.99)"
+    "tiny subject"
    ],
-   "flags": [
-    "fit 0.60"
-   ],
+   "flags": [],
    "origin": "search:tractor vehicle",
    "n_cands": 8,
    "forced": false
   },
   "vehicles|AMBULANCE": {
    "title": "File:British Red Cross (BRC) Rapid Response Vehicle (RRV) Ambulance 1.jpg",
-   "final": 1.039,
+   "final": 1.18,
    "p": 0.9996,
    "photo": 0.4688,
    "fit": 1.0,
@@ -2846,7 +2838,7 @@
   },
   "vehicles|FIRETRUCK": {
    "title": "File:Dublin Fire Brigade Pump Ladder D32.jpg",
-   "final": 0.924,
+   "final": 1.008,
    "p": 0.9969,
    "photo": 0.7668,
    "fit": 0.378,
@@ -2862,18 +2854,17 @@
    "forced": false
   },
   "vehicles|POLICE CAR": {
-   "title": "File:Norwegian Police car in Fredrikstad 6.6.2024.jpg",
-   "final": 0.85,
-   "p": 0.9993,
-   "photo": 0.1679,
-   "fit": 0.326,
+   "title": "File:Corfu police car 2006-09-24.jpg",
+   "final": 0.804,
+   "p": 0.9627,
+   "photo": 0.2408,
+   "fit": 0.823,
    "how": "yolo:car",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.54)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.33",
-    "not photo-like 0.17"
+    "not photo-like 0.24"
    ],
    "origin": "search:police car vehicle",
    "n_cands": 8,
@@ -2881,7 +2872,7 @@
   },
   "vehicles|ROCKET": {
    "title": "File:STS-125 Atlantis Liftoff 02.jpg",
-   "final": 1.088,
+   "final": 1.28,
    "p": 0.9885,
    "photo": 0.9212,
    "fit": 1.0,
@@ -2894,7 +2885,7 @@
   },
   "vehicles|SUBMARINE": {
    "title": "File:AG class submarines and submarine tender Oland.jpg",
-   "final": 0.957,
+   "final": 1.096,
    "p": 0.9994,
    "photo": 0.9994,
    "fit": 0.593,
@@ -2910,17 +2901,15 @@
    "forced": false
   },
   "vehicles|VAN": {
-   "title": "File:Old Renault van on Kew Green - geograph.org.uk - 5344850.jpg",
-   "final": 0.769,
-   "p": 0.6929,
-   "photo": 0.0676,
-   "fit": 0.808,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
+   "title": "File:Ocado grocery delivery van, West Acton - geograph.org.uk - 6785843.jpg",
+   "final": 0.931,
+   "p": 0.2727,
+   "photo": 0.9704,
+   "fit": 1.0,
+   "how": "yolo:car",
+   "notes": [],
    "flags": [
-    "not photo-like 0.07"
+    "low word prob 0.27"
    ],
    "origin": "search:van vehicle",
    "n_cands": 8,
@@ -2928,7 +2917,7 @@
   },
   "vehicles|SCOOTER": {
    "title": "File:Yamaha Aerox 2011 .jpg",
-   "final": 1.098,
+   "final": 1.297,
    "p": 0.9997,
    "photo": 0.9834,
    "fit": 1.0,
@@ -2940,18 +2929,17 @@
    "forced": false
   },
   "vehicles|TUK-TUK": {
-   "title": "File:Tuk-tuk fastfood grill 3.jpg",
-   "final": 0.874,
-   "p": 0.8787,
-   "photo": 0.1863,
-   "fit": 0.529,
+   "title": "File:Three quarter view of Hotel 3 Nagas with a tuk-tuk and an old red Citroen in Luang Prabang Laos.jpg",
+   "final": 0.962,
+   "p": 0.9472,
+   "photo": 0.9066,
+   "fit": 0.45,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.88)"
+    "subject cannot fit 3:4 (box cov 0.75)"
    ],
    "flags": [
-    "fit 0.53",
-    "not photo-like 0.19"
+    "fit 0.45"
    ],
    "origin": "search:tuk-tuk Thailand",
    "n_cands": 8,
@@ -6775,26 +6763,23 @@
    "forced": false
   },
   "vehicles|SPACESHIP": {
-   "title": "File:ISS March 2009.jpg",
-   "final": 0.771,
-   "p": 0.9538,
-   "photo": 0.496,
-   "fit": 0.365,
+   "title": "File:Space Shuttle Columbia launching.jpg",
+   "final": 0.896,
+   "p": 0.1943,
+   "photo": 0.9939,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.61)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.36",
-    "not photo-like 0.50"
+    "low word prob 0.19"
    ],
    "origin": "search:space shuttle",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|SAILBOAT": {
    "title": "File:Zoutelande (NL), Strand, Blick auf die Nordsee -- 2022 -- 4984.jpg",
-   "final": 1.095,
+   "final": 1.295,
    "p": 0.993,
    "photo": 0.9899,
    "fit": 1.0,
@@ -6802,14 +6787,14 @@
    "notes": [],
    "flags": [],
    "origin": "search:sailboat vehicle",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|FERRY": {
    "title": "File:DFDS Transmanche Ferry loading at Newhaven Harbour.jpg",
-   "final": 1.099,
+   "final": 1.299,
    "p": 0.9999,
-   "photo": 0.992,
+   "photo": 0.9919,
    "fit": 1.0,
    "how": "yolo:boat",
    "notes": [],
@@ -6820,7 +6805,7 @@
   },
   "vehicles|PICKUP TRUCK": {
    "title": "File:1994 Toyota T100 Deluxe, rear left.jpg",
-   "final": 0.823,
+   "final": 0.902,
    "p": 0.9917,
    "photo": 0.9142,
    "fit": 0.246,
@@ -6832,12 +6817,12 @@
     "fit 0.25"
    ],
    "origin": "current",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "vehicles|GARBAGE TRUCK": {
    "title": "File:LA-City-Sanitation-trash-truck-1.jpg",
-   "final": 1.091,
+   "final": 1.287,
    "p": 0.9916,
    "photo": 0.9521,
    "fit": 1.0,
@@ -6850,7 +6835,7 @@
   },
   "vehicles|CRANE": {
    "title": "File:College 10 construction crane - geograph.org.uk - 6655885.jpg",
-   "final": 1.101,
+   "final": 1.297,
    "p": 0.9875,
    "photo": 0.9475,
    "fit": 1.0,
@@ -6858,14 +6843,14 @@
    "notes": [],
    "flags": [],
    "origin": "search:construction crane",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|HOT AIR BALLOON": {
-   "title": "File:Cappadocia Balloon Inflating Wikimedia Commons.JPG",
-   "final": 1.174,
-   "p": 0.9988,
-   "photo": 0.7426,
+   "title": "File:Balloon over Luxor - Egypt denoised.jpg",
+   "final": 1.206,
+   "p": 1.0,
+   "photo": 0.5311,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -6876,20 +6861,20 @@
   },
   "vehicles|TRAM": {
    "title": "File:Münster, Stadthaus 3, Straßenbahn -- 2018 -- 0942.jpg",
-   "final": 1.046,
+   "final": 1.213,
    "p": 0.9632,
-   "photo": 0.6514,
+   "photo": 0.649,
    "fit": 1.0,
    "how": "yolo:train",
    "notes": [],
    "flags": [],
    "origin": "search:tram vehicle",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|SPEEDBOAT": {
    "title": "File:A speedboat tournament race.jpg",
-   "final": 0.846,
+   "final": 0.932,
    "p": 0.9901,
    "photo": 0.8538,
    "fit": 0.332,
@@ -6901,12 +6886,12 @@
     "fit 0.33"
    ],
    "origin": "search:speedboat vehicle",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|SKYTRAIN": {
    "title": "File:Bangkok skytrain sunset.jpg",
-   "final": 1.107,
+   "final": 1.306,
    "p": 0.9999,
    "photo": 0.9927,
    "fit": 1.0,
@@ -6914,7 +6899,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:BTS Skytrain Bangkok",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "jobs|VET": {
@@ -13186,63 +13171,58 @@
    "forced": false
   },
   "vehicles|SUBWAY": {
-   "title": "File:Seoul-metro-2009-20180916-103548.jpg",
-   "final": 0.36,
-   "p": 0.0538,
-   "photo": 0.9748,
-   "fit": 0.432,
+   "title": "File:Metro de São Paulo, Luz Station, Brazil.jpg",
+   "final": 0.974,
+   "p": 0.9929,
+   "photo": 0.9672,
+   "fit": 0.36,
    "how": "yolo:train",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.72)"
+    "touches 2 edge(s)"
    ],
    "flags": [
-    "low word prob 0.05",
-    "fit 0.43"
+    "fit 0.36"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:subway train",
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|LORRY": {
-   "title": "File:Peterbilt 359 Classic (1977) pic2.JPG",
-   "final": 0.341,
-   "p": 0.0002,
-   "photo": 0.4715,
-   "fit": 0.455,
+   "title": "File:Rabbits Vehicle Hire Highway Maintenance lorry, Crindau, Newport - geograph.org.uk - 6917890.jpg",
+   "final": 1.043,
+   "p": 0.9949,
+   "photo": 0.3636,
+   "fit": 1.0,
    "how": "yolo:truck",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.76)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.46",
-    "not photo-like 0.47"
+    "not photo-like 0.36"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:lorry vehicle",
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|RACE CAR": {
-   "title": "File:Auto sport montage.jpg",
-   "final": 0.81,
+   "title": "File:Kaipan 57 1.8T.jpg",
+   "final": 1.063,
    "p": 1.0,
-   "photo": 0.8706,
-   "fit": 0.216,
+   "photo": 0.8448,
+   "fit": 0.578,
    "how": "yolo:car",
    "notes": [
-    "touches 3 edge(s)"
+    "subject cannot fit 3:4 (box cov 0.96)"
    ],
    "flags": [
-    "fit 0.22"
+    "fit 0.58"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:race car vehicle",
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|JEEP": {
    "title": "File:Kelly Jeep Chrysler Dealership.jpg",
-   "final": 0.894,
-   "p": 1.0,
+   "final": 1.011,
+   "p": 0.9994,
    "photo": 0.9991,
    "fit": 0.45,
    "how": "yolo:car",
@@ -13254,7 +13234,7 @@
     "fit 0.45"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "vehicles|CANOE": {
@@ -13275,97 +13255,84 @@
    "forced": false
   },
   "vehicles|LONGTAIL BOAT": {
-   "title": "File:Poda island beach.jpg",
-   "final": 0.865,
-   "p": 0.9991,
-   "photo": 0.9941,
-   "fit": 0.324,
+   "title": "File:Long Tail boat Phi Phi Don 05.jpg",
+   "final": 1.283,
+   "p": 1.0,
+   "photo": 0.9216,
+   "fit": 0.849,
    "how": "yolo:boat",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.54)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.32"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:long-tail boat Thailand",
+   "n_cands": 8,
    "forced": false
   },
   "vehicles|WHEELCHAIR": {
-   "title": "File:Man in wheelchair with AFO braces and crutches b.jpg",
-   "final": 0.78,
-   "p": 1.0,
-   "photo": 0.8543,
-   "fit": 0.128,
+   "title": "File:MecanumWheelchair.jpg",
+   "final": 1.028,
+   "p": 0.999,
+   "photo": 0.9735,
+   "fit": 0.488,
    "how": "saliency",
    "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.99)"
-   ],
-   "flags": [
-    "fit 0.13"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "vehicles|STROLLER": {
-   "title": "File:Baby pram.jpg",
-   "final": 0.81,
-   "p": 0.9999,
-   "photo": 0.0653,
-   "fit": 0.439,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.73)"
-   ],
-   "flags": [
-    "fit 0.44",
-    "not photo-like 0.07"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "vehicles|WHEEL": {
-   "title": "File:Large tyre.jpg",
-   "final": 0.231,
-   "p": 0.0165,
-   "photo": 0.7271,
-   "fit": 0.172,
-   "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.79)"
-   ],
-   "flags": [
-    "low word prob 0.02",
-    "fit 0.17"
-   ],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
-  },
-  "vehicles|ENGINE": {
-   "title": "File:Chevrolet small-block engine - Automobile Driving Museum - El Segundo, CA - DSC01736.jpg",
-   "final": 0.948,
-   "p": 0.9896,
-   "photo": 0.7046,
-   "fit": 0.487,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.81)"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
     "fit 0.49"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:wheelchair",
+   "n_cands": 6,
+   "forced": false
+  },
+  "vehicles|STROLLER": {
+   "title": "File:A family with a stroller on the Grotto Falls trail -432 Custer Gallatin NF 3W6A3487 (53255122171).jpg",
+   "final": 0.765,
+   "p": 0.1358,
+   "photo": 0.9545,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.14"
+   ],
+   "origin": "search:baby stroller",
+   "n_cands": 8,
+   "forced": false
+  },
+  "vehicles|WHEEL": {
+   "title": "File:Laxey Wheel seen from car park - geograph.org.uk - 2111950.jpg",
+   "final": 0.924,
+   "p": 0.3779,
+   "photo": 0.8869,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.38"
+   ],
+   "origin": "search:car wheel",
+   "n_cands": 6,
+   "forced": false
+  },
+  "vehicles|ENGINE": {
+   "title": "File:Steam car \"engine\".jpg",
+   "final": 1.279,
+   "p": 0.9741,
+   "photo": 0.988,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:car engine",
+   "n_cands": 5,
    "forced": false
   },
   "vehicles|TRAFFIC LIGHT": {
    "title": "File:Modern British LED Traffic Light.jpg",
-   "final": 1.199,
+   "final": 1.399,
    "p": 1.0,
    "photo": 0.9985,
    "fit": 1.0,
@@ -13377,38 +13344,31 @@
    "forced": false
   },
   "vehicles|SEAT BELT": {
-   "title": "File:Female driver buckling seatbelt.jpg",
-   "final": 0.923,
+   "title": "File:Car seat belt.jpg",
+   "final": 1.289,
    "p": 1.0,
-   "photo": 0.9765,
-   "fit": 0.5,
+   "photo": 0.9436,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [
-    "fit 0.50"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:seat belt car",
+   "n_cands": 6,
    "forced": false
   },
   "vehicles|HELMET": {
-   "title": "File:Bicycle Helmet 0085.jpg",
-   "final": 0.874,
-   "p": 1.0,
-   "photo": 0.8918,
-   "fit": 0.385,
+   "title": "File:Building better riders, 86th AW hosts annual safety motorcycle mentorship ride (9745093).jpg",
+   "final": 1.169,
+   "p": 0.9676,
+   "photo": 0.4236,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.64)"
-   ],
+   "notes": [],
    "flags": [
-    "fit 0.39"
+    "not photo-like 0.42"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:motorcycle helmet",
+   "n_cands": 6,
    "forced": false
   },
   "clothes|JEANS": {
@@ -30184,7 +30144,6 @@
   "vegetables|YAM",
   "vehicles|AIRPLANE",
   "vehicles|AMBULANCE",
-  "vehicles|BIKE",
   "vehicles|BOAT",
   "vehicles|BUS",
   "vehicles|CANOE",
@@ -30192,7 +30151,6 @@
   "vehicles|CARGO SHIP",
   "vehicles|CRUISE SHIP",
   "vehicles|DUMP TRUCK",
-  "vehicles|ENGINE",
   "vehicles|EXCAVATOR",
   "vehicles|FIRETRUCK",
   "vehicles|GO-KART",
@@ -30202,10 +30160,8 @@
   "vehicles|JEEP",
   "vehicles|JET",
   "vehicles|LICENSE PLATE",
-  "vehicles|LONGTAIL BOAT",
   "vehicles|LORRY",
   "vehicles|MINIBUS",
-  "vehicles|MOTORCYCLE",
   "vehicles|MOTORCYCLE TAXI",
   "vehicles|PADDLE BOAT",
   "vehicles|PARACHUTE",
@@ -30216,7 +30172,6 @@
   "vehicles|RACE CAR",
   "vehicles|RAFT",
   "vehicles|RICKSHAW",
-  "vehicles|SEAT BELT",
   "vehicles|SONGTHAEW",
   "vehicles|SPACESHIP",
   "vehicles|SPEEDBOAT",
@@ -30224,7 +30179,6 @@
   "vehicles|SUBMARINE",
   "vehicles|SUBWAY",
   "vehicles|TOW TRUCK",
-  "vehicles|TRACTOR",
   "vehicles|TRAIN",
   "vehicles|TUK-TUK",
   "vehicles|UNICYCLE",
@@ -30275,6 +30229,6 @@
  "summary": {
   "words": 1903,
   "with_photo": 1893,
-  "flagged": 1093
+  "flagged": 1087
  }
 }

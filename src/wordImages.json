@@ -10457,6 +10457,13 @@
   "license": "CC BY-SA 4.0",
   "score": 0.436
  },
+ "technology|EMOJI": {
+  "file": "w/technology__emoji.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Balloon_with_smiley_face_02.jpg",
+  "author": "Kritzolina",
+  "license": "CC BY-SA 4.0",
+  "score": 1.027
+ },
  "technology|EXTENSION CORD": {
   "file": "w/technology__extension-cord.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Homes_in_Need_(20220129-RD-LSC-0177).jpg",
@@ -11374,6 +11381,13 @@
   "license": "CC BY-SA 3.0",
   "score": 1.222
  },
+ "toys|GLOW STICK": {
+  "file": "w/toys__glow-stick.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Glow_sticks_on_Baga_beach_at_night.jpg",
+  "author": "Slyronit",
+  "license": "CC BY-SA 4.0",
+  "score": 1.164
+ },
  "toys|GUITAR": {
   "file": "w/toys__guitar.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bridge_of_Hohner_bass_guitar_LX90B.jpg",
@@ -11597,6 +11611,13 @@
   "author": "Artaxerxes",
   "license": "CC BY-SA 3.0",
   "score": 0.99
+ },
+ "toys|SANDCASTLE": {
+  "file": "w/toys__sandcastle.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sand_castle_on_Castle_Street_-_geograph.org.uk_-_1865993.jpg",
+  "author": "M J Richardson",
+  "license": "CC BY-SA 2.0",
+  "score": 1.15
  },
  "toys|SCOOTER": {
   "file": "w/toys__scooter.jpg",

@@ -5887,7 +5887,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "toys|ROBOT": {
@@ -5900,7 +5900,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "toys|PUZZLE": {
@@ -5931,7 +5931,7 @@
     "fit 0.53"
    ],
    "origin": "search:toy blocks",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "toys|TEDDY BEAR": {
@@ -5959,7 +5959,7 @@
     "not photo-like 0.42"
    ],
    "origin": "search:balloons",
-   "n_cands": 4,
+   "n_cands": 5,
    "forced": false
   },
   "toys|DRUM": {
@@ -8209,7 +8209,7 @@
    ],
    "flags": [],
    "origin": "search:dice",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "toys|BOARD GAME": {
@@ -8243,7 +8243,7 @@
     "fit 0.59"
    ],
    "origin": "current",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "places|CINEMA": {
@@ -15654,7 +15654,7 @@
     "fit 0.46"
    ],
    "origin": "search:QI",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "technology|KEYBOARD": {
@@ -21313,7 +21313,22 @@
    "forced": false
   },
   "technology|EMOJI": {
-   "status": "no candidates"
+   "title": "File:Balloon with smiley face 02.jpg",
+   "final": 1.027,
+   "p": 1.0,
+   "photo": 0.9377,
+   "fit": 0.283,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.74)"
+   ],
+   "flags": [
+    "fit 0.28"
+   ],
+   "origin": "search:smiley face balloon",
+   "n_cands": 3,
+   "forced": false
   },
   "technology|VIDEO CALL": {
    "title": "File:Cheerful woman smiling and making gestures with her hands while talking on a video call on her laptop.jpg",
@@ -21435,7 +21450,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:QI",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "technology|ROBOT ARM": {
@@ -23285,7 +23300,19 @@
    "forced": false
   },
   "toys|SANDCASTLE": {
-   "status": "no candidates"
+   "title": "File:Sand castle on Castle Street - geograph.org.uk - 1865993.jpg",
+   "final": 1.15,
+   "p": 0.945,
+   "photo": 0.4891,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.49"
+   ],
+   "origin": "search:sand castle",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|SNOW GLOBE": {
    "title": "File:KRYONIUM 1 Matthias A. K. Zimmermann Kulturverlag Kadmos.jpg",
@@ -23539,7 +23566,19 @@
    "forced": false
   },
   "toys|GLOW STICK": {
-   "status": "no candidates"
+   "title": "File:Glow sticks on Baga beach at night.jpg",
+   "final": 1.164,
+   "p": 0.9995,
+   "photo": 0.717,
+   "fit": 0.835,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:glow sticks",
+   "n_cands": 8,
+   "forced": false
   },
   "toys|PLAYHOUSE": {
    "title": "File:Plastic house.jpg",
@@ -30152,7 +30191,6 @@
   "toys|DOCTOR KIT",
   "toys|DOLL",
   "toys|DOMINOES",
-  "toys|GLOW STICK",
   "toys|HULA HOOP",
   "toys|JACK-IN-THE-BOX",
   "toys|KALEIDOSCOPE",
@@ -30308,7 +30346,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1895,
-  "flagged": 1094
+  "with_photo": 1898,
+  "flagged": 1093
  }
 }

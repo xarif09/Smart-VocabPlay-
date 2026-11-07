@@ -5256,6 +5256,13 @@
   "license": "Public domain",
   "score": 1.09
  },
+ "jobs|ATHLETE": {
+  "file": "w/jobs__athlete.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Las_leoncitas_y_su_medalla_de_oro_05_(cropped).jpg",
+  "author": "BugWarp",
+  "license": "CC BY-SA 4.0",
+  "score": 0.979
+ },
  "jobs|BAKER": {
   "file": "w/jobs__baker.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:USS_John_C._Stennis_baker.jpg",
@@ -5263,12 +5270,40 @@
   "license": "Public domain",
   "score": 0.798
  },
+ "jobs|BEEKEEPER": {
+  "file": "w/jobs__beekeeper.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Beekeeper_holding_frame_at_El_Sol_Winery.jpg",
+  "author": "Grendelkhan",
+  "license": "CC BY-SA 4.0",
+  "score": 1.234
+ },
  "jobs|BUILDER": {
   "file": "w/jobs__builder.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Construction_worker_-_geograph.org.uk_-_1882862.jpg",
   "author": "David Lally",
   "license": "CC BY-SA 2.0",
   "score": 1.122
+ },
+ "jobs|BUTCHER": {
+  "file": "w/jobs__butcher.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Embutidos_en_una_carniceria_del_Mercado_Municipal_de_Sao_Paulo.jpg",
+  "author": "Wilfredor",
+  "license": "CC BY-SA 4.0",
+  "score": 1.278
+ },
+ "jobs|CAPTAIN": {
+  "file": "w/jobs__captain.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:CAPTAIN_BADR_(ship,_1978)._S%C3%A8te_cf01.jpg",
+  "author": "Christian Ferrer",
+  "license": "CC BY 4.0",
+  "score": 0.705
+ },
+ "jobs|CARPENTER": {
+  "file": "w/jobs__carpenter.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Papilio_demoleus_ALT_by_kadavoor.jpg",
+  "author": "Jeevan Jose, Kerala, India",
+  "license": "CC BY-SA 4.0",
+  "score": 0.768
  },
  "jobs|CASHIER": {
   "file": "w/jobs__cashier.jpg",
@@ -5312,12 +5347,33 @@
   "license": "CC BY-SA 4.0",
   "score": 1.141
  },
+ "jobs|DELIVERY RIDER": {
+  "file": "w/jobs__delivery-rider.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:UBER_Eats_Delivery_Cyclist_Riding_Through_a_Busy_Oxford_Road_in_Manchester.jpg",
+  "author": "shopblocks",
+  "license": "CC BY 2.0",
+  "score": 1.13
+ },
  "jobs|DENTIST": {
   "file": "w/jobs__dentist.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Dentist_adjusting_braces_to_patient.jpg",
   "author": "Shixart1985",
   "license": "CC BY 2.0",
   "score": 0.979
+ },
+ "jobs|DESIGNER": {
+  "file": "w/jobs__designer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Liz_Claiborne,_fashion_designer.jpg",
+  "author": "Gotfryd, Bernard, photographer",
+  "license": "Public domain",
+  "score": 0.626
+ },
+ "jobs|DJ": {
+  "file": "w/jobs__dj.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Disc-Jockey_Hugo_Medina_(Jard%C3%ADn_Am%C3%A9rica,_Misiones,_Argentina).jpg",
+  "author": "Horacio Cambeiro",
+  "license": "CC BY-SA 4.0",
+  "score": 1.264
  },
  "jobs|DOCTOR": {
   "file": "w/jobs__doctor.jpg",
@@ -5333,12 +5389,26 @@
   "license": "CC BY 2.5",
   "score": 0.948
  },
+ "jobs|ELECTRICIAN": {
+  "file": "w/jobs__electrician.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Elektriker_bei_der_Arbeit_0809.jpg",
+  "author": "Ermell",
+  "license": "CC BY-SA 4.0",
+  "score": 1.249
+ },
  "jobs|ENGINEER": {
   "file": "w/jobs__engineer.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Kitty_Joyner_-_Electrical_Engineer_-_GPN-2000-001933.jpg",
   "author": "NACA",
   "license": "Public domain",
   "score": 0.911
+ },
+ "jobs|FAIRY": {
+  "file": "w/jobs__fairy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_Forlorn_Fairy_(68943671).jpeg",
+  "author": "Vanessa Kay",
+  "license": "CC BY 3.0",
+  "score": 1.3
  },
  "jobs|FARMER": {
   "file": "w/jobs__farmer.jpg",
@@ -5375,6 +5445,13 @@
   "license": "CC BY-SA 2.0",
   "score": 0.884
  },
+ "jobs|FLORIST": {
+  "file": "w/jobs__florist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kalanchoe_blossfeldiana_(Florist_Kalanchoe).jpg",
+  "author": "Sabalo22",
+  "license": "CC0",
+  "score": 0.805
+ },
  "jobs|FOOTBALL PLAYER": {
   "file": "w/jobs__football-player.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Brendan_Egan_soccer_player_Summer.png",
@@ -5403,6 +5480,13 @@
   "license": "CC BY-SA 2.0 de",
   "score": 0.723
  },
+ "jobs|JUDGE": {
+  "file": "w/jobs__judge.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Rorup,_Schandpfahl_--_2015_--_5255.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.661
+ },
  "jobs|KING": {
   "file": "w/jobs__king.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Saint_Edward%27s_Crown.jpg",
@@ -5410,12 +5494,40 @@
   "license": "Public domain",
   "score": 1.104
  },
+ "jobs|KNIGHT": {
+  "file": "w/jobs__knight.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A_Knight_and_his_Horse.jpg",
+  "author": "Sean Tbear",
+  "license": "CC BY 2.0",
+  "score": 1.296
+ },
  "jobs|LAWYER": {
   "file": "w/jobs__lawyer.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Helena_Normanton.jpg",
   "author": "Elliott & Fry",
   "license": "No restrictions",
   "score": 0.334
+ },
+ "jobs|LIBRARIAN": {
+  "file": "w/jobs__librarian.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Library_of_Congress_Librarian%27s_Room_(97925p).jpg",
+  "author": "Rhododendrites",
+  "license": "CC BY-SA 4.0",
+  "score": 0.933
+ },
+ "jobs|LIFEGUARD": {
+  "file": "w/jobs__lifeguard.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pismo_Beach_(California,_USA),_Beach_--_2012_--_3.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.378
+ },
+ "jobs|MAGICIAN": {
+  "file": "w/jobs__magician.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Zan_Zig_performing_with_rabbit_and_roses,_magician_poster,_1899-2.jpg",
+  "author": "Strobridge Litho. Co., Cincinnati & New York Restoration by trialsanderrors and Morn",
+  "license": "CC BY 2.0",
+  "score": 0.604
  },
  "jobs|MAIL CARRIER": {
   "file": "w/jobs__mail-carrier.jpg",
@@ -5459,6 +5571,27 @@
   "license": "CC BY-SA 3.0",
   "score": 0.964
  },
+ "jobs|PARAMEDIC": {
+  "file": "w/jobs__paramedic.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Fan_Zone_Mainufer,_Frankfurt_am_Main_(1X7A5616).jpg",
+  "author": "Matti Blume",
+  "license": "CC BY-SA 4.0",
+  "score": 0.895
+ },
+ "jobs|PARK RANGER": {
+  "file": "w/jobs__park-ranger.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kakadu_(AU),_Kakadu_National_Park,_Nadap_Lookout_--_2019_--_4182.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.684
+ },
+ "jobs|PHARMACIST": {
+  "file": "w/jobs__pharmacist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Zentralfriedhof,_Alter_Teil,_Grabst%C3%A4tte_Landois_--_2021_--_7267.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.691
+ },
  "jobs|PHOTOGRAPHER": {
   "file": "w/jobs__photographer.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Photograph_of_a_Photographer.jpg",
@@ -5472,6 +5605,13 @@
   "author": "Alfred T. Palmer",
   "license": "Public domain",
   "score": 1.022
+ },
+ "jobs|PIRATE": {
+  "file": "w/jobs__pirate.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:U.S._President_Barack_Obama_reacts_to_seeing_speechwriter_Cody_Keenan_outside_the_Oval_Office_on_May_8,_2009.jpg",
+  "author": "Pete Souza",
+  "license": "Public domain",
+  "score": 0.932
  },
  "jobs|PLUMBER": {
   "file": "w/jobs__plumber.jpg",
@@ -5487,12 +5627,47 @@
   "license": "Public domain",
   "score": 0.925
  },
+ "jobs|PRINCE": {
+  "file": "w/jobs__prince.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sir_Edwin_Landseer_(1803-73)_-_Queen_Victoria_and_Prince_Albert_at_the_Bal_Costum%C3%A9_of_12_May_1842_-_RCIN_404540_-_Royal_Collection.jpg",
+  "author": "Edwin Landseer",
+  "license": "Public domain",
+  "score": 0.622
+ },
+ "jobs|PRINCESS": {
+  "file": "w/jobs__princess.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:MaudCostumeNatMusNo03330.jpg",
+  "author": "Unknown author Unknown author",
+  "license": "CC BY 4.0",
+  "score": 1.143
+ },
+ "jobs|PROGRAMMER": {
+  "file": "w/jobs__programmer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Abihu_Kwashie_Agede_-_Software_Engineer.png",
+  "author": "AbihuCode",
+  "license": "CC BY 4.0",
+  "score": 0.872
+ },
  "jobs|QUEEN": {
   "file": "w/jobs__queen.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:%C3%89vrard_e_fr%C3%A9d%C3%A9ric_bapst,_diadema_della_duchessa_d%27anguoleme,_smeraldi,_diamanti,_oro_e_argento,_parigi_1819-20.jpg",
   "author": "Sailko",
   "license": "CC BY 3.0",
   "score": 0.804
+ },
+ "jobs|RECEPTIONIST": {
+  "file": "w/jobs__receptionist.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Leah-Katz-Hernandez.png",
+  "author": "Disability.gov",
+  "license": "Public domain",
+  "score": 1.057
+ },
+ "jobs|SAILOR": {
+  "file": "w/jobs__sailor.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Monument_to_the_sailors_in_Finiki._Karpathos,_Greece.jpg",
+  "author": "Ввласенко",
+  "license": "CC BY-SA 3.0",
+  "score": 0.962
  },
  "jobs|SCIENTIST": {
   "file": "w/jobs__scientist.jpg",
@@ -5543,12 +5718,33 @@
   "license": "Public domain",
   "score": 0.862
  },
+ "jobs|TAILOR": {
+  "file": "w/jobs__tailor.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Bhura_Singh,_Tailor_from_Rampura_Jawaharwala,_Punjab,_India_01.jpg",
+  "author": "Gurdeepdali",
+  "license": "CC BY-SA 4.0",
+  "score": 1.104
+ },
+ "jobs|TAXI DRIVER": {
+  "file": "w/jobs__taxi-driver.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Public_transport_share_taxi_in_Maracaibo_city,_Zulia,_Venezuela.jpg",
+  "author": "Wilfredor",
+  "license": "CC0",
+  "score": 1.331
+ },
  "jobs|TEACHER": {
   "file": "w/jobs__teacher.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Ni%C3%B1os_estudiantes_chilenos.jpg",
   "author": "Pontificia Universidad Católica de Chile from Santiago, Chile",
   "license": "CC BY-SA 2.0",
   "score": 0.916
+ },
+ "jobs|TOUR GUIDE": {
+  "file": "w/jobs__tour-guide.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tour_group_at_Castlerigg_Stone_Circle.jpg",
+  "author": "Dominic Nelson",
+  "license": "CC BY-SA 4.0",
+  "score": 1.037
  },
  "jobs|VET": {
   "file": "w/jobs__vet.jpg",
@@ -5563,6 +5759,27 @@
   "author": "Paramount Pictures",
   "license": "Public domain",
   "score": 0.95
+ },
+ "jobs|WIZARD": {
+  "file": "w/jobs__wizard.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cowboy_Wizard_displaying_whimsical_expression.jpg",
+  "author": "Ollie_Des",
+  "license": "CC0",
+  "score": 0.965
+ },
+ "jobs|WRITER": {
+  "file": "w/jobs__writer.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Senior_man_writer_with_glasses_writing_on_an_old_typewriter.jpg",
+  "author": "Shixart1985",
+  "license": "CC BY 2.0",
+  "score": 0.611
+ },
+ "jobs|ZOOKEEPER": {
+  "file": "w/jobs__zookeeper.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Alligator_Bay_at_Naples_Zoo.jpg",
+  "author": "Tim Menzies",
+  "license": "CC BY-SA 2.0",
+  "score": 1.279
  },
  "music|ACCORDION": {
   "file": "w/music__accordion.jpg",

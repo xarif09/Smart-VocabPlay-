@@ -11028,10 +11028,39 @@
    "forced": false
   },
   "jobs|PROGRAMMER": {
-   "status": "no candidates"
+   "title": "File:Abihu Kwashie Agede - Software Engineer.png",
+   "final": 0.872,
+   "p": 0.9571,
+   "photo": 0.9118,
+   "fit": 0.289,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "fit 0.29"
+   ],
+   "origin": "search:software developer",
+   "n_cands": 5,
+   "forced": false
   },
   "jobs|DESIGNER": {
-   "status": "no candidates"
+   "title": "File:Liz Claiborne, fashion designer.jpg",
+   "final": 0.626,
+   "p": 0.9873,
+   "photo": 0.037,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "not photo-like 0.04"
+   ],
+   "origin": "search:fashion designer",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|PHOTOGRAPHER": {
    "title": "File:Photograph of a Photographer.jpg",
@@ -11067,7 +11096,21 @@
    "forced": false
   },
   "jobs|WRITER": {
-   "status": "no candidates"
+   "title": "File:Senior man writer with glasses writing on an old typewriter.jpg",
+   "final": 0.611,
+   "p": 0.9998,
+   "photo": 0.0179,
+   "fit": 0.76,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.02"
+   ],
+   "origin": "search:writer writing",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|MUSICIAN": {
    "title": "File:Joan Baez and Bob Dylan.jpg",
@@ -11134,10 +11177,32 @@
    "forced": false
   },
   "jobs|ELECTRICIAN": {
-   "status": "no candidates"
+   "title": "File:Elektriker bei der Arbeit 0809.jpg",
+   "final": 1.249,
+   "p": 0.9678,
+   "photo": 0.5031,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:electrician at work",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|CARPENTER": {
-   "status": "no candidates"
+   "title": "File:Papilio demoleus ALT by kadavoor.jpg",
+   "final": 0.768,
+   "p": 0.0,
+   "photo": 0.9927,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:carpenter at work",
+   "n_cands": 6,
+   "forced": false
   },
   "jobs|GARDENER": {
    "title": "File:Cementerio, Tulcán, Ecuador, 2015-07-21, DD 60.JPG",
@@ -11220,7 +11285,17 @@
    "forced": false
   },
   "jobs|TAXI DRIVER": {
-   "status": "no candidates"
+   "title": "File:Public transport share taxi in Maracaibo city, Zulia, Venezuela.jpg",
+   "final": 1.331,
+   "p": 0.9332,
+   "photo": 0.9728,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:taxi driver",
+   "n_cands": 5,
+   "forced": false
   },
   "jobs|FLIGHT ATTENDANT": {
    "title": "File:Austrian Crew - 8961564592.jpg",
@@ -11241,7 +11316,21 @@
    "forced": false
   },
   "jobs|CAPTAIN": {
-   "status": "no candidates"
+   "title": "File:CAPTAIN BADR (ship, 1978). Sète cf01.jpg",
+   "final": 0.705,
+   "p": 0.5835,
+   "photo": 0.9804,
+   "fit": 0.36,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.60)"
+   ],
+   "flags": [
+    "fit 0.36"
+   ],
+   "origin": "search:ship captain",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|FARMER'S HELPER": {
    "title": "File:Woman at work, Gujarat.jpg",
@@ -11289,10 +11378,32 @@
    "forced": false
   },
   "jobs|PRINCE": {
-   "status": "no candidates"
+   "title": "File:Sir Edwin Landseer (1803-73) - Queen Victoria and Prince Albert at the Bal Costumé of 12 May 1842 - RCIN 404540 - Royal Collection.jpg",
+   "final": 0.622,
+   "p": 0.0009,
+   "photo": 0.5548,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:prince costume",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|PRINCESS": {
-   "status": "no candidates"
+   "title": "File:MaudCostumeNatMusNo03330.jpg",
+   "final": 1.143,
+   "p": 0.854,
+   "photo": 0.9731,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:princess costume",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|SUPERHERO": {
    "title": "File:Front cover, \"Wow Comics\" no. 38 (art by Jack Binder).jpg",
@@ -11312,7 +11423,22 @@
    "forced": false
   },
   "jobs|PIRATE": {
-   "status": "no candidates"
+   "title": "File:U.S. President Barack Obama reacts to seeing speechwriter Cody Keenan outside the Oval Office on May 8, 2009.jpg",
+   "final": 0.932,
+   "p": 0.9039,
+   "photo": 0.8868,
+   "fit": 0.45,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "fit 0.45"
+   ],
+   "origin": "search:pirate costume",
+   "n_cands": 6,
+   "forced": false
   },
   "jobs|CLOWN": {
    "title": "File:Clown costume.jpg",
@@ -11334,7 +11460,21 @@
    "forced": false
   },
   "jobs|MAGICIAN": {
-   "status": "no candidates"
+   "title": "File:Zan Zig performing with rabbit and roses, magician poster, 1899-2.jpg",
+   "final": 0.604,
+   "p": 0.9999,
+   "photo": 0.0001,
+   "fit": 0.808,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.00"
+   ],
+   "origin": "search:magician performing",
+   "n_cands": 6,
+   "forced": false
   },
   "home|LIVING ROOM": {
    "title": "File:Sittingroom-edit1.jpg",
@@ -22197,64 +22337,308 @@
    "forced": false
   },
   "jobs|LIBRARIAN": {
-   "status": "no candidates"
+   "title": "File:Library of Congress Librarian's Room (97925p).jpg",
+   "final": 0.933,
+   "p": 0.7207,
+   "photo": 0.9776,
+   "fit": 0.644,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|PHARMACIST": {
-   "status": "no candidates"
+   "title": "File:Münster, Zentralfriedhof, Alter Teil, Grabstätte Landois -- 2021 -- 7267.jpg",
+   "final": 0.691,
+   "p": 0.0,
+   "photo": 0.9536,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "jobs|ZOOKEEPER": {
-   "status": "no candidates"
+   "title": "File:Alligator Bay at Naples Zoo.jpg",
+   "final": 1.279,
+   "p": 0.9992,
+   "photo": 0.9931,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:zookeeper at work",
+   "n_cands": 6,
+   "forced": false
   },
   "jobs|LIFEGUARD": {
-   "status": "no candidates"
+   "title": "File:Pismo Beach (California, USA), Beach -- 2012 -- 3.jpg",
+   "final": 1.378,
+   "p": 1.0,
+   "photo": 0.9266,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|TOUR GUIDE": {
-   "status": "no candidates"
+   "title": "File:Tour group at Castlerigg Stone Circle.jpg",
+   "final": 1.037,
+   "p": 0.9506,
+   "photo": 0.9858,
+   "fit": 0.597,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.60"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|DELIVERY RIDER": {
-   "status": "no candidates"
+   "title": "File:UBER Eats Delivery Cyclist Riding Through a Busy Oxford Road in Manchester.jpg",
+   "final": 1.13,
+   "p": 0.9992,
+   "photo": 0.9823,
+   "fit": 0.667,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.67"
+   ],
+   "origin": "search:food delivery rider",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|BUTCHER": {
-   "status": "no candidates"
+   "title": "File:Embutidos en una carniceria del Mercado Municipal de Sao Paulo.jpg",
+   "final": 1.278,
+   "p": 0.9943,
+   "photo": 0.8956,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|FLORIST": {
-   "status": "no candidates"
+   "title": "File:Kalanchoe blossfeldiana (Florist Kalanchoe).jpg",
+   "final": 0.805,
+   "p": 0.0,
+   "photo": 0.9992,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|TAILOR": {
-   "status": "no candidates"
+   "title": "File:Bhura Singh, Tailor from Rampura Jawaharwala, Punjab, India 01.jpg",
+   "final": 1.104,
+   "p": 0.9997,
+   "photo": 0.3216,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.32"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|RECEPTIONIST": {
-   "status": "no candidates"
+   "title": "File:Leah-Katz-Hernandez.png",
+   "final": 1.057,
+   "p": 0.9659,
+   "photo": 0.862,
+   "fit": 0.64,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)"
+   ],
+   "flags": [
+    "fit 0.64"
+   ],
+   "origin": "search:receptionist at work",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|JUDGE": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Rorup, Schandpfahl -- 2015 -- 5255.jpg",
+   "final": 0.661,
+   "p": 0.0016,
+   "photo": 0.9448,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|SAILOR": {
-   "status": "no candidates"
+   "title": "File:Monument to the sailors in Finiki. Karpathos, Greece.jpg",
+   "final": 0.962,
+   "p": 0.9423,
+   "photo": 0.9771,
+   "fit": 0.476,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.79)"
+   ],
+   "flags": [
+    "fit 0.48"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|KNIGHT": {
-   "status": "no candidates"
+   "title": "File:A Knight and his Horse.jpg",
+   "final": 1.296,
+   "p": 0.9969,
+   "photo": 0.9959,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:knight armour reenactment",
+   "n_cands": 7,
+   "forced": false
   },
   "jobs|WIZARD": {
-   "status": "no candidates"
+   "title": "File:Cowboy Wizard displaying whimsical expression.jpg",
+   "final": 0.965,
+   "p": 1.0,
+   "photo": 0.7288,
+   "fit": 0.41,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.85)"
+   ],
+   "flags": [
+    "fit 0.41"
+   ],
+   "origin": "search:wizard costume",
+   "n_cands": 3,
+   "forced": false
   },
   "jobs|FAIRY": {
-   "status": "no candidates"
+   "title": "File:The Forlorn Fairy (68943671).jpeg",
+   "final": 1.3,
+   "p": 1.0,
+   "photo": 0.9998,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:fairy costume girl",
+   "n_cands": 6,
+   "forced": false
   },
   "jobs|ATHLETE": {
-   "status": "no candidates"
+   "title": "File:Las leoncitas y su medalla de oro 05 (cropped).jpg",
+   "final": 0.979,
+   "p": 0.9939,
+   "photo": 0.9091,
+   "fit": 0.464,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.97)"
+   ],
+   "flags": [
+    "fit 0.46"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|PARK RANGER": {
-   "status": "no candidates"
+   "title": "File:Kakadu (AU), Kakadu National Park, Nadap Lookout -- 2019 -- 4182.jpg",
+   "final": 0.684,
+   "p": 0.0,
+   "photo": 0.9222,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|PARAMEDIC": {
-   "status": "no candidates"
+   "title": "File:Fan Zone Mainufer, Frankfurt am Main (1X7A5616).jpg",
+   "final": 0.895,
+   "p": 0.8277,
+   "photo": 0.3116,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.31"
+   ],
+   "origin": "search:QI",
+   "n_cands": 6,
+   "forced": false
   },
   "jobs|BEEKEEPER": {
-   "status": "no candidates"
+   "title": "File:Beekeeper holding frame at El Sol Winery.jpg",
+   "final": 1.234,
+   "p": 0.9999,
+   "photo": 0.6697,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:QI",
+   "n_cands": 8,
+   "forced": false
   },
   "jobs|DJ": {
-   "status": "no candidates"
+   "title": "File:Disc-Jockey Hugo Medina (Jardín América, Misiones, Argentina).jpg",
+   "final": 1.264,
+   "p": 0.9999,
+   "photo": 0.8213,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:disc jockey",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|ON": {
    "status": "no candidates"
@@ -22832,8 +23216,6 @@
   "jobs|ARTIST",
   "jobs|ATHLETE",
   "jobs|BAKER",
-  "jobs|BEEKEEPER",
-  "jobs|BUTCHER",
   "jobs|CAPTAIN",
   "jobs|CARPENTER",
   "jobs|CHEF",
@@ -22842,11 +23224,8 @@
   "jobs|DELIVERY RIDER",
   "jobs|DENTIST",
   "jobs|DESIGNER",
-  "jobs|DJ",
   "jobs|DOCTOR",
-  "jobs|ELECTRICIAN",
   "jobs|ENGINEER",
-  "jobs|FAIRY",
   "jobs|FLIGHT ATTENDANT",
   "jobs|FLORIST",
   "jobs|FOOTBALL PLAYER",
@@ -22854,10 +23233,8 @@
   "jobs|HAIRDRESSER",
   "jobs|JOURNALIST",
   "jobs|JUDGE",
-  "jobs|KNIGHT",
   "jobs|LAWYER",
   "jobs|LIBRARIAN",
-  "jobs|LIFEGUARD",
   "jobs|MAGICIAN",
   "jobs|MUSICIAN",
   "jobs|NURSE",
@@ -22868,7 +23245,6 @@
   "jobs|PIRATE",
   "jobs|POLICE",
   "jobs|PRINCE",
-  "jobs|PRINCESS",
   "jobs|PROGRAMMER",
   "jobs|QUEEN",
   "jobs|RECEPTIONIST",
@@ -22878,14 +23254,12 @@
   "jobs|STREET VENDOR",
   "jobs|SUPERHERO",
   "jobs|TAILOR",
-  "jobs|TAXI DRIVER",
   "jobs|TEACHER",
   "jobs|TOUR GUIDE",
   "jobs|VET",
   "jobs|WAITER",
   "jobs|WIZARD",
   "jobs|WRITER",
-  "jobs|ZOOKEEPER",
   "music|AUDIENCE",
   "music|BAGPIPES",
   "music|BAND",
@@ -23681,7 +24055,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1330,
-  "flagged": 1339
+  "with_photo": 1361,
+  "flagged": 1329
  }
 }

@@ -907,5 +907,113 @@
  },
  "food|CEREAL": {
   "file": "File:NCI Visuals Food Meal Breakfast.jpg"
+ },
+ "food|WAFFLE": {
+  "file": "File:Waffles with Strawberries.jpg"
+ },
+ "food|SAUSAGE": {
+  "file": "File:JP 日本 Japan 沖繩 OKINAWA 那霸 Naha 安里 Asato Hewitt Resort Naha Okinawa Hotel 自助早餐 breakfast buffet food restaurant 腸仔 grilled sausage February 2026 N13P 06.jpg"
+ },
+ "food|KETCHUP": {
+  "file": "File:Ketchup 20160918 181342 (cropped).jpg"
+ },
+ "food|BACON": {
+  "queries": [
+   "bacon strips",
+   "fried bacon"
+  ]
+ },
+ "vegetables|SPRING ONION": {
+  "file": "File:CSA-Red-Spring-Onions.jpg"
+ },
+ "vegetables|STRAW MUSHROOM": {
+  "file": "File:StrawMushroom.jpg"
+ },
+ "vegetables|CASSAVA": {
+  "file": "File:PeeLawPeeNam Cassava root Yuca Manioc.jpg"
+ },
+ "vegetables|LEEK": {
+  "file": "File:Leek on a white background.png"
+ },
+ "vegetables|LUFFA": {
+  "file": "File:Luffa acutangula vegetable 019.jpg"
+ },
+ "vegetables|MINT": {
+  "file": "File:CSA-Chocolate-Mint.jpg"
+ },
+ "vegetables|DILL": {
+  "queries": [
+   "dill herb",
+   "fresh dill"
+  ]
+ },
+ "vegetables|ENOKI": {
+  "queries": [
+   "enoki mushrooms",
+   "Flammulina enoki"
+  ]
+ },
+ "vegetables|BEANS": {
+  "queries": [
+   "green beans",
+   "string beans"
+  ]
+ },
+ "school|BOOK": {
+  "file": "File:Latin dictionary.jpg"
+ },
+ "school|MARKER": {
+  "file": "File:Felt Tip.jpg"
+ },
+ "school|PAINT": {
+  "file": "File:Multicolored tempera paints.jpg"
+ },
+ "school|PAINTBRUSH": {
+  "file": "File:Transparent Paintbrush.png"
+ },
+ "school|CHAIR": {
+  "file": "File:Set of fourteen side chairs MET DP110780.jpg"
+ },
+ "school|CLASSMATE": {
+  "file": "File:Head, Shoulders, Knees and Toes.jpg"
+ },
+ "school|PRINCIPAL": {
+  "file": "File:A high school principal shows off a newly-built classroom at Hayesville High School in North Carolina.jpg"
+ },
+ "school|STICKER": {
+  "file": "File:Sticker mule custom stickers.jpg"
+ },
+ "school|CHALK": {
+  "file": "File:Chalk on sidewalk in Park Slope (02730).jpg"
+ },
+ "school|TEXTBOOK": {
+  "file": "File:A tower of used books - 8443.jpg"
+ },
+ "school|DESK": {
+  "file": "File:Bureau table MET DP108643.jpg"
+ },
+ "school|PAPER": {
+  "file": "File:Paper 450x450.jpg"
+ },
+ "school|THUMBTACK": {
+  "file": "File:Red thumbtack (2814122833).jpg"
+ },
+ "school|HIGHLIGHTER": {
+  "queries": [
+   "highlighter pens",
+   "highlighter marker"
+  ]
+ },
+ "school|FOLDER": {
+  "queries": [
+   "file folders office",
+   "paper folder"
+  ]
+ },
+ "school|ENGLISH": {
+  "queries": [
+   "alphabet blocks",
+   "ABC letters toy"
+  ]
  }
 }

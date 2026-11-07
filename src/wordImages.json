@@ -6763,17 +6763,17 @@
  },
  "nature|AIR": {
   "file": "w/nature__air.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Top_of_Atmosphere.jpg",
-  "author": "NASA Earth Observatory",
-  "license": "Public domain",
-  "score": 0.485
+  "src": "https://commons.wikimedia.org/wiki/File:%22I%27m_forever_blowing_bubbles.%22_-_geograph.org.uk_-_2576925.jpg",
+  "author": "Richard Hoare",
+  "license": "CC BY-SA 2.0",
+  "score": 1.088
  },
  "nature|BAMBOO": {
   "file": "w/nature__bamboo.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bamboo_forest.jpg",
   "author": "Kamakura",
   "license": "CC BY-SA 3.0",
-  "score": 0.972
+  "score": 1.117
  },
  "nature|BEEHIVE": {
   "file": "w/nature__beehive.jpg",
@@ -6784,31 +6784,31 @@
  },
  "nature|BRANCH": {
   "file": "w/nature__branch.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Branches_(DSC_0326).jpg",
-  "author": "Trougnouf (Benoit Brummer)",
-  "license": "CC BY 4.0",
-  "score": 0.269
+  "src": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Park_Sentmaring_--_2015_--_9923.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 1.302
  },
  "nature|BUSH": {
   "file": "w/nature__bush.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Cytisus_scoparius2.jpg",
-  "author": "",
-  "license": "CC BY-SA 3.0",
-  "score": 0.94
+  "src": "https://commons.wikimedia.org/wiki/File:A_manzanita_bush_near_the_small_lake_in_the_Quinlan_Mountains_Kitt_Peak%E2%80%99s_Tohono_O%E2%80%99odham_name_is_I%27oligam_Du%27ag,_which_means_manzanita_shrub_mountain_(annee25058i).jpg",
+  "author": "J. Ramon-Sauberan",
+  "license": "CC BY 4.0",
+  "score": 1.074
  },
  "nature|CACTUS": {
   "file": "w/nature__cactus.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Carnegiea_gigantea_in_Saguaro_National_Park_near_Tucson,_Arizona_during_November_(58).jpg",
   "author": "WClarke",
   "license": "CC BY-SA 3.0",
-  "score": 1.141
+  "score": 1.344
  },
  "nature|CAVE": {
   "file": "w/nature__cave.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Lechuguilla_Cave_Pearlsian_Gulf.jpg",
   "author": "Dave Bunnell / Under Earth Images",
   "license": "CC BY-SA 2.5",
-  "score": 1.097
+  "score": 1.292
  },
  "nature|CLIFF": {
   "file": "w/nature__cliff.jpg",
@@ -6822,14 +6822,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:The_sky_is_beautiful_with_cumulus_clouds.jpg",
   "author": "Nana Hemaa N.A",
   "license": "CC0",
-  "score": 0.925
+  "score": 1.138
  },
  "nature|CORAL": {
   "file": "w/nature__coral.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Blue_Linckia_Starfish.JPG",
-  "author": "Richard Ling <wikipedia@rling.com>",
+  "src": "https://commons.wikimedia.org/wiki/File:Helcogramma_striata_(Neon_triplefin)_on_Diploastrea_heliopora_(Hard_coral).jpg",
+  "author": "Nhobgood Nick Hobgood",
   "license": "CC BY-SA 3.0",
-  "score": 1.076
+  "score": 1.367
  },
  "nature|DAISY": {
   "file": "w/nature__daisy.jpg",
@@ -6844,13 +6844,6 @@
   "author": "Romzig",
   "license": "CC0",
   "score": 1.188
- },
- "nature|DESERT": {
-  "file": "w/nature__desert.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Rub_al_Khali_002.JPG",
-  "author": "Nepenthes",
-  "license": "CC BY-SA 3.0",
-  "score": 1.102
  },
  "nature|EARTH": {
   "file": "w/nature__earth.jpg",
@@ -6878,28 +6871,28 @@
   "src": "https://commons.wikimedia.org/wiki/File:Field_with_mixed_intercropping_of_oat_and_rye.jpg",
   "author": "W.carter",
   "license": "CC0",
-  "score": 1.057
+  "score": 1.26
  },
  "nature|FIRE": {
   "file": "w/nature__fire.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Boiling_kettle_over_campfire_in_forest.jpg",
   "author": "Domalchuk",
   "license": "CC0",
-  "score": 1.051
+  "score": 1.202
  },
  "nature|FLOWER": {
   "file": "w/nature__flower.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Rubus_ulmifolius,_flowers_and_buds,_Vias,_H%C3%A9rault_01.jpg",
   "author": "Christian Ferrer",
   "license": "CC BY-SA 4.0",
-  "score": 0.98
+  "score": 1.097
  },
  "nature|FOREST": {
   "file": "w/nature__forest.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bamboo-Lined_Forest_Trail_in_Tadoba_Andhari_National_Park.jpg",
   "author": "Rohit Sharma",
   "license": "CC BY-SA 4.0",
-  "score": 1.081
+  "score": 1.281
  },
  "nature|FRANGIPANI": {
   "file": "w/nature__frangipani.jpg",
@@ -6927,7 +6920,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Poa_annua.jpg",
   "author": "Rasbak",
   "license": "CC BY-SA 3.0",
-  "score": 1.115
+  "score": 1.315
  },
  "nature|HIBISCUS": {
   "file": "w/nature__hibiscus.jpg",
@@ -6941,7 +6934,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Cape_Town_(ZA),_Sea_Point,_Nachtansicht_--_2024_--_1867-70_-_2.jpg",
   "author": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
-  "score": 0.547
+  "score": 0.79
  },
  "nature|ICEBERG": {
   "file": "w/nature__iceberg.jpg",
@@ -6952,10 +6945,10 @@
  },
  "nature|ISLAND": {
   "file": "w/nature__island.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:KohPhiPhi.JPG",
-  "author": "Luxure",
-  "license": "CC BY 3.0 au",
-  "score": 0.681
+  "src": "https://commons.wikimedia.org/wiki/File:The_Neck_Bruny_Island.jpg",
+  "author": "JJ Harrison ( https://www.jjharrison.com.au/ )",
+  "license": "CC BY-SA 2.5",
+  "score": 0.839
  },
  "nature|JASMINE": {
   "file": "w/nature__jasmine.jpg",
@@ -6969,7 +6962,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Lake_Kinney_mit_Mount_Whitehorn.jpg",
   "author": "Florian Fuchs",
   "license": "CC BY 3.0",
-  "score": 1.16
+  "score": 1.363
  },
  "nature|LAVA": {
   "file": "w/nature__lava.jpg",
@@ -6983,14 +6976,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Lisc_lipy.jpg",
   "author": "Krzysztof P. Jasiutowicz",
   "license": "CC BY-SA 3.0",
-  "score": 1.072
+  "score": 1.218
  },
  "nature|LOTUS": {
   "file": "w/nature__lotus.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Sacred_lotus_Nelumbo_nucifera.jpg",
-  "author": "T.Voekler",
-  "license": "CC BY-SA 3.0",
-  "score": 1.021
+  "src": "https://commons.wikimedia.org/wiki/File:Nelumbo_nucifera,_also_known_as_Indian_lotus_in_bud_stage_(Image_7_of_7).jpg",
+  "author": "Subhrajyoti07",
+  "license": "CC BY-SA 4.0",
+  "score": 1.384
  },
  "nature|MANGROVE": {
   "file": "w/nature__mangrove.jpg",
@@ -7018,7 +7011,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Space_Shuttle_Discovery_under_a_full_moon,_03-11-09.jpg",
   "author": "NASA/Bill Inglais",
   "license": "Public domain",
-  "score": 1.088
+  "score": 1.258
  },
  "nature|MOSS": {
   "file": "w/nature__moss.jpg",
@@ -7032,14 +7025,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg",
   "author": "Luca Galuzzi ( Lucag )",
   "license": "CC BY-SA 2.5",
-  "score": 1.097
- },
- "nature|MUD": {
-  "file": "w/nature__mud.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:2003-11-27_Northerner_boots_in_mud.jpg",
-  "author": "Ildar Sagdejev ( Specious )",
-  "license": "CC BY-SA 4.0",
-  "score": 1.069
+  "score": 1.295
  },
  "nature|NEST": {
   "file": "w/nature__nest.jpg",
@@ -7053,14 +7039,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Seal_Rocks,_Ocean_Beach,_San_Francisco.jpg",
   "author": "Radomianin",
   "license": "CC BY-SA 4.0",
-  "score": 1.002
+  "score": 1.209
  },
  "nature|ORCHID": {
   "file": "w/nature__orchid.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg",
   "author": "Rohit Naniwadekar",
   "license": "CC BY-SA 4.0",
-  "score": 1.169
+  "score": 1.367
  },
  "nature|PALM TREE": {
   "file": "w/nature__palm-tree.jpg",
@@ -7092,24 +7078,24 @@
  },
  "nature|PLANET": {
   "file": "w/nature__planet.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Planet_collage_to_scale.jpg",
-  "author": "CactiStaccingCrane",
-  "license": "CC BY-SA 4.0",
-  "score": 0.816
+  "src": "https://commons.wikimedia.org/wiki/File:Top_view_of_the_rings_of_Saturn_by_Cassini_-_October_10,_2013.jpg",
+  "author": "NASA / JPL-Caltech / SSI / Cornell",
+  "license": "Public domain",
+  "score": 1.222
  },
  "nature|POND": {
   "file": "w/nature__pond.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Cornjum,_Martenastate_010.jpg",
   "author": "Agnes Monkelbaan",
   "license": "CC BY-SA 4.0",
-  "score": 1.032
+  "score": 1.234
  },
  "nature|RAINBOW": {
   "file": "w/nature__rainbow.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Double-alaskan-rainbow.jpg",
   "author": "Eric Rolph at English Wikipedia",
   "license": "CC BY-SA 2.5",
-  "score": 1.183
+  "score": 1.381
  },
  "nature|RICE PADDY": {
   "file": "w/nature__rice-paddy.jpg",
@@ -7123,14 +7109,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Pirogue_running_on_the_Mekong_at_golden_hour_between_Don_Det_and_Don_Khon_Laos.jpg",
   "author": "Basile Morin",
   "license": "CC BY-SA 4.0",
-  "score": 1.139
+  "score": 1.338
  },
  "nature|ROCK": {
   "file": "w/nature__rock.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Boulder_of_Hornblende_Rock_on_Mica_Slate,_Neutaconkanut_Hill_(Jackson_1840).png",
-  "author": "Unknown author Unknown author",
-  "license": "Public domain",
-  "score": 1.012
+  "src": "https://commons.wikimedia.org/wiki/File:Rock_hyrax_(Procavia_capensis).jpg",
+  "author": "Charles J. Sharp",
+  "license": "CC BY-SA 4.0",
+  "score": 1.087
  },
  "nature|ROOT": {
   "file": "w/nature__root.jpg",
@@ -7144,63 +7130,63 @@
   "src": "https://commons.wikimedia.org/wiki/File:Rosa_rubiginosa_1.jpg",
   "author": "Stan Shebs",
   "license": "CC BY-SA 3.0",
-  "score": 1.089
+  "score": 1.257
  },
  "nature|SAND": {
   "file": "w/nature__sand.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Morro_Jable_(Fuerteventura,_Spain),_Strand_--_2025_--_2487.jpg",
   "author": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
-  "score": 0.625
+  "score": 0.868
  },
  "nature|SEA": {
   "file": "w/nature__sea.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Spring_Lake,_New_Jersey_Beach_at_Sunrise.jpg",
-  "author": "Nick Harris",
-  "license": "CC BY 2.5",
-  "score": 0.566
+  "src": "https://commons.wikimedia.org/wiki/File:California_sea_lion_in_La_Jolla_(70568).jpg",
+  "author": "Rhododendrites",
+  "license": "CC BY-SA 4.0",
+  "score": 0.934
  },
  "nature|SEED": {
   "file": "w/nature__seed.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:%D0%A0%D0%B0%D0%B7%D0%BD%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D0%B5_%D1%81%D0%B5%D0%BC%D1%8F%D0%BD.jpg",
   "author": "Alexander Klepnev",
   "license": "CC BY 4.0",
-  "score": 1.078
+  "score": 1.226
  },
  "nature|SHELL": {
   "file": "w/nature__shell.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Conchiglie_Seashells_01.jpg",
-  "author": "Alessio Sbarbaro User_talk:Yoggysot",
-  "license": "CC BY-SA 2.5",
-  "score": 0.805
+  "src": "https://commons.wikimedia.org/wiki/File:Bufonaria_perelegans_2010_G1.jpg",
+  "author": "George Chernilevsky",
+  "license": "Public domain",
+  "score": 0.989
  },
  "nature|SKY": {
   "file": "w/nature__sky.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:CirrusField-color.jpg",
-  "author": "PiccoloNamek",
-  "license": "CC BY-SA 3.0",
-  "score": 0.638
+  "src": "https://commons.wikimedia.org/wiki/File:Trees_rising_out_of_Cheow_Lan_Lake,_blue_sky,_eternal_summer_in_Surat_Thani_edited.jpg",
+  "author": "Original: Vyacheslav Argenberg Derivative work: The Cosmonaut",
+  "license": "CC BY 4.0",
+  "score": 0.741
  },
  "nature|SMOKE": {
   "file": "w/nature__smoke.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Ognisko_ubt_0126.jpeg",
   "author": "© 2005 by Tomasz Sienicki [user: tsca , mail: tomasz.sienicki at gmail.com]",
   "license": "CC BY-SA 3.0",
-  "score": 1.03
+  "score": 1.232
  },
  "nature|SOIL": {
   "file": "w/nature__soil.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Stagnogley.JPG",
   "author": "HolgerK at English Wikipedia",
   "license": "Public domain",
-  "score": 1.167
+  "score": 1.365
  },
  "nature|SPACE": {
   "file": "w/nature__space.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg",
   "author": "NASA, ESA, CSA, and STScI",
   "license": "Public domain",
-  "score": 0.537
+  "score": 0.785
  },
  "nature|SPIDER WEB": {
   "file": "w/nature__spider-web.jpg",
@@ -7214,28 +7200,28 @@
   "src": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B2%D0%B5%D1%82_%D0%BE%D1%82_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D0%B8_-_panoramio.jpg",
   "author": "Alexey Elfimov",
   "license": "CC BY 3.0",
-  "score": 1.097
+  "score": 1.294
  },
  "nature|STONE": {
   "file": "w/nature__stone.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Pebble_Dash_(15366562092).jpg",
-  "author": "wardyboy400",
-  "license": "CC BY 2.0",
-  "score": 0.423
+  "src": "https://commons.wikimedia.org/wiki/File:Gravel_stones_-_Preview_(Amal_Kumar_via_Poly_Haven).webp",
+  "author": "Amal Kumar ( https://polyhaven.com/all?a=Amal%20Kumar / https://web.archive.org/web/20230902205408/https://polyhaven.com/all?a=Amal%20Kumar ) via Poly Haven",
+  "license": "CC0",
+  "score": 0.456
  },
  "nature|STREAM": {
   "file": "w/nature__stream.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B2%D1%80%D1%86%D0%BA%D0%B0_2_PPRP001.jpg",
-  "author": "Svjetlopis, Vladimir Tadic",
+  "src": "https://commons.wikimedia.org/wiki/File:Breil-Brigels,_Lag_da_Breil-_Flem._23-09-2022._(d.j.b)_04.jpg",
+  "author": "Dominicus Johannes Bergsma",
   "license": "CC BY-SA 4.0",
-  "score": 0.741
+  "score": 1.111
  },
  "nature|SUN": {
   "file": "w/nature__sun.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:084_Sun_setting_in_the_Namib_desert_Photo_by_Giles_Laurent.jpg",
   "author": "Giles Laurent",
   "license": "CC BY-SA 4.0",
-  "score": 1.151
+  "score": 1.352
  },
  "nature|SUNFLOWER": {
   "file": "w/nature__sunflower.jpg",
@@ -7263,7 +7249,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Dragonblood_tree_in_Socotra_2.jpg",
   "author": "Alex38",
   "license": "CC BY 4.0",
-  "score": 1.04
+  "score": 1.245
  },
  "nature|TULIP": {
   "file": "w/nature__tulip.jpg",
@@ -7291,21 +7277,21 @@
   "src": "https://commons.wikimedia.org/wiki/File:Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg",
   "author": "Cyrus Read Geophysicist USGS, Alaska Volcano Observatory cread@usgs.gov",
   "license": "Public domain",
-  "score": 1.101
+  "score": 1.298
  },
  "nature|WATERFALL": {
   "file": "w/nature__waterfall.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Skradinski_buk_waterfall_%E2%80%93_NP_Krka_%E2%80%93_2016.jpg",
   "author": "Skot",
   "license": "CC BY-SA 4.0",
-  "score": 1.192
+  "score": 1.392
  },
  "nature|WAVE": {
   "file": "w/nature__wave.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Henry_Espinoza_Panta_smashing_a_wave_at_Lobitos.jpg",
   "author": "Freddy Sinarahua",
   "license": "CC BY-SA 4.0",
-  "score": 1.17
+  "score": 1.367
  },
  "nature|WOOD": {
   "file": "w/nature__wood.jpg",

@@ -3870,7 +3870,7 @@
   },
   "nature|TREE": {
    "title": "File:Dragonblood tree in Socotra 2.jpg",
-   "final": 1.04,
+   "final": 1.245,
    "p": 0.8736,
    "photo": 0.9933,
    "fit": 1.0,
@@ -3878,12 +3878,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:tree",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|FLOWER": {
    "title": "File:Rubus ulmifolius, flowers and buds, Vias, Hérault 01.jpg",
-   "final": 0.98,
+   "final": 1.097,
    "p": 0.9688,
    "photo": 0.9952,
    "fit": 0.44,
@@ -3901,7 +3901,7 @@
   },
   "nature|MOUNTAIN": {
    "title": "File:Everest North Face toward Base Camp Tibet Luca Galuzzi 2006.jpg",
-   "final": 1.097,
+   "final": 1.295,
    "p": 0.9968,
    "photo": 0.9805,
    "fit": 1.0,
@@ -3914,7 +3914,7 @@
   },
   "nature|RIVER": {
    "title": "File:Pirogue running on the Mekong at golden hour between Don Det and Don Khon Laos.jpg",
-   "final": 1.139,
+   "final": 1.338,
    "p": 0.9967,
    "photo": 0.9823,
    "fit": 1.0,
@@ -3927,7 +3927,7 @@
   },
   "nature|OCEAN": {
    "title": "File:Seal Rocks, Ocean Beach, San Francisco.jpg",
-   "final": 1.002,
+   "final": 1.209,
    "p": 0.852,
    "photo": 0.9945,
    "fit": 1.0,
@@ -3935,12 +3935,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:ocean",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|GRASS": {
    "title": "File:Poa annua.jpg",
-   "final": 1.115,
+   "final": 1.315,
    "p": 0.9806,
    "photo": 0.9908,
    "fit": 1.0,
@@ -3953,7 +3953,7 @@
   },
   "nature|LEAF": {
    "title": "File:Lisc lipy.jpg",
-   "final": 1.072,
+   "final": 1.218,
    "p": 0.9999,
    "photo": 0.9808,
    "fit": 0.652,
@@ -3966,28 +3966,28 @@
     "fit 0.65"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|ROCK": {
-   "title": "File:Boulder of Hornblende Rock on Mica Slate, Neutaconkanut Hill (Jackson 1840).png",
-   "final": 1.012,
-   "p": 0.9985,
-   "photo": 0.1298,
-   "fit": 1.0,
+   "title": "File:Rock hyrax (Procavia capensis).jpg",
+   "final": 1.087,
+   "p": 0.7719,
+   "photo": 0.8924,
+   "fit": 0.832,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.13"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
+   "flags": [],
    "origin": "search:rock boulder",
    "n_cands": 6,
    "forced": false
   },
   "nature|MOON": {
    "title": "File:Space Shuttle Discovery under a full moon, 03-11-09.jpg",
-   "final": 1.088,
-   "p": 0.9931,
+   "final": 1.258,
+   "p": 0.9929,
    "photo": 0.9989,
    "fit": 0.8,
    "how": "saliency",
@@ -3996,12 +3996,12 @@
    ],
    "flags": [],
    "origin": "search:full moon",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "nature|STAR": {
    "title": "File:Свет от деревни - panoramio.jpg",
-   "final": 1.097,
+   "final": 1.294,
    "p": 0.9998,
    "photo": 0.9722,
    "fit": 1.0,
@@ -4014,20 +4014,20 @@
   },
   "nature|SUN": {
    "title": "File:084 Sun setting in the Namib desert Photo by Giles Laurent.jpg",
-   "final": 1.151,
-   "p": 0.9766,
+   "final": 1.352,
+   "p": 0.9765,
    "photo": 0.9989,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [],
    "origin": "search:the sun in the sky",
-   "n_cands": 6,
+   "n_cands": 3,
    "forced": false
   },
   "nature|CLOUD": {
    "title": "File:The sky is beautiful with cumulus clouds.jpg",
-   "final": 0.925,
+   "final": 1.138,
    "p": 0.6873,
    "photo": 0.9729,
    "fit": 1.0,
@@ -4035,12 +4035,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:cumulus cloud",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "nature|LAKE": {
    "title": "File:Lake Kinney mit Mount Whitehorn.jpg",
-   "final": 1.16,
+   "final": 1.363,
    "p": 0.936,
    "photo": 0.9926,
    "fit": 1.0,
@@ -4048,12 +4048,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:lake",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "nature|FOREST": {
    "title": "File:Bamboo-Lined Forest Trail in Tadoba Andhari National Park.jpg",
-   "final": 1.081,
+   "final": 1.281,
    "p": 0.987,
    "photo": 0.9948,
    "fit": 1.0,
@@ -4065,36 +4065,26 @@
    "forced": false
   },
   "nature|DESERT": {
-   "title": "File:Rub al Khali 002.JPG",
-   "final": 1.102,
-   "p": 0.997,
-   "photo": 0.9853,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "nature|ISLAND": {
-   "title": "File:KohPhiPhi.JPG",
-   "final": 0.681,
-   "p": 0.3243,
-   "photo": 0.9426,
+   "title": "File:The Neck Bruny Island.jpg",
+   "final": 0.839,
+   "p": 0.2396,
+   "photo": 0.9847,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.32"
+    "low word prob 0.24"
    ],
-   "origin": "current",
-   "n_cands": 8,
+   "origin": "search:island",
+   "n_cands": 7,
    "forced": false
   },
   "nature|CAVE": {
    "title": "File:Lechuguilla Cave Pearlsian Gulf.jpg",
-   "final": 1.097,
+   "final": 1.292,
    "p": 1.0,
    "photo": 0.9599,
    "fit": 1.0,
@@ -4107,7 +4097,7 @@
   },
   "nature|WATERFALL": {
    "title": "File:Skradinski buk waterfall – NP Krka – 2016.jpg",
-   "final": 1.192,
+   "final": 1.392,
    "p": 0.9967,
    "photo": 0.9995,
    "fit": 1.0,
@@ -4115,12 +4105,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:waterfall",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|VOLCANO": {
    "title": "File:Augustine volcano Jan 24 2006 - Cyrus Read.jpg",
-   "final": 1.101,
+   "final": 1.298,
    "p": 0.9994,
    "photo": 0.9708,
    "fit": 1.0,
@@ -4133,7 +4123,7 @@
   },
   "nature|RAINBOW": {
    "title": "File:Double-alaskan-rainbow.jpg",
-   "final": 1.183,
+   "final": 1.381,
    "p": 1.0,
    "photo": 0.9754,
    "fit": 1.0,
@@ -4910,24 +4900,23 @@
    "forced": false
   },
   "nature|SKY": {
-   "title": "File:CirrusField-color.jpg",
-   "final": 0.638,
-   "p": 0.3545,
-   "photo": 0.0908,
+   "title": "File:Trees rising out of Cheow Lan Lake, blue sky, eternal summer in Surat Thani edited.jpg",
+   "final": 0.741,
+   "p": 0.0,
+   "photo": 0.9995,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.35",
-    "not photo-like 0.09"
+    "low word prob 0.00"
    ],
-   "origin": "current",
-   "n_cands": 7,
+   "origin": "search:sky",
+   "n_cands": 6,
    "forced": false
   },
   "nature|FIRE": {
    "title": "File:Boiling kettle over campfire in forest.jpg",
-   "final": 1.051,
+   "final": 1.202,
    "p": 1.0,
    "photo": 0.5077,
    "fit": 1.0,
@@ -7248,7 +7237,7 @@
   },
   "nature|SAND": {
    "title": "File:Morro Jable (Fuerteventura, Spain), Strand -- 2025 -- 2487.jpg",
-   "final": 0.625,
+   "final": 0.868,
    "p": 0.1358,
    "photo": 0.9989,
    "fit": 1.0,
@@ -7263,7 +7252,7 @@
   },
   "nature|WAVE": {
    "title": "File:Henry Espinoza Panta smashing a wave at Lobitos.jpg",
-   "final": 1.17,
+   "final": 1.367,
    "p": 0.9895,
    "photo": 0.9626,
    "fit": 1.0,
@@ -7271,12 +7260,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:ocean wave",
-   "n_cands": 7,
+   "n_cands": 5,
    "forced": false
   },
   "nature|HILL": {
    "title": "File:Cape Town (ZA), Sea Point, Nachtansicht -- 2024 -- 1867-70 - 2.jpg",
-   "final": 0.547,
+   "final": 0.79,
    "p": 0.0063,
    "photo": 0.9325,
    "fit": 1.0,
@@ -7286,12 +7275,12 @@
     "low word prob 0.01"
    ],
    "origin": "search:hill",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|FIELD": {
    "title": "File:Field with mixed intercropping of oat and rye.jpg",
-   "final": 1.057,
+   "final": 1.26,
    "p": 0.9224,
    "photo": 0.9961,
    "fit": 1.0,
@@ -7299,12 +7288,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:field",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "nature|POND": {
    "title": "File:Cornjum, Martenastate 010.jpg",
-   "final": 1.032,
+   "final": 1.234,
    "p": 0.9066,
    "photo": 0.9729,
    "fit": 1.0,
@@ -7317,7 +7306,7 @@
   },
   "nature|SEED": {
    "title": "File:Разнообразие семян.jpg",
-   "final": 1.078,
+   "final": 1.226,
    "p": 0.9999,
    "photo": 0.9996,
    "fit": 0.657,
@@ -7330,12 +7319,12 @@
     "fit 0.66"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|CACTUS": {
    "title": "File:Carnegiea gigantea in Saguaro National Park near Tucson, Arizona during November (58).jpg",
-   "final": 1.141,
+   "final": 1.344,
    "p": 0.9354,
    "photo": 0.9972,
    "fit": 1.0,
@@ -7348,7 +7337,7 @@
   },
   "nature|BAMBOO": {
    "title": "File:Bamboo forest.jpg",
-   "final": 0.972,
+   "final": 1.117,
    "p": 0.9962,
    "photo": 0.9927,
    "fit": 0.64,
@@ -7360,7 +7349,7 @@
     "fit 0.64"
    ],
    "origin": "current",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "sports|KARATE": {
@@ -12903,38 +12892,38 @@
    "forced": false
   },
   "nature|SEA": {
-   "title": "File:Spring Lake, New Jersey Beach at Sunrise.jpg",
-   "final": 0.566,
-   "p": 0.1717,
-   "photo": 0.9885,
+   "title": "File:California sea lion in La Jolla (70568).jpg",
+   "final": 0.934,
+   "p": 0.2898,
+   "photo": 0.9525,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.17"
+    "low word prob 0.29"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:sea",
+   "n_cands": 7,
    "forced": false
   },
   "nature|STREAM": {
-   "title": "File:Цврцка 2 PPRP001.jpg",
-   "final": 0.741,
-   "p": 0.2068,
-   "photo": 0.9994,
+   "title": "File:Breil-Brigels, Lag da Breil- Flem. 23-09-2022. (d.j.b) 04.jpg",
+   "final": 1.111,
+   "p": 0.4291,
+   "photo": 0.9814,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.21"
+    "low word prob 0.43"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:stream",
+   "n_cands": 8,
    "forced": false
   },
   "nature|SOIL": {
    "title": "File:Stagnogley.JPG",
-   "final": 1.167,
+   "final": 1.365,
    "p": 0.9955,
    "photo": 0.972,
    "fit": 1.0,
@@ -12946,86 +12935,69 @@
    "forced": false
   },
   "nature|MUD": {
-   "title": "File:2003-11-27 Northerner boots in mud.jpg",
-   "final": 1.069,
-   "p": 0.9923,
-   "photo": 0.7262,
-   "fit": 1.0,
-   "how": "scene",
-   "notes": [],
-   "flags": [],
-   "origin": "current",
-   "n_cands": 1,
-   "forced": false
+   "status": "no candidates"
   },
   "nature|STONE": {
-   "title": "File:Pebble Dash (15366562092).jpg",
-   "final": 0.423,
-   "p": 0.0362,
-   "photo": 0.9984,
-   "fit": 0.306,
+   "title": "File:Gravel stones - Preview (Amal Kumar via Poly Haven).webp",
+   "final": 0.456,
+   "p": 0.0,
+   "photo": 0.9657,
+   "fit": 0.527,
    "how": "saliency",
    "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.80)"
+    "subject cannot fit 3:4 (box cov 0.88)"
    ],
    "flags": [
-    "low word prob 0.04",
-    "fit 0.31"
+    "low word prob 0.00",
+    "fit 0.53"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:stones pebbles",
+   "n_cands": 7,
    "forced": false
   },
   "nature|SHELL": {
-   "title": "File:Conchiglie Seashells 01.jpg",
-   "final": 0.805,
-   "p": 0.4778,
-   "photo": 0.9999,
-   "fit": 1.0,
+   "title": "File:Bufonaria perelegans 2010 G1.jpg",
+   "final": 0.989,
+   "p": 0.9996,
+   "photo": 0.9852,
+   "fit": 0.379,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.48"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.63)"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [
+    "fit 0.38"
+   ],
+   "origin": "search:seashell",
+   "n_cands": 8,
    "forced": false
   },
   "nature|CORAL": {
-   "title": "File:Blue Linckia Starfish.JPG",
-   "final": 1.076,
-   "p": 0.9824,
-   "photo": 0.9124,
-   "fit": 0.7,
-   "how": "none",
-   "notes": [
-    "no subject found"
-   ],
-   "flags": [
-    "fit 0.70"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "title": "File:Helcogramma striata (Neon triplefin) on Diploastrea heliopora (Hard coral).jpg",
+   "final": 1.367,
+   "p": 0.9797,
+   "photo": 0.9938,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:coral",
+   "n_cands": 8,
    "forced": false
   },
   "nature|BRANCH": {
-   "title": "File:Branches (DSC 0326).jpg",
-   "final": 0.269,
-   "p": 0.0071,
-   "photo": 0.8941,
-   "fit": 0.21,
-   "how": "none",
+   "title": "File:Münster, Park Sentmaring -- 2015 -- 9923.jpg",
+   "final": 1.302,
+   "p": 0.9955,
+   "photo": 0.996,
+   "fit": 0.813,
+   "how": "saliency",
    "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.50)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "low word prob 0.01",
-    "fit 0.21"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:tree branch",
+   "n_cands": 7,
    "forced": false
   },
   "nature|ROOT": {
@@ -13047,20 +13019,20 @@
    "forced": false
   },
   "nature|BUSH": {
-   "title": "File:Cytisus scoparius2.jpg",
-   "final": 0.94,
-   "p": 0.9999,
-   "photo": 0.8887,
-   "fit": 0.477,
-   "how": "saliency",
+   "title": "File:A manzanita bush near the small lake in the Quinlan Mountains Kitt Peak’s Tohono O’odham name is I'oligam Du'ag, which means manzanita shrub mountain (annee25058i).jpg",
+   "final": 1.074,
+   "p": 0.9697,
+   "photo": 0.5049,
+   "fit": 0.7,
+   "how": "none",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.80)"
+    "no subject found"
    ],
    "flags": [
-    "fit 0.48"
+    "fit 0.70"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:bush shrub",
+   "n_cands": 7,
    "forced": false
   },
   "nature|PALM TREE": {
@@ -13077,25 +13049,21 @@
    "forced": false
   },
   "nature|LOTUS": {
-   "title": "File:Sacred lotus Nelumbo nucifera.jpg",
-   "final": 1.021,
-   "p": 0.9998,
-   "photo": 0.9938,
-   "fit": 0.494,
+   "title": "File:Nelumbo nucifera, also known as Indian lotus in bud stage (Image 7 of 7).jpg",
+   "final": 1.384,
+   "p": 0.9919,
+   "photo": 0.9991,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.82)"
-   ],
-   "flags": [
-    "fit 0.49"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:lotus flower",
+   "n_cands": 7,
    "forced": false
   },
   "nature|ROSE": {
    "title": "File:Rosa rubiginosa 1.jpg",
-   "final": 1.089,
+   "final": 1.257,
    "p": 0.9586,
    "photo": 0.9982,
    "fit": 0.778,
@@ -13105,7 +13073,7 @@
    ],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 8,
    "forced": false
   },
   "nature|SUNFLOWER": {
@@ -13127,7 +13095,7 @@
   },
   "nature|ORCHID": {
    "title": "File:Plant Orchid Cymbidium aloifolium P1110661 05 - cropped.jpg",
-   "final": 1.169,
+   "final": 1.367,
    "p": 0.9999,
    "photo": 0.9863,
    "fit": 1.0,
@@ -13139,20 +13107,16 @@
    "forced": false
   },
   "nature|PLANET": {
-   "title": "File:Planet collage to scale.jpg",
-   "final": 0.816,
-   "p": 0.8463,
-   "photo": 0.9973,
-   "fit": 0.505,
+   "title": "File:Top view of the rings of Saturn by Cassini - October 10, 2013.jpg",
+   "final": 1.222,
+   "p": 0.9792,
+   "photo": 0.8095,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.84)"
-   ],
-   "flags": [
-    "fit 0.51"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:planet Saturn",
+   "n_cands": 8,
    "forced": false
   },
   "nature|EARTH": {
@@ -13172,7 +13136,7 @@
   },
   "nature|SPACE": {
    "title": "File:Webb's First Deep Field.jpg",
-   "final": 0.537,
+   "final": 0.785,
    "p": 0.0157,
    "photo": 0.9859,
    "fit": 1.0,
@@ -13182,27 +13146,27 @@
     "low word prob 0.02"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "nature|AIR": {
-   "title": "File:Top of Atmosphere.jpg",
-   "final": 0.485,
-   "p": 0.0,
-   "photo": 0.9955,
+   "title": "File:\"I'm forever blowing bubbles.\" - geograph.org.uk - 2576925.jpg",
+   "final": 1.088,
+   "p": 0.79,
+   "photo": 0.4728,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [
-    "low word prob 0.00"
+    "not photo-like 0.47"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:blowing bubbles",
+   "n_cands": 8,
    "forced": false
   },
   "nature|SMOKE": {
    "title": "File:Ognisko ubt 0126.jpeg",
-   "final": 1.03,
+   "final": 1.232,
    "p": 0.8735,
    "photo": 0.9585,
    "fit": 1.0,
@@ -27744,7 +27708,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|RICE PADDY": {
@@ -28004,7 +27968,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "nature|LAVA": {
@@ -28032,7 +27996,7 @@
    "notes": [],
    "flags": [],
    "origin": "search:QI",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "nature|BEEHIVE": {
@@ -28091,7 +28055,7 @@
     "fit 0.21"
    ],
    "origin": "search:QI",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "places|HOUSE": {
@@ -29772,9 +29736,8 @@
   "nature|ACORN",
   "nature|AIR",
   "nature|BAMBOO",
-  "nature|BRANCH",
   "nature|BUSH",
-  "nature|CORAL",
+  "nature|DESERT",
   "nature|EARTH",
   "nature|FLOWER",
   "nature|FRANGIPANI",
@@ -29783,11 +29746,9 @@
   "nature|JASMINE",
   "nature|LAVA",
   "nature|LEAF",
-  "nature|LOTUS",
+  "nature|MUD",
   "nature|PEBBLE",
   "nature|PETAL",
-  "nature|PLANET",
-  "nature|ROCK",
   "nature|ROOT",
   "nature|SAND",
   "nature|SEA",
@@ -30342,7 +30303,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1896,
-  "flagged": 1101
+  "with_photo": 1894,
+  "flagged": 1098
  }
 }

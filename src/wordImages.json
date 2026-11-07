@@ -3735,7 +3735,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:1J6A8483-Black_faced_warbler.jpg",
   "author": "Shatruhanray",
   "license": "CC BY-SA 4.0",
-  "score": 1.117
+  "score": 1.21
  },
  "feelings|ANNOYED": {
   "file": "w/feelings__annoyed.jpg",
@@ -3756,14 +3756,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:FiremenFightBurningBarn.jpg",
   "author": "DallasPenner",
   "license": "CC BY-SA 4.0",
-  "score": 0.422
+  "score": 0.638
  },
  "feelings|CALM": {
   "file": "w/feelings__calm.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Person_in_traditional-inspired_attire_by_forest_water.jpg",
   "author": "Ezekiel Joviah",
   "license": "CC BY-SA 4.0",
-  "score": 0.817
+  "score": 0.816
  },
  "feelings|CHEERFUL": {
   "file": "w/feelings__cheerful.jpg",
@@ -3784,7 +3784,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Siamese_cat,_modern-style.jpg",
   "author": "Felinlove",
   "license": "CC BY-SA 4.0",
-  "score": 0.532
+  "score": 0.446
  },
  "feelings|CONFIDENT": {
   "file": "w/feelings__confident.jpg",
@@ -3812,7 +3812,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:International_Delight_Pumpkin_Spice_Creamer.jpg",
   "author": "SundaysChild",
   "license": "CC BY-SA 4.0",
-  "score": 0.582
+  "score": 0.577
  },
  "feelings|DISAPPOINTED": {
   "file": "w/feelings__disappointed.jpg",
@@ -3833,28 +3833,28 @@
   "src": "https://commons.wikimedia.org/wiki/File:Gonzalo_Guerrero,_77720_Playa_del_Carmen,_Q.R.,_Mexico_-_panoramio_(2).jpg",
   "author": "DizzyDJC",
   "license": "CC BY 3.0",
-  "score": 0.981
+  "score": 0.98
  },
  "feelings|EMBARRASSED": {
   "file": "w/feelings__embarrassed.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:The_posture_of_school_children,_with_its_home_hygiene_and_new_efficiency_methods_for_school_training_(1913)_(14592081638).jpg",
   "author": "Internet Archive Book Images",
   "license": "No restrictions",
-  "score": 0.602
+  "score": 0.601
  },
  "feelings|ENERGETIC": {
   "file": "w/feelings__energetic.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:NGC_3938_(composite).jpg",
   "author": "X-ray: NASA/CXC/SAO; Optical: Adam Block/Mount Lemmon SkyCenter/University of Arizona; Image Processing: NASA/CXC/SAO/L. Frattare",
   "license": "Public domain",
-  "score": 0.717
+  "score": 0.693
  },
  "feelings|EXCITED": {
   "file": "w/feelings__excited.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Nigerian_child_excited_by_the_waves.jpg",
   "author": "Ru sssh",
   "license": "CC BY-SA 4.0",
-  "score": 0.554
+  "score": 0.798
  },
  "feelings|FRIENDLY": {
   "file": "w/feelings__friendly.jpg",
@@ -3868,14 +3868,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Osmia_simillima,_face_2014-07-01-14.08.05_ZS_PMax_(14572058321).jpg",
   "author": "USGS Bee Inventory and Monitoring Lab from Beltsville, Maryland, USA",
   "license": "Public domain",
-  "score": 0.705
+  "score": 0.704
  },
  "feelings|FULL": {
   "file": "w/feelings__full.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Mother_And_Infant_Squirrel_Monkey.jpg",
   "author": "Shiv's fotografia",
   "license": "CC BY-SA 4.0",
-  "score": 0.694
+  "score": 0.693
  },
  "feelings|FUNNY": {
   "file": "w/feelings__funny.jpg",
@@ -3900,10 +3900,10 @@
  },
  "feelings|HAPPY": {
   "file": "w/feelings__happy.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Felicidade_A_very_happy_boy.jpg",
-  "author": "Luis Miguel Bugallo Sánchez ( Lmbuga Commons )( Lmbuga Galipedia )",
-  "license": "CC BY-SA 4.0",
-  "score": 0.479
+  "src": "https://commons.wikimedia.org/wiki/File:Woman_lifting_child_during_daytime.jpg",
+  "author": "Thiago Cerqueira",
+  "license": "CC0",
+  "score": 0.657
  },
  "feelings|HEALTHY": {
   "file": "w/feelings__healthy.jpg",
@@ -3917,7 +3917,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Overbergschule,_Verkehrsschild_--_2013_--_0659.jpg",
   "author": "Dietmar Rabich",
   "license": "CC BY-SA 4.0",
-  "score": 0.649
+  "score": 0.646
  },
  "feelings|HOPEFUL": {
   "file": "w/feelings__hopeful.jpg",
@@ -3938,7 +3938,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:God_give_me_food.jpg",
   "author": "Fredrichking",
   "license": "CC BY-SA 4.0",
-  "score": 0.636
+  "score": 0.825
  },
  "feelings|HURT": {
   "file": "w/feelings__hurt.jpg",
@@ -3959,7 +3959,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Grishneshwar_Temple.jpg",
   "author": "sowrirajan s from Chennai, india",
   "license": "CC BY 2.0",
-  "score": 0.328
+  "score": 0.324
  },
  "feelings|JOYFUL": {
   "file": "w/feelings__joyful.jpg",
@@ -3994,28 +3994,28 @@
   "src": "https://commons.wikimedia.org/wiki/File:VMU-2_reunites_with_families,_loved_ones_140522-M-SR938-004.jpg",
   "author": "Lance Cpl. Grace L. Waladkewics",
   "license": "Public domain",
-  "score": 1.23
+  "score": 1.229
  },
  "feelings|MAD": {
   "file": "w/feelings__mad.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Mont_Blanc_Massif.jpg",
   "author": "MadGeographer",
   "license": "Public domain",
-  "score": 0.615
+  "score": 0.613
  },
  "feelings|NAUGHTY": {
   "file": "w/feelings__naughty.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Naughty_Face_(2658970942).jpg",
   "author": "Richie Diesterheft from Chicago, IL, USA",
   "license": "CC BY 2.0",
-  "score": 0.524
+  "score": 0.487
  },
  "feelings|NERVOUS": {
   "file": "w/feelings__nervous.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Nervous_and_mental_diseases_(1919)_(14781822285).jpg",
   "author": "Internet Archive Book Images",
   "license": "No restrictions",
-  "score": 0.747
+  "score": 0.72
  },
  "feelings|PEACEFUL": {
   "file": "w/feelings__peaceful.jpg",
@@ -4029,14 +4029,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Playful_mood_(10635512194).jpg",
   "author": "Takashi Hososhima from Tokyo, Japan",
   "license": "CC BY-SA 2.0",
-  "score": 0.81
+  "score": 0.632
  },
  "feelings|PROUD": {
   "file": "w/feelings__proud.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Wiki_In_Classroom_2.0_Kano_26.jpg",
   "author": "Gwanki",
   "license": "CC0",
-  "score": 1.016
+  "score": 1.015
  },
  "feelings|RELAXED": {
   "file": "w/feelings__relaxed.jpg",
@@ -4047,17 +4047,17 @@
  },
  "feelings|SAD": {
   "file": "w/feelings__sad.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Sad-face.png",
-  "author": "rootstocks",
-  "license": "Public domain",
-  "score": 0.767
+  "src": "https://commons.wikimedia.org/wiki/File:Sad_feeling_of_a_child.jpg",
+  "author": "Kssajan",
+  "license": "CC BY-SA 4.0",
+  "score": 0.604
  },
  "feelings|SCARED": {
   "file": "w/feelings__scared.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Scared_Child_at_Nighttime.jpg",
   "author": "D Sharon Pruitt",
   "license": "CC BY 2.0",
-  "score": 0.503
+  "score": 0.63
  },
  "feelings|SERIOUS": {
   "file": "w/feelings__serious.jpg",
@@ -4078,14 +4078,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Girl_Shy_in_Exhibitor%27s_Trade_Review.jpg",
   "author": "Exhibitor's Trade Review",
   "license": "Public domain",
-  "score": 0.66
+  "score": 0.659
  },
  "feelings|SICK": {
   "file": "w/feelings__sick.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:A_sick_child_in_bed_has_his_castor_oil_medicine_poured_for_h_Wellcome_V0015144.jpg",
   "author": "https://wellcomeimages.org/indexplus/obf_images/6a/cb/58c6be86d9679bef9cb67e528f42.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0015144.html Wellcome Collection gallery (2018-03-22): https",
   "license": "CC BY 4.0",
-  "score": 1.031
+  "score": 0.676
  },
  "feelings|SILLY": {
   "file": "w/feelings__silly.jpg",
@@ -4117,10 +4117,10 @@
  },
  "feelings|SURPRISED": {
   "file": "w/feelings__surprised.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Surprise_Attack_-_titles.jpg",
-  "author": "Crown Film Unit",
-  "license": "Public domain",
-  "score": 0.563
+  "src": "https://commons.wikimedia.org/wiki/File:Child_-_Surprise.jpg",
+  "author": "Nithyanandan Babu",
+  "license": "CC BY-SA 4.0",
+  "score": 0.693
  },
  "feelings|TERRIFIED": {
   "file": "w/feelings__terrified.jpg",
@@ -4134,28 +4134,28 @@
   "src": "https://commons.wikimedia.org/wiki/File:%E2%80%9CThank_you_for_your_service%E2%80%9D_(7743324).jpg",
   "author": "U.S. Army photo by Candy C Knight",
   "license": "Public domain",
-  "score": 0.91
+  "score": 0.909
  },
  "feelings|THIRSTY": {
   "file": "w/feelings__thirsty.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:School_child_drinking_water.jpg",
   "author": "Cecil Dzwowa",
   "license": "CC BY-SA 4.0",
-  "score": 1.083
+  "score": 1.277
  },
  "feelings|TIRED": {
   "file": "w/feelings__tired.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Still_a_bit_tired._(Unsplash).jpg",
-  "author": "Andreas Berlin pfanni",
-  "license": "CC0",
-  "score": 0.452
+  "src": "https://commons.wikimedia.org/wiki/File:A_child_with_her_sister.jpg",
+  "author": "Obaro4real",
+  "license": "CC BY-SA 4.0",
+  "score": 0.686
  },
  "feelings|UPSET": {
   "file": "w/feelings__upset.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Cebus_capucinus-upset.jpg",
   "author": "Encarna Sáez Goñalons & Víctor Martínez Moll (User: Puput )",
   "license": "CC BY-SA 3.0",
-  "score": 0.471
+  "score": 0.47
  },
  "feelings|WORRIED": {
   "file": "w/feelings__worried.jpg",

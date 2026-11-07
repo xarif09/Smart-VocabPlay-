@@ -3276,7 +3276,7 @@
   },
   "clothes|SHIRT": {
    "title": "File:Camisade puño doble.jpg",
-   "final": 1.037,
+   "final": 0.914,
    "p": 0.9979,
    "photo": 0.9342,
    "fit": 0.556,
@@ -3288,12 +3288,12 @@
     "fit 0.56"
    ],
    "origin": "current",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "clothes|TSHIRT": {
    "title": "File:Batik Africa Tshirt.jpg",
-   "final": 0.932,
+   "final": 1.008,
    "p": 0.9857,
    "photo": 0.6711,
    "fit": 0.39,
@@ -3305,12 +3305,12 @@
     "fit 0.39"
    ],
    "origin": "search:tshirt clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|PANTS": {
    "title": "File:Uniqlo Unisex 2026-09-07 Geared Pants 02.jpg",
-   "final": 1.099,
+   "final": 1.298,
    "p": 0.9999,
    "photo": 0.9925,
    "fit": 1.0,
@@ -3318,12 +3318,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:pants clothing",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "clothes|DRESS": {
    "title": "File:Woman in traditional Uzbek long adras dress (Po-i-Kalyan complex, 2025 Buhara).jpg",
-   "final": 0.885,
+   "final": 0.98,
    "p": 0.9011,
    "photo": 0.986,
    "fit": 0.275,
@@ -3340,7 +3340,7 @@
   },
   "clothes|SHOES": {
    "title": "File:Bata Shoe Museum - Pope Benedict XV's shoes (91324).jpg",
-   "final": 1.022,
+   "final": 1.196,
    "p": 0.9653,
    "photo": 0.9674,
    "fit": 0.838,
@@ -3355,7 +3355,7 @@
   },
   "clothes|SOCKS": {
    "title": "File:Sport short socks 2026-09-06 UNIQLO Clothing Philippines 02.jpg",
-   "final": 1.091,
+   "final": 1.29,
    "p": 0.9858,
    "photo": 0.9832,
    "fit": 1.0,
@@ -3363,12 +3363,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:socks clothing",
-   "n_cands": 4,
+   "n_cands": 5,
    "forced": false
   },
   "clothes|HAT": {
    "title": "File:HK YLD Yuen Long MTR Station bus station visitor male clothing 帽子 hat August 2024 R12S 02.jpg",
-   "final": 1.058,
+   "final": 1.231,
    "p": 0.9998,
    "photo": 0.7375,
    "fit": 1.0,
@@ -3376,29 +3376,30 @@
    "notes": [],
    "flags": [],
    "origin": "search:hat clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|GLASSES": {
-   "title": "File:2023 Okulary korekcyjne.jpg",
-   "final": 0.978,
-   "p": 0.9996,
-   "photo": 0.9277,
-   "fit": 0.414,
+   "title": "File:Woman in Eyeglasses (9).jpg",
+   "final": 1.092,
+   "p": 0.9895,
+   "photo": 0.8581,
+   "fit": 0.521,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.69)"
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "fit 0.41"
+    "fit 0.52"
    ],
-   "origin": "current",
+   "origin": "search:eyeglasses",
    "n_cands": 6,
    "forced": false
   },
   "clothes|SCARF": {
    "title": "File:100% Kaschmir Wolle vonk kaschmirprodukte.de.jpg",
-   "final": 1.141,
+   "final": 1.34,
    "p": 0.9999,
    "photo": 0.9833,
    "fit": 1.0,
@@ -3411,7 +3412,7 @@
   },
   "clothes|GLOVES": {
    "title": "File:Gloves MET 26.56.100.jpg",
-   "final": 1.039,
+   "final": 1.213,
    "p": 0.9978,
    "photo": 0.9931,
    "fit": 0.83,
@@ -3421,12 +3422,12 @@
    ],
    "flags": [],
    "origin": "search:gloves clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|JACKET": {
    "title": "File:Clothing tag on Navy Issued Jacket, Cold Weather, Permeable built by the Vanderbilt Shirt Company.jpg",
-   "final": 0.856,
+   "final": 1.049,
    "p": 0.6368,
    "photo": 0.7483,
    "fit": 1.0,
@@ -3434,12 +3435,12 @@
    "notes": [],
    "flags": [],
    "origin": "search:jacket clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|SKIRT": {
    "title": "File:Skirt MET 26.265.48.jpg",
-   "final": 0.958,
+   "final": 1.07,
    "p": 0.9992,
    "photo": 0.8214,
    "fit": 0.527,
@@ -3452,12 +3453,12 @@
     "fit 0.53"
    ],
    "origin": "search:skirt clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|BOOTS": {
    "title": "File:Iranian woman wearing boots - Persian woman in boots, Iranian boots 01.jpg",
-   "final": 1.044,
+   "final": 1.214,
    "p": 0.9965,
    "photo": 0.6979,
    "fit": 1.0,
@@ -3469,23 +3470,25 @@
    "forced": false
   },
   "clothes|SANDALS": {
-   "title": "File:Pair of Sandals MET MCC 120crop 2.jpg",
-   "final": 0.962,
-   "p": 0.8629,
-   "photo": 0.9871,
-   "fit": 0.825,
+   "title": "File:Pair of Sandals MET 10.184.1a-b EGDP014941.jpg",
+   "final": 0.966,
+   "p": 0.9724,
+   "photo": 0.9106,
+   "fit": 0.394,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "subject cannot fit 3:4 (box cov 0.66)"
    ],
-   "flags": [],
+   "flags": [
+    "fit 0.39"
+   ],
    "origin": "search:sandals clothing",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "clothes|UMBRELLA": {
    "title": "File:Woman with Sun Umbrella.png",
-   "final": 1.099,
+   "final": 1.297,
    "p": 0.9736,
    "photo": 0.9686,
    "fit": 1.0,
@@ -3493,31 +3496,31 @@
    "notes": [],
    "flags": [],
    "origin": "search:umbrella clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|BELT": {
-   "title": "File:Germany Belt-and-Buckle-02.jpg",
-   "final": 0.885,
-   "p": 0.9999,
-   "photo": 0.9884,
-   "fit": 0.388,
+   "title": "File:Belt MET 41.47 side CP4.jpg",
+   "final": 0.957,
+   "p": 0.9988,
+   "photo": 0.9679,
+   "fit": 0.327,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.65)"
+    "subject cannot fit 3:4 (box cov 0.55)"
    ],
    "flags": [
-    "fit 0.39"
+    "fit 0.33"
    ],
-   "origin": "current",
-   "n_cands": 4,
+   "origin": "search:belt clothing",
+   "n_cands": 5,
    "forced": false
   },
   "clothes|TIE": {
    "title": "File:Memphis tie 1A.JPG",
-   "final": 1.119,
+   "final": 1.04,
    "p": 0.9981,
-   "photo": 0.2596,
+   "photo": 0.2595,
    "fit": 1.0,
    "how": "yolo:tie",
    "notes": [],
@@ -3530,7 +3533,7 @@
   },
   "clothes|COAT": {
    "title": "File:Coat MET DT1708.jpg",
-   "final": 0.593,
+   "final": 0.84,
    "p": 0.0568,
    "photo": 0.997,
    "fit": 1.0,
@@ -3540,39 +3543,36 @@
     "low word prob 0.06"
    ],
    "origin": "search:coat clothing",
-   "n_cands": 6,
-   "forced": false
-  },
-  "clothes|SWIMSUIT": {
-   "title": "File:Swimsuit open boobs.jpg",
-   "final": 0.941,
-   "p": 0.9979,
-   "photo": 0.9283,
-   "fit": 0.337,
-   "how": "saliency",
-   "notes": [
-    "touches 2 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.88)"
-   ],
-   "flags": [
-    "fit 0.34"
-   ],
-   "origin": "search:swimsuit",
    "n_cands": 7,
    "forced": false
   },
-  "clothes|UNIFORM": {
-   "title": "File:1950 UK school uniform n2.png",
-   "final": 1.029,
-   "p": 0.987,
-   "photo": 0.9987,
-   "fit": 0.818,
+  "clothes|SWIMSUIT": {
+   "title": "File:Wanda Hendrix pin-up in Leopard swimsuit 1954.jpg",
+   "final": 1.071,
+   "p": 0.8313,
+   "photo": 0.9923,
+   "fit": 0.841,
    "how": "saliency",
    "notes": [
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [],
-   "origin": "search:school uniform",
+   "origin": "search:swimsuit",
+   "n_cands": 8,
+   "forced": false
+  },
+  "clothes|UNIFORM": {
+   "title": "File:Ban Hat Suea Ten School in 6-2010.jpg",
+   "final": 1.151,
+   "p": 0.9946,
+   "photo": 0.9272,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "current",
    "n_cands": 5,
    "forced": false
   },
@@ -7096,9 +7096,9 @@
   },
   "clothes|SHORTS": {
    "title": "File:Red short shorts.jpg",
-   "final": 0.939,
-   "p": 0.969,
-   "photo": 0.339,
+   "final": 0.897,
+   "p": 0.9689,
+   "photo": 0.3375,
    "fit": 0.8,
    "how": "saliency",
    "notes": [
@@ -7108,65 +7108,78 @@
     "not photo-like 0.34"
    ],
    "origin": "search:shorts clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|SWEATER": {
-   "title": "File:Rudi Gernreich sweater designed by Lisa Anne Auerbach, Fall 2018, back.jpg",
-   "final": 0.886,
-   "p": 0.9546,
-   "photo": 0.1663,
-   "fit": 0.57,
+   "title": "File:Selburose-sweater.jpg",
+   "final": 0.785,
+   "p": 0.827,
+   "photo": 0.7962,
+   "fit": 0.233,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.95)"
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.76)"
    ],
    "flags": [
-    "fit 0.57",
-    "not photo-like 0.17"
+    "fit 0.23"
    ],
-   "origin": "search:sweater clothing",
-   "n_cands": 7,
+   "origin": "current",
+   "n_cands": 8,
    "forced": false
   },
   "clothes|RAINCOAT": {
-   "title": "File:Gabriel wearing a University of Chicago disposable raincoat, Hyde Park, Illinois, US (PPL1-Corrected) julesvernex2.jpg",
-   "final": 0.929,
-   "p": 0.8682,
-   "photo": 0.3171,
-   "fit": 1.0,
+   "title": "File:David Julian Kirchner (cropped).jpg",
+   "final": 0.966,
+   "p": 0.9997,
+   "photo": 0.5818,
+   "fit": 0.454,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.32"
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.95)"
    ],
-   "origin": "search:raincoat clothing",
+   "flags": [
+    "fit 0.45"
+   ],
+   "origin": "current",
    "n_cands": 7,
    "forced": false
   },
   "clothes|PAJAMAS": {
-   "title": "File:Cat's Pajamas 1926 ad.jpg",
-   "final": 0.918,
-   "p": 1.0,
-   "photo": 0.0803,
-   "fit": 0.8,
+   "title": "File:Little boy in pajamas have fun with toys.jpg",
+   "final": 0.645,
+   "p": 0.0304,
+   "photo": 0.6465,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
+   "notes": [],
    "flags": [
-    "not photo-like 0.08"
+    "low word prob 0.03"
    ],
    "origin": "search:pajamas",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "clothes|CAP": {
-   "status": "no candidates"
+   "title": "File:HK Central Chater Road Tunnel Saturday noon visitors n camera boy brown clothing with cap hat October 2025 N13P 04.jpg",
+   "final": 0.733,
+   "p": 0.0889,
+   "photo": 0.7005,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.09"
+   ],
+   "origin": "search:cap hat",
+   "n_cands": 5,
+   "forced": false
   },
   "clothes|SLIPPERS": {
    "title": "File:Slippers.jpg",
-   "final": 0.876,
+   "final": 0.969,
    "p": 0.9997,
    "photo": 0.8174,
    "fit": 0.412,
@@ -7178,13 +7191,13 @@
     "fit 0.41"
    ],
    "origin": "current",
-   "n_cands": 2,
+   "n_cands": 3,
    "forced": false
   },
   "clothes|APRON": {
    "title": "File:Preparing the Cake (5285262061).jpg",
-   "final": 0.829,
-   "p": 0.9992,
+   "final": 0.551,
+   "p": 0.992,
    "photo": 0.0941,
    "fit": 0.64,
    "how": "saliency",
@@ -7196,14 +7209,14 @@
     "not photo-like 0.09"
    ],
    "origin": "current",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "clothes|MASK": {
    "title": "File:Twisted Face Mask MET DP-12565-001.jpg",
-   "final": 1.088,
+   "final": 1.228,
    "p": 1.0,
-   "photo": 0.9228,
+   "photo": 0.6627,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -7214,7 +7227,7 @@
   },
   "clothes|WATCH": {
    "title": "File:Fossil wristwatch with white background.jpg",
-   "final": 1.1,
+   "final": 1.25,
    "p": 1.0,
    "photo": 0.4995,
    "fit": 1.0,
@@ -7224,12 +7237,12 @@
     "not photo-like 0.50"
    ],
    "origin": "search:wristwatch",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "clothes|NECKLACE": {
    "title": "File:194677 ERM B114 51 194677.jpg",
-   "final": 1.054,
+   "final": 1.234,
    "p": 0.8652,
    "photo": 0.9996,
    "fit": 0.818,
@@ -7239,7 +7252,7 @@
    ],
    "flags": [],
    "origin": "search:necklace clothing",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "nature|SAND": {
@@ -13496,7 +13509,7 @@
   "clothes|JEANS": {
    "title": "File:Jeans Centre, Winschoten (2020) 03.jpg",
    "final": 1.28,
-   "p": 0.9962,
+   "p": 0.9959,
    "photo": 0.7941,
    "fit": 1.0,
    "how": "saliency",
@@ -13507,50 +13520,49 @@
    "forced": false
   },
   "clothes|HOODIE": {
-   "title": "File:Marvin Jones 2019 (cropped).jpg",
-   "final": 0.837,
-   "p": 0.8393,
-   "photo": 0.6225,
-   "fit": 0.676,
+   "title": "File:\"Vaccinated\" hoodie on sale, reference to COVID-19.jpg",
+   "final": 1.112,
+   "p": 0.9991,
+   "photo": 0.5615,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 1.00)"
+    "touches 1 edge(s)"
    ],
-   "flags": [
-    "fit 0.68"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:hoodie clothing",
+   "n_cands": 8,
    "forced": false
   },
   "clothes|VEST": {
-   "title": "File:Warnweste gelb.jpg",
-   "final": 0.844,
-   "p": 0.9999,
-   "photo": 0.8143,
-   "fit": 0.25,
+   "title": "File:Vest MET CI39.13.135 B.jpg",
+   "final": 1.217,
+   "p": 0.9984,
+   "photo": 0.9746,
+   "fit": 0.846,
    "how": "saliency",
    "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.81)"
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "flags": [
-    "fit 0.25"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:vest clothing",
+   "n_cands": 8,
    "forced": false
   },
   "clothes|SUIT": {
-   "title": "File:DALL-E2 Photographs taken by Polaroid camera showing anthropomorphic rhinoceros wearing business suit and standing on two feet.jpg",
-   "final": 1.12,
-   "p": 0.9413,
-   "photo": 0.5175,
-   "fit": 1.0,
+   "title": "File:John Young in a business suit.jpg",
+   "final": 1.026,
+   "p": 0.9985,
+   "photo": 0.9732,
+   "fit": 0.543,
    "how": "saliency",
-   "notes": [],
-   "flags": [],
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.54"
+   ],
    "origin": "search:business suit",
    "n_cands": 7,
    "forced": false
@@ -13589,53 +13601,42 @@
    "forced": false
   },
   "clothes|SNEAKERS": {
-   "title": "File:Air Jordan 1 Banned.jpg",
-   "final": 0.426,
-   "p": 0.2326,
-   "photo": 0.9986,
-   "fit": 0.393,
+   "title": "File:JP 日本 Japan 沖繩 OKINAWA Outlet Mall Ashibinaa shop PUMA Clothing n shoes January 2025 R12S 27.jpg",
+   "final": 1.354,
+   "p": 0.999,
+   "photo": 0.9008,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.65)"
-   ],
-   "flags": [
-    "low word prob 0.23",
-    "fit 0.39"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:sneakers clothing",
+   "n_cands": 7,
    "forced": false
   },
   "clothes|HIGH HEELS": {
-   "title": "File:High-heeled shoes on display in Huangpu, Shanghai (20180211145140).jpg",
-   "final": 0.838,
-   "p": 0.8461,
-   "photo": 0.5366,
-   "fit": 0.349,
+   "title": "File:Stripper shoes Pleaser high heeled shoes 2023.jpg",
+   "final": 1.189,
+   "p": 0.9209,
+   "photo": 0.6413,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.58)"
-   ],
-   "flags": [
-    "fit 0.35"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:high heels shoes",
+   "n_cands": 7,
    "forced": false
   },
   "clothes|RING": {
-   "title": "File:Traditional Wedding Ring.jpg",
-   "final": 1.007,
-   "p": 0.9991,
-   "photo": 0.9982,
-   "fit": 0.8,
+   "title": "File:Glass finger ring MET DP121097.jpg",
+   "final": 1.319,
+   "p": 0.9858,
+   "photo": 0.9916,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "touches 1 edge(s)"
-   ],
+   "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:finger ring jewellery",
+   "n_cands": 8,
    "forced": false
   },
   "clothes|EARRINGS": {
@@ -13657,7 +13658,7 @@
   },
   "clothes|BRACELET": {
    "title": "File:Bracelet (jewelry).jpg",
-   "final": 1.033,
+   "final": 0.926,
    "p": 0.9989,
    "photo": 0.4237,
    "fit": 1.0,
@@ -13667,12 +13668,12 @@
     "not photo-like 0.42"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 6,
    "forced": false
   },
   "clothes|SUNGLASSES": {
    "title": "File:Allef Vinicius 2016-10-20 (Unsplash) (cropped).jpg",
-   "final": 1.017,
+   "final": 1.138,
    "p": 0.9997,
    "photo": 0.7953,
    "fit": 0.61,
@@ -13685,60 +13686,50 @@
     "fit 0.61"
    ],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "clothes|BUTTON": {
-   "title": "File:Reserveknapper til Hans' uniform.jpg",
-   "final": 0.877,
-   "p": 0.9999,
-   "photo": 0.9918,
-   "fit": 0.365,
+   "title": "File:PEARL BUTTONS.jpg",
+   "final": 1.032,
+   "p": 1.0,
+   "photo": 0.8455,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.61)"
-   ],
-   "flags": [
-    "fit 0.37"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "notes": [],
+   "flags": [],
+   "origin": "search:clothing buttons",
+   "n_cands": 7,
    "forced": false
   },
   "clothes|POCKET": {
-   "title": "File:Jeans pocket back.jpg",
-   "final": 0.501,
-   "p": 0.0323,
-   "photo": 0.9927,
-   "fit": 0.566,
+   "title": "File:Wrangler jeans back detail (2026-01-27).jpg",
+   "final": 1.158,
+   "p": 0.9173,
+   "photo": 0.4952,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 0.94)"
-   ],
+   "notes": [],
    "flags": [
-    "low word prob 0.03",
-    "fit 0.57"
+    "not photo-like 0.50"
    ],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:jeans pocket",
+   "n_cands": 8,
    "forced": false
   },
   "clothes|ZIPPER": {
-   "title": "File:Coil plastic and metal zippers.jpg",
-   "final": 0.898,
-   "p": 0.9982,
-   "photo": 0.9946,
-   "fit": 0.334,
+   "title": "File:YKK Zipper on Jeans close up.jpg",
+   "final": 1.242,
+   "p": 0.915,
+   "photo": 0.9408,
+   "fit": 1.0,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.70)"
+    "upscaled x1.7"
    ],
-   "flags": [
-    "fit 0.33"
-   ],
-   "origin": "current",
-   "n_cands": 1,
+   "flags": [],
+   "origin": "search:zipper",
+   "n_cands": 6,
    "forced": false
   },
   "sports|RUNNING SHOES": {
@@ -26350,7 +26341,7 @@
     "fit 0.67"
    ],
    "origin": "search:crown jewels",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "clothes|HEADBAND": {
@@ -26678,13 +26669,13 @@
     "not photo-like 0.29"
    ],
    "origin": "search:QI",
-   "n_cands": 7,
+   "n_cands": 6,
    "forced": false
   },
   "clothes|KNEE PADS": {
    "title": "File:東レ 2011 (5839420046).jpg",
    "final": 1.02,
-   "p": 0.9205,
+   "p": 0.9204,
    "photo": 0.8962,
    "fit": 0.677,
    "how": "saliency",
@@ -29441,7 +29432,6 @@
   "clothes|BIKINI",
   "clothes|BLOUSE",
   "clothes|BRACELET",
-  "clothes|BUTTON",
   "clothes|CAP",
   "clothes|CARDIGAN",
   "clothes|CHUT THAI",
@@ -29455,33 +29445,29 @@
   "clothes|GOGGLES",
   "clothes|HAIR CLIP",
   "clothes|HEADBAND",
-  "clothes|HIGH HEELS",
-  "clothes|HOODIE",
   "clothes|KNEE PADS",
   "clothes|LEGGINGS",
   "clothes|NIGHTGOWN",
   "clothes|PAJAMAS",
   "clothes|POCKET",
   "clothes|RAINCOAT",
+  "clothes|SANDALS",
   "clothes|SHIRT",
   "clothes|SHOELACES",
   "clothes|SHORTS",
   "clothes|SKIRT",
   "clothes|SLEEVE",
   "clothes|SLIPPERS",
-  "clothes|SNEAKERS",
+  "clothes|SUIT",
   "clothes|SUNGLASSES",
   "clothes|SWEATER",
-  "clothes|SWIMSUIT",
   "clothes|TANK TOP",
   "clothes|TIE",
   "clothes|TRACKSUIT",
   "clothes|TSHIRT",
   "clothes|UNDERWEAR",
-  "clothes|VEST",
   "clothes|WALLET",
   "clothes|WATCH",
-  "clothes|ZIPPER",
   "colors|AQUA",
   "colors|BABY BLUE",
   "colors|BABY PINK",
@@ -30399,7 +30385,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1896,
-  "flagged": 1114
+  "with_photo": 1897,
+  "flagged": 1109
  }
 }

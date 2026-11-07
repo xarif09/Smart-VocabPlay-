@@ -1957,7 +1957,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Preparing_the_Cake_(5285262061).jpg",
   "author": "Serge Melki from Indianapolis, USA",
   "license": "CC BY 2.0",
-  "score": 0.829
+  "score": 0.551
  },
  "clothes|BACKPACK": {
   "file": "w/clothes__backpack.jpg",
@@ -1989,10 +1989,10 @@
  },
  "clothes|BELT": {
   "file": "w/clothes__belt.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Germany_Belt-and-Buckle-02.jpg",
-  "author": "CEphoto, Uwe Aranas",
-  "license": "CC BY-SA 3.0",
-  "score": 0.885
+  "src": "https://commons.wikimedia.org/wiki/File:Belt_MET_41.47_side_CP4.jpg",
+  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
+  "license": "CC0",
+  "score": 0.957
  },
  "clothes|BIB": {
   "file": "w/clothes__bib.jpg",
@@ -2020,21 +2020,28 @@
   "src": "https://commons.wikimedia.org/wiki/File:Iranian_woman_wearing_boots_-_Persian_woman_in_boots,_Iranian_boots_01.jpg",
   "author": "iranpayara",
   "license": "CC0",
-  "score": 1.044
+  "score": 1.214
  },
  "clothes|BRACELET": {
   "file": "w/clothes__bracelet.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bracelet_(jewelry).jpg",
   "author": "David Ring",
   "license": "CC0",
-  "score": 1.033
+  "score": 0.926
  },
  "clothes|BUTTON": {
   "file": "w/clothes__button.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Reserveknapper_til_Hans%27_uniform.jpg",
-  "author": "Europeana staff photographer",
-  "license": "Public domain",
-  "score": 0.877
+  "src": "https://commons.wikimedia.org/wiki/File:PEARL_BUTTONS.jpg",
+  "author": "Ranjithkumar Murugesan",
+  "license": "CC0",
+  "score": 1.032
+ },
+ "clothes|CAP": {
+  "file": "w/clothes__cap.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:HK_Central_Chater_Road_Tunnel_Saturday_noon_visitors_n_camera_boy_brown_clothing_with_cap_hat_October_2025_N13P_04.jpg",
+  "author": "HOIM EE RINGWEITTP",
+  "license": "CC0",
+  "score": 0.733
  },
  "clothes|CAPE": {
   "file": "w/clothes__cape.jpg",
@@ -2062,7 +2069,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Coat_MET_DT1708.jpg",
   "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
   "license": "CC0",
-  "score": 0.593
+  "score": 0.84
  },
  "clothes|COLLAR": {
   "file": "w/clothes__collar.jpg",
@@ -2097,7 +2104,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Woman_in_traditional_Uzbek_long_adras_dress_(Po-i-Kalyan_complex,_2025_Buhara).jpg",
   "author": "Petar Milošević",
   "license": "CC BY-SA 4.0",
-  "score": 0.885
+  "score": 0.98
  },
  "clothes|EARMUFFS": {
   "file": "w/clothes__earmuffs.jpg",
@@ -2122,17 +2129,17 @@
  },
  "clothes|GLASSES": {
   "file": "w/clothes__glasses.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:2023_Okulary_korekcyjne.jpg",
-  "author": "Jacek Halicki",
-  "license": "CC BY-SA 4.0",
-  "score": 0.978
+  "src": "https://commons.wikimedia.org/wiki/File:Woman_in_Eyeglasses_(9).jpg",
+  "author": "Photo by form PxHere",
+  "license": "CC0",
+  "score": 1.092
  },
  "clothes|GLOVES": {
   "file": "w/clothes__gloves.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Gloves_MET_26.56.100.jpg",
   "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
   "license": "CC0",
-  "score": 1.039
+  "score": 1.213
  },
  "clothes|GOGGLES": {
   "file": "w/clothes__goggles.jpg",
@@ -2160,7 +2167,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:HK_YLD_Yuen_Long_MTR_Station_bus_station_visitor_male_clothing_%E5%B8%BD%E5%AD%90_hat_August_2024_R12S_02.jpg",
   "author": "ShaoYiuPai SimonHuang",
   "license": "CC0",
-  "score": 1.058
+  "score": 1.231
  },
  "clothes|HEADBAND": {
   "file": "w/clothes__headband.jpg",
@@ -2171,24 +2178,24 @@
  },
  "clothes|HIGH HEELS": {
   "file": "w/clothes__high-heels.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:High-heeled_shoes_on_display_in_Huangpu,_Shanghai_(20180211145140).jpg",
-  "author": "N509FZ",
-  "license": "CC BY-SA 4.0",
-  "score": 0.838
+  "src": "https://commons.wikimedia.org/wiki/File:Stripper_shoes_Pleaser_high_heeled_shoes_2023.jpg",
+  "author": "Zara KangR",
+  "license": "CC0",
+  "score": 1.189
  },
  "clothes|HOODIE": {
   "file": "w/clothes__hoodie.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Marvin_Jones_2019_(cropped).jpg",
-  "author": "AlexanderJonesi",
-  "license": "CC BY-SA 2.0",
-  "score": 0.837
+  "src": "https://commons.wikimedia.org/wiki/File:%22Vaccinated%22_hoodie_on_sale,_reference_to_COVID-19.jpg",
+  "author": "Syced",
+  "license": "CC0",
+  "score": 1.112
  },
  "clothes|JACKET": {
   "file": "w/clothes__jacket.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Clothing_tag_on_Navy_Issued_Jacket,_Cold_Weather,_Permeable_built_by_the_Vanderbilt_Shirt_Company.jpg",
   "author": "ArmyParatrooper436",
   "license": "CC BY-SA 4.0",
-  "score": 0.856
+  "score": 1.049
  },
  "clothes|JEANS": {
   "file": "w/clothes__jeans.jpg",
@@ -2223,7 +2230,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Twisted_Face_Mask_MET_DP-12565-001.jpg",
   "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
   "license": "CC0",
-  "score": 1.088
+  "score": 1.228
  },
  "clothes|MITTENS": {
   "file": "w/clothes__mittens.jpg",
@@ -2237,7 +2244,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:194677_ERM_B114_51_194677.jpg",
   "author": "Eesti Rahva Muuseum, http://www.muis.ee/museaalview/621208 ; Textilebase Qid: https://reprexbase.eu/textilebase/Item:Q1076 ; Finnougric database: https://reprexbase.eu/fu/Item:Q7287",
   "license": "Public domain",
-  "score": 1.054
+  "score": 1.234
  },
  "clothes|NIGHTGOWN": {
   "file": "w/clothes__nightgown.jpg",
@@ -2255,24 +2262,24 @@
  },
  "clothes|PAJAMAS": {
   "file": "w/clothes__pajamas.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Cat%27s_Pajamas_1926_ad.jpg",
-  "author": "Paramount Pictures",
-  "license": "Public domain",
-  "score": 0.918
+  "src": "https://commons.wikimedia.org/wiki/File:Little_boy_in_pajamas_have_fun_with_toys.jpg",
+  "author": "Shixart1985",
+  "license": "CC BY 2.0",
+  "score": 0.645
  },
  "clothes|PANTS": {
   "file": "w/clothes__pants.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Uniqlo_Unisex_2026-09-07_Geared_Pants_02.jpg",
   "author": "P1898",
   "license": "CC BY 4.0",
-  "score": 1.099
+  "score": 1.298
  },
  "clothes|POCKET": {
   "file": "w/clothes__pocket.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Jeans_pocket_back.jpg",
-  "author": "Dvortygirl",
+  "src": "https://commons.wikimedia.org/wiki/File:Wrangler_jeans_back_detail_(2026-01-27).jpg",
+  "author": "Olgierd Rudak",
   "license": "CC BY-SA 4.0",
-  "score": 0.501
+  "score": 1.158
  },
  "clothes|PURSE": {
   "file": "w/clothes__purse.jpg",
@@ -2283,24 +2290,24 @@
  },
  "clothes|RAINCOAT": {
   "file": "w/clothes__raincoat.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Gabriel_wearing_a_University_of_Chicago_disposable_raincoat,_Hyde_Park,_Illinois,_US_(PPL1-Corrected)_julesvernex2.jpg",
-  "author": "Jules Verne Times Two",
+  "src": "https://commons.wikimedia.org/wiki/File:David_Julian_Kirchner_(cropped).jpg",
+  "author": "Donni Schoenemond",
   "license": "CC BY-SA 4.0",
-  "score": 0.929
+  "score": 0.966
  },
  "clothes|RING": {
   "file": "w/clothes__ring.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Traditional_Wedding_Ring.jpg",
-  "author": "A Minty Penguin",
+  "src": "https://commons.wikimedia.org/wiki/File:Glass_finger_ring_MET_DP121097.jpg",
+  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
   "license": "CC0",
-  "score": 1.007
+  "score": 1.319
  },
  "clothes|SANDALS": {
   "file": "w/clothes__sandals.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Pair_of_Sandals_MET_MCC_120crop_2.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pair_of_Sandals_MET_10.184.1a-b_EGDP014941.jpg",
   "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
   "license": "CC0",
-  "score": 0.962
+  "score": 0.966
  },
  "clothes|SARONG": {
   "file": "w/clothes__sarong.jpg",
@@ -2314,14 +2321,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:100%25_Kaschmir_Wolle_vonk_kaschmirprodukte.de.jpg",
   "author": "https://www.kaschmirprodukte.de",
   "license": "CC BY-SA 4.0",
-  "score": 1.141
+  "score": 1.34
  },
  "clothes|SHIRT": {
   "file": "w/clothes__shirt.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Camisade_pu%C3%B1o_doble.jpg",
   "author": "Incal",
   "license": "CC BY-SA 3.0",
-  "score": 1.037
+  "score": 0.914
  },
  "clothes|SHOELACES": {
   "file": "w/clothes__shoelaces.jpg",
@@ -2335,21 +2342,21 @@
   "src": "https://commons.wikimedia.org/wiki/File:Bata_Shoe_Museum_-_Pope_Benedict_XV%27s_shoes_(91324).jpg",
   "author": "Rhododendrites",
   "license": "CC BY-SA 4.0",
-  "score": 1.022
+  "score": 1.196
  },
  "clothes|SHORTS": {
   "file": "w/clothes__shorts.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Red_short_shorts.jpg",
   "author": "Tinou Bao",
   "license": "CC BY 2.0",
-  "score": 0.939
+  "score": 0.897
  },
  "clothes|SKIRT": {
   "file": "w/clothes__skirt.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Skirt_MET_26.265.48.jpg",
   "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
   "license": "CC0",
-  "score": 0.958
+  "score": 1.07
  },
  "clothes|SLEEVE": {
   "file": "w/clothes__sleeve.jpg",
@@ -2363,49 +2370,49 @@
   "src": "https://commons.wikimedia.org/wiki/File:Slippers.jpg",
   "author": "PiccoloNamek at English Wikipedia",
   "license": "CC BY-SA 3.0",
-  "score": 0.876
+  "score": 0.969
  },
  "clothes|SNEAKERS": {
   "file": "w/clothes__sneakers.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Air_Jordan_1_Banned.jpg",
-  "author": "HI 622",
-  "license": "CC BY-SA 4.0",
-  "score": 0.426
+  "src": "https://commons.wikimedia.org/wiki/File:JP_%E6%97%A5%E6%9C%AC_Japan_%E6%B2%96%E7%B9%A9_OKINAWA_Outlet_Mall_Ashibinaa_shop_PUMA_Clothing_n_shoes_January_2025_R12S_27.jpg",
+  "author": "Naha Mama Pavilionz",
+  "license": "CC0",
+  "score": 1.354
  },
  "clothes|SOCKS": {
   "file": "w/clothes__socks.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Sport_short_socks_2026-09-06_UNIQLO_Clothing_Philippines_02.jpg",
   "author": "P1898",
   "license": "CC BY 4.0",
-  "score": 1.091
+  "score": 1.29
  },
  "clothes|SUIT": {
   "file": "w/clothes__suit.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:DALL-E2_Photographs_taken_by_Polaroid_camera_showing_anthropomorphic_rhinoceros_wearing_business_suit_and_standing_on_two_feet.jpg",
-  "author": "OpenAI DALL-E 2",
+  "src": "https://commons.wikimedia.org/wiki/File:John_Young_in_a_business_suit.jpg",
+  "author": "NASA",
   "license": "Public domain",
-  "score": 1.12
+  "score": 1.026
  },
  "clothes|SUNGLASSES": {
   "file": "w/clothes__sunglasses.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Allef_Vinicius_2016-10-20_(Unsplash)_(cropped).jpg",
   "author": "Allef Vinicius seteales",
   "license": "CC0",
-  "score": 1.017
+  "score": 1.138
  },
  "clothes|SWEATER": {
   "file": "w/clothes__sweater.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Rudi_Gernreich_sweater_designed_by_Lisa_Anne_Auerbach,_Fall_2018,_back.jpg",
-  "author": "Staff photographer, Rhode Island School of Design Museum of Art",
-  "license": "CC0",
-  "score": 0.886
+  "src": "https://commons.wikimedia.org/wiki/File:Selburose-sweater.jpg",
+  "author": "Nils R. Barth",
+  "license": "Public domain",
+  "score": 0.785
  },
  "clothes|SWIMSUIT": {
   "file": "w/clothes__swimsuit.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Swimsuit_open_boobs.jpg",
-  "author": "Naga La",
-  "license": "PDM-owner",
-  "score": 0.941
+  "src": "https://commons.wikimedia.org/wiki/File:Wanda_Hendrix_pin-up_in_Leopard_swimsuit_1954.jpg",
+  "author": "International News Photos (INS)",
+  "license": "Public domain",
+  "score": 1.071
  },
  "clothes|TANK TOP": {
   "file": "w/clothes__tank-top.jpg",
@@ -2419,7 +2426,7 @@
   "src": "https://commons.wikimedia.org/wiki/File:Memphis_tie_1A.JPG",
   "author": "Affärside",
   "license": "CC BY-SA 4.0",
-  "score": 1.119
+  "score": 1.04
  },
  "clothes|TRACKSUIT": {
   "file": "w/clothes__tracksuit.jpg",
@@ -2433,14 +2440,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Batik_Africa_Tshirt.jpg",
   "author": "Wordsmith105",
   "license": "CC BY-SA 4.0",
-  "score": 0.932
+  "score": 1.008
  },
  "clothes|UMBRELLA": {
   "file": "w/clothes__umbrella.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Woman_with_Sun_Umbrella.png",
   "author": "AIDEPCUL",
   "license": "CC BY 4.0",
-  "score": 1.099
+  "score": 1.297
  },
  "clothes|UNDERWEAR": {
   "file": "w/clothes__underwear.jpg",
@@ -2451,17 +2458,17 @@
  },
  "clothes|UNIFORM": {
   "file": "w/clothes__uniform.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:1950_UK_school_uniform_n2.png",
-  "author": "Snow storm in Eastern Asia at English Wikipedia",
-  "license": "Public domain",
-  "score": 1.029
+  "src": "https://commons.wikimedia.org/wiki/File:Ban_Hat_Suea_Ten_School_in_6-2010.jpg",
+  "author": "ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส มากคล้าย",
+  "license": "CC BY 3.0",
+  "score": 1.151
  },
  "clothes|VEST": {
   "file": "w/clothes__vest.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Warnweste_gelb.jpg",
-  "author": "Magnus Mertens",
-  "license": "CC BY-SA 2.0 de",
-  "score": 0.844
+  "src": "https://commons.wikimedia.org/wiki/File:Vest_MET_CI39.13.135_B.jpg",
+  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
+  "license": "CC0",
+  "score": 1.217
  },
  "clothes|WALLET": {
   "file": "w/clothes__wallet.jpg",
@@ -2475,14 +2482,14 @@
   "src": "https://commons.wikimedia.org/wiki/File:Fossil_wristwatch_with_white_background.jpg",
   "author": "Cvmontuy",
   "license": "CC BY-SA 4.0",
-  "score": 1.1
+  "score": 1.25
  },
  "clothes|ZIPPER": {
   "file": "w/clothes__zipper.jpg",
-  "src": "https://commons.wikimedia.org/wiki/File:Coil_plastic_and_metal_zippers.jpg",
-  "author": "Woodbine9",
-  "license": "CC BY-SA 4.0",
-  "score": 0.898
+  "src": "https://commons.wikimedia.org/wiki/File:YKK_Zipper_on_Jeans_close_up.jpg",
+  "author": "",
+  "license": "CC BY-SA 3.0",
+  "score": 1.242
  },
  "colors|AMBER": {
   "file": "w/colors__amber.jpg",

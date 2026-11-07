@@ -34,7 +34,7 @@
   },
   "numbers|THREE": {
    "title": "File:Three apples in hand.jpg",
-   "final": 0.994,
+   "final": 1.127,
    "p": 0.9566,
    "photo": 0.9869,
    "fit": 0.55,
@@ -46,7 +46,7 @@
     "fit 0.55"
    ],
    "origin": "search:three apples",
-   "n_cands": 8,
+   "n_cands": 10,
    "forced": false
   },
   "animals|CAT": {
@@ -2017,7 +2017,7 @@
     "low word prob 0.46"
    ],
    "origin": "search:rain weather",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "weather|SNOW": {
@@ -2047,7 +2047,7 @@
     "low word prob 0.47"
    ],
    "origin": "search:cloud weather",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "weather|WIND": {
@@ -2194,7 +2194,7 @@
   },
   "numbers|ZERO": {
    "title": "File:Empty plate with fork.jpg",
-   "final": 0.895,
+   "final": 1.075,
    "p": 0.8061,
    "photo": 0.996,
    "fit": 0.808,
@@ -2204,7 +2204,7 @@
    ],
    "flags": [],
    "origin": "search:empty plate",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "animals|RABBIT": {
@@ -2377,12 +2377,22 @@
    "forced": false
   },
   "weather|RAINBOW": {
-   "status": "no candidates"
+   "title": "File:Double-alaskan-rainbow.jpg",
+   "final": 1.381,
+   "p": 1.0,
+   "photo": 0.9754,
+   "fit": 1.0,
+   "how": "scene",
+   "notes": [],
+   "flags": [],
+   "origin": "current",
+   "n_cands": 5,
+   "forced": false
   },
   "numbers|ONE": {
    "title": "File:Apple II at Musée Bolo.jpg",
-   "final": 0.847,
-   "p": 0.6255,
+   "final": 1.065,
+   "p": 0.6243,
    "photo": 0.9992,
    "fit": 1.0,
    "how": "saliency",
@@ -2393,26 +2403,25 @@
    "forced": false
   },
   "numbers|TWO": {
-   "title": "File:Still Life with Two Apples by Édouard Manet.jpeg",
-   "final": 0.768,
-   "p": 0.9408,
-   "photo": 0.0004,
-   "fit": 0.546,
+   "title": "File:Person placing two apples on a red surface indoors.jpg",
+   "final": 1.072,
+   "p": 0.832,
+   "photo": 0.9884,
+   "fit": 0.566,
    "how": "saliency",
    "notes": [
-    "subject cannot fit 3:4 (box cov 0.91)"
+    "subject cannot fit 3:4 (box cov 0.94)"
    ],
    "flags": [
-    "fit 0.55",
-    "not photo-like 0.00"
+    "fit 0.57"
    ],
    "origin": "search:two apples",
-   "n_cands": 8,
+   "n_cands": 10,
    "forced": false
   },
   "numbers|FOUR": {
    "title": "File:Apples-cultivar-petrovka.jpg",
-   "final": 0.742,
+   "final": 0.953,
    "p": 0.3188,
    "photo": 0.9994,
    "fit": 0.845,
@@ -2424,14 +2433,14 @@
     "low word prob 0.32"
    ],
    "origin": "search:four apples",
-   "n_cands": 8,
+   "n_cands": 10,
    "forced": false
   },
   "numbers|FIVE": {
    "title": "File:Sole of foot of an infant held between the middle finger and the ring finger of an adult hand for size comparison.jpg",
-   "final": 0.855,
-   "p": 0.9921,
-   "photo": 0.8143,
+   "final": 0.919,
+   "p": 0.992,
+   "photo": 0.8119,
    "fit": 0.22,
    "how": "saliency",
    "notes": [
@@ -2442,33 +2451,31 @@
     "fit 0.22"
    ],
    "origin": "search:five fingers hand",
-   "n_cands": 8,
+   "n_cands": 10,
    "forced": false
   },
   "numbers|SIX": {
-   "title": "File:Six brown eggs boiling.png",
-   "final": 0.516,
-   "p": 0.451,
-   "photo": 0.8153,
-   "fit": 0.408,
+   "title": "File:Carton of eggs.jpg",
+   "final": 0.669,
+   "p": 0.0001,
+   "photo": 0.999,
+   "fit": 0.8,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.85)"
+    "touches 1 edge(s)"
    ],
    "flags": [
-    "low word prob 0.45",
-    "fit 0.41"
+    "low word prob 0.00"
    ],
-   "origin": "search:six eggs",
-   "n_cands": 8,
+   "origin": "search:six eggs carton",
+   "n_cands": 9,
    "forced": false
   },
   "numbers|SEVEN": {
    "title": "File:Sign number 7 on Jerusalem Street.jpg",
-   "final": 0.714,
+   "final": 0.894,
    "p": 0.2258,
-   "photo": 0.4132,
+   "photo": 0.4131,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -2477,60 +2484,64 @@
     "not photo-like 0.41"
    ],
    "origin": "search:number 7 sign",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "numbers|EIGHT": {
-   "title": "File:2026-09-17 8 Gizo Nishnianidze Street house number sign, Tbilisi.jpg",
-   "final": 0.513,
-   "p": 0.1517,
-   "photo": 0.6657,
-   "fit": 0.75,
+   "title": "File:Number ‘8’ in Nigerian Sign Language.jpg",
+   "final": 0.639,
+   "p": 0.0001,
+   "photo": 0.9936,
+   "fit": 0.676,
    "how": "saliency",
    "notes": [
-    "tiny subject"
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.15"
+    "low word prob 0.00",
+    "fit 0.68"
    ],
    "origin": "search:number 8 sign",
-   "n_cands": 8,
+   "n_cands": 9,
    "forced": false
   },
   "numbers|NINE": {
-   "title": "File:Sign number 9 on Jerusalem Street.jpg",
-   "final": 0.803,
-   "p": 0.6628,
-   "photo": 0.6668,
-   "fit": 0.765,
-   "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
-   ],
-   "flags": [],
-   "origin": "search:number 9 sign",
-   "n_cands": 8,
-   "forced": false
-  },
-  "numbers|TEN": {
-   "title": "File:2026-09-17 10 Gizo Nishnianidze Street house number sign, Tbilisi.jpg",
-   "final": 0.489,
-   "p": 0.0006,
-   "photo": 0.4634,
+   "title": "File:Square made from a group of tennis balls (4273177377).jpg",
+   "final": 1.012,
+   "p": 0.3072,
+   "photo": 0.9959,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.46"
+    "low word prob 0.31"
    ],
-   "origin": "search:number 10 sign",
+   "origin": "search:nine balls",
    "n_cands": 8,
+   "forced": false
+  },
+  "numbers|TEN": {
+   "title": "File:20240428 Armed Forces Sports Bowling Championship - bowling form.jpg",
+   "final": 0.585,
+   "p": 0.0088,
+   "photo": 0.4475,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.01",
+    "not photo-like 0.45"
+   ],
+   "origin": "search:ten fingers",
+   "n_cands": 6,
    "forced": false
   },
   "numbers|ELEVEN": {
    "title": "File:Międzyrzec-Podlaski-180927-house-number-Rymarska-11.jpg",
-   "final": 0.612,
+   "final": 0.459,
    "p": 0.4101,
    "photo": 0.1796,
    "fit": 0.766,
@@ -2543,12 +2554,12 @@
     "not photo-like 0.18"
    ],
    "origin": "search:house number 11",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "numbers|TWELVE": {
    "title": "File:Number 12 in front of a house in Jerusalem.jpg",
-   "final": 0.989,
+   "final": 1.169,
    "p": 0.8397,
    "photo": 0.9973,
    "fit": 0.813,
@@ -2558,12 +2569,12 @@
    ],
    "flags": [],
    "origin": "search:number 12 sign",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "numbers|TWENTY": {
    "title": "File:Sign number 20 on Jerusalem Street.jpg",
-   "final": 0.727,
+   "final": 0.788,
    "p": 0.8157,
    "photo": 0.4552,
    "fit": 0.378,
@@ -2580,25 +2591,23 @@
    "forced": false
   },
   "numbers|THIRTY": {
-   "title": "File:Sign number 55 on Jerusalem street.jpg",
-   "final": 0.505,
-   "p": 0.0,
-   "photo": 0.9945,
+   "title": "File:UK 30 speed Limit Sign - geograph.org.uk - 5094584.jpg",
+   "final": 1.285,
+   "p": 0.9936,
+   "photo": 0.9423,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
-   "flags": [
-    "low word prob 0.00"
-   ],
-   "origin": "search:number 30 sign",
-   "n_cands": 8,
+   "flags": [],
+   "origin": "search:speed limit 30 sign",
+   "n_cands": 10,
    "forced": false
   },
   "numbers|FORTY": {
    "title": "File:Münster, Prinzipalmarkt 40 -- 2020 -- 0236.jpg",
-   "final": 0.825,
+   "final": 1.042,
    "p": 0.5396,
-   "photo": 0.9391,
+   "photo": 0.9388,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
@@ -2609,7 +2618,7 @@
   },
   "numbers|FIFTY": {
    "title": "File:UK 50 mph speed limit sign on a single-carriageway.jpg",
-   "final": 1.023,
+   "final": 1.214,
    "p": 0.8889,
    "photo": 0.8455,
    "fit": 1.0,
@@ -2617,56 +2626,55 @@
    "notes": [],
    "flags": [],
    "origin": "search:number 50 sign",
-   "n_cands": 8,
+   "n_cands": 7,
    "forced": false
   },
   "numbers|HUNDRED": {
-   "title": "File:Thai road sign R-32 -100.png",
-   "final": 0.718,
-   "p": 0.9575,
-   "photo": 0.0362,
-   "fit": 0.252,
-   "how": "saliency",
-   "notes": [
-    "touches 3 edge(s)",
-    "subject cannot fit 3:4 (box cov 0.82)"
-   ],
-   "flags": [
-    "fit 0.25",
-    "not photo-like 0.04"
-   ],
-   "origin": "search:number 100 sign",
-   "n_cands": 8,
-   "forced": false
-  },
-  "numbers|THOUSAND": {
-   "title": "File:11.6.H Pin 1000 Km-h gold.jpg",
-   "final": 0.717,
-   "p": 0.5336,
-   "photo": 0.085,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.09"
-   ],
-   "origin": "search:number 1000",
-   "n_cands": 8,
-   "forced": false
-  },
-  "numbers|MILLION": {
-   "title": "File:Carte du monde au 1-1 000 000. Dossier sur le projet présenté au congrès géographique de Berne en 1891 de carte du globe à l'échelle du 1-1 000 000, 1891-1913 (27 pièces) - btv1b108745456 (011 of 104).jpg",
-   "final": 0.427,
-   "p": 0.0006,
-   "photo": 0.7711,
+   "title": "File:Lascar Rama VIII Bridge (4509749672).jpg",
+   "final": 0.69,
+   "p": 0.0002,
+   "photo": 0.9484,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:1000000",
+   "origin": "search:100 baht banknote",
    "n_cands": 8,
+   "forced": false
+  },
+  "numbers|THOUSAND": {
+   "title": "File:Exmoor , Wimbleball Lake - 1000 Sign ^ Lookout Point - geograph.org.uk - 1956301.jpg",
+   "final": 0.722,
+   "p": 0.0084,
+   "photo": 0.6402,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:1000 sign",
+   "n_cands": 10,
+   "forced": false
+  },
+  "numbers|MILLION": {
+   "title": "File:Venice, Museo Correr, pile of coins.jpg",
+   "final": 0.867,
+   "p": 0.9875,
+   "photo": 1.0,
+   "fit": 0.219,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.57)"
+   ],
+   "flags": [
+    "fit 0.22"
+   ],
+   "origin": "search:pile of coins",
+   "n_cands": 7,
    "forced": false
   },
   "vehicles|CAR": {
@@ -6725,20 +6733,20 @@
     "low word prob 0.00"
    ],
    "origin": "search:rainy weather",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "weather|FLOOD": {
-   "title": "File:Defense.gov photo essay 111016-M-ZN194-162.jpg",
-   "final": 1.287,
-   "p": 0.9987,
-   "photo": 0.9809,
+   "title": "File:Flooded Albizia Saman (rain tree) in the Mekong.jpg",
+   "final": 1.336,
+   "p": 0.936,
+   "photo": 0.996,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 8,
    "forced": false
   },
   "weather|ICE": {
@@ -6785,29 +6793,29 @@
    "forced": false
   },
   "weather|SPRING": {
-   "title": "File:Arboretum Robert Lenoir - Jardin des méllifères.jpg",
-   "final": 1.233,
+   "title": "File:Bonn, Heerstraße -- 2018 -- 2250.jpg",
+   "final": 1.399,
    "p": 1.0,
-   "photo": 0.6639,
+   "photo": 0.9971,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 9,
    "forced": false
   },
   "weather|AUTUMN": {
-   "title": "File:Dülmen, Wildpark -- 2014 -- 3808 color balanced.jpg",
-   "final": 1.324,
-   "p": 0.9672,
-   "photo": 0.9986,
+   "title": "File:Toulouse - Quercus leaves - 02.jpg",
+   "final": 1.399,
+   "p": 0.9992,
+   "photo": 0.9982,
    "fit": 1.0,
    "how": "scene",
    "notes": [],
    "flags": [],
-   "origin": "current",
-   "n_cands": 1,
+   "origin": "search:QI",
+   "n_cands": 6,
    "forced": false
   },
   "weather|SNOWMAN": {
@@ -6826,38 +6834,42 @@
    "forced": false
   },
   "numbers|THIRTEEN": {
-   "title": "File:2026-09-17 13 Gizo Nishnianidze Street house number sign, Tbilisi.jpg",
-   "final": 0.954,
-   "p": 0.8637,
-   "photo": 0.1357,
-   "fit": 1.0,
+   "title": "File:Sign number 13 on Jerusalem street.jpg",
+   "final": 0.766,
+   "p": 0.5901,
+   "photo": 0.7609,
+   "fit": 0.423,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.70)"
+   ],
    "flags": [
-    "not photo-like 0.14"
+    "fit 0.42"
    ],
    "origin": "search:number 13 sign",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "numbers|FOURTEEN": {
-   "title": "File:Dülmen, Haus Osthoff -- 2012 -- 8846.jpg",
-   "final": 0.55,
-   "p": 0.0004,
-   "photo": 0.9953,
-   "fit": 1.0,
+   "title": "File:James Webb Space Telescope Mirrors Will Piece Together Cosmic Puzzles (30108124923).jpg",
+   "final": 0.54,
+   "p": 0.0016,
+   "photo": 0.696,
+   "fit": 0.8,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "touches 1 edge(s)"
+   ],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:house number 14",
+   "origin": "search:number 14 sign",
    "n_cands": 8,
    "forced": false
   },
   "numbers|FIFTEEN": {
    "title": "File:2026-09-17 Old house number sign at 15 Kojori Street, Tbilisi.jpg",
-   "final": 1.069,
+   "final": 1.267,
    "p": 0.9481,
    "photo": 0.9581,
    "fit": 1.0,
@@ -6865,38 +6877,42 @@
    "notes": [],
    "flags": [],
    "origin": "search:number 15 sign",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "numbers|SIXTY": {
-   "title": "File:Boulevard Hotel (Neon sign), Miami Beach.jpg",
-   "final": 0.454,
-   "p": 0.0005,
-   "photo": 0.0831,
-   "fit": 1.0,
+   "title": "File:Korean Sign - Maximum Speed Limit 60kph 1.jpg",
+   "final": 1.033,
+   "p": 0.9071,
+   "photo": 0.459,
+   "fit": 0.768,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00",
-    "not photo-like 0.08"
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
    ],
-   "origin": "search:number 60 sign",
-   "n_cands": 6,
+   "flags": [
+    "not photo-like 0.46"
+   ],
+   "origin": "search:speed limit 60 sign",
+   "n_cands": 9,
    "forced": false
   },
   "numbers|SEVENTY": {
-   "title": "File:185 Anyetei Avenue, New Legon.jpg",
-   "final": 0.444,
-   "p": 0.0,
-   "photo": 0.9327,
-   "fit": 1.0,
+   "title": "File:Texas speed limit 70 65.JPG",
+   "final": 0.792,
+   "p": 0.7821,
+   "photo": 0.9474,
+   "fit": 0.257,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.00"
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.67)"
    ],
-   "origin": "search:house number 70",
-   "n_cands": 5,
+   "flags": [
+    "fit 0.26"
+   ],
+   "origin": "search:speed limit 70 sign",
+   "n_cands": 6,
    "forced": false
   },
   "vehicles|SPACESHIP": {
@@ -14568,18 +14584,21 @@
    "forced": false
   },
   "numbers|SIXTEEN": {
-   "title": "File:Amboy (California, USA) -- 2012 -- 4.jpg",
-   "final": 0.701,
-   "p": 0.0031,
-   "photo": 0.9725,
-   "fit": 1.0,
+   "title": "File:Yellowstone National Park (WY, USA), Old Faithful Geyser -- 2022 -- 2599.jpg",
+   "final": 0.478,
+   "p": 0.0042,
+   "photo": 0.9801,
+   "fit": 0.411,
    "how": "saliency",
-   "notes": [],
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.68)"
+   ],
    "flags": [
-    "low word prob 0.00"
+    "low word prob 0.00",
+    "fit 0.41"
    ],
    "origin": "search:number 16 sign",
-   "n_cands": 8,
+   "n_cands": 6,
    "forced": false
   },
   "numbers|SEVENTEEN": {
@@ -14594,63 +14613,46 @@
    ],
    "flags": [],
    "origin": "search:number 17 sign",
-   "n_cands": 9,
+   "n_cands": 8,
    "forced": false
   },
   "numbers|EIGHTEEN": {
-   "title": "File:Peak & Northern Footpath Society sign number 302 - geograph.org.uk - 3210998.jpg",
-   "final": 0.665,
-   "p": 0.0002,
-   "photo": 0.7477,
+   "title": "File:Rostock Power Station, SW view.jpg",
+   "final": 0.634,
+   "p": 0.0001,
+   "photo": 0.9572,
+   "fit": 0.765,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:house number 18",
+   "n_cands": 9,
+   "forced": false
+  },
+  "numbers|NINETEEN": {
+   "title": "File:St Mary's Church in Battersea.jpg",
+   "final": 0.705,
+   "p": 0.0004,
+   "photo": 0.9591,
    "fit": 1.0,
    "how": "saliency",
    "notes": [],
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:number 18 sign",
-   "n_cands": 8,
-   "forced": false
-  },
-  "numbers|NINETEEN": {
-   "title": "File:Sign number 19 on Jerusalem street.jpg",
-   "final": 0.761,
-   "p": 0.8332,
-   "photo": 0.1514,
-   "fit": 1.0,
-   "how": "saliency",
-   "notes": [],
-   "flags": [
-    "not photo-like 0.15"
-   ],
-   "origin": "search:number 19 sign",
-   "n_cands": 10,
+   "origin": "search:house number 19",
+   "n_cands": 9,
    "forced": false
   },
   "numbers|EIGHTY": {
-   "title": "File:Ramsau bei Berchtesgaden (DE), Milchstraße über Hochkalter & Hintersee -- 2024 -- 1018-50.jpg",
-   "final": 0.386,
-   "p": 0.0,
-   "photo": 0.997,
-   "fit": 0.373,
-   "how": "none",
-   "notes": [
-    "no subject found",
-    "subject cannot fit 3:4 (box cov 0.89)"
-   ],
-   "flags": [
-    "low word prob 0.00",
-    "fit 0.37"
-   ],
-   "origin": "search:house number 80",
-   "n_cands": 7,
-   "forced": false
-  },
-  "numbers|NINETY": {
-   "title": "File:I-90 east at WA-18, near Snoqualmie.jpg",
-   "final": 0.583,
-   "p": 0.0024,
-   "photo": 0.9928,
+   "title": "File:Speed Limit 20 sign on Commercial Drive, Southbridge, Massachusetts.jpg",
+   "final": 0.602,
+   "p": 0.0001,
+   "photo": 0.9777,
    "fit": 0.75,
    "how": "saliency",
    "notes": [
@@ -14659,8 +14661,23 @@
    "flags": [
     "low word prob 0.00"
    ],
-   "origin": "search:number 90 sign",
-   "n_cands": 8,
+   "origin": "search:speed limit 80 sign",
+   "n_cands": 6,
+   "forced": false
+  },
+  "numbers|NINETY": {
+   "title": "File:Combined speed camera and speed limit sign, Northway, Bishopston - geograph.org.uk - 6010968.jpg",
+   "final": 0.803,
+   "p": 0.0837,
+   "photo": 0.9881,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.08"
+   ],
+   "origin": "search:speed limit 90 sign",
+   "n_cands": 9,
    "forced": false
   },
   "numbers|FIRST": {
@@ -14969,7 +14986,7 @@
    "notes": [],
    "flags": [],
    "origin": "current",
-   "n_cands": 1,
+   "n_cands": 7,
    "forced": false
   },
   "weather|TYPHOON": {
@@ -22600,7 +22617,7 @@
     "low word prob 0.44"
    ],
    "origin": "search:4th place",
-   "n_cands": 5,
+   "n_cands": 6,
    "forced": false
   },
   "numbers|FIFTH": {
@@ -22633,7 +22650,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:6th place",
-   "n_cands": 6,
+   "n_cands": 7,
    "forced": false
   },
   "numbers|SEVENTH": {
@@ -22654,52 +22671,50 @@
    "forced": false
   },
   "numbers|EIGHTH": {
-   "title": "File:Ampthill market place.jpg",
-   "final": 0.742,
-   "p": 0.0809,
-   "photo": 0.9179,
-   "fit": 1.0,
+   "title": "File:2026-09-17 8 Gizo Nishnianidze Street house number sign, Tbilisi.jpg",
+   "final": 0.921,
+   "p": 0.6264,
+   "photo": 0.6656,
+   "fit": 0.75,
    "how": "saliency",
-   "notes": [],
-   "flags": [
-    "low word prob 0.08"
+   "notes": [
+    "tiny subject"
    ],
-   "origin": "search:8th place",
+   "flags": [],
+   "origin": "search:number 8 sign",
    "n_cands": 7,
    "forced": false
   },
   "numbers|NINTH": {
-   "title": "File:Number ‘9’ in Nigerian Sign Language.jpg",
-   "final": 0.644,
-   "p": 0.0001,
-   "photo": 0.9944,
-   "fit": 0.676,
+   "title": "File:Sign number 9 on Jerusalem Street.jpg",
+   "final": 0.777,
+   "p": 0.3145,
+   "photo": 0.6668,
+   "fit": 0.765,
    "how": "saliency",
    "notes": [
-    "touches 1 edge(s)",
     "subject cannot fit 3:4 (box cov 1.00)"
    ],
    "flags": [
-    "low word prob 0.00",
-    "fit 0.68"
+    "low word prob 0.31"
    ],
    "origin": "search:number 9 sign",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "numbers|TENTH": {
-   "title": "File:Sign number 10 on Jerusalem Street.jpg",
-   "final": 1.118,
-   "p": 0.9992,
-   "photo": 0.6448,
-   "fit": 0.774,
+   "title": "File:2026-09-17 10 Gizo Nishnianidze Street house number sign, Tbilisi.jpg",
+   "final": 1.191,
+   "p": 0.9863,
+   "photo": 0.4634,
+   "fit": 1.0,
    "how": "saliency",
-   "notes": [
-    "subject cannot fit 3:4 (box cov 1.00)"
+   "notes": [],
+   "flags": [
+    "not photo-like 0.46"
    ],
-   "flags": [],
    "origin": "search:number 10 sign",
-   "n_cands": 5,
+   "n_cands": 7,
    "forced": false
   },
   "numbers|ELEVENTH": {
@@ -22779,7 +22794,7 @@
     "low word prob 0.00"
    ],
    "origin": "search:house number 25",
-   "n_cands": 7,
+   "n_cands": 8,
    "forced": false
   },
   "numbers|TWO HUNDRED": {
@@ -22797,7 +22812,7 @@
     "fit 0.60"
    ],
    "origin": "search:house number 200",
-   "n_cands": 6,
+   "n_cands": 5,
    "forced": false
   },
   "numbers|FIVE HUNDRED": {
@@ -29850,7 +29865,6 @@
   "numbers|DOZEN",
   "numbers|EIGHT",
   "numbers|EIGHTEEN",
-  "numbers|EIGHTH",
   "numbers|EIGHTY",
   "numbers|ELEVEN",
   "numbers|ELEVENTH",
@@ -29867,6 +29881,7 @@
   "numbers|LAST",
   "numbers|MILLION",
   "numbers|MINUS",
+  "numbers|NINE",
   "numbers|NINETEEN",
   "numbers|NINETY",
   "numbers|NINTH",
@@ -29883,9 +29898,9 @@
   "numbers|SIXTY",
   "numbers|TEN",
   "numbers|TEN THOUSAND",
+  "numbers|TENTH",
   "numbers|THIRD",
   "numbers|THIRTEEN",
-  "numbers|THIRTY",
   "numbers|THOUSAND",
   "numbers|THREE",
   "numbers|TIMES",
@@ -30350,7 +30365,6 @@
   "weather|MIST",
   "weather|MONSOON",
   "weather|RAIN",
-  "weather|RAINBOW",
   "weather|RAINDROP",
   "weather|RAINY",
   "weather|SNOW",
@@ -30368,7 +30382,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1901,
-  "flagged": 1090
+  "with_photo": 1902,
+  "flagged": 1089
  }
 }

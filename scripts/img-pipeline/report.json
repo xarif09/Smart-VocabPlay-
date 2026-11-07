@@ -14565,34 +14565,165 @@
    "forced": false
   },
   "numbers|SIXTEEN": {
-   "status": "no candidates"
+   "title": "File:Amboy (California, USA) -- 2012 -- 4.jpg",
+   "final": 0.701,
+   "p": 0.0031,
+   "photo": 0.9725,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:number 16 sign",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|SEVENTEEN": {
-   "status": "no candidates"
+   "title": "File:Sign number 17 on Jerusalem neighborhood.jpg",
+   "final": 1.156,
+   "p": 0.967,
+   "photo": 0.7301,
+   "fit": 0.783,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:number 17 sign",
+   "n_cands": 9,
+   "forced": false
   },
   "numbers|EIGHTEEN": {
-   "status": "no candidates"
+   "title": "File:Peak & Northern Footpath Society sign number 302 - geograph.org.uk - 3210998.jpg",
+   "final": 0.665,
+   "p": 0.0002,
+   "photo": 0.7477,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:number 18 sign",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|NINETEEN": {
-   "status": "no candidates"
+   "title": "File:Sign number 19 on Jerusalem street.jpg",
+   "final": 0.761,
+   "p": 0.8332,
+   "photo": 0.1514,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.15"
+   ],
+   "origin": "search:number 19 sign",
+   "n_cands": 10,
+   "forced": false
   },
   "numbers|EIGHTY": {
-   "status": "no candidates"
+   "title": "File:Ramsau bei Berchtesgaden (DE), Milchstraße über Hochkalter & Hintersee -- 2024 -- 1018-50.jpg",
+   "final": 0.386,
+   "p": 0.0,
+   "photo": 0.997,
+   "fit": 0.373,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.37"
+   ],
+   "origin": "search:house number 80",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|NINETY": {
-   "status": "no candidates"
+   "title": "File:I-90 east at WA-18, near Snoqualmie.jpg",
+   "final": 0.583,
+   "p": 0.0024,
+   "photo": 0.9928,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:number 90 sign",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|FIRST": {
-   "status": "no candidates"
+   "title": "File:Adam Peaty. Gold Medal winner - geograph.org.uk - 5066328.jpg",
+   "final": 0.717,
+   "p": 0.0013,
+   "photo": 0.999,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:gold medal winner",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|SECOND": {
-   "status": "no candidates"
+   "title": "File:24H Le Mans 2025 LMGT3 2nd place podium.jpg",
+   "final": 0.887,
+   "p": 0.7916,
+   "photo": 0.935,
+   "fit": 0.427,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "fit 0.43"
+   ],
+   "origin": "search:2nd place podium",
+   "n_cands": 10,
+   "forced": false
   },
   "numbers|THIRD": {
-   "status": "no candidates"
+   "title": "File:24H Le Mans 2025 LMGT3 3rd place podium.jpg",
+   "final": 0.87,
+   "p": 0.2506,
+   "photo": 0.9554,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.25"
+   ],
+   "origin": "search:3rd place podium",
+   "n_cands": 10,
+   "forced": false
   },
   "numbers|HALF": {
-   "status": "no candidates"
+   "title": "File:USDA 2026 Apple half.png",
+   "final": 1.062,
+   "p": 0.999,
+   "photo": 0.7822,
+   "fit": 0.516,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.86)"
+   ],
+   "flags": [
+    "fit 0.52"
+   ],
+   "origin": "search:half apple",
+   "n_cands": 9,
+   "forced": false
   },
   "family|ME": {
    "title": "File:Cavalry Soldiers Support Bavarian USO (4940794).jpg",
@@ -20191,79 +20322,418 @@
    "forced": false
   },
   "numbers|FOURTH": {
-   "status": "no candidates"
+   "title": "File:July 4th fireworks, Washington, D.C. (LOC).jpg",
+   "final": 0.913,
+   "p": 0.4367,
+   "photo": 0.9927,
+   "fit": 0.784,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.44"
+   ],
+   "origin": "search:4th place",
+   "n_cands": 5,
+   "forced": false
   },
   "numbers|FIFTH": {
-   "status": "no candidates"
+   "title": "File:Egeskov Slot spejling Edit 2.jpg",
+   "final": 0.479,
+   "p": 0.0,
+   "photo": 0.9641,
+   "fit": 0.556,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.93)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.56"
+   ],
+   "origin": "search:number 5 sign",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|SIXTH": {
-   "status": "no candidates"
+   "title": "File:Holy SURP Hovhannes Church.jpg",
+   "final": 0.701,
+   "p": 0.0009,
+   "photo": 0.9957,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:6th place",
+   "n_cands": 6,
+   "forced": false
   },
   "numbers|SEVENTH": {
-   "status": "no candidates"
+   "title": "File:A1077 Barton Market Place, 7th December 2010 - geograph.org.uk - 2189695.jpg",
+   "final": 0.728,
+   "p": 0.1749,
+   "photo": 0.9953,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.17"
+   ],
+   "origin": "search:7th place",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|EIGHTH": {
-   "status": "no candidates"
+   "title": "File:Ampthill market place.jpg",
+   "final": 0.742,
+   "p": 0.0809,
+   "photo": 0.9179,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.08"
+   ],
+   "origin": "search:8th place",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|NINTH": {
-   "status": "no candidates"
+   "title": "File:Number ‘9’ in Nigerian Sign Language.jpg",
+   "final": 0.644,
+   "p": 0.0001,
+   "photo": 0.9944,
+   "fit": 0.676,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.68"
+   ],
+   "origin": "search:number 9 sign",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|TENTH": {
-   "status": "no candidates"
+   "title": "File:Sign number 10 on Jerusalem Street.jpg",
+   "final": 1.118,
+   "p": 0.9992,
+   "photo": 0.6448,
+   "fit": 0.774,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:number 10 sign",
+   "n_cands": 5,
+   "forced": false
   },
   "numbers|ELEVENTH": {
-   "status": "no candidates"
+   "title": "File:Sign 11 Pinsker Street in Jerusalem.jpg",
+   "final": 0.738,
+   "p": 0.9656,
+   "photo": 0.1625,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "not photo-like 0.16"
+   ],
+   "origin": "search:number 11 sign",
+   "n_cands": 9,
+   "forced": false
   },
   "numbers|TWELFTH": {
-   "status": "no candidates"
+   "title": "File:Number 12 sign - geograph.org.uk - 5546231.jpg",
+   "final": 1.209,
+   "p": 0.919,
+   "photo": 0.7488,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:number 12 sign",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|LAST": {
-   "status": "no candidates"
+   "title": "File:Last in line - geograph.org.uk - 2580035.jpg",
+   "final": 0.587,
+   "p": 0.0001,
+   "photo": 0.9962,
+   "fit": 0.775,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:last in line",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|TWENTY-ONE": {
-   "status": "no candidates"
+   "title": "File:Nikiszowiec, courtyard with chimneys, 2024-08-09.jpg",
+   "final": 0.415,
+   "p": 0.0002,
+   "photo": 0.6726,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00",
+    "check safety 0.63"
+   ],
+   "origin": "search:house number 21",
+   "n_cands": 9,
+   "forced": false
   },
   "numbers|TWENTY-FIVE": {
-   "status": "no candidates"
+   "title": "File:Mount Stuart House 2018-08-25.jpg",
+   "final": 0.495,
+   "p": 0.0004,
+   "photo": 0.529,
+   "fit": 0.763,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:house number 25",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|TWO HUNDRED": {
-   "status": "no candidates"
+   "title": "File:Shadow of a house 200 West Main New Holland.JPG",
+   "final": 0.549,
+   "p": 0.0,
+   "photo": 0.9451,
+   "fit": 0.598,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.60"
+   ],
+   "origin": "search:house number 200",
+   "n_cands": 6,
+   "forced": false
   },
   "numbers|FIVE HUNDRED": {
-   "status": "no candidates"
+   "title": "File:Timber for the construction of the Mechanics Pavilion at the Chicago World's Columbian Exposition, Seattle, Washington, ca 1893 (LAROCHE 166).jpeg",
+   "final": 0.451,
+   "p": 0.0002,
+   "photo": 0.999,
+   "fit": 0.513,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)",
+    "upscaled x1.6"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.51"
+   ],
+   "origin": "search:number 500 sign",
+   "n_cands": 6,
+   "forced": false
   },
   "numbers|TEN THOUSAND": {
-   "status": "no candidates"
+   "title": "File:HUN-32-Provisional-10000 Korona (1920).jpg",
+   "final": 0.642,
+   "p": 0.0028,
+   "photo": 0.9982,
+   "fit": 0.846,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:number 10000 sign",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|BILLION": {
-   "status": "no candidates"
+   "title": "File:Antennae galaxies xl.jpg",
+   "final": 1.244,
+   "p": 0.9925,
+   "photo": 0.6398,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:stars galaxy billion",
+   "n_cands": 7,
+   "forced": false
   },
   "numbers|QUARTER": {
-   "status": "no candidates"
+   "title": "File:Brass Funghi (quarter) - Yeastie Boys Pizza Club 2024-05-17.jpg",
+   "final": 0.264,
+   "p": 0.0001,
+   "photo": 0.2219,
+   "fit": 0.815,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.22"
+   ],
+   "origin": "search:quarter of a pizza",
+   "n_cands": 3,
+   "forced": false
   },
   "numbers|DOUBLE": {
-   "status": "no candidates"
+   "title": "File:Pink double cherry blossoms in Torp 7.jpg",
+   "final": 0.962,
+   "p": 0.8091,
+   "photo": 0.998,
+   "fit": 0.451,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "fit 0.45"
+   ],
+   "origin": "search:double cherries",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|PAIR": {
-   "status": "no candidates"
+   "title": "File:Pair of Shoes MET sf26-9-11a, b.jpg",
+   "final": 1.166,
+   "p": 0.9749,
+   "photo": 0.9788,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:pair of shoes",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|DOZEN": {
-   "status": "no candidates"
+   "title": "File:2020-05-05 19 26 30 A carton of a dozen Large Grade A Chicken Eggs from Egg-land's Best in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+   "final": 0.954,
+   "p": 1.0,
+   "photo": 0.8347,
+   "fit": 0.351,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.58)"
+   ],
+   "flags": [
+    "fit 0.35"
+   ],
+   "origin": "search:dozen eggs carton",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|PLUS": {
-   "status": "no candidates"
+   "title": "File:Addition to a tourist attractions sign, Cardiff Road, Newport - geograph.org.uk - 5061457.jpg",
+   "final": 0.749,
+   "p": 0.0294,
+   "photo": 0.9539,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [
+    "upscaled x1.5"
+   ],
+   "flags": [
+    "low word prob 0.03"
+   ],
+   "origin": "search:addition sign",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|MINUS": {
-   "status": "no candidates"
+   "title": "File:Renal artery angiography in a patient with fibromuscular dysplasia (1).jpg",
+   "final": 0.338,
+   "p": 0.0009,
+   "photo": 0.9569,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "upscaled x1.5"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:subtraction sign",
+   "n_cands": 3,
+   "forced": false
   },
   "numbers|EQUALS": {
-   "status": "no candidates"
+   "title": "File:Abigail Scott Duniway signing Oregon equal suffrage amendment.png",
+   "final": 0.7,
+   "p": 0.001,
+   "photo": 0.9992,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:equals sign",
+   "n_cands": 5,
+   "forced": false
   },
   "numbers|TIMES": {
-   "status": "no candidates"
+   "title": "File:Multiplication tablet Ashmolean.jpg",
+   "final": 0.642,
+   "p": 0.0,
+   "photo": 0.9967,
+   "fit": 0.817,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:multiplication sign",
+   "n_cands": 8,
+   "forced": false
   },
   "numbers|NUMBER": {
-   "status": "no candidates"
+   "title": "File:House numbers - geograph.org.uk - 6979619.jpg",
+   "final": 0.748,
+   "p": 0.0,
+   "photo": 0.9609,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:house numbers",
+   "n_cands": 7,
+   "forced": false
   },
   "toys|ACTION FIGURE": {
    "title": "File:Soldier action figures.jpg",
@@ -25680,7 +26150,6 @@
   "nature|STREAM",
   "nature|SUNFLOWER",
   "nature|WOOD",
-  "numbers|BILLION",
   "numbers|DOUBLE",
   "numbers|DOZEN",
   "numbers|EIGHT",
@@ -25706,12 +26175,10 @@
   "numbers|NINETY",
   "numbers|NINTH",
   "numbers|NUMBER",
-  "numbers|PAIR",
   "numbers|PLUS",
   "numbers|QUARTER",
   "numbers|SECOND",
   "numbers|SEVEN",
-  "numbers|SEVENTEEN",
   "numbers|SEVENTH",
   "numbers|SEVENTY",
   "numbers|SIX",
@@ -25720,14 +26187,12 @@
   "numbers|SIXTY",
   "numbers|TEN",
   "numbers|TEN THOUSAND",
-  "numbers|TENTH",
   "numbers|THIRD",
   "numbers|THIRTEEN",
   "numbers|THIRTY",
   "numbers|THOUSAND",
   "numbers|THREE",
   "numbers|TIMES",
-  "numbers|TWELFTH",
   "numbers|TWENTY",
   "numbers|TWENTY-FIVE",
   "numbers|TWENTY-ONE",
@@ -26326,7 +26791,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1547,
-  "flagged": 1260
+  "with_photo": 1582,
+  "flagged": 1255
  }
 }

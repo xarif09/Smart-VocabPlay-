@@ -6733,12 +6733,54 @@
   "license": "CC BY-SA 4.0",
   "score": 0.974
  },
+ "numbers|BILLION": {
+  "file": "w/numbers__billion.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Antennae_galaxies_xl.jpg",
+  "author": "NASA, ESA, and the Hubble Heritage Team (STScI/AURA)-ESA/Hubble Collaboration",
+  "license": "Public domain",
+  "score": 1.244
+ },
+ "numbers|DOUBLE": {
+  "file": "w/numbers__double.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pink_double_cherry_blossoms_in_Torp_7.jpg",
+  "author": "W.carter",
+  "license": "CC0",
+  "score": 0.962
+ },
+ "numbers|DOZEN": {
+  "file": "w/numbers__dozen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:2020-05-05_19_26_30_A_carton_of_a_dozen_Large_Grade_A_Chicken_Eggs_from_Egg-land%27s_Best_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+  "author": "Famartin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.954
+ },
  "numbers|EIGHT": {
   "file": "w/numbers__eight.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:2026-09-17_8_Gizo_Nishnianidze_Street_house_number_sign,_Tbilisi.jpg",
   "author": "FingerWiki",
   "license": "CC BY 4.0",
   "score": 0.513
+ },
+ "numbers|EIGHTEEN": {
+  "file": "w/numbers__eighteen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Peak_%26_Northern_Footpath_Society_sign_number_302_-_geograph.org.uk_-_3210998.jpg",
+  "author": "Bill Boaden",
+  "license": "CC BY-SA 2.0",
+  "score": 0.665
+ },
+ "numbers|EIGHTH": {
+  "file": "w/numbers__eighth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ampthill_market_place.jpg",
+  "author": "APB-CMX at English Wikipedia",
+  "license": "Public domain",
+  "score": 0.742
+ },
+ "numbers|EIGHTY": {
+  "file": "w/numbers__eighty.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ramsau_bei_Berchtesgaden_(DE),_Milchstra%C3%9Fe_%C3%BCber_Hochkalter_%26_Hintersee_--_2024_--_1018-50.jpg",
+  "author": "Anil Öztas",
+  "license": "CC BY 4.0",
+  "score": 0.386
  },
  "numbers|ELEVEN": {
   "file": "w/numbers__eleven.jpg",
@@ -6747,12 +6789,33 @@
   "license": "CC BY-SA 4.0",
   "score": 0.612
  },
+ "numbers|ELEVENTH": {
+  "file": "w/numbers__eleventh.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sign_11_Pinsker_Street_in_Jerusalem.jpg",
+  "author": "Korenn",
+  "license": "CC BY-SA 4.0",
+  "score": 0.738
+ },
+ "numbers|EQUALS": {
+  "file": "w/numbers__equals.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Abigail_Scott_Duniway_signing_Oregon_equal_suffrage_amendment.png",
+  "author": "Unknown author Unknown author",
+  "license": "Public domain",
+  "score": 0.7
+ },
  "numbers|FIFTEEN": {
   "file": "w/numbers__fifteen.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:2026-09-17_Old_house_number_sign_at_15_Kojori_Street,_Tbilisi.jpg",
   "author": "FingerWiki",
   "license": "CC0",
   "score": 1.069
+ },
+ "numbers|FIFTH": {
+  "file": "w/numbers__fifth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Egeskov_Slot_spejling_Edit_2.jpg",
+  "author": "Malene Thyssen",
+  "license": "CC BY-SA 3.0",
+  "score": 0.479
  },
  "numbers|FIFTY": {
   "file": "w/numbers__fifty.jpg",
@@ -6761,12 +6824,26 @@
   "license": "CC BY-SA 3.0",
   "score": 1.023
  },
+ "numbers|FIRST": {
+  "file": "w/numbers__first.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Adam_Peaty._Gold_Medal_winner_-_geograph.org.uk_-_5066328.jpg",
+  "author": "Alf Beard",
+  "license": "CC BY-SA 2.0",
+  "score": 0.717
+ },
  "numbers|FIVE": {
   "file": "w/numbers__five.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Sole_of_foot_of_an_infant_held_between_the_middle_finger_and_the_ring_finger_of_an_adult_hand_for_size_comparison.jpg",
   "author": "Basile Morin",
   "license": "CC BY-SA 4.0",
   "score": 0.855
+ },
+ "numbers|FIVE HUNDRED": {
+  "file": "w/numbers__five-hundred.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Timber_for_the_construction_of_the_Mechanics_Pavilion_at_the_Chicago_World%27s_Columbian_Exposition,_Seattle,_Washington,_ca_1893_(LAROCHE_166).jpeg",
+  "author": "Frank La Roche",
+  "license": "Public domain",
+  "score": 0.451
  },
  "numbers|FORTY": {
   "file": "w/numbers__forty.jpg",
@@ -6789,12 +6866,33 @@
   "license": "CC BY-SA 4.0",
   "score": 0.55
  },
+ "numbers|FOURTH": {
+  "file": "w/numbers__fourth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:July_4th_fireworks,_Washington,_D.C._(LOC).jpg",
+  "author": "Carol M. Highsmith",
+  "license": "Public domain",
+  "score": 0.913
+ },
+ "numbers|HALF": {
+  "file": "w/numbers__half.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:USDA_2026_Apple_half.png",
+  "author": "U.S. Department of Health and Human Services",
+  "license": "Public domain",
+  "score": 1.062
+ },
  "numbers|HUNDRED": {
   "file": "w/numbers__hundred.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Thai_road_sign_R-32_-100.png",
   "author": "มองโกเลีย๔๔",
   "license": "CC BY-SA 4.0",
   "score": 0.718
+ },
+ "numbers|LAST": {
+  "file": "w/numbers__last.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Last_in_line_-_geograph.org.uk_-_2580035.jpg",
+  "author": "Bill Nicholls",
+  "license": "CC BY-SA 2.0",
+  "score": 0.587
  },
  "numbers|MILLION": {
   "file": "w/numbers__million.jpg",
@@ -6803,12 +6901,47 @@
   "license": "Public domain",
   "score": 0.427
  },
+ "numbers|MINUS": {
+  "file": "w/numbers__minus.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Renal_artery_angiography_in_a_patient_with_fibromuscular_dysplasia_(1).jpg",
+  "author": "Zeina AR, Vladimir W, Barmeir E.",
+  "license": "CC BY 2.0",
+  "score": 0.338
+ },
  "numbers|NINE": {
   "file": "w/numbers__nine.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Sign_number_9_on_Jerusalem_Street.jpg",
   "author": "Korenn",
   "license": "CC BY-SA 4.0",
   "score": 0.803
+ },
+ "numbers|NINETEEN": {
+  "file": "w/numbers__nineteen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sign_number_19_on_Jerusalem_street.jpg",
+  "author": "Korenn",
+  "license": "CC BY-SA 4.0",
+  "score": 0.761
+ },
+ "numbers|NINETY": {
+  "file": "w/numbers__ninety.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:I-90_east_at_WA-18,_near_Snoqualmie.jpg",
+  "author": "Ken Lund",
+  "license": "CC BY-SA 2.0",
+  "score": 0.583
+ },
+ "numbers|NINTH": {
+  "file": "w/numbers__ninth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Number_%E2%80%989%E2%80%99_in_Nigerian_Sign_Language.jpg",
+  "author": "Monday Amos7",
+  "license": "CC BY-SA 4.0",
+  "score": 0.644
+ },
+ "numbers|NUMBER": {
+  "file": "w/numbers__number.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:House_numbers_-_geograph.org.uk_-_6979619.jpg",
+  "author": "Bob Harvey",
+  "license": "CC BY-SA 2.0",
+  "score": 0.748
  },
  "numbers|ONE": {
   "file": "w/numbers__one.jpg",
@@ -6817,12 +6950,54 @@
   "license": "CC BY-SA 2.0 fr",
   "score": 0.847
  },
+ "numbers|PAIR": {
+  "file": "w/numbers__pair.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Pair_of_Shoes_MET_sf26-9-11a,_b.jpg",
+  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
+  "license": "CC0",
+  "score": 1.166
+ },
+ "numbers|PLUS": {
+  "file": "w/numbers__plus.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Addition_to_a_tourist_attractions_sign,_Cardiff_Road,_Newport_-_geograph.org.uk_-_5061457.jpg",
+  "author": "Jaggery",
+  "license": "CC BY-SA 2.0",
+  "score": 0.749
+ },
+ "numbers|QUARTER": {
+  "file": "w/numbers__quarter.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Brass_Funghi_(quarter)_-_Yeastie_Boys_Pizza_Club_2024-05-17.jpg",
+  "author": "Andy Li",
+  "license": "CC0",
+  "score": 0.264
+ },
+ "numbers|SECOND": {
+  "file": "w/numbers__second.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:24H_Le_Mans_2025_LMGT3_2nd_place_podium.jpg",
+  "author": "Lukas Raich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.887
+ },
  "numbers|SEVEN": {
   "file": "w/numbers__seven.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Sign_number_7_on_Jerusalem_Street.jpg",
   "author": "Korenn",
   "license": "CC BY-SA 4.0",
   "score": 0.714
+ },
+ "numbers|SEVENTEEN": {
+  "file": "w/numbers__seventeen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sign_number_17_on_Jerusalem_neighborhood.jpg",
+  "author": "Korenn",
+  "license": "CC BY-SA 4.0",
+  "score": 1.156
+ },
+ "numbers|SEVENTH": {
+  "file": "w/numbers__seventh.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:A1077_Barton_Market_Place,_7th_December_2010_-_geograph.org.uk_-_2189695.jpg",
+  "author": "David Wright",
+  "license": "CC BY-SA 2.0",
+  "score": 0.728
  },
  "numbers|SEVENTY": {
   "file": "w/numbers__seventy.jpg",
@@ -6838,6 +7013,20 @@
   "license": "CC BY-SA 4.0",
   "score": 0.516
  },
+ "numbers|SIXTEEN": {
+  "file": "w/numbers__sixteen.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Amboy_(California,_USA)_--_2012_--_4.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.701
+ },
+ "numbers|SIXTH": {
+  "file": "w/numbers__sixth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Holy_SURP_Hovhannes_Church.jpg",
+  "author": "Farzin Izaddoust dar",
+  "license": "CC BY-SA 4.0",
+  "score": 0.701
+ },
  "numbers|SIXTY": {
   "file": "w/numbers__sixty.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Boulevard_Hotel_(Neon_sign),_Miami_Beach.jpg",
@@ -6851,6 +7040,27 @@
   "author": "FingerWiki",
   "license": "CC BY 4.0",
   "score": 0.489
+ },
+ "numbers|TEN THOUSAND": {
+  "file": "w/numbers__ten-thousand.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:HUN-32-Provisional-10000_Korona_(1920).jpg",
+  "author": "National Museum of American History",
+  "license": "Public domain",
+  "score": 0.642
+ },
+ "numbers|TENTH": {
+  "file": "w/numbers__tenth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sign_number_10_on_Jerusalem_Street.jpg",
+  "author": "Korenn",
+  "license": "CC BY-SA 4.0",
+  "score": 1.118
+ },
+ "numbers|THIRD": {
+  "file": "w/numbers__third.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:24H_Le_Mans_2025_LMGT3_3rd_place_podium.jpg",
+  "author": "Lukas Raich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.87
  },
  "numbers|THIRTEEN": {
   "file": "w/numbers__thirteen.jpg",
@@ -6880,6 +7090,20 @@
   "license": "Public domain",
   "score": 0.994
  },
+ "numbers|TIMES": {
+  "file": "w/numbers__times.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Multiplication_tablet_Ashmolean.jpg",
+  "author": "Zunkir",
+  "license": "CC BY-SA 4.0",
+  "score": 0.642
+ },
+ "numbers|TWELFTH": {
+  "file": "w/numbers__twelfth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Number_12_sign_-_geograph.org.uk_-_5546231.jpg",
+  "author": "Oast House Archive",
+  "license": "CC BY-SA 2.0",
+  "score": 1.209
+ },
  "numbers|TWELVE": {
   "file": "w/numbers__twelve.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Number_12_in_front_of_a_house_in_Jerusalem.jpg",
@@ -6894,12 +7118,33 @@
   "license": "CC BY-SA 4.0",
   "score": 0.727
  },
+ "numbers|TWENTY-FIVE": {
+  "file": "w/numbers__twenty-five.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Mount_Stuart_House_2018-08-25.jpg",
+  "author": "Colin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.495
+ },
+ "numbers|TWENTY-ONE": {
+  "file": "w/numbers__twenty-one.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Nikiszowiec,_courtyard_with_chimneys,_2024-08-09.jpg",
+  "author": "Radomianin",
+  "license": "CC BY-SA 4.0",
+  "score": 0.415
+ },
  "numbers|TWO": {
   "file": "w/numbers__two.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Still_Life_with_Two_Apples_by_%C3%89douard_Manet.jpeg",
   "author": "Édouard Manet",
   "license": "Public domain",
   "score": 0.768
+ },
+ "numbers|TWO HUNDRED": {
+  "file": "w/numbers__two-hundred.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Shadow_of_a_house_200_West_Main_New_Holland.JPG",
+  "author": "Smallbones",
+  "license": "CC BY-SA 3.0",
+  "score": 0.549
  },
  "numbers|ZERO": {
   "file": "w/numbers__zero.jpg",

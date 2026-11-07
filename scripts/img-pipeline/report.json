@@ -7802,25 +7802,115 @@
    "forced": false
   },
   "feelings|BORED": {
-   "status": "no candidates"
+   "title": "File:Jumping Frog detail, with Chair-O-Planes.jpg",
+   "final": 0.627,
+   "p": 0.0,
+   "photo": 0.6206,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:bored child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|SHY": {
-   "status": "no candidates"
+   "title": "File:Girl Shy in Exhibitor's Trade Review.jpg",
+   "final": 0.66,
+   "p": 0.0008,
+   "photo": 0.7957,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:shy girl",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|PROUD": {
-   "status": "no candidates"
+   "title": "File:Wiki In Classroom 2.0 Kano 26.jpg",
+   "final": 1.016,
+   "p": 0.9225,
+   "photo": 0.7303,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:proud student",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|NERVOUS": {
-   "status": "no candidates"
+   "title": "File:Nervous and mental diseases (1919) (14781822285).jpg",
+   "final": 0.747,
+   "p": 0.897,
+   "photo": 0.8274,
+   "fit": 0.225,
+   "how": "saliency",
+   "notes": [
+    "touches 4 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.91)"
+   ],
+   "flags": [
+    "fit 0.22"
+   ],
+   "origin": "search:nervous child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|SLEEPY": {
-   "status": "no candidates"
+   "title": "File:Painted FrogFish yawning.jpg",
+   "final": 0.546,
+   "p": 0.0002,
+   "photo": 0.9968,
+   "fit": 0.494,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.82)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.49"
+   ],
+   "origin": "search:yawning child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|CALM": {
-   "status": "no candidates"
+   "title": "File:Person in traditional-inspired attire by forest water.jpg",
+   "final": 0.817,
+   "p": 0.0231,
+   "photo": 0.999,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.02"
+   ],
+   "origin": "search:calm relaxed person",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|LONELY": {
-   "status": "no candidates"
+   "title": "File:Child depressed alone poverty.jpg",
+   "final": 1.039,
+   "p": 0.4779,
+   "photo": 0.9997,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.48"
+   ],
+   "origin": "search:alone child sitting",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|BRAVE": {
    "title": "File:FiremenFightBurningBarn.jpg",
@@ -13559,40 +13649,212 @@
    "forced": false
   },
   "feelings|LOVE": {
-   "status": "no candidates"
+   "title": "File:VMU-2 reunites with families, loved ones 140522-M-SR938-004.jpg",
+   "final": 1.23,
+   "p": 0.9731,
+   "photo": 0.9951,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:love family hug",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|WORRIED": {
-   "status": "no candidates"
+   "title": "File:WORRIED MOTHER HOLDING CHILD. (SEQUENCE) (FROM THE DOCUMERICA-1 EXHIBITION. FOR OTHER IMAGES IN THIS ASSIGNMENT, SEE... - NARA - 552935.jpg",
+   "final": 0.737,
+   "p": 0.0114,
+   "photo": 0.9876,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:worried child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|CONFUSED": {
-   "status": "no candidates"
+   "title": "File:Confused child.jpg",
+   "final": 0.619,
+   "p": 0.0003,
+   "photo": 0.9291,
+   "fit": 0.661,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.66"
+   ],
+   "origin": "search:confused child",
+   "n_cands": 5,
+   "forced": false
   },
   "feelings|SILLY": {
-   "status": "no candidates"
+   "title": "File:Little girl buried up to her neck in sand.jpg",
+   "final": 0.541,
+   "p": 0.1409,
+   "photo": 0.9988,
+   "fit": 0.34,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "low word prob 0.14",
+    "fit 0.34"
+   ],
+   "origin": "search:funny face child",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|GRUMPY": {
-   "status": "no candidates"
+   "title": "File:Grumpy face (48671021152).jpg",
+   "final": 0.566,
+   "p": 0.0011,
+   "photo": 0.9242,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:grumpy face",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|CURIOUS": {
-   "status": "no candidates"
+   "title": "File:Child examines a toy rabbit with a magnifying glass during an indoor playtime session.jpg",
+   "final": 0.644,
+   "p": 0.4746,
+   "photo": 0.8153,
+   "fit": 0.274,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "low word prob 0.47",
+    "fit 0.27"
+   ],
+   "origin": "search:curious child magnifying glass",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|THANKFUL": {
-   "status": "no candidates"
+   "title": "File:“Thank you for your service” (7743324).jpg",
+   "final": 0.91,
+   "p": 0.8516,
+   "photo": 0.916,
+   "fit": 0.543,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.54"
+   ],
+   "origin": "search:thank you child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|SORRY": {
-   "status": "no candidates"
+   "title": "File:Sorry Day poster.jpg",
+   "final": 0.499,
+   "p": 0.9987,
+   "photo": 0.0004,
+   "fit": 0.481,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.80)"
+   ],
+   "flags": [
+    "fit 0.48",
+    "not photo-like 0.00"
+   ],
+   "origin": "search:sorry apology",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|HURT": {
-   "status": "no candidates"
+   "title": "File:Pediatrics. (1900) (14578801360).jpg",
+   "final": 0.988,
+   "p": 0.8768,
+   "photo": 0.9939,
+   "fit": 0.534,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.53"
+   ],
+   "origin": "search:child with bandage knee",
+   "n_cands": 5,
+   "forced": false
   },
   "feelings|FULL": {
-   "status": "no candidates"
+   "title": "File:Mother And Infant Squirrel Monkey.jpg",
+   "final": 0.694,
+   "p": 0.0007,
+   "photo": 0.9847,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:child full stomach",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|COLD": {
-   "status": "no candidates"
+   "title": "File:Detail, The sea fairies (1911) (14750959234) (cropped).jpg",
+   "final": -0.022,
+   "p": 0.0002,
+   "photo": 0.0006,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.00"
+   ],
+   "origin": "search:child shivering cold",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|HOT": {
-   "status": "no candidates"
+   "title": "File:すててこ.jpg",
+   "final": 0.703,
+   "p": 0.0048,
+   "photo": 0.997,
+   "fit": 0.806,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:hot summer sweating",
+   "n_cands": 6,
+   "forced": false
   },
   "colors|BEIGE": {
    "title": "File:Münster, Speicherstadt, Uhrenturm -- 2020 -- 7541.jpg",
@@ -18763,106 +19025,582 @@
    "status": "no candidates"
   },
   "feelings|GLAD": {
-   "status": "no candidates"
+   "title": "File:2026-08-12 face projection during solar eclipse ending.jpg",
+   "final": 0.548,
+   "p": 0.0004,
+   "photo": 0.9852,
+   "fit": 0.646,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.65"
+   ],
+   "origin": "search:glad face",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|JOYFUL": {
-   "status": "no candidates"
+   "title": "File:A happy child in uniform.jpg",
+   "final": 1.031,
+   "p": 0.4547,
+   "photo": 0.9946,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.45"
+   ],
+   "origin": "search:joyful child",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|CHEERFUL": {
-   "status": "no candidates"
+   "title": "File:Mabel Trunnelle Stars of the Photoplay.jpg",
+   "final": 0.737,
+   "p": 0.138,
+   "photo": 0.9985,
+   "fit": 0.845,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.14"
+   ],
+   "origin": "search:cheerful face",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|UPSET": {
-   "status": "no candidates"
+   "title": "File:Cebus capucinus-upset.jpg",
+   "final": 0.471,
+   "p": 0.0005,
+   "photo": 0.7373,
+   "fit": 0.593,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.99)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.59"
+   ],
+   "origin": "search:upset face",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|FRUSTRATED": {
-   "status": "no candidates"
+   "title": "File:Osmia simillima, face 2014-07-01-14.08.05 ZS PMax (14572058321).jpg",
+   "final": 0.705,
+   "p": 0.0004,
+   "photo": 0.9655,
+   "fit": 0.844,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:frustrated face",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|JEALOUS": {
-   "status": "no candidates"
+   "title": "File:Grishneshwar Temple.jpg",
+   "final": 0.328,
+   "p": 0.0082,
+   "photo": 0.9581,
+   "fit": 0.172,
+   "how": "saliency",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "low word prob 0.01",
+    "fit 0.17"
+   ],
+   "origin": "search:jealous child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|EMBARRASSED": {
-   "status": "no candidates"
+   "title": "File:The posture of school children, with its home hygiene and new efficiency methods for school training (1913) (14592081638).jpg",
+   "final": 0.602,
+   "p": 0.0039,
+   "photo": 0.9797,
+   "fit": 0.8,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:embarrassed child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|DISAPPOINTED": {
-   "status": "no candidates"
+   "title": "File:Human male, disappointed in you.jpg",
+   "final": 0.225,
+   "p": 0.0068,
+   "photo": 0.3789,
+   "fit": 0.335,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.87)"
+   ],
+   "flags": [
+    "low word prob 0.01",
+    "fit 0.34",
+    "not photo-like 0.38"
+   ],
+   "origin": "search:disappointed face",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|RELAXED": {
-   "status": "no candidates"
+   "title": "File:HAPPY CHILD AFTER SHELLING.jpg",
+   "final": 0.998,
+   "p": 0.3961,
+   "photo": 0.9967,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.40"
+   ],
+   "origin": "search:relaxed child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|FRIENDLY": {
-   "status": "no candidates"
+   "title": "File:MoriokaChild.JPG",
+   "final": 0.771,
+   "p": 0.0197,
+   "photo": 0.9866,
+   "fit": 0.836,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.02"
+   ],
+   "origin": "search:friendly child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|KIND": {
-   "status": "no candidates"
+   "title": "File:Starved girl.jpg",
+   "final": 0.485,
+   "p": 0.0127,
+   "photo": 0.9998,
+   "fit": 0.433,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.90)"
+   ],
+   "flags": [
+    "low word prob 0.01",
+    "fit 0.43"
+   ],
+   "origin": "search:kind child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|ANNOYED": {
-   "status": "no candidates"
+   "title": "File:Toby Fox mask (cropped).jpg",
+   "final": 0.51,
+   "p": 0.0372,
+   "photo": 0.9591,
+   "fit": 0.512,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.04",
+    "fit 0.51"
+   ],
+   "origin": "search:annoyed face",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|AFRAID": {
-   "status": "no candidates"
+   "title": "File:An afraid child with his mother.jpg",
+   "final": 0.489,
+   "p": 0.0717,
+   "photo": 0.9877,
+   "fit": 0.344,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "low word prob 0.07",
+    "fit 0.34"
+   ],
+   "origin": "search:afraid child",
+   "n_cands": 5,
+   "forced": false
   },
   "feelings|HOPEFUL": {
-   "status": "no candidates"
+   "title": "File:Beautiful Baby Boy is Cute and Positive.jpg",
+   "final": 0.545,
+   "p": 0.0,
+   "photo": 0.9502,
+   "fit": 0.449,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.94)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.45"
+   ],
+   "origin": "search:hopeful child",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|PEACEFUL": {
-   "status": "no candidates"
+   "title": "File:Nittaya Wongsin With Child Jiang Li Wongsin Pattaya 2010.jpg",
+   "final": 0.629,
+   "p": 0.0,
+   "photo": 0.6469,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:peaceful child",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|CONFIDENT": {
-   "status": "no candidates"
+   "title": "File:MovieStillGishOConnorLoos.png",
+   "final": 0.7,
+   "p": 0.0001,
+   "photo": 0.9999,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:confident face",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|DISGUSTED": {
-   "status": "no candidates"
+   "title": "File:Shannon Marie Morgan searches for her house in Beverly Hills, Florida.jpg",
+   "final": 0.683,
+   "p": 0.0001,
+   "photo": 0.9161,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:disgusted child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|SHOCKED": {
-   "status": "no candidates"
+   "title": "File:Shocked Dead.jpg",
+   "final": 0.77,
+   "p": 0.0005,
+   "photo": 0.8568,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:shocked face",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|AMAZED": {
-   "status": "no candidates"
+   "title": "File:Five Secrets of The Water (2611155650).jpg",
+   "final": 0.697,
+   "p": 0.0,
+   "photo": 0.9825,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:amazed face",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|DELIGHTED": {
-   "status": "no candidates"
+   "title": "File:International Delight Pumpkin Spice Creamer.jpg",
+   "final": 0.582,
+   "p": 0.0118,
+   "photo": 0.8666,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:delighted child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|PLAYFUL": {
-   "status": "no candidates"
+   "title": "File:Playful mood (10635512194).jpg",
+   "final": 0.81,
+   "p": 0.7464,
+   "photo": 0.9068,
+   "fit": 0.21,
+   "how": "saliency",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.55)"
+   ],
+   "flags": [
+    "fit 0.21"
+   ],
+   "origin": "search:playful face",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|LAZY": {
-   "status": "no candidates"
+   "title": "File:Rato Machhindranath Temple Bungmati Lalitpur Nepal Rajesh Dhjungana (22).jpg",
+   "final": 0.573,
+   "p": 0.0001,
+   "photo": 0.9882,
+   "fit": 0.75,
+   "how": "yolo:person",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:lazy child",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|ENERGETIC": {
-   "status": "no candidates"
+   "title": "File:NGC 3938 (composite).jpg",
+   "final": 0.717,
+   "p": 0.0504,
+   "photo": 0.8768,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.05"
+   ],
+   "origin": "search:energetic face",
+   "n_cands": 8,
+   "forced": false
   },
   "feelings|DIZZY": {
-   "status": "no candidates"
+   "title": "File:Gonzalo Guerrero, 77720 Playa del Carmen, Q.R., Mexico - panoramio (2).jpg",
+   "final": 0.981,
+   "p": 0.8557,
+   "photo": 0.6673,
+   "fit": 0.75,
+   "how": "yolo:person",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:dizzy face",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|ITCHY": {
-   "status": "no candidates"
+   "title": "File:Amoxicillin rash 26 hours after 17th dose.JPG",
+   "final": 0.997,
+   "p": 0.9791,
+   "photo": 0.9654,
+   "fit": 0.429,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.89)"
+   ],
+   "flags": [
+    "fit 0.43"
+   ],
+   "origin": "search:itchy face",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|COMFORTABLE": {
-   "status": "no candidates"
+   "title": "File:Siamese cat, modern-style.jpg",
+   "final": 0.532,
+   "p": 0.2747,
+   "photo": 0.9865,
+   "fit": 0.25,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 0.52)"
+   ],
+   "flags": [
+    "low word prob 0.27",
+    "fit 0.25"
+   ],
+   "origin": "search:comfortable face",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|HELPFUL": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Overbergschule, Verkehrsschild -- 2013 -- 0659.jpg",
+   "final": 0.649,
+   "p": 0.0059,
+   "photo": 0.6801,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:helpful child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|NAUGHTY": {
-   "status": "no candidates"
+   "title": "File:Naughty Face (2658970942).jpg",
+   "final": 0.524,
+   "p": 0.0835,
+   "photo": 0.7552,
+   "fit": 0.61,
+   "how": "yolo:person",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.08",
+    "fit 0.61"
+   ],
+   "origin": "search:naughty face",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|STRESSED": {
-   "status": "no candidates"
+   "title": "File:Wiki foto 1.jpg",
+   "final": 0.323,
+   "p": 0.0,
+   "photo": 0.7569,
+   "fit": 0.344,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.57)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.34"
+   ],
+   "origin": "search:stressed child",
+   "n_cands": 6,
+   "forced": false
   },
   "feelings|TERRIFIED": {
-   "status": "no candidates"
+   "title": "File:Malanca ( The Child ).jpg",
+   "final": 0.692,
+   "p": 0.0,
+   "photo": 0.8573,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:terrified child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|FUNNY": {
-   "status": "no candidates"
+   "title": "File:Funny Chinese Child Playing Boy.jpg",
+   "final": 0.753,
+   "p": 0.0057,
+   "photo": 0.9203,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:funny child",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|SERIOUS": {
-   "status": "no candidates"
+   "title": "File:Such a serious child (2167637211).jpg",
+   "final": 0.503,
+   "p": 0.003,
+   "photo": 0.9798,
+   "fit": 0.532,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.53"
+   ],
+   "origin": "search:serious child",
+   "n_cands": 5,
+   "forced": false
   },
   "feelings|HEALTHY": {
-   "status": "no candidates"
+   "title": "File:Lanisha Cole.jpg",
+   "final": 0.381,
+   "p": 0.0019,
+   "photo": 0.8369,
+   "fit": 0.423,
+   "how": "yolo:person",
+   "notes": [
+    "touches 3 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.42"
+   ],
+   "origin": "search:healthy face",
+   "n_cands": 7,
+   "forced": false
   },
   "feelings|MAD": {
-   "status": "no candidates"
+   "title": "File:Mont Blanc Massif.jpg",
+   "final": 0.615,
+   "p": 0.0038,
+   "photo": 0.5159,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:mad face",
+   "n_cands": 5,
+   "forced": false
   },
   "numbers|FOURTH": {
    "status": "no candidates"
@@ -20899,7 +21637,6 @@
   "feelings|DELIGHTED",
   "feelings|DISAPPOINTED",
   "feelings|DISGUSTED",
-  "feelings|DIZZY",
   "feelings|EMBARRASSED",
   "feelings|ENERGETIC",
   "feelings|EXCITED",
@@ -20922,13 +21659,11 @@
   "feelings|KIND",
   "feelings|LAZY",
   "feelings|LONELY",
-  "feelings|LOVE",
   "feelings|MAD",
   "feelings|NAUGHTY",
   "feelings|NERVOUS",
   "feelings|PEACEFUL",
   "feelings|PLAYFUL",
-  "feelings|PROUD",
   "feelings|RELAXED",
   "feelings|SAD",
   "feelings|SCARED",
@@ -21977,7 +22712,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1191,
-  "flagged": 1392
+  "with_photo": 1244,
+  "flagged": 1389
  }
 }

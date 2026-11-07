@@ -22,6 +22,19 @@ QUALITY_NEG = ["a dark, blurry photo", "a cluttered, busy photo with many things
                "a low quality old photo", "a tiny subject far away"]
 UNSAFE = ["blood and gore", "a dead animal", "nudity", "a scary horror image", "a weapon", "a dangerous injury",
           "a sexy photo of a person in underwear", "a woman in lingerie or stockings", "a prison or concentration camp"]
+# off-topic classes so p_word is not only relative to the other words of the category
+GENERIC = {"building": "a photo of a building", "landscape": "a photo of a landscape", "animal": "a photo of an animal",
+           "plant": "a photo of a plant or flower", "text": "a photo of text, a sign or a poster", "vehicle": "a photo of a vehicle",
+           "food": "a photo of food", "object": "a photo of an everyday object", "crowd": "a photo of a crowd of people",
+           "person": "a portrait photo of a person"}
+GENERIC_SKIP = {"animals": {"animal"}, "nature": {"landscape", "plant", "animal"}, "places": {"building", "landscape", "crowd"},
+                "countries": {"building", "landscape", "crowd"}, "food": {"food", "plant", "object"}, "fruits": {"food", "plant"},
+                "vegetables": {"food", "plant"}, "vehicles": {"vehicle"}, "family": {"person", "crowd"}, "feelings": {"person"},
+                "jobs": {"person", "crowd"}, "actions": {"person", "crowd"}, "body": {"person"}, "clothes": {"person", "object"},
+                "sports": {"person", "crowd", "object"}, "numbers": {"text", "object", "food"}, "time": {"text", "landscape", "object", "crowd"},
+                "weather": {"landscape"}, "home": {"object", "building"}, "technology": {"object"}, "school": {"object", "person", "text"},
+                "toys": {"object"}, "music": {"object", "person", "crowd"}, "colors": {"object", "plant", "food", "animal", "vehicle", "building"},
+                "shapes": {"object", "building", "text"}, "opposites": set(GENERIC)}
 SAFE_REF = ["a friendly photo suitable for children", "an ordinary everyday photo"]
 
 COCO = set("""person bicycle car motorcycle airplane bus train truck boat traffic_light fire_hydrant stop_sign parking_meter bench
@@ -1099,6 +1112,29 @@ STRICT_SAFE = {"body|ARMPIT", "body|THIGH", "body|WAIST", "body|BELLY BUTTON", "
                "body|BACK", "body|SKIN", "body|BLOOD", "body|HEART", "body|BRAIN", "body|BONE", "places|BEACH", "sports|SWIMMING",
                "actions|SWIM", "actions|SHOWER", "home|BATH", "home|BATHROOM", "home|SHOWER", "family|HUSBAND", "family|WIFE"}
 
+
+
+FAM2 = {"MOM": (["mother and child", "mother hugging child"], "a mother with her child"),
+        "DAD": (["father and child", "father with son"], "a father with his child"),
+        "GRANDMA": (["grandmother with grandchild", "grandmother"], "a grandmother with her grandchild"),
+        "GRANDPA": (["grandfather with grandchild", "grandfather"], "a grandfather with his grandchild"),
+        "NEPHEW": (["uncle with nephew", "aunt with nephew"], "an adult with their young nephew"),
+        "NIECE": (["aunt with niece", "uncle with niece"], "an adult with their young niece"),
+        "GRANDSON": (["grandfather with grandson", "grandmother with grandson"], "a grandparent with a grandson"),
+        "GRANDDAUGHTER": (["grandmother with granddaughter", "grandfather with granddaughter"], "a grandparent with a granddaughter"),
+        "CHILD": (["child portrait smiling", "child playing"], "a child"), "TODDLER": (["toddler playing", "toddler walking"], "a toddler"),
+        "TEENAGER": (["teenagers", "teenager portrait"], "a teenager"), "ADULT": (["adult man and woman portrait", "adults"], "an adult"),
+        "BEST FRIEND": (["best friends children", "two friends hugging"], "two best friends"), "PET": (["child with pet dog", "child with cat"], "a child with a pet"),
+        "GUEST": (["guests at a party", "welcoming guests"], "guests arriving at a home"), "LADY": (["elegant lady portrait", "lady"], "a lady"),
+        "GENTLEMAN": (["gentleman in suit", "gentleman with hat"], "a gentleman in a suit"), "PEOPLE": (["group of people", "people walking"], "a group of people"),
+        "PERSON": (["person portrait", "a person standing"], "a person"), "NANNY": (["nanny with child", "babysitter with children"], "a nanny caring for a child"),
+        "GREAT-GRANDMOTHER": (["great-grandmother with baby", "four generations family"], "a very old great-grandmother with a baby"),
+        "BRIDE": (["bride wedding dress", "bride"], "a bride in a wedding dress"), "GROOM": (["bridegroom", "groom wedding"], "a bridegroom"),
+        "WEDDING": (["wedding couple", "wedding ceremony"], "a wedding"), "NEWBORN": (["newborn baby"], "a newborn baby"),
+        "SIBLINGS": (["siblings children", "brother and sister"], "siblings, brother and sister"),
+        "FAMILY TREE": (["family tree chart", "genealogy tree"], "a family tree"), "VISITOR": (["museum visitors", "tourists visiting"], "visitors at a museum")}
+for wd, (qs, p) in FAM2.items():
+    O[f"family|{wd}"] = dict(q=qs, p=[f"a photo of {p}"], **({"nostyle": ["a diagram", "a drawing"]} if wd == "FAMILY TREE" else {}))
 
 O["shapes|KNOT"]["neg"] = ["a photo of a bird"]
 O["shapes|STRIPES"]["neg"] = ["a prison uniform"]

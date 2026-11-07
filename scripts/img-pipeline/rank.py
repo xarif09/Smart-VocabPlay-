@@ -11,7 +11,7 @@ import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import CACHE, h
 import words as W
-from spec import spec_for, STYLE_NEG, PHOTO_POS, QUALITY_POS, QUALITY_NEG, UNSAFE, SAFE_REF
+from spec import spec_for, GENERIC, GENERIC_SKIP, STYLE_NEG, PHOTO_POS, QUALITY_POS, QUALITY_NEG, UNSAFE, SAFE_REF
 
 import models
 MODEL = "ViT-L-14"
@@ -116,6 +116,8 @@ def main(words):
             if ok == k or specs[ok]["word"] == sp["word"]: continue
             others.append(clip.cls(specs[ok]["prompts"]))
         for n in sp["neg"]: others.append(clip.cls([n]))
+        for g, prompt in GENERIC.items():
+            if g not in GENERIC_SKIP.get(w["cat"], set()): others.append(clip.cls([prompt]))
         classes = np.stack([tgt] + others)
         style = [s for s in STYLE_NEG if s not in sp["nostyle"] and not (sp["text_ok"] and s in ("text on a page", "a screenshot", "a scanned document"))]
         style_m = np.stack([photo_c] + [clip.cls([s]) for s in style])

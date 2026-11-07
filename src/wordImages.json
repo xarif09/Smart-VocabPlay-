@@ -7734,12 +7734,61 @@
   "license": "CC BY 4.0",
   "score": 0.895
  },
+ "opposites|ABOVE": {
+  "file": "w/opposites__above.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Kirchspiel,_B%C3%B6rnste,_Felder_und_B%C3%A4ume_--_2017_--_3238.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.7
+ },
+ "opposites|ASLEEP": {
+  "file": "w/opposites__asleep.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Virgin_and_Child,_with_the_Christ_child_sleeping_in_her_arms_Met_DP883214.jpg",
+  "author": "Gabriel Fiesinger / After Carlo Cignani",
+  "license": "CC0",
+  "score": 0.58
+ },
+ "opposites|AWAKE": {
+  "file": "w/opposites__awake.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Miscellaneous._Boy_in_bed-awake._LOC_nclc.05273.jpg",
+  "author": "Hine, Lewis Wickes; National Child Labor Committee Collection",
+  "license": "Public domain",
+  "score": 0.863
+ },
+ "opposites|BACK": {
+  "file": "w/opposites__back.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:RAF_car,_Bushmills_(rear_view)_-_geograph.org.uk_-_5849777.jpg",
+  "author": "Kenneth Allen",
+  "license": "CC BY-SA 2.0",
+  "score": 1.054
+ },
+ "opposites|BELOW": {
+  "file": "w/opposites__below.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Fractal_Broccoli.jpg",
+  "author": "Jon Sullivan",
+  "license": "Public domain",
+  "score": 0.524
+ },
  "opposites|BIG": {
   "file": "w/opposites__big.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Elephas_maximus_(Bandipur).jpg",
   "author": "Yathin S Krishnappa",
   "license": "CC BY-SA 3.0",
   "score": 1.09
+ },
+ "opposites|BOTTOM": {
+  "file": "w/opposites__bottom.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Restanten_van_een_ruitjesbovist_(Calvatia_utriformis)._15-02-2025._(d.j.b)._01.jpg",
+  "author": "Dominicus Johannes Bergsma.",
+  "license": "CC BY-SA 4.0",
+  "score": 1.039
+ },
+ "opposites|CHEAP": {
+  "file": "w/opposites__cheap.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Price_drop_sale,_Menarys,_Omagh_-_geograph.org.uk_-_6291091.jpg",
+  "author": "Kenneth Allen",
+  "license": "CC BY-SA 2.0",
+  "score": 0.733
  },
  "opposites|CLEAN": {
   "file": "w/opposites__clean.jpg",
@@ -7748,12 +7797,61 @@
   "license": "Public domain",
   "score": 0.481
  },
+ "opposites|CLOSED": {
+  "file": "w/opposites__closed.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Funchal_(Madeira,_Portugal),_Rua_de_Santa_Maria_39_--_2025_--_0831.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.782
+ },
  "opposites|COLD": {
   "file": "w/opposites__cold.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:CargoNet_Di_12_Euro_4000_L%C3%B8nsdal_-_Bolna.jpg",
   "author": "Kabelleger / David Gubler ( http://www.bahnbilder.ch ).",
   "license": "CC BY-SA 3.0",
   "score": 0.439
+ },
+ "opposites|CURLY": {
+  "file": "w/opposites__curly.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Sarah_Bernhardt,_par_Nadar,_1864.jpg",
+  "author": "Nadar",
+  "license": "Public domain",
+  "score": 0.641
+ },
+ "opposites|DANGEROUS": {
+  "file": "w/opposites__dangerous.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Fire_Danger_Rating_Sign_Klamath,_California.jpg",
+  "author": "Unknown author Unknown author",
+  "license": "Public domain",
+  "score": 0.619
+ },
+ "opposites|DARK": {
+  "file": "w/opposites__dark.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Dark_Energy_Survey_(DES)_camera_at_SiDet_clean_room_(10-0036-22Dhr-CC).jpg",
+  "author": "DOE/FNAL/DECam/R. Hahn/CTIO/NOIRLab/NSF/AURA",
+  "license": "CC BY 4.0",
+  "score": 0.799
+ },
+ "opposites|DEEP": {
+  "file": "w/opposites__deep.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Deep_sea_corals,_Wagner_Seamount.jpg",
+  "author": "NOAA Office of Ocean Exploration and Research, Deep-Sea Symphony: Exploring the Musicians Seamounts",
+  "license": "Public domain",
+  "score": 0.842
+ },
+ "opposites|DIFFERENT": {
+  "file": "w/opposites__different.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Municipal_Market_of_S%C3%A3o_Paulo_city.jpg",
+  "author": "Wilfredor",
+  "license": "CC BY-SA 4.0",
+  "score": 0.856
+ },
+ "opposites|DIFFICULT": {
+  "file": "w/opposites__difficult.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:%E2%80%9CThe_Rock%E2%80%9D_PT_Competition_(4673217).jpg",
+  "author": "U.S. Army photo by Paolo Bovo",
+  "license": "Public domain",
+  "score": 0.643
  },
  "opposites|DIRTY": {
   "file": "w/opposites__dirty.jpg",
@@ -7762,6 +7860,13 @@
   "license": "CC BY-SA 4.0",
   "score": 1.073
  },
+ "opposites|DOWN": {
+  "file": "w/opposites__down.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Girl_About_to_Go_Down_a_Slide.JPG",
+  "author": "Barelyhere",
+  "license": "CC BY-SA 4.0",
+  "score": 1.284
+ },
  "opposites|DRY": {
   "file": "w/opposites__dry.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Rub_al_Khali_002.JPG",
@@ -7769,12 +7874,54 @@
   "license": "CC BY-SA 3.0",
   "score": 0.163
  },
+ "opposites|EASY": {
+  "file": "w/opposites__easy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Easy_Virtue_1928_publicity_poster.jpg",
+  "author": "Unknown author Unknown author , distributed by: Woolf & Freedman Film Service (GBR) and Sono Art-World Wide Pictures (USA)",
+  "license": "Public domain",
+  "score": 0.67
+ },
+ "opposites|EMPTY": {
+  "file": "w/opposites__empty.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:An_empty_box_-_geograph.org.uk_-_5871457.jpg",
+  "author": "Neil Owen",
+  "license": "CC BY-SA 2.0",
+  "score": 0.699
+ },
+ "opposites|EXPENSIVE": {
+  "file": "w/opposites__expensive.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_Jewelry_(6995052429).jpg",
+  "author": "Erik Drost",
+  "license": "CC BY 2.0",
+  "score": 0.676
+ },
+ "opposites|FAR": {
+  "file": "w/opposites__far.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Distant_Mountains_-_geograph.org.uk_-_2995816.jpg",
+  "author": "Kevin Philpott",
+  "license": "CC BY-SA 2.0",
+  "score": 0.719
+ },
  "opposites|FAST": {
   "file": "w/opposites__fast.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Male_cheetah_facing_left_in_South_Africa.jpg",
   "author": "AfricanConservation",
   "license": "CC BY-SA 4.0",
   "score": 0.382
+ },
+ "opposites|FRONT": {
+  "file": "w/opposites__front.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Devonshire_Lodge_(Low-Martin_House),_Windsor,_Ontario,_2025-08-31_01.jpg",
+  "author": "Chris Woodrich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.705
+ },
+ "opposites|FULL": {
+  "file": "w/opposites__full.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Glass_Half_Full.jpg",
+  "author": "Leijurv",
+  "license": "CC BY-SA 4.0",
+  "score": 1.374
  },
  "opposites|HAPPY": {
   "file": "w/opposites__happy.jpg",
@@ -7797,12 +7944,89 @@
   "license": "CC BY-SA 3.0",
   "score": 0.403
  },
+ "opposites|HIGH": {
+  "file": "w/opposites__high.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cesenatico_-_Porto_Canale_(2023).jpg",
+  "author": "Terragio67",
+  "license": "CC BY-SA 4.0",
+  "score": 0.742
+ },
+ "opposites|HOT": {
+  "file": "w/opposites__hot.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Cup_of_coffee_on_black_background.jpg",
+  "author": "Greenraystudio",
+  "license": "CC BY 3.0",
+  "score": 1.131
+ },
+ "opposites|IN": {
+  "file": "w/opposites__in.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ehrenbach,_cat_on_box_between_elder_and_spruce.jpg",
+  "author": "Gerda Arendt",
+  "license": "CC0",
+  "score": 1.021
+ },
+ "opposites|INSIDE": {
+  "file": "w/opposites__inside.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Canopic_box_of_Hatnefer_MET_36.3.53a-b_EGDP015640.jpg",
+  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
+  "license": "CC0",
+  "score": 0.937
+ },
+ "opposites|LEFT": {
+  "file": "w/opposites__left.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:UK_No_Turn_Left_Sign_-_geograph.org.uk_-_6296640.jpg",
+  "author": "Gary",
+  "license": "CC BY-SA 2.0",
+  "score": 1.108
+ },
  "opposites|LIGHT": {
   "file": "w/opposites__light.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:InflatableBalloons.jpg",
   "author": "Complete fanatic",
   "license": "Public domain",
   "score": 0.246
+ },
+ "opposites|LONG": {
+  "file": "w/opposites__long.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:The_Church_of_Jesus_Christ_of_Latter-day_Saints_-_Idaho_Falls.jpg",
+  "author": "Tony Webster",
+  "license": "CC BY 2.0",
+  "score": 0.815
+ },
+ "opposites|LOUD": {
+  "file": "w/opposites__loud.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Loudspeaker_van_-_geograph.org.uk_-_4463786.jpg",
+  "author": "Richard Webb",
+  "license": "CC BY-SA 2.0",
+  "score": 0.686
+ },
+ "opposites|LOW": {
+  "file": "w/opposites__low.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Low_Table_or_Stand_MET_wb-69.225e.jpeg",
+  "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . See the Image and Data Resources Open Access Policy",
+  "license": "CC0",
+  "score": 0.596
+ },
+ "opposites|MESSY": {
+  "file": "w/opposites__messy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Messy_UVA_dorm.jpg",
+  "author": "Packer1028",
+  "license": "CC0",
+  "score": 1.057
+ },
+ "opposites|NARROW": {
+  "file": "w/opposites__narrow.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Narrow_Alley_-_geograph.org.uk_-_8057903.jpg",
+  "author": "Anne Burgess",
+  "license": "CC BY-SA 2.0",
+  "score": 1.256
+ },
+ "opposites|NEAR": {
+  "file": "w/opposites__near.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Wheat_close-up.JPG",
+  "author": "User:Bluemoose",
+  "license": "CC BY-SA 3.0",
+  "score": 0.809
  },
  "opposites|NEW": {
   "file": "w/opposites__new.jpg",
@@ -7811,12 +8035,54 @@
   "license": "CC BY-SA 4.0",
   "score": 0.405
  },
+ "opposites|OFF": {
+  "file": "w/opposites__off.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Incandescent_bulb_lamp_glowing_on_a_desk_at_night.jpg",
+  "author": "Sihyeon0621",
+  "license": "CC BY-SA 4.0",
+  "score": 0.89
+ },
  "opposites|OLD": {
   "file": "w/opposites__old.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:My_Grandfather_Photo_from_January_17.JPG",
   "author": "Diego Grez",
   "license": "CC BY-SA 3.0",
   "score": 0.818
+ },
+ "opposites|ON": {
+  "file": "w/opposites__on.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Energy_Arc_(central_electrode_of_a_Plasma_Lamp).jpg",
+  "author": "Blaise Frazier aka PiccoloNamek",
+  "license": "CC BY-SA 3.0",
+  "score": 0.937
+ },
+ "opposites|OPEN": {
+  "file": "w/opposites__open.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:House_wren_in_JBWR_(50039).jpg",
+  "author": "Rhododendrites",
+  "license": "CC BY-SA 4.0",
+  "score": 1.01
+ },
+ "opposites|OUT": {
+  "file": "w/opposites__out.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Exit_Old_NH7_MGR_Bus_Stand_2Wheelers_Tirunelveli_Apr22_A7C_01865.jpg",
+  "author": "This Photo was taken by Timothy A. Gonsalves . Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk pa",
+  "license": "CC BY-SA 4.0",
+  "score": 0.384
+ },
+ "opposites|OUTSIDE": {
+  "file": "w/opposites__outside.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Children_Playing_with_Decommissioned_M1937_Anti-Tank_Gun_outside_Skopje_Fortress,_North_Macedonia_(3).jpg",
+  "author": "Julian Lupyan",
+  "license": "CC0",
+  "score": 1.298
+ },
+ "opposites|POOR": {
+  "file": "w/opposites__poor.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Lost_wallet_(10623155873).jpg",
+  "author": "Martin Cooper",
+  "license": "CC BY 2.0",
+  "score": 1.315
  },
  "opposites|QUIET": {
   "file": "w/opposites__quiet.jpg",
@@ -7832,12 +8098,33 @@
   "license": "CC BY-SA 3.0 de",
   "score": 0.339
  },
+ "opposites|RIGHT": {
+  "file": "w/opposites__right.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Brown_tourist_sign--Historical_Marker-arrow_pointing_right.jpg",
+  "author": "Myotus",
+  "license": "CC BY 4.0",
+  "score": 1.256
+ },
+ "opposites|ROUGH": {
+  "file": "w/opposites__rough.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Stone_pathway_02_rough_8k_(Amal_Kumar_via_Poly_Haven)_JPG.jpg",
+  "author": "Amal Kumar",
+  "license": "CC0",
+  "score": 0.603
+ },
  "opposites|SAD": {
   "file": "w/opposites__sad.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Crying-girl.jpg",
   "author": "Crimfants",
   "license": "CC BY-SA 2.0",
   "score": 0.761
+ },
+ "opposites|SAFE": {
+  "file": "w/opposites__safe.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Brandslange.jpg",
+  "author": "Villy Fink Isaksen",
+  "license": "CC BY-SA 3.0",
+  "score": 0.737
  },
  "opposites|SAME": {
   "file": "w/opposites__same.jpg",
@@ -7846,12 +8133,40 @@
   "license": "Public domain",
   "score": 0.196
  },
+ "opposites|SHALLOW": {
+  "file": "w/opposites__shallow.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Ripples_dispersing_sunlight_into_underwater_rainbows_in_Brofjorden.jpg",
+  "author": "W.carter",
+  "license": "CC BY-SA 4.0",
+  "score": 1.259
+ },
+ "opposites|SHORT": {
+  "file": "w/opposites__short.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tall_and_short_housing,_Queensway_-_geograph.org.uk_-_2961414.jpg",
+  "author": "David Howard",
+  "license": "CC BY-SA 2.0",
+  "score": 0.683
+ },
  "opposites|SLOW": {
   "file": "w/opposites__slow.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Bicho-pregui%C3%A7a_3.jpg",
   "author": "Daniella Maraschiello",
   "license": "CC BY-SA 4.0",
   "score": 0.258
+ },
+ "opposites|SMALL": {
+  "file": "w/opposites__small.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tiny_house_in_yard,_Portland.jpg",
+  "author": "Tammy",
+  "license": "CC BY 2.0",
+  "score": 1.231
+ },
+ "opposites|SMOOTH": {
+  "file": "w/opposites__smooth.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Smooth_Stones,_Mounton,_Monmouthshire_-_geograph.org.uk_-_7034105.jpg",
+  "author": "Jaggery",
+  "license": "CC BY-SA 2.0",
+  "score": 0.655
  },
  "opposites|SOFT": {
   "file": "w/opposites__soft.jpg",
@@ -7867,6 +8182,13 @@
   "license": "CC BY-SA 4.0",
   "score": 1.138
  },
+ "opposites|STRAIGHT": {
+  "file": "w/opposites__straight.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:In_a_straight_line_-_geograph.org.uk_-_6968711.jpg",
+  "author": "Bob Harvey",
+  "license": "CC BY-SA 2.0",
+  "score": 0.608
+ },
  "opposites|STRONG": {
   "file": "w/opposites__strong.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:TwoDumbbells.JPG",
@@ -7881,12 +8203,68 @@
   "license": "CC BY 2.0",
   "score": 0.903
  },
+ "opposites|TALL": {
+  "file": "w/opposites__tall.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Tall_and_Steadfast_Giraffe.jpg",
+  "author": "Otukei Moses",
+  "license": "CC BY-SA 4.0",
+  "score": 1.246
+ },
+ "opposites|THICK": {
+  "file": "w/opposites__thick.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Thick-billed_Flowerpecker_by_Tisha_Mukherjee_04.jpg",
+  "author": "Tisha Mukherjee",
+  "license": "CC BY-SA 4.0",
+  "score": 0.684
+ },
+ "opposites|THIN": {
+  "file": "w/opposites__thin.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Maurice_brazil_prendergast_may_party125347).jpg",
+  "author": "MAURICE BRAZIL PRENDERGAST",
+  "license": "Public domain",
+  "score": -0.117
+ },
+ "opposites|TIDY": {
+  "file": "w/opposites__tidy.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Enchi_College_of_Education_Campus_June4.jpg",
+  "author": "Kwasi Rex",
+  "license": "CC BY-SA 4.0",
+  "score": 0.686
+ },
+ "opposites|TOP": {
+  "file": "w/opposites__top.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Conical_shadow_of_Mount_Nam_Xay_over_green_trees_at_golden_hour,_South-West_view_from_the_top,_Vang_Vieng,_Laos.jpg",
+  "author": "Basile Morin",
+  "license": "CC BY-SA 4.0",
+  "score": 1.297
+ },
+ "opposites|UP": {
+  "file": "w/opposites__up.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Stairs_going_up_from_the_High_Street,_Bethesda_-_geograph.org.uk_-_6432129.jpg",
+  "author": "Meirion",
+  "license": "CC BY-SA 2.0",
+  "score": 1.176
+ },
+ "opposites|WEAK": {
+  "file": "w/opposites__weak.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:LPK23-91-Lepakshi-Wilted_Lotus_flower_Nelumbo_nucifera_Nandi_garden_2792.jpg",
+  "author": "VasuVR",
+  "license": "CC BY 4.0",
+  "score": 0.659
+ },
  "opposites|WET": {
   "file": "w/opposites__wet.jpg",
   "src": "https://commons.wikimedia.org/wiki/File:Hard_rain_on_a_roof.jpg",
   "author": "W.carter",
   "license": "CC0",
   "score": 0.806
+ },
+ "opposites|WIDE": {
+  "file": "w/opposites__wide.jpg",
+  "src": "https://commons.wikimedia.org/wiki/File:Kruger_National_Park_(ZA),_Giraffe_--_2024_--_0431.jpg",
+  "author": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "score": 0.701
  },
  "opposites|YOUNG": {
   "file": "w/opposites__young.jpg",

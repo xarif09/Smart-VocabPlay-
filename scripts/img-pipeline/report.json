@@ -16484,16 +16484,60 @@
    "forced": false
   },
   "opposites|SMALL": {
-   "status": "no candidates"
+   "title": "File:Tiny house in yard, Portland.jpg",
+   "final": 1.231,
+   "p": 0.9115,
+   "photo": 0.9795,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:tiny kitten",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|TALL": {
-   "status": "no candidates"
+   "title": "File:Tall and Steadfast Giraffe.jpg",
+   "final": 1.246,
+   "p": 0.8431,
+   "photo": 0.9293,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:tall giraffe",
+   "n_cands": 3,
+   "forced": false
   },
   "opposites|SHORT": {
-   "status": "no candidates"
+   "title": "File:Tall and short housing, Queensway - geograph.org.uk - 2961414.jpg",
+   "final": 0.683,
+   "p": 0.0,
+   "photo": 0.9175,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:short and tall",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|LONG": {
-   "status": "no candidates"
+   "title": "File:The Church of Jesus Christ of Latter-day Saints - Idaho Falls.jpg",
+   "final": 0.815,
+   "p": 0.006,
+   "photo": 0.9924,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:long snake",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|FAST": {
    "title": "File:Male cheetah facing left in South Africa.jpg",
@@ -16532,7 +16576,17 @@
    "forced": false
   },
   "opposites|HOT": {
-   "status": "no candidates"
+   "title": "File:Cup of coffee on black background.jpg",
+   "final": 1.131,
+   "p": 0.5673,
+   "photo": 0.9694,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:hot coffee steam",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|COLD": {
    "title": "File:CargoNet Di 12 Euro 4000 Lønsdal - Bolna.jpg",
@@ -16706,46 +16760,213 @@
    "forced": false
   },
   "opposites|FULL": {
-   "status": "no candidates"
+   "title": "File:Glass Half Full.jpg",
+   "final": 1.374,
+   "p": 0.9996,
+   "photo": 0.9011,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:full glass of water",
+   "n_cands": 9,
+   "forced": false
   },
   "opposites|EMPTY": {
-   "status": "no candidates"
+   "title": "File:An empty box - geograph.org.uk - 5871457.jpg",
+   "final": 0.699,
+   "p": 0.0,
+   "photo": 0.9937,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:empty box",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|OPEN": {
-   "status": "no candidates"
+   "title": "File:House wren in JBWR (50039).jpg",
+   "final": 1.01,
+   "p": 0.523,
+   "photo": 0.9856,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:open box",
+   "n_cands": 10,
+   "forced": false
   },
   "opposites|CLOSED": {
-   "status": "no candidates"
+   "title": "File:Funchal (Madeira, Portugal), Rua de Santa Maria 39 -- 2025 -- 0831.jpg",
+   "final": 0.782,
+   "p": 0.9818,
+   "photo": 0.1399,
+   "fit": 0.806,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.14"
+   ],
+   "origin": "search:closed door",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|UP": {
-   "status": "no candidates"
+   "title": "File:Stairs going up from the High Street, Bethesda - geograph.org.uk - 6432129.jpg",
+   "final": 1.176,
+   "p": 0.9648,
+   "photo": 0.9335,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:stairs going up",
+   "n_cands": 5,
+   "forced": false
   },
   "opposites|DOWN": {
-   "status": "no candidates"
+   "title": "File:Girl About to Go Down a Slide.JPG",
+   "final": 1.284,
+   "p": 0.9789,
+   "photo": 0.9683,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:child slide going down",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|IN": {
-   "status": "no candidates"
+   "title": "File:Ehrenbach, cat on box between elder and spruce.jpg",
+   "final": 1.021,
+   "p": 0.6666,
+   "photo": 0.6586,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:cat in a box",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|OUT": {
-   "status": "no candidates"
+   "title": "File:Exit Old NH7 MGR Bus Stand 2Wheelers Tirunelveli Apr22 A7C 01865.jpg",
+   "final": 0.384,
+   "p": 0.0001,
+   "photo": 0.8126,
+   "fit": 0.379,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.63)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.38"
+   ],
+   "origin": "search:exit sign out",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|LEFT": {
-   "status": "no candidates"
+   "title": "File:UK No Turn Left Sign - geograph.org.uk - 6296640.jpg",
+   "final": 1.108,
+   "p": 0.6481,
+   "photo": 0.9181,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:turn left sign",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|RIGHT": {
-   "status": "no candidates"
+   "title": "File:Brown tourist sign--Historical Marker-arrow pointing right.jpg",
+   "final": 1.256,
+   "p": 0.914,
+   "photo": 0.9968,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:right arrow sign",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|FRONT": {
-   "status": "no candidates"
+   "title": "File:Devonshire Lodge (Low-Martin House), Windsor, Ontario, 2025-08-31 01.jpg",
+   "final": 0.705,
+   "p": 0.9307,
+   "photo": 0.5521,
+   "fit": 0.232,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.39)"
+   ],
+   "flags": [
+    "fit 0.23"
+   ],
+   "origin": "search:front of house",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|BACK": {
-   "status": "no candidates"
+   "title": "File:RAF car, Bushmills (rear view) - geograph.org.uk - 5849777.jpg",
+   "final": 1.054,
+   "p": 0.8051,
+   "photo": 0.9843,
+   "fit": 0.806,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:rear view car",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|NEAR": {
-   "status": "no candidates"
+   "title": "File:Wheat close-up.JPG",
+   "final": 0.809,
+   "p": 0.038,
+   "photo": 0.9801,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.04"
+   ],
+   "origin": "search:close up",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|FAR": {
-   "status": "no candidates"
+   "title": "File:Distant Mountains - geograph.org.uk - 2995816.jpg",
+   "final": 0.719,
+   "p": 0.8568,
+   "photo": 0.4665,
+   "fit": 0.236,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.56)"
+   ],
+   "flags": [
+    "fit 0.24",
+    "not photo-like 0.47"
+   ],
+   "origin": "search:distant mountains",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|HEAVY": {
    "title": "File:TwoDumbbells.JPG",
@@ -16824,7 +17045,21 @@
    "forced": false
   },
   "opposites|LOUD": {
-   "status": "no candidates"
+   "title": "File:Loudspeaker van - geograph.org.uk - 4463786.jpg",
+   "final": 0.686,
+   "p": 0.0,
+   "photo": 0.998,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [
+    "upscaled x1.8"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:loudspeaker",
+   "n_cands": 4,
+   "forced": false
   },
   "opposites|QUIET": {
    "title": "File:SanDiegoCityCollegeLearningResource - bookshelf.jpg",
@@ -16845,10 +17080,34 @@
    "forced": false
   },
   "opposites|EASY": {
-   "status": "no candidates"
+   "title": "File:Easy Virtue 1928 publicity poster.jpg",
+   "final": 0.67,
+   "p": 0.996,
+   "photo": 0.0268,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "not photo-like 0.03"
+   ],
+   "origin": "search:easy",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|DIFFICULT": {
-   "status": "no candidates"
+   "title": "File:“The Rock” PT Competition (4673217).jpg",
+   "final": 0.643,
+   "p": 0.0,
+   "photo": 0.6912,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:rock climbing difficult",
+   "n_cands": 5,
+   "forced": false
   },
   "opposites|RICH": {
    "title": "File:Gold-crystals.jpg",
@@ -16869,7 +17128,17 @@
    "forced": false
   },
   "opposites|POOR": {
-   "status": "no candidates"
+   "title": "File:Lost wallet (10623155873).jpg",
+   "final": 1.315,
+   "p": 0.9925,
+   "photo": 0.997,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:empty wallet",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|STRONG": {
    "title": "File:TwoDumbbells.JPG",
@@ -16890,13 +17159,54 @@
    "forced": false
   },
   "opposites|WEAK": {
-   "status": "no candidates"
+   "title": "File:LPK23-91-Lepakshi-Wilted Lotus flower Nelumbo nucifera Nandi garden 2792.jpg",
+   "final": 0.659,
+   "p": 0.0001,
+   "photo": 0.9939,
+   "fit": 0.843,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:wilted flower",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|THICK": {
-   "status": "no candidates"
+   "title": "File:Thick-billed Flowerpecker by Tisha Mukherjee 04.jpg",
+   "final": 0.684,
+   "p": 0.0,
+   "photo": 0.9077,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:thick",
+   "n_cands": 9,
+   "forced": false
   },
   "opposites|THIN": {
-   "status": "no candidates"
+   "title": "File:Maurice brazil prendergast may party125347).jpg",
+   "final": -0.117,
+   "p": 0.0005,
+   "photo": 0.0,
+   "fit": 0.834,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "not photo-like 0.00"
+   ],
+   "origin": "search:thin pencil",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|SWEET": {
    "title": "File:Candy in Damascus.jpg",
@@ -16949,7 +17259,19 @@
    "forced": false
   },
   "opposites|DIFFERENT": {
-   "status": "no candidates"
+   "title": "File:Municipal Market of São Paulo city.jpg",
+   "final": 0.856,
+   "p": 0.0897,
+   "photo": 0.9564,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.09"
+   ],
+   "origin": "search:different fruits",
+   "n_cands": 8,
+   "forced": false
   },
   "time|MONDAY": {
    "status": "no candidates"
@@ -27987,85 +28309,427 @@
    "forced": false
   },
   "opposites|ON": {
-   "status": "no candidates"
+   "title": "File:Energy Arc (central electrode of a Plasma Lamp).jpg",
+   "final": 0.937,
+   "p": 0.4558,
+   "photo": 0.9919,
+   "fit": 0.668,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.46",
+    "fit 0.67"
+   ],
+   "origin": "search:lamp on",
+   "n_cands": 9,
+   "forced": false
   },
   "opposites|OFF": {
-   "status": "no candidates"
+   "title": "File:Incandescent bulb lamp glowing on a desk at night.jpg",
+   "final": 0.89,
+   "p": 0.5461,
+   "photo": 0.5515,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:lamp off",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|ABOVE": {
-   "status": "no candidates"
+   "title": "File:Dülmen, Kirchspiel, Börnste, Felder und Bäume -- 2017 -- 3238.jpg",
+   "final": 0.7,
+   "p": 0.0005,
+   "photo": 0.9958,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:bird above",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|BELOW": {
-   "status": "no candidates"
+   "title": "File:Fractal Broccoli.jpg",
+   "final": 0.524,
+   "p": 0.0018,
+   "photo": 0.994,
+   "fit": 0.419,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 0.70)"
+   ],
+   "flags": [
+    "low word prob 0.00",
+    "fit 0.42"
+   ],
+   "origin": "search:below",
+   "n_cands": 9,
+   "forced": false
   },
   "opposites|INSIDE": {
-   "status": "no candidates"
+   "title": "File:Canopic box of Hatnefer MET 36.3.53a-b EGDP015640.jpg",
+   "final": 0.937,
+   "p": 0.52,
+   "photo": 0.9292,
+   "fit": 0.825,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:cat inside box",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|OUTSIDE": {
-   "status": "no candidates"
+   "title": "File:Children Playing with Decommissioned M1937 Anti-Tank Gun outside Skopje Fortress, North Macedonia (3).jpg",
+   "final": 1.298,
+   "p": 0.9991,
+   "photo": 0.9902,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [],
+   "origin": "search:children playing outside",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|HIGH": {
-   "status": "no candidates"
+   "title": "File:Cesenatico - Porto Canale (2023).jpg",
+   "final": 0.742,
+   "p": 0.0003,
+   "photo": 0.9037,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:high up",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|LOW": {
-   "status": "no candidates"
+   "title": "File:Low Table or Stand MET wb-69.225e.jpeg",
+   "final": 0.596,
+   "p": 0.0001,
+   "photo": 0.91,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:low table",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|WIDE": {
-   "status": "no candidates"
+   "title": "File:Kruger National Park (ZA), Giraffe -- 2024 -- 0431.jpg",
+   "final": 0.701,
+   "p": 0.0006,
+   "photo": 0.9533,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:wide road",
+   "n_cands": 5,
+   "forced": false
   },
   "opposites|NARROW": {
-   "status": "no candidates"
+   "title": "File:Narrow Alley - geograph.org.uk - 8057903.jpg",
+   "final": 1.256,
+   "p": 0.996,
+   "photo": 0.788,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:narrow alley",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|TOP": {
-   "status": "no candidates"
+   "title": "File:Conical shadow of Mount Nam Xay over green trees at golden hour, South-West view from the top, Vang Vieng, Laos.jpg",
+   "final": 1.297,
+   "p": 0.9892,
+   "photo": 0.9861,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [],
+   "origin": "search:top of mountain",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|BOTTOM": {
-   "status": "no candidates"
+   "title": "File:Restanten van een ruitjesbovist (Calvatia utriformis). 15-02-2025. (d.j.b). 01.jpg",
+   "final": 1.039,
+   "p": 0.7521,
+   "photo": 0.9956,
+   "fit": 0.771,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [],
+   "origin": "search:bottom",
+   "n_cands": 9,
+   "forced": false
   },
   "opposites|DARK": {
-   "status": "no candidates"
+   "title": "File:Dark Energy Survey (DES) camera at SiDet clean room (10-0036-22Dhr-CC).jpg",
+   "final": 0.799,
+   "p": 0.0,
+   "photo": 0.9953,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:dark room",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|ASLEEP": {
-   "status": "no candidates"
+   "title": "File:Virgin and Child, with the Christ child sleeping in her arms Met DP883214.jpg",
+   "final": 0.58,
+   "p": 0.1953,
+   "photo": 0.3996,
+   "fit": 1.0,
+   "how": "yolo:person",
+   "notes": [],
+   "flags": [
+    "low word prob 0.20",
+    "not photo-like 0.40"
+   ],
+   "origin": "search:sleeping child",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|AWAKE": {
-   "status": "no candidates"
+   "title": "File:Miscellaneous. Boy in bed-awake. LOC nclc.05273.jpg",
+   "final": 0.863,
+   "p": 0.2935,
+   "photo": 0.9951,
+   "fit": 0.835,
+   "how": "yolo:person",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "low word prob 0.29"
+   ],
+   "origin": "search:awake child",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|MESSY": {
-   "status": "no candidates"
+   "title": "File:Messy UVA dorm.jpg",
+   "final": 1.057,
+   "p": 0.908,
+   "photo": 0.5134,
+   "fit": 0.8,
+   "how": "saliency",
+   "notes": [
+    "touches 1 edge(s)"
+   ],
+   "flags": [],
+   "origin": "search:messy room",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|TIDY": {
-   "status": "no candidates"
+   "title": "File:Enchi College of Education Campus June4.jpg",
+   "final": 0.686,
+   "p": 0.0,
+   "photo": 0.9274,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:neat organized",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|SMOOTH": {
-   "status": "no candidates"
+   "title": "File:Smooth Stones, Mounton, Monmouthshire - geograph.org.uk - 7034105.jpg",
+   "final": 0.655,
+   "p": 0.0,
+   "photo": 0.6893,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:smooth stone",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|ROUGH": {
-   "status": "no candidates"
+   "title": "File:Stone pathway 02 rough 8k (Amal Kumar via Poly Haven) JPG.jpg",
+   "final": 0.603,
+   "p": 0.3501,
+   "photo": 0.8645,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.35"
+   ],
+   "origin": "search:rough stone",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|CHEAP": {
-   "status": "no candidates"
+   "title": "File:Price drop sale, Menarys, Omagh - geograph.org.uk - 6291091.jpg",
+   "final": 0.733,
+   "p": 0.0143,
+   "photo": 0.9818,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.01"
+   ],
+   "origin": "search:sale price",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|EXPENSIVE": {
-   "status": "no candidates"
+   "title": "File:Ponte Vecchio Jewelry (6995052429).jpg",
+   "final": 0.676,
+   "p": 0.0009,
+   "photo": 0.7097,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.00"
+   ],
+   "origin": "search:expensive jewelry",
+   "n_cands": 3,
+   "forced": false
   },
   "opposites|SAFE": {
-   "status": "no candidates"
+   "title": "File:Brandslange.jpg",
+   "final": 0.737,
+   "p": 0.0385,
+   "photo": 0.9364,
+   "fit": 1.0,
+   "how": "saliency",
+   "notes": [],
+   "flags": [
+    "low word prob 0.04"
+   ],
+   "origin": "search:safe",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|DANGEROUS": {
-   "status": "no candidates"
+   "title": "File:Fire Danger Rating Sign Klamath, California.jpg",
+   "final": 0.619,
+   "p": 0.9464,
+   "photo": 0.0007,
+   "fit": 0.847,
+   "how": "saliency",
+   "notes": [
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "not photo-like 0.00"
+   ],
+   "origin": "search:danger sign",
+   "n_cands": 8,
+   "forced": false
   },
   "opposites|CURLY": {
-   "status": "no candidates"
+   "title": "File:Sarah Bernhardt, par Nadar, 1864.jpg",
+   "final": 0.641,
+   "p": 0.7779,
+   "photo": 0.9877,
+   "fit": 0.542,
+   "how": "yolo:person",
+   "notes": [
+    "touches 2 edge(s)",
+    "subject cannot fit 3:4 (box cov 1.00)"
+   ],
+   "flags": [
+    "fit 0.54"
+   ],
+   "origin": "search:curly hair",
+   "n_cands": 6,
+   "forced": false
   },
   "opposites|STRAIGHT": {
-   "status": "no candidates"
+   "title": "File:In a straight line - geograph.org.uk - 6968711.jpg",
+   "final": 0.608,
+   "p": 0.0271,
+   "photo": 0.9931,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [
+    "low word prob 0.03"
+   ],
+   "origin": "search:straight line",
+   "n_cands": 5,
+   "forced": false
   },
   "opposites|DEEP": {
-   "status": "no candidates"
+   "title": "File:Deep sea corals, Wagner Seamount.jpg",
+   "final": 0.842,
+   "p": 0.9742,
+   "photo": 0.9323,
+   "fit": 0.178,
+   "how": "none",
+   "notes": [
+    "no subject found",
+    "subject cannot fit 3:4 (box cov 0.42)"
+   ],
+   "flags": [
+    "fit 0.18"
+   ],
+   "origin": "search:deep sea",
+   "n_cands": 7,
+   "forced": false
   },
   "opposites|SHALLOW": {
-   "status": "no candidates"
+   "title": "File:Ripples dispersing sunlight into underwater rainbows in Brofjorden.jpg",
+   "final": 1.259,
+   "p": 0.9937,
+   "photo": 0.9741,
+   "fit": 0.75,
+   "how": "saliency",
+   "notes": [
+    "tiny subject"
+   ],
+   "flags": [],
+   "origin": "search:shallow water",
+   "n_cands": 7,
+   "forced": false
   }
  },
  "low_confidence": [
@@ -28697,9 +29361,7 @@
   "opposites|ABOVE",
   "opposites|ASLEEP",
   "opposites|AWAKE",
-  "opposites|BACK",
   "opposites|BELOW",
-  "opposites|BOTTOM",
   "opposites|CHEAP",
   "opposites|CLEAN",
   "opposites|CLOSED",
@@ -28710,7 +29372,6 @@
   "opposites|DEEP",
   "opposites|DIFFERENT",
   "opposites|DIFFICULT",
-  "opposites|DOWN",
   "opposites|DRY",
   "opposites|EASY",
   "opposites|EMPTY",
@@ -28718,52 +29379,35 @@
   "opposites|FAR",
   "opposites|FAST",
   "opposites|FRONT",
-  "opposites|FULL",
   "opposites|HAPPY",
   "opposites|HARD",
   "opposites|HEAVY",
   "opposites|HIGH",
-  "opposites|HOT",
-  "opposites|IN",
-  "opposites|INSIDE",
-  "opposites|LEFT",
   "opposites|LIGHT",
   "opposites|LONG",
   "opposites|LOUD",
   "opposites|LOW",
-  "opposites|MESSY",
-  "opposites|NARROW",
   "opposites|NEAR",
   "opposites|NEW",
-  "opposites|OFF",
   "opposites|OLD",
   "opposites|ON",
-  "opposites|OPEN",
   "opposites|OUT",
-  "opposites|OUTSIDE",
-  "opposites|POOR",
   "opposites|QUIET",
   "opposites|RICH",
-  "opposites|RIGHT",
   "opposites|ROUGH",
   "opposites|SAD",
   "opposites|SAFE",
   "opposites|SAME",
-  "opposites|SHALLOW",
   "opposites|SHORT",
   "opposites|SLOW",
-  "opposites|SMALL",
   "opposites|SMOOTH",
   "opposites|SOFT",
   "opposites|STRAIGHT",
   "opposites|STRONG",
   "opposites|SWEET",
-  "opposites|TALL",
   "opposites|THICK",
   "opposites|THIN",
   "opposites|TIDY",
-  "opposites|TOP",
-  "opposites|UP",
   "opposites|WEAK",
   "opposites|WET",
   "opposites|WIDE",
@@ -29239,7 +29883,7 @@
  ],
  "summary": {
   "words": 1903,
-  "with_photo": 1787,
-  "flagged": 1167
+  "with_photo": 1841,
+  "flagged": 1147
  }
 }

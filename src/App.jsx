@@ -3679,7 +3679,7 @@ function BodyDoctorGame({ words, speak, showToast, track }) {
   const [fb,setFb]=useState(null);
   const wrongs=useRef(0);
   const [bodyOpts, setBodyOpts] = useState([]);
-  useEffect(()=>{const t=words[Math.floor(Math.random()*words.length)];setTarget(t);setFb(null);if(t){setBodyOpts(shuffle([t,...shuffle(words.filter(x=>x.id!==t.id)).slice(0,5)]));speak(`Touch the ${t.word}`,`แตะที่ ${t.meaning}`);}},[round]);
+  useEffect(()=>{const t=words[Math.floor(Math.random()*words.length)];setTarget(t);setFb(null);if(t){setBodyOpts(shuffle([t,...shuffle(words.filter(x=>x.id!==t.id)).slice(0,3)]));speak(`Touch the ${t.word}`,`แตะที่ ${t.meaning}`);}},[round]);
   return (
     <GameCard>
       <Bar left={`รอบ ${round}/${MAX}`} right={`⭐${score}`} />
@@ -3698,7 +3698,7 @@ function BodyDoctorGame({ words, speak, showToast, track }) {
               if(w.id===target.id){ track.correct(w); setScore(s=>s+1); setFb("ok"); speak(w.word,w.meaning); if(round>=MAX) afterSpeech(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),800); else afterSpeech(()=>setRound(r=>r+1),800); }
               else { wrongs.current+=1; track.wrong(target); setFb("no"); showToast("ลองอีก 🩺","warn"); setTimeout(()=>setFb(null),500); }
             }} style={{background:fb==="ok"&&w.id===target?.id?T.okC:T.tertiaryC,border:`2px solid ${fb==="ok"&&w.id===target?.id?T.ok:T.tertiaryC}`,borderRadius:18,padding:5,minHeight:60,display:"flex",flexDirection:"column",alignItems:"stretch",gap:4,cursor:"pointer",opacity:fb==="no"&&w.id!==target?.id?0.5:1}}>
-              <PicBox w={w} h="min(16vh, 150px)" r={14} />
+              <PicBox w={w} h="auto" r={14} style={TILE34} />
               <span style={{fontWeight:800,fontSize:13,color:T.ink}}>{w.word}</span>
             </button>
           ))}
@@ -5183,7 +5183,7 @@ function PhonicsScreen({ words, speak, speakAt, showToast, progress, setProgress
         <div style={{ display:"grid",gridTemplateColumns:`repeat(${Math.max(1, ex.length)},1fr)`,gap:6,margin:"14px -8px 0" }}>
           {ex.map(w => (
             <button key={w.id} onClick={() => speak(w.word, w.meaning)} style={{ background:T.surfHigh,border:"none",borderRadius:14,padding:3,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"stretch",textAlign:"center",gap:4,minHeight:44 }}>
-              <PicBox w={w} h={112} r={12} emojiSize={40} />
+              <PicBox w={w} h="auto" r={12} emojiSize={40} style={{ width:"100%" }} />
               <div style={{ fontWeight:900,fontSize:13,color:T.ink }}><span style={{ color:T.primary }}>{w.word[0]}</span>{w.word.slice(1)}</div>
               <div style={{ fontSize:11,color:T.ink2 }}>{w.meaning}</div>
             </button>

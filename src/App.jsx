@@ -17,6 +17,8 @@ import Pet, { PET_CSS } from "./Pet.jsx";
 import { CatIcon, GameIcon, hasGameIcon } from "./Icons.jsx";
 import audioManifest from "./audioManifest.json";
 import ttsManifest from "./ttsManifest.json";
+import WORD_IMG from "./wordImages.json";
+import { EXTRA_WORDS } from "./vocabExtra.js";
 import { conceptFor, CONCEPT_WORDS } from "./Concept.jsx";
 import qrcode from "qrcode-generator";
 import { encodeSet, decodeSet, setLink, readIncomingSet } from "./share.js";
@@ -1425,6 +1427,8 @@ const INITIAL_WORDS = [
   W("countries","BRAZIL","บราซิล","🇧🇷"),
   W("countries","WORLD","โลก","🌍"),
   W("countries","FLAG","ธงชาติ","🚩"),
+  // v3.20: คำเพิ่ม 738 คำ (src/vocabExtra.js) — ต่อท้ายเสมอ id จึงไม่ชนของเดิม
+  ...EXTRA_WORDS.map(r => W(...r)),
 ];
 
 // เติมคำอ่าน + ประโยคตัวอย่างจาก lexicon.js
@@ -1462,6 +1466,15 @@ function loadSavedWords() {
     const have = new Set(merged.map(w => w.cat));
     let nextId = Math.max(0, ...merged.map(w => w.id)) + 1;
     INITIAL_WORDS.forEach(w => { if (!have.has(w.cat)) merged.push({ ...w, id: nextId++ }); });
+    // v3.20: คำเพิ่มชุดใหญ่ → เติมให้ผู้ใช้เดิมครั้งเดียว (ข้ามคำที่มีอยู่แล้ว)
+    let added = false; try { added = window.localStorage.getItem("smart-vocabplay:extra-v320") === "1"; } catch (_) {}
+    if (!added) {
+      const key = w => `${w.cat}|${String(w.word).toUpperCase()}`;
+      const exist = new Set(merged.map(key));
+      const extraKeys = new Set(EXTRA_WORDS.map(r => `${r[0]}|${r[1]}`));
+      INITIAL_WORDS.forEach(w => { if (extraKeys.has(key(w)) && !exist.has(key(w))) merged.push({ ...w, id: nextId++ }); });
+      try { window.localStorage.setItem("smart-vocabplay:extra-v320", "1"); } catch (_) {}
+    }
     return merged;
   } catch (_) {
     return INITIAL_WORDS;
@@ -1494,8 +1507,12 @@ export default function App() {
   useEffect(() => { const h = e => setUpdateReg(e.detail); window.addEventListener("vp-update", h); return () => window.removeEventListener("vp-update", h); }, []);
   const [installHidden, setInstallHidden] = useState(() => { try { return localStorage.getItem("smart-vocabplay:install-hidden") === "1"; } catch (_) { return false; } });
   const [soundOn, setSoundOn] = useState(true);
-  const [bilingual, setBilingual] = useState(true);
-  const [rate, setRate] = useState(0.85);
+  const [bilingual, setBilingual] = useState(() => { try { return localStorage.getItem("smart-vocabplay:thaivoice") !== "0"; } catch (_) { return true; } });   // เสียงคำแปลไทย
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:thaivoice", bilingual ? "1" : "0"); } catch (_) {} }, [bilingual]);
+  const [showThai, setShowThai] = useState(() => { try { return localStorage.getItem("smart-vocabplay:thaitext") !== "0"; } catch (_) { return true; } });     // แสดงคำแปลไทยบนจอ
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:thaitext", showThai ? "1" : "0"); } catch (_) {} }, [showThai]);
+  const [rate, setRate] = useState(() => { try { const v = parseFloat(localStorage.getItem("smart-vocabplay:rate")); return v >= 0.5 && v <= 1.5 ? v : 0.85; } catch (_) { return 0.85; } });
+  useEffect(() => { try { localStorage.setItem("smart-vocabplay:rate", String(rate)); } catch (_) {} }, [rate]);
   // ด่านผู้ปกครอง: ก่อนเข้าตั้งค่า/จัดการคำ ต้องตอบโจทย์คูณ (กันเด็กกดมั่ว) · ผ่านแล้วจำ 10 นาที
   const [parentGate, setParentGate] = useState(() => { try { return localStorage.getItem("smart-vocabplay:gate") !== "0"; } catch (_) { return true; } });
   useEffect(() => { try { localStorage.setItem("smart-vocabplay:gate", parentGate ? "1" : "0"); } catch (_) {} }, [parentGate]);
@@ -1713,7 +1730,7 @@ export default function App() {
   // หน้า audit (dev): เปิด ?audit=1 → ตัวเลขความครบของเนื้อหา (รูป/ภาพออกแบบ/อีโมจิ · เสียงคนจริง · คำอ่าน/ประโยค) อ่านโดย scripts/audit.cjs
   if (typeof window !== "undefined" && /[?&]audit=1/.test(window.location.search)) {
     const rows = INITIAL_WORDS.map(w => {
-      const t = imageTitleOf(w); const photo = !!(t && cachedImageUrl(t)); const concept = !photo && !!conceptFor(w);
+      const t = imageTitleOf(w); const photo = !!wordImageUrl(w) || !!(t && cachedImageUrl(t)); const concept = !photo && !!conceptFor(w);
       const lx = lexOf(w); const parts = w.word.toLowerCase().split(/[\s-]+/);
       const audio = !!audioManifest[w.word.toLowerCase()] || (parts.length > 1 && parts.every(x => audioManifest[x]));
       return { key:`${w.cat}|${w.word}`, visual: photo ? "photo" : concept ? "concept" : "emoji", audio, read: !!lx?.read, sen: !!lx?.sen };
@@ -1845,7 +1862,7 @@ export default function App() {
     </>
   );
   return (
-    <PicCtx.Provider value={realPics}>
+    <PicCtx.Provider value={realPics}><ThaiTextCtx.Provider value={showThai}>
     {fxOn && !immersive && <Ambient />}
     <div style={{ fontFamily: FONT, color: T.ink, minHeight: "100dvh", paddingBottom: showNav ? 100 : 0, position:"relative", zIndex:1 }}>
       {/* HEADER (ไม่แสดงในโหมดเต็มจอ) */}
@@ -1861,6 +1878,7 @@ export default function App() {
           <div style={{ display:"flex",alignItems:"center",gap:8,padding:"calc(env(safe-area-inset-top, 0px) + 8px) 10px 6px",flexShrink:0 }}>
             <button onClick={goBack} aria-label="ย้อนกลับ" className="m3-press" style={M3.iconBtn({ background:"color-mix(in oklab, var(--md-surface) 55%, transparent)",color:T.ink,fontSize:24,backdropFilter:"blur(8px)" })}>‹</button>
             <div style={{ flex:1,minWidth:0,...TYPE.titleM,color:T.ink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{headerTitle}</div>
+            <button onClick={() => { sfx.tap(); setBilingual(v => !v); showToast(bilingual ? "ปิดเสียงคำแปลไทย" : "เปิดเสียงคำแปลไทย"); }} aria-label="เสียงคำแปลไทย" aria-pressed={bilingual} className="m3-press" style={{ minHeight:44,padding:"0 12px",borderRadius:999,border:`2px solid ${bilingual ? T.primary : T.cardBorder}`,background:bilingual ? T.primaryC : T.card,color:bilingual ? T.primary : T.ink2,fontFamily:HFONT,fontWeight:600,fontSize:14,cursor:"pointer",whiteSpace:"nowrap",textDecoration:bilingual ? "none" : "line-through" }}>🗣️ ไทย</button>
             <button onClick={() => setSoundOn(v => !v)} aria-label="เสียง" className="m3-press" style={M3.iconBtn({ background:"color-mix(in oklab, var(--md-surface) 55%, transparent)",color:T.ink,fontSize:18 })}>{soundOn ? "🔊" : "🔇"}</button>
           </div>
           <div style={{ flex:1,overflowY:"auto",WebkitOverflowScrolling:"touch",paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 16px)" }}>
@@ -1887,7 +1905,7 @@ export default function App() {
       {showSettings && (
         <SettingsSheet
           soundOn={soundOn} setSoundOn={setSoundOn}
-          bilingual={bilingual} setBilingual={setBilingual}
+          bilingual={bilingual} setBilingual={setBilingual} showThai={showThai} setShowThai={setShowThai}
           rate={rate} setRate={setRate}
           onResetProgress={() => { setProgress(ensureDaily({ ...EMPTY_PROGRESS })); setShowSettings(false); showToast("เริ่มใหม่แล้ว ✓"); }}
           onReport={() => { setShowSettings(false); goReport(); }}
@@ -1927,7 +1945,7 @@ export default function App() {
         }}>{toast.msg}</div>
       )}
     </div>
-    </PicCtx.Provider>
+    </ThaiTextCtx.Provider></PicCtx.Provider>
   );
 }
 
@@ -2426,12 +2444,64 @@ function ImportSetSheet({ encoded, words, setWords, showToast, onClose }) {
   );
 }
 
+// เครื่องมือครอปรูป 3:4 (แนวตั้ง) สำหรับคำศัพท์ที่เพิ่มเอง: เลือกรูป/ถ่ายรูป → ลากเลื่อน + ซูม → บันทึก 600×800 JPEG
+function ImageCropper({ onDone, onCancel }) {
+  const [src, setSrc] = useState(null); const [nat, setNat] = useState(null);
+  const [zoom, setZoom] = useState(1); const [off, setOff] = useState({ x:0, y:0 });
+  const box = useRef(null); const drag = useRef(null); const pinch = useRef(null);
+  const FW = 270, FH = 360;                                   // กรอบ 3:4 บนจอ
+  const base = nat ? Math.max(FW / nat.w, FH / nat.h) : 1;    // สเกลต่ำสุด = รูปเต็มกรอบพอดี (ไม่มีขอบ)
+  const sc = base * zoom;
+  const clamp = (o, z = zoom) => { if (!nat) return o; const w = nat.w * base * z, h = nat.h * base * z; return { x:Math.min(0, Math.max(FW - w, o.x)), y:Math.min(0, Math.max(FH - h, o.y)) }; };
+  const pick = f => { if (!f) return; const r = new FileReader(); r.onload = () => { const im = new Image(); im.onload = () => { const n = { w:im.naturalWidth, h:im.naturalHeight }; setNat(n); setZoom(1); const b = Math.max(FW / n.w, FH / n.h); setOff({ x:(FW - n.w * b) / 2, y:(FH - n.h * b) / 2 }); setSrc(r.result); }; im.src = r.result; }; r.readAsDataURL(f); };
+  const setZ = z => { z = Math.max(1, Math.min(4, z)); const cx = FW / 2, cy = FH / 2; const k = z / zoom; setOff(o => clamp({ x:cx - (cx - o.x) * k, y:cy - (cy - o.y) * k }, z)); setZoom(z); };
+  const down = e => { e.currentTarget.setPointerCapture?.(e.pointerId); drag.current = { x:e.clientX, y:e.clientY, o:off }; };
+  const move = e => { if (!drag.current) return; const d = drag.current; setOff(clamp({ x:d.o.x + e.clientX - d.x, y:d.o.y + e.clientY - d.y })); };
+  const up = () => { drag.current = null; };
+  const save = () => {
+    const im = new Image(); im.onload = () => {
+      const c = document.createElement("canvas"); c.width = 600; c.height = 800; const x = c.getContext("2d");
+      const k = 600 / FW; x.drawImage(im, off.x * k, off.y * k, nat.w * sc * k, nat.h * sc * k);
+      try { onDone(c.toDataURL("image/jpeg", 0.8)); } catch (_) { onCancel(); }
+    }; im.src = src;
+  };
+  return (
+    <div style={{ background:T.card,border:`2px solid ${T.cardBorder}`,borderRadius:24,padding:14,marginTop:10,textAlign:"center" }}>
+      <div style={{ ...TYPE.titleS,color:T.ink,marginBottom:8 }}>🖼️ รูปของคำนี้ (ครอป 3:4)</div>
+      {!src ? <>
+        <label className="vp-3d" style={{ "--edge":T.primaryEdge,display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,minHeight:52,padding:"0 20px",borderRadius:20,background:T.primary,color:T.onPrimary,fontFamily:HFONT,fontWeight:600,fontSize:16,cursor:"pointer" }}>
+          📷 เลือกรูป / ถ่ายรูป<input type="file" accept="image/*" onChange={e => pick(e.target.files?.[0])} style={{ display:"none" }} />
+        </label>
+        <div style={{ ...TYPE.bodyS,color:T.ink2,marginTop:8 }}>เลือกรูปที่เห็นของชิ้นนั้นชัดๆ แล้วจัดให้อยู่กลางกรอบ</div>
+      </> : <>
+        <div ref={box} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
+          onWheel={e => setZ(zoom * (e.deltaY < 0 ? 1.08 : 0.93))}
+          style={{ position:"relative",width:FW,height:FH,margin:"0 auto",overflow:"hidden",borderRadius:18,background:T.surfHigh,touchAction:"none",cursor:"grab",boxShadow:`0 0 0 3px ${T.primary}` }}>
+          <img src={src} alt="" draggable={false} style={{ position:"absolute",left:off.x,top:off.y,width:nat.w * sc,height:nat.h * sc,maxWidth:"none",userSelect:"none",pointerEvents:"none" }} />
+          <span style={{ position:"absolute",inset:0,pointerEvents:"none",backgroundImage:"linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px)",backgroundSize:`${FW/3}px ${FH/3}px` }} />
+        </div>
+        <div style={{ display:"flex",alignItems:"center",gap:10,maxWidth:FW,margin:"10px auto 0" }}>
+          <button onClick={() => setZ(zoom / 1.15)} aria-label="ซูมออก" style={M3.tonal({ minWidth:48,padding:0,fontSize:20 })}>－</button>
+          <input type="range" min="1" max="4" step="0.01" value={zoom} onChange={e => setZ(+e.target.value)} style={{ flex:1,height:44 }} aria-label="ซูม" />
+          <button onClick={() => setZ(zoom * 1.15)} aria-label="ซูมเข้า" style={M3.tonal({ minWidth:48,padding:0,fontSize:20 })}>＋</button>
+        </div>
+        <div style={{ ...TYPE.bodyS,color:T.ink2,margin:"6px 0 10px" }}>ลากเพื่อเลื่อน · ซูมให้เห็นของเต็มชิ้นและมีพื้นที่รอบๆ เล็กน้อย</div>
+        <div style={{ display:"flex",gap:8 }}>
+          <button onClick={save} style={M3.filled({ flex:1 })}>✓ ใช้รูปนี้</button>
+          <button onClick={() => { setSrc(null); setNat(null); }} style={M3.tonal({ flex:1 })}>เลือกใหม่</button>
+        </div>
+      </>}
+      <button onClick={onCancel} style={{ ...M3.text(),marginTop:6 }}>ยกเลิก</button>
+    </div>
+  );
+}
 function ManageScreen({ words, setWords, categories, showToast, speak, onReset }) {
   const [search, setSearch] = useState("");
   const [filterCat, setFilterCat] = useState("all");
   const [showAdd, setShowAdd] = useState(false);
   const [showShare, setShowShare] = useState(false);
   const [editingId, setEditingId] = useState(null);
+  const [cropFor, setCropFor] = useState(null);   // "new" | word id
   const EMPTY_DRAFT = { word:"", meaning:"", emoji:"📦", cat: categories[0]?.id, read:"", sen:"", senTh:"" };
   const [draft, setDraft] = useState(EMPTY_DRAFT);
 
@@ -2518,8 +2588,14 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
             <input placeholder="ประโยคตัวอย่าง EN" value={draft.sen} onChange={e=>setDraft({...draft,sen:e.target.value})} style={inputStyle} />
             <input placeholder="คำแปลประโยค TH" value={draft.senTh} onChange={e=>setDraft({...draft,senTh:e.target.value})} style={inputStyle} />
           </div>
+          {cropFor === "new"
+            ? <ImageCropper onDone={img => { setDraft(d => ({ ...d, img })); setCropFor(null); }} onCancel={() => setCropFor(null)} />
+            : <div style={{ display:"flex",alignItems:"center",gap:10,margin:"10px 0" }}>
+                {draft.img && <img src={draft.img} alt="" style={{ width:60,height:80,objectFit:"cover",borderRadius:10 }} />}
+                <button onClick={() => setCropFor("new")} style={M3.tonal({ flex:1 })}>{draft.img ? "🖼️ เปลี่ยนรูป" : "🖼️ ใส่รูป (ครอป 3:4)"}</button>
+              </div>}
           <div style={{ display:"flex",gap:8 }}>
-            <button onClick={saveNew} style={{ flex:1,minHeight:44,background:"#EF4444",color:"#fff",borderRadius:14,padding:"9px",fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>บันทึก</button>
+            <button onClick={saveNew} style={M3.filled({ flex:1 })}>บันทึก</button>
             <button onClick={()=>setShowAdd(false)} style={{ flex:1,minHeight:44,background:T.surfHigh,color:T.ink2,borderRadius:14,padding:"9px",fontWeight:700,fontSize:13,border:"none",cursor:"pointer" }}>ยกเลิก</button>
           </div>
         </div>
@@ -2555,11 +2631,13 @@ function ManageScreen({ words, setWords, categories, showToast, speak, onReset }
                     </div>
                     <div style={{ display:"flex",gap:4,flexShrink:0 }}>
                       <Btn onClick={()=>speak(w.word,w.meaning)} style={{ width:44,height:44,borderRadius:16,background:T.primaryC,fontSize:18 }}>🔊</Btn>
+                      <Btn onClick={()=>setCropFor(cropFor===w.id?null:w.id)} aria-label="ใส่รูป" style={{ width:44,height:44,borderRadius:16,background:T.secondaryC,fontSize:18 }}>🖼️</Btn>
                       <Btn onClick={()=>setEditingId(w.id)} style={{ width:44,height:44,borderRadius:16,background:T.tertiaryC,fontSize:18 }}>✏️</Btn>
                       <Btn onClick={()=>{if(window.confirm(`ลบ "${w.word}"?`))deleteWord(w.id);}} style={{ width:44,height:44,borderRadius:16,background:T.errorC,fontSize:18 }}>🗑️</Btn>
                     </div>
                   </div>
               }
+              {cropFor===w.id && <ImageCropper onDone={img => { saveEdit(w.id, { img }); setCropFor(null); }} onCancel={() => setCropFor(null)} />}
             </div>
           );
         })}
@@ -3004,10 +3082,15 @@ function GameCard({ children }) { return <div style={GS.wrap}><div style={GS.car
 function Bar({ left, right }) { return <div style={GS.bar}><span>{left}</span><span>{right}</span></div>; }
 // ── รูปจริง (Wikipedia) หรืออีโมจิ ──
 const PicCtx = createContext(true);
+const ThaiTextCtx = createContext(true);   // แสดงคำแปลไทยบนจอ (ตั้งค่าได้)
 if (typeof document !== "undefined" && !document.getElementById("vp-pet-css")) { const st = document.createElement("style"); st.id = "vp-pet-css"; st.textContent = PET_CSS; document.head.appendChild(st); }   // เปิด/ปิดรูปจริงจากตั้งค่า
+const WORD_IMG_BASE = (typeof import.meta !== "undefined" && import.meta.env?.BASE_URL) || "/";
+// มาตรฐานรูปใหม่ (v3.20): รูป 3:4 ที่ตรวจด้วย AI + ครอปให้เห็นตัวหลักเต็ม · src/wordImages.json ("cat|WORD" → file)
+export const wordImageUrl = w => { const e = w && WORD_IMG[`${w.cat}|${w.word}`]; return e ? WORD_IMG_BASE + "img/" + e.file : null; };
 function useWordImage(w) {
   const on = useContext(PicCtx);
-  const title = on ? imageTitleOf(w) : null;
+  const own = on ? (w?.img || wordImageUrl(w)) : null;      // รูปที่ผู้ใช้ครอปเอง → รูปมาตรฐานใหม่ → รูปเดิม
+  const title = on && !own ? imageTitleOf(w) : null;
   const [url, setUrl] = useState(() => (title ? cachedImageUrl(title) : ""));
   useEffect(() => {
     if (!title) { setUrl(""); return; }
@@ -3017,6 +3100,7 @@ function useWordImage(w) {
     fetchImageUrl(title).then(u => { if (alive) setUrl(u); });
     return () => { alive = false; };
   }, [title]);
+  if (own) return { url: own, title: null, loading: false, std: true };
   return { url: url || "", title, loading: title && url === undefined };
 }
 // รูปคำศัพท์: มีรูปจริง → แสดงรูป (อีโมจิเล็กๆ มุมขวาล่าง) · ไม่มี/โหลดไม่ได้ → อีโมจิ
@@ -3027,35 +3111,27 @@ function Pic({ w, size = 72, radius = 18, style = {}, fill = false }) {
   const concept = (!url || err) ? conceptFor(w) : null;
   // คำที่ไม่มีรูปถ่าย/ภาพออกแบบ → อีโมจิตัวใหญ่เต็มกล่องสีอ่อน (ไม่ทิ้งที่ว่าง)
   if ((!url || err) && !concept) return fill
-    ? <span data-emoji-box style={{ display:"flex",alignItems:"center",justifyContent:"center",width:"100%",maxWidth:"100%",height:"min(46vh, 430px, 92vw)",borderRadius:22,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})`,fontSize:"min(26vh, 220px, 60vw)",lineHeight:1,...style }}><span style={{ filter:"drop-shadow(0 8px 14px rgba(0,0,0,.18))" }}>{w?.emoji}</span></span>
+    ? <span data-emoji-box style={{ display:"flex",alignItems:"center",justifyContent:"center",maxWidth:"100%",height:"min(46vh, 430px, 92vw)",aspectRatio:"3/4",margin:"0 auto",borderRadius:22,background:`linear-gradient(135deg, ${T.secondaryC}, ${T.tertiaryC})`,fontSize:"min(26vh, 220px, 60vw)",lineHeight:1,...style }}><span style={{ filter:"drop-shadow(0 8px 14px rgba(0,0,0,.18))" }}>{w?.emoji}</span></span>
     : <span data-emoji-box style={{ fontSize:size,lineHeight:1,display:"inline-flex",alignItems:"center",justifyContent:"center",...style }}>{w?.emoji}</span>;
-  const box = fill ? "100%" : size * 2.2;
-  const [asp, setAsp] = useState(0);   // สัดส่วนจริงของรูป (กว้าง/สูง) → กรอบเปลี่ยนตามรูป ไม่มีขอบว่าง ไม่เบลอ
-  useEffect(() => setAsp(0), [url]);
+  // มาตรฐาน v3.20: กรอบ 3:4 แนวตั้งเสมอ รูปเต็มกรอบ (cover) ไม่มีขอบ · รูปมาตรฐานใหม่ครอป 3:4 มาแล้วจึงไม่ถูกตัดเพิ่ม
   const MAXH = "min(46vh, 430px, 92vw)";
-  const fa = asp ? Math.min(1.3, Math.max(0.72, asp)) : 4/3;
-  const fillBox = fill ? { width:"100%", maxWidth:`calc(${MAXH} * ${fa})`, aspectRatio:String(fa) } : { width:box, aspectRatio:String(fa) };
+  const fillBox = fill ? { height:MAXH, aspectRatio:"3/4", margin:"0 auto" } : { width:size * 1.7, aspectRatio:"3/4" };
   if (concept) return (
-    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...(fill ? { width:"100%",height:MAXH } : fillBox),borderRadius:fill?22:radius,overflow:"hidden",boxShadow:"0 10px 28px rgba(15,23,42,0.18)",...style }}>
+    <span style={{ position:"relative",display:"block",maxWidth:"100%",...fillBox,borderRadius:fill?24:radius,overflow:"hidden",...style }}>
       {concept}
     </span>
   );
   return (
-    <span style={{ position:"relative",display:"inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?22:radius,overflow:"hidden",background:T.surfHighest,...style }}>
-      <img src={url} alt={w.word} onLoad={e => { const im = e.currentTarget; if (im.naturalWidth) setAsp(im.naturalWidth / im.naturalHeight); }} onError={() => setErr(true)} loading="lazy" style={{ position:"relative",width:"100%",height:"100%",objectFit:"contain",display:"block" }} />
-      {size >= 30 && <span style={{ position:"absolute",right:4,bottom:3,fontSize:Math.max(14, size*0.3),lineHeight:1,filter:"drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>{w.emoji}</span>}
+    <span style={{ position:"relative",display:fill ? "block" : "inline-block",maxWidth:"100%",...fillBox,borderRadius:fill?24:radius,overflow:"hidden",background:T.surfHighest,...style }}>
+      <img src={url} alt={w.word} onError={() => setErr(true)} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 42%",display:"block" }} />
     </span>
   );
 }
 // รูปปก: เต็มกรอบ (cover) แต่ถ้าสัดส่วนรูปต่างจากกรอบมาก (แนวตั้ง/แนวนอนสลับ) → แสดงเต็มใบ (contain) บนพื้นเบลอ จุดโฟกัสไม่ล้นขอบ
+// ช่องรูปตัวเลือก 3:4 · สูงไม่เกินที่จอให้ (2 แถว) และไม่กว้างเกินคอลัมน์ → เต็มจอเล็กพอดีไม่ล้น
+const TILE34 = { aspectRatio:"3/4", height:"min(calc((100dvh - 300px) / 2), calc((min(100vw, 520px) - 76px) * 0.667))", width:"auto", maxWidth:"100%", justifySelf:"center" };
 function CoverImg({ url, word, onError }) {
-  const [safe, setSafe] = useState(false);
-  const chk = e => {
-    const im = e.currentTarget, p = im.parentElement; if (!p || !im.naturalWidth) return;
-    const fr = p.clientWidth / Math.max(1, p.clientHeight), ir = im.naturalWidth / im.naturalHeight;
-    setSafe(Math.max(fr / ir, ir / fr) > 1.3);
-  };
-  return <img src={url} alt={word} onLoad={chk} onError={onError} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:safe?"contain":"cover",objectPosition:"center 40%",borderRadius:"inherit",background:T.surfHighest }} />;
+  return <img src={url} alt={word} onError={onError} loading="lazy" style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 42%",borderRadius:"inherit",background:T.surfHighest }} />;
 }
 // รูปเล็กสำหรับตัวเลือก 4 ช่อง / การ์ดจับคู่: เต็มช่อง
 function PicFill({ w, emojiSize = 40, fit }) {
@@ -3075,7 +3151,8 @@ function Emoji({ e, w, size=72, fill=true }) {
 // ปุ่มลำโพงใหญ่ สำหรับเกม "ฟังแล้วเลือกรูป" (เด็กที่ยังอ่านไม่ออกเล่นได้)
 function SoundPrompt({ onClick, pulse = true, size = 80, w, word, sub }) {
   // โจทย์ = เสียง + คำเขียนเสมอ: การ์ดขาว ปุ่มลำโพงม่วงนูน · คำอังกฤษตัวใหญ่ Fredoka
-  const t = word ?? w?.word, m = sub ?? w?.meaning;
+  const showTh = useContext(ThaiTextCtx);
+  const t = word ?? w?.word, m = showTh ? (sub ?? w?.meaning) : null;
   const fs = !t ? 0 : t.length > 12 ? "clamp(22px,6.4vw,28px)" : t.length > 7 ? "clamp(26px,8vw,34px)" : "clamp(32px,10vw,44px)";
   return <button onClick={onClick} aria-label="ฟังคำ" style={{ display:"flex",alignItems:"center",gap:14,width:t ? "100%" : size,maxWidth:t ? 480 : size,margin:"2px auto 12px",padding:t ? "8px 16px 8px 8px" : 0,borderRadius:28,background:t ? T.card : "transparent",color:T.ink,border:t ? "2px solid #E3D9FF" : "none",boxShadow:t ? "0 4px 0 #E3D9FF" : "none",cursor:"pointer",textAlign:"left",fontFamily:HFONT }}>
     <span className="vp-3d" style={{ "--edge":T.primaryEdge,"--d":"5px",flex:"none",width:size,height:size,borderRadius:size/2,display:"flex",alignItems:"center",justifyContent:"center",background:T.primary,color:T.onPrimary,animation:pulse?"vpBounce 1.5s ease-in-out infinite":"none" }}>
@@ -3138,7 +3215,7 @@ function QuizGame({ words, speak, track, onBack, limit=10, pool }) {
             if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;ed=T.errorEdge;}
             if(lock&&!ip&&!ic){op=.45;}
             return <button key={c.id} onClick={e=>pick(c, e)} disabled={lock}
-              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${ed}`,borderRadius:20,padding:0,aspectRatio:"4/3",position:"relative",overflow:"hidden",cursor:"pointer",opacity:op,transform:sr&&ic?"scale(1.03)":"none",transition:"transform .15s, opacity .2s",animation:sr&&ip&&!ic?"vpWiggle .3s":"none" }}>
+              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${ed}`,borderRadius:20,padding:0,...TILE34,position:"relative",overflow:"hidden",cursor:"pointer",opacity:op,transform:sr&&ic?"scale(1.03)":"none",transition:"transform .15s, opacity .2s",animation:sr&&ip&&!ic?"vpWiggle .3s":"none" }}>
               <PicFill w={c} emojiSize={44} />
             </button>;
           })}
@@ -3362,7 +3439,7 @@ function SpeedGame({ words, speak, showToast, track }) {
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
               {opts.map(o=>(
                 <button key={o.id} onClick={()=>{ if(o.id===cur.id){scoreRef.current+=1;setScore(s=>s+1);track.correct(cur);next();}else{track.wrong(cur);showToast("❌","err");} }}
-                  style={{background:T.card,border:`3px solid ${T.cardBorder}`,boxShadow:`0 5px 0 ${T.cardEdge}`,borderRadius:20,padding:0,aspectRatio:"4/3",position:"relative",overflow:"hidden",cursor:"pointer"}}>
+                  style={{background:T.card,border:`3px solid ${T.cardBorder}`,boxShadow:`0 5px 0 ${T.cardEdge}`,borderRadius:20,padding:0,...TILE34,position:"relative",overflow:"hidden",cursor:"pointer"}}>
                   <PicFill w={o} emojiSize={40} />
                 </button>
               ))}
@@ -3602,7 +3679,7 @@ function BodyDoctorGame({ words, speak, showToast, track }) {
   const [fb,setFb]=useState(null);
   const wrongs=useRef(0);
   const [bodyOpts, setBodyOpts] = useState([]);
-  useEffect(()=>{const t=words[Math.floor(Math.random()*words.length)];setTarget(t);setFb(null);if(t){setBodyOpts(shuffle([t,...shuffle(words.filter(x=>x.id!==t.id)).slice(0,5)]));speak(`Touch the ${t.word}`,`แตะที่ ${t.meaning}`);}},[round]);
+  useEffect(()=>{const t=words[Math.floor(Math.random()*words.length)];setTarget(t);setFb(null);if(t){setBodyOpts(shuffle([t,...shuffle(words.filter(x=>x.id!==t.id)).slice(0,3)]));speak(`Touch the ${t.word}`,`แตะที่ ${t.meaning}`);}},[round]);
   return (
     <GameCard>
       <Bar left={`รอบ ${round}/${MAX}`} right={`⭐${score}`} />
@@ -3621,7 +3698,7 @@ function BodyDoctorGame({ words, speak, showToast, track }) {
               if(w.id===target.id){ track.correct(w); setScore(s=>s+1); setFb("ok"); speak(w.word,w.meaning); if(round>=MAX) afterSpeech(()=>track.finish(score+1,MAX,{ stars: starsByWrong(wrongs.current) }),800); else afterSpeech(()=>setRound(r=>r+1),800); }
               else { wrongs.current+=1; track.wrong(target); setFb("no"); showToast("ลองอีก 🩺","warn"); setTimeout(()=>setFb(null),500); }
             }} style={{background:fb==="ok"&&w.id===target?.id?T.okC:T.tertiaryC,border:`2px solid ${fb==="ok"&&w.id===target?.id?T.ok:T.tertiaryC}`,borderRadius:18,padding:5,minHeight:60,display:"flex",flexDirection:"column",alignItems:"stretch",gap:4,cursor:"pointer",opacity:fb==="no"&&w.id!==target?.id?0.5:1}}>
-              <PicBox w={w} h="min(16vh, 150px)" r={14} />
+              <PicBox w={w} h="auto" r={14} style={TILE34} />
               <span style={{fontWeight:800,fontSize:13,color:T.ink}}>{w.word}</span>
             </button>
           ))}
@@ -3744,7 +3821,7 @@ function BossGame({ words, speak, track, cat, onBack }) {
             if(sr&&ip&&!ic){bg=T.errorC;bo=T.error;tc=T.onErrorC;}
             if(lock&&!ip&&!ic){bg=T.surfHigh;bo=T.outlineV;tc=T.ink3;}
             return <button key={c.id} onClick={()=>pick(c)} disabled={lock}
-              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${T.cardEdge}`,borderRadius:20,padding:q.mode==="rev"?0:"12px 6px",aspectRatio:"4/3",fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
+              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${T.cardEdge}`,borderRadius:20,padding:q.mode==="rev"?0:"12px 6px",...TILE34,fontWeight:800,fontSize:q.mode==="rev"?30:15,color:tc,cursor:"pointer",position:"relative",overflow:"hidden" }}>
               {q.mode==="rev"?<PicFill w={c} emojiSize={34} />:c.word}
             </button>;
           })}
@@ -3866,7 +3943,7 @@ function StickerBook({ words, categories, progress, speak, showToast }) {
 // ═══════════════════════════════════════════════════════
 // SETTINGS SHEET
 // ═══════════════════════════════════════════════════════
-function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn, musicOn, setMusicOn, nativeVoice, setNativeVoiceOn, bigText, setBigText, parentGate, setParentGate }) {
+function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, showThai, setShowThai, rate, setRate, onResetProgress, onReport, onCredits, onClose, realPics, setRealPics, fullscreenOn, setFullscreenOn, thaiGuide, setThaiGuide, fxOn, setFxOn, musicOn, setMusicOn, nativeVoice, setNativeVoiceOn, bigText, setBigText, parentGate, setParentGate }) {
   const [vr, setVr] = useState(() => voiceReport());
   useEffect(() => { loadVoices(); setVr(voiceReport()); const t = setTimeout(() => { loadVoices(); setVr(voiceReport()); }, 800); return () => clearTimeout(t); }, []);
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -3874,15 +3951,34 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
     <M3Sheet onClose={onClose}>
         <h3 style={{ ...TYPE.headlineS,color:T.ink,margin:"0 0 4px" }}>ตั้งค่า</h3>
         <div style={{ fontSize:11,color:T.ink3,marginBottom:14 }}>Smart VocabPlay <b>v{APP_VERSION}</b>{BUILD_TIME && ` · build ${BUILD_TIME}`} · ถ้าเลขไม่ตรงกับที่แจ้งไว้ ให้ปิดแอปแล้วเปิดใหม่ หรือกด "อัปเดต" เมื่อมีแถบขึ้น</div>
+        <SetSec>🔊 เสียง</SetSec>
         <TRow label="เปิดเสียง" desc="เสียงพูด + เสียงเอฟเฟกต์ทุกเกม" on={soundOn} set={setSoundOn} />
-        <TRow label="เสียงสองภาษา EN→TH" desc="อ่านอังกฤษแล้วต่อด้วยไทย" on={bilingual} set={setBilingual} />
+        <TRow label="เสียงคำแปลภาษาไทย" desc="อ่านคำอังกฤษแล้วต่อด้วยคำแปลไทย · ปิด = ได้ยินแค่ภาษาอังกฤษ (สลับได้จากปุ่ม 🗣️ ไทย ในทุกหน้าเกม)" on={bilingual} set={setBilingual} />
         <TRow label="เสียงเจ้าของภาษา" desc={`คำศัพท์ ${nativeCount()} คำ (Wikimedia Commons) · ประโยค/บทสนทนา/นิทาน/คำแปลไทย ${ttsClipCount().toLocaleString()} ท่อน (เสียง neural) · โหลดครั้งแรกแล้วจำไว้ใช้ออฟไลน์ · ที่ไม่มีใช้เสียงเครื่องแทน`} on={nativeVoice} set={setNativeVoiceOn} />
         <TRow label="ดนตรีประกอบ" desc="เพลงกล่องดนตรีเบาๆ ตลอดแอป (สร้างในเครื่อง ไม่ใช้เน็ต) · ปิดอัตโนมัติเมื่อสลับแอป" on={musicOn} set={setMusicOn} />
         <TRow label="เอฟเฟกต์และแอนิเมชัน" desc="ระเบิดดาว คอนเฟตตี สั่นจอ พื้นหลังเคลื่อนไหว · ปิดถ้าเครื่องช้า" on={fxOn} set={setFxOn} />
         <TRow label="ผู้ช่วยเสียงไทย" desc="อ่านวิธีเล่นเป็นภาษาไทยทุกครั้งที่เข้าเกม (สำหรับเด็กที่ยังอ่านไทยไม่คล่อง)" on={thaiGuide} set={setThaiGuide} />
+        <div style={{ background:T.surfHigh,borderRadius:14,padding:"12px 14px",margin:"10px 0" }}>
+          <div style={{ display:"flex",justifyContent:"space-between",marginBottom:6 }}>
+            <div style={{ fontWeight:700,fontSize:14,color:T.ink }}>ความเร็วเสียง</div>
+            <span style={{ fontWeight:800,color:T.error,fontSize:15 }}>{rate.toFixed(2)}x</span>
+          </div>
+          <input type="range" min="0.5" max="1.5" step="0.05" value={rate} onChange={e=>setRate(+e.target.value)} style={{ width:"100%",height:44 }} />
+          <div style={{ display:"flex",justifyContent:"space-between",fontSize:10,color:T.ink3,marginTop:3 }}>
+            <span>🐢 ช้า</span><span>ปกติ</span><span>เร็ว 🐇</span>
+          </div>
+        </div>
+        <button onClick={()=>{ sfx.coin(); speakWord("Hello! How are you?","สวัสดี เป็นอย่างไรบ้าง",rate,bilingual); }}
+          style={M3.filled({ width:"100%",minHeight:52,marginBottom:6 })}>
+          🔊 ทดสอบเสียง EN+TH
+        </button>
+        <SetSec>🎮 การเล่น</SetSec>
+        <TRow label="แสดงคำแปลไทยบนจอ" desc="แสดงคำแปลใต้คำอังกฤษในโจทย์ทุกเกม · ปิด = ท้าทายขึ้น (ยังกดฟังได้)" on={showThai} set={setShowThai} />
         <TRow label="เต็มจอเมื่อเข้าเกม" desc="ซ่อนแถบเบราว์เซอร์ตอนเล่น (Android/คอม · iPhone ใช้ได้เมื่อติดตั้งเป็นแอป)" on={fullscreenOn} set={setFullscreenOn} />
+        <SetSec>🖼️ การแสดงผล</SetSec>
         <TRow label="รูปภาพจริง" desc={`รูปถ่ายจาก Wikipedia ${bundledCount()} รูปมากับแอป (ไม่ต้องใช้เน็ต) · ปิด = ใช้อีโมจิ`} on={realPics} set={setRealPics} />
         <TRow label="ตัวหนังสือใหญ่" desc="ขยายทุกอย่างในแอป 12% สำหรับเด็กเล็กหรือจอเล็ก" on={bigText} set={setBigText} />
+        <SetSec>👨‍👩‍👧 ผู้ปกครอง</SetSec>
         <TRow label="ด่านผู้ปกครอง" desc="ก่อนเข้าตั้งค่า/จัดการคำศัพท์ ต้องตอบโจทย์คูณ กันเด็กกดล้างข้อมูลหรือแก้คำเอง (ผ่านแล้วจำ 10 นาที)" on={parentGate} set={setParentGate} />
         <button onClick={onCredits} style={{ width:"100%",minHeight:44,marginBottom:10,borderRadius:16,background:T.surfHigh,color:T.ink2,border:"1px solid var(--md-outline-variant)",fontWeight:700,fontSize:12,cursor:"pointer" }}>🖼️ เครดิตรูปภาพ (ที่มา / สัญญาอนุญาต)</button>
         <div style={{ background:vr.th.length?"#ecfdf5":T.tertiaryC,border:`1px solid ${vr.th.length?"#a7f3d0":T.tertiary}`,borderRadius:14,padding:"10px 14px",marginBottom:10,fontSize:12,color:T.ink2 }}>
@@ -3897,20 +3993,6 @@ function SettingsSheet({ soundOn, setSoundOn, bilingual, setBilingual, rate, set
                 {vr.total === 0 && <><br/>(ยังโหลดรายชื่อเสียงไม่ขึ้น ลองกด "ทดสอบเสียง" 1 ครั้งแล้วเปิดตั้งค่าใหม่)</>}
               </div>}
         </div>
-        <div style={{ background:T.surfHigh,borderRadius:14,padding:"12px 14px",marginBottom:10 }}>
-          <div style={{ display:"flex",justifyContent:"space-between",marginBottom:6 }}>
-            <div style={{ fontWeight:700,fontSize:14,color:T.ink }}>ความเร็วเสียง</div>
-            <span style={{ fontWeight:800,color:T.error,fontSize:15 }}>{rate.toFixed(2)}x</span>
-          </div>
-          <input type="range" min="0.5" max="1.5" step="0.05" value={rate} onChange={e=>setRate(+e.target.value)} style={{ width:"100%",height:44 }} />
-          <div style={{ display:"flex",justifyContent:"space-between",fontSize:10,color:T.ink3,marginTop:3 }}>
-            <span>🐢 ช้า</span><span>ปกติ</span><span>เร็ว 🐇</span>
-          </div>
-        </div>
-        <button onClick={()=>{ sfx.coin(); speakWord("Hello! How are you?","สวัสดี เป็นอย่างไรบ้าง",rate,bilingual); }}
-          style={{ width:"100%",minHeight:48,padding:"12px",borderRadius:16,background:T.error,color:"#fff",fontWeight:800,fontSize:15,border:"none",cursor:"pointer",marginBottom:10 }}>
-          🔊 ทดสอบเสียง EN+TH
-        </button>
         <button onClick={onReport} style={{ width:"100%",minHeight:48,padding:"12px",borderRadius:16,background:T.secondaryC,color:"#1d4ed8",fontWeight:800,fontSize:14,border:"2px solid #bfdbfe",cursor:"pointer",marginBottom:10 }}>
           📊 รายงานผู้ปกครอง
         </button>
@@ -3972,6 +4054,7 @@ function OnboardingSheet({ speakTh, onDone }) {
     </M3Sheet>
   );
 }
+const SetSec = ({ children }) => <div style={{ ...TYPE.titleS,color:T.ink,margin:"18px 4px 4px",paddingTop:4 }}>{children}</div>;
 function TRow({ label, desc, on, set }) {
   return (
     <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,padding:"10px 4px 10px 12px",borderBottom:"1px solid var(--md-outline-variant)" }}>
@@ -4104,7 +4187,7 @@ function FeedGame({ words, speak, track, pet, hat, outfit, onBack }) {
         </div>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8 }}>
           {opts.map(o => (
-            <button key={o.id} onClick={e => tap(o, e)} disabled={lock} aria-label="รูปอาหาร" style={{ position:"relative",aspectRatio:"4/3",padding:0,borderRadius:20,overflow:"hidden",border:`3px solid ${wrongId === o.id ? T.error : T.primaryC}`,background:T.card,cursor:"pointer",
+            <button key={o.id} onClick={e => tap(o, e)} disabled={lock} aria-label="รูปอาหาร" style={{ position:"relative",...TILE34,padding:0,borderRadius:20,overflow:"hidden",border:`3px solid ${wrongId === o.id ? T.error : T.primaryC}`,background:T.card,cursor:"pointer",
               transition:"transform .9s cubic-bezier(.5,-0.3,.7,1), opacity .9s",transform:fly === o.id ? "translateY(-200px) scale(.25) rotate(360deg)" : wrongId === o.id ? "translateX(6px)" : "none",opacity:fly === o.id ? 0 : lock && fly !== o.id ? .5 : 1,animation:wrongId === o.id ? "vpWiggle .4s" : "none" }}>
               <PicFill w={o} emojiSize={44} />
             </button>
@@ -4149,7 +4232,7 @@ function ListenGame({ words, speakAt, track, onBack, pool }) {
             if (sr && ic) { bg = T.okC; bo = T.ok; ed = T.okEdge; }
             if (sr && ip && !ic) { bg = T.errorC; bo = T.error; ed = T.errorEdge; }
             return <button key={c.id} onClick={() => pick(c)} disabled={lock || !played}
-              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${ed}`,borderRadius:20,aspectRatio:"4/3",fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
+              style={{ background:bg,border:`3px solid ${bo}`,boxShadow:`0 5px 0 ${ed}`,borderRadius:20,...TILE34,fontSize:44,cursor:"pointer",opacity:played?1:0.5,position:"relative",overflow:"hidden",padding:0 }}><PicFill w={c} emojiSize={44} /></button>;
           })}
         </div>
       </div>
@@ -4631,7 +4714,12 @@ function CreditsScreen({ words }) {
     Promise.all([
       fetch(`${import.meta.env.BASE_URL}img/credits.json`).then(r => r.json()).catch(() => ({})),
       fetch(`${import.meta.env.BASE_URL}audio/credits.json`).then(r => r.json()).catch(() => ({})),
-    ]).then(([img, au]) => setList([...Object.entries(img), ...Object.entries(au).map(([w, c]) => [w, { ...c, audio: true }])])).catch(() => setList([]));
+    ]).then(([img, au]) => {
+      const std = Object.entries(WORD_IMG).map(([k, e]) => [k, { file: e.file, source: e.src, artist: e.author, license: e.license, std: true }]);
+      const stdWords = new Set(Object.keys(WORD_IMG));
+      const old = Object.entries(img).filter(([t]) => { const w = wordOf(t); return !(w && stdWords.has(`${w.cat}|${w.word}`)); });
+      setList([...std, ...old, ...Object.entries(au).map(([w, c]) => [w, { ...c, audio: true }])]);
+    }).catch(() => setList([]));
   }, []);
   const wordOf = title => words.find(w => imageTitleOf(w) === title);
   return (
@@ -4649,13 +4737,13 @@ function CreditsScreen({ words }) {
       {list === null && <div style={{ textAlign:"center",color:T.ink3 }}>กำลังโหลด…</div>}
       {list && list.length === 0 && <div style={{ textAlign:"center",color:T.ink3 }}>ยังไม่มีรายการ</div>}
       {list && list.map(([title, c]) => {
-        const w = c.audio ? words.find(x => x.word.toLowerCase() === title) : wordOf(title);
+        const w = c.audio ? words.find(x => x.word.toLowerCase() === title) : c.std ? words.find(x => `${x.cat}|${x.word}` === title) : wordOf(title);
         return (
           <a key={(c.audio ? "a:" : "i:") + title} href={c.source || c.page || "#"} target="_blank" rel="noreferrer" style={{ display:"flex",alignItems:"center",gap:10,padding:"6px 0",borderBottom:"1px solid var(--md-outline-variant)",textDecoration:"none",color:"inherit",minHeight:44 }}>
             {c.audio ? <div style={{ width:44,height:33,borderRadius:6,flexShrink:0,background:T.secondaryC,display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🔊</div>
-              : c.file && <img src={`${import.meta.env.BASE_URL}img/${c.file}`} alt="" loading="lazy" style={{ width:44,height:33,objectFit:"cover",borderRadius:6,flexShrink:0 }} />}
+              : c.file && <img src={`${import.meta.env.BASE_URL}img/${c.file}`} alt="" loading="lazy" style={{ width:44,height:c.std ? 58 : 33,objectFit:"cover",borderRadius:6,flexShrink:0 }} />}
             <div style={{ flex:1,minWidth:0 }}>
-              <div style={{ fontWeight:800,fontSize:13,color:T.ink }}>{w ? `${w.emoji} ${w.word}` : title} <span style={{ fontWeight:500,color:T.ink3 }}>· {title}</span></div>
+              <div style={{ fontWeight:800,fontSize:13,color:T.ink }}>{w ? `${w.emoji} ${w.word}` : title} {!c.std && <span style={{ fontWeight:500,color:T.ink3 }}>· {title}</span>}</div>
               <div style={{ fontSize:11,color:T.ink2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>{c.artist || "—"} · {c.license || "ดูที่ต้นทาง"}</div>
             </div>
           </a>
@@ -4677,7 +4765,7 @@ function wordByKey(words, key) {
 }
 // กล่องรูปขนาดกำหนด: รูปจริงเต็มกล่อง (contain + พื้นเบลอ) ใช้เป็นรูปหลัก/รูปตัวเลือกขนาดใหญ่
 function PicBox({ w, h = "min(30vh, 280px)", r = 22, style = {}, emojiSize = 64 }) {
-  return <span style={{ position:"relative",display:"block",width:"100%",height:h,borderRadius:r,overflow:"hidden",background:T.surfHigh,...style }}><PicFill w={w} emojiSize={emojiSize} /></span>;
+  return <span style={{ position:"relative",display:"block",height:h,aspectRatio:"3/4",maxWidth:"100%",margin:"0 auto",borderRadius:r,overflow:"hidden",background:T.surfHigh,...style }}><PicFill w={w} emojiSize={emojiSize} /></span>;
 }
 function picOf(words, key, size) {
   const w = wordByKey(words, key);
@@ -4886,7 +4974,7 @@ function ChoiceList({ opts, answer, picked, onPick, allWords, cols = 1, tone = "
       if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
       if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
       if (usePics) return <button key={o} data-ok={ic ? "1" : undefined} onClick={() => onPick(o)} disabled={!!picked} aria-label={picked ? o : "รูปตัวเลือก"} style={{ display:"flex",flexDirection:"column",padding:0,borderRadius:16,border:`3px solid ${bo}`,background:bg,color:c,overflow:"hidden",cursor:"pointer" }}>
-        <span style={{ position:"relative",display:"block",width:"100%",aspectRatio:"4/3" }}><PicFill w={pics[k]} emojiSize={40} /></span>
+        <span style={{ position:"relative",display:"block",width:"100%",aspectRatio:"3/4" }}><PicFill w={pics[k]} emojiSize={40} /></span>
         {picked && <span style={{ fontWeight:800,fontSize:14,padding:"4px 2px" }}>{o}</span>}
       </button>;
       return <button key={o} data-ok={ic ? "1" : undefined} onClick={() => onPick(o)} disabled={!!picked} style={{ minHeight:50,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:16,cursor:"pointer",padding:"0 14px" }}>{o}</button>;
@@ -4941,7 +5029,7 @@ function StoriesScreen({ words, progress, onOpen }) {
           const done = (progress.stars[`story:${s.id}:squiz`] || 0) >= 1;
           return (
             <button key={s.id} onClick={() => { sfx.tap(); onOpen(s); }} style={{ background:T.card,border:"none",borderRadius:18,padding:10,cursor:"pointer",textAlign:"left",boxShadow:"0 2px 8px rgba(0,0,0,0.05)",minHeight:160,display:"flex",flexDirection:"column",gap:6 }}>
-              <div style={{ width:"100%",aspectRatio:"4/3",borderRadius:16,overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center",background:T.surfHigh,position:"relative" }}>
+              <div style={{ width:"100%",aspectRatio:"3/4",borderRadius:16,overflow:"hidden",display:"flex",alignItems:"center",justifyContent:"center",background:T.surfHigh,position:"relative" }}>
                 <PicFill w={wordByKey(words, s.cover || s.pages[0].pic) || { emoji:s.emoji, word:s.title }} emojiSize={40} />
                 {done && <span style={{ position:"absolute",top:6,right:6,background:T.ok,color:"#fff",fontSize:11,fontWeight:800,padding:"2px 8px",borderRadius:999 }}>✓ อ่านแล้ว</span>}
               </div>
@@ -4997,7 +5085,7 @@ function StoryReader({ s, words, speak, speakAt, showToast, progress, setProgres
         {auto ? "⏹ หยุดอ่าน" : `▶ ฟังทั้งเรื่อง${i > 0 ? ` (ต่อจากหน้า ${i + 1})` : ""}`}
       </button>
       <div style={{ background:T.card,borderRadius:22,overflow:"hidden",boxShadow:"0 8px 28px rgba(0,0,0,0.08)",border:"none",outline:auto?`3px solid ${MD.primary}`:"none",transition:"outline .2s" }}>
-        <div style={{ width:"100%",aspectRatio:"4/3",position:"relative",background:T.surfHigh,display:"flex",alignItems:"center",justifyContent:"center" }}>
+        <div style={{ width:"100%",aspectRatio:"3/4",position:"relative",background:T.surfHigh,display:"flex",alignItems:"center",justifyContent:"center" }}>
           <PicFill w={wordByKey(words, page.pic) || { emoji:page.pic, word:"" }} emojiSize={80} />
           {auto && <span style={{ position:"absolute",top:8,left:8,...M3.assist({ minHeight:30,fontSize:12,background:MD.primary,color:MD.onPrimary }) }}>🔊 กำลังอ่าน · หน้า {i + 1}/{s.pages.length}</span>}
         </div>
@@ -5095,7 +5183,7 @@ function PhonicsScreen({ words, speak, speakAt, showToast, progress, setProgress
         <div style={{ display:"grid",gridTemplateColumns:`repeat(${Math.max(1, ex.length)},1fr)`,gap:6,margin:"14px -8px 0" }}>
           {ex.map(w => (
             <button key={w.id} onClick={() => speak(w.word, w.meaning)} style={{ background:T.surfHigh,border:"none",borderRadius:14,padding:3,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"stretch",textAlign:"center",gap:4,minHeight:44 }}>
-              <PicBox w={w} h={112} r={12} emojiSize={40} />
+              <PicBox w={w} h="auto" r={12} emojiSize={40} style={{ width:"100%" }} />
               <div style={{ fontWeight:900,fontSize:13,color:T.ink }}><span style={{ color:T.primary }}>{w.word[0]}</span>{w.word.slice(1)}</div>
               <div style={{ fontSize:11,color:T.ink2 }}>{w.meaning}</div>
             </button>
@@ -5456,7 +5544,7 @@ function TestGame({ cat, speak, speakAt, track, onBack, allWords }) {
             if (picked && ic) { bg = T.okC; bo = T.ok; c = T.onOkC; }
             if (picked && ip && !ic) { bg = T.errorC; bo = T.error; c = T.onErrorC; }
             const ow = q.type === "listen" || q.type === "pic" ? q.options.find(x => x.word === o) : null;
-            return <button key={o} onClick={() => pick(o)} disabled={!!picked || (q.type === "listen" && !played)} style={{ ...(ow ? { display:"flex",flexDirection:"column",alignItems:"stretch",gap:4,padding:4 } : {}),minHeight:52,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:15,cursor:"pointer",opacity:(q.type==="listen"&&!played)?0.5:1 }}>{ow && <PicBox w={ow} h="auto" r={12} emojiSize={40} style={{ aspectRatio:"4/3" }} />}{(!ow || picked) && o}</button>;
+            return <button key={o} onClick={() => pick(o)} disabled={!!picked || (q.type === "listen" && !played)} style={{ ...(ow ? { display:"flex",flexDirection:"column",alignItems:"stretch",gap:4,padding:4 } : {}),minHeight:52,borderRadius:16,border:`2px solid ${bo}`,background:bg,color:c,fontWeight:800,fontSize:15,cursor:"pointer",opacity:(q.type==="listen"&&!played)?0.5:1 }}>{ow && <PicBox w={ow} h="auto" r={12} emojiSize={40} style={{ aspectRatio:"3/4", width:"100%" }} />}{(!ow || picked) && o}</button>;
           })}
         </div>
       </div>

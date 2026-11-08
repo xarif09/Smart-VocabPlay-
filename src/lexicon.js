@@ -1,3 +1,4 @@
+import { EXTRA_LEX } from "./vocabExtra.js";
 // ═══════════════════════════════════════════════════════
 // LEXICON — คำอ่านไทย + ประโยคตัวอย่าง (EN/TH) ของทุกคำ
 // key = "หมวด|คำ" · read = คำอ่าน (ขีดแบ่งพยางค์) · sen = ประโยค EN · senTh = คำแปลประโยค
@@ -1231,5 +1232,6 @@ add("countries", [
   ["FLAG","แฟล็ก","Every country has a flag.","ทุกประเทศมีธง"],
 ]);
 
+Object.assign(L, EXTRA_LEX);   // v3.20 คำเพิ่ม
 export const LEXICON = L;
 export const lexOf = w => L[`${w.cat}|${w.word}`] || null;

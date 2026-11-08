@@ -26,6 +26,9 @@ const COLORS = {
   RED:"#ef4444", BLUE:"#2563eb", GREEN:"#22c55e", YELLOW:"#facc15", PURPLE:"#9333ea", ORANGE:"#f97316", PINK:"#ec4899", BROWN:"#92400e",
   BLACK:"#111827", WHITE:"#ffffff", GRAY:"#9ca3af", GOLD:"#d4a017", SILVER:"#c0c4cc", "LIGHT BLUE":"#7dd3fc", "DARK GREEN":"#166534",
   BEIGE:"#e7d2b0", TURQUOISE:"#2dd4bf", VIOLET:"#a78bfa", NAVY:"#1e3a8a",
+  "LIGHT GREEN":"#86efac", "HOT PINK":"#ff2d95", "DARK BROWN":"#5b3412", "LIGHT GRAY":"#d1d5db", "DARK GRAY":"#4b5563", MAROON:"#7f1d1d",
+  CYAN:"#06d6f0", AQUA:"#5eead4", BRONZE:"#b0723a", COPPER:"#c2673a", INDIGO:"#4338ca", AMBER:"#f59e0b", CHARCOAL:"#2f3437",
+  BURGUNDY:"#800f2f", "ROYAL BLUE":"#2b50e0", "DARK PURPLE":"#4c1d95", "LIGHT PURPLE":"#d8b4fe",
 };
 // สิ่งของในชีวิตจริงที่มีสีนั้น (วาดง่ายๆ ให้เด็กเชื่อมโยง)
 const COLOR_THINGS = {
@@ -55,7 +58,7 @@ function Thing({ kind, c }) {
 }
 function ColorCard({ word }) {
   const c = COLORS[word]; if (!c) return null;
-  const dark = word === "WHITE" || word === "BEIGE" || word === "YELLOW" || word === "SILVER";
+  const dark = ["WHITE","BEIGE","YELLOW","SILVER","LIGHT GRAY","LIGHT PURPLE","LIGHT GREEN","AQUA"].includes(word);
   return (
     <Frame bg="#ffffff" bg2="#f1f5f9">
       <circle cx="56" cy="55" r="36" fill={c} stroke={dark ? "#cbd5e1" : "none"} filter="url(#cp-sh)" />

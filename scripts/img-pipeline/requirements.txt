@@ -1,0 +1,9 @@
+torch
+torchvision
+open_clip_torch
+ultralytics
+rembg[cpu]
+onnxruntime
+pillow
+requests
+numpy

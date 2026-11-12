@@ -40,6 +40,7 @@ description: หา/เปลี่ยน/ตรวจรูปคำศัพ�
    - ปรับครอป: `{"zoom": 1.2, "dx": 0, "dy": -0.05}` หรือ `{"box": [x0,y0,x1,y1]}` หรือ `{"mode": "scene"}` (ใช้ทั้งฉาก เหมาะกับสถานที่และอากาศ)
    - ข้ามคำ: `{"skip": true}`
    - เลือกจากตารางผู้สมัคร: `$V scripts/img-pipeline/sheet.py OUT --cands "cat|WORD"` แล้ว `$V scripts/img-pipeline/pick.py "cat|WORD=3"`
+3.5 **จัดเฟรมใหม่ (v3.21)**: `$V scripts/img-pipeline/recrop.py` ใช้ `frame.py` (ตัวหลักราว 72% ของด้านที่จำกัด ขอบอย่างน้อย 6% อยู่กลาง ศีรษะคนไม่โดนตัด) · ต้องรันหลัง `run.py` ทุกครั้ง (select_crop.py ยังใช้ตรรกะเก่า) · `--alts` ลองรูปผู้สมัครอื่นที่พอดีกรอบ · `--old "cat|WORD"` ครอปรูปเก่าจาก public/img · ผลรายคำใน `frame_report.json` (`fits:false` = รูปกว้างเกินใส่ 3:4 ไม่ได้ ควรหารูปใหม่ด้วย `research.py`)
 4. **ตรวจด้วยตา (ห้ามข้าม)**:
    ```bash
    python3 scripts/img-pipeline/qa_sheet.py $SCRATCH/qa            # หรือระบุหมวด: ... $SCRATCH/qa body,family

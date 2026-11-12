@@ -160,3 +160,23 @@ export function pickChoices(words, target, n, urlOf) {
   return out;
 }
 export const shuffle = a => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
+
+// หน้าจอเริ่ม: เลือกตัวละคร + ปุ่มเริ่ม (ใช้ร่วมกันหลายเกม)
+export function StartCard({ title, sub, options, value, onPick, onStart, tokens, pickLabel = "เลือกตัวละคร" }) {
+  return (
+    <div style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", padding:12, zIndex:5 }}>
+      <div style={{ background:tokens.card, borderRadius:24, padding:"14px 12px", width:"min(100%, 440px)", boxShadow:`0 8px 0 rgba(0,0,0,.12), 0 16px 32px ${tokens.shadow || "rgba(0,0,0,.2)"}`, textAlign:"center" }}>
+        <div style={{ fontWeight:900, fontSize:22, color:tokens.ink }}>{title}</div>
+        <div style={{ fontSize:13, color:tokens.ink, opacity:.75, margin:"4px 0 10px", lineHeight:1.45 }}>{sub}</div>
+        {options && <>
+          <div style={{ fontSize:13, fontWeight:800, color:tokens.ink, marginBottom:6 }}>{pickLabel}</div>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(5, 1fr)", gap:6, marginBottom:12 }}>
+            {options.map(o => <button key={o.e} onClick={() => onPick(o)} aria-label={o.name} style={{ minHeight:56, borderRadius:16, border:`3px solid ${o === value ? tokens.primary : "transparent"}`,
+              background: o === value ? `${tokens.primary}22` : "transparent", padding:2, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}>
+              <Fl e={o.e} size={48} flip={!o.noFlip} /></button>)}
+          </div></>}
+        <button onClick={onStart} className="vp-3d" style={{ width:"100%", minHeight:60, borderRadius:999, border:"none", background:tokens.primary, color:tokens.onPrimary, fontSize:22, fontWeight:900, cursor:"pointer" }}>▶ เริ่ม!</button>
+      </div>
+    </div>
+  );
+}

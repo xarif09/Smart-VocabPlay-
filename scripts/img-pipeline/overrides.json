@@ -2289,5 +2289,113 @@
  },
  "numbers|TIMES": {
   "skip": true
+ },
+ "nature|NEST": {
+  "zoom": 0.6
+ },
+ "animals|LEOPARD": {
+  "exclude": [
+   "File:Leopard Tree AdF.jpg"
+  ]
+ },
+ "animals|LIZARD": {
+  "exclude": [
+   "File:DirkvdM lizard in the grass.jpg"
+  ]
+ },
+ "animals|OTTER": {
+  "exclude": [
+   "File:River otter (54340353665).jpg"
+  ]
+ },
+ "animals|SPARROW": {
+  "exclude": [
+   "File:032 Male House sparrow standing on flowering Wisteria near Lake Geneva Photo by Giles Laurent.jpg"
+  ]
+ },
+ "animals|TORTOISE": {
+  "exclude": [
+   "File:Gopher tortoise eating greens 22 November 2021.png"
+  ]
+ },
+ "clothes|PANTS": {
+  "exclude": [
+   "File:Uniqlo Clothing 2026-09-07 pants 01.jpg"
+  ]
+ },
+ "clothes|RAINCOAT": {
+  "exclude": [
+   "File:Nylon raincoat.jpg"
+  ]
+ },
+ "clothes|SHIRT": {
+  "exclude": [
+   "File:Perlis, New Orleans, Mardi Gras Rugby Shirt.jpg"
+  ]
+ },
+ "food|CHICKEN RICE": {
+  "exclude": [
+   "File:Hainanese chicken rice in Singapore - 20140213.jpg"
+  ]
+ },
+ "food|HAM": {
+  "exclude": [
+   "File:Prague Ham (Pražská šunka) at a food stall 02.jpg"
+  ]
+ },
+ "food|PEPPER": {
+  "exclude": [
+   "File:Black Pepper (Piper nigrum) fruits.jpg"
+  ]
+ },
+ "food|TACO": {
+  "exclude": [
+   "File:Mothers Tacos - February 2025 - Sarah Stierch.jpg"
+  ]
+ },
+ "home|RICE COOKER": {
+  "exclude": [
+   "File:T-fal Rice Cooker.jpg"
+  ]
+ },
+ "nature|ACORN": {
+  "exclude": [
+   "File:Quercus robur 3 RF.jpg"
+  ]
+ },
+ "school|PROTRACTOR": {
+  "exclude": [
+   "File:23 0053543 Convair Negative Image - Protractor attached to component (53918872693).jpg"
+  ]
+ },
+ "school|RULER": {
+  "exclude": [
+   "File:Width of man's thumb one inch ruler.png"
+  ]
+ },
+ "school|SHARPENER": {
+  "exclude": [
+   "File:Fiskars squeeze pencil sharpener, open, pink and purple.jpg"
+  ]
+ },
+ "technology|CIRCUIT BOARD": {
+  "exclude": [
+   "File:Extron DMP 128 - board - PS73601-9679.jpg"
+  ]
+ },
+ "toys|ROLLER SKATES": {
+  "exclude": [
+   "File:Kadena re-opens base roller rink (8936320).jpg"
+  ]
+ },
+ "toys|SEESAW": {
+  "exclude": [
+   "File:Holzwippe am Spielplatz.jpg"
+  ]
+ },
+ "vehicles|FIRETRUCK": {
+  "exclude": [
+   "File:Ferrara fire engine ladder truck (extended) downtown St. Johnsbury VT April 2019.jpg"
+  ]
  }
 }

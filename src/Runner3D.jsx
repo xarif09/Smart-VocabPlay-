@@ -248,13 +248,14 @@ function makeCar(primary) {
   return { g, wheels };
 }
 function makeCard(tex, aspect) {
-  const g = new THREE.Group(); const W = 2.25, H = 1.7;
+  const g = new THREE.Group(); const W = 2.04, H = 2.72;   // ป้ายแนวตั้ง 3:4 ให้ตรงกับรูปมาตรฐาน
   const s = new THREE.Shape(); const w = W / 2 + .14, h = H / 2 + .14, r = .22;
   s.moveTo(-w + r, -h); s.lineTo(w - r, -h); s.quadraticCurveTo(w, -h, w, -h + r); s.lineTo(w, h - r); s.quadraticCurveTo(w, h, w - r, h); s.lineTo(-w + r, h); s.quadraticCurveTo(-w, h, -w, h - r); s.lineTo(-w, -h + r); s.quadraticCurveTo(-w, -h, -w + r, -h);
   const fgeo = new THREE.ExtrudeGeometry(s, { depth:.1, bevelEnabled:true, bevelThickness:.05, bevelSize:.05, bevelSegments:3 }); fgeo.center();
   const frame = new THREE.Mesh(fgeo, new THREE.MeshPhysicalMaterial({ color:"#ffffff", roughness:.25, clearcoat:1, emissive:"#ffffff", emissiveIntensity:.12, fog:false }));
   frame.castShadow = true; g.add(frame);
-  let pw = W, ph = W / aspect; if (ph > H) { ph = H; pw = H * aspect; }
+  const pw = W, ph = H, pa = W / H;   // เต็มป้ายแบบ cover (ไม่มีขอบว่าง)
+  if (tex && tex.repeat) { if (aspect > pa) { tex.repeat.set(pa / aspect, 1); tex.offset.set((1 - pa / aspect) / 2, 0); } else { tex.repeat.set(1, aspect / pa); tex.offset.set(0, (1 - aspect / pa) * .58); } tex.needsUpdate = true; }
   const pic = new THREE.Mesh(new THREE.PlaneGeometry(pw, ph), new THREE.MeshBasicMaterial({ map:tex, toneMapped:false, fog:false })); pic.position.z = .11; g.add(pic);
   const pole = new THREE.Mesh(new THREE.CylinderGeometry(.06, .06, 1.6, 10), new THREE.MeshStandardMaterial({ color:"#e5e7eb", metalness:.8, roughness:.25 })); pole.position.y = -(H / 2) - .8; pole.castShadow = true; g.add(pole);
   return { g, frame, pic };   // ภาพหันไปทาง +z (หาผู้เล่น)
@@ -537,8 +538,8 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     const buildGate = async row => {
       const texs = await row.texP; if (S.over || !alive) return;
       const g = new THREE.Group(); g.position.z = S.scroll - row.c; scene.add(g);
-      row.cards = row.set.map((w, i) => { const c = makeCard(texs[i].tex, texs[i].aspect); c.g.position.set(LANES[i], 2.5, 0); c.g.scale.setScalar(.001); g.add(c.g);
-        const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map:glow, color:["#22d3ee","#f0abfc","#fde047"][i], transparent:true, opacity:.55, depthWrite:false, blending:THREE.AdditiveBlending, fog:false })); halo.scale.set(3.6, 3, 1); halo.position.z = -.2; c.g.add(halo);
+      row.cards = row.set.map((w, i) => { const c = makeCard(texs[i].tex, texs[i].aspect); c.g.position.set(LANES[i], 3.0, 0); c.g.scale.setScalar(.001); g.add(c.g);
+        const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map:glow, color:["#22d3ee","#f0abfc","#fde047"][i], transparent:true, opacity:.55, depthWrite:false, blending:THREE.AdditiveBlending, fog:false })); halo.scale.set(3.1, 3.9, 1); halo.position.z = -.2; c.g.add(halo);
         return { ...c, halo, w, lane:i }; });
       const arch = new THREE.Mesh(archGeo, archMat); arch.position.set(0, .1, -.5); g.add(arch);
       row.g = g;
@@ -559,7 +560,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     // ประตูถัดไปกลายเป็นโจทย์ปัจจุบัน: แสดงคำ + พูดคำ + การ์ดรูปเด้งขึ้น
     const activate = (row, silent) => {
       row.active = true; S.cur = row;
-      setHud(h => ({ ...h, target:row.target }));
+      setHud(h => ({ ...h, target:row.target, choices:row.set, lane:S.lane }));
       if (row.breather) banner("😊 พักหายใจ · เก็บของกัน!", 2400);
       if (!silent) setTimeout(() => { if (alive && !S.over && S.cur === row) ui.say(row.target); }, 650);
     };
@@ -572,7 +573,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
     const mult = () => S.combo >= 6 ? 3 : S.combo >= 3 ? 2 : 1;
     const stumble = (k = 1) => { S.stumble = Math.max(S.stumble, k); S.inv = 1.1; S.shake = 1; S.flash = 1; if (C?.def?.sad) playAct(C.def.sad, true); };
     const resolveRow = row => {
-      row.hit = true; S.cur = null;
+      row.hit = true; S.cur = null; setHud(h => ({ ...h, choices:null }));
       if (!row.g) return;   // ยังโหลดรูปไม่เสร็จ (เกิดยากมาก) → ข้าม ไม่นับ
       S.total += 1;
       const card = row.cards.find(c => c.lane === S.lane);
@@ -600,7 +601,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
         setTimeout(() => { if (alive) pop(player.position.clone().setY(2.4), `🧺 −${w.word}`, "minus"); }, 180); }
       syncHud();
     };
-    const move = d => { if (!S.started || S.over || S.paused) return; const n = Math.max(0, Math.min(2, S.lane + d)); if (n !== S.lane) { S.lane = n; sfx.tap(); } };
+    const move = d => { if (!S.started || S.over || S.paused) return; const n = Math.max(0, Math.min(2, S.lane + d)); if (n !== S.lane) { S.lane = n; sfx.tap(); setHud(h => ({ ...h, lane:n })); } };
     const jump = () => { if (!S.started || S.over || S.paused || S.ending) return; if (S.jump > .2) return;
       S.jump = 1; S.jumpRate = 1.55; sfx.tap(); const j = C?.def?.happy; if (j && /jump/i.test(j)) playAct(j, true); };
     const setPaused = p => { if (!S.started || S.over || S.ending) return; S.paused = p; setHud(h => ({ ...h, paused:p })); };
@@ -608,7 +609,7 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
       start: () => { if (S.started) return; S.started = true; setHud(h => ({ ...h, on:true, started:true, left:LEN })); if (C?.def?.run) playAct(C.def.run);
         const t0 = pickTarget(); ui.say(t0); planSegment(t0); activate(gates[0], true); spawnDue(); },   // พูดคำแรกตรงใน onClick (iOS)
       left: () => move(-1), right: () => move(1), jump,
-      lane: i => { if (!S.started || S.over || S.paused) return; if (i !== S.lane) { S.lane = i; sfx.tap(); } },
+      lane: i => { if (!S.started || S.over || S.paused) return; if (i !== S.lane) { S.lane = i; sfx.tap(); setHud(h => ({ ...h, lane:i })); } },
       pause: () => setPaused(true), resume: () => setPaused(false), end: () => { if (S.started && !S.over) finish(); },
       setChar: id => { saveChar(id); setChar(id); },
       peek: () => ({ S, items:items.length, hazards:hazards.length, gates:gates.length, models:col.modelCount, char:C?.def?.id }),   // ใช้ทดสอบ
@@ -748,6 +749,14 @@ export default function Runner3D({ words, speak, track, catId, sfx, Prompt, ui }
         <div ref={host} data-runner3d style={{ position:"absolute", inset:0 }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 55%, rgba(0,0,0,.28))" }} />
         <div style={{ position:"absolute", inset:0, pointerEvents:"none", background:"radial-gradient(circle, transparent 40%, rgba(239,68,68,.75))", opacity:"var(--flash, 0)" }} />
+        {hud.on && !hud.paused && hud.choices && <div data-r3d-preview style={{ position:"absolute", left:"4%", right:"4%", top:74, display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"3%", zIndex:2 }}>
+          {hud.choices.map((w, i) => <button key={w.id} aria-label={`เลน ${["ซ้าย","กลาง","ขวา"][i]}`} onClick={() => api.current.lane?.(i)} style={{ position:"relative", aspectRatio:"3/4", padding:0, borderRadius:14, overflow:"hidden", cursor:"pointer",
+            border:`4px solid ${hud.lane === i ? "#fde047" : "rgba(255,255,255,.85)"}`, boxShadow: hud.lane === i ? "0 0 0 3px rgba(0,0,0,.35), 0 0 18px #fde047" : "0 4px 10px rgba(0,0,0,.35)",
+            transform: hud.lane === i ? "scale(1.04)" : "none", transition:"transform .15s, border-color .15s", background:"#fff" }}>
+            {icon(w)}
+            <span style={{ position:"absolute", left:0, right:0, bottom:0, padding:"2px 0", background:"rgba(0,0,0,.45)", color:"#fff", fontWeight:900, fontSize:13, textAlign:"center" }}>{["◀ ซ้าย","กลาง","ขวา ▶"][i]}</span>
+          </button>)}
+        </div>}
         {hud.on && <div data-r3d-hud style={{ position:"absolute", left:8, top:8, right:8, display:"grid", gridTemplateColumns:"1fr auto 1fr", alignItems:"start", gap:6, pointerEvents:"none" }}>
           <div style={{ display:"flex", flexDirection:"column", alignItems:"flex-start", gap:4 }}>
             <span data-r3d-score style={{ ...pill, fontSize:20 }}>⭐ {hud.score}</span>

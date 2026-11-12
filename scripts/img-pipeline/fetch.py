@@ -75,7 +75,8 @@ def commons_search(query, limit=15):
     params = dict(action="query", generator="search", gsrsearch=f"{query} filetype:bitmap", gsrnamespace="6",
                   gsrlimit=str(limit), **IIPROPS)
     if api(COMMONS_API, params, cache_only=True) is None:
-        j = api(COMMONS_REST_SEARCH, dict(q=f"{query} filetype:bitmap", limit=str(limit)))
+        j = api(COMMONS_REST_SEARCH, dict(q=f"{query} filetype:bitmap", limit=str(limit)),
+                cache_only=os.environ.get("SEARCH_CACHE_ONLY") == "1") or {}
         return [(p["title"], None) for p in j.get("pages", []) if p.get("title", "").startswith("File:")]
     j = api(COMMONS_API, dict(action="query", generator="search", gsrsearch=f"{query} filetype:bitmap", gsrnamespace="6",
                               gsrlimit=str(limit), **IIPROPS))

@@ -1,7 +1,6 @@
 // Who Is Doing It? 2D — เวทีละครมีม่าน ไฟสปอตไลต์ นักแสดงการ์ตูน 4 ตัว ฟังคำกริยาแล้วแตะตัวที่ทำท่านั้น · เล่น 5 นาที
 import { useEffect, useRef, useState } from "react";
-import { Fl, fl, Hud, FloatText, shuffle } from "./kit.jsx";
-import { StartCard } from "./Runner2D.jsx";
+import { Fl, fl, Hud, FloatText, shuffle, StartCard } from "./kit.jsx";
 
 const SESSION = 300;
 

@@ -1,7 +1,6 @@
 // Find It! 2D — ห้องการ์ตูน (บ้าน/ห้องของเล่น/ห้องเรียน/ห้องแต่งตัว) มีของวางอยู่ ฟังคำแล้วแตะของชิ้นนั้น · เก็บครบ 5 ชิ้นจัดห้องใหม่ · เล่น 5 นาที
 import { useEffect, useRef, useState } from "react";
-import { Fl, fl, Hud, FloatText, shuffle } from "./kit.jsx";
-import { StartCard } from "./Runner2D.jsx";
+import { Fl, fl, Hud, FloatText, shuffle, StartCard } from "./kit.jsx";
 
 const SESSION = 300;
 const ROOMS = {

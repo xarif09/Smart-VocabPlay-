@@ -5,7 +5,7 @@ description: เพิ่มหรือปรับเกมใน Smart VocabP
 
 # เพิ่มหรือปรับเกม Smart VocabPlay
 
-ผู้ใช้คือเด็กไทย 4–9 ขวบ หลายคนยังอ่านหนังสือไม่ออก ผู้ปกครอง (Shareef) ตำหนิเรื่องเหล่านี้มาแล้ว: เกมพึ่งตัวหนังสือ, รูปเล็ก, ขอบเบลอ, กราฟิก 3D หยาบ (เลิกทำ 3D แล้ว), เกมสั้นเกินไป และเสียงมาช้ากว่าการกดตอบ
+ผู้ใช้คือเด็กไทย 4–9 ขวบ หลายคนยังอ่านหนังสือไม่ออก ผู้ปกครอง (Shareef) ตำหนิเรื่องเหล่านี้มาแล้ว: เกมพึ่งตัวหนังสือ, รูปเล็ก, ขอบเบลอ, กราฟิก 3D หยาบ แต่ก็ไม่เอาเกมแข่งรถ/วิ่ง/ยิงประตูแบบ 2D, เกมสั้นเกินไป และเสียงมาช้ากว่าการกดตอบ
 
 ## กฎการออกแบบ
 - **ฟังแล้วเลือกรูป**: โจทย์ต้องเป็นเสียงพร้อมคำเขียนเสมอ ใช้ `<SoundPrompt w={target} />` (ลำโพง + คำอังกฤษ + คำแปลไทย ซ่อนคำแปลได้ตามตั้งค่า `ThaiTextCtx`) ส่วนตัวเลือกเป็นรูป
@@ -35,13 +35,17 @@ description: เพิ่มหรือปรับเกมใน Smart VocabP
 7. ไอคอนใน `src/Icons.jsx` (`GAME` map) ห้ามใช้อีโมจิบนการ์ดหลัก
 8. `scripts/img-size-audit.cjs`: เพิ่ม `await game('<Cat>', '<label>', 'multi'|'single'|'info', pre?)`
 
-## เกมผจญภัย 2D (ห้ามใช้ three.js — ผู้ใช้ตัดสินแล้วว่าเกม 3D ไม่สวย)
-- แบบอย่าง: `src/game2d/Runner2D.jsx` (วงรอบ requestAnimationFrame + ref), `Penalty2D.jsx`/`Action2D.jsx` (ทีละรอบ + setTimeout)
+## เกม 3D vs 2D (ผู้ใช้ตัดสิน v3.22)
+- **ต้องเป็น 3D**: Word Runner (`src/Runner3D.jsx` + `src/runner/`), Word Racer (`src/Racer3D.jsx`), Penalty Kick (`src/PenaltyKick3D.jsx`): three.js 0.170 lazy, โมเดล CC0 ใน `public/models/` + `public/3d/` (CREDITS.md) · ห้ามแปลงเป็น 2D อีก · ปรับภาพให้สวยขึ้นได้ (แสง เงา tone mapping โมเดลที่ดีกว่า) — ถ้ามีเครื่องมือ AI สร้างโมเดล 3D (CellCog ฯลฯ) ให้ใช้
+- Playwright เกม 3D: `chromium.launch({ args:["--use-gl=angle","--use-angle=swiftshader","--enable-unsafe-swiftshader"] })`
+
+## เกม 2D (Find It!, Who Is Doing It?)
+- แบบอย่าง: `src/game2d/FindRoom2D.jsx`, `Action2D.jsx` (ทีละรอบ + setTimeout) · ฉากเลื่อน parallax ใช้ `Scene` + `scrollRef`
 - ชุดภาพ `src/game2d/kit.jsx`:
   - `Scene` = ฉาก SVG ชั้นๆ มี parallax ตามธีมของหมวด (`themeOf(catId)`)
   - `Fl`/`fl` = ตัวการ์ตูนและสิ่งของจาก Fluent Emoji 3D (MIT) ใน `public/fluent/`
   - `WordCard` = ป้ายรูปคำศัพท์ 3:4
-  - `Hud`, `FloatText`, `StartCard` (หน้าเลือกตัวละคร + ปุ่ม ▶ เริ่ม!)
+  - `Hud`, `FloatText`, `StartCard` (หน้าเลือกตัวละคร + ปุ่ม ▶ เริ่ม!) — อยู่ใน kit.jsx ทั้งหมด
 - อีโมจิตัวไหนยังไม่มีไฟล์ใน `public/fluent/`: ดึงจาก `raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/<Name>/3D/...` (คนใช้ `Default/3D`) แปลงเป็น WebP 256px ตั้งชื่อตาม codepoint แล้วเพิ่มลง `src/fluentList.json`
 - สัตว์และรถของ Fluent หันซ้าย: ถ้าจะให้วิ่งไปทางขวาให้ใช้ `flip`
 - ป้ายรูปต้องรอให้เด็กเลือก (ประตูหยุดกลางจอ ~8 วินาที) ห้ามวิ่งผ่านเร็วเกินไป

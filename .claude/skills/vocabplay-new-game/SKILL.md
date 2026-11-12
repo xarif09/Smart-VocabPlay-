@@ -1,11 +1,11 @@
 ---
 name: vocabplay-new-game
-description: เพิ่มหรือปรับเกมใน Smart VocabPlay (เกม 2D ใน App.jsx หรือเกม 3D three.js แบบ lazy) ให้ตรงกฎของแอป ได้แก่ โจทย์เป็นเสียงพร้อมคำเขียน ตอบด้วยรูป 3:4 ใหญ่ เด็กที่อ่านไม่ออกก็เล่นได้ ใช้โทเค็นสี ลงทะเบียนเกมครบทุกจุด และเพิ่มเข้าสคริปต์ทดสอบ ใช้เมื่อผู้ใช้สั่งทำเกมใหม่ เกมตามหมวด เกม 3D หรือแก้เกมเดิม
+description: เพิ่มหรือปรับเกมใน Smart VocabPlay (เกมใน App.jsx หรือเกมผจญภัย 2D แบบ lazy ใน src/game2d) ให้ตรงกฎของแอป ได้แก่ โจทย์เป็นเสียงพร้อมคำเขียน ตอบด้วยรูป 3:4 ใหญ่ เด็กที่อ่านไม่ออกก็เล่นได้ ใช้โทเค็นสี ลงทะเบียนเกมครบทุกจุด และเพิ่มเข้าสคริปต์ทดสอบ ใช้เมื่อผู้ใช้สั่งทำเกมใหม่ เกมตามหมวด เกมผจญภัย/แอนิเมชัน หรือแก้เกมเดิม
 ---
 
 # เพิ่มหรือปรับเกม Smart VocabPlay
 
-ผู้ใช้คือเด็กไทย 4–9 ขวบ หลายคนยังอ่านหนังสือไม่ออก ผู้ปกครอง (Shareef) ตำหนิเรื่องเหล่านี้มาแล้ว: เกมพึ่งตัวหนังสือ, รูปเล็ก, ขอบเบลอ, กราฟิก 3D หยาบ, เกมสั้นเกินไป และเสียงมาช้ากว่าการกดตอบ
+ผู้ใช้คือเด็กไทย 4–9 ขวบ หลายคนยังอ่านหนังสือไม่ออก ผู้ปกครอง (Shareef) ตำหนิเรื่องเหล่านี้มาแล้ว: เกมพึ่งตัวหนังสือ, รูปเล็ก, ขอบเบลอ, กราฟิก 3D หยาบ (เลิกทำ 3D แล้ว), เกมสั้นเกินไป และเสียงมาช้ากว่าการกดตอบ
 
 ## กฎการออกแบบ
 - **ฟังแล้วเลือกรูป**: โจทย์ต้องเป็นเสียงพร้อมคำเขียนเสมอ ใช้ `<SoundPrompt w={target} />` (ลำโพง + คำอังกฤษ + คำแปลไทย ซ่อนคำแปลได้ตามตั้งค่า `ThaiTextCtx`) ส่วนตัวเลือกเป็นรูป
@@ -26,7 +26,7 @@ description: เพิ่มหรือปรับเกมใน Smart VocabP
 ## ลงทะเบียนเกม (`src/App.jsx`) ให้ครบทุกจุด
 1. `GAME_META`: `id: { label, thai, emoji }`
 2. `GUIDE` (ประโยคนำทางภาษาไทยที่แอปพูด)
-3. `GameRouter`: เพิ่ม `if (gameId === "id") game = <XxxGame {...p} />` ถ้าเป็นเกม 3D ใช้ `mount3D(lazyComp, "ข้อความรอโหลด")`
+3. `GameRouter`: เพิ่ม `if (gameId === "id") game = <XxxGame {...p} />` ถ้าเป็นเกมผจญภัย 2D ใช้ `mount2D(lazyComp, "ข้อความรอโหลด")`
 4. จะให้เกมขึ้นที่ไหน:
    - เกมเฉพาะหมวด: ใส่ไว้หน้าสุดของ `games:[...]` ของหมวดนั้นใน `CATEGORIES`
    - เกมที่เล่นได้ทุกหมวด: ใส่ใน `EXTRA_GAMES`
@@ -35,22 +35,23 @@ description: เพิ่มหรือปรับเกมใน Smart VocabP
 7. ไอคอนใน `src/Icons.jsx` (`GAME` map) ห้ามใช้อีโมจิบนการ์ดหลัก
 8. `scripts/img-size-audit.cjs`: เพิ่ม `await game('<Cat>', '<label>', 'multi'|'single'|'info', pre?)`
 
-## เกม 3D (three.js 0.170, lazy chunk)
-- แบบอย่างอยู่ที่ `src/Runner3D.jsx`, `src/runner/environment.js` (ท้องฟ้า HDRI + พื้น PBR ตามธีม), `src/runner/props.js` และ brief กลาง `docs/AGENT-BRIEF-3D.md`
-- props ที่ได้รับ: `{ words, speak, track, catId, sfx, Prompt, ui }`
-  - `ui` มี `imageUrl`, `say`, `correct`, `wrong`, `unlock`, `tokens`
-  - ให้แสดง `<Prompt w={target} onClick={() => ui.say(target)} />` เหนือฉาก
-- **ใช้ asset จริงแบบ CC0** อย่าปั้นเองด้วยโค้ด:
-  - แหล่ง: Poly Haven, Quaternius (mirror บน GitHub), KayKit
-  - โมเดลละ ≲ 1.5 MB (gltf-transform), texture ≤ 512
-  - เก็บไว้ที่ `public/models/<folder>/` พร้อม `CREDITS.md` แล้วเพิ่มเครดิตใน `CreditsScreen`
-- สร้าง WebGL ใน try/catch พร้อมข้อความไทยกรณีเปิดไม่ได้ และ dispose ทุกอย่างเมื่อ unmount
-- ประสิทธิภาพบนมือถือ: pixelRatio ≤ 1.6, shadow map 1024–2048, กล้องไม่สั่นจนเวียนหัว
-- ถ้าเพิ่มโฟลเดอร์ asset ใหม่ ให้ตรวจว่า `public/sw.js` แคชด้วย แล้วเปลี่ยนชื่อ `CACHE`
+## เกมผจญภัย 2D (ห้ามใช้ three.js — ผู้ใช้ตัดสินแล้วว่าเกม 3D ไม่สวย)
+- แบบอย่าง: `src/game2d/Runner2D.jsx` (วงรอบ requestAnimationFrame + ref), `Penalty2D.jsx`/`Action2D.jsx` (ทีละรอบ + setTimeout)
+- ชุดภาพ `src/game2d/kit.jsx`:
+  - `Scene` = ฉาก SVG ชั้นๆ มี parallax ตามธีมของหมวด (`themeOf(catId)`)
+  - `Fl`/`fl` = ตัวการ์ตูนและสิ่งของจาก Fluent Emoji 3D (MIT) ใน `public/fluent/`
+  - `WordCard` = ป้ายรูปคำศัพท์ 3:4
+  - `Hud`, `FloatText`, `StartCard` (หน้าเลือกตัวละคร + ปุ่ม ▶ เริ่ม!)
+- อีโมจิตัวไหนยังไม่มีไฟล์ใน `public/fluent/`: ดึงจาก `raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/<Name>/3D/...` (คนใช้ `Default/3D`) แปลงเป็น WebP 256px ตั้งชื่อตาม codepoint แล้วเพิ่มลง `src/fluentList.json`
+- สัตว์และรถของ Fluent หันซ้าย: ถ้าจะให้วิ่งไปทางขวาให้ใช้ `flip`
+- ป้ายรูปต้องรอให้เด็กเลือก (ประตูหยุดกลางจอ ~8 วินาที) ห้ามวิ่งผ่านเร็วเกินไป
+- เวทีใช้ `overflow:"clip"` (ไม่ใช่ hidden) กันจอเลื่อนเวลาแตะปุ่ม
+- ขนาดทุกอย่างคิดจากความสูง/กว้างของเวที (ResizeObserver) เพื่อให้พอดีทั้ง 390×844 และ 360×640
+- ใช้ `ui.imageUrl(w)` สำหรับรูปคำศัพท์ (ลำดับ: รูปที่ผู้ใช้ครอป → wordImages 3:4 → รูปเดิม)
+- เครดิต: `public/fluent/CREDITS.md` และหน้าเครดิต
 
 ## ทดสอบเกม
 - ห้ามเปิด dev server พอร์ตอื่นซ้อน ให้ใช้ preview 4173 หรือ harness ที่ bundle ด้วย esbuild แล้วเสิร์ฟผ่าน `page.route()`
-- Playwright เกม 3D: `chromium.launch({ args:["--use-gl=angle","--use-angle=swiftshader","--enable-unsafe-swiftshader"] })`
 - ถ่ายภาพหน้าจอที่ 390×844 และ 360×640 ทั้งหน้าเริ่ม กลางเกม และตอนตอบถูก/ผิด แล้วดูเอง: ตัวหลักเห็นชัดไหม อ่านออกบนจอโทรศัพท์ไหม ไม่มีอะไรซ้อนกันใช่ไหม
 - เล่นจนจบหนึ่งรอบ ตรวจว่า `track.finish` ถูกเรียกครั้งเดียว และหน้าผลขึ้น
 - จากนั้นทำตาม skill `vocabplay-ship`

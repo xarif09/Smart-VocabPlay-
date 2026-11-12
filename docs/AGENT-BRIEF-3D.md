@@ -1,3 +1,5 @@
+> **เลิกใช้แล้ว (v3.21)** — เกม 3D ถูกแทนด้วยเกม 2D ใน `src/game2d/` ดู skill `vocabplay-new-game`
+
 # Shared brief for 3D mini-game agents (Smart VocabPlay)
 
 Repo: /home/user/Smart-VocabPlay- (Vite 8 + React 19 + three.js 0.170, base "/Smart-VocabPlay-/"). Kids' (age 4–9, Thai) English vocab app; many kids can't read yet.
